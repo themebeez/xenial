@@ -1,0 +1,221 @@
+@media (max-width: 992px) {
+
+	.xenial-container {
+	  	padding-left: 2.5em;
+	  	padding-right: 2.5em;
+	}
+	
+	#xenial-primary {
+		width: 100%;
+	}
+
+	#secondary {
+		width: 100%;
+		margin-top: 40px;
+	}
+
+	.xenial-top-header-right-element {
+		margin-top: 15px;
+		text-align: left;
+	}
+
+	body.xenial-sticky-sidebar-enabled #xenial-primary,
+	body.xenial-sticky-sidebar-enabled #secondary {
+		position: relative;
+	}
+
+	#xenial-banner.xenial-banner-wide-width > .xenial-banner-inner > .xenial-container {
+		max-width: 100%;
+	}
+
+	.xenial-banner-content-inner {
+		max-width: 100%;
+	}
+}
+
+@media (max-width: 768px) {
+	
+	.xenial-hide-mobile-tablet {
+		display: none;
+	}
+
+	.xenial-hide-tablet {
+		display: none;
+	}
+
+	.xenial-show-tablet {
+		display: block;
+	}
+
+	body.xenial-boxed #page {
+		border: none;
+	}
+
+	fieldset {
+		padding: 1em;
+	}
+
+	.xenial-container,
+	body.xenial-boxed .xenial-container {
+	  	padding-left: 1.875em;
+	  	padding-right: 1.875em;
+	}
+
+	body.xenial-sidebar-responsive-hidden #secondary {
+		display: none;
+	}
+
+	body.xenial-sidebar-before-content #xenial-primary {
+		order: 2;
+	}
+
+	body.xenial-sidebar-before-content #secondary {
+		order: 1;
+	}
+
+	body.xenial-has-left-sidebar.xenial-sidebar-after-content #xenial-primary {
+		order: 1;
+	}
+
+	body.xenial-has-left-sidebar.xenial-sidebar-after-content #secondary {
+		order: 2;
+	}
+
+	.xenial-search-modal .xenial-search-wrapper-inner {
+		width: 100%;
+	}
+
+	.xenial-search-modal .xenial-search-wrapper-inner > p {
+		display: none;
+	}
+
+
+	.comments-area .children,
+    .comments-area .children li,
+    .comments-area .children li.depth-2,
+    .comments-area .children li.depth-3,
+    .comments-area .children li.depth-4, 
+    .comments-area .children li.depth-5, 
+    .comments-area .children li.depth-6,
+    .comments-area .children li.depth-7,
+    .comments-area .children li.depth-8,
+    .comments-area .children li.depth-9,
+    .comments-area .children li.depth-10 {
+        padding-left:0;
+        margin-left:0;
+    }
+
+    .comment-form .comment-form-author, 
+    .comment-form .comment-form-email {
+        width:100%;
+    }
+
+    .comment-form .comment-form-author {
+        padding-right:0;
+    }
+
+    .comment-form .comment-form-email {
+        padding-left:0;
+    }
+
+    .comment-respond .comment-form-cookies-consent,
+    .comment-respond .comment-subscription-form,
+    .comment-respond .mc4wp-checkbox-wp-comment-form  {
+        display:none;
+    }
+}
+
+
+@media (max-width: 576px ) {
+	
+	.xenial-hide-mobile {
+		display: none;
+	}
+
+	.xenial-show-mobile {
+		display: block;
+	}
+
+	.xenial-container,
+	body.xenial-fullwidth-stretched .xenial-container {
+		padding-left: 1.25em;
+		padding-right: 1.25em;
+	}
+
+	#xenial-top-header,
+	.xenial-main-header-1 .xenial-main-header-logo-ad-container,
+	.xenial-main-header-1 .xenial-main-header-navigation-elements-container,
+	.xenial-main-header-2 .xenial-main-header-container,
+	#xenial-footer {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.site-content {
+		margin-top: 1.875em;
+		margin-bottom: 1.875em;
+	}
+
+	.xenial-archive-title-wrapper {
+		margin-bottom: 1.875em;
+	}
+
+	.xenial-author-box,
+	.xenial-posts-navigation,
+	.comments-area {
+		margin-top: 2.5em;
+	}
+
+	body.xenial-has-no-sidebar.xenial-boxed-contain.xenial-content-width main#xenial-main,
+	body.single.xenial-boxed-contain.xenial-has-sidebar main#xenial-main, 
+	body.page.xenial-boxed-contain.xenial-has-sidebar main#xenial-main,
+	body.single.xenial-boxed-contain main#xenial-main, 
+	body.page.xenial-boxed-contain main#xenial-main,
+	.xenial-boxed-fullwidth-article, 
+	.xenial-boxed-horizontal-list-article {
+		padding: 1.25em;
+	}
+
+	.xenial-fullwidth-layout-item:not(:last-child), 
+	.xenial-horizontal-list-layout-item:not(:last-child) {
+		margin-bottom: 1.875em;
+	}
+
+	.xenial-author-box-inner {
+		padding: 1.24em;
+	}
+
+	.xenial-posts-navigation .nav-previous {
+		margin-bottom: 1.875em;
+	}
+
+	#xenial-footer-widgets-wrapper .widget {
+		margin-bottom: 2.5em;
+	}
+
+	#xenial-footer-widgets-wrapper .xenial-row > div:last-child .widget {
+		margin-bottom: 0;
+	}
+
+	#xenial-footer-widgets-wrapper .widget .widget-title h4 {
+		margin-bottom: 0;
+	}
+
+	.xenial-search-modal .xenial-search-form input[type="search"] {
+		height: 2.5em;
+		font-size: 1.125rem;
+		padding-right: 3rem;
+	}
+
+	.xenial-search-modal .xenial-search-form button.xenial-search-form-submit {
+		font-size: 1.125rem;
+	}
+
+	.xenial-search-form-close-btn {
+		font-size: 1.25rem;
+	}
+
+	.error-404.not-found h1.page-title {
+		font-size: 8.75rem;
+	}
+}

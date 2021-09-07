@@ -1,0 +1,85 @@
+#xenial-light-dark-mode-switch-btn-wrapper {
+	position: fixed;
+	top: auto;
+	right: 1.875em;
+	bottom: 5.625em;
+	left: auto;
+	z-index: 10;
+}
+
+#xenial-light-dark-mode-switch-btn {
+	height: 3.125em;
+    width: 3.125em;
+    padding: 0;
+    border: none;
+    border-radius: 3.125em;
+    text-align: center;
+    font-size: 1rem;
+    position: relative;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#xenial-light-dark-mode-switch-btn::before {
+    content: '';
+    position: absolute;
+    top: -1.25em;
+    left: -1.25em;
+    bottom: -1.25em;
+    right: -1.25em;
+    background: inherit;
+    border-radius: 3.125em;
+    z-index: -1;
+    opacity: 0.4;
+    -webkit-transform: scale3d(0.5, 0.5, 1);
+    transform: scale3d(0.5, 0.5, 1);
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-show-dark-icon {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-show-light-icon {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-show-dark-icon:hover {
+    -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    background-color: #000000;
+	color: #ffffff;
+    -webkit-animation: moema-1 0.3s forwards;
+    animation: moema-1 0.3s forwards;
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-show-light-icon:hover {
+    -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+    background-color: #ffffff;
+	color: #000000;
+    -webkit-animation: moema-1 0.3s forwards;
+    animation: moema-1 0.3s forwards;
+}
+
+#xenial-light-dark-mode-switch-btn:hover::before {
+    -webkit-animation: moema-2 0.3s 0.3s forwards;
+    animation: moema-2 0.3s 0.3s forwards;
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-show-dark-icon span.xenial-dark-mode-icon {
+	display: block;
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-hide-dark-icon span.xenial-dark-mode-icon {
+	display: none;
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-show-light-icon span.xenial-light-mode-icon {
+	display: block;
+}
+
+#xenial-light-dark-mode-switch-btn.xenial-hide-light-icon span.xenial-light-mode-icon {
+	display: none;
+}

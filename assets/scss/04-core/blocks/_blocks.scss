@@ -1,0 +1,301 @@
+.alignleft {
+	float: left;
+	margin: 0 1.875em 1.25em 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 1.875em 1.25em;
+}
+
+.aligncenter {
+	clear: both;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+
+/*===============================================
+	Block - wp-block-image
+===============================================*/
+
+.wp-block-image .alignleft {
+	margin: 0 1.875em 1.25em 0;
+}
+
+.wp-block-image .alignright {
+    margin: 0 0 1.875em 1.25em;
+}
+
+
+
+/*===============================================
+	Block - wp-block-button
+===============================================*/
+
+.wp-block-button > a.wp-block-button__link {
+	background-color: var(--xenial-accent-color);
+	color: var(--xenial-accent-bg-text-color);
+}
+
+.wp-block-button.is-style-outline > .wp-block-button__link, 
+.wp-block-button__link.is-style-outline {
+	border-color: var(--xenial-accent-color);
+	color: var(--xenial-accent-color);
+}
+
+wp-block-button.is-style-outline > .wp-block-button__link:hover, 
+.wp-block-button__link.is-style-outline:hover {
+	color: var(--xenial-accent-color);
+}
+
+.wp-block-button.is-style-squared > a.wp-block-button__link {
+	border-radius: 0;
+}
+
+
+/*===============================================
+	Block - wp-block-cover
+===============================================*/
+
+.wp-block-cover {
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+.wp-block-cover.alignleft,
+.wp-block-cover.alignright {
+	margin-top: 0;
+}
+
+
+/*===============================================
+	Block - wp-block-gallery
+===============================================*/
+
+.wp-block-gallery {
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+.wp-block-gallery.alignleft,
+.wp-block-gallery.alignright {
+	margin-top: 0;
+}
+
+
+/*===============================================
+ 	Block - p
+===============================================*/
+
+.has-drop-cap:not(:focus)::first-letter {
+    font-weight: bold;
+    font-size: 6rem;
+    font-family: var(--xenial-headings-font-family);
+}
+
+
+/*===============================================
+	Block - wp-block-group__inner-container
+===============================================*/
+
+.wp-block-group.has-background {
+	margin-bottom: 1.25em;
+}
+
+.wp-block-group__inner-container > *:not(:last-child) {
+	margin-bottom: 1.25em;
+}
+
+
+/*===============================================
+	Block - .wp-block-quote
+===============================================*/
+
+.wp-block-quote,
+.wp-block-quote.has-text-align-right {
+	border-color: var(--xenial-accent-color);
+}
+
+.wp-block-quote.is-large, 
+.wp-block-quote.is-style-large {
+	padding: 0;
+	margin-bottom: 1.25em;
+}
+
+.wp-block-pullquote {
+	border: none;
+	padding: 0;
+	color: var(--xenial-content-color);
+	position: relative;
+}
+
+.wp-block-pullquote blockquote {
+	border: none;
+}
+
+.wp-block-pullquote::before {
+	content: '\e9c0';
+	font-family: 'fontisto';
+	font-size: 2rem;
+	display: block;
+	text-align: center;
+	color: var(--xenial-accent-color);
+}
+
+.wp-block-pullquote.is-style-solid-color::before {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	background-color: var(--xenial-site-background-color);
+	line-height: 60px;
+	font-size: 24px;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	border: none;
+	text-align: center;
+	padding-bottom: 30px;
+	padding-top: 40px;
+}
+
+.wp-block-pullquote__citation, 
+.wp-block-pullquote cite, 
+.wp-block-pullquote footer,
+.wp-block-quote__citation, 
+.wp-block-quote cite, 
+.wp-block-quote footer {
+	text-transform: inherit;
+	font-size: var(--xenial-body-font-size);
+	font-weight: bold;
+}
+
+/*===============================================
+	Block - figcaption
+===============================================*/
+
+.wp-block-image figcaption,
+.blocks-gallery-caption,
+.wp-block-video figcaption,
+.wp-block-embed figcaption {
+	color: var(--xenial-caption-color);
+}
+
+
+/*===============================================
+	Block - Post Password Form
+===============================================*/
+
+
+.post-password-form input[type="submit"] {
+	margin-top: 1.25em;
+}
+
+
+
+/*===============================================
+	Block - wp-block-calendar
+===============================================*/
+
+.wp-block-calendar table caption, 
+.wp-block-calendar table tbody {
+	color: var(--xenial-content-color);
+}
+
+.wp-block-calendar table th {
+	background-color: var(--xenial-input-field-bg-color);
+}
+
+.wp-block-calendar tbody td, 
+.wp-block-calendar th {
+	border-color: var(--xenial-border-color);
+}
+
+
+
+/*===============================================
+	Block- wp-block-latest-posts
+===============================================*/
+
+.wp-block-latest-posts.wp-block-latest-posts__list li {
+	margin-bottom: 10px;
+}
+
+.wp-block-latest-posts__post-author, 
+.wp-block-latest-posts__post-date {
+	color: var(--xenial-content-color);
+	font-size: var(--xenial-font-size-small);
+}
+
+
+/*===============================================
+	Block - wp-block-tag-cloud
+===============================================*/
+
+.wp-block-tag-cloud a.tag-cloud-link {
+	padding: 3px 10px;
+	border: 1px solid var(--xenial-border-color);
+	display: inline-block;
+	margin-right: 15px;
+	font-size: var(--xenial-body-font-size) !important;
+	margin-bottom: 10px;
+	color: var(--xenial-content-color);
+	text-decoration: none;
+}
+
+.wp-block-tag-cloud a.tag-cloud-link:hover {
+	text-decoration: underline;
+	color: var(--xenial-accent-color);
+}
+
+
+/*===============================================
+	Block - wp-block-latest-comments
+===============================================*/
+
+.wp-block-latest-comments__comment-date {
+	font-size: var(--xenial-font-size-small);
+}
+
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: var(--xenial-body-font-size);
+	line-height: var(--xenial-body-line-height);
+}
+
+
+/*===============================================
+	Block - wp-block-table
+===============================================*/
+
+.wp-block-table td, 
+.wp-block-table th {
+	border-color: var(--xenial-border-color);
+}
+
+.wp-block-table.is-style-stripes {
+	border-bottom: none;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(2n+1) {
+	background-color: var(--xenial-input-field-bg-color);
+}
+
+.wp-block-table.is-style-stripes td, 
+.wp-block-table.is-style-stripes th {
+	border-color: var(--xenial-border-color);
+}
+
+
+
+/*===============================================
+	Block - wp-block-search
+===============================================*/
+
+.wp-block-search .wp-block-search__input {
+	border-color: var(--xenial-border-color);
+}

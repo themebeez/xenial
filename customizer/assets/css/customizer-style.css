@@ -1,0 +1,273 @@
+.customize-control {
+
+    margin-bottom: 15px;
+}
+
+.customize-control-title {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.customize-control-description {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+#customize-theme-controls .customize-pane-child.open {
+    height:  100%;
+}
+
+#customize-control-typography_info_1 {
+    margin-top: 0px;
+}
+
+#customize-control-colors_info_1 {
+  margin-top: 15px;
+}
+
+#customize-control-miscellaneous_info_1 {
+    margin-top: 0px;
+}
+
+#customize-control-buttons_info_1 {
+    margin-top: 0px;
+}
+
+#accordion-section-xenial_colors,
+#accordion-section-xenial_buttons,
+#accordion-panel-xenial_site_header_panel,
+#accordion-panel-woocommerce,
+#accordion-section-title_tagline,
+#accordion-section-xenial_transparent_header,
+#accordion-section-xenial_archive_pages,
+#accordion-panel-xenial_site_pages,
+#accordion-panel-nav_menus {
+  margin-top: 15px;
+}
+
+
+
+/*li.customize-control:not(.customize-control-xenial-tab):not(#customize-control-page_header_content_width):not(.customize-control-xenial-wrapper):not(#customize-control-page_header_link_hover_color):not(#customize-control-body_line_height):not(#customize-control-headings_system_font_weight):not(#customize-control-headings_google_font):not(#customize-control-h1_line_height):not(#customize-control-h2_line_height):not(#customize-control-h3_line_height):not(#customize-control-h4_line_height):not(#customize-control-h5_line_height):not(#customize-control-h6_line_height)::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: #d9d9d9;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}*/
+
+
+li#customize-control-custom_logo_wrapper,
+li#customize-control-site_title_style_wrapper {
+    margin-top: 0;
+}
+
+li#customize-control-logo_position {
+    margin-top: 20px;
+}
+
+
+
+
+/* Responsive Switcher */
+
+.customize-control.has-switchers .customize-control-title {
+    display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.customize-control.has-switchers .customize-control-title span {
+    line-height: 20px
+}
+
+.customize-control .responsive-switchers {
+    margin-left: 5px;
+    width: auto;
+    float: right;
+}
+
+.customize-control .responsive-switchers li:not(.desktop) {
+    display: none
+}
+
+.customize-control .responsive-switchers-open.responsive-switchers li {
+    display: block
+}
+
+.customize-control .responsive-switchers li {
+    float: left;
+    margin: 0
+}
+
+.customize-control .responsive-switchers li button {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    margin-left: 5px;
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50%;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+    cursor: pointer
+}
+
+.customize-control .responsive-switchers li button:hover {
+    background-color: transparent;
+}
+
+.customize-control .responsive-switchers li:not(.desktop) button.active {
+    color: #0085ba;
+    background-color: transparent;
+}
+
+.customize-control .responsive-switchers.responsive-switchers-open li button.active {
+    color: #0085ba;
+}
+
+.customize-control .responsive-switchers li button i {
+    width: auto;
+    height: auto;
+    font-size: inherit;
+    line-height: 18px
+}
+
+.customize-control.has-switchers>.control-wrap:not(.active) {
+    display: none;
+    width: 100%
+}
+
+.customize-control-code_editor .CodeMirror {
+    height: calc(100vh - 185px)
+}
+
+body.rtl .customize-control-checkbox input[type=checkbox] {
+    margin: 0 0 0 6px
+}
+
+body.rtl .customize-control-checkbox input[type=checkbox]:checked:before,
+body.rtl .customize-control-ocean-multi-check input[type=checkbox]:checked:before {
+    right: 0;
+    left: auto
+}
+
+body.rtl .customize-control .responsive-switchers,
+body.rtl .customize-control .responsive-switchers li button {
+    margin-right: 5px;
+    margin-left: 0
+}
+
+body.rtl .customize-control .responsive-switchers li {
+    float: right
+}
+
+@media screen and (max-width:768px) {
+    body .customize-control .responsive-switchers {
+        display: none
+    }
+    body .customize-control.has-switchers>.control-wrap:not(.active) {
+        display: inline-block
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:768px) {
+    body .customize-control.has-switchers>.control-wrap {
+        display: inline-block
+    }
+    body .customize-control.has-switchers>.control-wrap:not(.tablet) {
+        display: none
+    }
+}
+
+@media screen and (max-width:480px) {
+    body .customize-control.has-switchers>.control-wrap {
+        display: inline-block
+    }
+    body .customize-control.has-switchers>.control-wrap:not(.mobile) {
+        display: none
+    }
+}
+
+
+
+
+input[type="color"], 
+input[type="date"], 
+input[type="datetime-local"], 
+input[type="datetime"], 
+input[type="email"], 
+input[type="month"], 
+input[type="number"], 
+input[type="password"], 
+input[type="search"], 
+input[type="tel"], 
+input[type="text"], 
+input[type="time"], 
+input[type="url"], 
+input[type="week"], 
+select, 
+textarea {
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    min-height: 35px;
+}
+
+.customize-control input[type="email"], 
+.customize-control input[type="number"], 
+.customize-control input[type="password"], 
+.customize-control input[type="search"], 
+.customize-control input[type="tel"], 
+.customize-control input[type="text"], 
+.customize-control input[type="url"] {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.customize-control-color,
+.customize-control-xenial-alpha-color {
+    position: relative;
+}
+
+.wp-picker-container .wp-color-result.button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 0;
+}
+
+.wp-picker-container {
+    width: 100%;
+}
+
+.wp-picker-container.wp-picker-active {
+    
+    margin-top: 15px;
+    background-color: #ffffff;
+}
+
+.wp-picker-container.wp-picker-active .wp-picker-open + .wp-picker-input-wrap {
+    width:  100%;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.wp-picker-container.wp-picker-active .wp-picker-holder {
+    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-left: 15px;
+}

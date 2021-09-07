@@ -1,0 +1,26 @@
+.widget.widget_rss > ul > li {
+	padding-top: 0.625em;
+	padding-bottom: 0.625em;
+}
+
+.widget.widget_rss > ul > li:first-child {
+	padding-top: 0;
+}
+
+.widget.widget_rss > ul > li:last-child {
+	padding-bottom: 0;
+}
+
+.widget.widget_rss > ul > li > a {
+	font-weight: bold;
+}
+
+.widget.widget_rss > ul > li > span.rss-date::before {
+	content: '-';
+	display: inline-block;
+	margin-right: 0.3125em;
+}
+
+.widget.widget_rss > ul > li > .rssSummary {
+	margin-top: 0.6255em;
+}

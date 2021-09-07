@@ -1,0 +1,25 @@
+.ss-main {
+	margin-bottom: 10px;
+}
+
+.ss-main .ss-single-selected,
+.ss-main .ss-multi-selected {
+	padding: 5px 10px;
+}
+
+.ss-main .ss-single-selected {
+	height: 35px;
+}
+
+.ss-main .ss-multi-selected .ss-values .ss-value {
+	border-radius: 2px;
+	padding: 3px 8px;
+}
+
+.ss-content .ss-search.ss-hide {
+	display: none;
+}
+
+.customize-control-xenial-slimslect-dropdown {
+	position: relative;
+}

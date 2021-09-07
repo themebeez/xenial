@@ -1,0 +1,69 @@
+.customize-control-xenial-slider .control-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.customize-control-xenial-slider .xenial-slider {
+    display: inline-block;
+    position: relative;
+    width: 75%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    transition: background .5s;
+    border: none;
+}
+
+.customize-control-xenial-slider .xenial-slider:hover {
+    background-color: rgba(0, 0, 0, .2)
+}
+
+.customize-control-xenial-slider .xenial-slider .ui-slider-range {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #0085ba;
+    background-image: none;
+    border-color: #0085ba;
+}
+
+.customize-control-xenial-slider .xenial-slider .ui-slider-handle {
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-3px);
+    transform: translateY(-50%) translateX(-3px);
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: none;
+    background-color: #0085ba;
+    border: none;
+}
+
+.customize-control-xenial-slider .xenial-slider-input {
+    float: right;
+    width: 25%;
+}
+
+.customize-control-xenial-slider input.slider-input {
+    float: right;
+    width: 80%;
+    height: 28px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555
+}

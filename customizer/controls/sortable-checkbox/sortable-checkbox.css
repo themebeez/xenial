@@ -1,0 +1,95 @@
+.sortable-checkbox_control .checkbox-label {
+
+	background-color: #fff;
+	color: #000;
+	margin-bottom: 8px;
+	cursor: pointer;
+	display: flex;
+	padding: 10px 10px;
+	align-items: center;
+	font-size: 13px;
+	color: #444;
+}
+
+.sortable-checkbox_control .checkbox-label > input {
+	display: none;
+}
+
+.sortable-checkbox_control .sortable .checkbox-label > .sortable-pill-title {
+	cursor: pointer;
+}
+
+.sortable-checkbox_control .fullwidth_pills .checkbox-label > .sortable-pill-title:before,
+.sortable-checkbox_control .sortable .checkbox-label > .sortable-pill-title:before {
+	font-family: "dashicons";
+	font-weight: normal;
+	font-size: 18px;
+	content: "\f530";
+	margin-right: 10px;
+	vertical-align: bottom;
+	display: inline-block;
+	border-right: 1px dotted #000;
+	padding-right: 10px;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+.sortable-checkbox_control .checkbox-label > input:checked + .sortable-pill-title:before { 
+	content: "\f177";
+	font-family: "dashicons";
+	font-weight: normal;
+	font-size: 18px;
+	margin-right: 10px;
+	vertical-align: bottom;
+	display: inline-block;
+	border-right: 1px dotted #000;
+	padding-right: 10px;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+.sortable-checkbox_control .fullwidth_pills .checkbox-label > .sortable-pill-title {
+	width: 100%;
+	border-radius: 0;
+}
+
+.sortable-checkbox_control .sortable.fullwidth_pills .checkbox-label > .sortable-pill-title {
+	width: 90%;
+}
+
+.pill-ui-state-highlight {
+	display: inline-block;
+	padding: 5px 15px;
+	border-radius: 20px;
+	font-size: 1rem;
+	border: 1px dotted #2084bd;
+	margin-bottom: 5px;
+	height: 16px;
+}
+
+.sortable-checkbox_control .sortable_pills .pill-ui-state-highlight {
+	width: 50px;
+	border-radius: 20px;
+}
+
+.sortable-checkbox_control .sortable_pills.fullwidth_pills .pill-ui-state-highlight {
+	width: 90%;
+	border-radius: 0;
+}
+
+.sortable-checkbox_control .dashicons-sort {
+	color: #d4d4d4;
+	cursor: move;
+}
+
+.sortable-checkbox_control .dashicons-sort:hover {
+	color: #a7a7a7;
+}
+
+.sortable-checkbox_control .sortable_pills.fullwidth_pills .ui-sortable-helper {
+	width: calc(100% - 25px) !important;
+}

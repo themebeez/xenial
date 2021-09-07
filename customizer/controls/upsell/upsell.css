@@ -1,0 +1,15 @@
+.control-section-wptrt-customize-pro .accordion-section-title .button {
+
+  margin-top:  -4px;
+  margin-left: 8px;
+  background-color: #ffffff;
+  color: #0286e7;
+  transition-duration: 0.3s;
+}
+
+.control-section-wptrt-customize-pro .accordion-section-title .button:hover {
+
+  background-color: #0286e7;
+  border-color: #0286e7;
+  color: #ffffff;
+}

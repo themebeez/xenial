@@ -1,0 +1,9 @@
+/* Widget Styles */
+.wp-core-ui p .custom_media_button,
+.custom_media_url {
+    margin-top: 10px;
+}
+
+.wp-core-ui p label {
+    margin-bottom: 5px;
+}

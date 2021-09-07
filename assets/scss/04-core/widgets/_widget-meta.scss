@@ -1,0 +1,13 @@
+.widget.widget_meta li a {
+	padding-top: 0.3125em;
+	padding-bottom: 0.3125em;
+	display: block;
+}
+
+.widget.widget_meta li:first-child a { 
+	padding-top: 0;
+}
+
+.widget.widget_meta li:last-child a { 
+	padding-bottom: 0;
+}

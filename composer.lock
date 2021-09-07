@@ -1,0 +1,71 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "7f26753cc09f81fbec52b59e0abf6a2a",
+    "packages": [
+        {
+            "name": "wptrt/control-color-alpha",
+            "version": "v1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WPTT/control-color-alpha.git",
+                "reference": "c6ddf43b78430c8217c9822620aa40399a81d641"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WPTT/control-color-alpha/zipball/c6ddf43b78430c8217c9822620aa40399a81d641",
+                "reference": "c6ddf43b78430c8217c9822620aa40399a81d641",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "composer/installers": "~1.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "*",
+                "wp-coding-standards/wpcs": "*",
+                "wptrt/wpthemereview": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WPTRT\\Customize\\Control\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress.org Theme Review Team",
+                    "email": "themes@wordpress.org",
+                    "homepage": "https://make.wordpress.org/themes",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Color control for the WordPress Customizer with RGBA support.",
+            "homepage": "https://github.com/WPTRT/control-color-alpha",
+            "keywords": [
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/WPTRT/control-color-alpha/issues",
+                "source": "https://github.com/WPTT/control-color-alpha/tree/master"
+            },
+            "time": "2020-07-24T12:32:40+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}

@@ -1,0 +1,13 @@
+.google_fonts_select_control .google-fonts,
+.google_fonts_select_control .weight-style {
+	margin-bottom: 15px;
+}
+
+.google_fonts_select_control .weight-style::last-child {
+	margin-bottom: 0px;
+}
+
+.google_fonts_select_control .customize-control-description {
+	font-style: inherit;
+	font-size: 14px;
+}

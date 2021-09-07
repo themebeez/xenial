@@ -1,0 +1,90 @@
+.woocommerce-error li:not(:first-child), 
+.woocommerce-info li:not(:first-child), 
+.woocommerce-message li:not(:first-child) {
+    margin-top: 0.625em;
+}
+
+.woocommerce #respond input#submit.loading::after, 
+.woocommerce a.button.loading::after, 
+.woocommerce button.button.loading::after, 
+.woocommerce input.button.loading::after {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    top: inherit;
+    right: inherit;
+}
+
+.woocommerce-products-header__title {
+    margin-top: 0;
+}
+
+.woocommerce-result-count-catalog-ordering-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5em;
+    flex-wrap: wrap;
+}
+
+.woocommerce .woocommerce-result-count,
+.woocommerce .woocommerce-ordering {
+    margin-bottom: 0;
+    float: none;
+}
+
+.woocommerce div.product p.price del, 
+.woocommerce div.product span.price del {
+	color: var(--xenial-del-price-color);
+}
+
+.woocommerce-error, 
+.woocommerce-info, 
+.woocommerce-message {
+	background-color: var(--xenial-secondary-background-color);
+	color: var(--xenial-text-color);
+}
+
+.woocommerce .star-rating span::before,
+.woocommerce .star-rating::before { 
+    color: #FFC107;
+}
+
+.woocommerce ul.products {
+    margin-bottom: 0;
+}
+
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product {
+    margin-bottom: 2.5em;
+}
+
+.woocommerce span.onsale {
+    min-height: auto;
+    min-width: auto;
+    border-radius: 0;
+    display: inline-block;
+    padding: 0.3125em 0.625em;
+    line-height: inherit;
+    background-color: var(--xenial-accent-color);
+    color: var(--xenial-accent-bg-text-color);
+    font-size: var(--xenial-font-size-small);
+    font-weight: 500;
+}
+
+.woocommerce ul.products li.product .onsale {
+    margin: 0;
+    top: 0.9375em;
+    left: 0.9375em;
+    right: auto;
+}
+
+.woocommerce ul.products li.product .price {
+    color: var(--xenial-accent-color);
+    margin-top: 0.625em;
+    font-size: var(--xenial-body-font-size);
+}
+
+.woocommerce ul.products li.product .star-rating {
+    margin: 0.5em 0;
+}

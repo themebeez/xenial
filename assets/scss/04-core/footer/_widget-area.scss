@@ -1,0 +1,15 @@
+#xenial-footer-widgets-wrapper {
+	padding-top: 2.5em;
+}
+
+#xenial-footer-widgets-wrapper .widget .widget-title h4 {
+	color: var(--xenial-headings-color);
+	margin-top: 0;
+}
+
+.xenial-footer-widget-separator {
+	width: 100%;
+	height: 2px;
+	background-color: var(--xenial-border-color);
+	margin-top: 1.875em;
+}

@@ -1,0 +1,14 @@
+.widget.widget_recent_entries ul > li > a {
+	padding-top: 0.3125em;
+	padding-bottom: 0.3125em;
+	display: block;
+	font-weight: bold;
+}
+
+.widget.widget_recent_entries ul > li:first-child > a {
+	padding-top: 0;
+}
+
+.widget.widget_recent_entries ul > li:last-child > a {
+	padding-bottom: 0;
+}

@@ -1,0 +1,52 @@
+.xenial-entry-content > *:not(:last-child) {
+	margin-bottom: 1.25em;
+}
+
+.xenial-entry-thumbnail-container .post-thumbnail {
+	text-align: center;
+}
+
+.xenial-entry-content {
+	color: var(--xenial-content-color);
+}
+
+.xenial-entry-content a {
+	text-decoration: underline;
+	color: var(--xenial-accent-color);
+}
+
+.xenial-entry-content .page-links {
+	clear: both;
+	text-align: center;
+}
+
+span.edit-link {
+	clear: both;
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 0;
+	font-size: var(--xenial-font-size-small);
+}
+
+span.edit-link a {
+	text-decoration: none;
+	color: var(--xenial-accent-color);
+}
+
+span.edit-link a:hover {
+	text-decoration: underline;
+}
+
+span.edit-link a i {
+	font-size: 14px;
+}
+
+.xenial-entry-footer {
+	margin-top: 2em;
+}
+
+.xenial-entry-post-tags a,
+.xenial-entry-updated-date {
+	font-size: var(--xenial-font-size-small);
+	margin-bottom: 10px;
+}

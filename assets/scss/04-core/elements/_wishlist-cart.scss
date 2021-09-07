@@ -1,0 +1,25 @@
+.xenial-cart-count-present .xenial-cart-container,
+.xenial-wishlist-count-present .xenial-wishlist-container {
+    position: relative;
+}
+
+.xenial-cart-count-present .xenial-cart-container .xenial-cart,
+.xenial-wishlist-count-present .xenial-wishlist-container .xenial-wishlist {
+    padding-right: 17px;
+}
+
+.xenial-cart-count-present #xenial-cart-items-count,
+.xenial-wishlist-count-present #xenial-wishlist-items-count {
+    position: absolute;
+    font-size: var(--xenial-icon-font-size);
+    top: 0;
+    right: 0;
+    min-height: 22px;
+    min-width: 22px;
+    text-align: center;
+    border-radius: 30px;
+    background-color: var(--xenial-accent-color);
+    color: #fff;
+    line-height: 22px;
+    margin-top: 10px;
+}

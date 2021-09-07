@@ -1,0 +1,37 @@
+.widget .widget-title {
+    margin-bottom: 1.25em;    
+}
+
+.widget-title h4 {
+    font-size: var(--xenial-font-size-medium);
+    font-weight: 500;
+}
+
+.widget:not(:last-child) {
+    margin-bottom: 1.875em;
+}
+
+
+
+.widget.widget_archive ul,
+.widget.widget_categories ul,
+.widget.widget_pages ul,
+.widget.widget_meta ul,
+.widget.widget_recent_comments ul,
+.widget.widget_recent_entries ul,
+.widget.widget_rss ul,
+.widget.widget_nav_menu ul.menu {
+    list-style: none;
+}
+
+.widget.widget_archive > ul,
+.widget.widget_categories > ul,
+.widget.widget_pages > ul,
+.widget.widget_meta > ul,
+.widget.widget_recent_comments > ul,
+.widget.widget_recent_entries > ul,
+.widget.widget_rss > ul,
+.widget.widget_nav_menu ul.menu {
+    margin: 0;
+    padding: 0;
+}

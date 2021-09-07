@@ -1,0 +1,47 @@
+#xenial-breadcrumbs.xenial-breadcrumb-default-container {
+	padding: 15px 0px;
+	border-bottom: 1px solid var(--xenial-border-color);
+	background-color: var(--xenial-background-color);
+}
+
+#xenial-breadcrumbs.xenial-breadcrumb-default-container a {
+	text-decoration: none;
+}
+
+#xenial-breadcrumbs.xenial-breadcrumb-default-container a:hover {
+	color: var(--xenial-accent-color);
+}
+
+.breadcrumbs ul.trail-items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-size: var(--xenial-font-size-small);
+}
+
+.breadcrumbs ul.trail-items li {
+	display: inline-block;
+}
+
+
+.breadcrumbs ul.trail-items li:not(:last-child) {
+	margin-right: 15px;
+}
+
+.breadcrumbs ul.trail-items li.trail-item:not(:last-child):after {
+	content: "\e96a";
+	margin-left: 15px;
+	display: inline-block;
+	font-family: 'fontisto';
+	font-size: var(--xenial-icon-font-size);
+	vertical-align: middle;
+}
+
+
+
+
+/* Rank Math Breadcrumb */
+
+.rank-math-breadcrumb > p {
+	margin-bottom: 0;
+}

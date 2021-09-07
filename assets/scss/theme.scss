@@ -1,0 +1,233 @@
+/*
+ Theme Name: Xenial
+ Theme URI: https://themebeez.com/themes/xenial/
+ Author: themebeez
+ Author URI: https://themebeez.com
+ Description: 
+ Requires at least: 5.3
+ Tested up to: 5.7
+ Requires PHP: 5.6
+ Version: 1.0.0
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain: xenial
+ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+ Xenial WordPress Theme, (C) 2021 themebeez
+ Xenial is distributed under the terms of the GNU GPL.
+ */
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	Variables
+	1. 	Normalize
+	2. 	Element Base
+	3. 	Grid
+	4. 	Utilities
+	5. 	Keyframes
+	6. 	Header
+	7. 	Elements
+	8. 	Post Meta
+	9. 	Breadcrumbs
+	10. Page Header
+	11. Banner
+	12. 404
+	13. Archive
+	14. Single
+	15. Blocks
+	16. Widgets
+	17. Sidebar
+	18. Footer
+	19. Modals
+	20. WooCommerce
+	21. Responsive
+
+----------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	0. Variables
+   -------------------------------------------------------------------------- */
+@import '01-variables/typography';
+@import '01-variables/colors';
+@import '01-variables/global';
+
+
+/* -------------------------------------------------------------------------- 
+	1. Normalize
+   -------------------------------------------------------------------------- */
+@import '02-base/normalize';
+
+
+/* -------------------------------------------------------------------------- 
+	2. Element Base
+   -------------------------------------------------------------------------- */
+@import '02-base/base';
+
+
+/* --------------------------------------------------------------------------
+	3. Grid
+   -------------------------------------------------------------------------- */
+@import '02-base/grid';
+@import '02-base/clearings';
+
+
+/* --------------------------------------------------------------------------
+	4. Utilities
+   -------------------------------------------------------------------------- */
+@import '02-base/utilities';
+
+
+/* -------------------------------------------------------------------------- 
+	5. Keyframes
+   -------------------------------------------------------------------------- */
+@import '03-keyframes/moema';
+
+
+/* -------------------------------------------------------------------------- 
+	6. Header
+   -------------------------------------------------------------------------- */
+@import '04-core/header/base';
+@import '04-core/header/top-header';
+@import '04-core/header/main-header';
+
+
+/* -------------------------------------------------------------------------- 
+	7. Elements
+   -------------------------------------------------------------------------- */
+@import '04-core/elements/common';
+@import '04-core/elements/site-identity';
+@import '04-core/elements/main-menu';
+@import '04-core/elements/search-icon';
+@import '04-core/elements/social-menu';
+@import '04-core/elements/top-menu';
+@import '04-core/elements/button';
+@import '04-core/elements/ad';
+@import '04-core/elements/wishlist-cart';
+
+
+/* -------------------------------------------------------------------------- 
+	8. Post Meta
+   -------------------------------------------------------------------------- */
+@import '04-core/components/post-meta/post-meta';
+
+
+/* --------------------------------------------------------------------------
+	9. Breadcrumbs
+   -------------------------------------------------------------------------- */
+@import '04-core/components/breadcrumbs/breadcrumbs';
+
+
+/* --------------------------------------------------------------------------
+	10. Page header
+   -------------------------------------------------------------------------- */
+@import '04-core/components/page-header/page-header';
+
+
+/* --------------------------------------------------------------------------
+	11. Banner
+   -------------------------------------------------------------------------- */
+@import '04-core/components/banner/banner';
+
+
+/* --------------------------------------------------------------------------
+	12. 404
+   -------------------------------------------------------------------------- */
+@import '04-core/pages/404/404';
+
+
+/* --------------------------------------------------------------------------
+	13. Archive
+   -------------------------------------------------------------------------- */
+@import '04-core/pages/archive/archive-title-description';
+@import '04-core/pages/archive/fullwidth';
+@import '04-core/pages/archive/horizontal';
+@import '04-core/pages/archive/pagination';
+@import '04-core/pages/archive/nothing-found';
+
+
+/* --------------------------------------------------------------------------
+	14. Single
+   -------------------------------------------------------------------------- */
+@import '04-core/pages/single/base';
+@import '04-core/pages/single/title-header';
+@import '04-core/pages/single/post-content';
+@import '04-core/pages/single/author-box';
+@import '04-core/pages/single/post-navigation';
+@import '04-core/pages/single/comments';
+
+
+/* --------------------------------------------------------------------------
+	15. Blocks
+   -------------------------------------------------------------------------- */
+@import '04-core/blocks/blocks';
+
+
+/* --------------------------------------------------------------------------
+	16. Widgets
+   -------------------------------------------------------------------------- */
+@import '04-core/widgets/widget-base';
+@import '04-core/widgets/widget-archives';
+@import '04-core/widgets/widget-audio';
+@import '04-core/widgets/widget-calendar';
+@import '04-core/widgets/widget-categories';
+@import '04-core/widgets/widget-custom-html';
+@import '04-core/widgets/widget-gallery';
+@import '04-core/widgets/widget-image';
+@import '04-core/widgets/widget-meta';
+@import '04-core/widgets/widget-navigation-menu';
+@import '04-core/widgets/widget-pages';
+@import '04-core/widgets/widget-recent-comments';
+@import '04-core/widgets/widget-recent-posts';
+@import '04-core/widgets/widget-rss';
+@import '04-core/widgets/widget-search';
+@import '04-core/widgets/widget-tag-cloud';
+@import '04-core/widgets/widget-text';
+@import '04-core/widgets/widget-video';
+
+
+/* --------------------------------------------------------------------------
+	17. Sidebar
+   -------------------------------------------------------------------------- */
+@import '04-core/sidebar/sidebar';
+
+
+/* --------------------------------------------------------------------------
+	18. Footer
+   -------------------------------------------------------------------------- */
+@import '04-core/footer/base';
+@import '04-core/footer/widget-area';
+@import '04-core/footer/copyright';
+@import '04-core/components/scroll-top';
+@import '04-core/components/dark-mode-switcher';
+
+
+/* --------------------------------------------------------------------------
+	19. Modals
+   -------------------------------------------------------------------------- */
+@import '04-core/modals/modal-main-menu';
+@import '04-core/modals/modal-search';
+
+
+/* --------------------------------------------------------------------------
+	20. WooCommerce
+   -------------------------------------------------------------------------- */
+@import '05-woocommerce/base';
+@import '05-woocommerce/common';
+@import '05-woocommerce/breadcrumbs';
+@import '05-woocommerce/archive';
+@import '05-woocommerce/single';
+@import '05-woocommerce/cart';
+@import '05-woocommerce/checkout';
+@import '05-woocommerce/my-account';
+@import '05-woocommerce/widgets';
+@import '05-woocommerce/responsive';
+
+
+/* --------------------------------------------------------------------------
+	21. Responsive
+   -------------------------------------------------------------------------- */
+@import '04-core/responsive/responsive';

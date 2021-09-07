@@ -1,0 +1,69 @@
+.xenial-main-header-elements-inner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.xenial-main-header-element {
+    -ms-flex-preferred-size: 0;
+    -ms-flex-positive: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.xenial-main-header-element:not(:first-child) {
+    margin-left: 20px;
+}
+
+.xenial-header-btn-inner,
+.xenial-header-search-inner,
+.xenial-header-cart-inner,
+.xenial-header-wishlist-inner {
+    display: inline-block;
+    position: relative;
+}
+
+.xenial-main-header-element:not(:last-child):after {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+body .xenial-main-header-element:not(:last-child):after {
+    color: var(--xenial-text-color);
+}
+
+.xenial-main-header-elements-separator-bar .xenial-main-header-element:not(:last-child):after {
+    content: '|';
+    margin-left: 15px;
+}
+
+.xenial-main-header-elements-separator-slanted-bar .xenial-main-header-element:not(:last-child):after {
+    content: '/';
+    margin-left: 15px;
+}
+
+
+.xenial-header-element-icon {
+    display: inline-block;
+    padding: 15px 0;
+    font-size: var(--xenial-font-size-small);
+}
+
+.xenial-header-element-icon:hover {
+    text-decoration: none;
+    color: var(--xenial-accent-color);
+}
+
+.xenial-main-header-element.xenial-rounded .xenial-header-element-icon {
+    font-size: 14px;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    background-color: rgba(255, 255, 255, 0.25);
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+}

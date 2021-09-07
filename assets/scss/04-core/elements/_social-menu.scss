@@ -1,0 +1,100 @@
+.xenial-social-menu-element:not(.xenial-social-menu-title-displayed) ul li a {
+    font-size: 0px;
+}
+
+.xenial-social-menu-element ul li a[href*=".com"]::before {
+    font-family: 'fontisto';
+    font-size: 0.875rem;
+}
+
+.xenial-social-menu-element.xenial-social-menu-title-displayed ul li a[href*=".com"]::before {
+    margin-right: 5px;
+}
+
+.xenial-social-menu-element ul li a[href*="facebook"]::before {
+    content: "\e918";
+}
+
+.xenial-social-menu-element ul li a[href*="twitter"]::before {
+    content: "\e942";
+}
+
+.xenial-social-menu-element ul li a[href*="instagram"]::before {
+    content: "\e922";
+}
+
+.xenial-social-menu-element ul li a[href*="youtube"]::before {
+    content: "\e94d";
+}
+
+.xenial-social-menu-element ul li a[href*="pinterest"]::before {
+    content: "\e92e";
+}
+
+.xenial-social-menu-element ul li a[href*="linkedin"]::before {
+    content: "\e926";
+}
+
+.xenial-social-menu-element ul li a[href*="vk"]::before {
+    content: "\ea99";
+}
+
+.xenial-social-menu-element ul li a[href*="tumblr"]::before {
+    content: "\e940";
+}
+
+.xenial-social-menu-element ul li a[href*="reddit"]::before {
+    content: "\e932";
+}
+
+.xenial-social-menu-element ul li a[href*="behance"]::before {
+    content: "\e910";
+}
+
+.xenial-social-menu-element ul li a[href*="github"]::before {
+    content: "\e91c";
+}
+
+.xenial-social-menu-element ul li a[href*="spotify"]::before {
+    content: "\e939";
+}
+
+.xenial-social-menu-element ul li a[href*="vimeo"]::before {
+    content: "\e943";
+}
+
+.xenial-social-menu-element ul li a[href*="quora"]::before {
+    content: "\ea91";
+}
+
+.xenial-social-menu-element ul li a[href*="twitch"]::before {
+    content: "\e941";
+}
+
+.xenial-social-menu-element ul li a[href*="slack"]::before {
+    content: "\e936";
+}
+
+.xenial-social-menu-element ul li a[href*="whatsapp"]::before {
+    content: "\e945";
+}
+
+.xenial-social-menu-element ul li a[href*="skype"]::before {
+    content: "\e935";
+}
+
+.xenial-social-menu-element ul li a[href*="snapchat"]::before {
+    content: "\e937";
+}
+
+.xenial-social-menu-element ul li a[href*="medium"]::before {
+    content: "\e92a";
+}
+
+.xenial-social-menu-element ul li a[href*="foursquare"]::before {
+    content: "\e91a";
+}
+
+.xenial-social-menu-element ul li a[href*="rss"]::before {
+    content: "\e9c5";
+}

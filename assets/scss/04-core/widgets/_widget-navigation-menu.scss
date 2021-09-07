@@ -1,0 +1,21 @@
+.widget.widget_nav_menu ul {
+	list-style: none;
+}
+
+.widget.widget_nav_menu ul.sub-menu {
+	padding-left: 0.9375em;
+}
+
+.widget.widget_nav_menu ul > li > a {
+	padding-top: 0.3125em;
+	padding-bottom: 0.3125em;
+	display: block;
+}
+
+.widget.widget_nav_menu ul > li:first-child > a {
+	padding-top: 0;
+}
+
+.widget.widget_nav_menu ul > li:last-child > a {
+	padding-bottom: 0;
+}

@@ -1,0 +1,26 @@
+.xenial-single-title-left .xenial-post-structure-categories,
+.xenial-single-title-left .xenial-page-title,
+.xenial-single-title-left .xenial-post-meta-entries {
+	text-align: left;
+}
+
+.xenial-single-title-center .xenial-post-structure-categories,
+.xenial-single-title-center .xenial-page-title,
+.xenial-single-title-center .xenial-post-meta-entries {
+	text-align: center;
+}
+
+.xenial-single-title-right .xenial-post-structure-categories,
+.xenial-single-title-right .xenial-page-title,
+.xenial-single-title-right .xenial-post-meta-entries {
+	text-align: right;
+}
+
+.xenial-post-meta-entries-inner .xenial-post-meta-entry,
+.xenial-post-meta-entries-inner .xenial-post-meta-entry a {
+	color: var(--xenial-post-meta-color);
+}
+
+.xenial-post-meta-entries-inner .xenial-post-meta-entry a:hover {
+	color: var(--xenial-accent-color);
+}

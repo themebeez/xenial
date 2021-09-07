@@ -1,0 +1,15 @@
+.widget.widget_archive > ul > li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding-top: 0.3125em;
+	padding-bottom: 0.3125em;
+}
+
+.widget.widget_archive > ul > li:first-child {
+	padding-top: 0;
+}
+
+.widget.widget_archive > ul > li:last-child {
+	padding-bottom: 0;
+}

@@ -1,0 +1,12 @@
+.woocommerce .woocommerce-breadcrumb {
+	margin-bottom: 0;
+}
+
+body.woocommerce .woocommerce-breadcrumb,
+body.woocommerce .woocommerce-breadcrumb a {
+	color: var(--xenial-text-color);
+}
+
+body.woocommerce .woocommerce-breadcrumb a:hover {
+	color: var(--xenial-accent-color);
+}

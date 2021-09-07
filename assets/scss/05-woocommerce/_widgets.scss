@@ -1,0 +1,187 @@
+.woocommerce ul.cart_list li:not(:last-child), 
+.woocommerce ul.product_list_widget li:not(:last-child) {
+	margin-bottom: 0.625em;
+}
+
+.woocommerce ul.cart_list li img, 
+.woocommerce ul.product_list_widget li img {
+	width: 2.8125em;
+}
+
+.woocommerce ul.cart_list li .woocommerce-Price-amount.amount, 
+.woocommerce ul.product_list_widget li .woocommerce-Price-amount.amount {
+	font-size: var(--xenial-font-size-small);
+}
+
+.woocommerce ul.cart_list ins, 
+.woocommerce ul.product_list_widget ins {
+	background-color: var(--xenial-accent-color);
+	color: var(--xenial-accent-bg-text-color);
+}
+
+
+
+/******************************
+	1. Cart
+******************************/
+.woocommerce .widget_shopping_cart .widget_shopping_cart_content,
+.woocommerce.widget_shopping_cart .widget_shopping_cart_content {
+	padding: 0.9375em;
+	border: 1px solid var(--xenial-border-color);	
+}
+
+.woocommerce .widget_shopping_cart .cart_list li, 
+.woocommerce.widget_shopping_cart .cart_list li {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.woocommerce .widget_shopping_cart .cart_list li:not(:last-child), 
+.woocommerce.widget_shopping_cart .cart_list li:not(:last-child) {
+	margin-bottom: 0.625em;
+}
+
+.woocommerce .widget_shopping_cart .cart_list .quantity, 
+.woocommerce.widget_shopping_cart .cart_list .quantity {
+	font-size: var(--xenial-font-size-small);
+}
+
+.woocommerce .widget_shopping_cart .total, 
+.woocommerce.widget_shopping_cart .total {
+	border-top: 1px solid var(--xenial-border-color);
+	border-bottom: 1px solid var(--xenial-border-color);
+	margin-top: 0.9375em;
+	padding: 0.625em 0;
+}
+
+.woocommerce .widget_shopping_cart .woocommerce-mini-cart__buttons,
+.woocommerce.widget_shopping_cart .woocommerce-mini-cart__buttons {
+	margin-bottom: 0;
+}
+
+.woocommerce .widget_shopping_cart .buttons a, 
+.woocommerce.widget_shopping_cart .buttons a {
+	margin-right: 0.625em;
+	font-size: var(--xenial-font-size-small);
+	padding: 0.625em 0.9375em;
+}
+
+
+
+/******************************
+	2. Filter Products by Attribute
+******************************/
+.woocommerce .woocommerce-widget-layered-nav-list .woocommerce-widget-layered-nav-list__item:not(:last-child) {
+	margin-bottom: 0.625em;
+}
+
+
+
+/******************************
+	3. Product Categories
+******************************/
+.widget_product_categories ul {
+	list-style: none;
+}
+
+.widget_product_categories ul.product-categories {
+	padding-left: 0;
+}
+
+.widget_product_categories .product-categories li.cat-item {
+	margin-top: 0.625em;
+}
+
+.widget_product_categories .product-categories > li.cat-item:not(:first-child) {
+	margin-top: 0.625em;
+}
+
+
+
+/******************************
+	4. Product Tag Cloud
+******************************/
+
+.widget.widget_product_tag_cloud > div.tagcloud {
+	display: flex;
+	flex-direction: flex-row;
+	flex-wrap: wrap;
+}
+
+.widget.widget_product_tag_cloud > div.tagcloud > a {
+	font-size: var(--xenial-body-font-size) !important;
+	border: 1px solid var(--xenial-border-color);
+	padding: 0.3125em 0.625em;
+	display: block;
+	margin-right: 0.6255em;
+	margin-bottom: 0.6255em;
+}
+
+
+
+/****************************** 
+	5. Filter Products by Price
+******************************/
+.widget_price_filter .price_slider_wrapper .ui-slider {
+	margin-bottom: 1.875em;
+}
+
+.widget_price_filter .price_slider_wrapper .ui-slider .ui-slider-range {
+	background-color: var(--xenial-accent-color);
+}
+
+.widget_price_filter .price_slider_wrapper .ui-slider .ui-slider-handle {
+	background-color: var(--xenial-accent-color);
+	height: 0.9375em;
+    width: 0.9375em;
+    top: -0.375em;
+}
+
+.woocommerce .widget_price_filter .ui-slider-horizontal,
+.woocommerce.widget_price_filter .ui-slider-horizontal {
+	height: 3px;
+}
+
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+	background-color: var(--xenial-input-field-bg-color);
+}
+
+.woocommerce .widget_price_filter .price_slider_amount .button,
+.woocommerce .widget_price_filter .price_slider_amount {
+	font-size: var(--xenial-font-size-small);
+}
+
+
+
+/******************************
+	6. Product Search
+******************************/
+.woocommerce .widget_product_search form.woocommerce-product-search,
+.woocommerce.widget_product_search form.woocommerce-product-search {
+	position: relative;
+}
+
+.woocommerce.widget_product_search form.woocommerce-product-search input.search-field {
+	padding-right: 40px;
+}
+
+.woocommerce.widget_product_search form.woocommerce-product-search button[type="submit"] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 0;
+	background-color: transparent;
+	padding: 0;
+	border-radius: 0;
+}
+
+.woocommerce.widget_product_search form.woocommerce-product-search button[type="submit"]::before {
+	content: '\eb1e';
+	font-family: 'fontisto';
+	font-size: var(--xenial-body-font-size);
+	display: inline-block;
+	height: 46px;
+	line-height: 46px;
+	width: 40px;
+	text-align: center;
+}

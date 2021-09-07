@@ -1,0 +1,13 @@
+.widget.widget_pages li.page_item a {
+	padding-top: 0.3125em;
+	padding-bottom: 0.3125em;
+	display: block;
+}
+
+.widget.widget_pages li.page_item:first-child a {
+	padding-top: 0;
+}
+
+.widget.widget_pages li.page_item:last-child a {
+	padding-bottom: 0;
+}
