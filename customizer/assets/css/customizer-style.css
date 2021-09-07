@@ -1,36 +1,256 @@
-.customize-control {
+
+/* Forms - Customizer */
+
+#customize-controls input[type="color"], 
+#customize-controls input[type="date"], 
+#customize-controls input[type="datetime-local"], 
+#customize-controls input[type="datetime"], 
+#customize-controls input[type="email"], 
+#customize-controls input[type="month"], 
+#customize-controls input[type="number"], 
+#customize-controls input[type="password"], 
+#customize-controls input[type="search"], 
+#customize-controls input[type="tel"], 
+#customize-controls input[type="text"], 
+#customize-controls input[type="time"], 
+#customize-controls input[type="url"], 
+#customize-controls input[type="week"], 
+#customize-controls select, 
+#customize-controls textarea {
+
+    border: 1px solid #e8e8e8;
+    font-size: 12px;
+    padding:0 10px;
+    min-height: 35px;
+    border-radius: 3px;
+    transition: all 0.5s ease;
+}
+
+#customize-controls input[type="color"]:hover, 
+#customize-controls input[type="date"]:hover, 
+#customize-controls input[type="datetime-local"]:hover, 
+#customize-controls input[type="datetime"]:hover, 
+#customize-controls input[type="email"]:hover, 
+#customize-controls input[type="month"]:hover, 
+#customize-controls input[type="number"]:hover, 
+#customize-controls input[type="password"]:hover, 
+#customize-controls input[type="search"]:hover, 
+#customize-controls input[type="tel"]:hover, 
+#customize-controls input[type="text"]:hover, 
+#customize-controls input[type="time"]:hover, 
+#customize-controls input[type="url"]:hover, 
+#customize-controls input[type="week"]:hover, 
+#customize-controls select:hover, 
+#customize-controls textarea:hover {
+
+    border-color: #D2D2D2;
+}
+
+#customize-controls input[type="color"]:focus, 
+#customize-controls input[type="date"]:focus, 
+#customize-controls input[type="datetime-local"]:focus, 
+#customize-controls input[type="datetime"]:focus, 
+#customize-controls input[type="email"]:focus, 
+#customize-controls input[type="month"]:focus, 
+#customize-controls input[type="number"]:focus, 
+#customize-controls input[type="password"]:focus, 
+#customize-controls input[type="search"]:focus, 
+#customize-controls input[type="tel"]:focus, 
+#customize-controls input[type="text"]:focus, 
+#customize-controls input[type="time"]:focus, 
+#customize-controls input[type="url"]:focus, 
+#customize-controls input[type="week"]:focus, 
+#customize-controls select:focus, 
+#customize-controls textarea:focus {
+
+    outline: none;
+    border-color: #3da6ff;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+#customize-controls input[type="email"], 
+#customize-controls input[type="number"], 
+#customize-controls input[type="password"], 
+#customize-controls input[type="search"], 
+#customize-controls input[type="tel"], 
+#customize-controls input[type="text"], 
+#customize-controls input[type="url"] {
+    
+    margin-bottom: 10px;
+}
+
+#customize-controls input::-webkit-outer-spin-button,
+#customize-controls input::-webkit-inner-spin-button {
+
+  -webkit-appearance: none;
+}
+
+#customize-controls input[type=number] {
+
+     -moz-appearance: textfield;
+}
+
+#customize-controls .ss-main .ss-single-selected .ss-arrow span {
+
+    border-color: #D2D2D2;
+}
+
+#customize-controls .wp-picker-container .wp-color-result.button {
+
+    border: none;
+}
+
+#customize-controls .slider-custom-control .slider {
+
+    width: 90%;
+}
+
+#customize-controls .slider-custom-control .dashicons-image-rotate {
+
+    font-size: 11px;
+    color: #BBBBBB;
+    margin-top: 15px;
+}
+
+#customize-controls .slider-custom-control .dashicons-image-rotate:hover {
+
+    color: #8E8E8E;
+}
+
+#customize-controls .customize-control .accordion-expand-button {
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    border: none;
+    color: #8E8E8E;
+    background-color: #ECECEC;
+    border-radius: 50%;
+}
+
+#customize-controls .customize-control .accordion-expand-button:before {
+
+    display: inline-flex;
+    font-size: 10px;
+    height: 25px;
+}
+
+#customize-controls .customize-control .accordion-expand-button:hover {
+
+    color: #8E8E8E;
+    background-color: #D2D2D2;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+#customize-controls .customize-control .accordion-expand-button:focus {
+
+    outline: none;
+}
+
+/* Text - Customizer */
+
+/* Icons - Customizer */
+
+/* Spacing - Customizer */
+
+/* Shadow - Customizer */
+
+/* Controls - Customizer */
+
+#customize-controls .customize-control {
 
     margin-bottom: 15px;
-}
+} 
 
-.customize-control-title {
-    margin-bottom: 10px;
+.customize-control-xenial-wrapper .customizer-wrapper-title {
+
+    color: #565656;
     font-size: 13px;
     font-weight: normal;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    background-color: #FFFFFF;
 }
 
+#customize-controls .customize-control-title {
+
+    font-size: 13px;
+}
+
+#customize-controls .wp-picker-container.wp-picker-active {
+
+    padding-top: 10px;
+    padding-bottom: 20px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 1px 30px rgba(0,0,0,0.1);
+}
+
+#customize-controls .wp-picker-container .wp-picker-input-wrap .color-picker-hex  {
+
+    width: 75px;
+}
+/*
+#customize-controls .wp-picker-container .wp-picker-input-wrap {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}*/
+/*
+#customize-controls .wp-picker-container .wp-picker-input-wrap .wp-picker-default {
+
+    font-size: 0;
+    height: 0;
+    width: 0;
+    min-height: 0;
+    padding: 0;
+}
+
+#customize-controls .wp-picker-container .wp-picker-input-wrap .wp-picker-default::after {
+    
+    content: "\f531";
+    font-family: dashicons;
+    font-size: 11px;
+    color: #BBBBBB;
+    margin-left: 15px;
+}*/
+
 .customize-control-description {
+
     display: inline-block;
     margin-top: 5px;
 }
 
 #customize-theme-controls .customize-pane-child.open {
+
     height:  100%;
 }
 
-#customize-control-typography_info_1 {
+#customize-controls-typography_info_1 {
+
     margin-top: 0px;
 }
 
-#customize-control-colors_info_1 {
+#customize-controls-colors_info_1 {
+
   margin-top: 15px;
 }
 
-#customize-control-miscellaneous_info_1 {
+#customize-controls-miscellaneous_info_1 {
+
     margin-top: 0px;
 }
 
-#customize-control-buttons_info_1 {
+#customize-controls-buttons_info_1 {
+
     margin-top: 0px;
 }
 
@@ -43,12 +263,13 @@
 #accordion-section-xenial_archive_pages,
 #accordion-panel-xenial_site_pages,
 #accordion-panel-nav_menus {
+
   margin-top: 15px;
 }
 
 
 
-/*li.customize-control:not(.customize-control-xenial-tab):not(#customize-control-page_header_content_width):not(.customize-control-xenial-wrapper):not(#customize-control-page_header_link_hover_color):not(#customize-control-body_line_height):not(#customize-control-headings_system_font_weight):not(#customize-control-headings_google_font):not(#customize-control-h1_line_height):not(#customize-control-h2_line_height):not(#customize-control-h3_line_height):not(#customize-control-h4_line_height):not(#customize-control-h5_line_height):not(#customize-control-h6_line_height)::after {
+/*li.customize-control:not(.customize-control-xenial-tab):not(#customize-controls-page_header_content_width):not(.customize-control-xenial-wrapper):not(#customize-controls-page_header_link_hover_color):not(#customize-controls-body_line_height):not(#customize-controls-headings_system_font_weight):not(#customize-controls-headings_google_font):not(#customize-controls-h1_line_height):not(#customize-controls-h2_line_height):not(#customize-controls-h3_line_height):not(#customize-controls-h4_line_height):not(#customize-controls-h5_line_height):not(#customize-controls-h6_line_height)::after {
     content: '';
     display: block;
     height: 1px;
@@ -60,16 +281,14 @@
 }*/
 
 
-li#customize-control-custom_logo_wrapper,
-li#customize-control-site_title_style_wrapper {
+li#customize-controls-custom_logo_wrapper,
+li#customize-controls-site_title_style_wrapper {
     margin-top: 0;
 }
 
-li#customize-control-logo_position {
+li#customize-controls-logo_position {
     margin-top: 20px;
 }
-
-
 
 
 /* Responsive Switcher */
@@ -196,44 +415,6 @@ body.rtl .customize-control .responsive-switchers li {
         display: none
     }
 }
-
-
-
-
-input[type="color"], 
-input[type="date"], 
-input[type="datetime-local"], 
-input[type="datetime"], 
-input[type="email"], 
-input[type="month"], 
-input[type="number"], 
-input[type="password"], 
-input[type="search"], 
-input[type="tel"], 
-input[type="text"], 
-input[type="time"], 
-input[type="url"], 
-input[type="week"], 
-select, 
-textarea {
-    border-radius: 3px;
-    border: 1px solid #ddd;
-    font-size: 12px;
-    min-height: 35px;
-}
-
-.customize-control input[type="email"], 
-.customize-control input[type="number"], 
-.customize-control input[type="password"], 
-.customize-control input[type="search"], 
-.customize-control input[type="tel"], 
-.customize-control input[type="text"], 
-.customize-control input[type="url"] {
-    margin-bottom: 10px;
-}
-
-
-
 
 
 .customize-control-color,
