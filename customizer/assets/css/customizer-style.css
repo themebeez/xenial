@@ -102,6 +102,25 @@
      -moz-appearance: textfield;
 }
 
+#customize-controls input[type=checkbox].tgl-ios + .tgl-btn {
+
+    width: 60px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #e2e2e2;
+}
+
+#customize-controls input[type=checkbox].tgl-ios + .tgl-btn:after {
+
+    border-radius: 50%;
+    box-shadow: none;
+}
+
+#customize-controls input[type=checkbox].tgl-ios:checked + .tgl-btn {
+
+    background: #32c10f;
+}
+
 #customize-controls .ss-main .ss-single-selected .ss-arrow span {
 
     border-color: #D2D2D2;
@@ -124,6 +143,7 @@
     line-height: 33px;
     padding: 0 10px;
     border: none;
+    border-radius: 0;
     background-color: var(--customizer-background-color);
 }
 
@@ -191,7 +211,7 @@
     outline: none;
 }
 
-#customize-controls .ui-slider .ui-slider-handle:before {
+#customize-controls .ui-slider-range .ui-slider-handle:before {
 
     content: "";
     position: absolute;
@@ -206,12 +226,13 @@
     transition: all 0.5s ease;
 }
 
-#customize-controls .ui-slider .ui-slider-handle:hover:before {
+#customize-controls .ui-slider-range .ui-slider-handle:hover:before {
 
     content: "";
     opacity: 1;
     visibility: visible;
 } 
+
 
 /* Text - Customizer */
 
