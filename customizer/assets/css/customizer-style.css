@@ -1,3 +1,14 @@
+/* Variables - Customizer */
+
+:root {
+
+    --border-color: #e8e8e8;
+    --border-color-hover: #d8d8d8;
+    --border-color-active: #3da6ff;
+    --customizer-background-color: #f0f0f1;
+
+}
+
 
 /* Forms - Customizer */
 
@@ -98,7 +109,34 @@
 
 #customize-controls .wp-picker-container .wp-color-result.button {
 
+    height: 35px;
+    min-height: 35px;
+    margin: 0;
+    padding: 0 0 0 35px;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    box-shadow: none;
+}
+
+#customize-controls .wp-picker-container .wp-color-result.button .wp-color-result-text {
+
+    font-size: 12px;
+    line-height: 33px;
+    padding: 0 10px;
     border: none;
+    background-color: var(--customizer-background-color);
+}
+
+#customize-controls .wp-picker-container .wp-color-result.button:hover {
+
+    border: 1px solid var(--border-color-hover);
+}
+
+#customize-controls .wp-picker-container .wp-color-result.button:focus {
+
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--border-color-hover);
 }
 
 #customize-controls .slider-custom-control .slider {
@@ -140,7 +178,8 @@
     height: 25px;
 }
 
-#customize-controls .customize-control .accordion-expand-button:hover {
+#customize-controls .customize-control .accordion-expand-button:hover,
+#customize-controls .customize-control.expanded .accordion-expand-button {
 
     color: #8E8E8E;
     background-color: #D2D2D2;
@@ -151,6 +190,28 @@
 
     outline: none;
 }
+
+#customize-controls .ui-slider .ui-slider-handle:before {
+
+    content: "";
+    position: absolute;
+    top: -9px;
+    left: -9px;
+    height: 35px;
+    width: 35px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgba(129, 183, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+#customize-controls .ui-slider .ui-slider-handle:hover:before {
+
+    content: "";
+    opacity: 1;
+    visibility: visible;
+} 
 
 /* Text - Customizer */
 
@@ -185,6 +246,7 @@
 
 #customize-controls .wp-picker-container.wp-picker-active {
 
+    margin: 40px 0 20px 0;
     padding-top: 10px;
     padding-bottom: 20px;
     overflow: hidden;
