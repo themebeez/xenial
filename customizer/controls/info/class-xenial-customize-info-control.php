@@ -30,13 +30,13 @@ class Xenial_Customize_Info_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/info/';
+		$asset_uri = XENIAL_THEME_URI . '/customizer/controls/info/';
 
 		wp_enqueue_style(
-			MAXIMO_THEME_SLUG . '-info',
+			XENIAL_THEME_SLUG . '-info',
 			$asset_uri . 'info.css',
 			null,
-			MAXIMO_THEME_VERSION,
+			XENIAL_THEME_VERSION,
 			'all'
 		);
 	}

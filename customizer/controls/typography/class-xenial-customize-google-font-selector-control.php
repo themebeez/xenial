@@ -78,23 +78,23 @@ class Xenial_Customize_Google_Font_Selector_Control extends WP_Customize_Control
 		 */
 		public function enqueue() {
 
-			$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/typography/';
+			$asset_uri = XENIAL_THEME_URI . '/customizer/controls/typography/';
 
-			$select_asset_uri = MAXIMO_THEME_URI . '/customizer/assets/';
+			$select_asset_uri = XENIAL_THEME_URI . '/customizer/assets/';
 
 			wp_enqueue_style(
 				'slimselect',
 				$select_asset_uri . 'css/slimselect.css',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
 			wp_enqueue_style(
-				MAXIMO_THEME_SLUG . '-typography-control',
+				XENIAL_THEME_SLUG . '-typography-control',
 				$asset_uri . 'typography-control.css',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
@@ -102,15 +102,15 @@ class Xenial_Customize_Google_Font_Selector_Control extends WP_Customize_Control
 				'slimselect',
 				$select_asset_uri . 'js/slimselect.min.js',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
 			wp_enqueue_script(
-				MAXIMO_THEME_SLUG . '-typography-control',
+				XENIAL_THEME_SLUG . '-typography-control',
 				$asset_uri . 'typography-control.js',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 		}
@@ -241,7 +241,7 @@ class Xenial_Customize_Google_Font_Selector_Control extends WP_Customize_Control
 		 */
 		public function getGoogleFonts( $count = 30 ) {
 
-			$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/typography/';
+			$asset_uri = XENIAL_THEME_URI . '/customizer/controls/typography/';
 
 			// Google Fonts json generated from https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=YOUR-API-KEY
 

@@ -1,0 +1,43 @@
+// tables
+
+table {
+
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    margin: 0 0 20px;
+    width: 100%;
+}
+
+table.fixed {
+
+    table-layout: fixed;
+}
+
+th {
+
+    font-weight: bold;
+}
+
+th,
+td {
+
+    padding: 15px 10px;
+    text-align: left;
+    border-width: 0 1px 1px 0;
+    border-bottom: 1px solid var(--xe_border_color);
+    vertical-align: middle;
+}
+
+thead th {
+
+    font-weight: normal;
+}
+
+table caption {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    caption-side: bottom;
+}

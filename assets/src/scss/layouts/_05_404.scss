@@ -1,0 +1,68 @@
+
+// 404 error page 
+
+.error404 #xe-page #primary {
+
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.error404 .content-is-404 {
+
+	text-align: center;
+}
+
+.error404 .content-is-404 .xe-title {
+
+	font-family: var(--xe_system_font_family);
+	font-size: 186px;
+	font-weight: bold;
+	line-height: 1em;
+	margin-bottom: 0;
+}
+
+.error404 .content-is-404 .xe-subtitle {
+
+	position: relative;
+	font-weight: 500;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+
+	&::after {
+
+		content: "";
+		display: block;
+		position: absolute;
+    	bottom: 0;
+    	left: 0;
+    	right: 0;
+		height: 3px;
+		width: 100px;
+		margin: 0 auto;
+		background-color: var(--xe_border_color);
+	}
+}
+
+.error404 .content-is-404 .xe-excerpt {
+
+	max-width: 400px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.error404 .xe-gohome .xe-button .icon {
+
+	margin-left: 10px;
+}
+
+
+// responsive 
+
+@media ( max-width: 575px ) {
+
+	.error404 .content-is-404 .xe-title {
+
+		font-size: 92px;
+	}
+}

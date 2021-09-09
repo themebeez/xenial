@@ -1,0 +1,63 @@
+// define alerts 
+
+.xe-alert {
+
+    @include flex();
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 12px;
+    margin-bottom: 30px;
+    border: 2px solid #eaeaea;
+    border-radius: 2px;
+
+    .icon {
+
+        margin-right: 5px;
+    }
+
+    .message {
+
+        margin: 0;
+    }
+}
+
+// success
+
+.xe-alert.success {
+
+    color: #267339;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+// info 
+
+.xe-alert.info {
+
+    color: #4a87c3;
+    background-color: #D8EAFC;
+    border-color: #bfdaf5;
+}
+
+
+// warning 
+
+.xe-alert.warning {
+
+    color: #968655;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+
+// errors
+
+.xe-alert.error {
+
+    color: #94666a;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}

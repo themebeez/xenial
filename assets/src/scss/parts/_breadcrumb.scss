@@ -1,0 +1,47 @@
+
+// default breadcrumb 
+
+.xe-breadcrumb,
+.xe-breadcrumb > ul {
+
+    @include flex();
+    align-items: center;
+}
+
+.xe-breadcrumb > ul {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.xe-breadcrumb .trail-item {
+
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.xe-breadcrumb .trail-item::after {
+
+    content: "\e649";
+    font-size: 7px;
+    line-height: 1;
+    font-weight: normal;
+    font-family: var(--xe_iconfont);
+    margin: 0 7px;
+    padding: 0;
+}
+
+.xe-breadcrumb .trail-item.trail-end::after {
+
+    content: "";
+    display: none;
+}
+
+.xe-breadcrumb .trail-item > a,
+.xe-breadcrumb .trail-item > span {
+
+    font-size: 13px;
+}

@@ -1,0 +1,53 @@
+
+// media 
+
+audio,
+video,
+canvas,
+progress {
+
+    vertical-align: baseline;
+}
+
+img {
+
+    max-width: 100%;
+    border-style: none;
+    height: auto; // WordPress fix
+    vertical-align: middle; 
+}
+
+audio:not([controls]) {
+
+    display: none;
+    height: 0;
+}
+
+video {
+
+    display: block;
+}
+
+figure {
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+figcaption,
+.wp-block-embed figcaption {
+
+    display: inherit;
+    font-size: calc(var(--xe_base_font_size) - 3px);
+    text-align: center;
+    margin:5px;
+}
+
+embed,
+iframe,
+object {
+
+    max-width: 100%;
+}

@@ -7,6 +7,8 @@
  * @package Xenial
  */
 
+// add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
 /**
  * WooCommerce setup function.
  *
@@ -45,7 +47,7 @@ function xenial_woocommerce_scripts() {
 
 	wp_add_inline_style( 'orchid-store-woocommerce-style', $inline_font );
 }
-add_action( 'wp_enqueue_scripts', 'xenial_woocommerce_scripts' );
+// add_action( 'wp_enqueue_scripts', 'xenial_woocommerce_scripts' );
 
 /**
  * Add 'woocommerce-active' class to the body tag.
@@ -191,8 +193,6 @@ if ( ! function_exists( 'xenial_refresh_cart_count' ) ) {
 	}  
 }
 add_filter( 'woocommerce_add_to_cart_fragments', 'xenial_refresh_cart_count' );
-
-
 
 
 remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );

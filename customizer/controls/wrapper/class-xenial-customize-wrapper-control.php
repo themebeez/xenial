@@ -52,20 +52,20 @@ if( ! class_exists( 'Xenial_Customize_Wrapper_Control' ) ) :
          */
         public function enqueue() {
 
-            $asset_uri = MAXIMO_THEME_URI . '/customizer/controls/wrapper/';
+            $asset_uri = XENIAL_THEME_URI . '/customizer/controls/wrapper/';
 
             wp_enqueue_style( 
-                MAXIMO_THEME_SLUG . '-wrapper',
+                XENIAL_THEME_SLUG . '-wrapper',
                 $asset_uri . 'wrapper.css', 
                 null, 
-                MAXIMO_THEME_VERSION 
+                XENIAL_THEME_VERSION 
             );
 
             wp_enqueue_script( 
-                MAXIMO_THEME_SLUG . '-wrapper',
+                XENIAL_THEME_SLUG . '-wrapper',
                 $asset_uri . 'wrapper.js', 
                 array( 'jquery', 'customize-base' ), 
-                MAXIMO_THEME_VERSION, 
+                XENIAL_THEME_VERSION, 
                 true 
             );
         }

@@ -27,36 +27,6 @@
 		wp_body_open(); 
 	} 
 	?>
-	<div id="page" class="site">
+	<div class="xe-page" id="xe-page">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'xenial' ); ?></a>
-
-		<?php do_action( 'xenial_header' ); ?>
-
-		<?php
-
-		/**
-		* Hook - xenial_page_header.
-		*
-		* @hooked xenial_page_header_template - 10
-		*/
-		do_action( 'xenial_page_header' );
-
-		if ( xenial_is_breadcrumbs_in_separate_container() ) {
-			
-			/**
-			* Hook - xenial_breadcrumbs.
-			*
-			* @hooked xenial_breadcrumbs_template - 10
-			*/
-			do_action( 'xenial_breadcrumbs' );
-		}
-
-		/**
-		* Hook - xenial_banner.
-		*
-		* @hooked xenial_banner_template - 10
-		*/
-		do_action( 'xenial_banner' );
-		?>
-
 		<div id="content" class="site-content">

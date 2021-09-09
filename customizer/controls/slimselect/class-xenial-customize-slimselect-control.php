@@ -16,23 +16,23 @@ class Xenial_Customize_SlimSelect_Control extends WP_Customize_Control {
 		 */
 		public function enqueue() {
 
-			$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/select2/';
+			$asset_uri = XENIAL_THEME_URI . '/customizer/controls/select2/';
 
-			$select_asset_uri = MAXIMO_THEME_URI . '/customizer/assets/';
+			$select_asset_uri = XENIAL_THEME_URI . '/customizer/assets/';
 
 			wp_enqueue_style(
 				'slimselect',
 				$select_asset_uri . 'css/slimselect.min.css',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
 			wp_enqueue_style(
-				MAXIMO_THEME_SLUG . '-slimselect-control',
-				MAXIMO_THEME_URI . '/customizer/controls/slimselect/slimselect-control.css',
+				XENIAL_THEME_SLUG . '-slimselect-control',
+				XENIAL_THEME_URI . '/customizer/controls/slimselect/slimselect-control.css',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
@@ -40,15 +40,15 @@ class Xenial_Customize_SlimSelect_Control extends WP_Customize_Control {
 				'slimselect',
 				$select_asset_uri . 'js/slimselect.min.js',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
 			wp_enqueue_script(
-				MAXIMO_THEME_SLUG . '-slimselect-control',
-				MAXIMO_THEME_URI . '/customizer/controls/slimselect/slimselect-control.js',
+				XENIAL_THEME_SLUG . '-slimselect-control',
+				XENIAL_THEME_URI . '/customizer/controls/slimselect/slimselect-control.js',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 		}

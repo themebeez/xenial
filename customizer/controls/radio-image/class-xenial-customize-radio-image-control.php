@@ -14,13 +14,13 @@ if( ! class_exists( 'Xenial_Customize_Radio_Image_Control' ) ) {
          */
         public function enqueue() {
 
-            $asset_uri = MAXIMO_THEME_URI . '/customizer/controls/radio-image/';
+            $asset_uri = XENIAL_THEME_URI . '/customizer/controls/radio-image/';
 
             wp_enqueue_style( 
-                MAXIMO_THEME_SLUG . '-radio-image',
+                XENIAL_THEME_SLUG . '-radio-image',
                 $asset_uri . 'radio-image.css', 
                 null, 
-                MAXIMO_THEME_VERSION 
+                XENIAL_THEME_VERSION 
             );
         }
 

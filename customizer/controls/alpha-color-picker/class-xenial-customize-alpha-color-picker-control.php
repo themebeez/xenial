@@ -34,25 +34,25 @@ class Xenial_Customize_Alpha_Color_Picker_Control extends WP_Customize_Control {
 		 */
 		public function enqueue() {
 
-			$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/alpha-color-picker/';
+			$asset_uri = XENIAL_THEME_URI . '/customizer/controls/alpha-color-picker/';
 
 			wp_enqueue_style( 'wp-color-picker' );
 
 			wp_enqueue_style(
-				MAXIMO_THEME_SLUG . '-alpha-color-picker',
+				XENIAL_THEME_SLUG . '-alpha-color-picker',
 				$asset_uri . 'alpha-color-picker.css',
 				array('wp-color-picker'),
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
 			wp_enqueue_script( 'wp-color-picker' );
 
 			wp_enqueue_script(
-				MAXIMO_THEME_SLUG . '-alpha-color-picker',
+				XENIAL_THEME_SLUG . '-alpha-color-picker',
 				$asset_uri . 'alpha-color-picker.js',
 				array('jquery', 'wp-color-picker'),
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				true
 			);
 		}

@@ -1,0 +1,110 @@
+/**
+=======================================================
+
+= Project : Xenial
+=
+= Since : 
+=
+= Author: Themebeez
+=
+= Author url : https://themebeez.com/
+=
+= SCSS version: 1.0.0
+=
+= Last updated: -
+
+======================================================================================
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+	0. 	Variables
+	1. 	Normalize
+	2. 	Element Base
+	3. 	Grid
+	4. 	Utilities
+	5. 	Keyframes
+	6. 	Header
+	7. 	Elements
+	8. 	Post Meta
+	9. 	Breadcrumbs
+	10. Page Header
+	11. Banner
+	12. 404
+	13. Archive
+	14. Single
+	15. Blocks
+	16. Widgets
+	17. Sidebar
+	18. Footer
+	19. Modals
+	20. WooCommerce
+	21. Responsive
+
+----------------------------------------------------------------------------- */
+
+// import functions
+
+@import 'functions/01_variables';
+@import 'functions/02_mixins';
+
+// import base styling
+
+@import 'base/01_normalize';         // normalize styles
+@import 'base/02_docsetup';         // document setup styles
+@import 'base/03_typography';       // base typography styles
+@import 'base/04_elements';         // elements styles
+@import 'base/05_forms';            // forms styles
+@import 'base/06_table';            // table styles
+@import 'base/07_lists';            // list styles
+@import 'base/08_code';             // code styles
+@import 'base/09_quote';            // quote styles
+@import 'base/10_media';            // media styles
+@import 'base/11_template';         // template styles
+@import 'base/12_svg';              // svg styles
+@import 'base/13_buttons';          // buttons styles
+@import 'base/14_links';            // links styles
+@import 'base/15_alignment';        // aligment styles
+@import 'base/16_screen';           // print & screen styles
+@import 'base/17_wpblocks';
+
+// import helpers
+
+@import 'helpers/grid';            // 12 grid styles
+@import 'helpers/class';           // helpers & utility class styles
+@import 'helpers/alerts';          // alerts styles
+@import 'helpers/tabs';            // tab styles
+@import 'helpers/animation';
+
+// import blocks
+
+@import 'blocks/01_banner';
+@import 'blocks/02_blog';
+@import 'blocks/03_product_1';
+@import 'blocks/04_product_2';
+@import 'blocks/05_product_3';
+
+// import parts
+
+@import 'parts/01_header';
+@import 'parts/02_footer';
+@import 'parts/06_mobilebar';
+@import 'parts/07_widgets';
+@import 'parts/breadcrumb';
+@import 'parts/pagination';
+
+// import layouts
+
+@import 'layouts/01_page';
+@import 'layouts/02_single';
+@import 'layouts/03_blog';
+@import 'layouts/04_search';
+@import 'layouts/05_404';
+@import 'layouts/06_catalog';
+
+
+// keyframe
+
+@import 'helpers/keyframes';

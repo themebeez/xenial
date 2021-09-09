@@ -1,6 +1,6 @@
 <?php
 
-$xenial_active_callbacks_path = MAXIMO_THEME_DIR . '/customizer/functions/active-callbacks/';
+$xenial_active_callbacks_path = XENIAL_THEME_DIR . '/customizer/functions/active-callbacks/';
 
 require $xenial_active_callbacks_path . 'callback-layout.php';
 

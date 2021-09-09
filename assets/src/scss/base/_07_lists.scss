@@ -1,0 +1,32 @@
+// lists 
+
+ul {
+
+    list-style: square;
+}
+
+ol {
+
+    list-style: decimal;
+}
+
+ul,
+ol {
+    padding: 0;
+    margin: 0 0 20px 50px;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+
+    margin: 10px 0 0 40px;
+}
+
+.list-unstyled {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

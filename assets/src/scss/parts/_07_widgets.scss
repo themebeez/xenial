@@ -1,0 +1,43 @@
+
+/* -------------------------------------------------------------------------- 
+	#. Default
+   -------------------------------------------------------------------------- */
+
+#secondary .widget {
+
+    margin-bottom: 40px;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. Search
+   -------------------------------------------------------------------------- */
+
+.wp-block-search .wp-block-search__inside-wrapper {
+
+    position: relative;
+}
+
+.wp-block-search .wp-block-search__button  {
+
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 3px;
+}
+
+.wp-block-search .wp-block-search__button::after {
+
+    content: "\e610";
+    font-size: 14px;
+    font-family: var(--xe_iconfont);
+}
+
+.wp-block-search input.wp-block-search__input {
+
+    padding-right: 55px;
+}

@@ -34,26 +34,26 @@ if( ! class_exists( 'Xenial_Customize_Dimensions_Control' ) ) {
 		 */
 		public function enqueue() {
 
-			$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/dimensions/';
+			$asset_uri = XENIAL_THEME_URI . '/customizer/controls/dimensions/';
 
 			wp_enqueue_style(
-				MAXIMO_THEME_SLUG . '-dimensions',
+				XENIAL_THEME_SLUG . '-dimensions',
 				$asset_uri . 'dimensions.css',
 				null,
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
 			wp_enqueue_script(
-				MAXIMO_THEME_SLUG . '-dimensions',
+				XENIAL_THEME_SLUG . '-dimensions',
 				$asset_uri . 'dimensions.js',
 				array('jquery', 'customize-base'),
-				MAXIMO_THEME_VERSION,
+				XENIAL_THEME_VERSION,
 				'all'
 			);
 
 			wp_localize_script( 
-				MAXIMO_THEME_SLUG . '-dimensions', 
+				XENIAL_THEME_SLUG . '-dimensions', 
 				'orchidStoreProL10n', 
 				$this->l10n() 
 			);

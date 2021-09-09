@@ -1,0 +1,123 @@
+// heading
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  line-height: var(--xe_heading_line_height);
+  font-family: var(--xe_heading_font_family);
+  font-weight: var(--xe_heading_font_weight);
+  letter-spacing: var(--xe_heading_letter_spacing);
+  color: var(--xe_base_heading_color);
+  margin-bottom: 20px;
+  @include better_font_rendering();
+}
+
+h1 {
+
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+h2 {
+
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+h3 {
+
+  font-size: 24px;
+  line-height: 1.3;
+}
+
+h4 {
+
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+h5 {
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h6 {
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+// strong, big & small texts
+
+b,
+strong {
+
+  font-weight: bold;
+}
+
+big {
+
+  font-size: 125%;
+}
+
+small {
+
+  font-size: 80%;
+}
+
+sub,
+sup {
+
+  position: relative;
+  font-size: 80%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+
+  bottom: -0.25em;
+}
+
+sup {
+
+  top: -0.5em;
+}
+
+i,
+em {
+
+  font-style: italic;
+}
+
+em {
+
+  font-family: var(--xe_text_emphasis_font_family);
+  letter-spacing: 0;
+}
+
+ins,
+mark {
+
+  color: #222222;
+  background-color: #fffbae; // light yellow
+  text-decoration: none;
+}
+
+s,
+del,
+strike {
+
+  text-decoration: line-through;
+  background-color: transparent;
+}
+
+bdi {
+  
+  background-color: transparent;
+}
