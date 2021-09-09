@@ -104,8 +104,8 @@
 
 #customize-controls input[type=checkbox].tgl-ios + .tgl-btn {
 
-    width: 60px;
-    height: 30px;
+    width: 50px;
+    height: 26px;
     border-radius: 25px;
     background-color: #e2e2e2;
 }
@@ -211,7 +211,8 @@
     outline: none;
 }
 
-#customize-controls .ui-slider-range .ui-slider-handle:before {
+#customize-controls .slider-custom-control .ui-slider .ui-slider-handle:before,
+#customize-controls .customize-control-xenial-slider .xenial-slider .ui-slider-handle:before {
 
     content: "";
     position: absolute;
@@ -226,7 +227,8 @@
     transition: all 0.5s ease;
 }
 
-#customize-controls .ui-slider-range .ui-slider-handle:hover:before {
+#customize-controls .slider-custom-control .ui-slider .ui-slider-handle:hover:before,
+#customize-controls .customize-control-xenial-slider .xenial-slider .ui-slider-handle:hover:before {
 
     content: "";
     opacity: 1;
@@ -279,32 +281,6 @@
 
     width: 75px;
 }
-/*
-#customize-controls .wp-picker-container .wp-picker-input-wrap {
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-}*/
-/*
-#customize-controls .wp-picker-container .wp-picker-input-wrap .wp-picker-default {
-
-    font-size: 0;
-    height: 0;
-    width: 0;
-    min-height: 0;
-    padding: 0;
-}
-
-#customize-controls .wp-picker-container .wp-picker-input-wrap .wp-picker-default::after {
-    
-    content: "\f531";
-    font-family: dashicons;
-    font-size: 11px;
-    color: #BBBBBB;
-    margin-left: 15px;
-}*/
 
 .customize-control-description {
 
@@ -315,6 +291,11 @@
 #customize-theme-controls .customize-pane-child.open {
 
     height:  100%;
+}
+
+.customize-control-xenial-dimensions .dimension-wrap .link-dimensions {
+    
+    border-color: var(--border-color); /* margin/padding dimensions control */
 }
 
 #customize-controls-typography_info_1 {
@@ -349,20 +330,6 @@
 
   margin-top: 15px;
 }
-
-
-
-/*li.customize-control:not(.customize-control-xenial-tab):not(#customize-controls-page_header_content_width):not(.customize-control-xenial-wrapper):not(#customize-controls-page_header_link_hover_color):not(#customize-controls-body_line_height):not(#customize-controls-headings_system_font_weight):not(#customize-controls-headings_google_font):not(#customize-controls-h1_line_height):not(#customize-controls-h2_line_height):not(#customize-controls-h3_line_height):not(#customize-controls-h4_line_height):not(#customize-controls-h5_line_height):not(#customize-controls-h6_line_height)::after {
-    content: '';
-    display: block;
-    height: 1px;
-    background-color: #d9d9d9;
-    margin-left: -12px;
-    margin-right: -12px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}*/
-
 
 li#customize-controls-custom_logo_wrapper,
 li#customize-controls-site_title_style_wrapper {
