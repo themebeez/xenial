@@ -1,0 +1,8 @@
+.tinymce-control textarea {
+	width: 100%;
+	padding: 10px;
+}
+
+.customize-control-xenial-tinymce-editor div.mce-statusbar {
+	border-top:  none;
+}

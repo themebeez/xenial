@@ -23,21 +23,21 @@ class Xenial_Customize_Toggle_Switch_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/toggle-switch/';
+		$asset_uri = XENIAL_THEME_URI . '/customizer/controls/toggle-switch/';
 
 		wp_enqueue_script( 
-			MAXIMO_THEME_SLUG . '-toggle-switch',
+			XENIAL_THEME_SLUG . '-toggle-switch',
 			$asset_uri . 'toggle-switch.js', 
 			array( 'jquery' ), 
-			MAXIMO_THEME_VERSION, 
+			XENIAL_THEME_VERSION, 
 			true 
 		);
 
 		wp_enqueue_style( 
-			MAXIMO_THEME_SLUG . '-toggle-switch',
+			XENIAL_THEME_SLUG . '-toggle-switch',
 			$asset_uri . 'toggle-switch.css', 
 			null, 
-			MAXIMO_THEME_VERSION 
+			XENIAL_THEME_VERSION 
 		);
 
 		$css = '
@@ -68,7 +68,7 @@ class Xenial_Customize_Toggle_Switch_Control extends WP_Customize_Control {
 		';
 
 		wp_add_inline_style( 
-			MAXIMO_THEME_SLUG . '-toggle-switch', 
+			XENIAL_THEME_SLUG . '-toggle-switch', 
 			$css 
 		);
 

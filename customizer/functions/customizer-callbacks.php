@@ -314,7 +314,6 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'site_description_visibility' => 'default',
             'logo_position' => 'left',
             'site_title_color' => '#000000',
-            'site_identity_alignment' => 'left',
             'site_identity_font_type' => 'system_font',
             'site_identity_system_font_family' => 'arial',
             'site_identity_system_font_weight' => '400',
@@ -522,8 +521,10 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'header_ad_aligment' => 'left',
 
             'header_html' => '',
-            'header_html_alignment' => 'left',
-            'header_html_visibility' => 'default',
+            'header_html_alignment_desktop' => 'left',
+            'header_html_alignment_tablet' => 'left',
+            'header_html_alignment_mobile' => 'left',
+            'header_html_visibility' => 'desktop,tablet,mobile',
             'header_html_text_color' => '',
             'header_html_link_color' => '',
             'header_html_link_hover_color' => '',
@@ -541,7 +542,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'header_html_text_font_style' => 'normal',
             'header_html_text_text_transform' => 'inherit',
 
-
+            'header_search_type' => 'default',
             'header_search_open_behaviour' => 'modal',
             'header_search_icon_color' => '',
             'header_search_icon_hover_color' => '',

@@ -1,0 +1,58 @@
+
+// default pagination 
+
+.xe-pagination {
+
+    @include flex();
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.nav-links {
+
+    @include flex();
+    align-items: center;
+}
+
+.nav-links .page-numbers,
+.page-links .post-page-numbers {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 40px;
+    border-radius: 3px;
+    margin-right: 5px;
+    border: 2px solid transparent;
+
+    &:last-child {
+
+        margin-right: 0;
+    }
+}
+
+.nav-links .page-numbers:hover,
+.page-links .post-page-numbers:hover  {
+
+    text-decoration: none;
+}
+
+.nav-links .page-numbers.current,
+.page-links .post-page-numbers.current  {
+
+    color: var(--xe_primary_color);
+    border: 2px solid var(--xe_primary_color);
+}
+
+.nav-links .page-numbers.next,
+.nav-links .page-numbers.previous,
+.page-links .post-page-numbers.next,
+.page-links .post-page-numbers.previous  {
+    
+    font-size: 10px;
+    font-weight: normal;
+}

@@ -1,0 +1,72 @@
+.xenial-button-checkbox-control:after {
+	content: " ";
+	display: block;
+	clear: both;
+}
+
+.xenial-button-checkbox-control .button-checkboxes {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	border: 1px solid #f9f9fe;
+}
+
+
+.xenial-button-checkbox-control .checkbox-label {
+	cursor: pointer;
+	text-align: center;
+}
+
+.xenial-button-checkbox-controlbutton-checkbox-columns-1 .checkbox-label {
+	width: 100%;
+}
+
+.xenial-button-checkbox-controlbutton-checkbox-columns-2 .checkbox-label {
+	width: 50%;
+}
+
+.xenial-button-checkbox-control.button-checkbox-columns-3 .checkbox-label {
+	width: 33.33%;
+}
+
+
+.xenial-button-checkbox-control .checkbox-label > input {
+	display: none;
+}
+
+.xenial-button-checkbox-control .checkbox-label span {
+	cursor: pointer;
+	font-weight: 500;
+	border: 2px solid #f9f9fe;
+	margin: 0;
+	background-color: #eee;
+	padding: 10px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+
+.xenial-button-checkbox-control .checkbox-label span:hover {
+	background-color: rgba(255, 255, 255, .2);
+	color: #2885bb;
+}
+
+
+.xenial-button-checkbox-control .checkbox-label > input:checked + span {
+	background-color: #2084bd;
+	color: #fff;
+}
+
+
+.xenial-button-checkbox-control .checkbox-label > input:checked + span:hover {
+	color: #fff;
+}
+
+.xenial-button-checkbox-control .checkbox-label > img {
+	cursor: pointer;
+	border: 3px solid #ddd;
+}
+
+.xenial-button-checkbox-control .checkbox-label > input:checked + img {
+	border: 3px solid #2885bb;
+}

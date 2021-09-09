@@ -10,23 +10,23 @@
  */
 function xenial_enqueues() { 
 
-	$asset_uri = MAXIMO_THEME_URI . '/customizer/assets/';
+	$asset_uri = XENIAL_THEME_URI . '/customizer/assets/';
 
 	wp_enqueue_style( 
-		MAXIMO_THEME_SLUG . '-customizer-style', 
+		XENIAL_THEME_SLUG . '-customizer-style', 
 		$asset_uri . 
 		'css/customizer-style.css' 
 	);
 
 	wp_enqueue_script( 
-		MAXIMO_THEME_SLUG . '-customizer-script', 
+		XENIAL_THEME_SLUG . '-customizer-script', 
 		$asset_uri . 'js/customizer-script.js', 
 		array( 'jquery' ), 
-		MAXIMO_THEME_VERSION, 
+		XENIAL_THEME_VERSION, 
 		true 
 	);
 
-	// wp_enqueue_script( 'xenial-control-dependencies', $asset_uri . 'js/control-dependencies.js', array( 'jquery' ), MAXIMO_THEME_VERSION, true );
+	// wp_enqueue_script( 'xenial-control-dependencies', $asset_uri . 'js/control-dependencies.js', array( 'jquery' ), XENIAL_THEME_VERSION, true );
 }
 add_action( 'customize_controls_enqueue_scripts', 'xenial_enqueues', 15 );
 
@@ -42,7 +42,7 @@ function xenial_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	$controls_path = MAXIMO_THEME_DIR . '/customizer/controls/';
+	$controls_path = XENIAL_THEME_DIR . '/customizer/controls/';
 
 	require $controls_path . 'slimselect/class-xenial-customize-slimselect-control.php';
 
@@ -130,6 +130,23 @@ function xenial_customize_register( $wp_customize ) {
 
 	$wp_customize->register_control_type( 'Xenial_Customize_Tab_Control' );
 
+
+	/**
+	 * Tab custom customize control.
+	 */
+	require $controls_path . 'tinymce-editor/class-xenial-customize-tinymce-editor-control.php';
+
+	/**
+	 * Button group customize control.
+	 */
+	require $controls_path . 'button-group/class-xenial-customize-button-group-control.php';
+
+	/**
+	 * Button checkbox customize control.
+	 */
+	require $controls_path . 'button-checkbox/class-xenial-customize-button-checkbox-control.php';
+
+
 	/**
 	 * Load custom customizer control for upsell
 	 */
@@ -152,9 +169,14 @@ function xenial_customize_register( $wp_customize ) {
 
 
 	/**
-	 * Load customizer functions for sanitization of input values of contol fields
+	 * Load customizer functions for sanitization of input values of control fields
 	 */
-	require MAXIMO_THEME_DIR . '/customizer/functions/sanitize-callbacks.php';	
+	require XENIAL_THEME_DIR . '/customizer/functions/sanitize-callbacks.php';
+
+	/**
+	 * Load functions to add customizer fields.
+	 */
+	require XENIAL_THEME_DIR . '/customizer/functions/reusable-fields.php';	
 
 
 	/**
@@ -162,7 +184,7 @@ function xenial_customize_register( $wp_customize ) {
 	 * and control fields
 	 */
 
-	$customizer_fields_path = MAXIMO_THEME_DIR . '/customizer/fields/';
+	$customizer_fields_path = XENIAL_THEME_DIR . '/customizer/fields/';
 
 	require $customizer_fields_path . 'panels.php';
 	require $customizer_fields_path . 'layout.php';
@@ -180,9 +202,9 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/elements/logo.php';
 	require $customizer_fields_path . 'header/elements/ad.php';
 	require $customizer_fields_path . 'header/elements/button.php';
-	// require $customizer_fields_path . 'header/elements/html.php';
+	require $customizer_fields_path . 'header/elements/html.php';
 	require $customizer_fields_path . 'header/elements/primary-menu.php';
-	// require $customizer_fields_path . 'header/elements/search.php';
+	require $customizer_fields_path . 'header/elements/search.php';
 	// require $customizer_fields_path . 'header/elements/seconday-menu.php';
 	// require $customizer_fields_path . 'header/elements/social-links.php';
 	// require $customizer_fields_path . 'header/elements/text.php';
@@ -225,19 +247,19 @@ add_action( 'customize_register', 'xenial_customize_register' );
  * Load active callback functions.
  */
 
-require MAXIMO_THEME_DIR . '/customizer/functions/active-callbacks.php';
+require XENIAL_THEME_DIR . '/customizer/functions/active-callbacks.php';
 
 /**
  * Load function to load customizer field's default values.
  */
-require MAXIMO_THEME_DIR . '/customizer/functions/customizer-callbacks.php';
+require XENIAL_THEME_DIR . '/customizer/functions/customizer-callbacks.php';
 
 /**
  * Load function to load customizer field's options.
  */
-require MAXIMO_THEME_DIR . '/customizer/functions/customizer-choices.php';
+require XENIAL_THEME_DIR . '/customizer/functions/customizer-choices.php';
 
-require MAXIMO_THEME_DIR . '/customizer/functions/dynamic-css.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css.php';
 
 
 
@@ -264,13 +286,13 @@ function xenial_customize_partial_blogdescription() {
  */
 function xenial_customize_preview_js() {
 
-	$asset_uri = MAXIMO_THEME_URI . '/customizer/assets/';
+	$asset_uri = XENIAL_THEME_URI . '/customizer/assets/';
 
 	wp_enqueue_script( 
-		MAXIMO_THEME_SLUG . '-customizer', 
+		XENIAL_THEME_SLUG . '-customizer', 
 		$asset_uri . 'js/customizer.js', 
 		array( 'customize-preview' ), 
-		MAXIMO_THEME_VERSION, 
+		XENIAL_THEME_VERSION, 
 		true 
 	);
 }

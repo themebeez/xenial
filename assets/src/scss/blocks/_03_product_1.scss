@@ -1,0 +1,47 @@
+// add to cart button
+.xe-product-block-1 .xe-woo-product .xe-product-thumb .xe-add-to-cart {
+
+    @include flex();
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    @include visibility_hidden();
+}
+
+.xe-product-block-1 .xe-woo-product:hover .xe-product-thumb .xe-add-to-cart {
+
+    @include visibility_visible();
+    animation: xeButtonFadeInUp 1s 0s;
+}
+
+
+@media (max-width: 575px) {
+
+    .xe-woo-product {
+
+        margin-bottom: 10px;
+    }
+
+    .xe-flex.xe-woo-products {
+
+        margin-left: calc(0 - var(--xe_mobile_device_gutter_width));
+        margin-right: calc(0 - var(--xe_mobile_device_gutter_width));
+    }
+
+    .xe-woo-products [class^="xe-col-xl-"],
+    .xe-woo-products [class^="xe-col-lg-"],
+    .xe-woo-products [class^="xe-col-md-"],
+    .xe-woo-products [class^="xe-col-sm-"],
+    .xe-woo-products [class^="xe-col-xs-"] {
+
+        padding-left: var(--xe_mobile_device_gutter_width);
+        padding-right: var(--xe_mobile_device_gutter_width);
+    }
+
+    .xe-woo-product .xe-product-title .xe-title {
+
+        font-size: var(--xe_mobile_device_woo_product_title_font_size);
+    }
+}

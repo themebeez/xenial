@@ -45,21 +45,21 @@ class Xenial_Customize_Sortable_Checkbox_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/sortable-checkbox/';
+		$asset_uri = XENIAL_THEME_URI . '/customizer/controls/sortable-checkbox/';
 
 		wp_enqueue_script( 
-			MAXIMO_THEME_SLUG . '-sortable-checkbox',
+			XENIAL_THEME_SLUG . '-sortable-checkbox',
 			$asset_uri . 'sortable-checkbox.js', 
 			array( 'jquery', 'jquery-ui-core' ), 
-			MAXIMO_THEME_VERSION, 
+			XENIAL_THEME_VERSION, 
 			true 
 		);
 
 		wp_enqueue_style( 
-			MAXIMO_THEME_SLUG . '-sortable-checkbox',
+			XENIAL_THEME_SLUG . '-sortable-checkbox',
 			$asset_uri . 'sortable-checkbox.css', 
 			null, 
-			MAXIMO_THEME_VERSION 
+			XENIAL_THEME_VERSION 
 		);
 	}
 	

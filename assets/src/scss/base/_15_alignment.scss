@@ -1,0 +1,77 @@
+// text aligment 
+
+.text-align-left {
+
+    text-align: left;
+}
+
+.text-align-center {
+
+    text-align: center;
+}
+
+.text-align-right {
+
+    text-align: right;
+}
+
+// float aligment 
+
+.alignleft {
+
+    display: inline;
+    float: left;
+}
+
+.alignright {
+
+    display: inline;
+    float: right;
+}
+
+.aligncenter {
+
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+// flex align 
+
+.xe-flex-start {
+
+    justify-content: flex-start;
+}
+
+.xe-flex-center {
+
+    justify-content: center;
+}
+
+.xe-flex-items-center {
+
+    align-items: center;
+}
+
+.xe-flex-end {
+
+    justify-content: flex-end;
+}
+
+// alignwide & alignfull
+
+.alignwide,
+.alignfull {
+
+    position: relative;
+    width: 80vw;
+    margin-right: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.alignfull {
+
+    width: 95vw;
+}

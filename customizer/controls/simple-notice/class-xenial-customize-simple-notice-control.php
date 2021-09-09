@@ -23,13 +23,13 @@ class Xenial_Customize_Simple_Notice_Control extends WP_Customize_Control {
 	 */
 	public function enqueue() {
 
-		$asset_uri = MAXIMO_THEME_URI . '/customizer/controls/simple-notice/';
+		$asset_uri = XENIAL_THEME_URI . '/customizer/controls/simple-notice/';
 
 		wp_enqueue_style( 
-			MAXIMO_THEME_SLUG . '-simple-notice',
+			XENIAL_THEME_SLUG . '-simple-notice',
 			$asset_uri . 'simple-notice.css', 
 			null, 
-			MAXIMO_THEME_VERSION 
+			XENIAL_THEME_VERSION 
 		);
 	}
 

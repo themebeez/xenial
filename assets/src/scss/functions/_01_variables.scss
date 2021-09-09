@@ -1,0 +1,103 @@
+/*================================================================
+[Define variables]
+==================================================================*/
+//
+// Since: 1.0.0
+// usage = color:var(--xe_primary_color);
+// there is a story behind why we started using CSS root vars instead of SASS/SCSS variables. 
+/*==================================================================*/
+
+:root {
+  // colors
+  --xe_primary_color: #ef2c2c;
+  --xe_seconary_color: #1e73be;
+  --xe_base_text_color: #585858;
+  --xe_base_heading_color: #3c3c3c;
+
+  --xe_body_background_color: #ffffff;
+
+  --xe_border_color: #eeeeee;
+  --xe_inputs_border_color: #dedede; // for inputs, selects & textarea
+
+  --xe_button_text_color: white;
+  --xe_button_background_color: #ef2c2c;
+  --xe_button_hover_text_color: #ffffff;
+  --xe_button_hover_background_color: #1e73be;
+  --xe_button_is_link_style_text_color: #ef2c2c;
+  --xe_button_is_link_style_hover_text_color: #1e73be;
+  --xe_button_is_link_style_underline_color: #ef2c2c;
+  --xe_button_is_link_style_hover_underline_color: #1e73be;
+
+  --xe_page_header_breadcrumb_background_color: #EEEEEE; // Alternative: #FFF2CF. page header/ breadcrumb section
+
+  --xe_woo_on_sale_text_color: #ffffff;
+  --xe_woo_on_sale_background_color: red;
+  --xe_woo_current_price_text_color: red;
+  --xe_woo_previous_price_text_color: #3a2e2e;
+
+  // typography
+  --xe_system_font_family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, Segoe ui, System ui, sans-serif; // websafe
+  --xe_text_emphasis_font_family: "Playfair Display", Georgia, Serif;
+  --xe_monospace_font_family: monospace, monospace;
+
+  --xe_base_font_size: 0.9375rem; // 15px: 0.9375rem [16px: 1rem]
+  --xe_base_font_weight: normal;
+  --xe_base_letter_spacing: -0.0311em;
+  --xe_base_font_line_height: 1.6em;
+  --xe_base_font_family: "Inter", sans-serif;
+
+  --xe_heading_font_weight: bold;
+  --xe_heading_letter_spacing: -0.0415625em;
+  --xe_heading_line_height: 1.2em;
+  --xe_heading_font_family: "Inter", sans-serif;
+  
+
+  --xe_button_font_size: 0.9375rem; // 14px: 15px: 0.9375rem [16px: 1rem]
+  --xe_button_font_weight: normal;
+  --xe_button_line_height: 1;
+
+  --xe_woo_product_title_size: 0.9375rem; // 15px: 0.9375rem [16px: 1rem]
+
+  // border radius
+  --xe_buttons_border_radius: 3px;
+  --xe_inputs_border_radius: 4px;
+
+  // grid
+  --xe_container_width: 1400px;
+  --xe_grid_gutter_width: 30px;
+  --xe_grid_gutter_width_none: 0;
+  --xe_large_device_breakpoint: 1024px;
+  --xe_medium_device_breakpoint: 991px;
+  --xe_tablet_device_breakpoint: 768px;
+  --xe_mobile_device_breakpoint: 575px;
+
+  --xe_mobile_device_gutter_width: 5px;
+
+  // width 
+  --xe_narrow_section_base_width: 700px;
+  --xe_default_primary_area_width: 75%;
+  --xe_default_sidebar_width: 25%; 
+  --xe_default_boxed_layout_maxwidth: 1170px;
+  --xe_no_sidebar_narrow_container_width: 800px; // search, blog, archive
+  --xe_default_boxed_layout_container_maxwidth: 1170px;
+   --xe_default_layout_container_stretch_width: 100%;
+  --xe_default_layout_container_stretch_maxwidth: 1920px;
+
+  // menu toggle breakpoint
+  --xe_mobile_menu_breakpoint: 991px;
+
+  // spacing
+  --xe_block_standard_spacing: 60px;
+  --xe_woo_product_item_spacing: 30px;
+
+  // web font icon
+  --xe_iconfont: "themify";
+
+  //mobile design specific
+  --xe_mobile_device_woo_product_title_font_size: 14px;
+
+
+  // z-index
+  --xe_site_navigation_zindex: 10000000;
+  --xe_submenu_dropdown_zindex: 10000001;
+}

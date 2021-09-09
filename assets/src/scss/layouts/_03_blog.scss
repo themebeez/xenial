@@ -1,0 +1,160 @@
+
+// layout 
+
+.archive.xe-no-sidebar #xe-page #content>.xe-container {
+
+    max-width: var(--xe_no_sidebar_narrow_container_width);
+}
+
+// blog
+
+#primary .hentry {
+
+    margin-bottom: 50px;
+}
+
+.hentry .post-thumbnail .xe-thumb {
+
+    margin-bottom: 20px;
+}
+
+.hentry .post-thumbnail .xe-thumb .xe-thumb-link {
+
+    display: inline-flex;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.hentry .post-thumbnail .xe-thumb img {
+
+    border-radius: 3px;
+}
+
+.hentry .xe-post-title,
+.hentry .xe-post-metas,
+.hentry .xe-post-excerpt,
+.hentry .xe-continue-reading {
+
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.hentry .xe-post-title .xe-title {
+    
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.xe-post-metas,
+.xe-post-excerpt > p,
+.hentry .xe-post-title .xe-title {
+
+    margin-bottom: 15px;
+}
+
+.xe-post-metas > ul {
+
+    @include flex();
+    align-items: center;
+}
+
+.xe-post-metas .meta {
+
+    position: relative;
+    font-size: calc( var(--xe_base_font_size) - 2px );
+    margin-right: 15px;
+    padding-right: 15px;
+}
+
+.xe-post-metas .meta::after {
+
+    content: "";
+    display: inline-flex;
+    position: relative;
+    right: auto;
+    left: 15px;
+    height: 10px;
+    width: 1px;
+    background-color: #d6d6d6;
+}
+
+.xe-post-metas.slanted-seperator .meta:after {
+
+    transform: rotate(20deg);
+}
+
+.xe-post-metas.no-seperator .meta {
+
+    margin-right: 15px;
+    padding-right: 0;
+
+    &::after {
+
+        content: "";
+        display: none;
+    }
+}
+
+.xe-post-metas > ul > .meta:last-child::after {
+
+    content: "";
+    display: none;
+}
+
+.xe-post-metas .meta.author .xe-avatar {
+
+    display: inline-flex;
+    margin-right: 5px;
+    max-width: 30px;
+}
+
+.xe-post-metas .meta.date::before,
+.xe-post-metas .meta.comments::before,
+.xe-post-metas .meta.categories::before {
+
+    content: "\e6c6";
+    font-family: var(--xe_iconfont);
+    margin-right: 2px;
+}
+
+.xe-post-metas .meta.categories::before {
+
+    content: "\e617";
+}
+
+.xe-post-metas .meta.comments::before {
+
+    content: "\e645";
+}
+
+.xe-post-metas .meta:last-child {
+
+    margin-right: 0;
+}
+
+.xe-post-metas .meta.categories > a {
+
+    margin-right: 2px;
+}
+
+.xe-post-metas .meta.categories > a::after {
+
+    content: ",";
+}
+
+.xe-post-metas .meta.categories > a:last-child {
+
+    margin-right: 0;
+
+    &::after {
+
+        content: "";
+    }
+}
+
+
+// responsive 
+
+@media ( max-width: 575px ) {
+
+    
+}

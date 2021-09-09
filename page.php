@@ -14,29 +14,66 @@
 
 get_header();
 ?>
-<div class="xenial-container">
-	<div class="xenial-row xenial-container-inner">
-		<div id="xenial-primary" class="xenial-content-area">
-			<?php do_action( 'xenial_before_content' ); ?>
-			<main id="xenial-main" class="xenial-site-main">
-				<?php
-				while ( have_posts() ) :
+<header class="xe-pageheader">
+    <div class="xe-container">
+        <nav class="xe-breadcrumb" role="navigation">
+            <ul class="trail-items">
+                <li class="trail-item trail-begin"><a href="index.html"><span>Home</span></a></li>
+                <li class="trail-item"><a href="archive.html"><span>eCommerce</span></a></li>
+                <li class="trail-item trail-end"><a href="single.html"><span>These Are the Handpicked April Top selling brands.</a></li>
+            </ul>
+        </nav><!-- // xe-breadcrumb -->
+    </div><!-- // xe-container -->
+</header><!-- // xe-pageheader -->
+<div class="xe-container xe-flex-alt">
+    <div id="primary" class="content-area">
+        <main id="site-main" class="site-main">
+        	<?php 
+        	while ( have_posts() ) :
+				the_post();
 
-					the_post();
-
-					get_template_part( 'template-parts/content/content', 'page' );
-
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :						
-						do_action( 'xenial_post_comments_box' );
-					endif;
-				endwhile; // End of the loop.
 				?>
-			</main><!-- #main -->
-			<?php do_action( 'xenial_after_content' ); ?>
-		</div><!-- #primary -->
-		<?php get_sidebar(); ?>
-	</div>
-</div>
+				<article class="hentry xe-article">
+	                <div class="xe-post-title xe-entry-title">
+	                    <h1 class="xe-title"><?php the_title(); ?></h1>
+	                </div><!-- // xe-post-title -->
+	                <?php 
+	                if ( has_post_thumbnail() ) :
+	                	?>
+		                <div class="post-thumbnail xe-entry-thumbnail">
+		                    <figure class="xe-thumb">
+		                        <?php the_post_thumbnail(); ?>
+		                    </figure><!-- // xe-thumb -->
+		                    <figcaption>Photo Credits: www.pexels.com</figcaption>
+		                </div><!-- // post-thumbnail -->
+		                <?php 
+		            endif;
+		            ?>
+	                <div class="xe-entry-content">
+	                    <?php 
+
+	                    the_content(); 
+
+	                    wp_link_pages(
+							array(
+								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'xenial' ),
+								'after'  => '</div>',
+							)
+						);
+	                    ?>
+	                </div><!-- // xe-entry-content -->
+	            </article>
+				<?php
+
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
+
+			endwhile; // End of the loop.
+			?>
+        </main> <!-- // #site-main -->
+    </div><!-- // #primary -->
+</div><!-- // xe-container -->
 <?php    
 get_footer();

@@ -1,0 +1,161 @@
+
+
+// page 
+
+#xe-page {
+
+	margin-top: 60px;
+	margin-bottom: 60px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// page header (holds breadcrumb & page title)
+
+#xe-page .xe-pageheader {
+
+	padding:35px 0;
+	background-color: var(--xe_page_header_breadcrumb_background_color);
+}
+
+#xe-page .xe-pageheader .xe-container {
+
+	@include flex();
+	align-items: center;
+	justify-content: space-between;
+}
+
+#xe-page .xe-pageheader .xe-pagetitle-holder .xe-title {
+
+	font-size: 24px;
+	margin-bottom: 0;
+}
+
+// content
+
+#xe-page #content > .xe-container {
+
+	@include flex();
+	justify-content: stretch;
+	align-items: stretch;
+}
+
+// default primary & secndary 
+
+#xe-page #primary,
+#xe-page #secondary {
+
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 100%; // by default let set them to be full width
+}
+
+// case: defaut width
+
+#xe-page #primary {
+
+	width: var(--xe_default_primary_area_width); // i.e 75%
+}
+
+#xe-page #secondary {
+
+	width: var(--xe_default_sidebar_width); // i.e 35%
+}
+
+.xe-no-sidebar #xe-page #primary {
+
+	width: 100%;
+	margin-left: auto; // case: no sidebar
+	margin-right: auto; // case: no sidebar
+}
+
+.xe-no-sidebar #xe-page #secondary {
+
+	display: none;
+}
+
+// case: sidebar position
+
+#xe-page #primary {
+
+	order: 1;
+}
+
+#xe-page #secondary {
+
+	order: 2;
+}
+
+// Options (Sidebar Position: Default, Left, Right) & Mobile device sidebar position (Top & Bottom )
+
+.xe-sidebar-position-left #xe-page #secondary {
+
+	order: 1;
+}
+
+.xe-sidebar-position-left #xe-page #primary {
+
+	order: 2;
+}
+
+.xe-sidebar-position-right #xe-page #primary {
+
+	order: 1;
+}
+
+.xe-sidebar-position-right #xe-page #secondary {
+
+	order: 2;
+}
+
+body:not(.xe-no-sidebar) #xe-page #primary {
+
+	padding-left: 0;
+	padding-right: 50px;
+}
+
+.xe-sidebar-position-left:not(.xe-no-sidebar) #xe-page #primary {
+
+	padding-right: 0;
+	padding-left: 50px;
+}
+
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #xe-page #primary,
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #xe-page #secondary {
+
+	order: 2;
+}
+
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #xe-page #secondary,
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #xe-page #primary {
+
+	order: 1;
+}
+
+
+// case: page layout ( default container, stretch container, boxed )
+
+.xe-layout-container-stretch .xe-container {
+
+	width: 100%;
+	max-width: 100%;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+// Boxed Width: Boxed Container
+
+.xe-layout-boxed #xe-page {
+
+	width: 100%;
+	max-width: 1170px;
+}
+
+@media ( max-width: 1024px ) {
+
+	.xe-layout-container-stretch .xe-container {
+
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}

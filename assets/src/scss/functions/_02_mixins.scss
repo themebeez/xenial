@@ -1,0 +1,70 @@
+// font
+
+@mixin better_font_rendering() {
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+// flex
+
+@mixin flex() {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+// transation
+
+@mixin transation_delay() {
+
+    transition: all 0.5s ease;
+}
+
+@mixin transation_delay_dymanic($value) {
+
+    transition: all $value ease;
+}
+
+// animation
+
+// shadow 
+
+@mixin shadow_normal() {}
+
+@mixin shadow_large () {}
+
+// visibility 
+
+@mixin visibility_hidden () {
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+@mixin visibility_visible () {
+
+    opacity: 1;
+    visibility: visible;
+}
+
+// scale
+
+@mixin scale ($value) {
+
+    transform: scale($value);
+}
+
+// rotate
+
+// mask 
+
+// layouts 
+
+@mixin no_sidebar_narrow_layout($margin_value) {
+
+    margin-left: $margin_value;
+    margin-right: $margin_value;
+    max-width: var(--xe_narrow_section_base_width);
+}

@@ -38,20 +38,20 @@ if( ! class_exists( 'Xenial_Customize_Tab_Control' ) ) :
          */
         public function enqueue() {
 
-            $asset_uri = MAXIMO_THEME_URI . '/customizer/controls/tab/';
+            $asset_uri = XENIAL_THEME_URI . '/customizer/controls/tab/';
 
             wp_enqueue_style( 
-                MAXIMO_THEME_SLUG . '-tab',
+                XENIAL_THEME_SLUG . '-tab',
                 $asset_uri . 'tab.css', 
                 null, 
-                MAXIMO_THEME_VERSION 
+                XENIAL_THEME_VERSION 
             );
 
             wp_enqueue_script( 
-                MAXIMO_THEME_SLUG . '-tab',
+                XENIAL_THEME_SLUG . '-tab',
                 $asset_uri . 'tab.js', 
                 array( 'jquery', 'customize-base' ), 
-                MAXIMO_THEME_VERSION, 
+                XENIAL_THEME_VERSION, 
                 true 
             );
         }

@@ -1,0 +1,107 @@
+// text, ancours 
+
+p {
+
+    margin: 0 0 20px 0;
+}
+
+p:empty {
+
+    display: none;
+}
+
+a {
+
+    color: var(--xe_base_text_color);
+    text-decoration: none;
+    @include transation_delay();
+}
+
+a:hover {
+
+    color: var(--xe_seconary_color);
+    text-decoration: underline;
+}
+
+a:focus {
+
+    outline: 1px dotted;
+    text-decoration: none;
+}
+
+.wp-block-button__link,
+.cb-entry .wp-block-button__link {
+
+    color: inherit;
+}
+
+a:not([href]):not([tabindex]) {
+
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+
+    outline: 0;
+}
+
+[tabindex="-1"]:focus {
+
+    outline: 0 !important;
+}
+
+.wp-block-button__link,
+a.wp-block-button__link {
+
+    text-decoration: none;
+}
+
+
+// styling elements 
+
+hr {
+
+    height: 1px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #bdbdbd;
+}
+
+hr.wp-block-separator {
+
+    max-width: 150px;
+    margin: 20px auto;
+}
+
+hr.wp-block-separator.is-style-wide {
+
+    max-width: 100%;
+}
+
+.wp-block-separator.is-style-dots {
+
+    background-color: none;
+    border: none;
+    text-align: center;
+    max-width: none;
+    line-height: 1;
+    height: auto;
+}
+
+br {
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    line-height: 1em;
+}

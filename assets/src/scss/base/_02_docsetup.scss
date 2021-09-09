@@ -1,0 +1,64 @@
+// document setup
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @include better_font_rendering();
+}
+
+:root {
+  font-size: 16px;
+}
+
+html {
+  font-family: var(--xe_system_font_family);
+  line-height: 1.15;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  @include better_font_rendering();
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-weight: var(--xe_base_font_weight);
+  font-size: var(--xe_base_font_size);
+  color: var(--xe_base_text_color);
+  font-family: var(--xe_base_font_family);
+  line-height: var(--xe_base_font_line_height);
+  letter-spacing: var(--xe_base_letter_spacing);
+  background-color: var(--xe_body_background_color);
+  -moz-word-wrap: break-word;
+  -webkit-word-wrap: break-word;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  @include better_font_rendering();
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}

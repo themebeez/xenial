@@ -1,0 +1,155 @@
+// product: tab 
+
+.xe-block-title-with-tab-navs {
+
+    @include flex();
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--xe_border_color);
+}
+
+.xe-block-title-with-tab-navs .xe-block-title {
+
+    margin-bottom: 0;
+}
+
+.xe-tab-panel {
+
+    position: relative;
+}
+
+.xe-tabpanel-mask {
+
+    @include flex();
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: inherit;
+    background-color: #FFFFFF;
+    @include visibility_hidden();
+    animation: xeFadeOut 1s 0s;
+}
+
+.xe-tabpanel-mask .spinner {
+
+    display: none;
+}
+
+.xe-tabpanel-mask.active {
+
+    opacity: 1;
+    @include visibility_visible();
+    animation: xeFadeIn 0.5s 0s;
+}
+
+.xe-tabpanel-mask.active .spinner {
+
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    display: block;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    font-size: 20px;
+    overflow: hidden;
+    animation-name: xeSpin;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform: translateX(-50%);
+}
+
+// product: tab
+
+.xe-tabnav-items {
+
+    display: inline-flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.xe-tabnav-items .xe-tabnav-item {
+
+    display: inline-flex;
+    position: relative;
+    font-size: 15px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.xe-tabnav-items > li {
+
+    margin-right: 20px;
+}
+
+.xe-tabnav-items > li:last-child {
+
+    margin-right: 0;
+}
+
+.xe-tabnav-items .xe-tabnav-item::after {
+
+    content: "";
+    display: block;
+    position: absolute;
+    top:auto;
+    bottom: -7px;
+    right: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: transparent;
+    transition: 0.5s 0.1s ease;
+}
+
+.xe-tabnav-items .xe-tabnav-item.active {
+
+    color: var(--xe_primary_color);
+}
+
+.xe-tabnav-items .xe-tabnav-item.active::after {
+
+    content: "";
+    width: 100%;
+    background-color: var(--xe_primary_color);
+} 
+
+.xe-tabnav-items .xe-tabnav-item:focus {
+
+    outline: none;
+}
+
+.toggle-hidden-tabnav-items svg {
+
+    height: 18px;
+    width: 18px;
+    fill: currentColor;
+}
+
+// panels
+
+.xe-tab-panels {
+
+    margin-top: 30px;
+}
+
+.xe-tab-panel {
+
+    display: none;
+}
+
+.xe-tab-panel.active {
+
+    display: block;
+    animation: xeFadeIn 0.5s 0s;
+}

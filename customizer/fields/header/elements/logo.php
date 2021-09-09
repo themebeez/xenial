@@ -9,7 +9,7 @@ $wp_customize->get_section( 'title_tagline' )->priority = 11;
 $wp_customize->add_setting( 
 	'xenial_header_title_tagline_tab', 
 	array(
-    	'sanitize_callback'        => 'wp_filter_nohtml_kses',
+    	'sanitize_callback'        => null,
 	) 
 );
 

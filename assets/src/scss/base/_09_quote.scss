@@ -1,0 +1,60 @@
+// blockquote & pullquote
+
+q,
+blockquote {
+
+    position: relative;
+    font-family: var(--xe_text_emphasis_font_family);
+    font-size: 20px; // fallback
+    font-size: calc(var(--xe_base_font_size) + 6px);
+    line-height: var(--xe_base_font_line_height);
+    font-style: italic;
+    font-weight: normal;
+    border: 1px solid currentColor;
+    padding:30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+q::before,
+blockquote::before {
+
+    content: "\e67f";
+    display: block;
+    font-family: var(--xe_iconfont);
+    font-style: normal;
+    line-height: 1;
+    font-size: 22px;
+    position: absolute;
+    left: 15px;
+    top: -17px;
+    padding: 5px 20px;
+    background-color: var(--xe_body_background_color);
+}
+
+q>p,
+blockquote>p {
+
+    margin: 0;
+    line-height: 1.4;
+}
+
+// pullquote
+
+// cite
+
+q cite,
+blockquote cite,
+.wp-block-quote cite {
+
+    display: inline-flex;
+    font-family: var(--xe_base_font_family);
+    font-size: var(--xe_base_font_size);
+    font-weight: normal;
+    line-height: inherit;
+    font-style: normal;
+    color: currentColor;
+    background-color: transparent;
+    margin: 10px 0 0 0;
+}
