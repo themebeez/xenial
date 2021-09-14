@@ -1,0 +1,34 @@
+/* -------------------------------------------------------------------------- 
+	#. WooCommerce Tables
+   -------------------------------------------------------------------------- */
+
+.woocommerce table.shop_table,
+.woocommerce table.shop_attributes {
+
+    margin-bottom: 30px;
+    border-top: 1px solid var(--xe_border_color);
+    border-bottom: none;
+}
+
+.woocommerce table.shop_table th,
+.woocommerce table.shop_table td,
+.woocommerce table.shop_attributes th,
+.woocommerce table.shop_attributes td {
+
+    font-weight: bold;
+    padding: 15px 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: var(--xe_base_font_size);
+    line-height: var(--xe_base_font_line_height);
+    border: none;
+    border-top: none;
+    border-bottom: 1px solid var(--xe_border_color);
+    vertical-align: middle;
+}
+
+.woocommerce table.shop_attributes tr:nth-child(even) td, 
+.woocommerce table.shop_attributes tr:nth-child(even) th {
+
+    background-color: transparent;
+}

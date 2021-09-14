@@ -1,0 +1,23 @@
+:root {
+
+    // price
+
+    --xe_woocommerce_price: var(--xe_base_text_color);
+    --xe_woocommerce_sale_price: #FF0000;
+
+    // sale 
+
+    --xe_woocommerce_onsale_color: #FFFFFF;
+    --xe_woocommerce_onsale_background_color: #FF0000;
+
+    // stock 
+
+    --xe_woocommerce_in_stock_color: #11A738;
+    --xe_woocommerce_out_stock_color: #FF0000;
+
+    // alerts 
+
+    --xe_woocommerce_alert_message: #00AD00;
+    --xe_woocommerce_alert_info: #4A8EFF;
+    --xe_woocommerce_alert_error: #FF0000;
+}

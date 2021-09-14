@@ -1,0 +1,123 @@
+/* -------------------------------------------------------------------------- 
+	#. WooCommerce Cart
+   -------------------------------------------------------------------------- */
+
+.woocommerce-cart-form {
+
+    margin-bottom: 30px;
+}
+
+.woocommerce-cart table.cart img {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    border: 1px solid var(--xe_border_color);
+}
+
+.woocommerce-page .woocommerce-cart-form .product-remove,
+.woocommerce-page .woocommerce-cart-form .product-thumbnail {
+
+    width: 60px;
+}
+
+.woocommerce-page .woocommerce-cart-form .product-thumbnail > a {
+
+    display: block;
+}
+
+.woocommerce-page .woocommerce-cart-form .product-name a[href] {
+
+    color: var(--xe_base_text_color) !important;
+}
+
+.woocommerce-page .woocommerce-cart-form .product-name a[href]:hover {
+
+    color: var(--xe_seconary_color) !important;
+}
+
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text,
+.woocommerce #content table.cart td.actions .input-text, 
+.woocommerce-page #content table.cart td.actions .input-text {
+
+    width: 150px;
+    padding: 14px 15px;
+    margin: 0 5px 0 0;
+    border: 1px solid var(--xe_border_color);
+}
+
+.woocommerce table.cart td.actions .input-text:focus,
+.woocommerce-page table.cart td.actions .input-text:focus,
+.woocommerce #content table.cart td.actions .input-text:focus, 
+.woocommerce-page #content table.cart td.actions .input-text:focus {
+
+    border-color: #3da6ff;
+}
+
+// Cart collaterals
+
+.woocommerce .cart-collaterals, 
+.woocommerce-page .cart-collaterals {
+
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.woocommerce .cart-collaterals .cart_totals {
+
+    float: right;
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#add_payment_method .cart-collaterals .cart_totals table, 
+.woocommerce-cart .cart-collaterals .cart_totals table, 
+.woocommerce-checkout .cart-collaterals .cart_totals table {
+
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals tr td, 
+.woocommerce-cart .cart-collaterals .cart_totals tr th, 
+#add_payment_method .cart-collaterals .cart_totals tr td, 
+#add_payment_method .cart-collaterals .cart_totals tr th, 
+.woocommerce-checkout .cart-collaterals .cart_totals tr td, 
+.woocommerce-checkout .cart-collaterals .cart_totals tr th {
+
+    border-top: none;
+}
+
+.woocommerce-cart .cart-collaterals .cart_totals tr th,
+#add_payment_method .cart-collaterals .cart_totals tr th,  
+.woocommerce-checkout .cart-collaterals .cart_totals tr th {
+
+    font-weight: normal;
+}
+
+.woocommerce .cart-collaterals .cart_totals > h2 {
+
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.woocommerce .cart-collaterals .cart_totals .wc-proceed-to-checkout {
+
+    padding: 0;
+    margin-top: 30px;
+}
+
+.woocommerce .cart-collaterals .cart_totals .wc-proceed-to-checkout a.wc-forward {
+
+    @include flex();
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    color: var(--xe_button_text_color);
+}

@@ -29,7 +29,7 @@ $link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $pr
 <li <?php wc_product_class( '', $product ); ?>>
     <div class="xe-woo-product">
         <figure class="xe-product-thumb">
-            <a class="xe-link xe-thumb-link has-secondary-thumb woocommerce-LoopProduct-link woocommerce-loop-product__link" href="<?php echo esc_url( $link ); ?>">
+            <a class="xe-link xe-thumb-link woocommerce-LoopProduct-link woocommerce-loop-product__link" href="<?php echo esc_url( $link ); ?>">
                 <?php echo woocommerce_get_product_thumbnail(); ?>
             </a>
             <div class="xe-woo-buttons-group visible-on-hover">
