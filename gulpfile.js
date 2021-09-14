@@ -34,32 +34,67 @@ const shell = require('gulp-shell');
 ====================================================
 */
 
-// #1 Script files path
-const scriptpath = {
-
-    script_src: [
-        'assets/src/js/libraries/*.js',
-        'assets/src/js/custom/*.js',
+// #1 base script files path
+var base__script__path = {
+    base__script__src: [
+        './assets/src/js/jQuery/*.js',
+        './assets/src/js/libs/*.js',
+        './assets/src/js/scripts/*.js',
+        '!./assets/src/js/conditional/*.js',
+        '!./assets/src/js/compatibility/*.js',
     ],
-
-    script_dist: "assets/dist/js/",
+    base__script__build__path: "./assets/build/js/",
 }
-const output_js_file_name = "bundle.js"; // what would you like to name your minified bundled js file
+var compiled__base__script_build = "xenial-script.js"; // what would you like to name your minified bundled js file
 
-// 2# SASS/SCSS file path
-const sasspath = {
+// #1.1 base script files path
+var compatibility__script__path = {
+    compatibility__script__src: [
 
-    sass_src: ["assets/scss/**/*.scss"],
-    sass_dist: "assets/css/",
+        './assets/src/js/compatibility/*.js',
+    ],
+    compatibility__script__build__path: "./assets/build/js/compatibility/",
 }
-const compiled_sass_css_file_name = "theme.css"; // what would you like to name your compiled CSS file
 
+// #2 base sass files path
+var base__sass__path = {
+    base__sass__src: [
+        "./assets/src/scss/**/*.scss",
+        "!./assets/src/scss/woocommerce/**",
+        "!./assets/src/scss/compatibility/**",
+    ],
+    base__sass__build__path: "./assets/build/css/",
+}
+var compiled__base__sass__build__name = "xenial-style.css"; // what would you like to name your compiled CSS file
+
+// #2.1 woocommerce sass file path
+var woocommerce__sass__path = {
+    woocommerce__sass__src: [
+
+        "./assets/src/scss/woocommerce/**"
+    ],
+    compiled__woocommerce__sass__build__path: "./assets/build/css/woocommerce/",
+}
+
+var compiled__woocommerce__sass__build__name = 'woocommerce.css';
+
+// #2.3 compatibility sass file path
+var compatibility__sass__path = {
+    compatibility__sass__src: [
+
+        "./assets/src/scss/compatibility/**"
+    ],
+    compiled__compatibility__sass__build__path: "./assets/build/css/compatibility/",
+}
 
 // #3 path of php files to generate WordPress POT file
 
-const php_files = {
+var project__name = 'Xenial';
+var project__text__domain = 'xenial';
 
-    php_files_path: [
+var php___files__path = {
+
+    php___files__src: [
 
         './**/*.php',
         '!./inc/plugin-recommendation.php',
@@ -67,10 +102,30 @@ const php_files = {
     ],
 }
 
-// #3.1 project text domain
+// #4 zip files & folders for production 
 
-const project_name = 'Xenial';
-const project_text_domain = 'xenial';
+var output__compressed__file = 'xenial-production.zip';
+
+const source__files__folders__to__compress = {
+
+    source__files__folders: [
+
+        './*',
+        './*/**',
+
+        '!./.gitignore',
+        '!./assets/src/**',
+        '!./gulpfile.js',
+        '!./package.json',
+        '!./package-lock.json',
+        '!./node_modules/**',
+        '!./composer.json',
+        '!./composer.lock',
+        '!./sftp-config.json'
+    ],
+
+    path__to__save__production__zip: "./",
+}
 
 /*
 ===========================================================
@@ -80,16 +135,29 @@ const project_text_domain = 'xenial';
 ====================================================
 */
 
+// # 1 Base script task
 
-gulp.task('scriptsTask', function () {
-    return gulp.src(scriptpath.script_src)
-        .pipe(concat(output_js_file_name))
+gulp.task('baseScriptsTask', function () {
+    return gulp.src(base__script__path.base__script__src)
+        .pipe(concat(compiled__base__script_build))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(gulp.dest(scriptpath.script_dist));
+        .pipe(gulp.dest(base__script__path.base__script__build__path));
 });
 
-gulp.task('sassTask', function () {
+// # 1.1 Compatibility script task
+
+gulp.task('compatibilityScriptsTask', function () {
+    return gulp.src(compatibility__script__path.compatibility__script__src)
+        //.pipe(concat())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(gulp.dest(compatibility__script__path.compatibility__script__build__path));
+});
+
+// # 2 Base SASS task
+
+gulp.task('baseSassTask', function () {
     var onError = function (err) {
         notify.onError({
             title: "Gulp",
@@ -99,30 +167,132 @@ gulp.task('sassTask', function () {
         })(err);
         this.emit('end');
     };
-    return gulp.src(sasspath.sass_src)
-        .pipe(sourcemaps.init()) // initialize sourcemaps first
+    return gulp.src(base__sass__path.base__sass__src)
+        .pipe(sourcemaps.init())
         .pipe(plumber({ errorHandler: onError }))
         .pipe(sass.sync().on('error', sass.logError))
         .pipe(postcss([autoprefixer('last 2 version'), cssnano()])) // PostCSS plugins
-        .pipe(concat(compiled_sass_css_file_name))
+        .pipe(concat(compiled__base__sass__build__name))
         .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
-        .pipe(gulp.dest(sasspath.sass_dist)); // put final CSS in dist folder
+        .pipe(gulp.dest(base__sass__path.base__sass__build__path)); // put final CSS in build folder
 });
 
-gulp.task('WordpressPot', function () {
-    return gulp.src(php_files.php_files_path)
+// # 2.1 WooCommerce SASS task
+
+gulp.task('woocommerceSassTask', function () {
+    var onError = function (err) {
+        notify.onError({
+            title: "Gulp",
+            subtitle: "Failure!",
+            message: "Error: <%= error.message %>",
+            sound: "Beep"
+        })(err);
+        this.emit('end');
+    };
+    return gulp.src(woocommerce__sass__path.woocommerce__sass__src)
+        .pipe(sourcemaps.init())
+        .pipe(plumber({ errorHandler: onError }))
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(postcss([autoprefixer('last 2 version'), cssnano()]))
+        .pipe(concat(compiled__woocommerce__sass__build__name))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(woocommerce__sass__path.compiled__woocommerce__sass__build__path));
+});
+
+
+// # 2.2 Compatibility SASS task
+
+gulp.task('compatibilitySassTask', function () {
+    var onError = function (err) {
+        notify.onError({
+            title: "Gulp",
+            subtitle: "Failure!",
+            message: "Error: <%= error.message %>",
+            sound: "Beep"
+        })(err);
+        this.emit('end');
+    };
+    return gulp.src(compatibility__sass__path.compatibility__sass__src)
+        .pipe(sourcemaps.init())
+        .pipe(plumber({ errorHandler: onError }))
+        .pipe(sass.sync().on('error', sass.logError))
+        .pipe(postcss([autoprefixer('last 2 version'), cssnano()]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(compatibility__sass__path.compiled__compatibility__sass__build__path));
+});
+
+// # 3 Generate WordPress POT file
+
+gulp.task('xenialPotFile', function () {
+    return gulp.src(php___files__src.php___files__path)
         .pipe(wpPot({
-            domain: project_text_domain,
-            package: project_name,
+            domain: project__text__domain,
+            package: project__name
         }))
-        .pipe(gulp.dest('languages/' + project_text_domain + '.pot'));
+        .pipe(gulp.dest('languages/xenial.pot'));
 });
 
-// just hit the command "gulp" it will run the following tasks...
-gulp.task('default', gulp.series( 'sassTask', 'WordpressPot', (done) => {
+// # 4 Generate Production Zip File 
 
-    // gulp.watch(scriptpath.script_src, gulp.series('scriptsTask'));
-    gulp.watch(sasspath.sass_src, gulp.series('sassTask'));
-    gulp.watch(php_files.php_files_path, gulp.series('WordpressPot'));
+gulp.task('zipProductionFiles', function () {
+    return gulp.src(source__files__folders__to__compress.source__files__folders)
+        .pipe(zip(output__compressed__file))
+        .pipe(gulp.dest(source__files__folders__to__compress.path__to__save__production__zip))
+});
+
+
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+=
+= Run All tasks
+=
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+//=========================================
+// = C O M M A N D S                      = 
+//=========================================
+//
+// 1. Command: gulp zip (zips the production files)
+// 2. Command: gulp makepot (will generate language file)
+// 3. Command: gulp assets (Compiles all assets)
+//
+//=========================================
+
+// Run Task: none, just echo message for default command
+
+gulp.task('default', shell.task(
+
+    'echo ====================== ⛔️ Hello Stranger, gulp default command is disabled in this project. These are the available commands gulp zip, gulp makepot & gulp assets. If you need additional info refer gulpfile.js 250. Cheers 😜 ======================',
+
+));
+
+// #1 Run Task: Zip production files
+
+gulp.task('zip', gulp.series('zipProductionFiles', (done) => {
+
     done();
 }));
+
+// #2 Run Task: Make WordPress POT file
+
+gulp.task('makepot', gulp.series('xenialPotFile', (done) => {
+
+    gulp.watch(php___files__path.php___files__src, gulp.series('xenialPotFile'));
+    done();
+}));
+
+// #3 Run Task: Compile static assets
+
+gulp.task('assets', gulp.series('baseScriptsTask', 'compatibilityScriptsTask', 'baseSassTask', 'woocommerceSassTask', 'compatibilitySassTask', (done) => {
+
+    gulp.watch(base__script__path.base__script__src, gulp.series('baseScriptsTask'));
+    gulp.watch(compatibility__script__path.compatibility__script__src, gulp.series('compatibilityScriptsTask'));
+    gulp.watch(base__sass__path.base__sass__src, gulp.series('baseSassTask'));
+    gulp.watch(woocommerce__sass__path.woocommerce__sass__src, gulp.series('woocommerceSassTask'));
+    gulp.watch(compatibility__sass__path.compatibility__sass__src, gulp.series('compatibilitySassTask'));
+    done();
+}));
+
+
+

@@ -1,0 +1,20 @@
+/* -------------------------------------------------------------------------- 
+	#. Import WooCommerce specific styles
+   -------------------------------------------------------------------------- */
+
+@import "../functions/01_variables";
+@import "../functions/02_mixins";
+
+@import "./functions/woocommerce-vars";
+
+@import "./global/alerts";
+@import "./global/buttons";
+@import "./global/tables";
+@import "./global/product";
+@import "./global/pagination";
+
+@import "./layout/single";
+@import "./layout/cart";
+@import "./layout/checkout";
+@import "./layout/orders";
+@import "./layout/account";

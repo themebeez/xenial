@@ -1,0 +1,238 @@
+
+// woocommerce buttons
+
+.woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce input.button, 
+.woocommerce button.button,
+.woocommerce input.button.alt,
+.woocommerce button.button.alt, 
+.woocommerce #respond input#submit,
+.woocommerce #respond input#submit.alt,
+.woocommerce ul.products li.product a.added_to_cart {
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--xe_button_font_size);
+    font-weight: normal;
+    color: var(--xe_button_text_color);
+    line-height: var(--xe_button_line_height);
+    height: 48px;
+    padding: 0 20px;
+    background-color: var(--xe_button_background_color);
+    border-radius: var(--xe_buttons_border_radius);
+
+    &:hover {
+
+        color: var(--xe_button_hover_text_color);
+        background-color: var(--xe_button_hover_background_color);
+    }
+
+    &:focus {
+
+        outline-color: currentColor;
+    }
+}
+
+// WooCommerce disabled buttons
+
+.woocommerce a.button.disabled, 
+.woocommerce a.button:disabled,
+.woocommerce button.button.disabled, 
+.woocommerce button.button:disabled,
+.woocommerce input.button.disabled, 
+.woocommerce input.button:disabled,
+.woocommerce a.button:disabled[disabled],
+.woocommerce #respond input#submit.disabled, 
+.woocommerce #respond input#submit:disabled, 
+.woocommerce button.button:disabled[disabled], 
+.woocommerce input.button:disabled[disabled],
+.woocommerce #respond input#submit:disabled[disabled] {
+
+    opacity: 1;
+    padding: 0 20px;
+    cursor: not-allowed;
+    color: var(--xe_button_text_color);
+    background-color: var(--xe_primary_color);
+}
+
+// add to cart button
+
+.woocommerce ul.products li.product .button {
+
+
+}
+
+.woocommerce ul.products li.product .button.added {
+
+    display: none;
+}
+
+.woocommerce ul.products li.product a.added_to_cart::before {
+
+    content: "\e64c";
+    font-family: var(--xe_iconfont);
+    display: inline-flex;
+    margin-right: 5px;
+}
+
+// woocommerce buttons 
+
+.xe-woo-buttons-group {
+
+    @include flex();
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%);
+    transition: all .3s ease;
+
+    .xe-button {
+
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+        line-height: 47px;
+        margin-bottom: 10px;
+        color: var(--xe_base_text_color);
+        background-color: white;
+        border-radius: 100%;
+
+        &:hover {
+
+            background-color: #e6e6e6;
+        }
+    }
+
+    .xe-quickview {
+
+        .xe-quickview-button {}
+    }
+
+    .xe-compare {}
+
+    .xe-wishlist {}
+
+    .xe-add-to-cart-button {
+
+        &::before {
+
+            content: "";
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+
+    .xe-woo-buttons-group .xe-button {
+
+        width: 35px;
+        height: 35px;
+        font-size: 15px;
+        line-height: 36px;
+    }
+}
+
+// add to cart button 
+
+.xe-add-to-cart-button {
+
+    align-items: center;
+
+    &::before {
+
+        content: "\e60e";
+        font-family: var(--xe_iconfont);
+        margin-right: 5px;
+    }
+
+    &::after {
+
+        content: "";
+        display: none;
+    }
+}
+
+.xe-add-to-cart-button.is-link-style {
+
+    position: relative;
+    padding: 0;
+    text-decoration: none;
+    color: var(--xe_button_is_link_style_text_color);
+    background-color: transparent;
+    border: none;
+
+    &::before {
+
+        content: '';
+        display: none; // remove icon if button is link style
+    }
+
+    &::after {
+
+        content: "";
+        display: inline-flex;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: auto;
+        width: 30px;
+        height: 3px;
+        background-color: var(--xe_button_is_link_style_underline_color);
+        @include transation_delay_dymanic(0.8s);
+    }
+
+    &:hover {
+
+        text-decoration: none;
+        color: var(--xe_button_is_link_style_hover_text_color);
+        background-color: transparent;
+        border: none;
+
+        &::after {
+
+            content: "";
+            right: 0;
+            width: 100%;
+            background-color: var(--xe_button_is_link_style_hover_underline_color);
+        }
+
+    }
+
+    &:focus {
+
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+// Remove button 
+
+.woocommerce a.remove {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    font-weight: normal;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+}
+
+.woocommerce a.remove::before {
+
+    content: "\e646";
+    font-family: var(--xe_iconfont);
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 1;
+}
