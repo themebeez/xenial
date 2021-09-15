@@ -48,6 +48,37 @@
     margin-bottom: 0;
 }
 
+// edit 
+
+.edit {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    font-family: var(--xe_system_font_family);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+.edit::before {
+
+    content: "\e61c";
+    display: inline-flex;
+    font-family: var(--xe_iconfont);
+    font-weight: normal;
+    margin-right: 4px;
+}
+
+.edit:hover {
+
+    text-decoration: none;
+}
+
 // sticky 
 
 .xe-sidebar-sticky #secondary {
