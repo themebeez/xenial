@@ -45,3 +45,13 @@
 
     font-size: 13px;
 }
+
+.xe-breadcrumb .trail-item a {
+
+    color: var(--xe_text_color);
+}
+
+.xe-breadcrumb .trail-item a:hover {
+
+    color: var(--xe_seconary_color);
+}

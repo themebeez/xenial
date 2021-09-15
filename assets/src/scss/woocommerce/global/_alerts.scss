@@ -40,7 +40,7 @@
 
 .woocommerce-error::before {
 
-   content: "\e6c5";
+   content: "\e717";
    color: var(--xe_woocommerce_alert_error);
 }
 
@@ -51,7 +51,7 @@
 
 .woocommerce-info::before {
 
-   content: "\e717";
+   content: "\e6b8";
    color: var(--xe_woocommerce_alert_info);
 }
 
@@ -64,6 +64,29 @@
 
    content: "\e64c";
    color: var(--xe_woocommerce_alert_message);
+}
+
+.woocommerce-info li,
+.woocommerce-error li, 
+.woocommerce-message li {
+
+   display: block;
+   width: 100%;
+   margin-bottom: 5px;
+}
+
+.woocommerce-info li:last-child,
+.woocommerce-error li:last-child, 
+.woocommerce-message li:last-child {
+
+   margin-bottom: 0;
+}
+
+.woocommerce-info li > strong,
+.woocommerce-error li > strong, 
+.woocommerce-message li > strong {
+
+   font-weight: 600;
 }
 
 // button in alert

@@ -12,7 +12,7 @@ p:empty {
 
 a {
 
-    color: var(--xe_base_text_color);
+    color: var(--xe_base_link_color);
     text-decoration: none;
     @include transation_delay();
 }

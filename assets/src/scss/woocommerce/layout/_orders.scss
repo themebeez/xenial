@@ -1,0 +1,78 @@
+
+.woocommerce-order-received .woocommerce-thankyou-order-received {
+
+    @include flex();
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    max-width: 800px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px dashed var(--xe_border_color);
+}
+
+.woocommerce-order-received .woocommerce-thankyou-order-received:before {
+
+    content: "\e6a0";
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: var(--xe_iconfont);
+    margin-right: 5px;
+}
+
+.woocommerce-order-received .woocommerce ul.order_details {
+
+    @include flex();
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin-bottom: 30px;
+    list-style: none;
+    border-radius: 5px;
+    border: 1px solid var(--xe_border_color);
+}
+
+.woocommerce-order-received .woocommerce ul.order_details li {
+
+    flex: 1;
+    float: none;
+    margin: 0;
+    padding: 20px;
+    font-size: var(--xe_base_font_size);
+    line-height: var(--xe_base_line_height);
+    text-transform: inherit;
+    border-right: 1px dashed var(--xe_border_color);
+}
+
+.woocommerce-order-received .woocommerce ul.order_details li > strong {
+
+    font-size: 14px;
+    font-size: calc(var(--xe_base_font_size) - 1px);
+    font-weight: var(--xe_base_font_weight);
+}
+
+.woocommerce-order-received .woocommerce ul.order_details li:last-child {
+
+    border-right: none;
+}
+
+.woocommerce-order-received .woocommerce-order-details h2 {
+
+    font-size: 20px;
+    font-weight: normal;
+    margin: 30px 0 20px 0;
+}
+
+.woocommerce-order-received table.shop_table td > a {
+
+    color: var(--xe_text_color);
+}
+
+.woocommerce-order-received table.shop_table td > a:hover {
+
+    color: var(--xe_seconary_color);
+}
+
