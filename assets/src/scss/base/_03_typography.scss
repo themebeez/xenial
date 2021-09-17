@@ -104,7 +104,7 @@ em {
 ins,
 mark {
 
-  color: #222222;
+  color: var(--xe_base_text_color);
   background-color: #fffbae; // light yellow
   text-decoration: none;
 }

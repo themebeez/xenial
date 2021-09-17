@@ -2,7 +2,7 @@
 
     // price
 
-    --xe_woocommerce_price: var(--xe_base_text_color);
+    --xe_woocommerce_price: #585858;
     --xe_woocommerce_sale_price: #FF0000;
 
     // sale 
@@ -20,4 +20,13 @@
     --xe_woocommerce_alert_message: #00AD00;
     --xe_woocommerce_alert_info: #4A8EFF;
     --xe_woocommerce_alert_error: #FF0000;
+
+    // starts 
+
+    --xe_woocommerce_star_color: #FFD100;
+    --xe_woocommerce_star_alternate_color: #D3CED2;
+
+    // quantity 
+
+    --xe_woocommerce_quantity_input_width: 100px;
 }
