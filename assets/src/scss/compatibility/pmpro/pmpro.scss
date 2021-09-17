@@ -1,0 +1,474 @@
+/* -------------------------------------------------------------------------- 
+	#. Import variables & Mixins
+   -------------------------------------------------------------------------- */
+
+@use '../../functions/01_variables';
+@import '../../functions/02_mixins';
+
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Variables
+   -------------------------------------------------------------------------- */
+
+:root {
+
+    // Alert Colors
+    --xe_pmpro_message_background_color: #F7F7F7;
+    --xe_pmpro_message_color: #4DC76D;
+    --xe_pmpro_message_alert_color: #FFD783;
+    --xe_pmpro_message_error_color: #F94646;  
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO General
+   -------------------------------------------------------------------------- */
+
+.pmpro_login_wrap, 
+.pmpro_lost_password_wrap, 
+.pmpro_reset_password_wrap {
+
+    margin-bottom: 30px;
+}
+
+.pmpro_actionlinks {
+
+    margin-top: 20px;
+    color: var(--xe_border_color);
+}
+
+.pmpro_actionlinks a {
+
+    margin: 0 10px;
+}
+
+.pmpro_actionlinks a:first-child {
+
+    margin-left: 0;
+}
+
+.pmpro_actionlinks a:last-child {
+
+    margin-right: 0;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Forms
+   -------------------------------------------------------------------------- */
+
+form.pmpro_form {
+
+    margin-bottom: 30px;
+}
+
+form.pmpro_form .pmpro_checkout-fields div, 
+[class*="pmpro_"] #loginform p {
+
+    margin: 0 0 20px 0;
+}
+
+form.pmpro_form label,
+[class*="pmpro_"] #loginform label {
+
+    display: inline-block;
+    margin: 0 0 5px 5px;
+    font-weight: normal;
+}
+
+.pmpro_form hr,
+[class*="pmpro_"] hr {
+
+    display: block;
+    margin: 20px 0;
+}
+
+form.pmpro_form .input, 
+form.pmpro_form textarea, 
+form.pmpro_form select, 
+[class*="pmpro_"] #loginform input[type=text], 
+[class*="pmpro_"] #loginform input[type=password] {
+
+    max-width: 98%;
+}
+
+.pmpro_actions_nav {
+
+    text-align: left;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Buttons
+   -------------------------------------------------------------------------- */
+
+.pmpro_btn, 
+.pmpro_btn:link,
+#pmpro_levels_table .pmpro_btn,
+.pmpro_logged_in_welcome_wrap .pmpro_member_log_out > a {
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--xe_button_font_size);
+    font-weight: normal;
+    color: var(--xe_button_text_color);
+    line-height: var(--xe_button_line_height);
+    height: 48px;
+    padding: 0 20px;
+    border: none;
+    background-color: var(--xe_button_background_color);
+    border-radius: var(--xe_buttons_border_radius);
+}
+
+.pmpro_btn:hover, 
+.pmpro_btn:link:hover,
+#pmpro_levels_table .pmpro_btn:hover,
+.pmpro_logged_in_welcome_wrap .pmpro_member_log_out > a:hover {
+
+    color: var(--xe_button_hover_text_color);
+    text-decoration: none;
+    border: none;
+    background-color: var(--xe_button_hover_background_color);
+}
+
+#pmpro_levels_table .pmpro_btn.disabled {
+
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.pmpro_btn.pmpro_btn-cancel, 
+.pmpro_btn.pmpro_btn-cancel:link {
+
+    color: var(--xe_base_link_color);
+    text-decoration: none;
+}
+
+.pmpro_btn.pmpro_btn-cancel:hover, 
+.entry-content a.pmpro_btn.pmpro_btn-cancel:hover {
+
+    color: var(--xe_seconary_color);
+    text-decoration: none;
+}
+
+// Button link style with underline.
+
+[class*="pmpro_"] .pmpro_message a {
+
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    order: 2;
+    float: none;
+    height: auto;
+    margin: 0;
+    padding: 0 0 2px 0;
+    color: var(--xe_primary_color);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+[class*="pmpro_"] .pmpro_message a:hover {
+
+    color: var(--xe_seconary_color);
+    background-color: transparent;
+    text-decoration: none;
+}
+
+[class*="pmpro_"] .pmpro_message a:focus {
+
+    outline: none;
+}
+
+[class*="pmpro_"] .pmpro_message a:after,
+[class*="pmpro_"] .pmpro_message a:before {
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+[class*="pmpro_"] .pmpro_message a:before {
+
+    content: "";
+    z-index: 1;
+    background-color: currentColor;
+    transform-origin: right center;
+    transform: scaleX(0);
+    will-change: scale;
+    transition: transform .26s cubic-bezier(.25,.8,.25,1);
+    -webkit-backface-visibility: hidden;
+}
+
+[class*="pmpro_"] .pmpro_message a:after {
+
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    opacity: 0.5;
+    margin: 0;
+    background-color: currentColor;
+}
+
+[class*="pmpro_"] .pmpro_message a:hover:before {
+
+    transform: scale(1);
+    transform-origin: left center;
+    background-color: var(--xe_seconary_color);
+}
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Icons
+   -------------------------------------------------------------------------- */
+
+.pmpro_actionlinks a,
+.pmpro_login_wrap .pmpro_actions_nav > a,
+.pmpro_checkout h3 span.pmpro_checkout-h3-msg > a {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+}
+
+.pmpro_message:before,
+.pmpro_actionlinks a:after,
+.pmpro_btn.pmpro_btn-cancel::after, 
+.pmpro_btn.pmpro_btn-cancel:link::after,
+.pmpro_login_wrap .pmpro_actions_nav > a:after,
+.pmpro_checkout h3 span.pmpro_checkout-h3-msg > a:after {
+
+    font-family: var(--xe_iconfont);
+    font-style: normal;
+    font-weight: normal;
+}
+
+.pmpro_actionlinks a:after,
+.pmpro_login_wrap .pmpro_actions_nav > a::after,
+.pmpro_checkout h3 span.pmpro_checkout-h3-msg > a:after {
+
+    content: "\e65a";
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Alerts
+   -------------------------------------------------------------------------- */
+
+.pmpro_message {
+
+    display: block;
+    margin: 30px 0;
+    padding: 15px;
+    font-size: var(--xe_base_font_size);
+    font-weight: var(--xe_base_font_weight);
+    line-height: var(--xe_base_font_line_height);
+    color: var(--xe_base_text_color);
+    border: none;
+    border-top: 3px solid var(--xe_pmpro_message_color);
+    border-radius: 0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: var(--xe_pmpro_message_background_color);
+}
+
+.pmpro_message.pmpro_alert,
+.pmpro_message.pmpro_error {
+
+    background-color: var(--xe_pmpro_message_background_color);
+}
+
+.pmpro_message::before {
+
+    content: "\e6b8";
+    margin-right: 5px;
+}
+
+.pmpro_message.pmpro_alert {
+
+    color: var(--xe_base_text_color);
+    border-top-color: var(--xe_pmpro_message_alert_color);
+}
+
+.pmpro_message.pmpro_error {
+
+    color: var(--xe_base_text_color);
+    border-top-color: var(--xe_pmpro_message_error_color);
+}
+
+.pmpro_message.pmpro_error::before {
+
+    content: "\e717";
+    color: var(--xe_pmpro_message_error_color);
+}
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Login
+   -------------------------------------------------------------------------- */
+
+.pmpro_logged_in_welcome_wrap .pmpro_member_display_name {
+
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.pmpro_login_wrap .pmpro_actions_nav {
+
+    text-align: left;
+    margin: 0;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Typography
+   -------------------------------------------------------------------------- */
+
+.pmpro_invoice_wrap > h3,
+#pmpro_account .pmpro_box h3,
+#pmpro_form .pmpro_checkout h3 {
+
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0 0 20px;
+}
+
+.pmpro_checkout h3 span.pmpro_checkout-h3-msg {
+
+    font-size: var(--xe_base_font_size); // fallback
+    font-size: calc(var(--xe_base_font_size) - 2px);
+}
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Account
+   -------------------------------------------------------------------------- */
+
+#pmpro_account .pmpro_table .pmpro_actionlinks {
+
+    margin: 5px 0 0 0;
+}
+
+#pmpro_account .pmpro_box {
+
+    padding: 20px 0;
+    margin: 20px 0;
+    border-top-color: var(--xe_border_color);
+}
+
+#pmpro_account .pmpro_box#pmpro_account-profile {
+
+    padding: 20px;
+    margin: 0 0 30px 0;
+    border-radius: 5px;
+    border: 2px dashed var(--xe_border_color);
+}
+
+#pmpro_account #pmpro_account-profile ul {
+
+    display: block;
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+}
+
+#pmpro_account #pmpro_account-profile ul li {
+
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#pmpro_account #pmpro_account-profile ul li:last-child {
+
+    margin-bottom: 0;
+}
+
+// EDIT ACCOUNT
+
+.pmpro_form .pmpro_checkout_box-user .lite {
+
+    margin: 20px 0;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Checkout
+   -------------------------------------------------------------------------- */
+
+.pmpro_checkout h3 span.pmpro_checkout-h3-name {
+
+    display: block;
+    margin: 0;
+}
+
+.pmpro_checkout .pmpro_checkout-fields #pmpro_level_cost {
+
+    margin-top: 20px;
+}
+
+.pmpro_confirmation_wrap p {
+
+    margin: 10px 0;
+}
+
+.pmpro_confirmation_wrap p:first-child {
+
+    margin-top: 0;
+}
+
+.pmpro_confirmation_wrap p:last-child {
+
+    margin-bottom: 0;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Billing
+   -------------------------------------------------------------------------- */
+
+
+
+/* -------------------------------------------------------------------------- 
+	#. PMPRO Invoice
+   -------------------------------------------------------------------------- */
+
+.pmpro_invoice_wrap .pmpro_a-print {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--xe_base_system_font_family);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.25px;
+    background: none;
+    color: var(--xe_base_link_color);
+    text-transform: uppercase;
+}
+
+.pmpro_invoice_wrap .pmpro_a-print:hover {
+
+    color: var(--xe_seconary_color);
+    text-decoration: none;
+}
+
+.pmpro_invoice_wrap .pmpro_a-print::before {
+
+    content: "\e681";
+    font-family: var(--xe_iconfont);
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+

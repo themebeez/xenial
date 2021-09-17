@@ -75,7 +75,7 @@ hr {
     margin: 0;
     overflow: hidden;
     box-sizing: border-box;
-    background-color: #bdbdbd;
+    background-color: var(--xe_border_color);
 }
 
 hr.wp-block-separator {

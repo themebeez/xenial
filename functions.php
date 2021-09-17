@@ -196,6 +196,8 @@ function xenial_scripts() {
 
 	wp_enqueue_style( 'xenial-woocommerce', $assets_url . 'css/woocommerce/woocommerce.css', NULL, XENIAL_THEME_VERSION, 'all' );
 
+	wp_enqueue_style( 'xenial-paid-membership-pro', $assets_url . 'css/compatibility/pmpro/pmpro.css', NULL, XENIAL_THEME_VERSION, 'all' );
+
 	//wp_enqueue_script( 'xenial-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.min.js', array( 'jquery' ), XENIAL_THEME_VERSION, true );		
 
 	wp_register_script( 'xenial-main', $assets_url . 'js/xenial-script.min.js', NULL, XENIAL_THEME_VERSION, true );
