@@ -5,7 +5,11 @@
 
 .woocommerce-account #customer_login h2,
 .woocommerce-MyAccount-content h3,
-.woocommerce-MyAccount-content .woocommerce-Address-title > h3 {
+.woocommerce-MyAccount-content .woocommerce-Address-title > h3,
+.woocommerce-MyAccount-content .woocommerce-order-details > h2,
+.woocommerce-MyAccount-content .woocommerce-order-downloads > h2,
+.woocommerce-MyAccount-content .woocommerce-column--billing-address .woocommerce-column__title,
+.woocommerce-MyAccount-content .woocommerce-column--shipping-address .woocommerce-column__title {
 
    font-size: 20px;
    font-weight: normal;
@@ -139,4 +143,18 @@
 .woocommerce-MyAccount-content form.edit-account fieldset {
 
    margin-bottom: 20px;
+}
+
+// Downloadable products
+
+.woocommerce-MyAccount-content .shop_table .woocommerce-MyAccount-downloads-file {
+
+   gap: 5px;
+}
+
+.woocommerce-MyAccount-content .shop_table .woocommerce-MyAccount-downloads-file::before {
+
+   content: "\e632";
+   display: inline-block;
+   font-family: var(--xe_iconfont);
 }
