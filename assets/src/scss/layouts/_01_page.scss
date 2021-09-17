@@ -4,8 +4,7 @@
 
 #xe-page {
 
-	margin-top: 60px;
-	margin-bottom: 60px;
+	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -62,14 +61,14 @@
 	width: var(--xe_default_sidebar_width); // i.e 35%
 }
 
-.xe-no-sidebar #xe-page #primary {
+.xenial-has-no-sidebar #xe-page #primary {
 
 	width: 100%;
 	margin-left: auto; // case: no sidebar
 	margin-right: auto; // case: no sidebar
 }
 
-.xe-no-sidebar #xe-page #secondary {
+.xenial-has-no-sidebar #xe-page #secondary {
 
 	display: none;
 }
@@ -108,13 +107,13 @@
 	order: 2;
 }
 
-body:not(.xe-no-sidebar) #xe-page #primary {
+body:not(.xenial-has-no-sidebar) #xe-page #primary {
 
 	padding-left: 0;
-	padding-right: 50px;
+	padding-right: 0;
 }
 
-.xe-sidebar-position-left:not(.xe-no-sidebar) #xe-page #primary {
+.xe-sidebar-position-left:not(.xenial-has-no-sidebar) #xe-page #primary {
 
 	padding-right: 0;
 	padding-left: 50px;

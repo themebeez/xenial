@@ -65,12 +65,18 @@
     margin-right: -15px;
 }
 
+.woocommerce .cart-collaterals .cross-sells,
 .woocommerce .cart-collaterals .cart_totals {
 
     float: right;
     width: 50%;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.woocommerce .cart-collaterals .cross-sells {
+
+    float: left;
 }
 
 #add_payment_method .cart-collaterals .cart_totals table, 
@@ -99,7 +105,9 @@
     font-weight: normal;
 }
 
-.woocommerce .cart-collaterals .cart_totals > h2 {
+.woocommerce .cart-collaterals .cart_totals > h2,
+.woocommerce .cart-collaterals .cross-sells > h2, 
+.woocommerce-page .cart-collaterals .cross-sells > h2 {
 
     font-size: 18px;
     font-weight: normal;
