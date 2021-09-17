@@ -59,7 +59,9 @@
     border-right: none;
 }
 
-.woocommerce-order-received .woocommerce-order-details h2 {
+.woocommerce-order-received .woocommerce-order-details h2,
+.woocommerce-order-received .woocommerce-customer-details h2,
+.woocommerce-order-received .woocommerce-column--shipping-address h2 {
 
     font-size: 20px;
     font-weight: normal;
@@ -74,5 +76,17 @@
 .woocommerce-order-received table.shop_table td > a:hover {
 
     color: var(--xe_seconary_color);
+}
+
+.woocommerce-order-received .woocommerce-customer-details h2,
+.woocommerce-order-received .woocommerce-column--shipping-address h2 {
+
+    margin-top: 0;
+}
+
+.woocommerce .woocommerce-customer-details address {
+
+    padding: 20px;
+    border: 1px solid var(--xe_border_color);
 }
 

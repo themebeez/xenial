@@ -1,0 +1,83 @@
+.woocommerce-pagination {
+
+    display: block;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+
+    @include flex();
+    justify-content: center;
+    padding: 0;
+    margin: 0 0 30px 0;
+    border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+
+    padding: 0;
+    margin: 0;
+    min-width: 40px;
+}
+
+.woocommerce nav.woocommerce-pagination ul li .page-numbers {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 40px;
+    border-radius: 3px;
+    margin-right: 5px;
+    color: var(--xe_base_text_color);
+    border: 2px solid transparent;
+    background-color: transparent;
+}
+
+.woocommerce nav.woocommerce-pagination ul li .page-numbers.current {
+
+    color: var(--xe_primary_color);
+    border-color: var(--xe_primary_color);
+    background: transparent;
+}
+
+.woocommerce nav.woocommerce-pagination ul li .page-numbers:hover {
+    
+    color: var(--xe_seconary_color);
+    text-decoration: none;
+    background: transparent;
+}
+
+.woocommerce nav.woocommerce-pagination ul li .page-numbers:focus {
+
+    outline: none;
+    background: transparent;
+}
+
+.woocommerce nav.woocommerce-pagination ul li .page-numbers.next,
+.woocommerce nav.woocommerce-pagination ul li .page-numbers.prev  {
+    
+    font-size: 10px;
+    font-weight: normal;
+    border: none;
+    background-color: transparent;
+}
+
+.woocommerce nav.woocommerce-pagination ul li:last-child .page-numbers {
+
+    margin-right: 0;
+}
