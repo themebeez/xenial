@@ -16,6 +16,11 @@ get_header();
 ?>
 <header class="xe-pageheader">
     <div class="xe-container">
+		<aside class="xe-pagetitle-holder">
+			<div class="xe-post-title xe-entry-title">
+	            <h1 class="xe-title"><?php the_title(); ?></h1>
+	        </div><!-- // xe-post-title -->
+		</aside><!-- // xe-pagetitle-holder -->
         <nav class="xe-breadcrumb" role="navigation">
             <ul class="trail-items">
                 <li class="trail-item trail-begin"><a href="index.html"><span>Home</span></a></li>
@@ -34,9 +39,6 @@ get_header();
 
 				?>
 				<article class="hentry xe-article">
-	                <div class="xe-post-title xe-entry-title">
-	                    <h1 class="xe-title"><?php the_title(); ?></h1>
-	                </div><!-- // xe-post-title -->
 	                <?php 
 	                if ( has_post_thumbnail() ) :
 	                	?>
