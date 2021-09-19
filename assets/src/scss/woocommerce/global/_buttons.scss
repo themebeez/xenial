@@ -9,7 +9,8 @@
 .woocommerce button.button.alt, 
 .woocommerce #respond input#submit,
 .woocommerce #respond input#submit.alt,
-.woocommerce ul.products li.product a.added_to_cart {
+.woocommerce ul.products li.product a.added_to_cart,
+.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
 
     display: inline-flex;
     flex-direction: row;

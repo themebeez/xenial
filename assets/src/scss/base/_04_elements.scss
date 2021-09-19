@@ -29,12 +29,6 @@ a:focus {
     text-decoration: none;
 }
 
-.wp-block-button__link,
-.cb-entry .wp-block-button__link {
-
-    color: inherit;
-}
-
 a:not([href]):not([tabindex]) {
 
     color: inherit;
@@ -58,8 +52,7 @@ a:not([href]):not([tabindex]):focus {
     outline: 0 !important;
 }
 
-.wp-block-button__link,
-a.wp-block-button__link {
+.wp-block-button__link {
 
     text-decoration: none;
 }
@@ -72,7 +65,7 @@ hr {
     height: 1px;
     border: none;
     padding: 0;
-    margin: 0;
+    margin: 20px 0;
     overflow: hidden;
     box-sizing: border-box;
     background-color: var(--xe_border_color);
