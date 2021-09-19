@@ -1,0 +1,155 @@
+/* -------------------------------------------------------------------------- 
+	#. WooCommerce Block: Product Listing
+   -------------------------------------------------------------------------- */
+
+.wc-block-grid__products {
+
+    @include flex();
+    padding: 0;
+    margin: 0 -15px;
+}
+
+.wc-block-grid__product.wc-block-grid__product {
+
+    position: relative;
+    border: none;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.wc-block-grid__product.wc-block-grid__product .wc-block-grid__product-link {
+
+    display: block;
+    font-size: var(--xe_base_font_size);
+    color: var(--xe_base_text_color);
+    text-decoration: none;
+}
+
+.wc-block-grid__product.wc-block-grid__product .wc-block-grid__product-link:hover {
+
+    color: var(--xe_seconary_color);
+    text-decoration: none;
+}
+
+.wc-block-grid__product.wc-block-grid__product .wc-block-grid__product-link:focus {
+
+    outline: none;
+}
+
+.wc-block-grid__product .wc-block-grid__product-add-to-cart {
+
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
+
+    position: relative;
+}
+
+.wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link:hover {
+
+    text-decoration: none;
+}
+
+.wc-block-grid__product .wc-block-grid__product-onsale {
+
+    border: none;
+    z-index: 10;
+}
+
+.wc-block-grid__product .wc-block-grid__product-rating {
+
+    @include flex();
+    justify-content: center;
+    margin: 0 0 20px 0;
+}
+
+.wc-block-grid__product-rating .star-rating:before, 
+.wc-block-grid__product-rating .wc-block-grid__product-rating__stars:before {
+
+    opacity: 1;
+}
+
+.wc-block-grid__product-rating .star-rating span:before, 
+.wc-block-grid__product-rating .wc-block-grid__product-rating__stars span:before {
+
+    color: var(--xe_woocommerce_star_color);
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. WooCommerce Block: Reviews
+   -------------------------------------------------------------------------- */
+
+
+.wc-block-components-review-list .wc-block-components-review-list-item__item {
+
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--xe_border_color);
+}
+
+.wc-block-components-review-list .wc-block-components-review-list-item__item:last-child {
+
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.wc-block-components-review-list .wc-block-review-list-item__product {
+
+    font-size: var(--xe_base_font_size);
+    font-weight: var(--xe_base_font_weight);
+    line-height: var(--xe_base_font_line_height);
+    margin-right: 10px;
+}
+
+.wc-block-components-review-list .wc-block-review-list-item__product > a {
+
+    color: var(--xe_base_text_color);
+}
+
+.wc-block-components-review-list .wc-block-review-list-item__product > a:hover {
+
+    color: var(--xe_seconary_color);
+}
+
+.wc-block-components-review-list-item__meta {
+
+    font-size: var(--xe_base_font_size); // fallback
+    font-size: calc(var(--xe_base_font_size) - 2px); // override
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. WooCommerce Block: Price Filter
+   -------------------------------------------------------------------------- */
+
+.wp-block-woocommerce-price-filter > h3 {
+
+    font-size: var(--xe_base_font_size);
+    font-weight: var(--xe_base_font_weight);
+    margin: 20px 0 30px 0;
+}
+
+.wc-block-components-price-slider__range-input-wrapper {
+
+    margin: 0 0 40px 0;
+}
+
+.wc-block-components-price-slider__range-input-wrapper,
+.wc-block-components-price-slider__range-input-progress {
+
+    height: 4px;
+}
+
+.wc-block-components-price-slider__range-input {
+
+    top: -4px;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. WooCommerce Block: Product Categories
+   -------------------------------------------------------------------------- */

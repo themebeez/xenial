@@ -122,10 +122,12 @@
 
 // Product: Title
 
+.wc-block-grid__product .wc-block-grid__product-title,
 .woocommerce ul.products li.product .xe-product-title .xe-title {
 
 	font-size: var(--xe_woo_product_title_size);
-	font-weight: normal;
+	font-weight: var(--xe_base_font_weight);
+	line-height: var(--xe_base_font_line_height);
     padding: 0;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -231,6 +233,7 @@
 
 // product: price
 
+.wc-block-grid__product .wc-block-grid__product-price,
 .woocommerce ul.products li.product .xe-product-price .price {
 
 	display: inline-flex;
@@ -245,6 +248,7 @@
 
 .woocommerce div.product p.price del, 
 .woocommerce div.product span.price del,
+.wc-block-grid__product .wc-block-grid__product-price del,
 .woocommerce ul.products li.product .xe-product-price .price del {
 
     display: inline-flex;
@@ -256,6 +260,7 @@
 
 .woocommerce div.product p.price ins, 
 .woocommerce div.product span.price ins,
+.wc-block-grid__product .wc-block-grid__product-price ins,
 .woocommerce ul.products li.product .xe-product-price .price ins {
 
     display: inline-flex;
@@ -273,7 +278,8 @@
 // product: on sale
 
 .woocommerce span.onsale,
-.woocommerce ul.products li.product .onsale {
+.woocommerce ul.products li.product .onsale,
+.wc-block-grid__product .wc-block-grid__product-onsale {
 
 	display: inline-flex;
 	position: absolute;
@@ -298,7 +304,8 @@
 
 // product: star rating
 
-.woocommerce .star-rating {
+.woocommerce .star-rating,
+.wc-block-grid__product-rating .star-rating {
 
 	position: relative;
 	overflow: hidden;
@@ -313,18 +320,21 @@
     letter-spacing: 0;
 }
 
-.woocommerce .star-rating::before {
+.woocommerce .star-rating::before,
+.wc-block-grid__product-rating .star-rating::before {
 
 	content: "\e60a\e60a\e60a\e60a\e60a";
 	color: var(--xe_woocommerce_star_alternate_color);
 }
 
-.woocommerce .star-rating span {
+.woocommerce .star-rating span,
+.wc-block-grid__product-rating .star-rating span {
 
 	padding-top: 17px;
 }
 
-.woocommerce .star-rating span::before {
+.woocommerce .star-rating span::before,
+.wc-block-grid__product-rating .star-rating span::before {
 
 	content: "\e60a\e60a\e60a\e60a\e60a";
 }
