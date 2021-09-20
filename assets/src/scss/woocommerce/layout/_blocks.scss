@@ -153,3 +153,32 @@
 /* -------------------------------------------------------------------------- 
 	#. WooCommerce Block: Product Categories
    -------------------------------------------------------------------------- */
+
+.wc-block-product-categories {
+
+    margin-bottom: 30px;
+}
+
+.wc-block-product-categories-list {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wc-block-product-categories-list li {
+
+    display: block;
+    margin: 10px 0;
+}
+
+.wc-block-product-categories-list li a {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.wc-block-product-categories-list ul {
+
+    margin: 0 0 0 20px;
+}
