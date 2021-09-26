@@ -171,10 +171,10 @@ if ( ! function_exists( 'xenial_get_text_transforms' ) ) {
 		return apply_filters( 
 			'xenial_text_transforms_array',  
 			array(
-				'inherit' => esc_html__( 'Inherit', 'xenial' ),
-				'uppercase' => esc_html__( 'Uppercase', 'xenial' ),
-				'lowercase' => esc_html__( 'Lowercase', 'xenial' ),
-				'capitalize' => esc_html__( 'Capitalize', 'xenial' ),
+				'inherit' => esc_html__( '-', 'xenial' ),
+				'uppercase' => esc_html__( 'AA', 'xenial' ),
+				'lowercase' => esc_html__( 'aa', 'xenial' ),
+				'capitalize' => esc_html__( 'Aa', 'xenial' ),
 			)
 		);
 	}
@@ -187,11 +187,10 @@ if ( ! function_exists( 'xenial_get_font_styles' ) ) {
 
 		return apply_filters( 
 			'xenial_filter_font_styles',  
-			array(
-				'normal' => esc_html__( 'Normal', 'xenial' ),
-				'italic' => esc_html__( 'Italic', 'xenial' ),
-				'oblique' => esc_html__( 'Oblique', 'xenial' )
-			)
+			[
+				'normal' => 'Aa',
+				'italic' => '<i>Aa</i>'
+			]
 		);
 	}
 }

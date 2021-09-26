@@ -11,7 +11,7 @@
 .customize-control-xenial-slider .xenial-slider {
     display: inline-block;
     position: relative;
-    width: 75%;
+    width: 70%;
     height: 3px;
     background-color: rgba(0, 0, 0, .15);
     border-radius: 5px;
@@ -20,6 +20,8 @@
     -moz-transition: background .5s;
     transition: background .5s;
     border: none;
+    margin-left: 5px;
+    top: 6px;
 }
 
 .customize-control-xenial-slider .xenial-slider:hover {
@@ -34,6 +36,7 @@
     background-color: #0085ba;
     background-image: none;
     border-color: #0085ba;
+    left: -5px;
 }
 
 .customize-control-xenial-slider .xenial-slider .ui-slider-handle {
@@ -42,13 +45,14 @@
     display: inline-block;
     position: absolute;
     top: 50%;
-    -webkit-transform: translateY(-50%) translateX(-3px);
-    transform: translateY(-50%) translateX(-3px);
+    -webkit-transform: translateY(-50%) translateX(-10px);
+    transform: translateY(-50%) translateX(-10px);
     border-radius: 50%;
     cursor: pointer;
     background-image: none;
     background-color: #0085ba;
     border: none;
+    margin-left: 0;
 }
 
 .customize-control-xenial-slider .xenial-slider-input {

@@ -56,7 +56,6 @@
 				resetValue = sliderMaxValue;
 				$(this).val(resetValue);
 			}
-			console.log(resetValue);
 			$(this).parent().find('.slider').slider('value', resetValue);
 		});
 	});

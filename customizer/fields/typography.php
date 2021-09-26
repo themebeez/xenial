@@ -162,6 +162,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true,
 		    )
 		) 
 	) 
@@ -209,6 +210,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 10,
 		        'step'  => 0.1,
+		        'responsive' => true
 		    )
 		) 
 	) 
@@ -390,6 +392,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' =>true
 		    ),
 		) 
 	) 
@@ -437,6 +440,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 10,
 		        'step'  => 0.1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -511,6 +515,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -558,6 +563,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 10,
 		        'step'  => 0.1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -631,6 +637,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -678,6 +685,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 10,
 		        'step'  => 0.1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -751,6 +759,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -798,6 +807,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 10,
 		        'step'  => 0.1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -872,6 +882,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -919,6 +930,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 10,
 		        'step'  => 0.1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -992,6 +1004,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true
 		    ),
 		) 
 	) 
@@ -1039,6 +1052,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 10,
 		        'step'  => 0.1,
+		        'responsive' => true
 		    ),
 		) 
 	) 

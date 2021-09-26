@@ -2,109 +2,109 @@
 /**
  * Funtion To Get Google Fonts
  */
-if ( ! function_exists( 'xenial_google_fonts' ) ) {
-    /**
-     * Return Font's URL.
-     *
-     * @since 1.0.0
-     * @return string Fonts URL.
-     */
-    function xenial_google_fonts() {
+// if ( ! function_exists( 'xenial_google_fonts' ) ) {
+//     /**
+//      * Return Font's URL.
+//      *
+//      * @since 1.0.0
+//      * @return string Fonts URL.
+//      */
+//     function xenial_google_fonts() {
 
-        $fonts_url = '';
-        $fonts = array();
-        $subsets = 'latin,latin-ext';
+//         $fonts_url = '';
+//         $fonts = array();
+//         $subsets = 'latin,latin-ext';
 
-        $body_font_type = xenial_get_option( 'body_font_type' );
+//         $body_font_type = xenial_get_option( 'body_font_type' );
 
-        if ( $body_font_type == 'google_font' ) {
+//         if ( $body_font_type == 'google_font' ) {
 
-            $body_google_font = xenial_get_option( 'body_google_font' );
+//             $body_google_font = xenial_get_option( 'body_google_font' );
 
-            $fonts[] = xenial_get_google_font_url( $body_google_font );
-        }
+//             $fonts[] = xenial_get_google_font_url( $body_google_font );
+//         }
 
-        $headings_font_type = xenial_get_option( 'headings_font_type' );
+//         $headings_font_type = xenial_get_option( 'headings_font_type' );
 
-        if ( $headings_font_type == 'google_font' ) {
+//         if ( $headings_font_type == 'google_font' ) {
 
-            $headings_google_font = xenial_get_option( 'headings_google_font' );
+//             $headings_google_font = xenial_get_option( 'headings_google_font' );
 
-            $fonts[] = xenial_get_google_font_url( $headings_google_font );
-        }
+//             $fonts[] = xenial_get_google_font_url( $headings_google_font );
+//         }
 
-        $logo_font_type = xenial_get_option( 'site_identity_font_type' );
+//         $logo_font_type = xenial_get_option( 'site_identity_font_type' );
 
-        if ( $logo_font_type == 'google_font' ) {
+//         if ( $logo_font_type == 'google_font' ) {
 
-            $logo_google_font = xenial_get_option( 'site_identity_google_font' );
+//             $logo_google_font = xenial_get_option( 'site_identity_google_font' );
 
-            $fonts[] = xenial_get_google_font_url( $logo_google_font );
-        }
+//             $fonts[] = xenial_get_google_font_url( $logo_google_font );
+//         }
 
-        $fonts = array_unique( $fonts );
+//         $fonts = array_unique( $fonts );
 
-        foreach ( $fonts as $f) {
+//         foreach ( $fonts as $f) {
 
-            $f_family = explode(':', $f);
+//             $f_family = explode(':', $f);
 
-            $f_family = str_replace('+', ' ', $f_family);
+//             $f_family = str_replace('+', ' ', $f_family);
 
-            $font_family = ( !empty( $f_family[1]) ) ? $f_family[1] : '';
+//             $font_family = ( !empty( $f_family[1]) ) ? $f_family[1] : '';
 
-            $fonts[] = $f_family[0].':'.$font_family;
+//             $fonts[] = $f_family[0].':'.$font_family;
 
-        }
+//         }
 
-        if ( $fonts ) {
-            $fonts_url = add_query_arg( array(
-                'family' => rawurlencode( implode( '|', $fonts ) ),
-                'subset' => rawurlencode( $subsets ),
-            ), 'https://fonts.googleapis.com/css' );
-        }
+//         if ( $fonts ) {
+//             $fonts_url = add_query_arg( array(
+//                 'family' => rawurlencode( implode( '|', $fonts ) ),
+//                 'subset' => rawurlencode( $subsets ),
+//             ), 'https://fonts.googleapis.com/css' );
+//         }
 
-        return $fonts_url;
-    }
-}
+//         return $fonts_url;
+//     }
+// }
 
 
-if ( ! function_exists( 'xenial_get_google_font_url' ) ) {
+// if ( ! function_exists( 'xenial_get_google_font_url' ) ) {
 
-    function xenial_get_google_font_url( $font ) {
+//     function xenial_get_google_font_url( $font ) {
 
-        $font_url = '';
+//         $font_url = '';
 
-        $googe_font = json_decode( $font, true );
+//         $googe_font = json_decode( $font, true );
 
-        $font_url = $googe_font['font'];
+//         $font_url = $googe_font['font'];
 
-        if ( $googe_font['regularweight'] ) {
+//         if ( $googe_font['regularweight'] ) {
 
-            $font_url .= ':';
+//             $font_url .= ':';
 
-            $font_weights = '';
+//             $font_weights = '';
 
-            foreach ( $googe_font['regularweight'] as $font_weight ) {
+//             foreach ( $googe_font['regularweight'] as $font_weight ) {
                 
-                if ( $font_weights ) {
-                    $font_weights .= ',';
-                }
+//                 if ( $font_weights ) {
+//                     $font_weights .= ',';
+//                 }
 
-                if ( $font_weight === 'italic' ) {
-                    $font_weights .= '400i';
-                } else if ( $font_weight === 'regular' ) {
-                    $font_weights .= '400';
-                } else {
-                    $font_weights .= str_replace(  'italic', 'i', $font_weight );
-                }
-            }
+//                 if ( $font_weight === 'italic' ) {
+//                     $font_weights .= '400i';
+//                 } else if ( $font_weight === 'regular' ) {
+//                     $font_weights .= '400';
+//                 } else {
+//                     $font_weights .= str_replace(  'italic', 'i', $font_weight );
+//                 }
+//             }
 
-            $font_url .= $font_weights;
-        }
+//             $font_url .= $font_weights;
+//         }
 
-        return $font_url;
-    }
-}
+//         return $font_url;
+//     }
+// }
 
 
 /**

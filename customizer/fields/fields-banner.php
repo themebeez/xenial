@@ -197,6 +197,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true
 		    ),
 		    'active_callback' => 'xenial_is_banner_slider_enabled'
 		) 
@@ -654,6 +655,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true,
 		    ),
 		    'active_callback' => 'xenial_is_banner_slider_enabled'
 		) 

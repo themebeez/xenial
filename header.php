@@ -20,7 +20,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> <?php xenial_get_active_theme_skin_data_attr(); ?>>
+<body <?php body_class(); ?>>
 	<?php 
 	if( function_exists( 'wp_body_open' ) ) { 
 

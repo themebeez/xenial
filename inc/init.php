@@ -1,34 +1,20 @@
 <?php
 
-$xenial_template_functions_path = XENIAL_THEME_DIR . '/inc/template-functions/template-functions-';
+require XENIAL_THEME_DIR . '/inc/helper-functions.php';
 
-// Load template actions.
-
-require $xenial_template_functions_path . 'header.php';
-require $xenial_template_functions_path . 'top-header.php';
-require $xenial_template_functions_path . 'main-header.php';
-require $xenial_template_functions_path . 'banner.php'; 
-require $xenial_template_functions_path . 'page-header.php';
-require $xenial_template_functions_path . 'breadcrumbs.php';
-require $xenial_template_functions_path . 'article-content.php';
-require $xenial_template_functions_path . 'footer.php';
-require $xenial_template_functions_path . 'miscellaneous.php';
+$xenial_helper_functions_path = XENIAL_THEME_DIR . '/inc/helpers';
 
 
-require XENIAL_THEME_DIR . '/inc/helpers.php'; 
+require $xenial_helper_functions_path . '/helpers-sidebar.php';
 
-require XENIAL_THEME_DIR . '/inc/third-party/breadcrumbs.php'; 
+require $xenial_helper_functions_path . '/helpers-sidebar.php';
 
-if ( class_exists( 'WooCommerce' ) ) {
 
-	require XENIAL_THEME_DIR . '/inc/third-party/woocommerce.php'; 
+$xenial_template_functions_path = XENIAL_THEME_DIR . '/inc/template-functions';
 
-	require $xenial_template_functions_path . 'woocommerce.php'; 
-
-	if ( class_exists( 'Addonify_Wishlist' ) ) {
-
-		require XENIAL_THEME_DIR . '/inc/third-party/addonify.php';
-	}
-}
+require $xenial_template_functions_path . '/template-meta.php';
+require $xenial_template_functions_path . '/template-content.php';
+require $xenial_template_functions_path . '/template-navigation.php';
+require $xenial_template_functions_path . '/template-navigation.php';
 
 

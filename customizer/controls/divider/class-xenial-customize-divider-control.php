@@ -22,7 +22,7 @@ class Xenial_Customize_Divider_Control extends WP_Customize_Control {
 	 *
 	 * @var string
 	 */
-	public $type = 'divider';
+	public $type = 'xenial-divider';
 
 	/**
 	 * Enqueue our scripts and styles

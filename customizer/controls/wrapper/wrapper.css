@@ -2,6 +2,15 @@
 	margin-top: 10px;
 }
 
+/*.customize-control-xenial-wrapper.no-margin {
+	margin-top: -25px;
+}
+
+.customize-control-xenial-wrapper.no-margin .customizer-wrapper-title {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}*/
+
 .customizer-wrapper-title {
 	display: block;
 	position: relative;

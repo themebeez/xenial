@@ -727,6 +727,7 @@ $wp_customize->add_control(
 		        'min'   => 0,
 		        'max'   => 100,
 		        'step'  => 1,
+		        'responsive' => true
 		    ),
 		    'active_callback' => 'xenial_is_page_header_enabled'
 		) 
