@@ -19,10 +19,10 @@
 			jQuery( 'body' ).on( 'click', '.customize-control .responsive-switchers button', function( event ) {
 				
 				// Set up variables				var ,
-					var $device 	= jQuery(this).data( 'device' ),
-					$body 		= jQuery( '.wp-full-overlay' ),
-					$footer_devices = jQuery( '.wp-full-overlay-footer .devices' );
-					var $devices 	= jQuery( '.responsive-switchers' );
+				var $device = jQuery(this).data( 'device' ),
+				$body = jQuery( '.wp-full-overlay' ),
+				$footer_devices = jQuery( '.wp-full-overlay-footer .devices' );
+				var $devices = jQuery( '.responsive-switchers' );
 				// Button class
 				
 				if ( $device == 'desktop' ) {
@@ -34,7 +34,7 @@
 				$devices.find( 'button' ).removeClass( 'active' );
 				$devices.find( 'button.preview-' + $device ).addClass( 'active' );
 
-				var controls = jQuery('.control-wrap');
+				var controls = jQuery('.responsive-control-wrap');
 				controls.each(function() {
 					if ( jQuery(this).hasClass($device) ) {
 						jQuery(this).addClass('active');
@@ -55,7 +55,7 @@
 	        jQuery('#customize-footer-actions .devices button').on( 'click', function( event ) {
 	            event.preventDefault();
 	            var device = jQuery(this).data('device');
-	            var queries 	= jQuery( '.responsive-switchers' );
+	            var queries = jQuery( '.responsive-switchers' );
 
 	            // Button class
 				if (  device == 'desktop' ) {
@@ -73,7 +73,7 @@
 				queries.find( 'button' ).removeClass( 'active' );
 	            queries.find( 'button.preview-' + device ).addClass( 'active' );
 
-	            var controls = jQuery('.control-wrap');
+	            var controls = jQuery('.responsive-control-wrap');
 				controls.each(function() {
 					if ( jQuery(this).hasClass(device) ) {
 						jQuery(this).addClass('active');

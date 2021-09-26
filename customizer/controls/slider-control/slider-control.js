@@ -11,6 +11,8 @@ wp.customize.controlConstructor['xenial-slider'] = wp.customize.Control.extend({
 			tablet_slider_input 	= tablet_slider.next( '.xenial-slider-input' ).find( 'input.tablet-input' ),
 			mobile_slider 			= control.container.find( '.xenial-slider.mobile-slider' ),
 			mobile_slider_input 	= mobile_slider.next( '.xenial-slider-input' ).find( 'input.mobile-input' ),
+			normal_slider 			= control.container.find( '.xenial-slider.normal-slider' ),
+			normal_slider_input 	= normal_slider.next( '.xenial-slider-input' ).find( 'input.normal-input' ),
 			slider_input,
 			$this,
 			val;
@@ -96,6 +98,34 @@ wp.customize.controlConstructor['xenial-slider'] = wp.customize.Control.extend({
 
 		control.container.on( 'change keyup paste', '.mobile input', function() {
 			control.settings['mobile'].set( jQuery( this ).val() );
+		} );
+	
+
+		normal_slider.slider( {
+			range: 'min',
+			value: normal_slider_input.val(),
+			min: +normal_slider_input.attr( 'min' ),
+			max: +normal_slider_input.attr( 'max' ),
+			step: +normal_slider_input.attr( 'step' ),
+			slide: function( event, ui ) {
+				normal_slider_input.val( ui.value ).keyup();
+			},
+	        change: function( event, ui ){
+	            control.setting.set( ui.value );
+	        }
+		} );
+
+		// Update the slider when the number value change
+		jQuery( 'input.normal-input' ).on( 'change keyup paste', function() {
+			$this 			= jQuery( this );
+			val 			= $this.val();
+			slider_input 	= $this.parent().prev( '.xenial-slider.normal-slider' );
+
+			slider_input.slider( 'value', val );
+		} );
+
+		control.container.on( 'change keyup paste', '.normal input', function() {
+			control.setting.set( jQuery( this ).val() );
 		} );
 
 	}

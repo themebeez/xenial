@@ -1,8 +1,8 @@
-.customize-control-divider {
+.customize-control-xenial-divider {
     display: block;
 }
 
-.customize-control-divider .divider-line {
+.customize-control-xenial-divider .divider-line {
 	height: 1px;
 	border-bottom: 1px solid #d9d9d9;
 	margin: 10px -15px;

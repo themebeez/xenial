@@ -1,3 +1,7 @@
+.customize-control-xenial-alpha-color .customize-control-title {
+	width: calc(100% - 120px);
+}
+
 .customize-control-alpha-color .wp-picker-container .iris-picker {
 	border-bottom:none;
 }

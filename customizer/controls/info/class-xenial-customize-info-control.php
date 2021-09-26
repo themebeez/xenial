@@ -23,7 +23,7 @@ class Xenial_Customize_Info_Control extends WP_Customize_Control {
 	 *
 	 * @var string
 	 */
-	public $type = 'info';
+	public $type = 'xenial-info';
 
 	/**
 	 * Enqueue our scripts and styles
@@ -47,21 +47,16 @@ class Xenial_Customize_Info_Control extends WP_Customize_Control {
 	 * @since 1.0.0
 	 */
 	public function render_content() {
-		
 		?>
 		<div class="customize-control-info-wrapper">
-			<div class="customize-control-info-wrapper-inner">
-				<div class="customize-control-info-title-desc-wrapper">
-					<span class="customize-control-info-title"><?php echo esc_html( $this->label ); ?></span>
-					<?php
-					if( $this->description ) {
-						?>
-						<p><?php echo esc_html( $this->description ); ?></p>
-						<?php
-					}
-					?>
-				</div>
-			</div>
+			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<?php
+			if( $this->description ) {
+				?>
+				<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
+				<?php
+			}
+			?>
 		</div>
 		<?php
 	}

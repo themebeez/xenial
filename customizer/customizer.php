@@ -139,12 +139,17 @@ function xenial_customize_register( $wp_customize ) {
 	/**
 	 * Button group customize control.
 	 */
-	require $controls_path . 'button-group/class-xenial-customize-button-group-control.php';
+	// require $controls_path . 'button-group/class-xenial-customize-button-group-control.php';
 
 	/**
 	 * Button checkbox customize control.
 	 */
 	require $controls_path . 'button-checkbox/class-xenial-customize-button-checkbox-control.php';
+
+
+	require $controls_path . 'radio-button-group/class-xenial-customize-radio-button-group.php';
+
+	$wp_customize->register_control_type( 'Xenial_Customize_Radio_Button_Group_Control' );
 
 
 	/**
@@ -200,19 +205,20 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/transparent-header.php';
 
 	require $customizer_fields_path . 'header/elements/logo.php';
-	require $customizer_fields_path . 'header/elements/ad.php';
+	// require $customizer_fields_path . 'header/elements/ad.php';
 	require $customizer_fields_path . 'header/elements/button.php';
 	require $customizer_fields_path . 'header/elements/html.php';
 	require $customizer_fields_path . 'header/elements/primary-menu.php';
 	require $customizer_fields_path . 'header/elements/search.php';
-	// require $customizer_fields_path . 'header/elements/seconday-menu.php';
-	// require $customizer_fields_path . 'header/elements/social-links.php';
+	require $customizer_fields_path . 'header/elements/secondary-menu.php';
+	require $customizer_fields_path . 'header/elements/social-links.php';
 	// require $customizer_fields_path . 'header/elements/text.php';
 
 	require $customizer_fields_path . 'pages/inner-header.php';
 	require $customizer_fields_path . 'pages/breadcrumbs.php';
 	require $customizer_fields_path . 'pages/archive-settings.php';
 	require $customizer_fields_path . 'pages/single-settings.php';
+	require $customizer_fields_path . 'pages/single-page.php';
 	
 	require $customizer_fields_path . 'fields-banner.php';
 
@@ -259,7 +265,12 @@ require XENIAL_THEME_DIR . '/customizer/functions/customizer-callbacks.php';
  */
 require XENIAL_THEME_DIR . '/customizer/functions/customizer-choices.php';
 
+
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-typo.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-colors.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css.php';
+
 
 
 

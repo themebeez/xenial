@@ -22,26 +22,33 @@ xenial_tab_field(
 				'xenial_filter_header_html_tab_1_controls',
 				[
 					'header_html' => [],
-					'header_html_alignment_wrapper' => [],
-					'header_html_alignment_desktop' => [],
-					'header_html_alignment_tablet' => [],
-					'header_html_alignment_mobile' => [],
-					'header_html_visibility' => []
+					'header_html_alignment' => [],
+					'header_html_visibility' => [],
+
+					'header_html_general_divider_1' => '',
+					'header_html_general_divider_2' => '',
+					'header_html_general_divider_3' => '',
 				]
 			),
 			'tab_2' => apply_filters(
 				'xenial_filter_header_html_tab_2_controls',
 				[	
-					'header_html_alignment_color_wrapper' => [],
-					'header_html_text_color' => [],
-					'header_html_link_color' => [],
-		            'header_html_link_hover_color' => [],
-		            'header_html_alignment_typo_wrapper' => [],
+					'header_html_typo' => [],
 		            'header_html_text_font_size' => [],
 		            'header_html_text_line_height' => [],
 		            'header_html_text_font_weight' => [],
 		            'header_html_text_font_style' => [],
 		            'header_html_text_text_transform' => [],
+
+		            'header_html_default_state_color' => '',
+		            'header_html_text_color' => '',
+					'header_html_link_color' => '',
+
+					'header_html_hover_state_color' => '',
+					'header_html_link_hover_color' => [],
+
+					'header_html_style_divider_1' => '',
+					'header_html_style_divider_2' => ''
 				]
 			)
 		]
@@ -65,6 +72,15 @@ xenial_tinymce_editor_field(
 );
 
 
+xenial_divider_field( 
+	'header_html_general_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_html', 
+	] 
+);
+
+
 xenial_button_checkbox_field(
 	'header_html_visibility',
 	[
@@ -82,128 +98,53 @@ xenial_button_checkbox_field(
 );
 
 
-xenial_controls_wrapper_field(
-	'header_html_alignment_wrapper',
+xenial_divider_field( 
+	'header_html_general_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_html', 
+	] 
+);
+
+
+xenial_radio_button_group_field(
+	'header_html_alignment',
 	[
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Alignment', 'xenial' ),
-	    'class' => 'header-html-alignment',
-	    'controls_to_wrap' => 3,
-		'expanded' => false
+		'item' => 'icon',
+		'columns' => 3,
+		'choices' => [
+			'left' => 'dashicons-align-left',
+			'center' => 'dashicons-align-center',
+			'right' => 'dashicons-align-right'
+		],
+		'default' => $xenial_customizer_defaults['header_html_alignment']
 	],
 	true
 );
 
 
-xenial_button_group_field(
-	'header_html_alignment_desktop',
-	[
+xenial_divider_field( 
+	'header_html_general_divider_3', 
+	[ 
 		'priority' => 10,
-		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Desktop', 'xenial' ),
-		'item' => 'icon',
-		'choices' => [
-			'left' => 'dashicons-align-left',
-			'center' => 'dashicons-align-center',
-			'right' => 'dashicons-align-right'
-		],
-		'default' => $xenial_customizer_defaults['header_html_alignment_desktop']
-	]
-);
-
-
-xenial_button_group_field(
-	'header_html_alignment_tablet',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Tablet', 'xenial' ),
-		'item' => 'icon',
-		'choices' => [
-			'left' => 'dashicons-align-left',
-			'center' => 'dashicons-align-center',
-			'right' => 'dashicons-align-right'
-		],
-		'default' => $xenial_customizer_defaults['header_html_alignment_tablet']
-	]
-);
-
-
-xenial_button_group_field(
-	'header_html_alignment_mobile',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Mobile', 'xenial' ),
-		'item' => 'icon',
-		'choices' => [
-			'left' => 'dashicons-align-left',
-			'center' => 'dashicons-align-center',
-			'right' => 'dashicons-align-right'
-		],
-		'default' => $xenial_customizer_defaults['header_html_alignment_mobile']
-	]
+		'section' => 'xenial_header_html', 
+	] 
 );
 
 
 
-xenial_controls_wrapper_field(
-	'header_html_alignment_color_wrapper',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Font Color', 'xenial' )
-	],
-	false
-);
 
 
-xenial_color_field(
-	'header_html_text_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Text Initial', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_html_text_color']
-	],
-	false
-);
-
-
-xenial_color_field(
-	'header_html_link_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Link Initial', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_html_link_color']
-	],
-	false
-);
-
-
-xenial_color_field(
-	'header_html_link_hover_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Link Hover', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_html_link_hover_color']
-	],
-	false
-);
-
-
-
-xenial_controls_wrapper_field(
-	'header_html_alignment_typo_wrapper',
+xenial_info_field(
+	'header_html_typo',
 	[
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Typography', 'xenial' )
-	],
-	false
+	]
 );
 
 
@@ -213,10 +154,9 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1],
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
 		'defaults' => $xenial_customizer_defaults['header_html_text_font_size']
-	],
-	true
+	]
 );
 
 
@@ -226,10 +166,9 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' => ['min' => 1, 'max' => 5, 'step' => 0.5],
+		'input_attrs' => ['min' => 1, 'max' => 5, 'step' => 0.5, 'responsive' => true],
 		'defaults' => $xenial_customizer_defaults['header_html_text_font_size']
-	],
-	true
+	]
 );
 
 
@@ -245,25 +184,108 @@ xenial_select_field(
 );
 
 
-xenial_select_field(
+xenial_radio_button_group_field(
 	'header_html_text_font_style',
 	[
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Font Style', 'xenial' ),
-		'choices' => xenial_get_font_styles(),
+		'item' => 'text',
+		'columns' => 2,
+		'choices' => [
+			'normal' => 'Aa',
+			'italic' => '<i>Aa</i>'
+		],
 		'default' => $xenial_customizer_defaults['header_html_text_font_style']
-	]
+	],
+	false
 );
 
 
-xenial_select_field(
+xenial_radio_button_group_field(
 	'header_html_text_text_transform',
 	[
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Text Transform', 'xenial' ),
+		'item' => 'text',
+		'columns' => 4,
 		'choices' => xenial_get_text_transforms(),
 		'default' => $xenial_customizer_defaults['header_html_text_text_transform']
+	],
+	false
+);
+
+
+xenial_divider_field( 
+	'header_html_style_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_html', 
+	] 
+);
+
+
+xenial_info_field(
+	'header_html_default_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_html',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
 	]
+);
+
+
+xenial_color_field(
+	'header_html_text_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_html',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['header_html_text_color']
+	],
+	false
+);
+
+
+xenial_color_field(
+	'header_html_link_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_html',
+		'label' => esc_html__( 'Link Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['header_html_link_color']
+	],
+	false
+);
+
+
+xenial_divider_field( 
+	'header_html_style_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_html', 
+	] 
+);
+
+
+xenial_info_field(
+	'header_html_hover_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_html',
+		'label' => esc_html__( 'Hover State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'header_html_link_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_html',
+		'label' => esc_html__( 'Link Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['header_html_link_hover_color']
+	],
+	false
 );

@@ -263,8 +263,8 @@
 }
 
 #customize-controls .customize-control-title {
-
     font-size: 13px;
+    font-weight: 500;
 }
 
 #customize-controls .wp-picker-container.wp-picker-active {
@@ -410,7 +410,7 @@ li#customize-controls-logo_position {
     line-height: 18px
 }
 
-.customize-control.has-switchers>.control-wrap:not(.active) {
+.customize-control.has-switchers>.responsive-control-wrap:not(.active) {
     display: none;
     width: 100%
 }
@@ -443,25 +443,25 @@ body.rtl .customize-control .responsive-switchers li {
     body .customize-control .responsive-switchers {
         display: none
     }
-    body .customize-control.has-switchers>.control-wrap:not(.active) {
+    body .customize-control.has-switchers>.responsive-control-wrap:not(.active) {
         display: inline-block
     }
 }
 
 @media screen and (min-width:481px) and (max-width:768px) {
-    body .customize-control.has-switchers>.control-wrap {
+    body .customize-control.has-switchers>.responsive-control-wrap {
         display: inline-block
     }
-    body .customize-control.has-switchers>.control-wrap:not(.tablet) {
+    body .customize-control.has-switchers>.responsive-control-wrap:not(.tablet) {
         display: none
     }
 }
 
 @media screen and (max-width:480px) {
-    body .customize-control.has-switchers>.control-wrap {
+    body .customize-control.has-switchers>.responsive-control-wrap {
         display: inline-block
     }
-    body .customize-control.has-switchers>.control-wrap:not(.mobile) {
+    body .customize-control.has-switchers>.responsive-control-wrap:not(.mobile) {
         display: none
     }
 }

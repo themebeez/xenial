@@ -77,9 +77,9 @@ $wp_customize->add_control(
 
 
 $wp_customize->add_setting( 
-	'sidebar_archives_and_search_position',
+	'sidebar_archive_position',
 	array(
-		'default' => $xenial_customizer_defaults['sidebar_archives_and_search_position'],
+		'default' => $xenial_customizer_defaults['sidebar_archive_position'],
 		'sanitize_callback' => 'xenial_sanitize_select'
 	) 
 );
@@ -87,9 +87,9 @@ $wp_customize->add_setting(
 $wp_customize->add_control( 
 	new Xenial_Customize_SlimSelect_Control( 
 		$wp_customize,
-		'sidebar_archives_and_search_position',
+		'sidebar_archive_position',
 		array(
-			'label' => esc_html__( 'Archives &amp; Search', 'xenial' ),
+			'label' => esc_html__( 'Archive / Category / Tag / Search', 'xenial' ),
 			'section' => 'xenial_sidebar',
 			'choices' => xenial_get_sidebar_positions(),
 			'priority' => 10,

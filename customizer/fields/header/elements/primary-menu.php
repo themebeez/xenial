@@ -2,2627 +2,1873 @@
 
 $xenial_customizer_defaults = xenial_get_customizer_defaults();
 
-$wp_customize->add_section( 
-	'xenial_header_primary_menu', 
-	array(
-		'priority'		=> 11,
-		'title'			=> esc_html__( 'Primary Menu', 'xenial' ),
-		'panel'			=> 'xenial_site_header_panel'
-	) 
+
+xenial_section_field( 
+	'xenial_header_primary_menu',
+	[
+		'priority' => 11,
+		'panel' => 'xenial_site_header_panel',
+		'title' => esc_html__( 'Primary Menu', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'xenial_header_primary_menu_tab', 
-	array(
-    	'sanitize_callback'        => 'wp_filter_nohtml_kses',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Tab_Control( 
-		$wp_customize, 
-		'xenial_header_primary_menu_tab', 
-		array(
-		    'section'                  => 'xenial_header_primary_menu',
-		    'tabs'                     => xenial_get_tab_control_2_labels(),
-		    'controls'                 => array(
-		        'tab_1' => apply_filters( 
-		        	'xenial_header_primary_menu_tab_1_controls', 
-		        	[
-		        		'primary_desktop_menu_wrapper' => [],
-		        		'primary_menu_top_level_items_wrapper' => [],
-		        		'primary_menu_top_level_items_hover_effect' => [],
-		        		'primary_menu_top_level_items_spacing' => [],
-		        		'primary_menu_dropdown_items_wrapper' => [],
-		        		'primary_menu_dropdown_items_hover_effect' => [],
-		        		'primary_menu_dropdown_items_divider_width' => [],
-		        		'primary_menu_dropdown_width' => [],
-		        		'primary_menu_dropdown_top_offset' => [],
-		        		'primary_mobile_menu_wrapper' => [],
-		        		'mobile_menu_breakpoint' => [],
-		        		'mobile_menu_toggle_button_label' => [],
-		        		'mobile_menu_items_divider_width' => [],
-		        		'mobile_offcanvas_menu_position' => [],
-            			'mobile_menu_enable_offcanvas_overlay' => [],
- 		        	] 
-		        ),
-		        'tab_2' => apply_filters( 
-		        	'xenial_header_primary_menu_tab_2_controls', 
-		        	[
-		        		'primary_desktop_menu_style_wrapper' => [],
-		        		'primary_menu_top_level_items_style_wrapper' => [],
-		        		'primary_menu_top_level_items_colors_wrapper' => [],
-		        		'primary_menu_top_level_items_color' => [],
-		        		'primary_menu_top_level_items_hover_color' => [],
-		        		'primary_menu_top_level_items_active_color' => [],
-		        		'primary_menu_top_level_items_background_colors_wrapper' => [],
-		        		'primary_menu_top_level_items_background_color' => [],
-		        		'primary_menu_top_level_items_hover_background_color' => [],
-		        		'primary_menu_top_level_items_active_background_color' => [],
-		        		'primary_menu_top_level_items_padding' => [],
-		        		'primary_menu_top_level_items_border_wrapper' => [],
-		        		'primary_menu_top_level_items_border_style' => [],
-			            'primary_menu_top_level_items_border_width' => [],
-			            'primary_menu_top_level_items_border_radius' => [],
-			            'primary_menu_top_level_items_border_colors_wrapper' => [],
-			            'primary_menu_top_level_items_border_color' => [],
-			            'primary_menu_top_level_items_hover_border_color' => [],
-			            'primary_menu_top_level_items_active_border_color' => [],
-			            'primary_menu_dropdown_style_wrapper' => [],
-			            'primary_menu_dropdown_border_width' => [],
-			            'primary_menu_dropdown_border_radius' => [],
-			            'primary_menu_dropdown_border_color' => [],
-		        		'primary_menu_dropdown_items_divider_color' => [],            
-			            'primary_menu_dropdown_font_color_wrapper' => [],
-			            'primary_menu_dropdown_items_color' => [],
-			            'primary_menu_dropdown_items_hover_color' => [],
-			            'primary_menu_dropdown_items_active_color' => [],
-			            'primary_menu_dropdown_items_background_color_wrapper' => [],
-			            'primary_menu_dropdown_items_background_color' => [],
-			            'primary_menu_dropdown_items_hover_background_color' => [],
-			            'primary_menu_dropdown_items_active_background_color' => [],
-			            'primary_menu_top_level_items_typo_wrapper' => [],
-			            'primary_menu_top_level_items_font_size' => [],
-			            'primary_menu_top_level_items_font_weight' => [],
-			            'primary_menu_top_level_items_line_height' => [],
-			            'primary_menu_dropdown_items_typo_wrapper' => [],
-			            'primary_menu_top_level_items_font_style' => [],
-			            'primary_menu_top_level_items_text_transform' => [],
-			            'primary_menu_dropdown_items_font_size' => [],
-			            'primary_menu_dropdown_items_font_weight' => [],
-			            'primary_menu_dropdown_items_line_height' => [],
-			            'primary_menu_dropdown_items_font_style' => [],
-			            'primary_menu_dropdown_items_text_transform' => [],
-			            'mobile_menu_styles_wrapper' => [],
-			            'offcanvas_menu_toggle_button_styles_wrapper' => [],
-			            'mobile_menu_toggle_button_label_color' => [],
-			            'mobile_menu_toggle_button_hover_label_color' => [],
-			            'mobile_menu_toggle_button_background_color' => [],
-			            'mobile_menu_toggle_button_hover_background_color' => [],
-			            'mobile_menu_toggle_button_border_radius' => [],
-			            'mobile_menu_toggle_button_border_style' => [],
-			            'mobile_menu_toggle_button_border_width' => [],
-			            'mobile_menu_toggle_button_border_color' => [],
-			            'mobile_menu_toggle_button_hover_border_color' => [],
-			            'mobile_menu_toggle_button_padding' => [],	
-			            'offcanvas_menu_styles_wrapper' => [],		            
-			            'mobile_offcanvas_menu_background' => [],
-			            'offcanvas_menu_borders_wrapper' => [],
-			            'mobile_offcanvas_menu_border_width' => [],
-			            'mobile_offcanvas_menu_border_radius' => [],
-			            'mobile_offcanvas_menu_border_color' => [],
-			            'offcanvas_menu_items_styles_wrapper' => [],
-			            'offcanvas_menu_items_colors_wrapper' => [],
-			            'mobile_offcanvas_menu_item_color' => [],
-			            'mobile_offcanvas_menu_item_hover_color' => [],
-			            'mobile_offcanvas_menu_active_item_color' => [],
-			            'offcanvas_menu_items_typos_wrapper' => [],
-			            'mobile_menu_items_font_size' => [],
-			            'mobile_menu_items_font_weight' => [],
-			            'mobile_menu_items_line_height' => [],
-			            'mobile_menu_items_font_style' => [],
-			            'mobile_menu_items_text_transform' => [],			            
-			            'mobile_menu_offcanvas_overlay_color' => [],
-			            
-		        	] 
-		        )
-		    ),
-		    'priority'                 => 10,
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_desktop_menu_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_desktop_menu_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Desktop Options', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-desktop-menu' ),
-		    'controls_to_wrap'         => 7,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Top Level', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-top-level-items' ),
-		    'controls_to_wrap'         => 2,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_hover_effect',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_hover_effect'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_top_level_items_hover_effect',
-		array(
-			'label' => esc_html__( 'Items Hover Effect', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_top_level_menu_items_hover_effects(),
-			'priority' => 10
-		)
-	)
-);
-
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_spacing', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_spacing'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_spacing', 
-		array(
-			'label' 			=> esc_html__( 'Items Spacing (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Dropdown', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-dropdown' ),
-		    'controls_to_wrap'         => 4,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_width', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_width'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_width', 
-		array(
-			'label' 			=> esc_html__( 'Dropdown Width (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 300,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_top_offset', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_top_offset'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_top_offset', 
-		array(
-			'label' 			=> esc_html__( 'Dropdown Top Offset (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_hover_effect',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_hover_effect'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_dropdown_items_hover_effect',
-		array(
-			'label' => esc_html__( 'Items Hover Effect', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_dropdown_menu_items_hover_effects(),
-			'priority' => 10
-		)
-	)
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_divider_width', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_divider_width'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_divider_width', 
-		array(
-			'label' 			=> esc_html__( 'Items Divider Width (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 5,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-
-
-$wp_customize->add_setting( 
-	'primary_mobile_menu_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_mobile_menu_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Mobile Options', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-mobile-menu' ),
-		    'controls_to_wrap'         => 5,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_breakpoint', 
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_breakpoint'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'mobile_menu_breakpoint', 
-		array(
-			'label' 			=> esc_html__( 'Offcanvas Menu Toggle Breakpoint (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 320,
-                'max' 		=> 1920,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_label', 
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_label'],
-	) 
-);
-
-$wp_customize->add_control( 
-	'mobile_menu_toggle_button_label', 
-	array(
-		'label' => esc_html__( 'Offcanvas Menu Toggle Button Label', 'xenial' ),
+xenial_tab_field(
+	'xenial_header_primary_menu_tab',
+	[
+		'priority' => 10,
 		'section' => 'xenial_header_primary_menu',
-		'type' => 'text'
-	) 
+		'tabs' => xenial_get_tab_control_2_labels(),
+		'controls' => [
+			'tab_1' => apply_filters( 
+	        	'xenial_header_primary_menu_tab_1_controls', 
+	        	[
+	        		'primary_menu_display' => '',
+	        		
+	        		'primary_desktop_menu' => '',
+	        		'header_desktop_top_level_menu' => '',
+	        		'primary_desktop_top_level_menu_item_spacing' => '',
+
+	        		'primary_menu_general_divider_1' => '',
+	        		'header_desktop_dropdown_menu' => '',
+	        		'primary_menu_dropdown_items_wrapper' => '',
+	        		'primary_menu_dropdown_items_divider_width' => '',
+	        		'primary_menu_dropdown_width' => '',
+
+	        		'mobile_menu' => '',
+	        		'offcanvas_menu_toggle_button' => '',
+	        		'offcanvas_menu_toggle_button_breakpoint' => '',
+	        		'offcanvas_menu_toggle_button_label' => '',
+	        		'primary_menu_general_divider_2' => '',
+
+	        		'offcanvas_menu' => '',
+	        		'offcanvas_menu_position' => '',
+        			'enable_offcanvas_menu_overlay' => '',
+        			'close_offcanvas_menu_on_click_on_overlay' => '',
+        			'primary_menu_general_divider_3' => '',
+
+        			'offcanvas_menu_items_divider_width' => '',
+	        	] 
+	        ),
+	        'tab_2' => apply_filters( 
+	        	'xenial_header_primary_menu_tab_2_controls', 
+	        	[	
+	        		'primary_desktop_menu_styles' => '',
+
+	        		'primary_desktop_top_level_menu_styles' => '',
+	        		'primary_menu_top_level_items_padding' => '',
+	        		'primary_menu_top_level_divider_1' => '',
+
+	        		'primary_desktop_top_level_menu_typo' => '',
+	        		'primary_menu_top_level_items_font_size' => '',
+		            'primary_menu_top_level_items_font_weight' => '',
+		            'primary_menu_top_level_items_line_height' => '',
+		            'primary_menu_top_level_items_font_style' => '',
+		            'primary_menu_top_level_items_text_transform' => '',
+		            'primary_menu_top_level_divider_2' => '',
+
+		            'primary_desktop_top_level_menu_border' => '',
+		            'primary_menu_top_level_items_border_style' => '',
+		            'primary_menu_top_level_items_border_width' => '',
+		            'primary_menu_top_level_items_border_radius' => '',
+		            'primary_menu_top_level_divider_3' => '',
+
+		            'primary_desktop_top_level_menu_default_state_color' => '',
+		            'primary_menu_top_level_items_color' => '',
+		            'primary_menu_top_level_items_background_color' => '',
+		            'primary_menu_top_level_items_border_color' => '',
+		            'primary_menu_top_level_divider_4' => '',
+
+		            'primary_desktop_top_level_menu_hover_state_color' => '',
+		            'primary_menu_top_level_items_hover_color' => '',
+		            'primary_menu_top_level_items_hover_background_color' => '',
+		            'primary_menu_top_level_items_hover_border_color' => '',
+		            'primary_menu_top_level_divider_5' => '',
+
+		            'primary_desktop_top_level_menu_active_state_color' => '',
+		            'primary_menu_top_level_items_active_color' => '',
+		            'primary_menu_top_level_items_active_background_color' => '',
+		            'primary_menu_top_level_items_active_border_color' => '',
+
+
+		            'primary_menu_dropdown_styles' => '',
+		            'primary_menu_dropdown_top_offset' => '',
+		            'primary_menu_dropdown_divider_1' => '',
+
+
+		            'primary_menu_dropdown_padding' => '',
+		            'primary_menu_dropdown_divider_2' => '',
+
+		            'primary_menu_dropdown_border' => '',
+		            'primary_menu_dropdown_border_style' => '',
+		            'primary_menu_dropdown_border_width' => '',
+		            'primary_menu_dropdown_border_radius' => '',
+		            'primary_menu_dropdown_border_color' => '',
+		            'primary_menu_dropdown_divider_3' => '',
+
+
+		            'primary_menu_dropdown_items_padding' => '',
+		            'primary_menu_dropdown_divider_4' => '',
+
+
+		            'primary_menu_dropdown_items_typo' => '',
+		            'primary_menu_dropdown_items_font_size' => '',
+		            'primary_menu_dropdown_items_font_weight' => '',
+		            'primary_menu_dropdown_items_line_height' => '',
+		            'primary_menu_dropdown_items_font_style' => '',
+		            'primary_menu_dropdown_items_text_transform' => '',
+		            'primary_menu_dropdown_divider_5' => '',
+
+		            'primary_menu_dropdown_items_default_state_color' => '',
+		            'primary_menu_dropdown_items_divider_color' => '', 
+		            'primary_menu_dropdown_items_color' => '',
+		            'primary_menu_dropdown_items_background_color' => '',
+		            'primary_menu_dropdown_divider_6' => '',
+
+		            'primary_menu_dropdown_items_hover_state_color' => '',
+		            'primary_menu_dropdown_items_hover_color' => '',
+		            'primary_menu_dropdown_items_hover_background_color' => '',
+		            'primary_menu_dropdown_divider_7' => '',
+
+		            'primary_menu_dropdown_items_active_state_color' => '',
+		            'primary_menu_dropdown_items_active_color' => '',
+		            'primary_menu_dropdown_items_active_background_color' => '',
+		            
+		            
+		            'mobile_menu_styles' => '',
+
+		            'mobile_offcanvas_menu_padding' => '',
+		            'mobile_offcanvas_menu_margin' => '',
+		            'mobile_offcanvas_menu_style_divider_1' => '',
+		            
+		            'mobile_offcanvas_menu_border_width' => '',
+		            'mobile_offcanvas_menu_border_radius' => '',
+		            'mobile_offcanvas_menu_border_color' => '',
+		            'mobile_offcanvas_menu_style_divider_2' => '',
+
+		            'mobile_offcanvas_menu_background' => '',		            
+		            'mobile_menu_offcanvas_overlay_color' => '',
+
+
+		            'mobile_menu_toggle_button_styles' => '',
+
+		            'mobile_menu_toggle_button_spacing' => '',
+		            'mobile_offcanvas_menu_style_divider_3' => '',
+
+		            'mobile_menu_toggle_button_font_size' => '',
+		            'mobile_offcanvas_menu_style_divider_4' => '',
+
+		            'mobile_menu_toggle_button_border' => '',
+		            'mobile_menu_toggle_button_border_style' => '',
+		            'mobile_menu_toggle_button_border_width' => '',
+		            'mobile_menu_toggle_button_border_radius' => '',
+		            'mobile_offcanvas_menu_style_divider_5' => '',
+
+		            'mobile_menu_toggle_button_default_state_color' => '',
+		            'mobile_menu_toggle_button_label_color' => '',
+		            'mobile_menu_toggle_button_background_color' => '',
+		            'mobile_menu_toggle_button_border_color' => '',
+		            'mobile_offcanvas_menu_style_divider_6' => '',
+		            
+		            'mobile_menu_toggle_button_hover_state_color' => '',
+		            'mobile_menu_toggle_button_hover_label_color' => '',		            
+		            'mobile_menu_toggle_button_hover_background_color' => '',
+		            'mobile_menu_toggle_button_hover_border_color' => '',
+		            
+		            'mobile_menu_items_styles' => '',
+		            'mobile_offcanvas_menu_item_padding' => '',
+		            'mobile_offcanvas_menu_style_divider_7' => '',
+
+		            'mobile_menu_items_typography' => '',
+		            'mobile_menu_items_font_size' => '',
+		            'mobile_menu_items_font_weight' => '',
+		            'mobile_menu_items_line_height' => '',
+		            'mobile_menu_items_font_style' => '',
+		            'mobile_menu_items_text_transform' => '',
+		            'mobile_offcanvas_menu_style_divider_8' => '',
+
+		            'mobile_menu_items_color' => '',
+		            'mobile_offcanvas_menu_item_divider_color' => '',
+		            'mobile_offcanvas_menu_item_color' => '',
+		            'mobile_offcanvas_menu_item_hover_color' => '',
+		            'mobile_offcanvas_menu_active_item_color' => '',
+		            
+
+		            'mobile_menu_close_button_styles' => '',
+		            'mobile_menu_close_button_font_size' => '',
+		            'mobile_offcanvas_menu_style_divider_9' => '',
+
+		            'mobile_menu_close_button_spacing' => '',
+		            'mobile_offcanvas_menu_style_divider_10' => '',
+
+		            'mobile_menu_close_button_border' => '',
+		            'mobile_menu_close_button_border_radius' => '',
+		            'mobile_menu_close_button_border_style' => '',
+		            'mobile_menu_close_button_border_width' => '',
+		            'mobile_offcanvas_menu_style_divider_11' => '',
+
+		            'mobile_menu_close_button_default_state_color' => '',
+		            'mobile_menu_close_button_label_color' => '',
+		            'mobile_menu_close_button_background_color' => '',
+		            'mobile_menu_close_button_border_color' => '',
+		            'mobile_offcanvas_menu_style_divider_12' => '',
+
+		            'mobile_menu_close_button_hover_state_color' => '',
+		            'mobile_menu_close_button_hover_label_color' => '',		            
+		            'mobile_menu_close_button_hover_background_color' => '',
+		            'mobile_menu_close_button_hover_border_color' => '',
+	        	] 
+	        )
+		]
+	]
+);
+
+xenial_radio_button_group_field(
+	'primary_menu_display',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Display Option', 'xenial' ),
+		'choices' => [
+			'default' => [
+				'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+				'name' => esc_html__( 'Search Bar', 'xenial' )
+			],
+			'toggle' => [
+				'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+				'name' => esc_html__( 'Search Modal', 'xenial' )
+			]
+		],
+		'item' => 'image',
+		'columns' => 2,
+		'default' => $xenial_customizer_defaults['primary_menu_display']
+	],
+	false
+);
+
+xenial_controls_wrapper_field(
+	'primary_desktop_menu',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Desktop Menu', 'xenial' )
+	],
+	false
+);
+
+
+xenial_info_field(
+	'header_desktop_top_level_menu',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Top Level Menu', 'xenial' )
+	]
+);
+
+
+xenial_range_control_field(
+	'primary_desktop_top_level_menu_item_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Items Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_desktop_top_level_menu_item_spacing']
+	]
+);
+
+
+xenial_divider_field( 
+	'primary_menu_general_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
 
 
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_position',
-	array(
-		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_position'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'mobile_offcanvas_menu_position',
-		array(
-			'label' => esc_html__( 'Offcanvas Menu Position', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_offcanvas_menu_positions(),
-			'priority' => 10
-		)
-	)
+xenial_info_field(
+	'header_desktop_dropdown_menu',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Dropdown Menu', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_menu_enable_offcanvas_overlay', 
-	array(
-		'sanitize_callback' => 'wp_validate_boolean',
-		'default' => $xenial_customizer_defaults['mobile_menu_enable_offcanvas_overlay'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Toggle_Switch_Control( 
-		$wp_customize,
-		'mobile_menu_enable_offcanvas_overlay', 
-		array(
-			'label' => esc_html__( 'Display Offcanvas Background Overlay', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'type' => 'ios'
-		) 
-	) 
+xenial_range_control_field(
+	'primary_menu_dropdown_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 400, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_width']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_menu_items_divider_width', 
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_items_divider_width'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'mobile_menu_items_divider_width', 
-		array(
-			'label' 			=> esc_html__( 'Menu Items Divider Width (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 5,
-                'step' 		=> 1,
-            )
-		) 
-	) 
+xenial_range_control_field(
+	'primary_menu_dropdown_items_divider_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Items Divider Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_divider_width']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_desktop_menu_style_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_desktop_menu_style_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Desktop Options', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-desktop-menu-styles' ),
-		    'controls_to_wrap'         => 43,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_controls_wrapper_field(
+	'mobile_menu',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Mobile / Offcanvas Menu', 'xenial' )
+	],
+	false
 );
 
 
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_style_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_style_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Top Level', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-top-level-styles' ),
-		    'controls_to_wrap'         => 23,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_info_field(
+	'offcanvas_menu_toggle_button',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Offcanvas Menu Toggle Button', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_padding_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_padding']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_padding_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_padding']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_padding_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_padding']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_padding_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_padding']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_padding', 
-		array(
-			'label'	   				=> esc_html__( 'Items Padding (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'primary_menu_top_level_items_padding_top',
-		        'right' 	=> 'primary_menu_top_level_items_padding_right',
-		        'bottom' 	=> 'primary_menu_top_level_items_padding_bottom',
-		        'left' 		=> 'primary_menu_top_level_items_padding_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		    )
-		) 
-	) 
+xenial_range_control_field(
+	'offcanvas_menu_toggle_button_breakpoint',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Display Breakpoint (px)', 'xenial' ),
+		'input_attrs' => ['min' => 320, 'max' => 1920, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['offcanvas_menu_toggle_button_breakpoint']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_colors_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
+xenial_text_field(
+	'offcanvas_menu_toggle_button_label',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Label', 'xenial' ),
+		'default' => $xenial_customizer_defaults['offcanvas_menu_toggle_button_label']
+	]
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_colors_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Font Colors', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-top-level-items-colors' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+
+xenial_divider_field( 
+	'primary_menu_general_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'offcanvas_menu',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Offcanvas Menu', 'xenial' )
+	]
+);
+
+
+xenial_radio_button_group_field(
+	'offcanvas_menu_position',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Position', 'xenial' ),
+		'item' => 'text',
+		'columns' => 2,
+		'choices' => [
+			'left' => esc_html__( 'Left', 'xenial' ),
+			'right' => esc_html__( 'Right', 'xenial' )
+		],
+		'default' => $xenial_customizer_defaults['offcanvas_menu_position']
+	],
+	false
+);
+
+
+xenial_switch_field(
+	'enable_offcanvas_menu_overlay',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Enable Background Overlay', 'xenial' ),
+		'default' => $xenial_customizer_defaults['enable_offcanvas_menu_overlay']
+	]
+);
+
+
+xenial_switch_field(
+	'close_offcanvas_menu_on_click_on_overlay',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Close on Click on Overlay', 'xenial' ),
+		'default' => $xenial_customizer_defaults['close_offcanvas_menu_on_click_on_overlay']
+	]
+);
+
+
+xenial_divider_field( 
+	'primary_menu_general_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+xenial_range_control_field(
+	'offcanvas_menu_items_divider_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Menu Items Divider Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['offcanvas_menu_items_divider_width']
+	]
 );
 
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_color'],
-	) 
-);
 
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_color', 
-		array(
-			'label'	   	=> esc_html__( 'Initial', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_controls_wrapper_field(
+	'primary_desktop_menu_styles',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Desktop Menu', 'xenial' )
+	],
+	false
 );
 
 
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_hover_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_hover_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Hover', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_controls_wrapper_field(
+	'primary_desktop_top_level_menu_styles',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Top Level Menu', 'xenial' ),
+		'class' => 'no-margin'
+	],
+	false
 );
 
 
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_active_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_active_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_active_color', 
-		array(
-			'label'	   	=> esc_html__( 'Active', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_box_dimension_field(
+	'primary_menu_top_level_items_padding',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['primary_menu_top_level_items_padding']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_background_colors_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_background_colors_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Background Colors', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-top-level-items-background-colors' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_divider_field( 
+	'primary_menu_top_level_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_background_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'Initial', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_info_field(
+	'primary_desktop_top_level_menu_typo',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Typography', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_hover_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_hover_background_color'],
-	) 
+xenial_range_control_field(
+	'primary_menu_top_level_items_font_size',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_font_size']
+	]
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_hover_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'Hover', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_active_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_active_background_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_active_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'Active', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_range_control_field(
+	'primary_menu_top_level_items_line_height',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Line Height', 'xenial' ),
+		'input_attrs' => ['min' => 1, 'max' => 10, 'step' => 0.01, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_line_height']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_border_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Border Styles', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-top-level-items-border' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_style',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_border_style'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control(
-		$wp_customize, 
-		'primary_menu_top_level_items_border_style',
-		array(
-			'label' => esc_html__( 'Style', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_border_styles()
-		) 
-	)
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_width_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_width']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_width_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_width']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_width_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_width']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_width_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_width']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_border_width', 
-		array(
-			'label'	   				=> esc_html__( 'Border Width (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'primary_menu_top_level_items_border_width_top',
-		        'right' 	=> 'primary_menu_top_level_items_border_width_right',
-		        'bottom' 	=> 'primary_menu_top_level_items_border_width_bottom',
-		        'left' 		=> 'primary_menu_top_level_items_border_width_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 10,
-		        'step'  => 1,
-		    )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_radius_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_radius']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_radius_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_radius']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_radius_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_radius']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_radius_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_top_level_items_border_radius']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_border_radius', 
-		array(
-			'label'	   				=> esc_html__( 'Border Radius (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'primary_menu_top_level_items_border_radius_top',
-		        'right' 	=> 'primary_menu_top_level_items_border_radius_right',
-		        'bottom' 	=> 'primary_menu_top_level_items_border_radius_bottom',
-		        'left' 		=> 'primary_menu_top_level_items_border_radius_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 10,
-		        'step'  => 1,
-		    )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_colors_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_border_colors_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Border Colors', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-top-level-items-border-colors' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Initial', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_hover_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_hover_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_hover_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Hover', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_active_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_active_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_active_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Active', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_typo_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_typo_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Typography', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-top-level-items_typo' ),
-		    'controls_to_wrap'         => 5,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
+xenial_select_field(
 	'primary_menu_top_level_items_font_weight',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_font_weight'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_top_level_items_font_weight',
-		array(
-			'label' => esc_html__( 'Font Weight', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_standard_font_weights(),
-			'priority' 	=> 10,
-		)
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Weight', 'xenial' ),
+		'choices' => xenial_get_standard_font_weights(),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_font_weight']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_font_size', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_font_size'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_font_size', 
-		array(
-			'label' 			=> esc_html__( 'Font Size (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_top_level_items_line_height', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_line_height'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_top_level_items_line_height', 
-		array(
-			'label' 			=> esc_html__( 'Line Height', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 0.1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
+xenial_radio_button_group_field(
 	'primary_menu_top_level_items_font_style',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_font_style'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_top_level_items_font_style',
-		array(
-			'label' => esc_html__( 'Font Style', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_font_styles(),
-			'priority' 	=> 10,
-		)
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Style', 'xenial' ),
+		'item' => 'text',
+		'columns' => 2,
+		'choices' => [
+			'normal' => 'Aa',
+			'italic' => '<i>Aa</i>'
+		],
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_font_style']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
+xenial_radio_button_group_field(
 	'primary_menu_top_level_items_text_transform',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_text_transform'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_top_level_items_text_transform',
-		array(
-			'label' => esc_html__( 'Text Transform', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_text_transforms(),
-			'priority' 	=> 10,
-		)
-	)
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_style_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_style_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Dropdown', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-dropdown-style' ),
-		    'controls_to_wrap'         => 18,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_width_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_width']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_width_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_width']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_width_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_width']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_width_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_width']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_border_width', 
-		array(
-			'label'	   				=> esc_html__( 'Border Width (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'primary_menu_dropdown_border_width_top',
-		        'right' 	=> 'primary_menu_dropdown_border_width_right',
-		        'bottom' 	=> 'primary_menu_dropdown_border_width_bottom',
-		        'left' 		=> 'primary_menu_dropdown_border_width_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 10,
-		        'step'  => 1,
-		    )
-		) 
-	) 
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Transform', 'xenial' ),
+		'item' => 'text',
+		'columns' => 4,
+		'choices' => [
+			'inherit' => '-',
+			'uppercase' => 'AA',
+			'lowercase' => 'aa',
+			'capitalize' => 'Aa'
+		],
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_text_transform']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_radius_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_radius']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_radius_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_radius']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_radius_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_radius']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_radius_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['primary_menu_dropdown_border_radius']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_border_radius', 
-		array(
-			'label'	   				=> esc_html__( 'Border Radius (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'primary_menu_dropdown_border_radius_top',
-		        'right' 	=> 'primary_menu_dropdown_border_radius_right',
-		        'bottom' 	=> 'primary_menu_dropdown_border_radius_bottom',
-		        'left' 		=> 'primary_menu_dropdown_border_radius_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		    )
-		) 
-	) 
+xenial_divider_field( 
+	'primary_menu_top_level_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Border Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_info_field(
+	'primary_desktop_top_level_menu_border',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_divider_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_divider_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_divider_color', 
-		array(
-			'label'	   	=> esc_html__( 'Divider Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_select_field(
+	'primary_menu_top_level_items_border_style',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Style', 'xenial' ),
+		'choices' => xenial_get_border_styles(),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_border_style']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_font_color_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_font_color_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Font Color', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-dropdown-font-color' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_box_dimension_field(
+	'primary_menu_top_level_items_border_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 10, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['primary_menu_top_level_items_border_width']
+	],
+	false
 );
 
 
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_color'],
-	) 
+xenial_range_control_field(
+	'primary_menu_top_level_items_border_radius',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Radius', 'xenial' ),
+		'input_attrs' => ['min' => 1, 'max' => 1000, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_border_radius']
+	]
 );
 
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_color', 
-		array(
-			'label'	   	=> esc_html__( 'Initial', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+
+xenial_divider_field( 
+	'primary_menu_top_level_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'primary_desktop_top_level_menu_default_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'primary_menu_top_level_items_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_color']
+	],
+	false
+);
+
+xenial_color_field(
+	'primary_menu_top_level_items_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_background_color']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'primary_menu_top_level_items_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_border_color']
+	],
+	true
+);
+
+
+xenial_divider_field( 
+	'primary_menu_top_level_divider_4', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'primary_desktop_top_level_menu_hover_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Hover State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'primary_menu_top_level_items_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_hover_color']
+	],
+	false
+);
+
+xenial_color_field(
+	'primary_menu_top_level_items_hover_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_hover_background_color']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'primary_menu_top_level_items_hover_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_hover_border_color']
+	],
+	true
+);
+
+
+xenial_divider_field( 
+	'primary_menu_top_level_divider_5', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+xenial_info_field(
+	'primary_desktop_top_level_menu_active_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Active State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'primary_menu_top_level_items_active_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_active_color']
+	],
+	false
+);
+
+xenial_color_field(
+	'primary_menu_top_level_items_active_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_active_background_color']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'primary_menu_top_level_items_active_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_top_level_items_active_border_color']
+	],
+	true
 );
 
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_hover_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_hover_color'],
-	) 
+
+
+
+xenial_controls_wrapper_field(
+	'primary_menu_dropdown_styles',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Dropdown Menu', 'xenial' )
+	],
+	false
 );
 
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Hover', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_range_control_field(
+	'primary_menu_dropdown_top_offset',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Top Offset (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_top_offset']
+	]
 );
 
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_active_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_active_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_active_color', 
-		array(
-			'label'	   	=> esc_html__( 'Active', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_divider_field( 
+	'primary_menu_dropdown_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_background_color_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
+xenial_box_dimension_field(
+	'primary_menu_dropdown_padding',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['primary_menu_dropdown_padding']
+	],
+	false
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_background_color_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Background Color', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-dropdown-items-background-color' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_divider_field( 
+	'primary_menu_dropdown_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_background_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'Initial', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_select_field(
+	'primary_menu_dropdown_border_style',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Style', 'xenial' ),
+		'choices' => xenial_get_border_styles(),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_border_style']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_hover_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_hover_background_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_hover_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'Hover', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_box_dimension_field(
+	'primary_menu_dropdown_border_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 10, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['primary_menu_dropdown_border_width']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_active_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_active_background_color'],
-	) 
+xenial_range_control_field(
+	'primary_menu_dropdown_border_radius',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_border_radius']
+	]
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_active_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'Active', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_typo_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_typo_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Typography', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-dropdown-items-typo' ),
-		    'controls_to_wrap'         => 5,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_color_field(
+	'primary_menu_dropdown_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_border_color']
+	],
+	true
 );
 
 
-$wp_customize->add_setting( 
+xenial_divider_field( 
+	'primary_menu_dropdown_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_box_dimension_field(
+	'primary_menu_dropdown_items_padding',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Dropdown Menu Items Padding (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['primary_menu_dropdown_items_padding']
+	],
+	false
+);
+
+
+xenial_divider_field( 
+	'primary_menu_dropdown_divider_4', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+xenial_info_field(
+	'primary_menu_dropdown_items_typo',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Typography', 'xenial' )
+	]
+);
+
+
+xenial_range_control_field(
+	'primary_menu_dropdown_items_font_size',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_font_size']
+	]
+);
+
+xenial_range_control_field(
+	'primary_menu_dropdown_items_line_height',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Line Height', 'xenial' ),
+		'input_attrs' => ['min' => 1, 'max' => 10, 'step' => 0.01, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_line_height']
+	]
+);
+
+
+xenial_select_field(
 	'primary_menu_dropdown_items_font_weight',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_font_weight'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_dropdown_items_font_weight',
-		array(
-			'label' => esc_html__( 'Font Weight', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_standard_font_weights(),
-			'priority' 	=> 10,
-		)
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Weight', 'xenial' ),
+		'choices' => xenial_get_standard_font_weights(),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_font_weight']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_font_size', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_font_size'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_font_size', 
-		array(
-			'label' 			=> esc_html__( 'Font Size (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'primary_menu_dropdown_items_line_height', 
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_line_height'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'primary_menu_dropdown_items_line_height', 
-		array(
-			'label' 			=> esc_html__( 'Line Height', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 0.1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
+xenial_radio_button_group_field(
 	'primary_menu_dropdown_items_font_style',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_font_style'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_dropdown_items_font_style',
-		array(
-			'label' => esc_html__( 'Font Style', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_font_styles(),
-			'priority' 	=> 10,
-		)
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Style', 'xenial' ),
+		'item' => 'text',
+		'columns' => 2,
+		'choices' => [
+			'normal' => 'Aa',
+			'italic' => '<i>Aa</i>'
+		],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_font_style']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
+xenial_radio_button_group_field(
 	'primary_menu_dropdown_items_text_transform',
-	array(
-		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_text_transform'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Transform', 'xenial' ),
+		'item' => 'text',
+		'columns' => 4,
+		'choices' => [
+			'inherit' => '-',
+			'uppercase' => 'AA',
+			'lowercase' => 'aa',
+			'capitalize' => 'Aa'
+		],
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_text_transform']
+	],
+	false
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'primary_menu_dropdown_items_text_transform',
-		array(
-			'label' => esc_html__( 'Text Transform', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_text_transforms(),
-			'priority' 	=> 10,
-		)
-	)
+xenial_divider_field( 
+	'primary_menu_dropdown_divider_5', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
-
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_styles_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'mobile_menu_styles_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Mobile Options', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'mobile-menu-styles' ),
-		    'controls_to_wrap'         => 26,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_info_field(
+	'primary_menu_dropdown_items_default_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'offcanvas_menu_toggle_button_styles_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'offcanvas_menu_toggle_button_styles_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Offcanvas Toggle Button', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'offcanvas-menu-toggle-button-styles' ),
-		    'controls_to_wrap'         => 8,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_color_field(
+	'primary_menu_dropdown_items_divider_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Divider Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_divider_color']
+	],
+	true
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_padding_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_padding']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_padding_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_padding']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_padding_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_padding']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_padding_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_padding']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_padding', 
-		array(
-			'label'	   				=> esc_html__( 'Padding (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'mobile_menu_toggle_button_padding_top',
-		        'right' 	=> 'mobile_menu_toggle_button_padding_right',
-		        'bottom' 	=> 'mobile_menu_toggle_button_padding_bottom',
-		        'left' 		=> 'mobile_menu_toggle_button_padding_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		    )
-		) 
-	) 
+xenial_color_field(
+	'primary_menu_dropdown_items_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_color']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_label_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_label_color'],
-	) 
+xenial_color_field(
+	'primary_menu_dropdown_items_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_background_color']
+	],
+	true
 );
 
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_label_color', 
-		array(
-			'label'	   	=> esc_html__( 'Label Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_divider_field( 
+	'primary_menu_dropdown_divider_6', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_hover_label_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_hover_label_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_hover_label_color', 
-		array(
-			'label'	   	=> esc_html__( 'On Hover Label Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_info_field(
+	'primary_menu_dropdown_items_hover_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_background_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'Background Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_color_field(
+	'primary_menu_dropdown_items_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_hover_color']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_hover_background_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_hover_background_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_hover_background_color', 
-		array(
-			'label'	   	=> esc_html__( 'On Hover Background Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_color_field(
+	'primary_menu_dropdown_items_hover_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_hover_background_color']
+	],
+	true
 );
 
 
-$wp_customize->add_setting( 
+xenial_divider_field( 
+	'primary_menu_dropdown_divider_7', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'primary_menu_dropdown_items_active_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Active State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'primary_menu_dropdown_items_active_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_active_color']
+	],
+	false
+);
+
+
+xenial_color_field(
+	'primary_menu_dropdown_items_active_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_menu_dropdown_items_active_background_color']
+	],
+	true
+);
+
+
+
+
+
+xenial_controls_wrapper_field(
+	'mobile_menu_styles',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Mobile / Offcanvas Menu', 'xenial' )
+	],
+	false
+);
+
+
+xenial_box_dimension_field(
+	'mobile_offcanvas_menu_margin',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Margin (%)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_offcanvas_menu_margin']
+	],
+	true
+);
+
+
+xenial_box_dimension_field(
+	'mobile_offcanvas_menu_padding',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_offcanvas_menu_padding']
+	],
+	true
+);
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_box_dimension_field(
+	'mobile_offcanvas_menu_border_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['mobile_offcanvas_menu_border_width']
+	]
+);
+
+xenial_range_control_field(
+	'mobile_offcanvas_menu_border_radius',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_border_radius']
+	]
+);
+
+xenial_color_field(
+	'mobile_offcanvas_menu_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_border_color']
+	],
+	true
+);
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_color_field(
+	'mobile_offcanvas_menu_background',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_background']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'mobile_menu_offcanvas_overlay_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Overlay Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_offcanvas_overlay_color']
+	],
+	true
+);
+
+
+
+xenial_controls_wrapper_field(
+	'mobile_menu_toggle_button_styles',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Offcanvas Menu Toggle Button', 'xenial' )
+	],
+	false
+);
+
+xenial_range_control_field(
+	'mobile_menu_toggle_button_font_size',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Icon / Label Size (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_toggle_button_font_size']
+	]
+);
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_range_control_field(
+	'mobile_menu_toggle_button_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_toggle_button_spacing']
+	]
+);
+
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_4', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'mobile_menu_toggle_button_border',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border', 'xenial' )
+	]
+);
+
+
+xenial_select_field(
 	'mobile_menu_toggle_button_border_style',
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_border_style'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control(
-		$wp_customize, 
-		'mobile_menu_toggle_button_border_style',
-		array(
-			'label' => esc_html__( 'Border Style', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_border_styles()
-		) 
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Style', 'xenial' ),
+		'choices' => xenial_get_border_styles(),
+		'defaults' => $xenial_customizer_defaults['mobile_menu_toggle_button_border_style']
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_width_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_width']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_width_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_width']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_width_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_width']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_width_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_width']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_border_width', 
-		array(
-			'label'	   				=> esc_html__( 'Border Width (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'mobile_menu_toggle_button_border_width_top',
-		        'right' 	=> 'mobile_menu_toggle_button_border_width_right',
-		        'bottom' 	=> 'mobile_menu_toggle_button_border_width_bottom',
-		        'left' 		=> 'mobile_menu_toggle_button_border_width_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 10,
-		        'step'  => 1,
-		    )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_radius_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_radius']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_radius_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_radius']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_radius_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_radius']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_radius_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_menu_toggle_button_border_radius']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_border_radius', 
-		array(
-			'label'	   				=> esc_html__( 'Border Radius (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'mobile_menu_toggle_button_border_radius_top',
-		        'right' 	=> 'mobile_menu_toggle_button_border_radius_right',
-		        'bottom' 	=> 'mobile_menu_toggle_button_border_radius_bottom',
-		        'left' 		=> 'mobile_menu_toggle_button_border_radius_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		    )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Border Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_hover_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_hover_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_hover_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'On Hover Border Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
+xenial_box_dimension_field(
+	'mobile_menu_toggle_button_border_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_toggle_button_border_width']
+	]
 );
 
 
 
-$wp_customize->add_setting( 
-	'offcanvas_menu_styles_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'offcanvas_menu_styles_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Offcanvas Menu', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-dropdown-styles' ),
-		    'controls_to_wrap'         => 17,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_menu_offcanvas_overlay_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['mobile_menu_offcanvas_overlay_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'mobile_menu_offcanvas_overlay_color', 
-		array(
-			'label'	   	=> esc_html__( 'Background Overlay Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_padding_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_padding']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_padding_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_padding']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_padding_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_padding']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_padding_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_padding']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_padding', 
-		array(
-			'label'	   				=> esc_html__( 'Padding (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'mobile_offcanvas_menu_padding_top',
-		        'right' 	=> 'mobile_offcanvas_menu_padding_right',
-		        'bottom' 	=> 'mobile_offcanvas_menu_padding_bottom',
-		        'left' 		=> 'mobile_offcanvas_menu_padding_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		    )
-		) 
-	) 
+xenial_range_control_field(
+	'mobile_menu_toggle_button_border_radius',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_border_radius']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_margin_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_margin']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_margin_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_margin']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_margin_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_margin']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_margin_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_margin']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_margin', 
-		array(
-			'label'	   				=> esc_html__( 'Margin (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'mobile_offcanvas_menu_margin_top',
-		        'right' 	=> 'mobile_offcanvas_menu_margin_right',
-		        'bottom' 	=> 'mobile_offcanvas_menu_margin_bottom',
-		        'left' 		=> 'mobile_offcanvas_menu_margin_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		    )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_background', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_background'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_background', 
-		array(
-			'label'	   	=> esc_html__( 'Background Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'offcanvas_menu_borders_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'offcanvas_menu_borders_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Border Styles', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'primary-menu-dropdown-styles' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_width_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_width']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_width_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_width']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_width_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_width']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_width_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_width']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_border_width', 
-		array(
-			'label'	   				=> esc_html__( 'Border Width (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'mobile_offcanvas_menu_border_width_top',
-		        'right' 	=> 'mobile_offcanvas_menu_border_width_right',
-		        'bottom' 	=> 'mobile_offcanvas_menu_border_width_bottom',
-		        'left' 		=> 'mobile_offcanvas_menu_border_width_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 10,
-		        'step'  => 1,
-		    )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_radius_top', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_radius']['top'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_radius_right', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_radius']['right'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_radius_bottom', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_radius']['bottom'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_border_radius_left', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['mobile_offcanvas_menu_border_radius']['left'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Box_Dimension_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_border_radius', 
-		array(
-			'label'	   				=> esc_html__( 'Border Radius (px)', 'xenial' ),
-			'section'  				=> 'xenial_header_primary_menu',				
-			'settings'   => array(
-		        'top' 		=> 'mobile_offcanvas_menu_border_radius_top',
-		        'right' 	=> 'mobile_offcanvas_menu_border_radius_right',
-		        'bottom' 	=> 'mobile_offcanvas_menu_border_radius_bottom',
-		        'left' 		=> 'mobile_offcanvas_menu_border_radius_left'
-			),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		    )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_toggle_button_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'mobile_menu_toggle_button_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Border Color', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'offcanvas_menu_items_styles_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'offcanvas_menu_items_styles_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Menu Items Styles', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'offcanvas-menu-items-styles' ),
-		    'controls_to_wrap'         => 10,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'offcanvas_menu_items_colors_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'offcanvas_menu_items_colors_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Font Color', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'offcanvas-menu-items-colors' ),
-		    'controls_to_wrap'         => 3,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_item_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_item_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_item_color', 
-		array(
-			'label'	   	=> esc_html__( 'Initial', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_5', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
 );
 
 
 
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_item_hover_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_item_hover_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_item_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Hover', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_info_field(
+	'mobile_menu_toggle_button_default_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'mobile_offcanvas_menu_active_item_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_active_item_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'mobile_offcanvas_menu_active_item_color', 
-		array(
-			'label'	   	=> esc_html__( 'Active', 'xenial' ),
-			'section'  	=> 'xenial_header_primary_menu',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_color_field(
+	'mobile_menu_toggle_button_label_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Icon / Label Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_label_color']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
-	'offcanvas_menu_items_typos_wrapper', 
-	array(
-    	'sanitize_callback' 	   => 'sanitize_text_field',
-	) 
-);
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Wrapper_Control( 
-		$wp_customize, 
-		'offcanvas_menu_items_typos_wrapper', 
-		array(
-		    'label'                    => esc_html__( 'Typography', 'xenial' ),
-		    'section'                  => 'xenial_header_primary_menu',
-		    'type'                     => 'xenial-wrapper',
-		    'accordion'                => true,
-		    'class'                    => esc_attr( 'offcanvas-menu-items-typos' ),
-		    'controls_to_wrap'         => 5,
-		    'expanded'                 => false,
-		    'priority'                 => 10
-		) 
-	) 
+xenial_color_field(
+	'mobile_menu_toggle_button_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_background_color']
+	],
+	true
 );
 
 
-$wp_customize->add_setting( 
+xenial_color_field(
+	'mobile_menu_toggle_button_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_border_color']
+	],
+	true
+);
+
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_6', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+
+xenial_info_field(
+	'mobile_menu_toggle_button_hover_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Hover State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'mobile_menu_toggle_button_hover_label_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Icon / Label Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_hover_label_color']
+	],
+	false
+);
+
+
+
+xenial_color_field(
+	'mobile_menu_toggle_button_hover_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_hover_background_color']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'mobile_menu_toggle_button_hover_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_toggle_button_hover_border_color']
+	],
+	true
+);
+
+
+
+
+
+
+xenial_controls_wrapper_field(
+	'mobile_menu_items_styles',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Menu Items', 'xenial' )
+	],
+	false
+);
+
+
+
+xenial_box_dimension_field(
+	'mobile_offcanvas_menu_item_padding',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_offcanvas_menu_item_padding']
+	],
+	true
+);
+
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_7', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'mobile_menu_items_typography',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Typography', 'xenial' )
+	]
+);
+
+
+xenial_range_control_field(
+	'mobile_menu_items_font_size',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_items_font_size']
+	]
+);
+
+xenial_range_control_field(
+	'mobile_menu_items_line_height',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Line Height', 'xenial' ),
+		'input_attrs' => ['min' => 1, 'max' => 10, 'step' => 0.01, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_items_line_height']
+	]
+);
+
+
+xenial_select_field(
 	'mobile_menu_items_font_weight',
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_items_font_weight'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'mobile_menu_items_font_weight',
-		array(
-			'label' => esc_html__( 'Font Weight', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_standard_font_weights(),
-			'priority' 	=> 10,
-		)
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Weight', 'xenial' ),
+		'choices' => xenial_get_standard_font_weights(),
+		'default' => $xenial_customizer_defaults['mobile_menu_items_font_weight']
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'mobile_menu_items_font_size', 
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_items_font_size'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'mobile_menu_items_font_size', 
-		array(
-			'label' 			=> esc_html__( 'Font Size (px)', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
-	'mobile_menu_items_line_height', 
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_items_line_height'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'mobile_menu_items_line_height', 
-		array(
-			'label' 			=> esc_html__( 'Line Height', 'xenial' ),
-			'section'  			=> 'xenial_header_primary_menu',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 0.1,
-            )
-		) 
-	) 
-);
-
-
-$wp_customize->add_setting( 
+xenial_radio_button_group_field(
 	'mobile_menu_items_font_style',
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_items_font_style'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'mobile_menu_items_font_style',
-		array(
-			'label' => esc_html__( 'Font Style', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_font_styles(),
-			'priority' 	=> 10,
-		)
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Font Style', 'xenial' ),
+		'item' => 'text',
+		'columns' => 2,
+		'choices' => [
+			'normal' => 'Aa',
+			'italic' => '<i>Aa</i>'
+		],
+		'default' => $xenial_customizer_defaults['mobile_menu_items_font_style']
+	],
+	false
 );
 
 
-$wp_customize->add_setting( 
+xenial_radio_button_group_field(
 	'mobile_menu_items_text_transform',
-	array(
-		'default' => $xenial_customizer_defaults['mobile_menu_items_text_transform'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Text Transform', 'xenial' ),
+		'item' => 'text',
+		'columns' => 4,
+		'choices' => [
+			'inherit' => '-',
+			'uppercase' => 'AA',
+			'lowercase' => 'aa',
+			'capitalize' => 'Aa'
+		],
+		'default' => $xenial_customizer_defaults['mobile_menu_items_text_transform']
+	],
+	false
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'mobile_menu_items_text_transform',
-		array(
-			'label' => esc_html__( 'Text Transform', 'xenial' ),
-			'section' => 'xenial_header_primary_menu',
-			'choices' => xenial_get_text_transforms(),
-			'priority' 	=> 10,
-		)
-	)
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_8', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'mobile_menu_items_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'mobile_offcanvas_menu_item_divider_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Divider Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_item_divider_color']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'mobile_offcanvas_menu_item_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Link Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_item_color']
+	],
+	false
+);
+
+
+xenial_color_field(
+	'mobile_offcanvas_menu_item_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Link Hover Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_item_hover_color']
+	],
+	false
+);
+
+
+xenial_color_field(
+	'mobile_offcanvas_menu_active_item_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Active Link Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_offcanvas_menu_active_item_color']
+	],
+	false
+);
+
+
+
+
+xenial_controls_wrapper_field(
+	'mobile_menu_close_button_styles',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Offcanvas Menu Close Button', 'xenial' )
+	],
+	false
+);
+
+
+xenial_range_control_field(
+	'mobile_menu_close_button_font_size',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Icon Size (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_close_button_font_size']
+	]
+);
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_9', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+
+xenial_range_control_field(
+	'mobile_menu_close_button_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_close_button_spacing']
+	]
+);
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_10', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+
+xenial_info_field(
+	'mobile_menu_close_button_border',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border', 'xenial' )
+	]
+);
+
+
+xenial_select_field(
+	'mobile_menu_close_button_border_style',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Style', 'xenial' ),
+		'choices' => xenial_get_border_styles(),
+		'defaults' => $xenial_customizer_defaults['mobile_menu_close_button_border_style']
+	]
+);
+
+
+xenial_box_dimension_field(
+	'mobile_menu_close_button_border_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['mobile_menu_close_button_border_width']
+	]
+);
+
+
+
+xenial_range_control_field(
+	'mobile_menu_close_button_border_radius',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['mobile_menu_close_button_border_radius']
+	]
+);
+
+
+xenial_divider_field( 
+	'mobile_offcanvas_menu_style_divider_11', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu', 
+	] 
+);
+
+
+xenial_info_field(
+	'mobile_menu_close_button_default_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'mobile_menu_close_button_label_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Icon / Label Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_close_button_label_color']
+	],
+	false
+);
+
+
+
+xenial_color_field(
+	'mobile_menu_close_button_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_close_button_background_color']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'mobile_menu_close_button_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_close_button_border_color']
+	],
+	true
+);
+
+
+
+xenial_info_field(
+	'mobile_menu_close_button_hover_state_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Hover State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'mobile_menu_close_button_hover_label_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Icon / Label Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_close_button_hover_label_color']
+	],
+	false
+);
+
+
+
+xenial_color_field(
+	'mobile_menu_close_button_hover_background_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_close_button_hover_background_color']
+	],
+	true
+);
+
+
+xenial_color_field(
+	'mobile_menu_close_button_hover_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_primary_menu',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['mobile_menu_close_button_hover_border_color']
+	],
+	true
 );

@@ -53,6 +53,16 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 				XENIAL_THEME_VERSION, 
 				true 
 			);
+
+			$xenialSliderScriptObjArray = [
+				'isResponsive' => ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) ? true : false
+			];
+
+			wp_localize_script( 
+				XENIAL_THEME_SLUG . '-slider-control', 
+				'xenialSliderScriptObj', 
+				$xenialSliderScriptObjArray
+			);
 		}
 
 		/**
@@ -63,7 +73,11 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 		protected function render() {
 			
 			$id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
-			$class = 'customize-control has-switchers customize-control-' . $this->type;
+			$class = 'customize-control customize-control-' . $this->type;
+
+			if ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) {
+				$class .= ' has-switchers';
+			}
 
 			?><li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
 				<?php $this->render_content(); ?>
@@ -76,28 +90,38 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 		 * @see WP_Customize_Control::to_json()
 		 */
 		public function to_json() {
+
 			parent::to_json();
 
 			$this->json['id'] 		= $this->id;
 
 			$this->json['inputAttrs'] = '';
+
 			foreach ( $this->input_attrs as $attr => $value ) {
-				$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+				if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+					$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+				}
 			}
 
-			$this->json['desktop'] = array();
-		    $this->json['tablet']  = array();
-		    $this->json['mobile']  = array();
+			$this->json['isResponsive'] = ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) ? true : false;
 
-		    foreach ( $this->settings as $setting_key => $setting ) {
-		        $this->json[ $setting_key ] = array(
-		            'id'        => $setting->id,
-		            'default'   => $setting->default,
-		            'link'      => $this->get_link( $setting_key ),
-		            'value'     => $this->value( $setting_key ),
-		        );
-		    }
+			if ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) {
+				$this->json['desktop'] = [];
+			    $this->json['tablet']  = [];
+			    $this->json['mobile']  = [];
 
+			    foreach ( $this->settings as $setting_key => $setting ) {
+			        $this->json[ $setting_key ] = [
+			            'id'        => $setting->id,
+			            'default'   => $setting->default,
+			            'link'      => $this->get_link( $setting_key ),
+			            'value'     => $this->value( $setting_key ),
+			        ];
+			    }
+			} else {
+				$this->json['value'] = $this->value();
+				$this->json['defaultValue'] = $this->setting->default;
+			}
 		}
 
 		/**
@@ -115,25 +139,25 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 			<# if ( data.label ) { #>
 				<span class="customize-control-title">
 					<span>{{{ data.label }}}</span>
-
-					<ul class="responsive-switchers">
-						<li class="desktop">
-							<button type="button" class="preview-desktop active" data-device="desktop">
-								<i class="dashicons dashicons-desktop"></i>
-							</button>
-						</li>
-						<li class="tablet">
-							<button type="button" class="preview-tablet" data-device="tablet">
-								<i class="dashicons dashicons-tablet"></i>
-							</button>
-						</li>
-						<li class="mobile">
-							<button type="button" class="preview-mobile" data-device="mobile">
-								<i class="dashicons dashicons-smartphone"></i>
-							</button>
-						</li>
-					</ul>
-
+					<# if ( data.isResponsive ) { #>
+						<ul class="responsive-switchers">
+							<li class="desktop">
+								<button type="button" class="preview-desktop active" data-device="desktop">
+									<i class="dashicons dashicons-desktop"></i>
+								</button>
+							</li>
+							<li class="tablet">
+								<button type="button" class="preview-tablet" data-device="tablet">
+									<i class="dashicons dashicons-tablet"></i>
+								</button>
+							</li>
+							<li class="mobile">
+								<button type="button" class="preview-mobile" data-device="mobile">
+									<i class="dashicons dashicons-smartphone"></i>
+								</button>
+							</li>
+						</ul>
+					<# } #>
 				</span>
 			<# } #>
 
@@ -141,32 +165,42 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 				<span class="description customize-control-description">{{{ data.description }}}</span>
 			<# } #>
 
-			<# if ( data.desktop ) { #>
-				<div class="desktop control-wrap active">
-					<div class="xenial-slider desktop-slider"></div>
-					<div class="xenial-slider-input">
-						<input {{{ data.inputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
-					</div>
-		    	</div>
-		    <# } #>
+			<# if ( data.isResponsive ) { #>
 
-			<# if ( data.tablet ) { #>
-				<div class="tablet control-wrap">
-					<div class="xenial-slider tablet-slider"></div>
-					<div class="xenial-slider-input">
-						<input {{{ data.inputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
-					</div>
-		    	</div>
-		    <# } #>
+				<# if ( data.desktop ) { #>
+					<div class="desktop responsive-control-wrap active">
+						<div class="xenial-slider desktop-slider"></div>
+						<div class="xenial-slider-input">
+							<input {{{ data.inputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
+						</div>
+			    	</div>
+			    <# } #>
 
-			<# if ( data.mobile ) { #>
-				<div class="mobile control-wrap">
-					<div class="xenial-slider mobile-slider"></div>
+				<# if ( data.tablet ) { #>
+					<div class="tablet responsive-control-wrap">
+						<div class="xenial-slider tablet-slider"></div>
+						<div class="xenial-slider-input">
+							<input {{{ data.inputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
+						</div>
+			    	</div>
+			    <# } #>
+
+				<# if ( data.mobile ) { #>
+					<div class="mobile responsive-control-wrap">
+						<div class="xenial-slider mobile-slider"></div>
+						<div class="xenial-slider-input">
+							<input {{{ data.inputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
+						</div>
+			    	</div>
+			    <# } #>
+			<# } else { #>
+				<div class="normal control-wrap">
+					<div class="xenial-slider normal-slider"></div>
 					<div class="xenial-slider-input">
-						<input {{{ data.inputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
+						<input {{{ data.inputAttrs }}} type="number" class="slider-input normal-input" value="{{ data.value }}" {{{ data.link }}} />
 					</div>
 		    	</div>
-		    <# } #>
+			<# } #>
 			<?php
 		}
 	}

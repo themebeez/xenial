@@ -2,81 +2,77 @@
 
 $xenial_customizer_defaults = xenial_get_customizer_defaults();
 
-$wp_customize->add_section( 
+xenial_section_field( 
 	'xenial_colors',
-	array(
-		'title' => esc_html__( 'Colors', 'xenial' ),
-		'panel' => 'xenial_general_panel'
-	)
-);
-
-
-$wp_customize->add_setting( 
-	'theme_skin',
-	array(
-		'default' => $xenial_customizer_defaults['theme_skin'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'theme_skin',
-		array(
-			'label' => esc_html__( 'Theme Skin', 'xenial' ),
-			'section' => 'xenial_colors',
-			'choices' => xenial_color_themes()
-		) 
-	)
+	[
+		'priority' => 10,
+		'panel' => 'xenial_general_panel',
+		'title' => esc_html__( 'Colors', 'xenial' )
+	]
 );
 
 
 
 
-$wp_customize->add_setting( 
-	'accent_color', 
-	array(
-		'sanitize_callback' => 'sanitize_hex_color',
-		'default' => $xenial_customizer_defaults['accent_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new WP_Customize_Color_Control( 
-		$wp_customize, 
-		'accent_color', 
-		array(
-			'label'	   	=> esc_html__( 'Accent Color', 'xenial' ),
-			'section'  	=> 'xenial_colors',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_color_field(
+	'primary_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_colors',
+		'label' => esc_html__( 'Primary Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['primary_color']
+	],
+	false
 );
 
 
 
-
-
-$wp_customize->add_setting( 
-	'display_dark_mode_toggle_button', 
-	array(
-		'sanitize_callback' => 'wp_validate_boolean',
-		'default' => $xenial_customizer_defaults['display_dark_mode_toggle_button'],
-	) 
+xenial_color_field(
+	'secondary_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_colors',
+		'label' => esc_html__( 'Secondary Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['secondary_color']
+	],
+	false
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Toggle_Switch_Control( 
-		$wp_customize,
-		'display_dark_mode_toggle_button', 
-		array(
-			'label' => esc_html__( 'Display Dark Mode Toggle Button', 'xenial' ),
-			'section' => 'xenial_colors',
-			'type' => 'ios',
-			'active_callback' => 'xenial_is_theme_skin_not_dark'
-		) 
-	) 
+
+xenial_color_field(
+	'text_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_colors',
+		'label' => esc_html__( 'Text Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['text_color']
+	],
+	false
+);
+
+
+xenial_color_field(
+	'headings_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_colors',
+		'label' => esc_html__( 'Headings Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['headings_color']
+	],
+	false
+);
+
+
+
+xenial_color_field(
+	'link_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_colors',
+		'label' => esc_html__( 'Link Color', 'xenial' ),
+		'default' => $xenial_customizer_defaults['link_color']
+	],
+	false
 );
 
 
