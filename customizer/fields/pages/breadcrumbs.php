@@ -2,14 +2,14 @@
 
 $xenial_customizer_defaults = xenial_get_customizer_defaults();
 
-$wp_customize->add_section( 
-	'xenial_breadcrumbs', 
-	array(
-		'priority'		=> 10,
-		'title'			=> esc_html__( 'Breadcrumbs', 'xenial' ),
-		'panel'			=> 'xenial_site_pages'
-	) 
-);
+// $wp_customize->add_section( 
+// 	'xenial_breadcrumbs', 
+// 	array(
+// 		'priority'		=> 10,
+// 		'title'			=> esc_html__( 'Breadcrumbs', 'xenial' ),
+// 		'panel'			=> 'xenial_site_pages'
+// 	) 
+// );
 
 
 $wp_customize->add_setting( 

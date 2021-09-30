@@ -2,57 +2,72 @@
 
 $xenial_customizer_defaults = xenial_get_customizer_defaults();
 
-$wp_customize->add_section( 
+xenial_section_field( 
 	'xenial_layout',
-	array(
-		'title' => esc_html__( 'Layout', 'xenial' ),
-		'panel' => 'xenial_general_panel'
-	)
+	[
+		'priority' => 10,
+		'panel' => 'xenial_general_panel',
+		'title' => esc_html__( 'Layout', 'xenial' )
+	]
 );
 
-
-$wp_customize->add_setting( 
+xenial_select_field(
 	'site_layout',
-	array(
-		'default' => $xenial_customizer_defaults['site_layout'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
+	[
+		'priority' => 10,
+		'section' => 'xenial_layout',
+		'label' => esc_html__( 'Site Layout', 'xenial' ),
+		'choices' => xenial_get_site_layouts(),
+		'default' => $xenial_customizer_defaults['site_layout']
+	]
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control(
-		$wp_customize, 
-		'site_layout',
-		array(
-			'label' => esc_html__( 'Site Layout', 'xenial' ),
-			'section' => 'xenial_layout',
-			'choices' => xenial_get_site_layouts()
-		) 
-	)
+xenial_divider_field( 
+	'xenial_layout_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_layout', 
+	] 
 );
 
 
-$wp_customize->add_setting( 
-	'container_width', 
-	array(
+xenial_range_control_field(
+	'container_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_layout',
+		'label' => esc_html__( 'Container Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 700, 'max' => 1920, 'step' => 1, 'responsive' => false],
 		'default' => $xenial_customizer_defaults['container_width'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
+		'active_callback' => 'xenial_is_fullwidth_stretched_site_layout_disabled'
+	]
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'container_width', 
-		array(
-			'label' 			=> esc_html__( 'Container Width (px)', 'xenial' ),
-			'section'  			=> 'xenial_layout',
-            'input_attrs' 		=> array(
-                'min'		=> 500,
-                'max' 		=> 1920,
-                'step' 		=> 1,
-            ),
-            'active_callback' => 'xenial_is_fullwidth_stretched_site_layout_disabled'
-		) 
-	) 
+
+xenial_divider_field( 
+	'xenial_layout_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_layout', 
+	] 
+);
+
+xenial_range_control_field(
+	'narrow_container_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_layout',
+		'label' => esc_html__( 'Narrow Container Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 700, 'max' => 1920, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['narrow_container_width']
+	]
+);
+
+
+xenial_divider_field( 
+	'xenial_layout_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_layout', 
+	] 
 );

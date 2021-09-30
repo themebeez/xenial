@@ -217,6 +217,18 @@ $wp_customize->add_control(
 );
 
 
+xenial_range_control_field(
+	'body_letter_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_typography',
+		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['body_letter_spacing']
+	]
+);
+
+
 $wp_customize->add_setting( 
 	'headings_typography_wrapper', 
 	array(
@@ -344,7 +356,7 @@ $wp_customize->add_control(
 		    'type'                     => 'xenial-wrapper',
 		    'accordion'                => true,
 		    'class'                    => esc_attr( 'h1-typography-content' ),
-		    'controls_to_wrap'         => 2,
+		    'controls_to_wrap'         => 3,
 		    'expanded'                 => false,
 		    'priority'                 => 10,
 		) 
@@ -446,7 +458,16 @@ $wp_customize->add_control(
 	) 
 );
 
-
+xenial_range_control_field(
+	'h1_letter_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_typography',
+		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['h1_letter_spacing']
+	]
+);
 
 
 
@@ -467,7 +488,7 @@ $wp_customize->add_control(
 		    'type'                     => 'xenial-wrapper',
 		    'accordion'                => true,
 		    'class'                    => esc_attr( 'h2-typography-content' ),
-		    'controls_to_wrap'         => 2,
+		    'controls_to_wrap'         => 3,
 		    'expanded'                 => false,
 		    'priority'                 => 10,
 		) 
@@ -569,7 +590,16 @@ $wp_customize->add_control(
 	) 
 );
 
-
+xenial_range_control_field(
+	'h2_letter_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_typography',
+		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['h2_letter_spacing']
+	]
+);
 
 
 $wp_customize->add_setting( 
@@ -589,7 +619,7 @@ $wp_customize->add_control(
 		    'type'                     => 'xenial-wrapper',
 		    'accordion'                => true,
 		    'class'                    => esc_attr( 'h3-typography-content' ),
-		    'controls_to_wrap'         => 2,
+		    'controls_to_wrap'         => 3,
 		    'expanded'                 => false,
 		    'priority'                 => 10,
 		) 
@@ -691,7 +721,16 @@ $wp_customize->add_control(
 	) 
 );
 
-
+xenial_range_control_field(
+	'h3_letter_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_typography',
+		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['h3_letter_spacing']
+	]
+);
 
 
 $wp_customize->add_setting( 
@@ -711,7 +750,7 @@ $wp_customize->add_control(
 		    'type'                     => 'xenial-wrapper',
 		    'accordion'                => true,
 		    'class'                    => esc_attr( 'h4-typography-content' ),
-		    'controls_to_wrap'         => 2,
+		    'controls_to_wrap'         => 3,
 		    'expanded'                 => false,
 		    'priority'                 => 10,
 		) 
@@ -814,7 +853,16 @@ $wp_customize->add_control(
 );
 
 
-
+xenial_range_control_field(
+	'h4_letter_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_typography',
+		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['h4_letter_spacing']
+	]
+);
 
 
 $wp_customize->add_setting( 
@@ -834,7 +882,7 @@ $wp_customize->add_control(
 		    'type'                     => 'xenial-wrapper',
 		    'accordion'                => true,
 		    'class'                    => esc_attr( 'h5-typography-content' ),
-		    'controls_to_wrap'         => 2,
+		    'controls_to_wrap'         => 3,
 		    'expanded'                 => false,
 		    'priority'                 => 10,
 		) 
@@ -937,7 +985,16 @@ $wp_customize->add_control(
 );
 
 
-
+xenial_range_control_field(
+	'h5_letter_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_typography',
+		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['h5_letter_spacing']
+	]
+);
 
 $wp_customize->add_setting( 
 	'h6_typography_wrapper', 
@@ -956,7 +1013,7 @@ $wp_customize->add_control(
 		    'type'                     => 'xenial-wrapper',
 		    'accordion'                => true,
 		    'class'                    => esc_attr( 'h6-typography-content' ),
-		    'controls_to_wrap'         => 2,
+		    'controls_to_wrap'         => 3,
 		    'expanded'                 => false,
 		    'priority'                 => 10,
 		) 
@@ -1056,4 +1113,15 @@ $wp_customize->add_control(
 		    ),
 		) 
 	) 
+);
+
+xenial_range_control_field(
+	'h6_letter_spacing',
+	[
+		'priority' => 10,
+		'section' => 'xenial_typography',
+		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.5, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['h6_letter_spacing']
+	]
 );

@@ -196,6 +196,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'colors.php';
 	require $customizer_fields_path . 'typography.php';
 	require $customizer_fields_path . 'buttons.php';
+	require $customizer_fields_path . 'breadcrumbs.php';
 	require $customizer_fields_path . 'miscellaneous.php';
 
 	require $customizer_fields_path . 'header/top-header.php';
@@ -215,9 +216,18 @@ function xenial_customize_register( $wp_customize ) {
 	// require $customizer_fields_path . 'header/elements/text.php';
 
 	require $customizer_fields_path . 'pages/inner-header.php';
-	require $customizer_fields_path . 'pages/breadcrumbs.php';
+	// require $customizer_fields_path . 'pages/breadcrumbs.php';
 	require $customizer_fields_path . 'pages/archive-settings.php';
+	require $customizer_fields_path . 'pages/archive/header.php';
+	require $customizer_fields_path . 'pages/archive/post-card.php';
+	require $customizer_fields_path . 'pages/archive/pagination.php';
 	require $customizer_fields_path . 'pages/single-settings.php';
+	require $customizer_fields_path . 'pages/single-post.php';
+	require $customizer_fields_path . 'pages/post-single/header.php';
+	require $customizer_fields_path . 'pages/post-single/post-content.php';
+	require $customizer_fields_path . 'pages/post-single/posts-navigation.php';
+	require $customizer_fields_path . 'pages/post-single/author-box.php';
+	require $customizer_fields_path . 'pages/post-single/related-posts.php';
 	require $customizer_fields_path . 'pages/single-page.php';
 	
 	require $customizer_fields_path . 'fields-banner.php';

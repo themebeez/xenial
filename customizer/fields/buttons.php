@@ -2,237 +2,199 @@
 
 $xenial_customizer_defaults = xenial_get_customizer_defaults();
 
-$wp_customize->add_section( 
+
+xenial_section_field( 
 	'xenial_buttons',
-	array(
-		'title' => esc_html__( 'Buttons', 'xenial' ),
-		'panel' => 'xenial_general_panel'
-	)
-);
-
-$wp_customize->add_setting(
-	'buttons_info_1',
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default' => ''
-	)
-);
-
-$wp_customize->add_control(
-	new Xenial_Customize_Info_Control(
-		$wp_customize,
-		'buttons_info_1',
-		array(
-			'label' => esc_html__( 'Primary Button', 'xenial' ),
-			'section' => 'xenial_buttons',
-			'priority' => 10,
-		)
-	)
-);
-
-$wp_customize->add_setting( 
-	'button_style',
-	array(
-		'default' => $xenial_customizer_defaults['button_style'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'button_style',
-		array(
-			'label' => esc_html__( 'Style', 'xenial' ),
-			'section' => 'xenial_buttons',
-			'choices' => xenial_button_styles()
-		) 
-	)
+	[
+		'priority' => 10,
+		'panel' => 'xenial_general_panel',
+		'title' => esc_html__( 'Buttons', 'xenial' )
+	]
 );
 
 
-$wp_customize->add_setting( 
-	'btn_txt_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['btn_txt_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'btn_txt_color', 
-		array(
-			'label'	   	=> esc_html__( 'Text Color', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_controls_wrapper_field(
+	'general_button',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'General Button', 'xenial' )
+	],
+	false
 );
 
 
-
-$wp_customize->add_setting( 
-	'btn_bg_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['btn_bg_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'btn_bg_color', 
-		array(
-			'label'	   	=> esc_html__( 'Background Color', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_box_dimension_field(
+	'btn_padding',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['btn_padding']
+	],
+	false
 );
 
 
-
-$wp_customize->add_setting( 
-	'btn_txt_hover_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['btn_txt_hover_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'btn_txt_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Text Color - On Hover', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_divider_field( 
+	'general_button_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_buttons', 
+	] 
 );
 
 
-
-$wp_customize->add_setting( 
-	'btn_bg_hover_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['btn_bg_hover_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'btn_bg_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Background Color - On Hover', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_info_field(
+	'general_button_border',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border', 'xenial' )
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'btn_border_width', 
-	array(
-		'default' => $xenial_customizer_defaults['btn_border_width'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'btn_border_width', 
-		array(
-			'label' 			=> esc_html__( 'Border Width (px)', 'xenial' ),
-			'section'  			=> 'xenial_buttons',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 15,
-                'step' 		=> 1,
-            ),
-		) 
-	) 
+xenial_select_field(
+	'btn_border_style',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border Style', 'xenial' ),
+		'choices' => xenial_get_border_styles(),
+		'default' => $xenial_customizer_defaults['btn_border_style']
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'btn_border_radius', 
-	array(
-		'default' => $xenial_customizer_defaults['btn_border_radius'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'btn_border_radius', 
-		array(
-			'label' 			=> esc_html__( 'Border Radius (px)', 'xenial' ),
-			'section'  			=> 'xenial_buttons',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 1,
-            ),
-            'active_callback' => 'xenial_is_button_rounded'
-		) 
-	) 
+xenial_box_dimension_field(
+	'btn_border_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 10, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['btn_border_width']
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'btn_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['btn_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'btn_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Border Color', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_range_control_field(
+	'btn_border_radius',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['btn_border_radius']
+	]
 );
 
 
-
-
-$wp_customize->add_setting( 
-	'btn_border_hover_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['btn_border_hover_color'],
-	) 
+xenial_divider_field( 
+	'general_button_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_buttons', 
+	] 
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'btn_border_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Border Color - On Hover', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_info_field(
+	'general_button_default_state_header',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'btn_txt_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Text', 'xenial' ),
+		'default' => $xenial_customizer_defaults['btn_txt_color']
+	],
+	false
+);
+
+
+xenial_color_field(
+	'btn_bg_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Background', 'xenial' ),
+		'default' => $xenial_customizer_defaults['btn_bg_color']
+	],
+	true
+);
+
+xenial_color_field(
+	'btn_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border', 'xenial' ),
+		'default' => $xenial_customizer_defaults['btn_border_color']
+	],
+	true
+);
+
+
+xenial_divider_field( 
+	'general_button_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_buttons', 
+	] 
+);
+
+xenial_info_field(
+	'general_button_hover_state_header',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Hover State Color', 'xenial' )
+	]
+);
+
+
+xenial_color_field(
+	'btn_txt_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Text', 'xenial' ),
+		'default' => $xenial_customizer_defaults['btn_txt_hover_color']
+	],
+	false
+);
+
+
+xenial_color_field(
+	'btn_bg_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Background', 'xenial' ),
+		'default' => $xenial_customizer_defaults['btn_bg_hover_color']
+	],
+	true
+);
+
+xenial_color_field(
+	'btn_border_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border', 'xenial' ),
+		'default' => $xenial_customizer_defaults['btn_border_hover_color']
+	],
+	true
 );
 
 
@@ -240,232 +202,186 @@ $wp_customize->add_control(
 
 
 
-$wp_customize->add_setting(
-	'buttons_info_2',
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default' => ''
-	)
+xenial_controls_wrapper_field(
+	'text_button',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Text Button', 'xenial' )
+	],
+	false
 );
 
-$wp_customize->add_control(
-	new Xenial_Customize_Info_Control(
-		$wp_customize,
-		'buttons_info_2',
-		array(
-			'label' => esc_html__( 'Text Button', 'xenial' ),
-			'section' => 'xenial_buttons',
-			'priority' => 10,
-		)
-	)
+
+xenial_box_dimension_field(
+	'txt_button_padding',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['txt_button_padding']
+	],
+	false
 );
 
-$wp_customize->add_setting( 
+
+xenial_divider_field( 
+	'text_button_divider_1', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_buttons', 
+	] 
+);
+
+
+xenial_info_field(
+	'text_button_border',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border', 'xenial' )
+	]
+);
+
+
+xenial_select_field(
 	'txt_button_style',
-	array(
-		'default' => $xenial_customizer_defaults['txt_button_style'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'txt_button_style',
-		array(
-			'label' => esc_html__( 'Style', 'xenial' ),
-			'section' => 'xenial_buttons',
-			'choices' => xenial_button_styles()
-		) 
-	)
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border Style', 'xenial' ),
+		'choices' => xenial_get_border_styles(),
+		'default' => $xenial_customizer_defaults['txt_button_style']
+	]
 );
 
 
-
-
-
-$wp_customize->add_setting( 
-	'txt_btn_txt_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['txt_btn_txt_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'txt_btn_txt_color', 
-		array(
-			'label'	   	=> esc_html__( 'Text Color', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_box_dimension_field(
+	'txt_btn_border_width',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 10, 'step' => 1, 'responsive' => false],
+		'defaults' => $xenial_customizer_defaults['txt_btn_border_width']
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'txt_btn_bg_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['txt_btn_bg_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'txt_btn_bg_color', 
-		array(
-			'label'	   	=> esc_html__( 'Background Color', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_range_control_field(
+	'txt_btn_border_radius',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
+		'default' => $xenial_customizer_defaults['txt_btn_border_radius']
+	]
 );
 
 
-
-
-
-$wp_customize->add_setting( 
-	'txt_btn_txt_hover_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['txt_btn_txt_hover_color'],
-	) 
+xenial_divider_field( 
+	'text_button_divider_2', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_buttons', 
+	] 
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'txt_btn_txt_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Text Color - On Hover', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_info_field(
+	'text_button_default_state_header',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Default State Color', 'xenial' )
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'txt_btn_bg_hover_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['txt_btn_bg_hover_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'txt_btn_bg_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Background Color - On Hover', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_color_field(
+	'txt_btn_txt_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Text', 'xenial' ),
+		'default' => $xenial_customizer_defaults['txt_btn_txt_color']
+	],
+	false
 );
 
 
-
-$wp_customize->add_setting( 
-	'txt_btn_border_width', 
-	array(
-		'default' => $xenial_customizer_defaults['txt_btn_border_width'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
+xenial_color_field(
+	'txt_btn_bg_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Background', 'xenial' ),
+		'default' => $xenial_customizer_defaults['txt_btn_bg_color']
+	],
+	true
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'txt_btn_border_width', 
-		array(
-			'label' 			=> esc_html__( 'Border Width (px)', 'xenial' ),
-			'section'  			=> 'xenial_buttons',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 15,
-                'step' 		=> 1,
-            ),
-		) 
-	) 
+xenial_color_field(
+	'txt_btn_border_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border', 'xenial' ),
+		'default' => $xenial_customizer_defaults['txt_btn_border_color']
+	],
+	true
 );
 
 
-
-$wp_customize->add_setting( 
-	'txt_btn_border_radius', 
-	array(
-		'default' => $xenial_customizer_defaults['txt_btn_border_radius'],
-		'sanitize_callback' 	=> 'xenial_sanitize_range',
-	) 
+xenial_divider_field( 
+	'text_button_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_buttons', 
+	] 
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Range_Control( 
-		$wp_customize, 
-		'txt_btn_border_radius', 
-		array(
-			'label' 			=> esc_html__( 'Border Radius (px)', 'xenial' ),
-			'section'  			=> 'xenial_buttons',
-            'input_attrs' 		=> array(
-                'min'		=> 0,
-                'max' 		=> 100,
-                'step' 		=> 1,
-            ),
-            'active_callback' => 'xenial_is_text_button_rounded'
-		) 
-	) 
+xenial_info_field(
+	'text_button_hover_state_header',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Hover State Color', 'xenial' )
+	]
 );
 
 
-
-$wp_customize->add_setting( 
-	'txt_btn_border_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['txt_btn_border_color'],
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'txt_btn_border_color', 
-		array(
-			'label'	   	=> esc_html__( 'Border Color', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_color_field(
+	'txt_btn_txt_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Text', 'xenial' ),
+		'default' => $xenial_customizer_defaults['txt_btn_txt_hover_color']
+	],
+	false
 );
 
 
-
-
-$wp_customize->add_setting( 
-	'txt_btn_border_hover_color', 
-	array(
-		'sanitize_callback' => '',
-		'default' => $xenial_customizer_defaults['txt_btn_border_hover_color'],
-	) 
+xenial_color_field(
+	'txt_btn_bg_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Background', 'xenial' ),
+		'default' => $xenial_customizer_defaults['txt_btn_bg_hover_color']
+	],
+	true
 );
 
-$wp_customize->add_control( 
-	new Xenial_Customize_Alpha_Color_Picker_Control( 
-		$wp_customize, 
-		'txt_btn_border_hover_color', 
-		array(
-			'label'	   	=> esc_html__( 'Border Color - On Hover', 'xenial' ),
-			'section'  	=> 'xenial_buttons',
-			'priority' 	=> 10,
-		) 
-	) 
+xenial_color_field(
+	'txt_btn_border_hover_color',
+	[
+		'priority' => 10,
+		'section' => 'xenial_buttons',
+		'label' => esc_html__( 'Border', 'xenial' ),
+		'default' => $xenial_customizer_defaults['txt_btn_border_hover_color']
+	],
+	true
 );

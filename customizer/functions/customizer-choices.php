@@ -636,6 +636,23 @@ if ( ! function_exists( 'xenial_get_single_content_widths' ) ) {
 }
 
 
+
+if ( ! function_exists( 'xenial_get_inner_container_widths' ) ) {
+
+	function xenial_get_inner_container_widths() {
+
+		return apply_filters( 
+			'xenial_filter_inner_container_widths',  
+			array(
+				'wide' => esc_html__( 'Wide', 'xenial' ),
+				'container' => esc_html__( 'Container', 'xenial' ),
+				'narrow' => esc_html__( 'Narrow', 'xenial' )
+			)
+		);
+	}
+}
+
+
 if ( ! function_exists( 'xenial_get_single_post_elements' ) ) {
 
 	function xenial_get_single_post_elements() {
@@ -1108,6 +1125,21 @@ if ( ! function_exists( 'xenial_get_offcanvas_menu_positions' ) ) {
 				'left' => esc_html__( 'Left', 'xenail' ),
 				'right' => esc_html__( 'Right', 'xenial' )
 			]
+		);
+	}
+}
+
+
+if ( ! function_exists( 'xenial_get_heading_tags' ) ) {
+
+	function xenial_get_heading_tags() {
+		return array(
+			'h1' => 'H1',
+			'h2' => 'H2',
+			'h3' => 'H3',
+			'h4' => 'H4',
+			'h5' => 'H5',
+			'h6' => 'H6'
 		);
 	}
 }
