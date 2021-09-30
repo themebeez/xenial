@@ -314,17 +314,21 @@ input[type="checkbox"] {
         content: '';
         position: absolute !important;
         z-index: 2 !important;
-        left: 1px !important;
-        top: 1px !important;
-        width: 15px !important;
-        height: 15px !important;
-        border: 2px solid #ffffff !important;
+        left: 0px !important;
+        top: 0px !important;
+        width: 18px !important;
+        height: 18px !important;
+        border: none !important;
         opacity: 0 !important;
         overflow: hidden !important;
         margin: 0 !important;
         padding: 0 !important;
-        border-radius: 2px !important;
+        border-radius: 0 !important;
         background-color: transparent !important;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E") !important;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: center;
         transition: all .26s cubic-bezier(.25, .8, .25, 1);
     }
 

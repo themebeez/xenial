@@ -232,6 +232,8 @@
 .xe-author-box .author-avatar {
 
     max-width: 75px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .xe-author-box .author-meta-data {
@@ -283,6 +285,13 @@
 .xe-post-navigation .nav-previous > a {
 
     display: block;
+    color: var(--xe_base_text_color);
+}
+
+.xe-post-navigation .nav-next > a:hover,
+.xe-post-navigation .nav-previous > a:hover {
+
+    color: var(--xe_seconary_color);
 }
 
 .xe-post-navigation .nav-next h6,

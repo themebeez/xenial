@@ -50,14 +50,15 @@
 
 // edit 
 
-.edit {
+.edit,
+.post-edit-link {
 
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
+    gap: 5px;
     position: relative;
-    font-family: var(--xe_system_font_family);
-    font-size: 14px;
+    font-size: 11px;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.25px;
@@ -65,16 +66,17 @@
     background-color: transparent;
 }
 
-.edit::before {
+.edit::before,
+.post-edit-link::before {
 
     content: "\e61c";
     display: inline-flex;
     font-family: var(--xe_iconfont);
     font-weight: normal;
-    margin-right: 4px;
 }
 
-.edit:hover {
+.edit:hover,
+.post-edit-link::hover {
 
     text-decoration: none;
 }
