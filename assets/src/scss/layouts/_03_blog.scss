@@ -44,6 +44,16 @@
     font-weight: 600;
 }
 
+.hentry .xe-post-title .xe-title a {
+
+    color: var(--xe_base_text_color); 
+}
+
+.hentry .xe-post-title .xe-title a:hover {
+
+    color: var(--xe_seconary_color);
+}
+
 .xe-post-metas,
 .xe-post-excerpt > p,
 .hentry .xe-post-title .xe-title {
@@ -77,6 +87,16 @@
     background-color: #d6d6d6;
 }
 
+.xe-post-metas .meta a {
+
+    color: var(--xe_base_text_color);
+}
+
+.xe-post-metas .meta a:hover {
+
+    color: var(--xe_seconary_color);
+}
+
 .xe-post-metas.slanted-seperator .meta:after {
 
     transform: rotate(20deg);
@@ -105,6 +125,7 @@
     display: inline-flex;
     margin-right: 5px;
     max-width: 30px;
+    border-radius: 50%;
 }
 
 .xe-post-metas .meta.date::before,

@@ -27,6 +27,7 @@
     line-height: 40px;
     border-radius: 3px;
     margin-right: 5px;
+    color: var(--xe_base_text_color);
     border: 2px solid transparent;
 
     &:last-child {
@@ -38,6 +39,7 @@
 .nav-links .page-numbers:hover,
 .page-links .post-page-numbers:hover  {
 
+    color: var(--xe_seconary_color);
     text-decoration: none;
 }
 

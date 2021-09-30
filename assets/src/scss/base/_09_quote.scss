@@ -3,10 +3,11 @@
 q,
 blockquote {
 
+    display: block;
     position: relative;
     font-family: var(--xe_text_emphasis_font_family);
     font-size: 20px; // fallback
-    font-size: calc(var(--xe_base_font_size) + 6px);
+    font-size: calc(var(--xe_base_font_size) + 30%);
     line-height: var(--xe_base_font_line_height);
     font-style: italic;
     font-weight: normal;
