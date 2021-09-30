@@ -23,347 +23,128 @@ xenial_tab_field(
 			'tab_1' => apply_filters( 
 	        	'xenial_archive_pages_tab_1_controls', 
 	        	[
-	        		'archive_content_width' => '',
-	        		'archive_narrow_width' => '',
-	        		'xenial_archive_pages_general_divider_1' => '',
+	        		'archive_page_header' => '',
+	        		'archive_page_header_width' => '',
+	        		'archive_page_header_general_divider_1' => '',
+	        		'archive_title_tag' => '',
+	        		'archive_page_header_general_divider_2' => '',
+	        		
+	        		'archive_content_container_width' => '',
+	        		'archive_post_cards' => '',
+	        
 	        		'archive_post_structure_one' => '',
-	        		'xenial_archive_pages_general_divider_2' => '',
+	        		'xenial_archive_pages_general_divider_1' => '',
 	        		'archive_post_meta' => '',
 	        		'archive_show_icons_in_post_meta' => '',
-	        		'xenial_archive_pages_general_divider_3' => '',
+	        		'xenial_archive_pages_general_divider_2' => '',
 	        		'archive_excerpt_heading' => '',
 	        		'archive_excerpt_length' => '',
 	        		'archive_excerpt_more' => '',
-	        		'xenial_archive_pages_general_divider_4' => '',
+	        		'xenial_archive_pages_general_divider_3' => '',
 	        		'archive_read_more_heading' => '',
 	        		'archive_enable_read_more_button' => '',
 	        		'archive_read_more_button_title' => '',
-	        		'xenial_archive_pages_general_divider_5' => '',
-	        		'archive_pagination_heading' => '',
+	        		'xenial_archive_pages_general_divider_4' => '',
+
+	        		'archive_pagination' => '',
 	        		'archive_pagination_type' => '',
+	        		'archive_pagination_general_divider_1' => '',
 	        		'previous_posts_link_btn_label' => '',
 	        		'next_posts_link_btn_label' => '',
+	        		'archive_pagination_general_divider_2' => '',
 	        		'pagination_mid_size' => '',
 	        	] 
 	        ),
 	        'tab_2' => apply_filters( 
 	        	'xenial_archive_pages_tab_2_controls', 
 	        	[
-	        		
+	        		'archive_page_header_styles' => '',
+	        		'archive_page_header_background_color' => '',
+	        		'archive_page_header_styles_divider_1' => '',
+
+	        		'archive_page_header_title_typography' => '',	
+	        		'archive_page_title_font_size' => '',
+		            'archive_page_title_line_height' => '',
+		            'archive_page_title_letter_spacing' => '',
+		            'archive_page_title_font_weight' => '',
+		            'archive_page_title_font_style' => '',
+		            'archive_page_title_text_transform' => '',   
+		            'archive_page_header_title_color_header' =>  '',    		
+	        		'archive_page_header_title_color' => '',
+
+	        		'archive_page_header_styles_divider_2' => '',
+	        		'archive_page_header_breadcrumb_styles' => '',
+	        		'archive_page_header_breadcrumb_text_color' => '',
+	        		'archive_page_header_breadcrumb_link_hover_color' => '',
+
+
+	        		'archive_page_header_post_cards_styles' => '',
+	        		'archive_post_card_background_color' => '',
+	        		'archive_page_header_post_card_divider_1' => '',
+		            'archive_post_card_border_style' => '',
+		            'archive_post_card_border_width' => '',
+		            'archive_post_card_border_radius' => '',
+		            'archive_post_card_border_color' => '',
+		            'archive_page_header_post_card_divider_2' => '',
+
+		            'archive_page_header_post_title_typography' => '',
+		            'archive_post_title_font_size' => '',
+		            'archive_post_title_line_height' => '',
+		            'archive_post_title_letter_spacing' => '',
+		            'archive_post_title_font_weight' => '',
+		            'archive_post_title_font_style' => '',
+		            'archive_post_title_text_transform' => '',
+		            'archive_page_header_post_card_divider_3' => '',
+		            'archive_page_header_post_title_color' => '',
+		            'archive_post_title_font_color' => '',
+		            'archive_post_title_font_hover_color' => '',
+		            'archive_page_header_post_card_divider_4' => '',
+
+		            'archive_page_header_post_card_divider_4' => '',
+		            'archive_page_header_post_meta_typography' => '',
+		            'archive_post_meta_font_size' => '',
+		            'archive_post_meta_line_height' => '',
+		            'archive_post_meta_letter_spacing' => '',
+		            'archive_post_meta_font_weight' => '',
+		            'archive_post_meta_font_style' => '',
+		            'archive_post_meta_text_transform' => '',
+		            'archive_page_header_post_card_divider_5' => '',
+		            'archive_page_header_post_meta_color' => '',
+		            'archive_post_meta_color' => '',
+		            'archive_post_meta_hover_color' => '',
+		            'archive_post_meta_separator_color' => '',
+
+
+		            'archive_page_header_post_card_divider_6' => '',
+		            'archive_page_header_post_excerpt_typography' => '',
+		            'archive_post_excerpt_font_size' => '',
+		            'archive_post_excerpt_line_height' => '',
+		            'archive_post_excerpt_letter_spacing' => '',
+		            'archive_post_excerpt_font_weight' => '',
+		            'archive_post_excerpt_font_style' => '',
+		            'archive_post_excerpt_text_transform' => '',
+		            'archive_page_header_post_card_divider_7' => '',
+		            'archive_page_header_post_excerpt_color' => '',
+		            'archive_post_excerpt_color' => '',
+
+		            'archive_page_header_pagination_styles' => '',
+		            'archive_pagination_top_spacing' => '',
+		            'archive_pagination_items_spacing' => '',
+		            'archive_pagination_items_padding' => '',
+		            'archive_pagination_font_size' => '',
+		            'archive_pagination_item_initial_background_color' => '',
+		            'archive_pagination_item_active_background_color' => '',
+		            'archive_pagination_item_hover_background_color' => '',
+		            'archive_pagination_item_initial_font_color' => '',
+		            'archive_pagination_item_active_font_color' => '',
+		            'archive_pagination_item_hover_font_color' => '',
+		            'archive_pagination_item_border_style' => '',
+		            'archive_pagination_item_border_width' => '',
+		            'archive_pagination_item_border_radius' => '',
+		            'archive_pagination_item_border_color' => '',
+		            'archive_pagination_item_border_hover_color' => ''
 	        	] 
 	        )
 		]
 	]
-);
-
-
-xenial_radio_button_group_field(
-	'archive_content_width',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Content Width', 'xenial' ),
-		'item' => 'text',
-		'columns' => 2,
-		'choices' => xenial_content_widths(),
-		'default' => $xenial_customizer_defaults['archive_content_width']
-	],
-	false
-);
-
-
-
-xenial_range_control_field(
-	'archive_narrow_width',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Narrow Width (px)', 'xenial' ),
-		'input_attrs' => ['min' => 500, 'max' => 1500, 'step' => 1, 'responsive' => false],
-		'default' => $xenial_customizer_defaults['archive_narrow_width']
-	]
-);
-
-
-xenial_divider_field( 
-	'xenial_archive_pages_general_divider_1', 
-	[ 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	] 
-);
-
-
-xenial_sortable_checkbox_field(
-	'archive_post_structure_one',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Post Elements', 'xenial' ),
-		'choices' => apply_filters( 
-			'xenial_archive_post_structure_one_array',  
-			[
-				'image' => esc_html__( 'Featured Image', 'xenial' ),
-				'title' => esc_html__( 'Title', 'xenial' ),
-				'meta' => esc_html__( 'Meta', 'xenial' ),
-				'excerpt' => esc_html__( 'Excerpt', 'xenial' ),
-			]
-		),
-		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ]
-	]
-);
-
-
-xenial_divider_field( 
-	'xenial_archive_pages_general_divider_2', 
-	[ 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	] 
-);
-
-
-xenial_sortable_checkbox_field(
-	'archive_post_meta',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Meta Structure', 'xenial' ),
-		'choices' => xenial_get_post_meta_structure(),
-		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ]
-	]
-);
-
-
-
-xenial_switch_field(
-	'archive_show_icons_in_post_meta',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Display Icons In Post Meta', 'xenial' ),
-		'default' => $xenial_customizer_defaults['archive_show_icons_in_post_meta']
-	]
-);
-
-
-
-xenial_divider_field( 
-	'xenial_archive_pages_general_divider_3', 
-	[ 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	] 
-);
-
-
-xenial_info_field(
-	'archive_excerpt_heading',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Post Excerpt', 'xenial' )
-	]
-);
-
-
-xenial_range_control_field(
-	'archive_excerpt_length',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Length', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false],
-		'default' => $xenial_customizer_defaults['archive_excerpt_length']
-	]
-);
-
-
-xenial_text_field(
-	'archive_excerpt_more',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'More Text', 'xenial' ),
-		'default' => $xenial_customizer_defaults['archive_excerpt_more']
-	]
-);
-
-
-xenial_divider_field( 
-	'xenial_archive_pages_general_divider_4', 
-	[ 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	] 
-);
-
-
-xenial_info_field(
-	'archive_read_more_heading',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Read More Button', 'xenial' )
-	]
-);
-
-
-xenial_switch_field(
-	'archive_enable_read_more_button',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Enable Button', 'xenial' ),
-		'default' => $xenial_customizer_defaults['archive_enable_read_more_button']
-	]
-);
-
-
-xenial_text_field(
-	'archive_read_more_button_title',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Label', 'xenial' ),
-		'default' => $xenial_customizer_defaults['archive_read_more_button_title']
-	]
-);
-
-
-
-xenial_divider_field( 
-	'xenial_archive_pages_general_divider_5', 
-	[ 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	] 
-);
-
-
-
-xenial_info_field(
-	'archive_pagination_heading',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Pagination', 'xenial' )
-	]
-);
-
-
-xenial_select_field(
-	'archive_pagination_type',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Type', 'xenial' ),
-		'choices' => xenial_get_pagination_layouts(),
-		'default' => $xenial_customizer_defaults['archive_pagination_type']
-	]
-);
-
-
-xenial_text_field(
-	'previous_posts_link_btn_label',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Previous Button Label', 'xenial' ),
-		'default' => $xenial_customizer_defaults['previous_posts_link_btn_label']
-	]
-);
-
-
-xenial_text_field(
-	'next_posts_link_btn_label',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Next Button Label', 'xenial' ),
-		'default' => $xenial_customizer_defaults['next_posts_link_btn_label']
-	]
-);
-
-
-
-xenial_range_control_field(
-	'pagination_mid_size',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Mid Size', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 10, 'step' => 1, 'responsive' => false],
-		'default' => $xenial_customizer_defaults['pagination_mid_size']
-	]
-);
-
-
-
-$wp_customize->add_setting(
-	'archive_info_5',
-	array(
-		'sanitize_callback' => 'sanitize_text_field',
-		'default' => ''
-	)
-);
-
-$wp_customize->add_control(
-	new Xenial_Customize_Info_Control(
-		$wp_customize,
-		'archive_info_5',
-		array(
-			'label' => esc_html__( 'Typography', 'xenial' ),
-			'section' => 'xenial_archive_pages',
-			'priority' => 10,
-		)
-	)
-);
-
-
-$wp_customize->add_setting( 
-	'archive_post_title_font_size_desktop', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['archive_post_title_font_size']['desktop'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'archive_post_title_font_size_tablet', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['archive_post_title_font_size']['tablet'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_setting( 
-	'archive_post_title_font_size_mobile', 
-	array(
-		'default'           	=> $xenial_customizer_defaults['archive_post_title_font_size']['mobile'],
-		'sanitize_callback' 	=> 'xenial_sanitize_integer_number',
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_Slider_Control( 
-		$wp_customize, 
-		'archive_post_title_font_size', 
-		array(
-			'label' 			=> esc_html__( 'Font Size (px)', 'xenial' ),
-			'section'  			=> 'xenial_archive_pages',
-			'settings' => array(
-		        'desktop' 	=> 'archive_post_title_font_size_desktop',
-		        'tablet' 	=> 'archive_post_title_font_size_tablet',
-		        'mobile' 	=> 'archive_post_title_font_size_mobile',
-		    ),
-			'priority' 				=> 10,
-		    'input_attrs' 			=> array(
-		        'min'   => 0,
-		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' => true
-		    ),
-		) 
-	) 
 );
