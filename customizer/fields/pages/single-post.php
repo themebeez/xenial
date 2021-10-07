@@ -28,6 +28,15 @@ xenial_tab_field(
             		'post_single_breadcrumbs_width' => '',
             		'post_single_breadcrumbs_divider_2' => '',
 
+            		'post_single_content_general' => '',
+            		'post_single_content_width' => '',
+            		'post_single_content_divider_1' => '',
+		            'post_single_content_elements' => '',
+		            'post_single_content_divider_2' => '',
+		            'post_single_meta_elements' => '',
+		            'post_single_content_divider_3' => '',
+		            'post_single_show_icons_in_post_meta' => '',
+
             		'post_single_author_box_general' => '',
             		'post_single_display_author_box' => '',
 
@@ -40,6 +49,14 @@ xenial_tab_field(
 		            'post_single_next_post_link_title_label' => '', 
 		            'post_single_posts_navigation_divider_3' => '',		             
 		            'post_single_posts_navigation_divider_4' => '',
+
+		            'post_single_comments_general' => '',
+		            'post_single_display_comments' => '',
+		            'post_single_comments_divider_1' => '',
+		            'post_single_comments_toggle_heading' => '',
+		            'post_single_show_toggle_comments_btn' => '',
+		            'post_single_comment_toggle_btn_title' => '',
+		            'post_single_comment_toggled_state_toggle_btn_title' => '',
 
 		            'post_single_related_posts_general' => '',
 		            'post_single_display_related_posts' => '',

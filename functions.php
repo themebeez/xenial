@@ -251,3 +251,9 @@ require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 
 
 require get_template_directory() . '/inc/assets.php';
+
+
+
+
+
+require get_template_directory() . '/inc/third-party/breadcrumbs.php';

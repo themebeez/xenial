@@ -60,15 +60,9 @@ add_action( 'xenial_post_content', 'xenial_post_content_wrapper_after_template' 
 /**
  * Article footer.
  *
- * @see xenial_post_content_footer_before_template()
- * @see xenial_post_tags_meta_template()
- * @see xenial_post_updated_date_meta_template()
- * @see xenial_post_content_footer_after_template()
+ * @see xenial_post_content_footer_template()
  */
-add_action( 'xenial_post_content_footer', 'xenial_post_content_footer_before_template' );
-add_action( 'xenial_post_content_footer', 'xenial_post_tags_meta_template' );
-add_action( 'xenial_post_content_footer', 'xenial_post_updated_date_meta_template' );
-add_action( 'xenial_post_content_footer', 'xenial_post_content_footer_after_template' );
+
 
 
 
@@ -77,3 +71,24 @@ add_action( 'xenial_post_author_box', 'xenial_author_box_template' );
 add_action( 'xenial_post_navigation', 'xenial_post_navigation_template' );
 add_action( 'xenial_post_comments', 'xenial_post_comments_template' );
 add_action( 'xenial_related_posts', 'xenial_related_posts_template' );
+
+
+
+add_action( 'xenial_breadcrumbs', 'xenial_breadcrumbs_template' );
+
+
+
+
+add_action( 'xenial_archive_page_header', 'xenial_archive_page_header_template' );
+add_action( 'xenial_archive_grouped_post_meta', 'xenial_archive_grouped_post_meta_template' );
+add_action( 'xenial_archive_read_more', 'xenial_archive_read_more_template' );
+
+
+
+
+add_action( 'xenial_single_header', 'xenial_single_header_template' );
+add_action( 'xenial_single_grouped_post_meta', 'xenial_single_grouped_post_meta_template' );
+add_action( 'xenial_single_content_footer', 'xenial_single_content_footer_template' );
+
+
+add_action( 'xenial_single_page_header', 'xenial_single_page_header_template' );

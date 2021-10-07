@@ -683,6 +683,7 @@ if ( ! function_exists( 'xenial_get_post_meta_structure' ) ) {
 				'date' => esc_html__( 'Publish Date', 'xenial' ),
 				'comment' => esc_html__( 'Comments', 'xenial' ),
 				'categories' => esc_html__( 'Categories', 'xenial' ),
+				'read_time' => esc_html__( 'Read Time', 'xenial' ),
 			)
 		);
 	}

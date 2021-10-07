@@ -220,128 +220,34 @@ if ( ! function_exists( 'xenial_grouped_post_metas_template' ) ) {
 }
 
 
-if ( ! function_exists( 'xenial_post_content_footer_before_template' ) ) {
-	function xenial_post_content_footer_before_template() {
-		?>
-		<section class="xe-post-tags">
-		<?php
-	}
-}
 
 
-if ( ! function_exists( 'xenial_post_content_footer_after_template' ) ) {
-	function xenial_post_content_footer_after_template() {
-		?>
-		</section><!-- .xe-post-tags -->
-		<?php
-	}
-}
-
-
-
-if ( ! function_exists( 'xenial_post_tags_meta_template' ) ) {
-	function xenial_post_tags_meta_template() {
-		?>
-		<div class="post-tags">
-            <?php xenial_get_post_tags(); ?>
-        </div><!-- .post-tags -->
-		<?php
-	}
-}
-
-
-if ( ! function_exists( 'xenial_post_updated_date_meta_template' ) ) {
-	function xenial_post_updated_date_meta_template() {
-		?>
-		<div class="xe-lastupdated-info">
-            <p class="no-margin">
-                <span class="icon"><i class="ti-pencil"></i></span> 
-                <?php
-                printf(
-                	/* translators: %s: post updated date. */
-                	esc_html__( 'Last updated on %s', 'xenial' ),
-                	xenial_get_post_updated_date()
-                );
-                ?>
-            </p><!-- .no-margin -->
-        </div><!-- .xe-lastupdated-info -->
-		<?php
-	}
-}
-
-
-
-if ( ! function_exists( 'xenial_author_box_template' ) ) {
-	function xenial_author_box_template() {
-		$args = [];
-		get_template_part( 'template-parts/content/content', 'author-box', $args );
-	}
-}
-
-
-if ( ! function_exists( 'xenial_post_navigation_template' ) ) {
-	function xenial_post_navigation_template() {
-		$args = [];
-		get_template_part( 'template-parts/content/content', 'post-navigation', $args );
-	}
-}
 
 if ( ! function_exists( 'xenial_post_comments_template' ) ) {
 	function xenial_post_comments_template() {
+		$enableComments = xenial_get_option( 'post_single_display_comments' );
+		if ( ! $enableComments ) {
+			return;
+		}
+
 		// If comments are open or we have at least one comment, load up the comment template.
 		if ( comments_open() || get_comments_number() ) {
-			$args = [];
-			get_template_part( 'template-parts/content/content', 'comments', $args );
+
+			// Get customizer options values for comments toggle button.
+			$enableCommentsToggleButton = xenial_get_option( 'post_single_show_toggle_comments_btn' );
+			$initalButtonLabel = xenial_get_option( 'post_single_comment_toggle_btn_title' );
+			$toggledStateButtonLabel = xenial_get_option( 'post_single_comment_toggled_state_toggle_btn_title' );
+
+			// Assign customizer options values for template arguments array elements.
+			$templateArgs = array(
+				'enableCommentsToggleButton' => ( $enableCommentsToggleButton == true ) ? true : false,
+				'initialButtonLabel' => $initalButtonLabel,
+				'toggledStateButtonLabel' => $toggledStateButtonLabel,
+			);
+
+			get_template_part( 'template-parts/content/content', 'comments', $templateArgs );
 		}
 	}
 }
 
 
-if ( ! function_exists( 'xenial_related_posts_template' ) ) {
-	function xenial_related_posts_template() {
-		$args = [];
-
-		$currentPostID = get_queried_object_id();
-
-		$queryArgs = [
-			'post_type' => 'post',
-			'post__not_in' => [ $currentPostID ],
-			'posts_per_page' => 2,
-			'ignore_sticky_posts' => true
-		];
-
-		$taxQuery = [];
-
-		$currentPostCategories = wp_get_post_categories( $currentPostID );
-
-		if ( $currentPostCategories ) {
-			$taxQuery[] = [
-                'taxonomy' => 'category',
-                'field'    => 'term_id',
-                'terms'    => $currentPostCategories,
-                'operator' => 'IN',
-            ];
-		}
-
-		$currentPostTags = wp_get_post_tags( $currentPostID );
-		
-		if ( $currentPostTags ) {
-			$tagTerms = [];
-			foreach( $currentPostTags as $currentPostTag ) {
-				$tagTerms[] = $currentPostTag->term_id;
-			}
-			$taxQuery[] = [
-                'taxonomy' => 'post_tag',
-                'field'    => 'term_id',
-                'terms'    => $tagTerms,
-                'operator' => 'IN',
-            ];
-		}
-
-		$queryArgs['tax_query'] = [ 'relation' => 'OR', $taxQuery ];
-
-		$posts = new WP_Query( $queryArgs );
-		$args['posts'] = $posts;
-		get_template_part( 'template-parts/content/content', 'related-posts', $args );
-	}
-}

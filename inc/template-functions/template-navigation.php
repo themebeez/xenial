@@ -7,7 +7,12 @@ if ( ! function_exists( 'xenial_breadcrumbs_template' ) ) {
 
 	function xenial_breadcrumbs_template() {
 
-		$args = [];
+		$templateArgs = [
+			'source' => 'default'
+		];
+
+		$templateArgs['source'] = xenial_get_option( 'breadcrumbs_source' );
+
 		get_template_part( 'template-parts/content/content', 'breadcrumbs', $args );	
 	}
 }

@@ -28,6 +28,8 @@ xenial_tab_field(
 	        		'archive_page_header_general_divider_1' => '',
 	        		'archive_title_tag' => '',
 	        		'archive_page_header_general_divider_2' => '',
+	        		'archive_page_display_breadcrumbs' => '',
+	        		'archive_page_header_general_divider_3' => '',
 	        		
 	        		'archive_content_container_width' => '',
 	        		'archive_post_cards' => '',

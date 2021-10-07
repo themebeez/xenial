@@ -19,6 +19,8 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
 
         $css .= xenial_dynamic_color_css();
 
+        $css .= xenial_dynamic_sidebar_css();
+
 		// End styles for mobile devices
 
 		// Allow CSS to be filtered.
