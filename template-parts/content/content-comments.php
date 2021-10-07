@@ -12,10 +12,13 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
-?>
-<button id="xe-comment-toggle-btn" class="xe-button">
-    <span id="xe-show-comment-text"><?php echo esc_html__( 'Leave a Comment', 'xenial' ); ?> <span class="icon"><i class="ti-comment-alt"></i></span></span>
-    <span id="xe-hide-comment-text"><?php echo esc_html__( 'Hide Comments', 'xenial' ); ?> <span class="icon"><i class="ti-comments"></i></span></span>
-</button>
-<?php
+
+if ( $args['enableCommentsToggleButton'] ) {
+    ?>
+    <button id="xe-comment-toggle-btn" class="xe-button">
+        <span id="xe-show-comment-text"><?php echo esc_html( $args['initialButtonLabel'] ); ?> <span class="icon"><i class="ti-comment-alt"></i></span></span>
+        <span id="xe-hide-comment-text"><?php echo esc_html( $args['toggledStateButtonLabel'] ); ?> <span class="icon"><i class="ti-comments"></i></span></span>
+    </button>
+    <?php
+}
 comments_template();

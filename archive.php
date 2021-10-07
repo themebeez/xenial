@@ -10,19 +10,7 @@
 get_header();
 ?>
 
-<header class="xe-pageheader">
-    <div class="xe-container">
-        <aside class="xe-pagetitle-holder">
-            <h1 class="xe-title"><span class="classifier">Archive:</span> eCommerce</h1>
-        </aside><!-- // xe-pagetitle-holder -->
-        <nav class="xe-breadcrumb" role="navigation">
-            <ul class="trail-items">
-                <li class="trail-item trail-begin"><a href="index.html"><span>Home</span></a></li>
-                <li class="trail-item trail-end"><a href="archive.html"><span>eCommerce</span></a></li>
-            </ul>
-        </nav><!-- // xe-breadcrumb -->
-    </div><!-- // xe-container -->
-</header><!-- // xe-pageheader -->
+<?php do_action( 'xenial_archive_page_header' ); ?>
 <div class="xe-container xe-flex-alt">
     <div id="primary" class="content-area">
         <main id="site-main" class="site-main">
@@ -40,6 +28,7 @@ get_header();
             ?>
         </main> <!-- #site-main -->
     </div><!-- #primary -->
+    <?php get_sidebar(); ?>
 </div><!-- .xe-container -->
 <?php    
 get_footer();

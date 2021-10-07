@@ -225,10 +225,14 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'pages/single-post.php';
 	require $customizer_fields_path . 'pages/post-single/header.php';
 	require $customizer_fields_path . 'pages/post-single/post-content.php';
-	require $customizer_fields_path . 'pages/post-single/posts-navigation.php';
 	require $customizer_fields_path . 'pages/post-single/author-box.php';
+	require $customizer_fields_path . 'pages/post-single/posts-navigation.php';	
+	require $customizer_fields_path . 'pages/post-single/post-comment.php';		
 	require $customizer_fields_path . 'pages/post-single/related-posts.php';
+
 	require $customizer_fields_path . 'pages/single-page.php';
+	require $customizer_fields_path . 'pages/page-single/header.php';
+	require $customizer_fields_path . 'pages/page-single/content.php';
 	
 	require $customizer_fields_path . 'fields-banner.php';
 
@@ -279,6 +283,7 @@ require XENIAL_THEME_DIR . '/customizer/functions/customizer-choices.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-typo.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-colors.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-sidebar.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css.php';
 
 

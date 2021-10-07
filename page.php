@@ -14,7 +14,7 @@
 
 get_header();
 ?>
-<?php do_action( 'xenial_page_header' ); ?>
+<?php do_action( 'xenial_single_page_header' ); ?>
 <div class="xe-container xe-flex-alt">
     <div id="primary" class="content-area">
         <main id="site-main" class="site-main">
@@ -24,7 +24,10 @@ get_header();
 
 				get_template_part( 'template-parts/content/content', 'page' );
 
-				do_action( 'xenial_post_comments' );
+				// If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) :
+                    comments_template();
+                endif;
 
 			endwhile; // End of the loop.
 			?>

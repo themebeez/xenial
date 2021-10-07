@@ -43,9 +43,11 @@ xenial_sortable_checkbox_field(
 				'title' => esc_html__( 'Title', 'xenial' ),
 				'meta' => esc_html__( 'Meta', 'xenial' ),
 				'excerpt' => esc_html__( 'Excerpt', 'xenial' ),
+				'read_more' => esc_html__( 'Read More', 'xenial' ),
 			]
 		),
-		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ]
+		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ],
+		'default' => $xenial_customizer_defaults['archive_post_structure_one']
 	]
 );
 
@@ -76,7 +78,8 @@ xenial_sortable_checkbox_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Meta Elements', 'xenial' ),
 		'choices' => xenial_get_post_meta_structure(),
-		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ]
+		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ],
+		'default' => $xenial_customizer_defaults['archive_post_meta']
 	]
 );
 
@@ -151,17 +154,6 @@ xenial_info_field(
 		'priority' => 10,
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Read More Button', 'xenial' )
-	]
-);
-
-
-xenial_switch_field(
-	'archive_enable_read_more_button',
-	[
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Enable Button', 'xenial' ),
-		'default' => $xenial_customizer_defaults['archive_enable_read_more_button']
 	]
 );
 

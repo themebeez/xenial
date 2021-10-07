@@ -97,16 +97,15 @@ xenial_sortable_checkbox_field(
 			[
 				'image' => esc_html__( 'Featured Image', 'xenial' ),
 				'title' => esc_html__( 'Title', 'xenial' ),
-				'meta' => esc_html__( 'Meta', 'xenial' ),
-				'excerpt' => esc_html__( 'Excerpt', 'xenial' ),
+				'read_more' => esc_html__( 'Read More', 'xenial' ),
 			]
 		),
-		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ]
+		'input_attrs' => [ 'sortable' => false, 'fullwidth' => true ]
 	]
 );
 
 
-xenial_divider_field( 
+/*xenial_divider_field( 
 	'post_single_related_posts_divider_4', 
 	[ 
 		'priority' => 10,
@@ -124,7 +123,7 @@ xenial_sortable_checkbox_field(
 		'choices' => xenial_get_post_meta_structure(),
 		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ]
 	]
-);
+);*/
 
 
 xenial_divider_field( 
@@ -141,7 +140,7 @@ xenial_range_control_field(
 	[
 		'priority' => 10,
 		'section' => 'xenial_post_single',
-		'label' => esc_html__( 'Items Spacing (px)', 'xenial' ),
+		'label' => esc_html__( 'Number of Posts', 'xenial' ),
 		'input_attrs' => ['min' => 2, 'max' => 4, 'step' => 1, 'responsive' => false],
 		'default' => $xenial_customizer_defaults['post_single_related_posts_number']
 	]
@@ -193,8 +192,8 @@ xenial_radio_button_group_field(
 		'item' => 'text',
 		'columns' => 2,
 		'choices' => array(
-			'categories' => esc_html__( 'Category', 'xenial' ),
-			'tag' => esc_html__( 'Tag', 'xenial' )
+			'categories' => esc_html__( 'Categories', 'xenial' ),
+			'tag' => esc_html__( 'Tags', 'xenial' )
 		),
 		'default' => $xenial_customizer_defaults['post_single_related_posts_by']
 	],

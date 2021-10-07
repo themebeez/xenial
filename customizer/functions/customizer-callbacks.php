@@ -865,6 +865,9 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
         $defaultPostSinglePageValues = xenial_get_customizer_default_post_single_page_values();
         $defaults = array_merge( $defaults, $defaultPostSinglePageValues );
 
+        $defaultPageSingleValues = xenial_get_customizer_defaults_page_single_values();
+        $defaults = array_merge( $defaults, $defaultPageSingleValues );
+
         if ( class_exists( 'WooCommerce' ) ) {
 
             $woocommerce_defaults = array(
@@ -1175,21 +1178,19 @@ if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) 
             //     'tablet' => '',
             //     'mobile' => ''
             // ),
+            'archive_page_display_breadcrumbs' => true,
             'archive_page_header_background_color' => '',
             'archive_page_header_title_color' => '',
             'archive_page_header_breadcrumb_text_color' => '',
             'archive_page_header_breadcrumb_link_hover_color' => '',
 
             'archive_content_container_width' => 'container',
-            'archive_post_structure_one' => array( 'image', 'category', 'title', 'meta', 'excerpt' ),
-            'archive_post_meta' => array( 'author', 'date', 'comment', 'categories' ),
+            'archive_post_structure_one' => array( 'image', 'category', 'title', 'meta', 'excerpt', 'read_more' ),
+            'archive_post_meta' => array( 'author', 'date', 'comment', 'categories', 'read_time' ),
             'archive_show_icons_in_post_meta' => false,
-            'archive_show_post_thumbnail' => false,
             'archive_post_thumbnail_size' => 'large',
-            'archive_post_thumbnail_position' => 'right',
             'archive_excerpt_length' => 30,
             'archive_excerpt_more' => '',
-            'archive_enable_read_more_button' => false,
             'archive_read_more_button_title' => esc_html__( 'Read More', 'xenial' ),
             'archive_pagination_type' => 'default',
             'previous_posts_link_btn_label' => esc_html__( 'Newer Posts', 'xenial' ),
@@ -1388,14 +1389,14 @@ if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' 
             'post_single_breadcrumb_link_hover_color' => '',
 
             'post_single_content_width' => 'container',
-            'post_single_title_header_alignment' => 'left',
-            'post_single_content_elements' => array( 'title', 'image', 'category', 'tags', 'meta', 'updated_date' ),
+            'post_single_content_elements' => array( 'title', 'image', 'categories', 'tags', 'meta', 'updated_date' ),
             'post_single_meta_elements' => array( 'author', 'date', 'comment', 'categories' ),
             'post_single_show_icons_in_post_meta' => false,
 
             'post_single_display_comments' => true,
             'post_single_show_toggle_comments_btn' => false,
-            'post_single_comment_toggle_btn_title' => esc_html__( 'Show Comments', 'xenial' ),
+            'post_single_comment_toggle_btn_title' => esc_html__( 'Leave a Comment', 'xenial' ),
+            'post_single_comment_toggled_state_toggle_btn_title' => esc_html__( 'Hide Comments', 'xenial' ),
 
             'post_single_display_author_box' => true,
 
@@ -1407,7 +1408,7 @@ if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' 
             'post_single_display_related_posts' => false,
             'post_single_related_posts_section_title' => esc_html__( 'Related Posts', 'xenial' ),
             'post_single_related_posts_section_title_alignment' => 'left',
-            'post_single_related_posts_elements' => array( 'image', 'title', 'meta', 'excerpt' ),
+            'post_single_related_posts_elements' => array( 'image', 'title', 'read_more' ),
             'post_single_related_posts_meta' => array( 'author', 'date', 'comment', 'categories' ),
             'post_single_related_posts_number' => 2,
             'post_single_related_posts_content_alignment' => 'left',
@@ -1416,3 +1417,41 @@ if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' 
     }
 }
 
+
+if ( ! function_exists( 'xenial_get_customizer_defaults_page_single_values' ) ) {
+    function xenial_get_customizer_defaults_page_single_values() {
+        return array(
+            'page_single_header_width' => 'container',
+            'page_single_title_tag' => 'h1',
+            'page_single_display_breadcrumbs' => true,
+
+            'page_single_header_background_color' => '',
+            'page_single_header_title_color' => '',
+            'page_single_header_breadcrumb_text_color' => '',
+            'page_single_header_breadcrumb_link_hover_color' => '',
+
+            'page_single_title_font_size' => array(
+                'desktop' => '',
+                'tablet' => '',
+                'mobile' => '',
+            ),
+            'page_single_title_line_height' => array(
+                'desktop' => '',
+                'tablet' => '',
+                'mobile' => '',
+            ),
+            'page_single_title_letter_spacing' => array(
+                'desktop' => '',
+                'tablet' => '',
+                'mobile' => '',
+            ),
+            'page_single_title_font_weight' => '400',
+            'page_single_title_font_style' => 'normal',
+            'page_single_title_text_transform' => 'inherit',
+
+
+            'page_single_content_width' => 'container',
+            'page_single_content_elements' => array( 'image' ),
+        );
+    }
+}

@@ -12,10 +12,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
+
+$xenialPageContents = xenial_get_option( 'page_single_content_elements' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php do_action( 'xenial_post_title', [ 'titleTag' => 'h1', 'enableLink' => false, 'cssClass' => [ 'xe-entry-title' ] ] ); ?>
-    <?php do_action( 'xenial_post_thumbnail', [ 'enableLink' => true, 'enableCaption' => true, 'cssClass' => [ 'xe-entry-thumbnail' ] ] ); ?>
+    <?php 
+    if ( in_array( 'image', $xenialPageContents ) ) {
+        do_action( 'xenial_post_thumbnail', [ 'enableLink' => true, 'enableCaption' => true, 'cssClass' => [ 'xe-entry-thumbnail' ] ] );
+    }
+    ?>
     <div class="xe-entry-content">
         <?php do_action( 'xenial_post_content' ); ?>
     </div><!-- .xe-entry-content -->

@@ -10,11 +10,18 @@
 if ( ! $args['posts']->have_posts() ) {
 	return;
 }
+
+$xenialRelatedPostsContent = xenial_get_option( 'post_single_related_posts_elements' );
+if ( ! $xenialRelatedPostsContent ) {
+	return;
+}
 ?>
 <section class="xe-related-posts">
-	<div class="xe-block-title">
-	    <h3 class="xe-title">Related posts</h3><!-- .xe-title -->
-	</div><!-- .xe-block-title -->
+	<?php if ( xenial_get_option( 'post_single_related_posts_section_title' ) ) { ?>
+		<div class="xe-block-title">
+		    <h3 class="xe-title"><?php echo esc_html( xenial_get_option( 'post_single_related_posts_section_title' ) ); ?></h3><!-- .xe-title -->
+		</div><!-- .xe-block-title -->
+	<?php } ?>
 	<div class="xe-flex">
 		<?php 
 		while( $args['posts']->have_posts() ) { 
@@ -22,10 +29,25 @@ if ( ! $args['posts']->have_posts() ) {
 			?>
 		    <div class="xe-col-xl-6 xe-col-lg-6 xe-col-md-12 xe-col-sm-12 xe-col-xs-12">
 		        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		            <?php do_action( 'xenial_post_thumbnail', [ 'enableLink' => true ] ); ?>
+		        	<?php if ( has_post_thumbnail() && in_array( 'image', $xenialRelatedPostsContent ) ) { ?>
+			        	<div class="post-thumbnail">
+	                        <figure class="xe-thumb">
+	                            <a href="<?php the_permalink(); ?>" class="xe-link xe-thumb-link">
+	                            	<?php the_post_thumbnail( array( 335, 251.25 ) ); ?>
+	                            </a>
+	                        </figure>
+	                    </div><!-- .post-thumbnail -->
+	                <?php } ?>
 		            <div class="post-content">
-		                <?php do_action( 'xenial_post_title', [ 'titleTag' => 'h4', 'enableLink' => true ] ); ?>
-		                <?php do_action( 'xenial_post_read_more' ); ?>
+		                <?php 
+		                if ( in_array( 'title', $xenialRelatedPostsContent ) ) {
+		                	do_action( 'xenial_post_title', [ 'titleTag' => 'h4', 'enableLink' => true ] );
+		                }
+		                
+		                if ( in_array( 'read_more', $xenialRelatedPostsContent ) ) {
+		                	do_action( 'xenial_post_read_more' );
+		                } 
+		                ?>
 		            </div><!-- .post-content -->
 		        </article>
 		    </div><!-- .xe-col-* -->

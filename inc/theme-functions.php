@@ -161,15 +161,20 @@ if( !function_exists( 'xenial_excerpt_more' ) ) :
 
     function xenial_excerpt_more( $more ) {
 
-        if ( xenial_get_option( 'archive_excerpt_more' ) ) {
-
-            return esc_html( xenial_get_option( 'archive_excerpt_more' ) );
-        } else {
-            return $more;
+        if ( is_single() ) {
+            return '';
         }
+
+        if ( is_archive() || is_home() || is_search() ) {
+            $excerptMore = xenial_get_option( 'archive_excerpt_more' );
+            return esc_html( $excerptMore );
+        }
+
+        return $more;
     }
+    add_filter( 'excerpt_more', 'xenial_excerpt_more' );
 endif;
-add_filter( 'excerpt_more', 'xenial_excerpt_more' );
+
 
 
 

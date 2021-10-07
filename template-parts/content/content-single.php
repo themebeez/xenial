@@ -6,15 +6,41 @@
  *
  * @package Xenial
  */
+$xenialSingleContents = xenial_get_option( 'post_single_content_elements' );
+if ( ! $xenialSingleContents ) {
+    return;
+}
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php do_action( 'xenial_post_categories_meta' ); ?>
-    <?php do_action( 'xenial_post_title', [ 'titleTag' => 'h1', 'enableLink' => false, 'cssClass' => [ 'xe-entry-title' ] ] ); ?>
-    <?php do_action( 'xenial_grouped_post_metas' ); ?>
-    <?php do_action( 'xenial_post_thumbnail', [ 'currentPage' => 'single', 'thumbSize' => 'full' ] ); ?>
-    <?php do_action( 'xenial_post_excerpt' ); ?>
-    <?php do_action( 'xenial_post_content' ); ?>
-    <?php do_action( 'xenial_post_content_footer' ); ?>
-    <?php do_action( 'xenial_post_author_box' ); ?>
-    <?php do_action( 'xenial_post_navigation' ); ?>
+    <?php 
+    foreach( $xenialSingleContents as $content ) {
+        switch ( $content ) {
+            case 'categories' :
+                do_action( 'xenial_post_categories_meta' );
+                break;
+            case 'title' :
+                do_action( 'xenial_post_title', [ 'titleTag' => 'h1', 'enableLink' => false, 'cssClass' => [ 'xe-entry-title' ] ] );
+                break;
+            case 'meta' :
+                do_action( 'xenial_single_grouped_post_meta' );
+                break;
+            case 'image' :
+                do_action( 'xenial_post_thumbnail', [ 'currentPage' => 'single', 'thumbSize' => 'full' ] );
+                break;
+            case 'excerpt' :
+                do_action( 'xenial_post_excerpt' );
+                break;
+            case 'content' :
+                do_action( 'xenial_post_content' );
+                break;
+            default :
+                break;
+        } 
+    }
+    do_action( 'xenial_single_content_footer' );
+
+    do_action( 'xenial_post_author_box' );
+
+    do_action( 'xenial_post_navigation' ); 
+    ?>
 </article><!-- #post-<?php the_ID(); ?> -->
