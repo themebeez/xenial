@@ -44,10 +44,14 @@ function xenial_body_classes( $classes ) {
 	if ( xenial_has_sidebar() ) {
 		$sidebar_position = xenial_get_sidebar_position();
 
-		$classes[] = ( $sidebar_position == 'left' ) ? 'xe-sidebar-position-left' : 'xe-sidebar-position-right';
+		$classes[] = ( $sidebar_position == 'left-sidebar' ) ? 'xe-sidebar-position-left' : 'xe-sidebar-position-right';
 	} else {
 		$classes[] = 'xenial-has-no-sidebar';
 	}
+
+	$siteLayout = xenial_get_option( 'site_layout' );
+
+	$classes[] = ( $siteLayout == 'default' ) ? 'xe-site-layout-default' : 'xe-site-layout-boxed';
 
 	return $classes;
 }
