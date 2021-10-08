@@ -101,7 +101,7 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
             }
 
             if ( $body_line_height ) {
-                $css .= '--xe_base_font_line_height: ' . esc_attr( $body_line_height ) . 'px;';
+                $css .= '--xe_base_font_line_height: ' . esc_attr( $body_line_height ) . 'em;';
             }            
 
             if ( $headings_font_family ) {
