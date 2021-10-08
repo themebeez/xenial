@@ -14,12 +14,22 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
         $customizer_defaults = xenial_get_customizer_defaults();
 
 		$css = '';
+
+		$css .= xenial_dynamic_layout_css();
 		
         $css .= xenial_dynamic_typo_css();
 
         $css .= xenial_dynamic_color_css();
 
-        $css .= xenial_dynamic_sidebar_css();
+        $css .= xenial_dynamic_breadcrumbs_css();
+
+        $css .= xenial_dynamic_archive_header_css();
+
+        $css .= xenial_dynamic_page_header_css();
+
+        $css .= xenial_dynamic_single_header_css();
+
+        // $css .= xenial_dynamic_sidebar_css();
 
 		// End styles for mobile devices
 

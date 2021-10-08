@@ -281,9 +281,18 @@ require XENIAL_THEME_DIR . '/customizer/functions/customizer-choices.php';
 
 
 
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-layout.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-typo.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-colors.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-breadcrumbs.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-header.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-pagination.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-post-card.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/single/dynamic-page-header.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/single/dynamic-single-header.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-sidebar.php';
+
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css.php';
 
 

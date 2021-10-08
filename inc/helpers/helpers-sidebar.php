@@ -18,6 +18,10 @@ if ( ! function_exists( 'xenial_get_sidebar_position' ) ) {
 			return xenial_get_archive_sidebar_position();
 		}
 
+		if ( is_404() ) {
+			return 'no-sidebar';
+		}
+
 		return $global_sidebar_position;
 	}
 }

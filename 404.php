@@ -8,25 +8,30 @@
  */
 
 get_header();
-	?>
-	<div class="xenial-container">
-		<div class="xenial-row xenial-container-inner">
-			<div id="xenial-primary" class="xenial-content-area">
-				<main id="xenial-main" class="xenial-site-main">
-					<section class="error-404 not-found">
-						<div class="page-header">
-							<h1 class="page-title"><?php esc_html_e( '404', 'xenial' ); ?></h1>
-							<p><?php esc_html_e( 'Oops! page can&rsquo;t be found.', 'xenial' ); ?></p>
-						</div><!-- .page-header -->
-
-						<div class="page-content">
-							<p><?php esc_html_e( 'We could&rsquo;t find the page you&rsquo;re looking for. Maybe try searching?', 'xenial' ); ?></p>
-							<?php get_search_form(); ?>
-						</div><!-- .page-content -->
-					</section><!-- .error-404 -->
-				</main>
-			</div>
-		</div>
-	</div>
-	<?php
+?>
+<header class="xe-pageheader">
+    <div class="xe-container">
+        <aside class="xe-pagetitle-holder">
+            <h1 class="xe-title"><?php echo esc_html__( '404', 'xenial' ); ?></h1>
+        </aside><!-- .xe-pagetitle-holder -->
+        <?php do_action( 'xenial_breadcrumbs' ); ?>
+    </div><!-- .xe-container -->
+</header><!-- .xe-pageheader -->
+<div class="xe-container xe-flex-alt">
+    <div id="primary" class="content-area">
+        <main id="site-main" class="site-main">
+            <article class="content-is-404">
+                <div class="animation">
+                </div>
+                <h2 class="xe-title"><?php echo esc_html__( '404', 'xenial' ); ?></h2>
+                <h3 class="xe-subtitle"><?php echo esc_html__( 'Oops! the page couldn&rsquo;t be found.', 'xenial' ); ?></h3>
+                <p class="xe-excerpt"><?php echo esc_html__( 'The page that you are trying to access either has been moved or doesn&rsquo;t exist.', 'xenial' ); ?></p>
+                <p class="xe-gohome">
+                    <a href="index.html" class="xe-button"><?php echo esc_html__( 'Go back to homepage', 'xenial' ); ?> <span class="icon"><i class="ti-shift-right"></i></span></a>
+                </p>
+            </article>
+        </main> <!-- #site-main -->
+    </div><!-- #primary -->
+</div><!-- .xe-container -->
+<?php
 get_footer();
