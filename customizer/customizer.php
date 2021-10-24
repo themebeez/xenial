@@ -199,6 +199,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'breadcrumbs.php';
 	require $customizer_fields_path . 'miscellaneous.php';
 
+	require $customizer_fields_path . 'header/base.php';
 	require $customizer_fields_path . 'header/top-header.php';
 	require $customizer_fields_path . 'header/main-header.php';
 	require $customizer_fields_path . 'header/site-identity.php';
@@ -238,6 +239,7 @@ function xenial_customize_register( $wp_customize ) {
 
 	require $customizer_fields_path . 'fields-sidebar.php';
 
+	require $customizer_fields_path . 'footer/base.php';
 	require $customizer_fields_path . 'footer/footer-widgets.php';
 	require $customizer_fields_path . 'footer/copyright-bar.php';
 
@@ -273,6 +275,20 @@ require XENIAL_THEME_DIR . '/customizer/functions/active-callbacks.php';
  * Load function to load customizer field's default values.
  */
 require XENIAL_THEME_DIR . '/customizer/functions/customizer-callbacks.php';
+
+$xenial_customizer_defaults_path = XENIAL_THEME_DIR . '/customizer/functions/defaults/';
+
+require $xenial_customizer_defaults_path . 'defaults-header-base.php';
+require $xenial_customizer_defaults_path . 'defaults-footer-base.php';
+require $xenial_customizer_defaults_path . 'defaults-colors.php';
+require $xenial_customizer_defaults_path . 'defaults-typography.php';
+require $xenial_customizer_defaults_path . 'defaults-layout.php';
+require $xenial_customizer_defaults_path . 'defaults-buttons.php';
+require $xenial_customizer_defaults_path . 'defaults-miscellaneous.php';
+require $xenial_customizer_defaults_path . 'defaults-breadcrumbs.php';
+require $xenial_customizer_defaults_path . 'defaults-archive.php';
+require $xenial_customizer_defaults_path . 'defaults-single.php';
+require $xenial_customizer_defaults_path . 'defaults-page.php';
 
 /**
  * Load function to load customizer field's options.

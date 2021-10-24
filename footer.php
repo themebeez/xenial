@@ -12,6 +12,8 @@
 ?>
 
 	</div><!-- #content -->
+
+    <?php do_action( 'xenial_scroll_top' ); ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
