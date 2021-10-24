@@ -46,9 +46,9 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 
 			$content_layout = get_post_meta( $post->ID, 'xenial_post_content_layout', true );
 
-			$disable_default_header = get_post_meta( $post->ID, 'xenial_post_disable_default_header', true );
+			$themeHeaderDisplay = get_post_meta( $post->ID, 'xenial_theme_header_display', true );
 
-			$disable_default_footer = get_post_meta( $post->ID, 'xenial_post_disable_default_footer', true );
+			$themeFooterDisplay = get_post_meta( $post->ID, 'xenial_theme_footer_display', true );
 
 			$disable_breadcrumb = get_post_meta( $post->ID, 'xenial_post_disable_breadcrumb', true );
 
@@ -73,6 +73,12 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 				'xenial-fullwidth-stretched' => __( 'Fullwidth: Stretched', 'xenial' ),
 				'xenial-boxed-contain' => __( 'Boxed: Contain', 'xenial' ),
 				'xenial-boxed' => __( 'Boxed', 'xenial' ),
+		    );
+
+		    $displayChoices = array(
+		    	'default' => esc_html__( 'Default (From Customizer)', 'xenial' ),
+		    	'enable' => esc_html__( 'Enable', 'xenial' ),
+		    	'disable' => esc_html__( 'Disable', 'xenial' )
 		    );
 		    ?>
 		    <table width="100%" border="0" class="options" cellspacing="5" cellpadding="5">
@@ -162,6 +168,44 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        		</label>
 		        	</td>
 		        </tr> 
+
+		        <tr>
+		        	<td><hr/></td>
+		        </tr>
+
+		        <tr>
+		        	<td>
+		        		<label for="xenial-theme-header-meta"><?php echo esc_html__( 'Theme Header', 'xenial' ); ?></label>
+			        	<select name="xenial-theme-header-meta" id="xenial-theme-header-meta" class="xenial-select-field">
+			        		<?php
+			        		foreach( $displayChoices as $key => $choice ) {
+			        			?>
+			        			<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $themeHeaderDisplay, $key ); ?>><?php echo esc_html( $choice ); ?></option>
+			        			<?php
+			        		}
+			        		?>
+			        	</select>
+		        	</td>
+		        </tr>
+
+		        <tr>
+		        	<td><hr/></td>
+		        </tr>
+
+		        <tr>
+		        	<td>
+		        		<label for="xenial-theme-footer-meta"><?php echo esc_html__( 'Theme Footer', 'xenial' ); ?></label>
+			        	<select name="xenial-theme-footer-meta" id="xenial-theme-footer-meta" class="xenial-select-field">
+			        		<?php
+			        		foreach( $displayChoices as $key => $choice ) {
+			        			?>
+			        			<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $themeFooterDisplay, $key ); ?>><?php echo esc_html( $choice ); ?></option>
+			        			<?php
+			        		}
+			        		?>
+			        	</select>
+		        	</td>
+		        </tr>
 		    </table>   
 		    <?php   
 		}

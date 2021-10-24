@@ -44,8 +44,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
 
         $defaults = array(
             
-            'enable_scroll_top_button' => false,
-            'scroll_top_btn_device_visibility' => 'default',
+            
 
             'enable_page_header' => false,
             'page_header_display_pages' => array(),
@@ -853,9 +852,16 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
         $defaultButtonValues = xenial_get_customizer_default_button_values();
         $defaults = array_merge( $defaults, $defaultButtonValues );
 
+        $defaultMiscellaneousValues = xenial_get_customizer_defaults_miscellaneous_values();
+        $defaults = array_merge( $defaults, $defaultMiscellaneousValues );
+
 
         $defaultBreadcrumbsValues = xenial_get_customizer_default_breadcrumbs_values();
         $defaults = array_merge( $defaults, $defaultBreadcrumbsValues );
+
+
+        $defaultHeaderBaseValues = xenial_get_customizer_default_header_base_values();
+        $defaults = array_merge( $defaults, $defaultHeaderBaseValues );
 
 
         $defaultArchivePageValues = xenial_get_customizer_default_archive_page_values();
@@ -867,6 +873,9 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
 
         $defaultPageSingleValues = xenial_get_customizer_defaults_page_single_values();
         $defaults = array_merge( $defaults, $defaultPageSingleValues );
+
+        $defaultFooterBaseValues = xenial_get_customizer_default_footer_base_values();
+        $defaults = array_merge( $defaults, $defaultFooterBaseValues );
 
         if ( class_exists( 'WooCommerce' ) ) {
 
@@ -904,555 +913,30 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
 }
 
 
-if ( ! function_exists( 'xenial_get_customizer_default_layout_values' ) ) {
-    function xenial_get_customizer_default_layout_values() {
-        return array(
-            'site_layout' => 'default',
-            'site_container_width' => 1200,
-            'container_width' => 1200,
-            'narrow_container_width' => 750
-        );
-    }
-}
-
-
-if ( ! function_exists( 'xenial_get_customizer_default_color_values' ) ) {
-    function xenial_get_customizer_default_color_values() {
-        return array(
-            'primary_color' => '#ef2c2c',
-            'secondary_color' => '#1e73be',
-            'text_color' => '#585858',
-            'headings_color' => '#4A4A4A',
-            'link_color' => '#0366E0',
-            'border_color' => '#eeeeee',
-            'input_fields_border_color' => '#dedede'
-        );
-    }
-}
-
-
-if ( ! function_exists( 'xenial_get_customizer_default_typography_values' ) ) {
-    function xenial_get_customizer_default_typography_values() {
-        return array(
-            'body_font_type' => 'system_font',
-            'body_system_font_family' => 'garamond',
-            'body_system_font_weight' => '400',
-            'body_google_font' => json_encode(
-                array(
-                    'font' => 'Open Sans',
-                    'regularweight' => array( 'regular' ),
-                    'boldweight' => array( '400' ),
-                    'category' => 'sans-serif'
-                )
-            ),
-            'body_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'body_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'body_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'headings_font_type' => 'system_font',
-            'headings_system_font_family' => 'garamond',
-            'headings_system_font_weight' => '400',
-            'headings_google_font' => json_encode(
-                array(
-                    'font' => 'Open Sans',
-                    'regularweight' => array( 'regular' ),
-                    'boldweight' => array( '400' ),
-                    'category' => 'sans-serif'
-                )
-            ),
-            'h1_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h1_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h1_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h2_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h2_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h2_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h3_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h3_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h3_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h4_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h4_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h4_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h5_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h5_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h5_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h6_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h6_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'h6_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-        );
-    }
-}
 
 
 
-if ( ! function_exists( 'xenial_get_customizer_default_button_values' ) ) {
-    function xenial_get_customizer_default_button_values() {
-        return array(
-            'btn_padding' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],
-            'btn_txt_color' => '#ffffff',
-            'btn_bg_color' => '#000000',
-            'btn_txt_hover_color' => '#000000',
-            'btn_bg_hover_color' => '#16c1ff',
-            'btn_border_style' => 'none',
-            'btn_border_width' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],
-            'btn_border_radius' => 0,
-            'btn_border_color' => '#000000',
-            'btn_border_hover_color' => '#16c1ff',
-            'txt_button_padding' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],
-            'txt_button_style' => 'default',
-            'txt_btn_txt_color' => '#ffffff',
-            'txt_btn_bg_color' => '#000000',
-            'txt_btn_txt_hover_color' => '#000000',
-            'txt_btn_bg_hover_color' => '#16c1ff',
-            'txt_btn_border_width' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],
-            'txt_btn_border_radius' => 0,
-            'txt_btn_border_color' => '#000000',
-            'txt_btn_border_hover_color' => '#16c1ff',
-        );
-    }
-}
-
-
-if ( ! function_exists( 'xenial_get_customizer_default_breadcrumbs_values' ) ) {
-    function xenial_get_customizer_default_breadcrumbs_values() {
-        return array(
-            'breadcrumbs_source' => 'default',
-            'breadcrumbs_separator' => 'default',
-            'breadcrumbs_home_item' => 'text',
-            'breadcrumbs_home_page_text' => esc_html__( 'Home', 'xenial' ),
-            'breadcrumbs_font_size' => [
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ],
-            'breadcrumbs_text_color' => '',
-            'breadcrumbs_link_hover_color' => ''
-        );
-    }
-}
-
-
-if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) {
-    function xenial_get_customizer_default_archive_page_values() {
-        return array(
-            // 'enable_archive_page_header' => false,
-            'archive_page_header_width' => 'container',
-            // 'archive_page_header_layout' => 'default',
-            // 'archive_page_header_elements' => array( 'title', 'breadcrumbs' ),
-            // 'archive_page_header_content_horizontal_alignment' => 'middle',
-            // 'archive_page_header_content_verticle_alignment' => 'center',
-            // 'archive_page_header_height' => '',
-            // 'archive_page_header_content_margin' => array(
-            //     'desktop_top' => '',
-            //     'desktop_right' => '',
-            //     'desktop_bottom' => '',
-            //     'desktop_left' => '',
-            //     'tablet_top' => '',
-            //     'tablet_right' => '',
-            //     'tablet_bottom' => '',
-            //     'tablet_left' => '',
-            //     'mobile_top' => '',
-            //     'mobile_right' => '',
-            //     'mobile_bottom' => '',
-            //     'mobile_left' => '',
-            // ),
-            // 'archive_page_header_content_padding' => array(
-            //     'desktop_top' => '',
-            //     'desktop_right' => '',
-            //     'desktop_bottom' => '',
-            //     'desktop_left' => '',
-            //     'tablet_top' => '',
-            //     'tablet_right' => '',
-            //     'tablet_bottom' => '',
-            //     'tablet_left' => '',
-            //     'mobile_top' => '',
-            //     'mobile_right' => '',
-            //     'mobile_bottom' => '',
-            //     'mobile_left' => '',
-            // ),
-
-            'archive_title_tag' => 'h1',
-            // 'archive_page_header_bottom_spacing' => array(
-            //     'desktop' => '',
-            //     'tablet' => '',
-            //     'mobile' => ''
-            // ),
-            'archive_page_display_breadcrumbs' => true,
-            'archive_page_header_background_color' => '',
-            'archive_page_header_title_color' => '',
-            'archive_page_header_breadcrumb_text_color' => '',
-            'archive_page_header_breadcrumb_link_hover_color' => '',
-
-            'archive_content_container_width' => 'container',
-            'archive_post_structure_one' => array( 'image', 'category', 'title', 'meta', 'excerpt', 'read_more' ),
-            'archive_post_meta' => array( 'author', 'date', 'comment', 'categories', 'read_time' ),
-            'archive_show_icons_in_post_meta' => false,
-            'archive_post_thumbnail_size' => 'large',
-            'archive_excerpt_length' => 30,
-            'archive_excerpt_more' => '',
-            'archive_read_more_button_title' => esc_html__( 'Read More', 'xenial' ),
-            'archive_pagination_type' => 'default',
-            'previous_posts_link_btn_label' => esc_html__( 'Newer Posts', 'xenial' ),
-            'next_posts_link_btn_label' => esc_html__( 'Older Posts', 'xenial' ),
-            'pagination_mid_size' => 2,
-
-            'archive_page_title_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_page_title_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_page_title_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_page_title_font_weight' => '400',
-            'archive_page_title_font_style' => 'normal',
-            'archive_page_title_text_transform' => 'inherit',
-
-            'archive_post_card_background_color' => '',
-            'archive_post_card_border_style' => 'none',
-            'archive_post_card_border_width' => array(
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ),
-            'archive_post_card_border_radius' => array(
-                'desktop_top' => '',
-                'desktop_right' => '',
-                'desktop_bottom' => '',
-                'desktop_left' => '',
-                'tablet_top' => '',
-                'tablet_right' => '',
-                'tablet_bottom' => '',
-                'tablet_left' => '',
-                'mobile_top' => '',
-                'mobile_right' => '',
-                'mobile_bottom' => '',
-                'mobile_left' => ''
-            ),
-            'archive_post_card_border_color' => '#000000',
-
-            'archive_post_title_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_title_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_title_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_title_font_weight' => '400',
-            'archive_post_title_font_style' => 'normal',
-            'archive_post_title_text_transform' => 'inherit',
-            'archive_post_title_font_color' => '',
-            'archive_post_title_font_hover_color' => '',
-
-            'archive_post_excerpt_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'archive_post_excerpt_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_excerpt_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_excerpt_font_weight' => '400',
-            'archive_post_excerpt_font_style' => 'normal',
-            'archive_post_excerpt_text_transform' => 'inherit',
-            'archive_post_excerpt_color' => '',
-
-            'archive_post_excerpt_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'archive_post_excerpt_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_excerpt_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_excerpt_font_weight' => '400',
-            'archive_post_excerpt_font_style' => 'normal',
-            'archive_post_excerpt_text_transform' => 'inherit',
-            'archive_post_excerpt_color' => '',
-
-
-            'archive_post_meta_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'archive_post_meta_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_meta_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_meta_font_weight' => '400',
-            'archive_post_meta_font_style' => 'normal',
-            'archive_post_meta_text_transform' => 'inherit',
-            'archive_post_meta_color' => '',
-            'archive_post_meta_hover_color' => '',
-            'archive_post_meta_separator_color' => '',
 
 
 
-            'archive_pagination_top_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'archive_pagination_items_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'archive_pagination_items_padding' => array(
-                'desktop_top' => '',
-                'desktop_right' => '',
-                'desktop_bottom' => '',
-                'desktop_left' => '',
-                'tablet_top' => '',
-                'tablet_right' => '',
-                'tablet_bottom' => '',
-                'tablet_left' => '',
-                'mobile_top' => '',
-                'mobile_right' => '',
-                'mobile_bottom' => '',
-                'mobile_left' => ''
-            ),
-            'archive_pagination_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
-            ),
-            'archive_pagination_item_initial_background_color' => '',
-            'archive_pagination_item_active_background_color' => '',
-            'archive_pagination_item_hover_background_color' => '',
-            'archive_pagination_item_initial_font_color' => '',
-            'archive_pagination_item_active_font_color' => '',
-            'archive_pagination_item_hover_font_color' => '',
-            'archive_pagination_item_border_style' => 'none',
-            'archive_pagination_item_border_width' => array(
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ),
-            'archive_pagination_item_border_radius' => 0,
-            'archive_pagination_item_border_color' => '#000000',
-            'archive_pagination_item_border_hover_color' => '#16c1ff',
-            'archive_pagination_item_border_active_color' => '#16c1ff'
-        );
-    }
-}
 
 
 
-if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' ) ) {
-    function xenial_get_customizer_default_post_single_page_values() {
-        return array(
-            'post_single_display_breadcrumbs' => true,
-            'post_single_breadcrumbs_width' => 'container',
-
-            'post_single_breadcrumb_background_color' => '',
-            'post_single_breadcrumb_text_color' => '',
-            'post_single_breadcrumb_link_hover_color' => '',
-
-            'post_single_content_width' => 'container',
-            'post_single_content_elements' => array( 'title', 'image', 'categories', 'tags', 'meta', 'updated_date' ),
-            'post_single_meta_elements' => array( 'author', 'date', 'comment', 'categories' ),
-            'post_single_show_icons_in_post_meta' => false,
-
-            'post_single_display_comments' => true,
-            'post_single_show_toggle_comments_btn' => false,
-            'post_single_comment_toggle_btn_title' => esc_html__( 'Leave a Comment', 'xenial' ),
-            'post_single_comment_toggled_state_toggle_btn_title' => esc_html__( 'Hide Comments', 'xenial' ),
-
-            'post_single_display_author_box' => true,
-
-            'post_single_display_posts_navigation' => true,
-            'post_single_prev_post_link_title_label' => esc_html__( 'Previous Post', 'xenial' ),
-            'post_single_next_post_link_title_label' => esc_html__( 'Next Post', 'xenial' ), 
-            'post_single_display_post_image_in_post_navigation' => true, 
-
-            'post_single_display_related_posts' => false,
-            'post_single_related_posts_section_title' => esc_html__( 'Related Posts', 'xenial' ),
-            'post_single_related_posts_section_title_alignment' => 'left',
-            'post_single_related_posts_elements' => array( 'image', 'title', 'read_more' ),
-            'post_single_related_posts_meta' => array( 'author', 'date', 'comment', 'categories' ),
-            'post_single_related_posts_number' => 2,
-            'post_single_related_posts_content_alignment' => 'left',
-            'post_single_related_posts_by' => 'categories'
-        );
-    }
-}
 
 
-if ( ! function_exists( 'xenial_get_customizer_defaults_page_single_values' ) ) {
-    function xenial_get_customizer_defaults_page_single_values() {
-        return array(
-            'page_single_header_width' => 'container',
-            'page_single_title_tag' => 'h1',
-            'page_single_display_breadcrumbs' => true,
-
-            'page_single_header_background_color' => '',
-            'page_single_header_title_color' => '',
-            'page_single_header_breadcrumb_text_color' => '',
-            'page_single_header_breadcrumb_link_hover_color' => '',
-
-            'page_single_title_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'page_single_title_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'page_single_title_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'page_single_title_font_weight' => '400',
-            'page_single_title_font_style' => 'normal',
-            'page_single_title_text_transform' => 'inherit',
 
 
-            'page_single_content_width' => 'container',
-            'page_single_content_elements' => array( 'image' ),
-        );
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

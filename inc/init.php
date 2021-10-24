@@ -18,5 +18,6 @@ require $xenial_template_functions_path . '/template-navigation.php';
 require $xenial_template_functions_path . '/template-archive.php';
 require $xenial_template_functions_path . '/template-page.php';
 require $xenial_template_functions_path . '/template-single.php';
+require $xenial_template_functions_path . '/template-miscellaneous.php';
 
 

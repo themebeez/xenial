@@ -74,7 +74,7 @@ class Xenial_Customize_SlimSelect_Control extends WP_Customize_Control {
 					if ( $attrs['multiselect'] ) {
 						foreach ( $this->choices as $value => $label ) {
 							?>
-							<option value="<?php echo esc_attr( $value ); ?>" <?php if ( $saved_values ) { selected( in_array( $val, $saved_values ) ); } ?>><?php echo esc_html( $label ); ?></option>
+							<option value="<?php echo esc_attr( $value ); ?>" <?php if ( $saved_values ) { selected( in_array( $value, $saved_values ) ); } ?>><?php echo esc_html( $label ); ?></option>
 							<?php
 						}
 					} else {
