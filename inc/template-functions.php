@@ -46,7 +46,7 @@ function xenial_body_classes( $classes ) {
 
 		$classes[] = ( $sidebar_position == 'left-sidebar' ) ? 'xe-sidebar-position-left' : 'xe-sidebar-position-right';
 	} else {
-		$classes[] = 'xenial-has-no-sidebar';
+		$classes[] = 'xe-has-no-sidebar';
 	}
 
 	$siteLayout = xenial_get_option( 'site_layout' );
