@@ -61,14 +61,14 @@
 	width: var(--xe_default_sidebar_width); // i.e 35%
 }
 
-.xenial-has-no-sidebar #xe-page #primary {
+.xe-has-no-sidebar #xe-page #primary {
 
 	width: 100%;
 	margin-left: auto; // case: no sidebar
 	margin-right: auto; // case: no sidebar
 }
 
-.xenial-has-no-sidebar #xe-page #secondary {
+.xe-has-no-sidebar #xe-page #secondary {
 
 	display: none;
 }
@@ -107,13 +107,13 @@
 	order: 2;
 }
 
-body:not(.xenial-has-no-sidebar) #xe-page #primary {
+body:not(.xe-has-no-sidebar) #xe-page #primary {
 
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.xe-sidebar-position-left:not(.xenial-has-no-sidebar) #xe-page #primary {
+.xe-sidebar-position-left:not(.xe-has-no-sidebar) #xe-page #primary {
 
 	padding-right: 0;
 	padding-left: 50px;
@@ -144,7 +144,7 @@ body:not(.xenial-has-no-sidebar) #xe-page #primary {
 
 // Boxed Width: Boxed Container
 
-.xe-layout-boxed #xe-page {
+.xe-site-layout-boxed #xe-page {
 
 	width: 100%;
 	max-width: 1170px;

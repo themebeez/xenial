@@ -20,7 +20,7 @@ if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' 
             'post_single_comment_toggle_btn_title' => esc_html__( 'Leave a Comment', 'xenial' ),
             'post_single_comment_toggled_state_toggle_btn_title' => esc_html__( 'Hide Comments', 'xenial' ),
 
-            'post_single_display_author_box' => true,
+            'post_single_display_author_box' => false,
 
             'post_single_display_posts_navigation' => true,
             'post_single_prev_post_link_title_label' => esc_html__( 'Previous Post', 'xenial' ),

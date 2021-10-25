@@ -5,11 +5,11 @@ if ( ! function_exists( 'xenial_get_customizer_default_typography_values' ) ) {
     function xenial_get_customizer_default_typography_values() {
         return array(
             'body_font_type' => 'system_font',
-            'body_system_font_family' => 'garamond',
+            'body_system_font_family' => 'arial',
             'body_system_font_weight' => '400',
             'body_google_font' => json_encode(
                 array(
-                    'font' => 'Open Sans',
+                    'font' => 'Inter',
                     'regularweight' => array( 'regular' ),
                     'boldweight' => array( '400' ),
                     'category' => 'sans-serif'
@@ -31,13 +31,13 @@ if ( ! function_exists( 'xenial_get_customizer_default_typography_values' ) ) {
                 'mobile' => ''
             ),
             'headings_font_type' => 'system_font',
-            'headings_system_font_family' => 'garamond',
-            'headings_system_font_weight' => '400',
+            'headings_system_font_family' => 'helvetica',
+            'headings_system_font_weight' => '600',
             'headings_google_font' => json_encode(
                 array(
-                    'font' => 'Open Sans',
+                    'font' => 'Inter',
                     'regularweight' => array( 'regular' ),
-                    'boldweight' => array( '400' ),
+                    'boldweight' => array( '600' ),
                     'category' => 'sans-serif'
                 )
             ),
