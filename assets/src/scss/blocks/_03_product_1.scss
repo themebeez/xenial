@@ -1,21 +1,4 @@
 // add to cart button
-.xe-product-block-1 .xe-woo-product .xe-product-thumb .xe-add-to-cart {
-
-    @include flex();
-    justify-content: center;
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    @include visibility_hidden();
-}
-
-.xe-product-block-1 .xe-woo-product:hover .xe-product-thumb .xe-add-to-cart {
-
-    @include visibility_visible();
-    animation: xeButtonFadeInUp 1s 0s;
-}
-
 
 @media (max-width: 575px) {
 

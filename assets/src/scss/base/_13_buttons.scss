@@ -98,7 +98,7 @@
 
 // backtotop button 
 
-#xe-backtotop {
+#xe-backtotop-button {
 
     display: block;
     position: fixed;
@@ -108,18 +108,7 @@
     bottom: 30px;
     @include visibility_hidden();
     @include transation_delay_dymanic(0.5s);
-}
-
-#xe-backtotop.visible {
-
-    z-index: 10001;
-    @include visibility_visible();
-    animation: xeButtonFadeInUp 0.5s 0s;
-}
-
-#xe-backtotop-button {
-
-    justify-content: center;
+    text-align: center;
     font-size: 10px;
     font-weight: normal;
     padding: 0;
@@ -128,9 +117,16 @@
     line-height: 40px;
 }
 
+#xe-backtotop-button.visible {
+
+    z-index: 10001;
+    @include visibility_visible();
+    animation: xeButtonFadeInUp 0.5s 0s;
+}
+
 @media ( max-width: 575px ) {
 
-    #xe-backtotop {
+    #xe-backtotop-button {
 
         right: 10px;
         bottom: 80px;

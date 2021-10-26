@@ -105,7 +105,7 @@
     width: 35px;
     height: 35px;
     background-color: var(--xe_primary_color);
-    border-radius: 50%;
+    border-radius: 4px;
     @include transation_delay();
 }
 

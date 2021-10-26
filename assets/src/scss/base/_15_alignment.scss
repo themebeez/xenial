@@ -33,6 +33,26 @@
     margin-bottom: 30px;
 }
 
+.alignleft,
+.alignright {
+
+    clear: both;
+}
+
+.alignleft::before,
+.alignright::before {
+
+    content: "";
+    display: table;
+}
+
+.alignleft::after,
+.alignright::after {
+
+    content: "";
+    clear: both;
+}
+
 .aligncenter {
 
     float: none;

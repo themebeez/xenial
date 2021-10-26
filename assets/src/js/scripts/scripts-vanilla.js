@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// back to top button 
 	function xeBackToTopButton() {
 
-		var backToTopButtonHolder = document.getElementById("xe-backtotop");
+		//var backToTopButtonHolder = document.getElementById("xe-backtotop");
 		var backToTopTriggerBtn = document.getElementById("xe-backtotop-button");
 
 		window.addEventListener('scroll', function () {
@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
 			var yAxisHeight = window.pageYOffset;
 
 			if (yAxisHeight > 600) {
-				backToTopButtonHolder.classList.add("visible");
+				backToTopTriggerBtn.classList.add("visible");
 			} else {
-				backToTopButtonHolder.classList.remove("visible");
+				backToTopTriggerBtn.classList.remove("visible");
 			}
 		});
 

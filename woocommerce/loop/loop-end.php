@@ -20,4 +20,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 </ul>
-</div>
+</div> <!-- // xe-woo-products-entry --> 
