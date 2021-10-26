@@ -7,16 +7,200 @@
 
 
 /* -------------------------------------------------------------------------- 
-	#. Dokan variables
+	#. Dokan ganeral styles
    -------------------------------------------------------------------------- */
 
+
+.theme-xenial.dokan-dashboard .dokan-dashboard-header .entry-title {
+
+   font-size: 24px;
+   font-weight: normal;
+}
 
 
 /* -------------------------------------------------------------------------- 
-	#. Dokan general
+	#. Dokan buttons
    -------------------------------------------------------------------------- */
 
-.dokan-dashboard-wrap {
+.theme-xenial .dokan-btn, 
+.theme-xenial a.dokan-btn, 
+.theme-xenial input[type='submit'].dokan-btn {
 
-   position: relative;
+   display: inline-flex;
+   flex-direction: row;
+   align-items: center;
+   gap: 5px;
+   font-size: var(--xe_button_font_size);
+   font-weight: normal;
+   color: var(--xe_button_text_color);
+   line-height: var(--xe_button_line_height);
+   background-color: var(--xe_button_background_color);
+   border: none !important;
+   border-radius: var(--xe_buttons_border_radius);
+}
+
+.theme-xenial .dokan-btn:hover, 
+.theme-xenial a.dokan-btn:hover, 
+.theme-xenial input[type='submit'].dokan-btn:hover {
+
+   color: var(--xe_button_hover_text_color);
+   border: none;
+   background-color: var(--xe_button_hover_background_color);
+}
+
+// Dokan small button 
+
+.theme-xenial .dokan-pro-gravatar-drag,
+.theme-xenial .dokan-btn.dokan-add-new-product {
+
+   padding: 12px 15px;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. Dokan forms/input
+   -------------------------------------------------------------------------- */
+
+.dokan-form-inline .dokan-form-group {
+
+
+}
+
+.theme-xenial .dokan-dashboard-wrap select.dokan-form-control {
+   
+   font-size: 15px;
+   line-height: 26px;
+   font-weight: normal;
+   border-color: var(--xe_inputs_border_color);
+   height: 48px;
+   padding: 12px 15px;
+   min-width: 200px;
+   border-radius: 3px;
+   background-image: url("data:image/svg+xml,%0A%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='512' height='512'%3E%3Cg id='_01_align_center' data-name='01 align center'%3E%3Cpath d='M12,15.5a1.993,1.993,0,0,1-1.414-.585L5.293,9.621,6.707,8.207,12,13.5l5.293-5.293,1.414,1.414-5.293,5.293A1.993,1.993,0,0,1,12,15.5Z'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+
+.theme-xenial .dokan-dashboard-wrap select.dokan-form-control:focus {
+
+   border-color: #3da6ff;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. Dokan table
+   -------------------------------------------------------------------------- */
+
+.product-listing-table [data-title=Name] strong {
+
+   display: block;
+   margin-bottom: 5px;
+   font-size: var(--xe_base_font_size);
+   font-weight: var(--xe_base_font_weight);
+}
+
+.product-listing-table [data-title=Name] strong > a {
+
+   color: var(--xe_base_text_color);
+}
+
+.product-listing-table [data-title=Name] strong > a:hover {
+
+   color: var(--xe_seconary_color);
+}
+
+.theme-xenial .dokan-product-listing .dokan-product-listing-area table.product-listing-table mark.instock {
+
+   font-size: 15px;
+   font-weight: normal;
+   line-height: 1;
+}
+
+.dokan-product-listing .dokan-product-listing-area del .amount,
+.dokan-product-listing .dokan-product-listing-area ins .amount {
+
+   font-family: var(--xe_system_font_family);
+   font-weight: normal;
+}
+
+.dokan-product-listing .dokan-product-listing-area del .amount {
+
+
+}
+
+.dokan-product-listing .dokan-product-listing-area ins {
+
+   background-color: transparent;
+}
+
+.dokan-product-listing .dokan-product-listing-area ins .amount {
+
+
+}
+
+// Dokan pagination
+
+.theme-xenial .pagination-wrap ul.pagination,
+.theme-xenial .dokan-pagination-container .dokan-pagination {
+
+   @include flex();
+   justify-content: center;
+   margin-bottom: 30px;
+}
+
+.theme-xenial .pagination-wrap ul.pagination > li,
+.theme-xenial .dokan-pagination-container .dokan-pagination li {
+
+   display: inline-flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   margin: 3px;
+}
+
+.pagination-wrap ul.pagination > li > a,
+.pagination-wrap ul.pagination > li > span,
+.theme-xenial .dokan-pagination-container .dokan-pagination li a {
+
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   height: 40px;
+   width: 40px;
+   font-size: 13px;
+   font-weight: 500;
+   line-height: 40px;
+   border-radius: 3px;
+   margin: 0;
+   color: var(--xe_base_text_color);
+   border: 2px solid transparent;
+}
+
+.theme-xenial .pagination-wrap ul.pagination > li > a,
+.theme-xenial .dokan-pagination-container .dokan-pagination li a {
+
+   float: none;
+   display: inline-flex;
+   margin: 0;
+   border: none;
+   background-color: transparent;
+}
+
+.theme-xenial .pagination-wrap ul.pagination > li > .page-numbers:hover,
+.theme-xenial .dokan-pagination-container .dokan-pagination li a:hover {
+
+   color: var(--xe_seconary_color);
+   text-decoration: none;
+   background-color: transparent;
+}
+
+.theme-xenial .pagination-wrap ul.pagination > li > .page-numbers.current,
+.theme-xenial .dokan-pagination-container .dokan-pagination li.active a {
+
+   color: var(--xe_primary_color);
+   background-color: transparent;
+   border: 2px solid var(--xe_primary_color);
+}
+
+.theme-xenial .pagination-wrap ul.pagination > li > .page-numbers.next,
+.theme-xenial .pagination-wrap ul.pagination > li > .page-numbers.prev  {
+    
+   font-size: var(--xe_base_font_size);
+   font-weight: normal;
+   width: auto;
 }
