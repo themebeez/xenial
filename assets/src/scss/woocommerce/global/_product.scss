@@ -258,6 +258,11 @@
 
 // Add to cart button
 
+.woocommerce ul.products li.product .button {
+
+	margin: 0;
+}
+
 .woocommerce ul.products li.product .xe-product-thumb .xe-add-to-cart {
 
     @include flex();
@@ -437,4 +442,7 @@
 	font-weight: normal;
 }
 
-
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
+ 

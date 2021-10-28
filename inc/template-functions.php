@@ -5,6 +5,7 @@
  * @package Xenial
  */
 
+
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -15,7 +16,6 @@ function xenial_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'xenial_pingback_header' );
-
 
 
 function xenial_google_fonts_header() {

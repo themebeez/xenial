@@ -9,7 +9,8 @@
 
 if ( ! defined( 'XENIAL_THEME_VERSION' ) ) {
 
-	define( 'XENIAL_THEME_VERSION', '1.0.0' );
+	$theme = wp_get_theme();
+	define('XENIAL_THEME_VERSION', $theme->Version);
 }
 
 if ( ! defined( 'XENIAL_THEME_URI' ) ) {

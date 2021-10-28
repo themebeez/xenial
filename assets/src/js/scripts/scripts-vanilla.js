@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// init 
 	var xeInitAll = function () {
 
+		consoleLog();
 		xeSmoothScroll();
 		xeTabs();
 		xeToolTip();
@@ -29,6 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	// define variables & constants
 
 	const body = document.body;
+
+	function consoleLog() {
+
+		console.log('JavaScript Enqueue is Working Now. Cheers!');
+	}
 
 	// smooth scroll
 	function xeSmoothScroll() {
