@@ -73,8 +73,8 @@ if ( ! function_exists( 'xenial_get_post_comments' ) ) {
  */
 if ( ! function_exists( 'xenial_get_post_categories' ) ) {
 
-	function xenial_get_post_categories( $enable_separator = false ) {
-		$categories_list = ( $enable_separator == true ) ? get_the_category_list( ', ' ) : get_the_category_list(); 
+	function xenial_get_post_categories() {
+		$categories_list = get_the_category_list(); 
 		if ( $categories_list ) {
 			echo $categories_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}

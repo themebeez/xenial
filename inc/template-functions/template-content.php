@@ -29,44 +29,52 @@ if ( ! function_exists( 'xenial_post_title_template' ) ) {
  * Display the post thumbnail.
  * 
  */ 
-if ( ! function_exists( 'xenial_post_thumbnail_template' ) ) {
-	function xenial_post_thumbnail_template( $args ) {
+if ( ! function_exists( 'xenial_linked_post_thumbnail_template' ) ) {
+
+	function xenial_linked_post_thumbnail_template( $args ) {
 
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
 
-		$enablePostThumb = false;
-
-
-		$currentPage = ( isset( $args['currentPage'] ) ) ? $args['currentPage'] : '';
-		$thumbSize = ( isset( $args['thumbSize'] ) ) ? $args['thumbSize'] : 'thumbnail';
-		$thumbnailCaption = wp_get_attachment_caption( get_post_thumbnail_id( get_the_ID() ) );
-		$cssClass = [ 'post-thumbnail' ];
-		if ( $currentPage === 'single' ) {
-			$cssClass[] = 'xe-entry-thumbnail';
-		}
+		$thumbnailSize = ( isset( $args['thumbnail_size'] ) && $args['thumbnail_size'] ) ? $args['thumbnail_size'] : 'full';
 		?>
-		<div class="<?php echo esc_attr( implode( ' ', $cssClass ) ); ?>">
+		<div class="post-thumbnail">
 	        <figure class="xe-thumb">
-	        	<?php
-	        	if ( $currentPage != 'single' ) {
-	        		?>
-	        		<a href="<?php the_permalink() ?>" class="xe-link xe-thumb-link"><?php the_post_thumbnail( $thumbSize ); ?></a>
-	        		<?php
-	        	} else {
-	        		the_post_thumbnail();
-
-	        		if ( $thumbnailCaption ) {
-		        		?>
-		        		<figcaption><?php echo wp_kses_post( $thumbnailCaption ); ?></figcaption>
-		        		<?php
-		        	}
-	        	}	        	
-	        	?>
+	        	<a href="<?php the_permalink() ?>" class="xe-link xe-thumb-link" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail( $thumbnailSize ); ?></a>
 	        </figure><!-- .xe-thumb -->
 	    </div><!-- .post-thumbnail -->
 		<?php
+	}
+}
+
+
+if ( ! function_exists( 'xenial_single_thumbnail_template' ) ) {
+
+	function xenial_single_thumbnail_template( $args = array() ) {
+
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
+
+		$thumbnailSize = ( isset( $args['thumbnail_size'] ) && $args['thumbnail_size'] ) ? $args['thumbnail_size'] : 'full';
+
+		$thumbnailCaption = wp_get_attachment_caption( get_post_thumbnail_id( get_the_ID() ) ); 
+		?>
+		<div class="post-thumbnail xe-entry-thumbnail">
+	        <figure class="xe-thumb">
+	        	<?php
+        		the_post_thumbnail( $thumbnailSize );
+
+        		if ( $thumbnailCaption ) {
+	        		?>
+	        		<figcaption><?php echo wp_kses_post( $thumbnailCaption ); ?></figcaption>
+	        		<?php
+	        	}        	
+	        	?>
+	        </figure><!-- .xe-thumb -->
+	    </div><!-- .post-thumbnail -->
+	    <?php
 	}
 }
 
@@ -185,7 +193,7 @@ if ( ! function_exists( 'xenial_post_categories_meta_template' ) ) {
 	function xenial_post_categories_meta_template() {
 		?>
 		<div class="xe-categories xe-entry-categories">
-            <?php xenial_get_post_categories( true ); ?>
+            <?php xenial_get_post_categories(); ?>
         </div><!-- .xe-categories -->
 		<?php
 	}
@@ -208,7 +216,7 @@ if ( ! function_exists( 'xenial_grouped_post_metas_template' ) ) {
                     <?php xenial_get_post_comments(); ?>
                 </li><!-- .meta.comments -->
                 <li class="meta categories">
-                    <?php xenial_get_post_categories( true ); ?>
+                    <?php xenial_get_post_categories(); ?>
                 </li><!-- .meta.categories -->
                 <li class="meta readtime">
                     <?php xenial_get_post_read_time(); ?>

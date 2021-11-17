@@ -29,15 +29,11 @@ if ( ! $xenialRelatedPostsContent ) {
 			?>
 		    <div class="xe-col-xl-6 xe-col-lg-6 xe-col-md-12 xe-col-sm-12 xe-col-xs-12">
 		        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		        	<?php if ( has_post_thumbnail() && in_array( 'image', $xenialRelatedPostsContent ) ) { ?>
-			        	<div class="post-thumbnail">
-	                        <figure class="xe-thumb">
-	                            <a href="<?php the_permalink(); ?>" class="xe-link xe-thumb-link">
-	                            	<?php the_post_thumbnail( array( 335, 251.25 ) ); ?>
-	                            </a>
-	                        </figure>
-	                    </div><!-- .post-thumbnail -->
-	                <?php } ?>
+		        	<?php 
+		        	if ( has_post_thumbnail() && in_array( 'image', $xenialRelatedPostsContent ) ) { 
+		        		do_action( 'xenial_linked_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_related_post_thumbnail_size', array( 335, 251.25 ) ) ) );
+		        	}
+		        	?>
 		            <div class="post-content">
 		                <?php 
 		                if ( in_array( 'title', $xenialRelatedPostsContent ) ) {

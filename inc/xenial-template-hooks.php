@@ -13,7 +13,9 @@ defined( 'ABSPATH' ) || exit;
 
 add_action( 'xenial_post_title', 'xenial_post_title_template' );
 
-add_action( 'xenial_post_thumbnail', 'xenial_post_thumbnail_template' );
+add_action( 'xenial_linked_post_thumbnail', 'xenial_linked_post_thumbnail_template' );
+
+add_action( 'xenial_single_post_thumbnail', 'xenial_single_thumbnail_template' );
 
 /**
  * 

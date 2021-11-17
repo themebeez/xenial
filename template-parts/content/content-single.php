@@ -25,7 +25,7 @@ if ( ! $xenialSingleContents ) {
                 do_action( 'xenial_single_grouped_post_meta' );
                 break;
             case 'image' :
-                do_action( 'xenial_post_thumbnail', [ 'currentPage' => 'single', 'thumbSize' => 'full' ] );
+                do_action( 'xenial_single_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_post_size_thumbnail_size', 'full' ) ) );
                 break;
             case 'excerpt' :
                 do_action( 'xenial_post_excerpt' );

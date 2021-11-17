@@ -11,7 +11,7 @@ if ( $args['current_page'] == 'single' && $args['display_breadcrumbs'] == false 
 }
 ?>
 <header class="xe-pageheader">
-    <div class="xe-container">
+    <div class="<?php echo esc_attr( $args['classes'] ); ?>">
         <?php if ( $args['current_page'] != 'single' ) { ?>
             <aside class="xe-pagetitle-holder">
                 <?php

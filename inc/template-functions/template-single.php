@@ -9,7 +9,8 @@ if ( ! function_exists( 'xenial_single_header_template' ) ) {
 			'container_width' => '',
 			'before_title' => '',
 			'after_title' => '',
-			'display_breadcrumbs' => false
+			'display_breadcrumbs' => false,
+			'classes' => 'xe-container'
 		);
 
 		$containerWidth = xenial_get_option( 'post_single_breadcrumbs_width' );
@@ -23,6 +24,20 @@ if ( ! function_exists( 'xenial_single_header_template' ) ) {
 
 		$displayBreadcrumbs = xenial_get_option( 'post_single_display_breadcrumbs' );
 		$templateArgs['display_breadcrumbs'] = ( $displayBreadcrumbs == true ) ? true : false;
+
+		if ( $displayBreadcrumbs ) {
+			$breadcrumbsWidth = xenial_get_option( 'post_single_breadcrumbs_width' );
+			switch ( $breadcrumbsWidth ) {
+				case 'wide' :
+					$templateArgs['classes'] = 'xe-container-wide';
+					break;
+				case 'narrow' :
+					$templateArgs['classes'] = 'xe-container-narrow';
+					break;
+				default :
+					$templateArgs['classes'] = 'xe-container';
+			}
+		}
 
 		get_template_part( 'template-parts/page-header/content', 'header', $templateArgs );	
 	}
@@ -235,7 +250,7 @@ if ( ! function_exists( 'xenial_single_grouped_post_meta_template' ) ) {
 						case 'categories' :
 							?>
 							<li class="meta categories">
-			                    <?php xenial_get_post_categories( true ); ?>
+			                    <?php xenial_get_post_categories( ); ?>
 			                </li><!-- .meta.categories -->
 							<?php
 							break;
@@ -254,5 +269,44 @@ if ( ! function_exists( 'xenial_single_grouped_post_meta_template' ) ) {
 			</ul><!-- .list-unstyled -->
 		</div><!-- .xe-post-metas.xe-entry-metas -->
 		<?php
+	}
+}
+
+
+if ( ! function_exists( 'xenial_post_single_content_container_classes' ) ) {
+
+	function xenial_post_single_content_container_classes() {
+
+		$contentContainerClasses = array();
+
+		if ( xenial_has_sidebar() ) {
+
+			$contentContainerClasses[] = 'xe-container';
+			$contentContainerClasses[] = 'xe-flex-alt';
+		} else {
+			$contentContainerWidth = xenial_get_option( 'post_single_content_width' );
+
+			if ( $contentContainerWidth ) {
+
+				switch ( $contentContainerWidth ) {
+					case 'wide' :
+						$contentContainerClasses[] = 'xe-container-wide';
+						break;
+					case 'narrow' :
+						$contentContainerClasses[] = 'xe-container-narrow';
+						break;
+					default :
+						$contentContainerClasses[] = 'xe-container';
+						$contentContainerClasses[] = 'xe-flex-alt';
+				}
+			} else {
+				$contentContainerClasses[] = 'xe-container';
+				$contentContainerClasses[] = 'xe-flex-alt';
+			}
+		}
+
+		$contentContainerClasses = apply_filters( 'xenial_post_single_content_container_classes', $contentContainerClasses );
+
+		echo esc_attr( implode( ' ', $contentContainerClasses ) );
 	}
 }
