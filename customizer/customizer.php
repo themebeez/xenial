@@ -235,7 +235,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'pages/page-single/header.php';
 	require $customizer_fields_path . 'pages/page-single/content.php';
 	
-	require $customizer_fields_path . 'fields-banner.php';
+	// require $customizer_fields_path . 'fields-banner.php';
 
 	require $customizer_fields_path . 'fields-sidebar.php';
 

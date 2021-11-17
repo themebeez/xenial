@@ -1144,3 +1144,56 @@ if ( ! function_exists( 'xenial_get_heading_tags' ) ) {
 		);
 	}
 }
+
+
+
+if ( ! function_exists( 'xenial_get_social_networks' ) ) {
+
+	function xenial_get_social_networks() {
+
+		return apply_filters( 'xenial_social_networks_filter', array(
+			'behance'		=> 'Behance',
+			'codepen'		=> 'CodePen',
+			'discord'		=> 'Discord',
+			'dribble'		=> 'Dribble',
+			'email'			=> 'Email',
+			'facebook'		=> 'Facebook',
+			'flickr'		=> 'Flickr',
+			'foursquare'	=> 'Foursquare',
+			'github'		=> 'Github',
+			'gitlab'		=> 'GitLab',
+			'instagram'		=> 'Instagram',
+			'line'			=> 'Line',
+			'linkedin'		=> 'LinkedIn',
+			'medium'		=> 'Medium',
+			'odnoklassniki'	=> 'Odnoklassniki',
+			'patreon'		=> 'Patreon',
+			'phone'			=> 'Phone',
+			'pinterest'		=> 'Pinterest',
+			'qq'			=> 'QQ',
+			'rss'			=> 'RSS',
+			'reddit'		=> 'Reddit',
+			'skype'			=> 'Skype',
+			'slack'			=> 'Slack',
+			'snapchat'		=> 'Snapchat',
+			'soundcloud'	=> 'SoundCloud',
+			'spotify'		=> 'Spotify',
+			'telegram'		=> 'Telegram',
+			'tiktok'		=> 'TikTok',
+			'tripadvisor'	=> 'TripAdvisor',
+			'tumblr'		=> 'Tumblr',
+			'twitch'		=> 'Twitch',
+			'twitter'		=> 'Twitter',
+			'unsplash'		=> 'Unsplash',
+			'vk'			=> 'VK',
+			'viber'			=> 'Viber',
+			'vimeo'			=> 'Vimeo',
+			'wechat'		=> 'WeChat',
+			'weibo'			=> 'Weibo',
+			'whatsapp'		=> 'WhatsApp',
+			'xing'			=> 'Xing',
+			'yelp'			=> 'Yelp',
+			'youtube'		=> 'YouTube'
+		) );
+	}
+}

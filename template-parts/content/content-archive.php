@@ -17,7 +17,7 @@ if ( ! $xenialArchiveContents ) {
     foreach ( $xenialArchiveContents as $content ) :
         switch ( $content ) {
             case 'image' :
-                do_action( 'xenial_post_thumbnail', [ 'thumbSize' => [ 800, 450 ] ] );
+                do_action( 'xenial_linked_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_archive_post_thumbnail_size', array( 800, 450 ) ) ) );
                 break;
             case 'title' :
                 do_action( 'xenial_post_title', [ 'titleTag' => 'h2', 'enableLink' => true ] );

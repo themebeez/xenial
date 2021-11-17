@@ -15,7 +15,7 @@
 get_header();
 ?>
 <?php do_action( 'xenial_single_page_header' ); ?>
-<div class="xe-container xe-flex-alt">
+<div class="<?php xenial_page_single_content_container_classes(); ?>">
     <div id="primary" class="content-area">
         <main id="site-main" class="site-main">
         	<?php 

@@ -70,15 +70,15 @@ class Xenial_Customize_SlimSelect_Control extends WP_Customize_Control {
 			?>
 			<select name="slimselect-<?php echo esc_attr( $this->id ); ?>" id="slimselect-<?php echo esc_attr( $this->id ); ?>" <?php echo ( $attrs['multiselect'] ) ? 'multiple' : ''; ?> <?php echo ( $attrs['multiselect'] ) ? 'data-showsearch="enable"' : 'data-showsearch="disable"'; ?> <?php $this->link(); ?>>
 				<?php if ( $this->choices ) {
-					$saved_values = $this->value();
-					if ( $attrs['multiselect'] ) {
+					$saved_values = ( $this->value() ) ? $this->value() : array();
+					if ( isset( $attrs['multiselect'] ) && $attrs['multiselect'] == true ) {
 						foreach ( $this->choices as $value => $label ) {
 							?>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php if ( $saved_values ) { selected( in_array( $value, $saved_values ) ); } ?>><?php echo esc_html( $label ); ?></option>
 							<?php
 						}
 					} else {
-						$saved_value = $this->value();
+						$saved_value = ( $this->value() ) ? $this->value() : '';
 						foreach ( $this->choices as $value => $label ) {
 							?>
 							<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, $saved_value ); ?>><?php echo esc_html( $label ); ?></option>

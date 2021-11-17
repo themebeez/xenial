@@ -16,25 +16,20 @@ if ( ! function_exists( 'xenial_get_option' ) ) {
             return;
         }
 
-        $value = '';
+        $default_keys_values = xenial_get_customizer_defaults();
 
-        $default = xenial_get_customizer_defaults();
+        if ( array_key_exists( $key, $default_keys_values ) ) {
 
-        $default_value = null;
+            // Get default key value.
+            $default_key_value = $default_keys_values[ $key ];
 
-        if ( is_array( $default ) && isset( $default[ $key ] ) ) {
-            $default_value = $default[ $key ];
-        }
-
-        if ( null !== $default_value ) {
-
-            $value = get_theme_mod( $key, $default_value );
+            // Get and return customizer option set value using default value.
+            return get_theme_mod( $key, $default_key_value );
         } else {
 
-            $value = get_theme_mod( $key );
+            // Return customizer option set value without using default value.
+            return get_theme_mod( $key );
         }
-
-        return $value;
     }
 }
 
@@ -165,9 +160,11 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'site_description_visibility' => 'default',
 
             'logo_position' => 'left',
-            'site_identity_alignment_desktop' => 'left',
-            'site_identity_alignment_tablet' => 'left',
-            'site_identity_alignment_mobile' => 'left',
+            'site_identity_alignment' => array(
+                'desktop' => 'left',
+                'tablet' => 'left',
+                'mobile' => 'left'
+            ),
 
             'site_title_color' => '#000000',
             'site_title_hover_color' => '#000000',
@@ -214,9 +211,11 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'header_button_link' => '#',
             'header_button_link_open_in_new_tab' => false,
             'header_button_visibility' => 'default',
-            'header_button_alignment_desktop' => 'left',
-            'header_button_alignment_tablet' => 'left',
-            'header_button_alignment_mobile' => 'left',
+            'header_button_alignment' => array(
+                'desktop' => 'left',
+                'tablet' => 'left', 
+                'mobile' => 'left'
+            ),
             'header_button_font_color' => '',
             'header_button_hover_font_color' => '',
             'header_button_background_color' => '',

@@ -29,11 +29,25 @@ if ( ! function_exists( 'xenial_archive_page_header_template' ) ) {
 		$titleTag = xenial_get_option( 'archive_title_tag' );
 		if ( $titleTag ) {
 			$templateArgs['before_title'] = '<' . $titleTag . ' class="xe-title">';
-			$templateArgs['after_title'] = '<' . $titleTag . '>';  
+			$templateArgs['after_title'] = '</' . $titleTag . '>';  
 		}
 
 		$displayBreadcrumbs = xenial_get_option( 'archive_page_display_breadcrumbs' );
 		$templateArgs['display_breadcrumbs'] = ( $displayBreadcrumbs == true ) ? true : false;
+
+		if ( $displayBreadcrumbs ) {
+			$breadcrumbsWidth = xenial_get_option( 'archive_page_header_width' );
+			switch ( $breadcrumbsWidth ) {
+				case 'wide' :
+					$templateArgs['classes'] = 'xe-container-wide';
+					break;
+				case 'narrow' :
+					$templateArgs['classes'] = 'xe-container-narrow';
+					break;
+				default :
+					$templateArgs['classes'] = 'xe-container';
+			}
+		}
 
 		get_template_part( 'template-parts/page-header/content', 'header', $templateArgs );	
 	}
@@ -77,7 +91,7 @@ if ( ! function_exists( 'xenial_archive_grouped_post_meta_template' ) ) {
 						case 'categories' :
 							?>
 							<li class="meta categories">
-			                    <?php xenial_get_post_categories( true ); ?>
+			                    <?php xenial_get_post_categories(); ?>
 			                </li><!-- .meta.categories -->
 							<?php
 							break;
@@ -111,5 +125,44 @@ if ( ! function_exists( 'xenial_archive_read_more_template' ) ) {
 	        <a href="<?php the_permalink(); ?>" class="xe-button xe-false-button has-underline xe-post-link"><?php echo esc_html( $readMoreButtonLabel ); ?></a>
 	    </div><!-- .xe-continue-reading -->
 		<?php
+	}
+}
+
+
+if ( ! function_exists( 'xenial_archive_content_container_classes' ) ) {
+
+	function xenial_archive_content_container_classes() {
+
+		$contentContainerClasses = array();
+
+		if ( xenial_has_sidebar() ) {
+
+			$contentContainerClasses[] = 'xe-container';
+			$contentContainerClasses[] = 'xe-flex-alt';
+		} else {
+			$contentContainerWidth = xenial_get_option( 'archive_content_container_width' );
+
+			if ( $contentContainerWidth ) {
+
+				switch ( $contentContainerWidth ) {
+					case 'wide' :
+						$contentContainerClasses[] = 'xe-container-wide';
+						break;
+					case 'narrow' :
+						$contentContainerClasses[] = 'xe-container-narrow';
+						break;
+					default :
+						$contentContainerClasses[] = 'xe-container';
+						$contentContainerClasses[] = 'xe-flex-alt';
+				}
+			} else {
+				$contentContainerClasses[] = 'xe-container';
+				$contentContainerClasses[] = 'xe-flex-alt';
+			}
+		}
+
+		$contentContainerClasses = apply_filters( 'xenial_archive_content_container_classes', $contentContainerClasses );
+
+		echo esc_attr( implode( ' ', $contentContainerClasses ) );
 	}
 }
