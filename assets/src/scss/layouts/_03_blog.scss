@@ -20,12 +20,13 @@
 
 .hentry .post-thumbnail .xe-thumb .xe-thumb-link {
 
-    display: inline-flex;
+    display: inline-block;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .hentry .post-thumbnail .xe-thumb img {
 
+    display: inline-block;
     border-radius: 3px;
 }
 
@@ -152,26 +153,47 @@
     margin-right: 0;
 }
 
-.xe-post-metas .meta.categories > a {
+.xe-post-metas .meta.categories .post-categories {
 
-    margin-right: 2px;
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.xe-post-metas .meta.categories > a::after {
+.xe-categories .post-categories {
+
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.xe-categories .post-categories li {
+
+    display: inline-block;
+}
+
+.xe-post-metas .meta.categories .post-categories li {
+
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.xe-post-metas .meta.categories .post-categories li::after {
 
     content: ",";
 }
 
-.xe-post-metas .meta.categories > a:last-child {
+.xe-post-metas .meta.categories .post-categories li:last-child {
 
     margin-right: 0;
+} 
 
-    &::after {
+.xe-post-metas .meta.categories .post-categories li:last-child::after {
 
-        content: "";
-    }
-}
-
+    content: "";
+} 
 
 // responsive 
 
