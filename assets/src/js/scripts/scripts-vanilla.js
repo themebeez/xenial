@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	// init 
 	var xeInitAll = function () {
 
-		consoleLog();
 		xeSmoothScroll();
 		xeTabs();
 		xeToolTip();
@@ -26,15 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	xeInitAll();
-
-	// define variables & constants
-
-	const body = document.body;
-
-	function consoleLog() {
-
-		console.log('JavaScript Enqueue is Working Now. Cheers!');
-	}
 
 	// smooth scroll
 	function xeSmoothScroll() {
@@ -67,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// toggle comments
 	function xeToggleComment() {
 
+		var body = document.body;
 		var commentToggleBtn = document.getElementById("xe-comment-toggle-btn");
 
 		if (commentToggleBtn !== null || undefined) {
@@ -82,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	// back to top button 
 	function xeBackToTopButton() {
 
+		var body = document.body;
 		//var backToTopButtonHolder = document.getElementById("xe-backtotop");
 		var backToTopTriggerBtn = document.getElementById("xe-backtotop-button");
 

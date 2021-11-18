@@ -1,12 +1,27 @@
 // container
 
-.xe-container {
+[class*="xe-container"] {
 
-    max-width: var(--xe_container_width);
     width: 100%;
+    max-width: var(--xe_container_width);
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.xe-container {
+
+    max-width: var(--xe_container_width);
+}
+
+.xe-container-narrow {
+
+    max-width: var(--xe_container_width_narrow);
+}
+
+.xe-container-wide {
+
+    max-width: var(--xe_container_width_wide);
 }
 
 // flex 

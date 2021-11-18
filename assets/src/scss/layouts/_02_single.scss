@@ -1,45 +1,38 @@
 
-// post single 
-
-.single #xe-page .xe-pageheader {
+// page header
+.single .xe-pageheader {
 
     padding: 10px 0;
 }
 
-.single.xe-no-sidebar #xe-page .xe-breadcrumb {
+.single.xe-no-sidebar .xe-breadcrumb {
 
     width: 100%;
 }
 
-.single.xe-no-sidebar #comments,
-.single.xe-no-sidebar .xe-related-posts,
-.single.xe-no-sidebar .hentry .page-links,
-.single.xe-no-sidebar .hentry .xe-post-tags,
-.single.xe-no-sidebar #xe-comment-toggle-btn,
-.single.xe-no-sidebar #xe-page .xe-breadcrumb, 
-.single.xe-no-sidebar .hentry .xe-entry-metas, 
-.single.xe-no-sidebar .hentry .xe-author-box,
-.single.xe-no-sidebar .hentry .xe-entry-title,
-.single.xe-no-sidebar .hentry .xe-entry-excerpt,
-.single.xe-no-sidebar .hentry .xe-entry-categories,
-.single.xe-no-sidebar .hentry .xe-post-navigation {
-
-    @include no_sidebar_narrow_layout(auto);
-}
-
-.single #xe-page #primary,
-.single.xe-no-sidebar #xe-page #primary {
+// primary
+.single #primary,
+.single.xe-no-sidebar #primary {
 
     width: 100%;
     max-width: 100%;
 }
 
-#primary .xe-entry-title .xe-title {
+// post title
+
+.single .hentry .xe-entry-title .xe-title {
 
     font-size: 36px;
 }
 
-#primary .xe-entry-excerpt > p {
+// excerpt
+
+.single .hentry .xe-post-excerpt {
+
+    margin-bottom: 30px;
+}
+
+.single .hentry .xe-entry-excerpt > p {
 
     font-family: var(--xe_text_emphasis_font_family);
     font-size: 22px;
@@ -48,77 +41,75 @@
     line-height: var(--xe_base_font_line_height);
 }
 
-#primary .xe-entry-thumbnail {
-
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-#primary .xe-entry-thumbnail > .xe-thumb {
-
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-#primary .xe-entry-thumbnail > figcaption {
-
-    text-align: center;
-    margin: 5px 0;
-}
-
 // blog entry categories
 
-.hentry .xe-entry-categories {
+.single .hentry .xe-entry-categories {
 
     @include flex();
     margin-bottom: 15px;
 }
 
-.xe-post-tags .post-tags a,
-.hentry .xe-entry-categories a {
+.single .xe-post-tags .post-tags a,
+.single .hentry .xe-entry-categories ul li a {
 
+    display: inline-block;
     font-size: calc(var(--xe_base_font_size) - 2px);
     line-height: 1;
     font-weight: normal;
     padding: 7px 15px;
     color: var(--xe_primary_color);
     border: 2px solid var(--xe_primary_color);
-    border-radius: 25px;
+    border-radius: 3px;
     margin:5px;
 }
 
-.xe-post-tags .post-tags a:hover,
-.hentry .xe-entry-categories a:hover {
+.single .xe-post-tags .post-tags a:hover,
+.single .hentry .xe-entry-categories ul li a:hover {
 
     text-decoration: none;
     color: var(--xe_seconary_color);
     border-color: var(--xe_seconary_color);
 }
 
-.xe-post-tags .post-tags a:focus,
-.hentry .xe-entry-categories a:focus {
+.single .xe-post-tags .post-tags a:focus,
+.single .hentry .xe-entry-categories ul li a:focus {
 
     outline: none;
 }
 
-.xe-post-tags .post-tags a:first-child
-.hentry .xe-entry-categories a:first-child {
+.single .xe-post-tags .post-tags a:first-child
+.single .hentry .xe-entry-categories ul li a:first-child {
 
     margin-left: 0;
 }
 
 .xe-post-tags .post-tags a:last-child,
-.hentry .xe-entry-categories a:last-child {
+.hentry .xe-entry-categories ul li a:last-child {
 
     margin-right: 0;
 }
 
-// post thumbnail 
+// post thumbnail
 
-#primary .xe-entry-thumbnail > .xe-thumb {
+.single .hentry .xe-entry-thumbnail {
 
-    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
+
+.single .hentry .xe-entry-thumbnail > .xe-thumb {
+
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.single .hentry .xe-entry-thumbnail > figcaption {
+
+    text-align: left;
+    margin: 5px 0;
+}
+
 
 // main content 
 
@@ -151,11 +142,6 @@
 
     margin-bottom: 10px;
 }
-
-//.xe-entry-content a:not(.xe-button):not(.button):not(.wp-block-button__link):not(.showcoupon):not(.showlogin):not(.shipping-calculator-button) {
-
-//    color: blue;
-//}
 
 // post pagination 
 
@@ -254,8 +240,7 @@
     margin-bottom: 15px;
 }
 
-
-// post navigation. next & prev
+// post navigation next & prev
 
 .xe-post-navigation {
 
@@ -284,7 +269,8 @@
 .xe-post-navigation .nav-next > a,
 .xe-post-navigation .nav-previous > a {
 
-    display: block;
+    display: inline-flex;
+    flex-wrap: wrap;
     color: var(--xe_base_text_color);
 }
 
@@ -305,8 +291,18 @@
 .xe-post-navigation .nav-content {
 
     @include flex();
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
+}
+
+.xe-post-navigation .nav-next .nav-content  {
+
+    justify-content: flex-end;
+}
+
+.xe-post-navigation .nav-previous .nav-content {
+
+    justify-content: flex-start;
 }
 
 .xe-post-navigation .nav-content span {
@@ -359,16 +355,21 @@
 
 #comments {
 
+    display: block;
     margin-top: 40px;
 }
 
-#comments,
+.xe-comment-toggle-btn-enabled #comments {
+
+    display: none; // hide comment form by default when toggle button is enabled in customizer.
+}
+
 #xe-comment-toggle-btn #xe-hide-comment-text {
 
     display: none;
 }
 
-.xe-visible-comments #comments,
+.xe-comment-toggle-btn-enabled.xe-visible-comments #comments,
 .xe-visible-comments #xe-comment-toggle-btn #xe-hide-comment-text {
 
     display: block;
@@ -379,6 +380,192 @@
     display: none;
 }
 
+// comment form titles
+
+#comments .comments-title,
+#comments #respond .comment-reply-title {
+
+    font-size: var(--xe_base_font_size);
+    font-weight: var(--xe_base_font_weight);
+    line-height: var(--xe_base_font_line_height);
+    letter-spacing: var(--xe_base_letter_spacing);
+    color: var(--xe_base_text_color);
+    border: 2px dashed var(--xe_border_color);
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#comments .comments-title::before,
+#comments #respond .comment-reply-title::before {
+
+    content: "\e643";
+    display: inline-block;
+    margin-right: 5px;
+    font-family: var(--xe_iconfont);
+}
+
+// comments list
+
+#comments .comment-list {
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#comments .comment-list .comment-body {
+
+    position: relative;
+}
+
+#comments .comment-list .children {
+
+    margin: 30px 0 30px 40px;
+}
+
+#comments .comment-list li {
+
+    display: block;
+    margin-bottom: 40px;
+}
+
+#comments .comment-list li .comment-author-avatar {
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: auto;
+}
+
+#comments .comment-list li .comment-author-avatar figure  {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex: 0 0 32px;
+    max-width: 32px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#comments .comment-list li .comment-author-info {
+
+    display: block;
+    margin-left: 42px;
+}
+
+#comments .comment-list li .comment-author-info a,
+#comments .comment-list li .comment-author-info .comment-meta  {
+
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#comments .comment-list li .comment-author-info cite {
+
+    font-style: normal;
+}
+
+#comments .comment-list li .comment-author-info .comment-meta a:not(.comment-edit-link) {
+
+    color: var(--xe_base_text_color);
+}
+
+#comments .comment-list li .reply .comment-reply-link,
+#comments .comment-list li .comment-author-info a.comment-edit-link {
+
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.50px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+#comments .comment-list li .comment-author-info a.comment-edit-link {
+
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+#comments .comment-list li .comment-author-info a.comment-edit-link::before {
+
+    content: "\e61c";
+    margin-right: 2px;
+    font-family: var(--xe_iconfont);
+}
+
+#comments .comment-list li .comment-author-info a.comment-edit-link:hover {
+
+    text-decoration: none;
+}
+
+#comments .comment-list li .comment-author-info a.comment-edit-link:focus {
+
+    outline: none;
+}
+
+#comments .comment-list li .comment-author-comment {
+
+    border: 1px solid var(--xe_border_color);
+    border-radius: 5px;
+    padding: 20px 20px 0 20px;
+    margin: 30px 0 20px 0;
+    box-shadow: 0 1px 3px rgb(0,0,0,0.1);
+}
+
+#comments .comment-list li .reply .comment-reply-link {
+
+    color: grey;
+}
+
+#comments .comment-list li .reply .comment-reply-link:hover {
+
+    color: var(--xe_base_link_color);
+}
+
+#comments .comment-list li .reply .comment-reply-link::before {
+
+    content: "\e6bc";
+    margin-right: 5px;
+    font-family: var(--xe_iconfont);
+}
+
+// respond comment form
+
+#comments #respond {
+
+    margin-top: 30px;
+}
+
+#comments #respond .comment-reply-title #cancel-comment-reply-link {
+
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#comments #respond .comment-reply-title #cancel-comment-reply-link:hover {
+
+    text-decoration: none;
+}
+
+#comments #respond .comment-reply-title #cancel-comment-reply-link:focus {
+
+    outline: none;
+}
+
+#comments #respond .comment-reply-title #cancel-comment-reply-link::before {
+
+    content: "\e646";
+    display: inline-block;
+    margin-right: 5px;
+    font-family: var(--xe_iconfont);
+}
 
 // related posts
 
@@ -401,3 +588,37 @@
 
     font-size: 18px;
 }
+
+/* -------------------------------------------------------------------------- 
+	Case: content layouts narrow container width
+   -------------------------------------------------------------------------- */
+
+   .single .xe-entry-title,
+   .single .xe-entry-categories,
+   .single .hentry .xe-entry-metas,
+   .single .hentry .xe-entry-excerpt {
+
+       margin-left: 5%;
+       margin-right: 5%;
+   }
+
+/* -------------------------------------------------------------------------- 
+	Case: content layouts narrow container width
+   -------------------------------------------------------------------------- */
+
+//.single .xe-container-narrow #comments,
+//.single .xe-container-narrow .xe-related-posts,
+//.single .xe-container-narrow .hentry .page-links,
+//.single .xe-container-narrow .hentry .xe-post-tags,
+//.single .xe-container-narrow #xe-comment-toggle-btn,
+//.single .xe-container-narrow #xe-page .xe-breadcrumb, 
+//.single .hentry .xe-entry-metas, 
+//.single .xe-container-narrow .hentry .xe-author-box,
+//.single .xe-entry-title,
+//.single .hentry .xe-entry-excerpt,
+//.single .xe-container-narrow .hentry .xe-post-navigation,
+//.single .xe-entry-categories {
+
+//    margin-left: 5%;
+//    margin-right: 5%;
+//}

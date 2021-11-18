@@ -5,7 +5,7 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 
 		$assets_url = get_template_directory_uri() . '/assets/build/';
 
-		wp_register_script( 'xenial-main', $assets_url . 'js/xenial-script.min.js', NULL, XENIAL_THEME_VERSION, true );
+		wp_enqueue_script( 'xenial-bundle', $assets_url . 'js/xenial-script.min.js', NULL, XENIAL_THEME_VERSION, true );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 

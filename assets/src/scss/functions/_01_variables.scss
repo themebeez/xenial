@@ -65,9 +65,15 @@
   --xe_inputs_border_radius: 4px;
 
   // grid
-  --xe_container_width: 1400px;
   --xe_grid_gutter_width: 30px;
   --xe_grid_gutter_width_none: 0;
+
+  // containers
+  --xe_container_width: 1400px;
+  --xe_container_width_narrow: 800px;
+  --xe_container_width_wide: 100%;
+
+  // breakpoints
   --xe_large_device_breakpoint: 1024px;
   --xe_medium_device_breakpoint: 991px;
   --xe_tablet_device_breakpoint: 768px;
@@ -102,4 +108,7 @@
   // z-index
   --xe_site_navigation_zindex: 10000000;
   --xe_submenu_dropdown_zindex: 10000001;
+
+  // containers
+
 }
