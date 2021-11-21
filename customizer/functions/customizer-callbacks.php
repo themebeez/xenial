@@ -655,7 +655,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'header_search_modal_close_button_hover_background_color' => '',
             
 
-            'header_social_link_menu' => '',
+            'header_social_links' => '',
             'header_social_link_visibility' => 'desktop,tablet,mobile',
             'header_social_link_alignment' => [
                 'desktop' => 'left',

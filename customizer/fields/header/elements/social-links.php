@@ -22,7 +22,7 @@ xenial_tab_field(
 			'tab_1' => apply_filters( 
 	        	'xenial_header_social_links_tab_1_controls', 
 	        	[
-	        		'header_social_link_menu' => '',
+	        		'header_social_links' => '',
 	        		'header_social_link_general_divider_1' => '',
 
 	        		'header_social_link_visibility' => '',
@@ -79,17 +79,15 @@ xenial_tab_field(
 );
 
 
-xenial_select_field(
-	'header_social_link_menu',
-	[
+xenial_sortable_selector_field(
+	'header_social_links',
+	array(
 		'priority' => 10,
 		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Social Link Menu', 'xenial' ),
-		'choices' => xenial_get_nav_menus(),
-		'default' => $xenial_customizer_defaults['header_social_link_menu']
-	]
+		'label' => esc_html__( 'Social Links', 'xenial' ),
+		'choices' => xenial_get_social_networks()
+	)
 );
-
 
 xenial_divider_field( 
 	'header_social_link_general_divider_1', 
