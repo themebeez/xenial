@@ -2,8 +2,8 @@
 	#. Import WooCommerce specific styles
    -------------------------------------------------------------------------- */
 
-@use "../functions/01_variables"; // only use this base variables file as it is already imported in base xenial css.
-@import "../functions/02_mixins";
+@use "../functions/variables"; // only use this base variables file as it is already imported in base xenial css.
+@import "../functions/mixins";
 
 @import "./functions/woocommerce-vars";
 

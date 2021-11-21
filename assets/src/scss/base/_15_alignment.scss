@@ -17,30 +17,26 @@
 
 // float aligment 
 
-.alignleft {
-
-    display: inline;
-    float: left;
-    margin-right: 30px;
-    margin-bottom: 30px;
-}
-
-.alignright {
-
-    display: inline;
-    float: right;
-    margin-left: 30px;
-    margin-bottom: 30px;
-}
-
 .alignleft,
-.alignright {
+.wp-block-image .alignleft {
 
-    clear: both;
+    display: table;
+    float: left;
+    margin: 0 30px 30px 0;
+}
+
+.alignright,
+.wp-block-image .alignright {
+
+    display: table;
+    float: right;
+    margin: 0 0 30px 30px;
 }
 
 .alignleft::before,
-.alignright::before {
+.alignleft::after,
+.alignright::before,
+.alignright::after {
 
     content: "";
     display: table;
@@ -55,6 +51,7 @@
 
 .aligncenter {
 
+    display: table;
     float: none;
     margin-left: auto;
     margin-right: auto;
@@ -88,8 +85,10 @@
 .alignwide,
 .alignfull {
 
+    display: block;
     position: relative;
     width: 80vw;
+    max-width: 80vw;
     margin-right: auto;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -97,5 +96,48 @@
 
 .alignfull {
 
-    width: 95vw;
+    width: 98vw;
+    max-width: 98vw;
 }
+
+// WordPress embeds
+
+.wp-block-embed.alignwide:not(.is-type-rich) .wp-block-embed__wrapper::before,
+.wp-block-embed.alignfull:not(.is-type-rich) .wp-block-embed__wrapper::before,
+.wp-block-embed.wp-embed-aspect-4-3:not(.is-type-rich) .wp-block-embed__wrapper::before  {
+
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+}
+
+.wp-block-embed.alignwide.wp-embed-aspect-4-3:not(.is-type-rich) .wp-block-embed__wrapper::before,
+.wp-block-embed.alignfull.wp-embed-aspect-4-3:not(.is-type-rich) .wp-block-embed__wrapper::before  {
+
+    content: "";
+    padding-top: 75%;
+}
+
+.wp-block-embed.alignwide:not(.is-type-rich) iframe,
+.wp-block-embed.alignfull:not(.is-type-rich) iframe {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.wp-block-embed.alignwide.is-type-rich iframe,
+.wp-block-embed.alignfull.is-type-rich iframe {
+
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+

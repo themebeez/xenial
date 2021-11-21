@@ -1,5 +1,6 @@
 
 // page header
+
 .single .xe-pageheader {
 
     padding: 10px 0;
@@ -11,6 +12,7 @@
 }
 
 // primary
+
 .single #primary,
 .single.xe-no-sidebar #primary {
 
@@ -110,38 +112,19 @@
     margin: 5px 0;
 }
 
-
 // main content 
 
-.xe-entry-content h1,
-.xe-entry-content h2,
-.xe-entry-content h3,
-.xe-entry-content h4,
-.xe-entry-content h5,
-.xe-entry-content h6 {
+.xe-entry-content::after {
 
-    margin-top: 30px;
-    margin-bottom: 15px;
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.single.xe-no-sidebar .xe-entry-content >*:not([class*="alignfull"]):not([class*="alignwide"]):not([class*="gallery"]) {
+//.single.xe-has-no-sidebar .xe-entry-content >*:not([class*="alignfull"]):not([class*="alignwide"]):not([class*="gallery"]) {
 
-    @include no_sidebar_narrow_layout(auto);
-}
-
-.single .xe-entry-content ol,
-.single .xe-entry-content ul:not([class*="wp-block"]) {
-
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 50px;
-}
-
-.single .xe-entry-content ol li,
-.single .xe-entry-content ul:not([class*="wp-block"]) li {
-
-    margin-bottom: 10px;
-}
+//    @include no_sidebar_narrow_layout(auto);
+//}
 
 // post pagination 
 
@@ -565,6 +548,14 @@
     display: inline-block;
     margin-right: 5px;
     font-family: var(--xe_iconfont);
+}
+
+@media( max-width: 575px ) {
+
+    #comments .comment-list .children {
+
+        margin-left: 30px; 
+    }
 }
 
 // related posts
