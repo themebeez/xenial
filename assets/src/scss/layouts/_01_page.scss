@@ -16,7 +16,7 @@
 	background-color: var(--xe_page_header_breadcrumb_background_color);
 }
 
-#xe-page .xe-pageheader .xe-container {
+#xe-page .xe-pageheader [class*="xe-container"] {
 
 	@include flex();
 	align-items: center;

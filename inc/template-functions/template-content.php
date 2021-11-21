@@ -113,7 +113,7 @@ if ( ! function_exists( 'xenial_post_read_more_template' ) ) {
 if ( ! function_exists( 'xenial_post_content_wrapper_before_template' ) ) {
 	function xenial_post_content_wrapper_before_template() {
 		?>
-		<div class="entry-content">
+		<div class="xe-entry-content">
 		<?php
 	}
 }
@@ -122,7 +122,7 @@ if ( ! function_exists( 'xenial_post_content_wrapper_before_template' ) ) {
 if ( ! function_exists( 'xenial_post_content_wrapper_after_template' ) ) {
 	function xenial_post_content_wrapper_after_template() {
 		?>
-		</div><!-- .entry-content -->
+		</div><!-- .xe-entry-content -->
 		<?php
 	}
 }
