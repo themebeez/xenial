@@ -94,6 +94,12 @@ function xenial_customize_register( $wp_customize ) {
 	 */
 	require $controls_path . 'sortable-checkbox/class-xenial-customize-sortable-checkbox-control.php';
 
+
+	/**
+	 * Load sortable selector custom customize control.
+	 */
+	require $controls_path . 'sortable-selector/class-xenial-customize-sortable-selector-control.php';
+
 	/**
 	 * Load simple notice custom customize control.
 	 */
@@ -198,6 +204,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'buttons.php';
 	require $customizer_fields_path . 'breadcrumbs.php';
 	require $customizer_fields_path . 'miscellaneous.php';
+	require $customizer_fields_path . 'social-network-links.php';
 
 	require $customizer_fields_path . 'header/base.php';
 	require $customizer_fields_path . 'header/top-header.php';
