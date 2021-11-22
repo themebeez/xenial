@@ -19,7 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
-
+<?php do_action( 'xenial_single_header' ); ?>
 <div id="primary" class="content-area">
     <main id="site-main" class="site-main">
         <div class="xe-container">
+            
