@@ -258,3 +258,9 @@ require get_template_directory() . '/inc/assets.php';
 
 
 require get_template_directory() . '/inc/third-party/breadcrumbs.php';
+
+
+if ( class_exists( 'WooCommerce' ) ) {
+	require get_template_directory() . '/inc/third-party/woocommerce.php';
+	require get_template_directory() . '/inc/third-party/woocommerce/woocommerce-hooks.php';
+}
