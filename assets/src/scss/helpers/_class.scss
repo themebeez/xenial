@@ -266,3 +266,11 @@
     transform-origin: left center;
     background-color: var(--xe_primary_color);
 }
+
+// Social icon
+
+.xe-social-icon > svg {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+}
