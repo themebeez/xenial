@@ -594,7 +594,7 @@
    }
 
 /* -------------------------------------------------------------------------- 
-	Case: content layouts narrow container width
+	Case: container width normal with no sidebar
    -------------------------------------------------------------------------- */
 
 //.single .xe-container-narrow #comments,
@@ -613,3 +613,15 @@
 //    margin-left: 5%;
 //    margin-right: 5%;
 //}
+
+.single.xe-has-no-sidebar [class*="xe-container"]:not(.xe-container-narrow) #comments,
+.single.xe-has-no-sidebar [class*="xe-container"]:not(.xe-container-narrow) .xe-post-tags,
+.single.xe-has-no-sidebar [class*="xe-container"]:not(.xe-container-narrow) .xe-author-box,
+.single.xe-has-no-sidebar [class*="xe-container"]:not(.xe-container-narrow) .xe-related-posts,
+.single.xe-has-no-sidebar [class*="xe-container"]:not(.xe-container-narrow) .xe-post-navigation,
+.single.xe-has-no-sidebar [class*="xe-container"]:not(.xe-container-narrow) #xe-comment-toggle-btn {
+
+    max-width: var(--xe_container_width_narrow);
+    margin-left: auto;
+    margin-right: auto;
+}
