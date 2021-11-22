@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	var xeInitAll = function () {
 
 		xeSmoothScroll();
-		xeTabs();
+		//xeTabs();
 		xeToolTip();
 		xeToggleComment();
 		xeBackToTopButton();
-		xeTabHiddenItems();
-		initSwiper();
+		//xeTabHiddenItems();
+		//initSwiper();
 	}
 
 	xeInitAll();
@@ -73,8 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	// back to top button 
 	function xeBackToTopButton() {
 
-		var body = document.body;
-		//var backToTopButtonHolder = document.getElementById("xe-backtotop");
 		var backToTopTriggerBtn = document.getElementById("xe-backtotop-button");
 
 		window.addEventListener('scroll', function () {
@@ -89,128 +87,130 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 
 		backToTopTriggerBtn.addEventListener('click', function () {
-			body.scrollIntoView({
-				behavior: 'smooth',
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
 			});
 		});
 	}
 
 
 	// tab
-	function xeTabs() {
-		var bindAllTabs = function () {
-			var tabElements = document.querySelectorAll("[xe-data-tab]");
+	//function xeTabs() {
+	//	var bindAllTabs = function () {
+	//		var tabElements = document.querySelectorAll("[xe-data-tab]");
 
-			for (var i = 0; i < tabElements.length; i++) {
-				tabElements[i].addEventListener("click", change, false);
-			}
-		};
+	//		for (var i = 0; i < tabElements.length; i++) {
+	//			tabElements[i].addEventListener("click", change, false);
+	//		}
+	//	};
 
-		var clear = function () {
-			var tabElements = document.querySelectorAll("[xe-data-tab]");
+	//	var clear = function () {
+	//		var tabElements = document.querySelectorAll("[xe-data-tab]");
 
-			for (var i = 0; i < tabElements.length; i++) {
-				tabElements[i].classList.remove("active");
-				var id = tabElements[i].getAttribute("xe-data-tab");
-				document.getElementById(id).classList.remove("active");
-			}
-		};
+	//		for (var i = 0; i < tabElements.length; i++) {
+	//			tabElements[i].classList.remove("active");
+	//			var id = tabElements[i].getAttribute("xe-data-tab");
+	//			document.getElementById(id).classList.remove("active");
+	//		}
+	//	};
 
-		var change = function (e) {
-			clear();
-			e.preventDefault();
-			e.target.classList.add("active");
-			var id = e.currentTarget.getAttribute("xe-data-tab");
-			document.getElementById(id).classList.add("active");
-		};
+	//	var change = function (e) {
+	//		clear();
+	//		e.preventDefault();
+	//		e.target.classList.add("active");
+	//		var id = e.currentTarget.getAttribute("xe-data-tab");
+	//		document.getElementById(id).classList.add("active");
+	//	};
 
-		bindAllTabs();
-	}
+	//	bindAllTabs();
+	//}
 
 
 	// tab hidden nav items
-	function xeTabHiddenItems() {
+	//function xeTabHiddenItems() {
 
-		var hiddenTabNavToggleEle = document.querySelectorAll(".toggle-hidden-tabnav-items");
-		var hiddenTabNavItemsEle = document.querySelectorAll(".xe-hidden-tabnavs");
+	//	var hiddenTabNavToggleEle = document.querySelectorAll(".toggle-hidden-tabnav-items");
+	//	var hiddenTabNavItemsEle = document.querySelectorAll(".xe-hidden-tabnavs");
 
-		[].forEach.call(hiddenTabNavToggleEle, function (item) {
-			item.addEventListener("click", function (e) {
-				e.preventDefault();
-				var parentNav = item.parentNode;
-				var parentNavChildren = parentNav.children;
-				for (var i = 0; i < parentNavChildren.length; i++) {
-					if (
-						parentNavChildren[i].classList.contains(
-							"xe-hidden-tabnavs"
-						)
-					) {
-						parentNavChildren[i].classList.toggle("visible");
-					}
-				}
-			});
-		});
-	}
+	//	[].forEach.call(hiddenTabNavToggleEle, function (item) {
+	//		item.addEventListener("click", function (e) {
+	//			e.preventDefault();
+	//			var parentNav = item.parentNode;
+	//			var parentNavChildren = parentNav.children;
+	//			for (var i = 0; i < parentNavChildren.length; i++) {
+	//				if (
+	//					parentNavChildren[i].classList.contains(
+	//						"xe-hidden-tabnavs"
+	//					)
+	//				) {
+	//					parentNavChildren[i].classList.toggle("visible");
+	//				}
+	//			}
+	//		});
+	//	});
+	//}
 
 	// swiper
-	function initSwiper() {
-		var swiper = new Swiper("#product-block-1-demo-carosuel", {
-			direction: "horizontal",
-			effect: "slide",
-			spaceBetween: 30,
-			slidesPerView: 4,
-			loopedSlides: 4,
-			loop: true,
-			freeMode: false,
-			lazy: true,
-			speed: 1000,
-			breakpoints: {
-				1024: {
-					slidesPerView: 4,
-				},
-				991: {
-					slidesPerView: 3,
-				},
-				768: {
-					slidesPerView: 3,
-				},
-				575: {
-					slidesPerView: 2,
-					spaceBetween: 10,
-				},
-				0: {
-					slidesPerView: 2,
-					spaceBetween: 10,
-				},
-			},
-			pagination: {
-				el: ".swiper-pagination",
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-		});
+	//function initSwiper() {
+	//	var swiper = new Swiper("#product-block-1-demo-carosuel", {
+	//		direction: "horizontal",
+	//		effect: "slide",
+	//		spaceBetween: 30,
+	//		slidesPerView: 4,
+	//		loopedSlides: 4,
+	//		loop: true,
+	//		freeMode: false,
+	//		lazy: true,
+	//		speed: 1000,
+	//		breakpoints: {
+	//			1024: {
+	//				slidesPerView: 4,
+	//			},
+	//			991: {
+	//				slidesPerView: 3,
+	//			},
+	//			768: {
+	//				slidesPerView: 3,
+	//			},
+	//			575: {
+	//				slidesPerView: 2,
+	//				spaceBetween: 10,
+	//			},
+	//			0: {
+	//				slidesPerView: 2,
+	//				spaceBetween: 10,
+	//			},
+	//		},
+	//		pagination: {
+	//			el: ".swiper-pagination",
+	//		},
+	//		navigation: {
+	//			nextEl: ".swiper-button-next",
+	//			prevEl: ".swiper-button-prev",
+	//		},
+	//	});
 
-		var swiper = new Swiper("#product-block-2-demo-carosuel", {
-			direction: "horizontal",
-			effect: "slide",
-			spaceBetween: 0,
-			slidesPerView: 1,
-			loopedSlides: 1,
-			loop: true,
-			freeMode: false,
-			lazy: true,
-			speed: 1000,
-			pagination: {
-				el: ".swiper-pagination",
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-		});
-	}
+	//	var swiper = new Swiper("#product-block-2-demo-carosuel", {
+	//		direction: "horizontal",
+	//		effect: "slide",
+	//		spaceBetween: 0,
+	//		slidesPerView: 1,
+	//		loopedSlides: 1,
+	//		loop: true,
+	//		freeMode: false,
+	//		lazy: true,
+	//		speed: 1000,
+	//		pagination: {
+	//			el: ".swiper-pagination",
+	//		},
+	//		navigation: {
+	//			nextEl: ".swiper-button-next",
+	//			prevEl: ".swiper-button-prev",
+	//		},
+	//	});
+	//}
 
 });
 

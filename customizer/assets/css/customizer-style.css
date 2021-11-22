@@ -37,6 +37,11 @@
     transition: all 0.5s ease;
 }
 
+#customize-controls textarea {
+
+    padding: 20px;
+}
+
 #customize-controls input[type="color"]:hover, 
 #customize-controls input[type="date"]:hover, 
 #customize-controls input[type="datetime-local"]:hover, 
@@ -505,17 +510,33 @@ body.rtl .customize-control .responsive-switchers li {
 
 /* Sortable */
 
+.xenial-sortable-selector-control .selector-select-add-wrapper {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.xenial-sortable-selector-control .selector-select-add-wrapper .sortable-selector-select {
+
+    max-width: 85%;
+    margin-bottom: 0;
+}
+
 .xenial-sortable-selector-control .button.sortable-selector-input-add {
 
-    line-height: 40px;
-    width: 40px;
-    height: 40px;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
     padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
-    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    border: 1px solid #dcdee2;
     background-color: #FFFFFF;
 }
 
@@ -535,8 +556,8 @@ body.rtl .customize-control .responsive-switchers li {
 
     display: inline-flex;
     flex-wrap: wrap;
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     fill: #50575E;
 }
 
@@ -563,6 +584,11 @@ body.rtl .customize-control .responsive-switchers li {
 .xenial-sortable-selector-control .sortable-elements-wrapper .sortable-element .sortable-icon {
 
     line-height: 1;
+}
+
+.xenial-sortable-selector-control .sortable-elements-wrapper .sortable-element .item-label {
+
+    min-width: 100px;
 }
 
 .xenial-sortable-selector-control .sortable-element .sortable-icon svg,

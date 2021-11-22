@@ -1186,11 +1186,11 @@ if ( ! function_exists( 'xenial_get_social_networks' ) ) {
 			'twitter'		=> 'Twitter',
 			'unsplash'		=> 'Unsplash',
 			'vk'			=> 'VK',
-			'viber'			=> 'Viber',
 			'vimeo'			=> 'Vimeo',
 			'wechat'		=> 'WeChat',
 			'weibo'			=> 'Weibo',
 			'whatsapp'		=> 'WhatsApp',
+			'wordpress'		=> 'WordPress',
 			'xing'			=> 'Xing',
 			'yelp'			=> 'Yelp',
 			'youtube'		=> 'YouTube'
