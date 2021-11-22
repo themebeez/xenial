@@ -502,3 +502,106 @@ body.rtl .customize-control .responsive-switchers li {
     padding-top: 15px;
     padding-left: 15px;
 }
+
+/* Sortable */
+
+.xenial-sortable-selector-control .button.sortable-selector-input-add {
+
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    background-color: #FFFFFF;
+}
+
+.xenial-sortable-selector-control .button.sortable-selector-input-add:hover {
+
+    border-color: var(border-color-hover);
+    background-color: #FFFFFF;
+}
+
+.xenial-sortable-selector-control .button.sortable-selector-input-add:focus {
+
+    outline: none;
+    border-color: var(--border-color-active);
+}
+
+.xenial-sortable-selector-control .button.sortable-selector-input-add svg {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 24px;
+    height: 24px;
+    fill: #50575E;
+}
+
+.xenial-sortable-selector-control .sortable-element {
+
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px 15px;
+    line-height: 1;
+    border: 1px solid var(--border-color);
+    background-color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.xenial-sortable-selector-control .sortable-element.ui-sortable-helper {
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.xenial-sortable-selector-control .sortable-elements-wrapper .sortable-element .sortable-icon {
+
+    line-height: 1;
+}
+
+.xenial-sortable-selector-control .sortable-element .sortable-icon svg,
+.xenial-sortable-selector-control .sortable-element .sortable-selector-input-delete {
+
+    line-height: 1;
+    fill: #50575E;
+    transition: all 0.3s ease;
+}
+
+.xenial-sortable-selector-control .sortable-element .sortable-icon svg {
+
+    height: 16px;
+    width: 16px;
+    opacity: 0.5;
+}
+
+.xenial-sortable-selector-control .sortable-element.ui-sortable-helper .sortable-icon svg {
+
+    fill: #3DA6FF;
+    opacity: 1;
+}
+
+.xenial-sortable-selector-control .sortable-element .sortable-selector-input-delete {
+    
+    color: #50575E;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+.xenial-sortable-selector-control .sortable-element .sortable-selector-input-delete:hover {
+
+    color: #3DA6FF;
+    text-decoration: none;
+}
+
+.xenial-sortable-selector-control .sortable-element .sortable-selector-input-delete:focus {
+
+    outline: none;
+    text-decoration: none;
+}
+

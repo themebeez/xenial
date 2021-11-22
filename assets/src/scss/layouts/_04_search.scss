@@ -5,3 +5,51 @@
 
     max-width: var(--xe_no_sidebar_narrow_container_width);
 }
+
+.search article {
+
+    margin-bottom: 50px;
+}
+
+.search article .post-thumbnail .xe-thumb {
+
+    margin-bottom: 20px;
+}
+
+.search article .post-thumbnail .xe-thumb .xe-thumb-link {
+
+    display: inline-block;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.search article .xe-post-title .xe-title {
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.search article .xe-post-title .xe-title a {
+
+    color: var(--xe_base_text_color);
+}
+
+.search article .xe-post-title .xe-title a:hover {
+
+    color: var(--xe_seconary_color);
+}
+
+.search article .xe-post-metas,
+.search article .xe-post-excerpt>p,
+.search article.xe-post-title .xe-title {
+
+    margin-bottom: 15px;
+}
+ 
+.search article .xe-post-metas, 
+.search article .xe-post-title,
+.search article .xe-post-excerpt,
+.search article .xe-continue-reading {
+
+    margin-left: 5%;
+    margin-right: 5%;
+}
