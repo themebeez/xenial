@@ -10,20 +10,20 @@
 
 // page header (holds breadcrumb & page title)
 
-#xe-page .xe-pageheader {
+.xe-pageheader {
 
 	padding:35px 0;
 	background-color: var(--xe_page_header_breadcrumb_background_color);
 }
 
-#xe-page .xe-pageheader [class*="xe-container"] {
+.xe-pageheader [class*="xe-container"] {
 
 	@include flex();
 	align-items: center;
 	justify-content: space-between;
 }
 
-#xe-page .xe-pageheader .xe-pagetitle-holder .xe-title {
+.xe-pageheader .xe-pagetitle-holder .xe-title {
 
 	font-size: 24px;
 	margin-bottom: 0;
@@ -31,7 +31,7 @@
 
 // content
 
-#xe-page #content > .xe-container {
+#content > .xe-container {
 
 	@include flex();
 	justify-content: stretch;
@@ -40,8 +40,8 @@
 
 // default primary & secndary 
 
-#xe-page #primary,
-#xe-page #secondary {
+#content #primary,
+#content #secondary {
 
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -50,14 +50,19 @@
 
 // case: defaut width
 
-#xe-page #primary {
+#content #primary {
 
-	width: var(--xe_default_primary_area_width); // i.e 75%
+	width: var(--xe_default_primary_area_width); // i.e 100%
 }
 
-#xe-page #secondary {
+#content #secondary {
 
 	width: var(--xe_default_sidebar_width); // i.e 35%
+}
+
+body:not(.xe-has-no-sidebar) #xe-page #primary  {
+
+	width: calc(100% - var(--xe_default_sidebar_width));
 }
 
 .xe-has-no-sidebar #xe-page #primary {
@@ -74,58 +79,64 @@
 
 // case: sidebar position
 
-#xe-page #primary {
+#content #primary {
 
 	order: 1;
 }
 
-#xe-page #secondary {
+#content #secondary {
 
 	order: 2;
 }
 
 // Options (Sidebar Position: Default, Left, Right) & Mobile device sidebar position (Top & Bottom )
 
-.xe-sidebar-position-left #xe-page #secondary {
+.xe-sidebar-position-left #content #secondary {
 
 	order: 1;
 }
 
-.xe-sidebar-position-left #xe-page #primary {
+.xe-sidebar-position-left #content #primary {
 
 	order: 2;
 }
 
-.xe-sidebar-position-right #xe-page #primary {
+.xe-sidebar-position-right #content #primary {
 
 	order: 1;
 }
 
-.xe-sidebar-position-right #xe-page #secondary {
+.xe-sidebar-position-right #content #secondary {
 
 	order: 2;
 }
 
-body:not(.xe-has-no-sidebar) #xe-page #primary {
+body.xe-has-no-sidebar #xe-page #primary {
 
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.xe-sidebar-position-left:not(.xe-has-no-sidebar) #xe-page #primary {
+.xe-sidebar-position-left:not(.xe-has-no-sidebar) #content #primary {
 
 	padding-right: 0;
 	padding-left: 50px;
 }
 
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #xe-page #primary,
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #xe-page #secondary {
+.xe-sidebar-position-right:not(.xe-has-no-sidebar) #content #primary {
+
+	padding-left: 0;
+	padding-right: 50px;
+}
+
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #content #primary,
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #content #secondary {
 
 	order: 2;
 }
 
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #xe-page #secondary,
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #xe-page #primary {
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #content #secondary,
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #content #primary {
 
 	order: 1;
 }
@@ -141,19 +152,13 @@ body:not(.xe-has-no-sidebar) #xe-page #primary {
 	padding-right: 50px;
 }
 
-// Boxed Width: Boxed Container
+
+/* -------------------------------------------------------------------------- 
+	Case: Boxed Layout
+   -------------------------------------------------------------------------- */
 
 .xe-site-layout-boxed #xe-page {
 
 	width: 100%;
-	max-width: 1170px;
-}
-
-@media ( max-width: 1024px ) {
-
-	.xe-layout-container-stretch .xe-container {
-
-		padding-left: 15px;
-		padding-right: 15px;
-	}
+	max-width: var(--xe_boxed_layout_maxwidth);
 }
