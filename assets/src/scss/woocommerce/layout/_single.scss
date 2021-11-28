@@ -521,6 +521,7 @@
 
     font-size: 18px;
     font-weight: normal;
+    margin-top: 0;
     margin-bottom: 30px;
 }
 
@@ -668,4 +669,29 @@
     display: block;
     width: 100%;
     max-width: 100%;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 768px ) {
+
+    .woocommerce div.product div.images,
+    .woocommerce-page div.product div.images,
+    .woocommerce #content div.product div.images,
+    .woocommerce-page #content div.product div.images {
+
+        width: 100%;
+    }
+
+    .woocommerce div.product div.summary,
+    .woocommerce-page div.product div.summary,
+    .woocommerce #content div.product div.summary, 
+    .woocommerce-page #content div.product div.summary {
+
+        width: 100%;
+        padding-left: 0;
+    }
 }
