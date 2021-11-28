@@ -24,6 +24,14 @@
     max-width: var(--xe_container_width_wide);
 }
 
+@media ( max-width: 575px ) {
+
+    [class*=xe-container] {
+
+        max-width: 98%;
+    }
+}
+
 // flex 
 
 .xe-flex {

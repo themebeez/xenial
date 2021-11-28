@@ -82,8 +82,18 @@
 
 // alignwide & alignfull
 
-body.xe-has-no-sidebar .alignwide,
-body.xe-has-no-sidebar .alignfull {
+.alignwide,
+.alignfull {
+
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body:not(.xe-sidebar-position) .alignwide,
+body:not(.xe-sidebar-position) .alignfull {
 
     display: block;
     position: relative;
@@ -94,10 +104,10 @@ body.xe-has-no-sidebar .alignfull {
     transform: translateX(-50%);
 }
 
-body.xe-has-no-sidebar .alignfull {
+body:not(.xe-sidebar-position) .alignfull {
 
-    width: 98vw;
-    max-width: 98vw;
+    width: 100vw;
+    max-width: 100vw;
 }
 
 
@@ -142,3 +152,18 @@ body.xe-has-no-sidebar .alignfull {
     max-width: 100%;
 }
 
+
+/* -------------------------------------------------------------------------- 
+	Responsive
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 1024px ) {
+
+    body:not(.xe-sidebar-position) .alignwide {
+
+        width: 100%;
+        max-width: 100%;
+        margin-left: auto;
+        transform: none;
+    }
+}

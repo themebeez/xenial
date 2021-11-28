@@ -268,13 +268,14 @@
 
     font-size: calc( var(--xe_base_font_size) + 1px );
     font-weight: normal;
+    margin-top: 0;
     margin-bottom: 15px;
 }
 
 .xe-post-navigation .nav-content {
 
     @include flex();
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
 }
 
@@ -383,5 +384,50 @@
     .single .hentry .xe-entry-title .xe-title {
 
         font-size: calc( var(--xe_entry_single_title_font_size) - 25% ); 
+    }
+
+    .xe-post-tags,
+    .xe-author-box {
+
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .xe-post-navigation {
+
+        gap: 10px;
+    }
+
+    .xe-post-navigation .nav-next,
+    .xe-post-navigation .nav-previous {
+
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 20px;
+        text-align: left;
+        border: 1px solid var(--xe_border_color);
+        border-radius: 5px;
+    }
+    
+    .xe-post-navigation .nav-content {
+
+        flex-wrap: wrap;
+    }
+
+    .xe-post-navigation .nav-next .nav-content {
+
+        justify-content: flex-start;
+    }
+
+    .xe-post-navigation .nav-next span {
+
+        order: 2;
+        margin-right: 0;
+        margin-left: 15px;
+    }
+
+    .xe-post-navigation .nav-next img {
+
+        order: 1;
     }
 }

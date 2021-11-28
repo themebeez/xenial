@@ -453,7 +453,6 @@
 
 		margin-left: -5px;
 		margin-right: -5px;
-		margin-bottom: 30px;
 	}
 
 	.woocommerce ul.products[class*="columns-"]:not(.columns-1) li.product,
@@ -463,12 +462,13 @@
 		width: 50%;
 		padding-left: 5px;
 		padding-right: 5px;
+		margin: 0 0 20px 0;
 	}
 
-	.woocommerce ul.products[class*="columns-"]:not(.columns-1) li.product,
-	.woocommerce-page ul.products[class*="columns-"]:not(.columns-1) li.product {
+	.woocommerce ul.products[class*="columns-1"] li.product,
+	.woocommerce-page ul.products[class*="columns-1"] li.product {
 
-		flex: 0 0 50%;
+		margin: 0 0 30px 0;
 	}
 }
  

@@ -528,3 +528,28 @@
     float: none;
     width: 100%;
 }
+
+
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 575px ) {
+
+    .woocommerce form.woocommerce-checkout {
+
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .woocommerce-page form.checkout .col2-set .col-1, 
+    .woocommerce-page form.checkout .col2-set .col-2 {
+
+        width: 100%;
+    }
+    .woocommerce-page form.checkout .col2-set .col-2 {
+
+        position: relative;
+        margin-top: 40px;
+    }
+}
