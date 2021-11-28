@@ -43,6 +43,7 @@
     
     font-size: 24px;
     font-weight: 600;
+    margin-top: 0;
 }
 
 .hentry .xe-post-title .xe-title a {
@@ -195,9 +196,15 @@
     content: "";
 } 
 
-// responsive 
+
+/* -------------------------------------------------------------------------- 
+	Responsive
+   -------------------------------------------------------------------------- */
 
 @media ( max-width: 575px ) {
 
-    
+    #primary .hentry {
+
+        margin-bottom: 40px;
+    }
 }

@@ -6,6 +6,10 @@
     -webkit-font-smoothing: antialiased;
 }
 
+@function make_rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
 // flex
 
 @mixin flex() {

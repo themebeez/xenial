@@ -1,3 +1,81 @@
+
+// links style
+
+.theme-xenial[data-title*=link-style-] a {
+
+    position: relative;
+    display: inline-block;
+}
+
+.theme-xenial[data-title*=link-style-]:hover {
+
+    text-decoration: none;
+}
+
+// links style - 1 (uderline)
+
+.theme-xenial[data-title*=link-style-1] a {
+
+    color: blue;
+}
+
+.theme-xenial[data-title*=link-style-]:hover {
+
+    color: red;
+}
+
+.theme-xenial[data-title*=link-style-1] a::after {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+}
+
+.theme-xenial[data-title*=link-style-1] a:hover::after {
+
+    content: "";
+    background-color: red;
+}
+
+// links style - 2 (double uderline)
+
+.theme-xenial[data-title*=link-style-2] a {
+
+    color: blue;
+}
+
+.theme-xenial[data-title*=link-style-2] a::before,
+.theme-xenial[data-title*=link-style-2] a::after {
+
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+}
+
+.theme-xenial[data-title*=link-style-2] a::before {
+
+    bottom: unset;
+    top: 0;
+}
+
+.theme-xenial[data-title*=link-style-2] a:hover::before,
+.theme-xenial[data-title*=link-style-2] a:hover::after {
+
+    content: "";
+    background-color: red;
+}
+
+
 // links with no text decoration 
 
 .xe-link,

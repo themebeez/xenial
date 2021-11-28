@@ -23,8 +23,8 @@
 // post title
 
 .single .hentry .xe-entry-title .xe-title {
-
-    font-size: 36px;
+    
+    font-size: var(--xe_entry_single_title_font_size); // 36px 
 }
 
 // excerpt
@@ -372,4 +372,16 @@
     max-width: var(--xe_container_width_narrow);
     margin-left: auto;
     margin-right: auto;
+}
+
+/* -------------------------------------------------------------------------- 
+	Responsive
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 575px ) {
+
+    .single .hentry .xe-entry-title .xe-title {
+
+        font-size: calc( var(--xe_entry_single_title_font_size) - 25% ); 
+    }
 }

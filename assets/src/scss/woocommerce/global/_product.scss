@@ -445,4 +445,30 @@
 /* -------------------------------------------------------------------------- 
 	#. Media Query
    -------------------------------------------------------------------------- */
+
+@media ( max-width: 575px ) {
+
+	.woocommerce ul.products[class*="columns-"]:not(.columns-1),
+	.woocommerce-page ul.products[class*="columns-"]:not(.columns-1) {
+
+		margin-left: -5px;
+		margin-right: -5px;
+		margin-bottom: 30px;
+	}
+
+	.woocommerce ul.products[class*="columns-"]:not(.columns-1) li.product,
+	.woocommerce-page ul.products[class*="columns-"]:not(.columns-1) li.product {
+
+		flex: 0 0 50%;
+		width: 50%;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.woocommerce ul.products[class*="columns-"]:not(.columns-1) li.product,
+	.woocommerce-page ul.products[class*="columns-"]:not(.columns-1) li.product {
+
+		flex: 0 0 50%;
+	}
+}
  

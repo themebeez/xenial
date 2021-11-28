@@ -26,7 +26,7 @@
 .xe-pageheader .xe-pagetitle-holder .xe-title {
 
 	font-size: 24px;
-	margin-bottom: 0;
+	margin: 0;
 }
 
 // content
@@ -161,4 +161,18 @@ body.xe-has-no-sidebar #xe-page #primary {
 
 	width: 100%;
 	max-width: var(--xe_boxed_layout_maxwidth);
+}
+
+/* -------------------------------------------------------------------------- 
+	Responsive
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 575px ) {
+
+    #content #primary, 
+	#content #secondary {
+
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 }
