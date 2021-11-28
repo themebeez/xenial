@@ -3,9 +3,10 @@
 	#. Default
    -------------------------------------------------------------------------- */
 
-#secondary .widget {
+.widget_block {
 
-    margin-bottom: 40px;
+    display: block;
+    margin-bottom: 30px;
 }
 
 
@@ -41,3 +42,157 @@
 
     padding-right: 55px;
 }
+
+
+/* -------------------------------------------------------------------------- 
+	#. Tag cloud
+   -------------------------------------------------------------------------- */
+
+.widget_block .wp-block-tag-cloud {
+
+    @include flex();
+    margin: 0;
+}
+
+.widget_block .wp-block-tag-cloud a {
+
+    display: inline-flex;
+    flex: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    margin: 5px;
+    border: 1px solid var(--xe_border_color);
+    color: var(--xe_base_text_color);
+    font-size: calc( var(--xe_base_font_size) - 10% ) !important;
+    border-radius: 3px;
+}
+
+.widget_block .wp-block-tag-cloud a:hover {
+
+    color: var(--xe_seconary_color);
+    border-color: var(--xe_seconary_color);
+    text-decoration: none;
+}
+
+.widget_block .wp-block-tag-cloud a .tag-link-count {
+
+    margin-left: 5px;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. Archive
+   -------------------------------------------------------------------------- */
+
+.widget_block .wp-block-archives {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. Calendar
+   -------------------------------------------------------------------------- */
+
+.wp-block-calendar table {
+
+    margin: 0;
+}
+
+.wp-block-calendar table caption {
+
+    text-align: center;
+}
+
+.wp-block-calendar table th {
+
+    background-color: var(--xe_border_color);
+}
+
+.wp-block-calendar th,
+.wp-block-calendar table th,
+.wp-block-calendar tbody td {
+
+    text-align: center;
+    padding: 10px;
+    border-color: var(--xe_border_color);
+}
+
+.wp-calendar-nav {
+
+    @include flex();
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wp-calendar-nav a {
+
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. Categories
+   -------------------------------------------------------------------------- */
+
+.widget_block .wp-block-categories {
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.widget_block .wp-block-categories li {
+
+    @include flex();
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.widget_block .wp-block-categories li:first-child {
+
+    padding-top: 0;
+}
+
+.widget_block .wp-block-categories li:last-child {
+
+    padding-bottom: 0;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. Latest comments
+   -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	#. Latest posts
+   -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	#. Page list
+   -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	#. Rss
+   -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	#. Social Icons
+   -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	#. Meta
+   -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	#. Navigation menu
+   -------------------------------------------------------------------------- */

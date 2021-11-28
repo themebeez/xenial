@@ -9,18 +9,23 @@
 
 :root {
   
-  // colors
+  /* -------------------------------------------------------------------------- 
+	  Colors variables
+  -------------------------------------------------------------------------- */
+
+  // Base colors
   --xe_primary_color: #ef2c2c;
   --xe_seconary_color: #1e73be;
   --xe_base_text_color: #585858;
   --xe_base_heading_color: #4A4A4A;
   --xe_base_link_color: #0366E0; // default link color
-
   --xe_body_background_color: #ffffff;
-
   --xe_border_color: #eeeeee;
+  
+  // Inputs
   --xe_inputs_border_color: #dedede; // for inputs, selects & textarea
 
+  // Buttons
   --xe_button_text_color: white;
   --xe_button_background_color: #ef2c2c;
   --xe_button_hover_text_color: #ffffff;
@@ -30,16 +35,22 @@
   --xe_button_is_link_style_underline_color: #ef2c2c;
   --xe_button_is_link_style_hover_underline_color: #1e73be;
 
+  // Page header
   --xe_page_header_breadcrumb_background_color: #EEEEEE; // Alternative: #FFF2CF. page header/ breadcrumb section
 
+  // WooCommerce
   --xe_woo_on_sale_text_color: #ffffff;
   --xe_woo_on_sale_background_color: red;
   --xe_woo_current_price_text_color: red;
   --xe_woo_previous_price_text_color: #3a2e2e;
 
+  /* -------------------------------------------------------------------------- 
+	  Typography variables
+  -------------------------------------------------------------------------- */
+
   // typography
   --xe_system_font_family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, Segoe ui, System ui, sans-serif; // websafe
-  --xe_text_emphasis_font_family: "Playfair Display", Georgia, Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, Serif;
+  --xe_text_emphasis_font_family: "Playfair Display", "Times New Roman", Garamond, Baskerville, Baskerville Old Face, Hoefler Text, 'Serif';
   --xe_monospace_font_family: monospace, monospace;
 
   --xe_base_font_size: 0.9375rem; // 15px: 0.9375rem [16px: 1rem]
@@ -47,6 +58,13 @@
   --xe_base_letter_spacing: 0; // -0.0311em is best for inter
   --xe_base_font_line_height: 1.6;
   --xe_base_font_family: "Inter", sans-serif;
+
+  --xe_heading_h1_font_size: 2.25rem;
+  --xe_heading_h2_font_size: 1.75rem;
+  --xe_heading_h3_font_size: 1.5rem;
+  --xe_heading_h4_font_size: 1.25rem;
+  --xe_heading_h5_font_size: 1.125rem;
+  --xe_heading_h6_font_size: 1rem;
 
   --xe_heading_font_weight: bold;
   --xe_heading_letter_spacing: 0; // -0.0415625em is best for inter
@@ -58,22 +76,33 @@
   --xe_button_font_weight: normal;
   --xe_button_line_height: 1;
 
+  // Entry
   --xe_woo_product_title_size: 0.9375rem; // 15px: 0.9375rem [16px: 1rem]
 
-  // border radius
+  --xe_entry_single_title_font_size: 2.25rem; 
+
+  /* -------------------------------------------------------------------------- 
+	  Border radius
+  -------------------------------------------------------------------------- */
   --xe_buttons_border_radius: 3px;
   --xe_inputs_border_radius: 4px;
 
-  // grid
+  /* -------------------------------------------------------------------------- 
+	  Grid
+  -------------------------------------------------------------------------- */
   --xe_grid_gutter_width: 30px;
   --xe_grid_gutter_width_none: 0;
 
-  // containers
+  /* -------------------------------------------------------------------------- 
+	  Containers
+  -------------------------------------------------------------------------- */
   --xe_container_width: 1400px;
   --xe_container_width_narrow: 800px;
   --xe_container_width_wide: 100%;
 
-  // breakpoints
+  /* -------------------------------------------------------------------------- 
+	  Breakpoints
+  -------------------------------------------------------------------------- */
   --xe_large_device_breakpoint: 1024px;
   --xe_medium_device_breakpoint: 991px;
   --xe_tablet_device_breakpoint: 768px;
@@ -81,7 +110,9 @@
 
   --xe_mobile_device_gutter_width: 5px;
 
-  // width 
+  /* -------------------------------------------------------------------------- 
+	  Width
+  -------------------------------------------------------------------------- */
   --xe_narrow_section_base_width: 700px;
   --xe_default_primary_area_width: 100%;
   --xe_default_sidebar_width: 30%; 
@@ -98,12 +129,13 @@
   --xe_block_standard_spacing: 60px;
   --xe_woo_product_item_spacing: 30px;
 
-  // web font icon
+  /* -------------------------------------------------------------------------- 
+	  Icon font
+  -------------------------------------------------------------------------- */
   --xe_iconfont: "themify";
 
   //mobile design specific
   --xe_mobile_device_woo_product_title_font_size: 14px;
-
 
   // z-index
   --xe_site_navigation_zindex: 10000000;
