@@ -53,6 +53,11 @@ function xenial_body_classes( $classes ) {
 
 	$classes[] = ( $siteLayout == 'default' ) ? 'xe-site-layout-default' : 'xe-site-layout-boxed';
 
+
+	if ( is_single() && xenial_get_option( 'post_single_show_toggle_comments_btn' ) ) {
+		$classes[] = 'xe-comment-toggle-btn-enabled';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'xenial_body_classes' );

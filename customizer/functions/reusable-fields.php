@@ -791,3 +791,36 @@ if ( ! function_exists( 'xenial_sortable_selector_field' ) ) {
 		);
 	}
 }
+
+
+
+
+if ( ! function_exists( 'xenial_header_elements_selector_field' ) ) {
+
+	function xenial_header_elements_selector_field( $id, $args ) {
+
+		global $wp_customize;
+
+		$wp_customize->add_setting( $id,
+			array(
+				'default' => isset( $args['default'] ) ? $args['default'] : '',
+				'sanitize_callback' => ''
+			)
+		);
+		
+		$wp_customize->add_control( 
+			new Xenial_Customize_Header_Elements_Selector_Control( 
+				$wp_customize, 
+				$id,
+				array(
+					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
+					'section' => isset( $args['section'] ) ? $args['section'] : '',
+					'label' => isset( $args['label'] ) ? $args['label'] : '',
+					'description' => isset( $args['description'] ) ? $args['description'] : '',
+					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
+					'choices' => isset( $args['choices'] ) ? $args['choices'] : array(),
+				)
+			) 
+		);
+	}
+}
