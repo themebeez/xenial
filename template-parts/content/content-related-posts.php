@@ -31,7 +31,7 @@ if ( ! $xenialRelatedPostsContent ) {
 		        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		        	<?php 
 		        	if ( has_post_thumbnail() && in_array( 'image', $xenialRelatedPostsContent ) ) { 
-		        		do_action( 'xenial_linked_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_related_post_thumbnail_size', array( 335, 251.25 ) ) ) );
+		        		do_action( 'xenial_linked_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_related_post_thumbnail_size', array( 400, 251.25 ) ) ) );
 		        	}
 		        	?>
 		            <div class="post-content">

@@ -297,6 +297,8 @@ require $xenial_customizer_defaults_path . 'defaults-archive.php';
 require $xenial_customizer_defaults_path . 'defaults-single.php';
 require $xenial_customizer_defaults_path . 'defaults-page.php';
 
+require XENIAL_THEME_DIR . '/customizer/controls/header-builder/class-xenial-header-builder.php';
+
 /**
  * Load function to load customizer field's options.
  */

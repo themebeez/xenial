@@ -1,0 +1,101 @@
+#xenial-header-builder {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	max-height: 350px;
+	margin-bottom: 0;
+	transition-duration: 0.3s;
+}
+
+#xenial-header-builder.xenial-hide-header-builder {
+	margin-bottom: -350px;
+	transition-duration: 0.3s;
+}
+
+.xenial-header-builder-inner {
+	padding: 30px;
+	background-color: #f0f0f1;
+	border-top: 2px solid #e8e8e8;
+	margin-bottom: 0;
+	transition-duration: 0.3s;
+}
+
+.xenial-header-builder-inner.xenial-hide-header-builder-inner {
+	margin-bottom: -320px;
+	transition-duration: 0.3s;
+}
+
+#xenial-header-elements-selector-wrapper {
+	margin-bottom: 30px;
+}
+
+.selected-elements-wrapper .xenial-header-element-button .xenail-header-element-setting-link,
+.selected-elements-wrapper .xenial-header-element-button .xenial-header-element-remove {
+	display: none;
+}
+
+.xenial-header-builder-row {
+	height: 50px;
+	width: 100%;
+	border:  1px solid #e8e8e8;
+	background-color: #f7f7f7;
+}
+
+.xenial-header-element-button {
+	display: inline-block;
+	max-width: fit-content;
+}
+
+.xenial-header-element-label {
+	color: #ffffff;
+}
+
+.xenial-header-builder-row-inner {
+}
+
+.xenial-header-builder-row:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+.xenial-header-builder-row-inner {
+	display: flex;
+	align-items: center;
+}
+
+.xenial-header-row-setting-link {
+	padding: 0px 10px;
+	display: block;
+	border-right: 2px dotted #e5e5e5;
+	height: 50px;
+	line-height: 50px;
+}
+
+.xenial-header-builder-col {
+	width: 33.33%;
+	padding: 10px;
+}
+
+.xenial-header-builder-col:nth-child(3) {
+	border-right: 2px dotted #e5e5e5;
+	border-left: 2px dotted #e5e5e5;
+}
+
+.xenial-header-builder-col .selected-elements-wrapper {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	height: 30px;
+}
+
+.selected-elements-wrapper.dropzone-drag-over {
+	background-color: #e8e8e8;
+}
+
+.xenial-header-builder-col .xenial-header-element-button .xenail-header-element-setting-link,
+.xenial-header-builder-col .xenial-header-element-button .xenial-header-element-remove {
+	display: inline-block;
+}
+
+.xenial-header-builder-col .xenial-header-element-button .xenial-header-element-icon {
+	display: none;
+}

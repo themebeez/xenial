@@ -30,3 +30,7 @@
 	<div class="xe-page" id="xe-page">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'xenial' ); ?></a>
 		<div id="content" class="site-content">
+
+			<?php 
+
+			do_action( 'xenail_display_header_builder' );
