@@ -1,0 +1,72 @@
+
+#xe-mastheader {
+
+    margin-top: 30px;
+    @include transation_delay();
+}
+
+.xe-transparent-header #xe-mastheader {
+
+    background-color: transparent;
+}
+
+.xe-header-sticky #xe-mastheader {
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10000000000;
+}
+
+.xe-header-sticky.xe-transparent-header #xe-mastheader {
+
+    background-color: white;
+}
+
+/* -------------------------------------------------------------------------- 
+	Header Elements
+  -------------------------------------------------------------------------- */
+
+.xe-header-elements .xe-header-element {
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.xe-header-elements .xe-header-element:first-child {
+
+    padding-left: 0;
+}
+
+.xe-header-elements .xe-header-element:last-child {
+
+    padding-right: 0;
+}
+
+/* -------------------------------------------------------------------------- 
+	Responsive
+  -------------------------------------------------------------------------- */
+
+@media ( min-width: 576px ) {
+
+    #xe-mobile-header {
+
+        display: none;
+    }
+}
+
+@media ( max-width: 575px ) {
+
+    #xe-desktop-header {
+
+        display: none;
+    }
+
+    #xe-mobile-header {
+
+        display: block;
+    }
+}
+ 
