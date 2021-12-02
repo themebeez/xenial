@@ -84,10 +84,18 @@
 @import 'blocks/04_product_2';
 @import 'blocks/05_product_3';
 
+// Import Header
+
+@import 'header/header';
+@import 'header/html';
+@import 'header/logo';
+@import 'header/button';
+@import 'header/search';
+@import 'header/social';
+@import 'header/navigation';
+
 // import parts
 
-@import 'parts/01_header';
-@import 'parts/02_footer';
 @import 'parts/06_mobilebar';
 @import 'parts/07_widgets';
 @import 'parts/08_comment';

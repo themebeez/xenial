@@ -1,0 +1,88 @@
+/* -------------------------------------------------------------------------- 
+	Header Element - Search button
+  -------------------------------------------------------------------------- */
+
+.xe-header-element-search svg,
+#xe-search-form form .xe-button svg,
+#xe-search-form #xe-close-search-box svg  {
+
+    display: inline-flex;
+    fill: var(--xe_base_text_color);
+    width: 22px;
+    height: 22px;
+}
+
+.xe-header-element-search:hover svg,
+#xe-search-form form .xe-button:hover svg,
+#xe-search-form #xe-close-search-box:hover svg  {
+
+    fill: var(--xe_seconary_color);
+}
+
+/* -------------------------------------------------------------------------- 
+	Search form
+  -------------------------------------------------------------------------- */
+
+#xe-search-form {
+
+    display: block;
+    position: fixed;
+    z-index: calc( 99999 - 1 );
+    top: -999em;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-width: 100vw;
+    min-height: 250px;
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
+}
+
+// # Show search form if search button is clicked
+
+.xe-visible-search-form #xe-search-form {
+
+    top: 0;
+    animation: xeButtonFadeDown 0.6s 0s;
+}
+
+// # Show search form if search button is clicked
+
+#xe-search-form .xe-search-entry {
+
+    position: relative;
+    padding: 60px;
+}
+
+#xe-search-form .search-box-header {
+
+    @include flex();
+    justify-content: flex-end;
+}
+
+#xe-search-form #xe-close-search-box svg {
+
+    width: 32px;
+    height: 32px;
+}
+
+#xe-search-form form {
+
+    display: block;
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#xe-search-form form input[type="text"] {
+
+    padding-right: 40px;
+}
+
+#xe-search-form form .xe-button {
+
+    position: absolute;
+    top: 12px;
+    right: 15px;
+}

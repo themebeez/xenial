@@ -122,8 +122,24 @@
    --xe_default_layout_container_stretch_width: 100%;
   --xe_default_layout_container_stretch_maxwidth: 1920px;
 
-  // menu toggle breakpoint
-  --xe_mobile_menu_breakpoint: 991px;
+    /* -------------------------------------------------------------------------- 
+	  Menu & Navigation
+  -------------------------------------------------------------------------- */
+
+  --xe_navigation_item_font_size: 0.875rem;
+  --xe_navigation_item_font_weight: normal;
+  --xe_navigation_dropdown_top_spacing: 20px;
+
+  --xe_navigation_item_color: var(--xe_base_text_color);
+  --xe_navigation_item_hover_color: var(--xe_seconary_color);
+
+  --xe_navigation_dropdown_background_color: #FFFFFF;
+  --xe_navigation_dropdown_top_border_color: var(--xe_primary_color);
+  --xe_navigation_dropdown_item_color: var(--xe_base_text_color);
+  --xe_navigation_dropdown_item_seperator_color: transparent;
+  --xe_navigation_dropdown_item_hover_color: var(--xe_seconary_color);
+
+  --xe_mobile_menu_breakpoint: 768px;
 
   // spacing
   --xe_block_standard_spacing: 60px;
