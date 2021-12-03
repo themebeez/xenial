@@ -122,6 +122,29 @@
    --xe_default_layout_container_stretch_width: 100%;
   --xe_default_layout_container_stretch_maxwidth: 1920px;
 
+   /* -------------------------------------------------------------------------- 
+	  Site title & description
+  -------------------------------------------------------------------------- */
+
+  --xe_site_title_font_size: 1.375rem;
+  --xe_site_title_font_weight: 600;
+  --xe_site_title_letter_spacing: 0;
+  --xe_site_title_line_height: 1.2;
+  --xe_site_title_font_family: "Inter", sans-serif;
+  --xe_site_title_color: var(--xe_base_text_color);
+  --xe_site_title_hover_color: var(--xe_seconary_color);
+  --xe_site_title_font_syle: normal;
+  --xe_site_title_text_transform: inherit;
+
+  --xe_site_description_font_size: 0.813rem; // 13px
+  --xe_site_description_font_weight: normal;
+  --xe_site_description_letter_spacing: 0;
+  --xe_site_description_line_height: 1.4;
+  --xe_site_description_color: var(--xe_base_text_color);
+  --xe_site_description_font_syle: normal;
+  --xe_site_description_text_transform: inherit;
+
+
     /* -------------------------------------------------------------------------- 
 	  Menu & Navigation
   -------------------------------------------------------------------------- */
@@ -133,10 +156,11 @@
   --xe_navigation_item_color: var(--xe_base_text_color);
   --xe_navigation_item_hover_color: var(--xe_seconary_color);
 
+  --xe_navigation_dropdown_width: 200px;
   --xe_navigation_dropdown_background_color: #FFFFFF;
   --xe_navigation_dropdown_top_border_color: var(--xe_primary_color);
   --xe_navigation_dropdown_item_color: var(--xe_base_text_color);
-  --xe_navigation_dropdown_item_seperator_color: transparent;
+  --xe_navigation_dropdown_item_seperator_color: #EEE;
   --xe_navigation_dropdown_item_hover_color: var(--xe_seconary_color);
 
   --xe_mobile_menu_breakpoint: 768px;

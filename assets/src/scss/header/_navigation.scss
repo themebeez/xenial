@@ -105,7 +105,7 @@
     left: -999em;
     right: auto;
     top: 100%;
-    width: 200px;
+    width: var(--xe_navigation_dropdown_width);
     margin-top: var(--xe_navigation_dropdown_top_spacing);
     line-height: 1.45;
     visibility: hidden;
