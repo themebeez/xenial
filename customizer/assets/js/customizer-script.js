@@ -2,17 +2,6 @@
 
 	jQuery(document).ready(function(e){
 
-		var topHeaderLeftElement = jQuery('#customize-control-top_header_left_element select');
-		var topHeaderRightElement = jQuery('#customize-control-top_header_right_element select');
-
-		jQuery('body').on('change', topHeaderLeftElement, function() {
-			taleBlogDisableSelectOption( topHeaderLeftElement, topHeaderRightElement );
-		});	
-		
-		jQuery('body').on('change', topHeaderRightElement, function() {
-			taleBlogDisableSelectOption( topHeaderRightElement, topHeaderLeftElement );
-		});	
-
 		function responsiveSwitcher(){
 
 			// Responsive switchers
@@ -86,18 +75,15 @@
 
 		responsiveSwitcher();
 
+		var footerWidgetAreaSectionLinks = jQuery('.customize-section-link');
+		footerWidgetAreaSectionLinks.each( function(i,o){
+			jQuery(this).on('click', function(event) {
+				event.preventDefault();
+				var sectionID = jQuery(this).attr('data-attr');
+				wp.customize.section('sidebar-widgets-' + sectionID).focus();
+			} )
+		});
+
 	    
 	});
-
-	function taleBlogDisableSelectOption( source, target ) {
-		var targetValue = source.val();
-		target.find('option').each(function() {
-			targetOption = jQuery(this);
-			if( targetOption.attr('value') == targetValue ) {
-				targetOption.attr('disabled', 'disabled');
-			} else {
-				targetOption.removeAttr('disabled');
-			}
-		});
-	}
 }) ( jQuery );

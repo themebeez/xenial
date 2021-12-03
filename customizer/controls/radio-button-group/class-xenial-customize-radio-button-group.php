@@ -67,9 +67,30 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 
 			$this->json['id'] 		= $this->id;
 
-			$this->json['choices'] = $this->choices;
-
 			$this->json['isResponsive'] = ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) ? true : false ;
+
+			if ( $this->choices ) {
+				if ( $this->json['isResponsive'] ) {
+
+					$choices = $this->choices;
+					
+					if ( 
+						! isset( $choices['desktop'] ) && 
+						! isset( $choices['tablet'] ) && 
+						! isset( $choices['mobile'] ) 
+					) {
+						$this->json['desktopChoices'] 	= $this->choices;
+						$this->json['tabletChoices'] 	= $this->choices;
+						$this->json['mobileChoices'] 	= $this->choices;
+					} else {
+						$this->json['desktopChoices'] 	= $choices['desktop'];
+						$this->json['tabletChoices'] 	= $choices['tablet'];
+						$this->json['mobileChoices'] 	= $choices['mobile'];
+					}
+				} else {
+					$this->json['choices'] = $this->choices;
+				}
+			}
 
 			$this->json['item'] = isset( $this->input_attrs['item'] ) ? $this->input_attrs['item'] : 'text' ;
 
@@ -164,7 +185,7 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 
 				<# if ( data.desktop ) { #>
 					<div class="desktop responsive-control-wrap columns-{{data.columns}} active">					
-						<# _.each( data.choices, function( choice, key ) { #>
+						<# _.each( data.desktopChoices, function( choice, key ) { #>
 							<#  var value = ( data.desktop.value ) ? data.desktop.value : data.desktop.default; #>
 							<label>
 								<# if ( key == value ) { #>
@@ -194,7 +215,7 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 
 				<# if ( data.tablet ) { #>
 					<div class="tablet responsive-control-wrap columns-{{data.columns}}">
-						<# _.each( data.choices, function( choice, key ) { #>
+						<# _.each( data.tabletChoices, function( choice, key ) { #>
 							<#  var value = ( data.tablet.value ) ? data.tablet.value : data.tablet.default; #>
 							<label>	
 								<# if ( key == value ) { #>
@@ -224,7 +245,7 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 
 				<# if ( data.mobile ) { #>
 					<div class="mobile responsive-control-wrap columns-{{data.columns}}">
-						<# _.each( data.choices, function( choice, key ) { #>
+						<# _.each( data.mobileChoices, function( choice, key ) { #>
 							<# var value = ( data.mobile.value ) ? data.mobile.value : data.mobile.default; #>
 							<label>	
 								<# if ( key == value ) { #>

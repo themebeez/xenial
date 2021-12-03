@@ -17,7 +17,7 @@ $wp_customize->add_panel(
 );
 
 $wp_customize->add_panel(
-	'xenial_footer_panel',
+	'xenial_theme_footer_panel',
 	array(
 		'title' => esc_html__( 'Footer', 'xenial' ),
 		'priority' => 12,

@@ -33,6 +33,21 @@ if ( ! function_exists( 'xenial_get_option' ) ) {
     }
 }
 
+
+
+if ( ! function_exists( 'xenial_get_customize_default' ) ) {
+
+    function xenial_get_customize_default( $customize_id ) {
+
+        $customize_defaults = xenial_get_customizer_defaults();
+
+        return ( isset( $customize_defaults[ $customize_id ] ) ) ? $customize_defaults[ $customize_id ] : '';
+    }
+}
+
+
+
+
 if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
 
     function xenial_get_customizer_defaults() {
@@ -147,672 +162,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'transparent_header_link_hover_color' => '#16c1ff',
             'transparent_header_border_color' => '#eeeeee',
             
-            'mobile_logo' => '',
-            'transparent_desktop_logo' => '',
-            'transparent_mobile_logo' => '',
-            'site_identity_logo_height' => array(
-                'desktop' => 90,
-                'tablet' => 90,
-                'mobile' => 90
-            ),
 
-            'display_site_title' => true,
-            'site_title_visibility' => 'default',
-
-            'site_description_visibility' => 'default',
-
-            'logo_position' => 'left',
-            'site_identity_alignment' => array(
-                'desktop' => 'left',
-                'tablet' => 'left',
-                'mobile' => 'left'
-            ),
-
-            'site_title_color' => '#000000',
-            'site_title_hover_color' => '#000000',
-            'site_identity_font_type' => 'system_font',
-            'site_identity_system_font_family' => 'arial',
-            'site_identity_system_font_weight' => '400',
-            'site_identity_google_font' => json_encode(
-                array(
-                    'font' => 'Open Sans',
-                    'regularweight' => array( 'regular' ),
-                    'boldweight' => array( '400' ),
-                    'category' => 'sans-serif'
-                )
-            ),
-            'site_identity_font_size' => array(
-                'desktop' => 36,
-                'tablet' => 36,
-                'mobile' => 36,
-            ),
-            'site_identity_line_height' => array(
-                'desktop' => 1.5,
-                'tablet' => 1.5,
-                'mobile' => 1.5,
-            ),
-            'site_identity_font_style' => 'normal',
-            'site_identity_text_transform' => 'inherit',
-
-
-            'site_description_font_size' => array(
-                'desktop' => 36,
-                'tablet' => 36,
-                'mobile' => 36,
-            ),
-            'site_description_line_height' => array(
-                'desktop' => 1.5,
-                'tablet' => 1.5,
-                'mobile' => 1.5,
-            ),
-            'site_description_font_style' => 'normal',
-            'site_description_text_transform' => 'inherit',
-            
-
-            'header_button_title' => esc_html__( 'Download', 'xenial' ),
-            'header_button_link' => '#',
-            'header_button_link_open_in_new_tab' => false,
-            'header_button_visibility' => 'default',
-            'header_button_alignment' => array(
-                'desktop' => 'left',
-                'tablet' => 'left', 
-                'mobile' => 'left'
-            ),
-            'header_button_font_color' => '',
-            'header_button_hover_font_color' => '',
-            'header_button_background_color' => '',
-            'header_button_hover_background_color' => '',
-            'header_button_border_radius' => [
-                'desktop' => 0,
-                'tablet' => 0,
-                'mobile' => 0
-            ],
-            'header_button_border_style' => 'solid',
-            'header_button_border_width' => [
-                'top' => 1,
-                'right' => 1,
-                'bottom' => 1,
-                'left' => 1
-            ],
-            'header_button_border_color' => '',
-            'header_button_hover_border_color' => '',
-            'header_button_padding' => array(
-                'desktop_top' => 0,
-                'desktop_right' => 0,
-                'desktop_bottom' => 0,
-                'desktop_left' => 0,
-                'tablet_top' => 0,
-                'tablet_right' => 0,
-                'tablet_bottom' => 0,
-                'tablet_left' => 0,
-                'mobile_top' => 0,
-                'mobile_right' => 0,
-                'mobile_bottom' => 0,
-                'mobile_left' => 0,
-            ),
-
-            'header_button_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_button_line_height' => [
-                'desktop' => 1.5,
-                'tablet' => 1.5,
-                'mobile' => 1.5
-            ],
-            'header_button_font_weight' => '400',
-            'header_button_font_style' => 'normal',
-            'header_button_text_transform' => 'inherit', 
-
-            'primary_menu_display' => '',
-
-            'primary_desktop_top_level_menu_item_spacing' => 30,
-            'primary_menu_top_level_items_color' => '',
-            'primary_menu_top_level_items_hover_color' => '',
-            'primary_menu_top_level_items_active_color' => '',
-            'primary_menu_top_level_items_background_color' => '',
-            'primary_menu_top_level_items_hover_background_color' => '',
-            'primary_menu_top_level_items_active_background_color' => '',
-            'primary_menu_top_level_items_padding' => array(
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ),
-            'primary_menu_top_level_items_border_style' => 'solid',
-            'primary_menu_top_level_items_border_width' => array(
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ),
-            'primary_menu_top_level_items_border_radius' => 0,
-            'primary_menu_top_level_items_border_color' => '',
-            'primary_menu_top_level_items_hover_border_color' => '',
-            'primary_menu_top_level_items_active_border_color' => '',
-            
-            'primary_menu_top_level_items_font_weight' => '400',
-            'primary_menu_top_level_items_font_size' => 16,
-            'primary_menu_top_level_items_line_height' => 1.5,
-            'primary_menu_top_level_items_font_style' => 'normal',
-            'primary_menu_top_level_items_text_transform' => 'inherit',
-            
-            'primary_menu_dropdown_items_hover_effect' => 'default',
-            'primary_menu_dropdown_width' => 200,
-            'primary_menu_dropdown_padding' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0,
-            ],
-            'primary_menu_dropdown_border_style' => 'solid',
-            'primary_menu_dropdown_border_width' => array(
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ),
-            'primary_menu_dropdown_border_radius' => 0,
-            'primary_menu_dropdown_border_color' => '',
-            'primary_menu_dropdown_top_offset' => 0,
-            'primary_menu_dropdown_items_divider_width' => 1,
-            'primary_menu_dropdown_items_divider_color' => '',            
-            'primary_menu_dropdown_items_color' => '',
-            'primary_menu_dropdown_items_hover_color' => '',
-            'primary_menu_dropdown_items_active_color' => '',
-            'primary_menu_dropdown_items_background_color' => '',
-            'primary_menu_dropdown_items_hover_background_color' => '',
-            'primary_menu_dropdown_items_active_background_color' => '',
-            'primary_menu_dropdown_items_padding' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0,
-            ],
-            'primary_menu_dropdown_items_font_size' => 16,
-            'primary_menu_dropdown_items_font_weight' => '400',
-            'primary_menu_dropdown_items_line_height' => 1.5,
-            'primary_menu_dropdown_items_font_style' => 'normal',
-            'primary_menu_dropdown_items_text_transform' => 'inherit',
-
-            'primary_menu_alignment' => 'left',
-
-            'offcanvas_menu_toggle_button_breakpoint' => 768,
-            'offcanvas_menu_toggle_button_label' => '',
-            'offcanvas_menu_position' => 'left',
-            'enable_offcanvas_menu_overlay' => true,
-            'close_offcanvas_menu_on_click_on_overlay' => true,
-            'offcanvas_menu_items_divider_width' => 1,
-
-            'mobile_menu_toggle_button_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'mobile_menu_toggle_button_spacing' => [
-                'desktop' => 0,
-                'tablet' => 0,
-                'mobile' => 0
-            ],
-            'mobile_menu_toggle_button_label_color' => '',
-            'mobile_menu_toggle_button_hover_label_color' => '',
-            'mobile_menu_toggle_button_background_color' => '',
-            'mobile_menu_toggle_button_hover_background_color' => '',
-            'mobile_menu_toggle_button_border_radius' => 0,
-            'mobile_menu_toggle_button_border_style' => 'solid',
-            'mobile_menu_toggle_button_border_width' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],
-            'mobile_menu_toggle_button_border_color' => '',
-            'mobile_menu_toggle_button_hover_border_color' => '',
-            
-            'mobile_offcanvas_menu_padding' => [
-                'desktop_top' => 0,
-                'desktop_right' => 0,
-                'desktop_bottom' => 0,
-                'desktop_left' => 0,
-                'tablet_top' => 0,
-                'tablet_right' => 0,
-                'tablet_bottom' => 0,
-                'tablet_left' => 0,
-                'mobile_top' => 0,
-                'mobile_right' => 0,
-                'mobile_bottom' => 0,
-                'mobile_left' => 0,
-            ],
-            'mobile_offcanvas_menu_margin' => [
-                'desktop_top' => 0,
-                'desktop_right' => 0,
-                'desktop_bottom' => 0,
-                'desktop_left' => 0,
-                'tablet_top' => 0,
-                'tablet_right' => 0,
-                'tablet_bottom' => 0,
-                'tablet_left' => 0,
-                'mobile_top' => 0,
-                'mobile_right' => 0,
-                'mobile_bottom' => 0,
-                'mobile_left' => 0,
-            ],
-            'mobile_offcanvas_menu_background' => '',
-            'mobile_offcanvas_menu_border_width' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],
-            'mobile_offcanvas_menu_border_radius' => 0,
-            'mobile_offcanvas_menu_border_color' => '',
-            
-            'mobile_offcanvas_menu_item_padding' => [
-                'desktop_top' => 0,
-                'desktop_right' => 0,
-                'desktop_bottom' => 0,
-                'desktop_left' => 0,
-                'tablet_top' => 0,
-                'tablet_right' => 0,
-                'tablet_bottom' => 0,
-                'tablet_left' => 0,
-                'mobile_top' => 0,
-                'mobile_right' => 0,
-                'mobile_bottom' => 0,
-                'mobile_left' => 0,
-            ],
-            'mobile_offcanvas_menu_item_divider_color' => '',
-            'mobile_offcanvas_menu_item_color' => '',
-            'mobile_offcanvas_menu_item_hover_color' => '',
-            'mobile_offcanvas_menu_active_item_color' => '',
-
-            'mobile_menu_items_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'mobile_menu_items_font_weight' => '400',
-            'mobile_menu_items_line_height' => [
-                'desktop' => 1.5,
-                'tablet' => 1.5,
-                'mobile' => 1.5
-            ],
-            'mobile_menu_items_font_style' => 'normal',
-            'mobile_menu_items_text_transform' => 'inherit',
-            
-            'mobile_menu_offcanvas_overlay_color' => '',
-
-
-            'mobile_menu_close_button_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'mobile_menu_close_button_spacing' => [
-                'desktop' => 0,
-                'tablet' => 0,
-                'mobile' => 0
-            ],
-            'mobile_menu_close_button_label_color' => '',
-            'mobile_menu_close_button_hover_label_color' => '',
-            'mobile_menu_close_button_background_color' => '',
-            'mobile_menu_close_button_hover_background_color' => '',
-            'mobile_menu_close_button_border_radius' => 0,
-            'mobile_menu_close_button_border_style' => 'solid',
-            'mobile_menu_close_button_border_width' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' =>0
-            ],
-            'mobile_menu_close_button_border_color' => '',
-            'mobile_menu_close_button_hover_border_color' => '',
-
-
-
-            'header_ad_img' => '',
-            'header_ad_link' => '',
-            'header_open_ad_link_in_new_tab' => false,
-            'header_ad_visibility' => 'default',
-            'header_ad_aligment' => 'left',
-
-            'header_html' => '',
-            'header_html_alignment' => [
-                'desktop' => 'left',
-                'tablet' => 'left',
-                'mobile' => 'left'
-            ],
-            'header_html_visibility' => 'desktop,tablet,mobile',
-            'header_html_text_color' => '',
-            'header_html_link_color' => '',
-            'header_html_link_hover_color' => '',
-            'header_html_text_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_html_text_line_height' => [
-                'desktop' => 1.5,
-                'tablet' => 1.5,
-                'mobile' => 1.5
-            ],
-            'header_html_text_font_weight' => '400',
-            'header_html_text_font_style' => 'normal',
-            'header_html_text_text_transform' => 'inherit',
-
-            'header_search_display' => 'search-bar',
-            'header_search_placeholder_text' => esc_html__( 'Search', 'xenial' ),
-            'header_search_visibility' => 'desktop,tablet,mobile',
-            'header_search_alignment' => [
-                'desktop' => 'left',
-                'tablet' => 'left',
-                'mobile' => 'left'
-            ],
-
-            'header_search_bar_width' => [
-                'desktop' => 300,
-                'tablet' => 250,
-                'mobile' => 200,
-            ],
-            'header_search_bar_height' => [
-                'desktop' => 40,
-                'tablet' => 35,
-                'mobile' => 30
-            ],            
-            'header_search_bar_border_style' => 'none',
-            'header_search_bar_border_width' => [
-                'top' => 1,
-                'right' => 1,
-                'bottom' => 1,
-                'left' => 1
-            ],
-            'header_search_bar_border_radius' => 0,  
-            'header_search_bar_border_color' => '',          
-            'header_search_bar_background_color' => '',
-            'header_search_bar_text_color' => '',
-            'header_search_bar_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_search_bar_line_height' => [
-                'desktop' => 1,
-                'tablet' => 1,
-                'mobile' => 1
-            ],
-
-
-
-            'header_search_modal_toggle_button_height' => [
-                'desktop' => 50,
-                'tablet' => 50,
-                'mobile' => 50
-            ],
-            'header_search_modal_toggle_button_width' => [
-                'desktop' => 50,
-                'tablet' => 50,
-                'mobile' => 50
-            ],
-            'header_search_modal_toggle_button_border_style' => 'none',
-            'header_search_modal_toggle_button_border_width' => [
-                'top' => 1,
-                'right' => 1,
-                'bottom' => 1,
-                'left' => 1
-            ],
-            'header_search_modal_toggle_button_border_radius' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],  
-            'header_search_modal_toggle_button_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_search_modal_toggle_button_line_height' => [
-                'desktop' => 1,
-                'tablet' => 1,
-                'mobile' => 1
-            ],
-            'header_search_modal_toggle_button_text_color' => '',
-            'header_search_modal_toggle_button_hover_text_color' => '',
-            'header_search_modal_toggle_button_border_color' => '',          
-            'header_search_modal_toggle_button_hover_border_color' => '',          
-            'header_search_modal_toggle_button_background_color' => '',
-            'header_search_modal_toggle_button_hover_background_color' => '',
-            
-            'header_search_bar_submit_button_height' => [
-                'desktop' => 50,
-                'tablet' => 50,
-                'mobile' => 50
-            ],
-            'header_search_bar_submit_button_width' => [
-                'desktop' => 50,
-                'tablet' => 50,
-                'mobile' => 50
-            ],
-            'header_search_bar_submit_button_border_style' => 'none',
-            'header_search_bar_submit_button_border_width' => [
-                'top' => 1,
-                'right' => 1,
-                'bottom' => 1,
-                'left' => 1
-            ],
-            'header_search_bar_submit_button_border_radius' => 0,  
-            'header_search_bar_submit_button_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_search_bar_submit_button_line_height' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_search_bar_submit_button_text_color' => '',
-            'header_search_bar_submit_button_hover_text_color' => '',
-            'header_search_bar_submit_button_border_color' => '',          
-            'header_search_bar_submit_button_hover_border_color' => '',          
-            'header_search_bar_submit_button_background_color' => '',
-            'header_search_bar_submit_button_hover_background_color' => '',
-
-            'header_search_modal_background_color' => '',
-
-            'header_search_modal_close_button_height' => [
-                'desktop' => 50,
-                'tablet' => 50,
-                'mobile' => 50
-            ],
-            'header_search_modal_close_button_width' => [
-                'desktop' => 50,
-                'tablet' => 50,
-                'mobile' => 50
-            ],
-            'header_search_modal_close_button_border_style' => 'none',
-            'header_search_modal_close_button_border_width' => [
-                'top' => 1,
-                'right' => 1,
-                'bottom' => 1,
-                'left' => 1
-            ],
-            'header_search_modal_close_button_border_radius' => 0,  
-            'header_search_modal_close_button_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_search_modal_close_button_line_height' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16
-            ],
-            'header_search_modal_close_button_text_color' => '',
-            'header_search_modal_close_button_hover_text_color' => '',
-            'header_search_modal_close_button_border_color' => '',          
-            'header_search_modal_close_button_hover_border_color' => '',          
-            'header_search_modal_close_button_background_color' => '',
-            'header_search_modal_close_button_hover_background_color' => '',
-            
-
-            'header_social_links' => '',
-            'header_social_link_visibility' => 'desktop,tablet,mobile',
-            'header_social_link_alignment' => [
-                'desktop' => 'left',
-                'tablet' => 'left',
-                'mobile' => 'left'
-            ],
-            'header_social_link_display_title' => false,
-            'header_social_link_item_spacing' => [
-                'desktop' => 10,
-                'tablet' => 10,
-                'mobile' => 10,
-            ],
-            'header_social_link_icon_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16,
-            ],
-            'header_social_link_icon_background_spacing' => [
-                'desktop' => 15,
-                'tablet' => 15,
-                'mobile' => 15,
-            ],
-            'header_social_link_icon_border_style' => '',
-            'header_social_link_icon_border_width' => [
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
-            ],
-            'header_social_link_icon_border_radius' => 0,
-            'header_social_link_title_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16,
-            ],
-            'header_social_link_title_line_height' => [
-                'desktop' => 1,
-                'tablet' => 1,
-                'mobile' => 1,
-            ],
-            'header_social_link_icon_color_type' => 'custom',
-            'header_social_link_icon_color' => '',
-            'header_social_link_title_color' => '',
-            'header_social_link_background_color' => '',
-            'header_social_link_border_color' => '',
-            'header_social_link_hover_icon_color' => '',
-            'header_social_link_hover_title_color' => '',
-            'header_social_link_hover_background_color' => '',
-            'header_social_link_hover_border_color' => '',
-
-
-
-            'header_secondary_menu' => '',
-            'header_secondary_menu_visibility' => 'desktop,tablet,mobile',
-            'header_secondary_menu_alignment' => [
-                'desktop' => 'left',
-                'tablet' => 'left',
-                'mobile' => 'left'
-            ],
-            'header_secondary_menu_items_spacing' => [
-                'desktop' => 10,
-                'tablet' => 10,
-                'mobile' => 10,
-            ],
-            'header_secondary_menu_font_size' => [
-                'desktop' => 16,
-                'tablet' => 16,
-                'mobile' => 16,
-            ],
-            'header_secondary_menu_line_height' => [
-                'desktop' => 1,
-                'tablet' => 1,
-                'mobile' => 1,
-            ],
-            'header_secondary_menu_font_weight' => '400',
-            'header_secondary_menu_font_style' => 'normal',
-            'header_secondary_menu_text_transform' => 'inherit',
-            'header_secondary_menu_link_color' => '',
-            'header_secondary_menu_link_hover_color' => '',
-
-            'enable_banner_slider' => false,
-            'banner_slider_enable_on' => 'blog_page',
-            'banner_slider_visibility' => 'default',
-            'banner_slider_width' => 'xenial-banner-content-width',
-            'banner_slider_post_no' => 3,
-            'banner_slider_post_category' => 'default',
-            'banner_slider_display_categories' => false,
-            'banner_slider_post_meta' => array( 'author', 'date', 'comment', 'categories' ),
-            'banner_slider_enable_meta_icons' => false,
-            'banner_slider_display_excerpt' => false,
-            'banner_slider_enable_button' => false,
-            'banner_slider_button_title' => esc_html__( 'Read More', 'xenial' ),
-            'banner_slider_open_link_in_new_tab' => false,
-            'banner_slider_content_position' => 'top',
-            'banner_slider_content_alignment' => 'left',
-            'banner_slider_content_width' => 'xenial-content-width',
-            'banner_slider_content_wrap_width' => array(
-                'desktop' => 100,
-                'tablet' => 100,
-                'mobile' => 100,
-            ),
-            'banner_slider_image_size' => 'large',
-            'banner_slider_image_background_repeat' => 'no-repeat',
-            'banner_slider_image_background_size' => 'auto',
-            'banner_slider_image_background_position' => 'center-center',
-            'banner_slider_height' => array(
-                'desktop' => 100,
-                'tablet' => 100,
-                'mobile' => 100,
-            ),
-            'banner_slider_margin' => array(
-                'desktop_top' => 0,
-                'desktop_right' => 0,
-                'desktop_bottom' => 0,
-                'desktop_left' => 0,
-                'tablet_top' => 0,
-                'tablet_right' => 0,
-                'tablet_bottom' => 0,
-                'tablet_left' => 0,
-                'mobile_top' => 0,
-                'mobile_right' => 0,
-                'mobile_bottom' => 0,
-                'mobile_left' => 0,
-            ),
-            'banner_slider_content_margin' => array(
-                'desktop_top' => 0,
-                'desktop_right' => 0,
-                'desktop_bottom' => 0,
-                'desktop_left' => 0,
-                'tablet_top' => 0,
-                'tablet_right' => 0,
-                'tablet_bottom' => 0,
-                'tablet_left' => 0,
-                'mobile_top' => 0,
-                'mobile_right' => 0,
-                'mobile_bottom' => 0,
-                'mobile_left' => 0,
-            ),
-            'banner_slider_content_padding' => array(
-                'desktop_top' => 0,
-                'desktop_right' => 0,
-                'desktop_bottom' => 0,
-                'desktop_left' => 0,
-                'tablet_top' => 0,
-                'tablet_right' => 0,
-                'tablet_bottom' => 0,
-                'tablet_left' => 0,
-                'mobile_top' => 0,
-                'mobile_right' => 0,
-                'mobile_bottom' => 0,
-                'mobile_left' => 0,
-            ),
-            'banner_slider_enable_overlay' => false,
-            'banner_slider_overlay_color' => 'rgba(0,0,0,0.2)',
-            'banner_slider_text_color' => '#ffffff',
             'sidebar_default_position' => 'no-sidebar',
             'sidebar_post_single_position' => 'default',
             'sidebar_page_single_position' => 'default',
@@ -839,74 +189,54 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'footer_copyright_bar_nav_menu' => ''
         );
 
-        $defaultLayoutValues = xenial_get_customizer_default_layout_values();
-        $defaults = array_merge( $defaults, $defaultLayoutValues );
-
-
-        $defaultColorValues = xenial_get_customizer_default_color_values();
-        $defaults = array_merge( $defaults, $defaultColorValues );
-
-        $defaultTypographyValues = xenial_get_customizer_default_typography_values();
-        $defaults = array_merge( $defaults, $defaultTypographyValues );
-
-
-        $defaultButtonValues = xenial_get_customizer_default_button_values();
-        $defaults = array_merge( $defaults, $defaultButtonValues );
-
-        $defaultMiscellaneousValues = xenial_get_customizer_defaults_miscellaneous_values();
-        $defaults = array_merge( $defaults, $defaultMiscellaneousValues );
-
-
-        $defaultBreadcrumbsValues = xenial_get_customizer_default_breadcrumbs_values();
-        $defaults = array_merge( $defaults, $defaultBreadcrumbsValues );
-
-
-        $defaultHeaderBaseValues = xenial_get_customizer_default_header_base_values();
-        $defaults = array_merge( $defaults, $defaultHeaderBaseValues );
-
-
-        $defaultArchivePageValues = xenial_get_customizer_default_archive_page_values();
-        $defaults = array_merge( $defaults, $defaultArchivePageValues );
-
-
-        $defaultPostSinglePageValues = xenial_get_customizer_default_post_single_page_values();
-        $defaults = array_merge( $defaults, $defaultPostSinglePageValues );
-
-        $defaultPageSingleValues = xenial_get_customizer_defaults_page_single_values();
-        $defaults = array_merge( $defaults, $defaultPageSingleValues );
-
-        $defaultFooterBaseValues = xenial_get_customizer_default_footer_base_values();
-        $defaults = array_merge( $defaults, $defaultFooterBaseValues );
+        $customize_defaults = array(
+            'theme_elements'        => xenial_theme_elements_customizer_defaults(),
+            'layouts'               => xenial_get_customizer_default_layout_values(),
+            'colors'                => xenial_get_customizer_default_color_values(),
+            'typography'            => xenial_get_customizer_default_typography_values(),
+            'buttons'               => xenial_get_customizer_default_button_values(),
+            'miscellaneous'         => xenial_get_customizer_defaults_miscellaneous_values(),
+            'breadcrumbs'           => xenial_get_customizer_default_breadcrumbs_values(),
+            'archive_template'      => xenial_get_customizer_default_archive_page_values(),
+            'page_template'         => xenial_get_customizer_default_post_single_page_values(),
+            'post_template'         => xenial_get_customizer_default_post_single_page_values(),
+            'header_general'        => xenial_get_header_general_customize_defaults(),
+            'header_top'            => xenial_theme_header_top_section_defaults(),
+            'header_middle'         => xenial_theme_header_middle_section_defaults(),
+            'header_bottom'         => xenial_theme_header_bottom_section_defaults(),
+            'site_title_logo'       => xenial_theme_header_site_identity_logo_defaults(),
+            'header_button'         => xenial_get_header_button_customize_defaults(),
+            'header_html'           => xenial_get_header_html_customize_defaults(),
+            'menu_1'                => xenial_get_header_primary_menu_customize_defaults(),
+            'menu_2'                => xenial_get_header_secondary_menu_customize_defaults(),
+            'header_search'         => xenial_get_header_search_customize_defaults(),
+            'header_social_links'   => xenial_get_header_social_links_customize_defaults(),
+            'footer_general'        => xenial_get_footer_general_customize_defaults(),
+            'footer_top'            => xenial_theme_footer_top_section_defaults(),
+            'footer_middle'         => xenial_theme_footer_middle_section_defaults(),
+            'footer_bottom'         => xenial_theme_footer_bottom_section_defaults(),
+            'footer_copyright'      => xenial_get_footer_copyright_customize_defaults(),
+            'footer_menu'           => xenial_get_footer_menu_customize_defaults(),
+            'footer_social_links'   => xenial_get_footer_social_links_customize_defaults(),
+            'footer_widget_area_1'  => xenial_get_footer_widget_area_1_customize_defaults(),
+            'footer_widget_area_2'  => xenial_get_footer_widget_area_2_customize_defaults(),
+            'footer_widget_area_3'  => xenial_get_footer_widget_area_3_customize_defaults(),
+            'footer_widget_area_4'  => xenial_get_footer_widget_area_4_customize_defaults(),
+            'footer_widget_area_5'  => xenial_get_footer_widget_area_5_customize_defaults(),
+            'footer_widget_area_6'  => xenial_get_footer_widget_area_6_customize_defaults(),
+        );
 
         if ( class_exists( 'WooCommerce' ) ) {
-
-            $woocommerce_defaults = array(
-                'main_header_display_cart_items_no' => false,
-                'main_header_cart_visibility' => 'default',
-                'sidebar_woocommerce_archive_position' => 'default',
-                'sidebar_woocommerce_product_position' => 'default',
-                'related_products_heading' => esc_html__( 'Related products', 'xenial' ),
-                'related_products_columns_per_row' => 3,
-                'related_products_per_page' => 3,
-                'upsell_products_heading' => esc_html__( 'You may also like…', 'xenial' ),
-                'upsell_products_columns_per_row' => 3,
-                'upsell_products_per_page' => 3,
-                'cross_sell_products_heading' => esc_html__( 'You may be interested in…', 'xenial' ),
-                'cross_sell_products_columns_per_row' => 3,
-                'cross_sell_products_per_page' => 3
-            );
-
-            $defaults = array_merge( $defaults, $woocommerce_defaults );
+            $customize_defaults['woocommerce'] = xenial_get_woocommerce_customize_defaults();
         }
 
         if ( class_exists( 'YITH_WCWL' ) ) {
+            $customize_defaults['yith_wishlist'] = xenial_get_yith_wishlist_customize_defaults();
+        }
 
-            $yith_defaults = array(
-                'main_header_display_wishlist_items_no' => false,
-                'main_header_wishlist_visibility' => 'default'
-            );
+        foreach ( $customize_defaults as $customize_default ) {
 
-            $defaults = array_merge( $defaults, $yith_defaults );
+            $defaults = array_merge( $defaults, $customize_default );
         }
 
         return apply_filters( 'xenial_customizer_defaults', $defaults );

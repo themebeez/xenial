@@ -44,9 +44,11 @@ class Xenial_Customize_Simple_Notice_Control extends WP_Customize_Control {
 				'title' => array(),
 				'class' => array(),
 				'target' => array(),
+				'data-attr' => array()
 			),
 			'br' => array(),
 			'em' => array(),
+			'b' => array(),
 			'strong' => array(),
 			'i' => array(
 				'class' => array()
@@ -59,12 +61,12 @@ class Xenial_Customize_Simple_Notice_Control extends WP_Customize_Control {
 		?>
 		<div class="simple-notice-custom-control">
 			<?php 
-			if( !empty( $this->label ) ) { ?>
+			if( ! empty( $this->label ) ) { ?>
 				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 				<?php 
 			} 
 
-			if( !empty( $this->description ) ) { 
+			if( ! empty( $this->description ) ) { 
 				?>
 				<span class="customize-control-description"><?php echo wp_kses( $this->description, $allowed_html ); ?></span>
 				<?php 

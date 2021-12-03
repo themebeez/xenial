@@ -100,6 +100,8 @@ if ( ! function_exists( 'xenial_setup' ) ) :
 		add_theme_support( 'align-wide' );
 
 		add_theme_support( 'wp-block-styles' );
+		
+		add_theme_support( 'widgets-block-editor' );
 
 		add_theme_support( 'editor-styles' );
 
@@ -133,25 +135,22 @@ function xenial_widgets_init() {
 		 'after_title'   => '</h3></div>',
 	) );
 
-	$footer_widgets_count = absint( xenial_get_option( 'footer_widgets_columns' ) );
+	
 
-	if ( $footer_widgets_count ) {
+	for ( $i = 1; $i <= 6; $i++ ) {
 
-		for ( $i = 1; $i <= $footer_widgets_count; $i++ ) {
-
-			register_sidebar( array(
-				'name'          => sprintf( 
-					esc_html__( 'Footer %s', 'xenial' ), 
-					$i 
-				),
-				'id'            => 'footer-' . $i,
-				// 'description'   => esc_html__( 'Add widgets here.', 'xenial' ),
-				// 'before_widget' => '<div id="%1$s" class="widget %2$s">',
-				// 'after_widget'  => '</div>',
-				// 'before_title'  => '<div class="widget-title"><h4>',
-				// 'after_title'   => '</h4></div>',
-			) );
-		}
+		register_sidebar( array(
+			'name'          => sprintf( 
+				esc_html__( 'Footer Widget Area %s', 'xenial' ), 
+				$i 
+			),
+			'id'            => 'footer_widget_area_' . $i,
+			// 'description'   => esc_html__( 'Add widgets here.', 'xenial' ),
+			// 'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			// 'after_widget'  => '</div>',
+			// 'before_title'  => '<div class="widget-title"><h4>',
+			// 'after_title'   => '</h4></div>',
+		) );
 	}
 
 	register_sidebar( array(

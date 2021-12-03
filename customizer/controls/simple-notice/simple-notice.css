@@ -1,3 +1,13 @@
+.simple-notice-custom-control {
+	padding: 15px;
+	border: 1px dashed #c9c9c9;
+}
+
+.simple-notice-custom-control .customize-control-title {
+	font-weight: 600 !important;
+	font-style: italic;
+}
+
 .simple-notice-custom-control .customize-control-description {
 	line-height: 1.6
 }
