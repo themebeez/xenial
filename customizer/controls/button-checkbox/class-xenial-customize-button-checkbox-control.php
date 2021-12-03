@@ -76,10 +76,16 @@ if ( ! class_exists( 'Xenial_Customize_Button_Checkbox_Control' ) ) {
 				<div class="button-checkboxes">
 					<?php 
 	 				if ( $choices ) {
-		 				foreach ( $choices as $key => $value ) { 
+		 				foreach ( $choices as $key => $value ) {
+		 					
+		 					$checked = false;
+		 					
+			 				if  ( $values && in_array( $key, $values ) ) {
+			 					$checked = true;
+			 				} 
 		 					?>
 		 					<label class="checkbox-label <?php echo esc_attr( $item ); ?>-checkbox">
-		 						<input type="checkbox" name="<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php checked( in_array( $key , $values ), 1 ); ?> class="multi-button-checkbox"/>
+		 						<input type="checkbox" name="<?php echo esc_attr( $key ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php checked( $checked, 1 ); ?> class="multi-button-checkbox"/>
 		 						<?php 
 		 						switch ( $item ) {
 		 							case 'image':

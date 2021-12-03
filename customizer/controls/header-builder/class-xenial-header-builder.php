@@ -56,11 +56,196 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 			$headerElementsChoices = xenial_get_header_elements();
 			?>
 			<div id="xenial-header-builder" class="xenial-hide-header-builder">
+				<div class="xenial-header-builder-device-tab-wrapper">
+					<button id="xenial-header-builder-desktop-tab-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-desktop"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Desktop', 'xenial' ); ?></span></button>
+					<button id="xenial-header-builder-mobile-tab-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-smartphone"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Table/Mobile', 'xenial' ); ?></span></button>
+				</div>
 				<div class="xenial-header-builder-button-wrapper">
 					<button id="xenial-header-builder-hide-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-arrow-down-alt2"></span></button>
 				</div>
 				
-				<div class="xenial-header-builder-inner">
+				<div id="xenial-desktop-header-builder-inner" class="xenial-header-builder-inner">
+					<div id="xenial-header-elements-selector-wrapper" class="xenial-header-elements-wrapper">
+						<div class="xenial-header-elements-wrapper-inner">
+							<?php 
+
+							$selected_header_elements = array();
+
+							foreach ( $headerElements as $positions ) {
+								foreach ( $positions as $position ) {
+									if ( $position ) {
+										$selected_header_elements = array_merge( $selected_header_elements, $position );
+									}
+								}
+							}
+							?>
+							<div id="xenial-header-elements-container" class="selected-elements-wrapper">
+								<?php
+								
+								if ( $headerElementsChoices ) {
+									foreach ( $headerElementsChoices as $key => $element ) {
+										if ( ! in_array( $key, $selected_header_elements ) ) {
+											$this->get_header_element_template( $key, $element );
+										}
+									}
+								}
+								?>
+							</div>
+						</div>
+					</div>
+					<div class="xenial-header-builder-row xenial-header-builder-top-row">
+						<div class="xenial-header-builder-row-inner xenial-header-builder-top-row-inner">
+							<?php $this->get_header_row_settings_template( 'xenial_top_header' ); ?>
+							<div class="xenial-header-builder-col xenial-header-builder-top-col-1">
+								<div id="xenial-top-left-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$topLeftElements = $headerElements['top']['left'];
+									if ( $topLeftElements ) {
+										foreach ( $topLeftElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+							<div class="xenial-header-builder-col xenial-header-builder-top-col-2">
+								<div id="xenial-top-middle-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$topMiddleElements = $headerElements['top']['middle'];
+									if ( $topMiddleElements ) {
+										foreach ( $topMiddleElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+							<div class="xenial-header-builder-col xenial-header-builder-top-col-3">
+								<div id="xenial-top-right-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$topRightElements = $headerElements['top']['right'];
+									if ( $topRightElements ) {
+										foreach ( $topRightElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="xenial-header-builder-row xenial-header-builder-middle-row">
+						<div class="xenial-header-builder-row-inner xenial-header-builder-middle-row-inner">
+							<?php $this->get_header_row_settings_template( 'xenial_middle_header' ); ?>
+							<div class="xenial-header-builder-col xenial-header-builder-middle-col-1">
+								<div id="xenial-middle-left-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$middleLeftElements = $headerElements['middle']['left'];
+									if ( $middleLeftElements ) {
+										foreach ( $middleLeftElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+							<div class="xenial-header-builder-col xenial-header-builder-middle-col-2">
+								<div id="xenial-middle-middle-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$middleMiddleElements = $headerElements['middle']['middle'];
+									if ( $middleMiddleElements ) {
+										foreach ( $middleMiddleElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+							<div class="xenial-header-builder-col xenial-header-builder-middle-col-3">
+								<div id="xenial-middle-right-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$middleRightElements = $headerElements['middle']['right'];
+									if ( $middleRightElements ) {
+										foreach ( $middleRightElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="xenial-header-builder-row xenial-header-builder-bottom-row">
+						<div class="xenial-header-builder-row-inner xenial-header-builder-bottom-row-inner">
+							<?php $this->get_header_row_settings_template( 'xenial_bottom_header' ); ?>
+							<div class="xenial-header-builder-col xenial-header-builder-bottom-col-1">
+								<div id="xenial-bottom-left-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$bottomLeftElements = $headerElements['bottom']['left'];
+									if ( $bottomLeftElements ) {
+										foreach ( $bottomLeftElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+							<div class="xenial-header-builder-col xenial-header-builder-tbottomop-col-2">
+								<div id="xenial-bottom-middle-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$bottomMiddleElements = $headerElements['bottom']['middle'];
+									if ( $bottomMiddleElements ) {
+										foreach ( $bottomMiddleElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+							<div class="xenial-header-builder-col xenial-header-builder-bottom-col-3">
+								<div id="xenial-bottom-right-header-elements-container" class="selected-elements-wrapper">
+									<?php
+									$bottomRightElements = $headerElements['bottom']['right'];
+									if ( $bottomRightElements ) {
+										foreach ( $bottomRightElements as $element ) {
+											$getElement = $headerElementsChoices[ $element ];
+											if ( $getElement ) {
+												$this->get_header_element_template( $element, $getElement );
+											}
+										}
+									}
+									?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="xenial-mobile-header-builder-inner" class="xenial-header-builder-inner">
 					<div id="xenial-header-elements-selector-wrapper" class="xenial-header-elements-wrapper">
 						<div class="xenial-header-elements-wrapper-inner">
 							<?php 
@@ -556,8 +741,6 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 			</script>
 			<?php
 		}
-
-
 	}
 }
 

@@ -138,6 +138,14 @@ function xenial_customize_register( $wp_customize ) {
 
 
 	/**
+	 * Custom Customizer Background Image Control.
+	 */
+	require $controls_path . 'background-image/class-xenial-customize-background-image-control.php';
+
+	$wp_customize->register_control_type( 'Xenial_Customize_Background_Image_Control' );
+
+
+	/**
 	 * Tab custom customize control.
 	 */
 	require $controls_path . 'tinymce-editor/class-xenial-customize-tinymce-editor-control.php';
@@ -165,18 +173,7 @@ function xenial_customize_register( $wp_customize ) {
 
 	$wp_customize->register_section_type( 'Xenial_Customize_Upsell_Control' );
 
-	$wp_customize->add_section(
-		new Xenial_Customize_Upsell_Control( 
-			$wp_customize, 
-			'xenial_pro_upsell', 
-			array(
-				'title'       	=> esc_html__( 'Xenial Pro', 'xenial' ),
-				'button_text' 	=> esc_html__( 'Get Pro',        'xenial' ),
-				'button_url'  	=> 'https://themebeez.com/themes/xenial-pro/?ref=upsell-btn',
-				'priority'		=> 0,
-			) 
-		)
-	);
+	
 
 
 	/**
@@ -198,6 +195,7 @@ function xenial_customize_register( $wp_customize ) {
 	$customizer_fields_path = XENIAL_THEME_DIR . '/customizer/fields/';
 
 	require $customizer_fields_path . 'panels.php';
+	require $customizer_fields_path . 'theme-elements.php';
 	require $customizer_fields_path . 'layout.php';
 	require $customizer_fields_path . 'colors.php';
 	require $customizer_fields_path . 'typography.php';
@@ -208,7 +206,8 @@ function xenial_customize_register( $wp_customize ) {
 
 	require $customizer_fields_path . 'header/base.php';
 	require $customizer_fields_path . 'header/top-header.php';
-	require $customizer_fields_path . 'header/main-header.php';
+	require $customizer_fields_path . 'header/middle-header.php';
+	require $customizer_fields_path . 'header/bottom-header.php';
 	require $customizer_fields_path . 'header/site-identity.php';
 	require $customizer_fields_path . 'header/main-navigation.php';
 	require $customizer_fields_path . 'header/transparent-header.php';
@@ -241,21 +240,28 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'pages/single-page.php';
 	require $customizer_fields_path . 'pages/page-single/header.php';
 	require $customizer_fields_path . 'pages/page-single/content.php';
-	
-	// require $customizer_fields_path . 'fields-banner.php';
 
 	require $customizer_fields_path . 'fields-sidebar.php';
 
 	require $customizer_fields_path . 'footer/base.php';
-	require $customizer_fields_path . 'footer/footer-widgets.php';
-	require $customizer_fields_path . 'footer/copyright-bar.php';
+	require $customizer_fields_path . 'footer/top-footer.php';
+	require $customizer_fields_path . 'footer/middle-footer.php';
+	require $customizer_fields_path . 'footer/bottom-footer.php';
 
+	require $customizer_fields_path . 'footer/elements/copyright.php';
+	require $customizer_fields_path . 'footer/elements/footer-menu.php';
+	require $customizer_fields_path . 'footer/elements/social-links.php';
+	require $customizer_fields_path . 'footer/elements/widget-1.php';
+	require $customizer_fields_path . 'footer/elements/widget-2.php';
+	require $customizer_fields_path . 'footer/elements/widget-3.php';
+	require $customizer_fields_path . 'footer/elements/widget-4.php';
+	require $customizer_fields_path . 'footer/elements/widget-5.php';
+	require $customizer_fields_path . 'footer/elements/widget-6.php';
 
 	if ( class_exists( 'WooCommerce' ) ) {
 
 		require $customizer_fields_path . 'fields-woocommerce.php';
 	}
-	
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 
@@ -281,23 +287,15 @@ require XENIAL_THEME_DIR . '/customizer/functions/active-callbacks.php';
 /**
  * Load function to load customizer field's default values.
  */
+require XENIAL_THEME_DIR . '/customizer/functions/defaults/defaults.php';
+
+
+
 require XENIAL_THEME_DIR . '/customizer/functions/customizer-callbacks.php';
 
-$xenial_customizer_defaults_path = XENIAL_THEME_DIR . '/customizer/functions/defaults/';
-
-require $xenial_customizer_defaults_path . 'defaults-header-base.php';
-require $xenial_customizer_defaults_path . 'defaults-footer-base.php';
-require $xenial_customizer_defaults_path . 'defaults-colors.php';
-require $xenial_customizer_defaults_path . 'defaults-typography.php';
-require $xenial_customizer_defaults_path . 'defaults-layout.php';
-require $xenial_customizer_defaults_path . 'defaults-buttons.php';
-require $xenial_customizer_defaults_path . 'defaults-miscellaneous.php';
-require $xenial_customizer_defaults_path . 'defaults-breadcrumbs.php';
-require $xenial_customizer_defaults_path . 'defaults-archive.php';
-require $xenial_customizer_defaults_path . 'defaults-single.php';
-require $xenial_customizer_defaults_path . 'defaults-page.php';
 
 require XENIAL_THEME_DIR . '/customizer/controls/header-builder/class-xenial-header-builder.php';
+require XENIAL_THEME_DIR . '/customizer/controls/footer-builder/class-xenial-footer-builder.php';
 
 /**
  * Load function to load customizer field's options.

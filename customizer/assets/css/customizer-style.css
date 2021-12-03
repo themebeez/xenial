@@ -631,3 +631,9 @@ body.rtl .customize-control .responsive-switchers li {
     text-decoration: none;
 }
 
+
+
+/* Hidden Fields  */
+#customize-control-theme_header_elements {
+    display: none;
+}

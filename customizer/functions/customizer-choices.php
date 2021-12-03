@@ -276,6 +276,22 @@ if ( ! function_exists( 'xenial_get_page_header_background_choices' ) ) {
 }
 
 
+if ( ! function_exists( 'xenial_get_background_choices' ) ) {
+
+	function xenial_get_background_choices() {
+
+		return apply_filters(
+			'xenial_background_choices_filter',
+			array(
+				'color' => esc_html__( 'Color', 'xenial' ),
+				'gradient' => esc_html__( 'Gradient', 'xenial' ),
+				'image' => esc_html__( 'Image', 'xenial' ),
+			)
+		);
+	}
+} 
+
+
 if ( ! function_exists( 'xenial_get_background_repeat_choices' ) ) {
 
 	function xenial_get_background_repeat_choices() {
@@ -1249,3 +1265,218 @@ if ( ! function_exists( 'xenial_get_header_elements' ) ) {
 
 
 
+if ( ! function_exists( 'xenial_get_footer_2_columns_layout' ) ) {
+
+	function xenial_get_footer_2_columns_layout() {
+
+		return apply_filters(
+			'xenial_footer_2_columns_layout_filter',
+			array(
+				'desktop' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'tablet' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'mobile' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				)
+			)
+		);
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_get_footer_3_columns_layout' ) ) {
+
+	function xenial_get_footer_3_columns_layout() {
+
+		return apply_filters(
+			'xenial_footer_3_columns_layout_filter',
+			array(
+				'desktop' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'tablet' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'mobile' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				)
+			)
+		);
+	}
+}
+
+
+if ( ! function_exists( 'xenial_get_footer_4_columns_layout' ) ) {
+
+	function xenial_get_footer_4_columns_layout() {
+
+		return apply_filters(
+			'xenial_footer_4_columns_layout_filter',
+			array(
+				'desktop' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'tablet' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'mobile' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				)
+			)
+		);
+	}
+}
+
+
+if ( ! function_exists( 'xenial_get_footer_5_columns_layout' ) ) {
+
+	function xenial_get_footer_5_columns_layout() {
+
+		return apply_filters(
+			'xenial_footer_5_columns_layout_filter',
+			array(
+				'desktop' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'tablet' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'mobile' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				)
+			)
+		);
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_get_footer_6_columns_layout' ) ) {
+
+	function xenial_get_footer_6_columns_layout() {
+
+		return apply_filters(
+			'xenial_footer_6_columns_layout_filter',
+			array(
+				'desktop' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'tablet' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				),
+				'mobile' => array(
+					'layout_1' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-1.png',
+						'name' => esc_html__( 'Search Bar', 'xenial' )
+					),
+					'layout_2' => array(
+						'image' => XENIAL_THEME_URI . '/customizer/assets/images/copyright-2.png',
+						'name' => esc_html__( 'Search Modal', 'xenial' )
+					)
+				)
+			)
+		);
+	}
+}
