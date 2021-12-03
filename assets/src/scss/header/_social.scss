@@ -1,0 +1,45 @@
+/* -------------------------------------------------------------------------- 
+	Header Element - Social
+  -------------------------------------------------------------------------- */
+
+    .xe-header-element-social {
+
+        @include flex();
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .xe-header-element-social li,
+    .xe-header-element-social li a,
+    .xe-header-element-social li span {
+
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .xe-header-element-social li a {
+
+        color: var(--xe_base_text_color);
+    }
+
+    .xe-header-element-social li a svg {
+
+        display: inline-flex;
+        fill: var(--xe_base_text_color);
+        width: 20px;
+        height: 20px;
+        @include transation_delay();
+    }
+
+    .xe-header-element-social li a:hover {
+
+        color: var(--xe_seconary_color);
+    }
+
+    .xe-header-element-social li a:hover svg {
+
+        fill: var(--xe_seconary_color);
+    }

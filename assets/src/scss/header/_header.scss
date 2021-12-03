@@ -1,13 +1,13 @@
 
 #xe-mastheader {
-
-    margin-top: 30px;
-    @include transation_delay();
+    
+    position: relative;
 }
 
 .xe-transparent-header #xe-mastheader {
 
     background-color: transparent;
+    @include transation_delay();
 }
 
 .xe-header-sticky #xe-mastheader {
@@ -17,7 +17,7 @@
     right: 0;
     width: 100%;
     height: auto;
-    z-index: 10000000000;
+    z-index: 1000000;
 }
 
 .xe-header-sticky.xe-transparent-header #xe-mastheader {
@@ -25,9 +25,22 @@
     background-color: white;
 }
 
+#xe-mastheader .xe-top-header,
+#xe-mastheader .xe-middle-header,
+#xe-mastheader .xe-bottom-header {
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 /* -------------------------------------------------------------------------- 
 	Header Elements
   -------------------------------------------------------------------------- */
+
+.xe-header-elements {
+
+    @include flex();
+}
 
 .xe-header-elements .xe-header-element {
 

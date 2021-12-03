@@ -1,0 +1,78 @@
+/* -------------------------------------------------------------------------- 
+	Header Element - Site title & Custom Logo
+  -------------------------------------------------------------------------- */
+
+    .xe-site-branding {
+
+        @include flex();
+    }
+
+    .xe-site-branding .site-title {
+        
+        display: block;
+        font-size: var(--xe_site_title_font_size);
+        font-family: var(--xe_site_title_font_family);
+        font-weight: var(--xe_site_title_font_weight);
+        line-height: var(--xe_site_title_line_height);
+        letter-spacing: var(--xe_site_title_letter_spacing);
+        font-style: var(--xe_site_title_font_syle);
+        text-transform: var(--xe_site_title_text_transform);
+        padding: 0;
+        margin: 0;
+    }
+
+    .xe-site-branding .site-title a {
+
+        color: var(--xe_site_title_color);
+    }
+
+    .xe-site-branding .site-title > a:hover {
+
+        color: var(--xe_site_title_hover_color);
+    }
+
+    .xe-site-branding .site-description {
+        
+        display: block;
+        font-size: var(--xe_site_description_font_size);
+        font-weight: var(--xe_site_description_font_weight);
+        letter-spacing: var(--xe_site_description_letter_spacing);
+        font-style: var(--xe_site_description_font_syle);
+        line-height: var(--xe_site_description_line_height);
+        text-transform: var(--xe_site_description_text_transform);
+        color: var(--xe_site_description_color);
+        padding: 0;
+        margin: 0;
+        white-space: wrap;
+    }
+
+/* -------------------------------------------------------------------------- 
+	Logo alignment
+  -------------------------------------------------------------------------- */
+
+    .xe-site-branding[xe-logo-position=left],
+    .xe-site-branding[xe-logo-position=right] {
+
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .xe-site-branding[xe-logo-position=right] {
+
+        flex-direction: row-reverse;        
+    }
+
+    .xe-site-branding[xe-logo-position=top],
+    .xe-site-branding[xe-logo-position=bottom] {
+
+        .site-title-block,
+        .custom-logo-block {
+            
+            width: 100%;
+        }
+    }
+
+    .xe-site-branding[xe-logo-position=bottom] {
+
+        flex-direction: column-reverse;
+    }
