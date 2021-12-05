@@ -25,12 +25,12 @@
     background-color: white;
 }
 
-#xe-mastheader .xe-top-header,
-#xe-mastheader .xe-middle-header,
-#xe-mastheader .xe-bottom-header {
+#xe-mastheader .xe-top-header .xe-header-inner,
+#xe-mastheader .xe-middle-header .xe-header-inner,
+#xe-mastheader .xe-bottom-header .xe-header-inner {
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /* -------------------------------------------------------------------------- 

@@ -47,8 +47,8 @@
 
 // import functions
 
-@import 'functions/variables';
-@import 'functions/mixins';
+@use 'functions/variables' as *;
+@use 'functions/mixins' as *;
 
 // import base styling
 
