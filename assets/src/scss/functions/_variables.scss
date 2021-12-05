@@ -160,10 +160,10 @@
   --xe_navigation_dropdown_background_color: #FFFFFF;
   --xe_navigation_dropdown_top_border_color: var(--xe_primary_color);
   --xe_navigation_dropdown_item_color: var(--xe_base_text_color);
-  --xe_navigation_dropdown_item_seperator_color: #EEE;
+  --xe_navigation_dropdown_item_seperator_color: transparent;
   --xe_navigation_dropdown_item_hover_color: var(--xe_seconary_color);
 
-  --xe_mobile_menu_breakpoint: 768px;
+  --xe_menu_toggle_button_color: var(--xe_base_text_color);
 
   // spacing
   --xe_block_standard_spacing: 60px;

@@ -53,8 +53,8 @@
     .xe-site-branding[xe-logo-position=left],
     .xe-site-branding[xe-logo-position=right] {
 
-        flex-wrap: nowrap;
         align-items: center;
+        justify-content: space-between;
     }
 
     .xe-site-branding[xe-logo-position=right] {

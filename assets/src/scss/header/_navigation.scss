@@ -196,6 +196,64 @@
     display: none;
 }
 
+// Mobile Canvas trigger button 
+
+#xe-menu-toggle-button {
+
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+#xe-menu-toggle-button .menu-bar {
+
+    width: 25px;
+    height: 2px;
+    background-color: var(--xe_menu_toggle_button_color);
+    @include transation_delay_dymanic(0.3s);
+}
+
+//#xe-menu-toggle-button[mobile-menu=active] .menu-bar {
+
+//    position: absolute;
+//}
+
+//#xe-menu-toggle-button[mobile-menu=active] .menu-bar:first-child {
+
+//    transform: rotate(45deg);
+//}
+
+//#xe-menu-toggle-button[mobile-menu=active] .menu-bar:nth-child(2) {
+
+//    transform: rotate(-45deg);
+//}
+
+//#xe-menu-toggle-button[mobile-menu=active] .menu-bar:last-child {
+
+//    display: none;
+//}
+
+@media ( min-width: 768px ) {
+
+    #xe-menu-toggle-button {
+
+        display: none;
+    }
+}
+
+@media ( max-width: 768px ) {
+
+    .is-primary .xe-site-navigation{
+
+        display: none;
+    }
+}
+
 // desktop header
 
 #xe-desktop-header {
