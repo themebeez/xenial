@@ -137,6 +137,36 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 			?>
 			<#
 			var settingValue;
+
+			if ( data.isResponsive ) {
+				settingValue = {
+					desktop: {
+						initial: '',
+						link: '',
+						hover: '',
+						active: ''
+					},
+					tablet: {
+						initial: '',
+						link: '',
+						hover: '',
+						active: ''
+					},
+					mobile: {
+						initial: '',
+						link: '',
+						hover: '',
+						active: ''		
+					}
+				};
+			} else {
+				settingValue = {
+					initial: '',
+					link: '',
+					hover: '',
+					active: ''
+				};
+			}
 			if ( data.value ) {
 				settingValue = JSON.parse( data.value );
 			}

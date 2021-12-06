@@ -178,7 +178,6 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 			}
 
 			stringifySettingValue = JSON.stringify( settingValue );
-			console.log(stringifySettingValue);
 			control.setting.set( stringifySettingValue );
 		}
 	}
