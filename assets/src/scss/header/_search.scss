@@ -27,7 +27,7 @@
 
     display: block;
     position: fixed;
-    z-index: calc( 99999 - 1 );
+    z-index: var(--xe_search_form_modal_zindex);
     top: -999em;
     left: 0;
     right: 0;
@@ -51,19 +51,37 @@
 #xe-search-form .xe-search-entry {
 
     position: relative;
-    padding: 60px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 #xe-search-form .search-box-header {
 
+    position: relative;
     @include flex();
     justify-content: flex-end;
+    height: 60px;
+}
+
+#xe-search-form #xe-close-search-box {
+
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#xe-search-form #xe-close-search-box:hover {
+
+    color: var(--xe_seconary_color);
 }
 
 #xe-search-form #xe-close-search-box svg {
 
-    width: 24px;
-    height: 24px;
+    width: 14px;
+    height: 14px;
 }
 
 #xe-search-form form {

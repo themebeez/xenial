@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- 
+	Header Element: Site Navigation
+  -------------------------------------------------------------------------- */
 
 .xe-site-navigation {
 
@@ -180,6 +183,7 @@
 .xe-site-navigation ul li .sub-menu li a:hover,
 .xe-site-navigation ul li .children li a:hover {
 
+    margin-left: 5px;
     color: var(--xe_navigation_dropdown_item_hover_color);
 }
 
@@ -196,7 +200,9 @@
     display: none;
 }
 
-// Mobile Canvas trigger button 
+/* -------------------------------------------------------------------------- 
+	Mobile Menu Toggle button
+  -------------------------------------------------------------------------- */
 
 #xe-menu-toggle-button {
 
@@ -238,6 +244,70 @@
 //    display: none;
 //}
 
+/* -------------------------------------------------------------------------- 
+	Submenu dropdown animation
+  -------------------------------------------------------------------------- */
+
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li:hover > .sub-menu,
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li:hover > .children,
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li:focus > .sub-menu,
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li:focus > .children,
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .sub-menu li:hover > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .children li:hover > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .sub-menu li:focus > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .children li:focus > ul {
+
+    animation: xeFadeIn 0.5s 0s ease-in;
+}
+
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li:hover > .sub-menu,
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li:hover > .children,
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li:focus > .sub-menu,
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li:focus > .children,
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .sub-menu li:hover > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .children li:hover > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .sub-menu li:focus > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .children li:focus > ul {
+
+    animation: xeButtonFadeInUp 0.5s 0s ease-in;
+}
+
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li:hover > .sub-menu,
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li:hover > .children,
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li:focus > .sub-menu,
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li:focus > .children,
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li .sub-menu li:hover > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li .children li:hover > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li .sub-menu li:focus > ul,
+.xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li .children li:focus > ul {
+
+    animation: xeButtonFadeDown 0.5s 0s ease-in-out;
+}
+
+/* -------------------------------------------------------------------------- 
+	Desktop Header
+  -------------------------------------------------------------------------- */
+
+#xe-desktop-header {
+
+    @include flex();
+    align-items: center;
+}
+
+/* -------------------------------------------------------------------------- 
+	Mbile Header
+  -------------------------------------------------------------------------- */
+
+#xe-mobile-header {
+
+    @include flex();
+    align-items: center;
+}
+
+/* -------------------------------------------------------------------------- 
+	Responsive
+  -------------------------------------------------------------------------- */
+
 @media ( min-width: 768px ) {
 
     #xe-menu-toggle-button {
@@ -254,18 +324,3 @@
     }
 }
 
-// desktop header
-
-#xe-desktop-header {
-
-    @include flex();
-    align-items: center;
-}
-
-// mobile header 
-
-#xe-mobile-header {
-
-    @include flex();
-    align-items: center;
-}

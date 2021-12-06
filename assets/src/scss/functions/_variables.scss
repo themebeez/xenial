@@ -177,9 +177,12 @@
   //mobile design specific
   --xe_mobile_device_woo_product_title_font_size: 14px;
 
-  // z-index
+  /* -------------------------------------------------------------------------- 
+	  Icon font
+  -------------------------------------------------------------------------- */
   --xe_site_navigation_zindex: 10000000;
   --xe_submenu_dropdown_zindex: 10000001;
+  --xe_search_form_modal_zindex: 10000002;
 
   // containers
 
