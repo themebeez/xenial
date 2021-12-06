@@ -637,3 +637,40 @@ body.rtl .customize-control .responsive-switchers li {
 #customize-control-theme_header_elements {
     display: none;
 }
+
+
+
+.tippy-box[data-animation=scale][data-placement^=top] {
+
+    transform-origin: bottom
+}
+
+.tippy-box[data-animation=scale][data-placement^=bottom] {
+
+    transform-origin: top
+}
+
+.tippy-box[data-animation=scale][data-placement^=left] {
+
+    transform-origin: right
+}
+
+.tippy-box[data-animation=scale][data-placement^=right] {
+
+    transform-origin: left
+}
+
+.tippy-box[data-animation=scale][data-state=hidden] {
+
+    transform: scale(.5);
+    opacity: 0
+}
+
+.tippy-box {
+
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: normal;
+    padding: 4px 10px 4px 10px;
+    border-radius: 2px;
+}

@@ -19,6 +19,22 @@ function xenial_enqueues() {
 	);
 
 	wp_enqueue_script( 
+		'popper', 
+		$asset_uri . 'js/popper.min.js', 
+		array(), 
+		'2.11.0', 
+		true 
+	);
+
+	wp_enqueue_script( 
+		'tippy', 
+		$asset_uri . 'js/tippy.min.js', 
+		array(), 
+		'6.3.7', 
+		true 
+	);
+
+	wp_enqueue_script( 
 		XENIAL_THEME_SLUG . '-customizer-script', 
 		$asset_uri . 'js/customizer-script.js', 
 		array( 'jquery' ), 
@@ -172,6 +188,14 @@ function xenial_customize_register( $wp_customize ) {
 	require $controls_path . 'upsell/class-xenial-customize-upsell-control.php';
 
 	$wp_customize->register_section_type( 'Xenial_Customize_Upsell_Control' );
+
+
+	/**
+	 * Load custom customizer control for upsell
+	 */
+	require $controls_path . 'color-picker/class-xenial-customize-color-picker-control.php';
+
+	$wp_customize->register_section_type( 'Xenial_Customize_Color_Picker_Control' );
 
 	
 

@@ -98,3 +98,14 @@ xenial_divider_field(
 		'section' => 'xenial_layout', 
 	] 
 );
+
+
+xenial_color_picker_field(
+	'test_color_picker',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_layout',
+		'label' => esc_html__( 'Color Picker Test', 'xenial' ),
+		'is_responsive' => false
+	)
+);

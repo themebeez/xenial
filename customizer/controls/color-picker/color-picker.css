@@ -1,0 +1,45 @@
+.colors.control-wrap,
+.responsive-control-wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 10px;
+}
+
+.pcr-app[data-theme="nano"] {
+	width: 93%;
+}
+
+.pcr-app {
+	position: absolute;
+	left: 10px !important;
+	right: 10px !important;
+}
+
+.pcr-app.visible {
+	z-index: 999999;
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection {
+	height: 18.5em;
+}
+
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-chooser, 
+.pcr-app[data-theme="nano"] .pcr-selection .pcr-color-opacity {
+	height: 0.6em;
+	margin: 0 1.6em;
+}
+
+.pickr .pcr-button {
+	padding: 0;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.responsive-control-wrap {
+	display: none;
+}
+
+.responsive-control-wrap.active {
+	display: flex;
+}

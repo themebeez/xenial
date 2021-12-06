@@ -2,6 +2,17 @@
 
 	jQuery(document).ready(function(e){
 
+		tippy(".xe-customize-tippy", {
+			content: "",
+			allowHTML: false,
+			arrow: true,
+			delay: 10,
+			duration: 350,
+			maxWidth: 350,
+			placement: "top",
+			animation: "scale",
+		});
+
 		function responsiveSwitcher(){
 
 			// Responsive switchers
