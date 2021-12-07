@@ -1,4 +1,6 @@
-// text aligment 
+/* -------------------------------------------------------------------------- 
+	Text Alignments
+  -------------------------------------------------------------------------- */
 
 .text-align-left {
 
@@ -15,7 +17,9 @@
     text-align: right;
 }
 
-// float aligment 
+/* -------------------------------------------------------------------------- 
+	Float Alignments
+  -------------------------------------------------------------------------- */
 
 .alignleft,
 .wp-block-image .alignleft {
@@ -58,7 +62,9 @@
     text-align: center;
 }
 
-// alignwide & alignfull
+/* -------------------------------------------------------------------------- 
+	Wide & Full
+  -------------------------------------------------------------------------- */
 
 .alignwide,
 .alignfull {
@@ -88,8 +94,9 @@ body:not(.xe-sidebar-position) .alignfull {
     max-width: 99vw;
 }
 
-
-// WordPress embeds
+/* -------------------------------------------------------------------------- 
+	WordPress Embeds
+  -------------------------------------------------------------------------- */
 
 .wp-block-embed.alignwide:not(.is-type-rich) .wp-block-embed__wrapper::before,
 .wp-block-embed.alignfull:not(.is-type-rich) .wp-block-embed__wrapper::before,

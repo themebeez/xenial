@@ -45,12 +45,16 @@
 
 ----------------------------------------------------------------------------- */
 
-// import functions
+/* -------------------------------------------------------------------------- 
+	Import: Variables & Mixins
+  -------------------------------------------------------------------------- */
 
 @use 'functions/variables' as *;
 @use 'functions/mixins' as *;
 
-// import base styling
+/* -------------------------------------------------------------------------- 
+	Import: Base styles
+  -------------------------------------------------------------------------- */
 
 @import 'base/01_normalize';         // normalize styles
 @import 'base/02_docsetup';         // document setup styles
@@ -70,7 +74,9 @@
 @import 'base/16_screen';           // print & screen styles
 @import 'base/17_wpblocks';
 
-// import helpers
+/* -------------------------------------------------------------------------- 
+	Import: Grid & Helper Classes
+  -------------------------------------------------------------------------- */
 
 @import 'helpers/grid';            // 12 grid styles
 @import 'helpers/class';           // helpers & utility class styles
@@ -78,13 +84,17 @@
 @import 'helpers/tabs';            // tab styles
 @import 'helpers/animation';
 
-// import blocks
+/* -------------------------------------------------------------------------- 
+	Import: WooCommerce Products Layouts
+  -------------------------------------------------------------------------- */
 
 @import 'blocks/03_product_1';
 @import 'blocks/04_product_2';
 @import 'blocks/05_product_3';
 
-// Import Header
+/* -------------------------------------------------------------------------- 
+	Import: Header Elements & Styles
+  -------------------------------------------------------------------------- */
 
 @import 'header/header';
 @import 'header/html';
@@ -94,7 +104,9 @@
 @import 'header/social';
 @import 'header/navigation';
 
-// import parts
+/* -------------------------------------------------------------------------- 
+	Import: Parts
+  -------------------------------------------------------------------------- */
 
 @import 'parts/06_mobilebar';
 @import 'parts/07_widgets';
@@ -102,8 +114,9 @@
 @import 'parts/breadcrumb';
 @import 'parts/pagination';
 
-
-// import layouts
+/* -------------------------------------------------------------------------- 
+	Import: Layouts
+  -------------------------------------------------------------------------- */
 
 @import 'layouts/01_page';
 @import 'layouts/02_single';
@@ -112,7 +125,8 @@
 @import 'layouts/05_404';
 @import 'layouts/06_catalog';
 
-
-// keyframe
+/* -------------------------------------------------------------------------- 
+	Import: Keyframes
+  -------------------------------------------------------------------------- */
 
 @import 'helpers/keyframes';
