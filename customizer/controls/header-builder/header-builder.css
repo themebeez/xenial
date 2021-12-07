@@ -1,20 +1,24 @@
 
+#xenial-header-builder * {
+
+	box-sizing: border-box;
+}
+
 #xenial-header-builder {
 
+	display: block;
 	position: absolute;
 	bottom: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
+	max-width: 100%;
 	max-height: 350px;
 	margin-bottom: 0;
 	box-sizing: border-box;
 	-webkit-transition-duration: 0.3s;
 	     -o-transition-duration: 0.3s;
 	        transition-duration: 0.3s;
-}
-
-#xenial-header-builder * {
-
-	box-sizing: border-box;
 }
 
 #xenial-header-builder.xenial-hide-header-builder {
@@ -41,6 +45,7 @@
 	-webkit-box-pack: end;
 	    -ms-flex-pack: end;
 	        justify-content: flex-end;
+			display: none;
 }
 
 /* Buttons */
@@ -143,20 +148,24 @@
 
 .xenial-header-elements,
 .xenial-header-builder-section {
+
 	display: none;
 }
 
 .xenial-header-elements {
+
 	width: 100%;
 }
 
 .xenial-header-elements-active,
 .xenial-header-builder-section-active {
+
 	display: block;
 }
 
 .xenial-header-builder-inner {
 
+	display: block;
 	padding: 30px;
 	background-color: #f0f0f1;
 	border-top: 2px solid #e8e8e8;
