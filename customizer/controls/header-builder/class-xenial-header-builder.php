@@ -67,12 +67,9 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 						<div class="responsive-switchers">
 							<button id="xenial-header-builder-desktop-tab-button" class="button button-primary xenial-header-builder-button preview-desktop active" data-device="desktop"><span class="dashicons dashicons-desktop"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Desktop', 'xenial' ); ?></span></button>
 							<button id="xenial-header-builder-mobile-tab-button" class="button button-primary xenial-header-builder-button preview-mobile" data-device="mobile"><span class="dashicons dashicons-smartphone"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Table/Mobile', 'xenial' ); ?></span></button>
+							<button id="xenial-header-builder-hide-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-arrow-down-alt2"></span></button>
 						</div>
 					</div>
-				</div>
-
-				<div class="xenial-header-builder-button-wrapper">
-					<button id="xenial-header-builder-hide-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-arrow-down-alt2"></span></button>
 				</div>
 				
 				<div id="xenial-header-builder-inner" class="xenial-header-builder-inner">
@@ -931,6 +928,8 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 							desktopElementsWrapper.append(parentElement);
 						}
 						parentElementClone.remove();
+
+						xenialSaveHeaderElements();
 					});
 				} );
 
