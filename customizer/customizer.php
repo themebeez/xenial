@@ -232,6 +232,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/top-header.php';
 	require $customizer_fields_path . 'header/middle-header.php';
 	require $customizer_fields_path . 'header/bottom-header.php';
+	require $customizer_fields_path . 'header/offcanvas.php';
 	require $customizer_fields_path . 'header/site-identity.php';
 	require $customizer_fields_path . 'header/main-navigation.php';
 	require $customizer_fields_path . 'header/transparent-header.php';
