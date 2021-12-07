@@ -635,7 +635,7 @@ body.rtl .customize-control .responsive-switchers li {
 
 /* Hidden Fields  */
 #customize-control-theme_header_elements {
-    display: none;
+    /*display: none;*/
 }
 
 
@@ -674,3 +674,5 @@ body.rtl .customize-control .responsive-switchers li {
     padding: 4px 10px 4px 10px;
     border-radius: 2px;
 }
+
+

@@ -26,12 +26,12 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 			);
 		}
 
-		public function get_header_element_template( $id, $element ) {
+		public function get_header_element_template( $id, $element, $device ) {
 			?>
-			<div id="header-element-<?php echo $id; ?>" class="button button-primary xenial-header-element-button" draggable="true" data-element="<?php echo $id; ?>">
+			<div id="header-element-<?php echo $id; ?>" class="button button-primary xenial-header-element-button"  draggable="true" data-element="<?php echo $id; ?>">
 				<span class="xenial-header-element-icon"><?php echo $element['icon']; ?></span>
 				<a class="xenial-header-element-label" data-section="<?php echo $element['section']; ?>"><?php echo $element['label']; ?></a>
-				<a href="#" class="xenial-header-element-remove">
+				<a href="#" class="xenial-header-element-remove" data-device="<?php echo $device; ?>">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>
 				</a>
 			</div>
@@ -50,91 +50,82 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 		
 		public function display_header_builder() {
 
-			$headerElements = get_theme_mod( 'theme_header_elements' );
+			$headerElements = get_theme_mod( 'theme_header_elements', xenial_get_customize_default( 'header_elements' ) );
 			$headerElements = json_decode( $headerElements, true ); 
 
-			$headerElementsChoices = xenial_get_header_elements();
+			$desktop_header_elements = $headerElements['desktop']; 
+
+			$mobile_header_elements = $headerElements['mobile']; 
+
+			$desktop_header_elements_choices = xenial_get_desktop_header_elements();
+
+			$mobile_header_elements_choices = xenial_get_mobile_header_elements();
 			?>
 			<div id="xenial-header-builder" class="xenial-hide-header-builder">
 				<div class="xenial-header-builder-device-tab-wrapper">
-					<button id="xenial-header-builder-desktop-tab-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-desktop"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Desktop', 'xenial' ); ?></span></button>
-					<button id="xenial-header-builder-mobile-tab-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-smartphone"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Table/Mobile', 'xenial' ); ?></span></button>
+					<div class="customize-control">
+						<div class="responsive-switchers">
+							<button id="xenial-header-builder-desktop-tab-button" class="button button-primary xenial-header-builder-button preview-desktop active" data-device="desktop"><span class="dashicons dashicons-desktop"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Desktop', 'xenial' ); ?></span></button>
+							<button id="xenial-header-builder-mobile-tab-button" class="button button-primary xenial-header-builder-button preview-mobile" data-device="mobile"><span class="dashicons dashicons-smartphone"></span>&nbsp;<span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Table/Mobile', 'xenial' ); ?></span></button>
+						</div>
+					</div>
 				</div>
+
 				<div class="xenial-header-builder-button-wrapper">
 					<button id="xenial-header-builder-hide-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-arrow-down-alt2"></span></button>
 				</div>
 				
-				<div id="xenial-desktop-header-builder-inner" class="xenial-header-builder-inner">
+				<div id="xenial-header-builder-inner" class="xenial-header-builder-inner">
 					<div id="xenial-header-elements-selector-wrapper" class="xenial-header-elements-wrapper">
 						<div class="xenial-header-elements-wrapper-inner">
 							<?php 
 
-							$selected_header_elements = array();
+							$desktop_header_selected_elements = array();
+							if ( $desktop_header_elements ) {
+								foreach ( $desktop_header_elements as $positions ) {
+									if ( $positions ) {
+										foreach ( $positions as $position ) {
+											if ( $position ) {
+												$desktop_header_selected_elements = array_merge( $desktop_header_selected_elements, $position );
+											}
+										}
+									}
+								}
+							}
 
-							foreach ( $headerElements as $positions ) {
-								foreach ( $positions as $position ) {
-									if ( $position ) {
-										$selected_header_elements = array_merge( $selected_header_elements, $position );
+							$mobile_header_selected_elements = array();
+							if ( $mobile_header_elements ) {
+								foreach ( $mobile_header_elements as $positions ) {
+									if ( $positions ) {
+										foreach ( $positions as $position ) {
+											if ( is_array( $position ) ) {
+												$mobile_header_selected_elements = array_merge( $mobile_header_selected_elements, $position );
+											} else {
+												$mobile_header_selected_elements[] = $position;
+											}
+										}
 									}
 								}
 							}
 							?>
 							<div id="xenial-header-elements-container" class="selected-elements-wrapper">
-								<?php
-								
-								if ( $headerElementsChoices ) {
-									foreach ( $headerElementsChoices as $key => $element ) {
-										if ( ! in_array( $key, $selected_header_elements ) ) {
-											$this->get_header_element_template( $key, $element );
-										}
-									}
-								}
-								?>
-							</div>
-						</div>
-					</div>
-					<div class="xenial-header-builder-row xenial-header-builder-top-row">
-						<div class="xenial-header-builder-row-inner xenial-header-builder-top-row-inner">
-							<?php $this->get_header_row_settings_template( 'xenial_top_header' ); ?>
-							<div class="xenial-header-builder-col xenial-header-builder-top-col-1">
-								<div id="xenial-top-left-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$topLeftElements = $headerElements['top']['left'];
-									if ( $topLeftElements ) {
-										foreach ( $topLeftElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
+								<div id="xenial-desktop-header-elements" class="xenial-header-elements xenial-header-elements-active">
+									<?php								
+									if ( $desktop_header_elements_choices ) {
+										foreach ( $desktop_header_elements_choices as $key => $element ) {
+											if ( ! in_array( $key, $desktop_header_selected_elements ) ) {
+												$this->get_header_element_template( $key, $element, 'desktop' );
 											}
 										}
 									}
 									?>
 								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-top-col-2">
-								<div id="xenial-top-middle-header-elements-container" class="selected-elements-wrapper">
+								<div id="xenial-mobile-header-elements" class="xenial-header-elements">
 									<?php
-									$topMiddleElements = $headerElements['top']['middle'];
-									if ( $topMiddleElements ) {
-										foreach ( $topMiddleElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-top-col-3">
-								<div id="xenial-top-right-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$topRightElements = $headerElements['top']['right'];
-									if ( $topRightElements ) {
-										foreach ( $topRightElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
+									if ( $mobile_header_elements_choices ) {
+										foreach ( $mobile_header_elements_choices as $key => $element ) {
+											if ( ! in_array( $key, $mobile_header_selected_elements ) ) {
+												$this->get_header_element_template( $key, $element, 'mobile' );
 											}
 										}
 									}
@@ -143,289 +134,332 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 							</div>
 						</div>
 					</div>
-					<div class="xenial-header-builder-row xenial-header-builder-middle-row">
-						<div class="xenial-header-builder-row-inner xenial-header-builder-middle-row-inner">
-							<?php $this->get_header_row_settings_template( 'xenial_middle_header' ); ?>
-							<div class="xenial-header-builder-col xenial-header-builder-middle-col-1">
-								<div id="xenial-middle-left-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$middleLeftElements = $headerElements['middle']['left'];
-									if ( $middleLeftElements ) {
-										foreach ( $middleLeftElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
+					<div id="xenial-desktop-header-builder-section" class="xenial-header-builder-section xenial-header-builder-section-active">
+						<div class="xenial-header-builder-row xenial-header-builder-top-row">
+							<div class="xenial-header-builder-row-inner xenial-header-builder-top-row-inner">
+								<?php $this->get_header_row_settings_template( 'xenial_top_header' ); ?>
+								<div class="xenial-header-builder-col xenial-header-builder-top-col-1">
+									<div id="xenial-desktop-top-left" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_top_left_elements = $desktop_header_elements['top']['left'];
+										if ( $desktop_header_top_left_elements ) {
+											foreach ( $desktop_header_top_left_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
 											}
 										}
-									}
-									?>
+										?>
+									</div>
+								</div>
+								<div class="xenial-header-builder-col xenial-header-builder-top-col-2">
+									<div id="xenial-desktop-top-middle" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_top_middle_elements = $desktop_header_elements['top']['middle'];
+										if ( $desktop_header_top_middle_elements ) {
+											foreach ( $desktop_header_top_middle_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
+											}
+										}
+										?>
+									</div>
+								</div>
+								<div class="xenial-header-builder-col xenial-header-builder-top-col-3">
+									<div id="xenial-desktop-top-right" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_top_right_elements = $desktop_header_elements['top']['right'];
+										if ( $desktop_header_top_right_elements ) {
+											foreach ( $desktop_header_top_right_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
+											}
+										}
+										?>
+									</div>
 								</div>
 							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-middle-col-2">
-								<div id="xenial-middle-middle-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$middleMiddleElements = $headerElements['middle']['middle'];
-									if ( $middleMiddleElements ) {
-										foreach ( $middleMiddleElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
+						</div>
+						<div class="xenial-header-builder-row xenial-header-builder-middle-row">
+							<div class="xenial-header-builder-row-inner xenial-header-builder-middle-row-inner">
+								<?php $this->get_header_row_settings_template( 'xenial_middle_header' ); ?>
+								<div class="xenial-header-builder-col xenial-header-builder-middle-col-1">
+									<div id="xenial-desktop-middle-left" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_middle_left_elements = $desktop_header_elements['middle']['left'];
+										if ( $desktop_header_middle_left_elements ) {
+											foreach ( $desktop_header_middle_left_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
 											}
 										}
-									}
-									?>
+										?>
+									</div>
+								</div>
+								<div class="xenial-header-builder-col xenial-header-builder-middle-col-2">
+									<div id="xenial-desktop-middle-middle" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_middle_middle_elements = $desktop_header_elements['middle']['middle'];
+										if ( $desktop_header_middle_middle_elements ) {
+											foreach ( $desktop_header_middle_middle_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
+											}
+										}
+										?>
+									</div>
+								</div>
+								<div class="xenial-header-builder-col xenial-header-builder-middle-col-3">
+									<div id="xenial-desktop-middle-right" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_middle_right_elements = $desktop_header_elements['middle']['right'];
+										if ( $desktop_header_middle_right_elements ) {
+											foreach ( $desktop_header_middle_right_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
+											}
+										}
+										?>
+									</div>
 								</div>
 							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-middle-col-3">
-								<div id="xenial-middle-right-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$middleRightElements = $headerElements['middle']['right'];
-									if ( $middleRightElements ) {
-										foreach ( $middleRightElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
+						</div>
+						<div class="xenial-header-builder-row xenial-header-builder-bottom-row">
+							<div class="xenial-header-builder-row-inner xenial-header-builder-bottom-row-inner">
+								<?php $this->get_header_row_settings_template( 'xenial_bottom_header' ); ?>
+								<div class="xenial-header-builder-col xenial-header-builder-bottom-col-1">
+									<div id="xenial-desktop-bottom-left" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_bottom_left_elements = $desktop_header_elements['bottom']['left'];
+										if ( $desktop_header_bottom_left_elements ) {
+											foreach ( $desktop_header_bottom_left_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
 											}
 										}
-									}
-									?>
+										?>
+									</div>
+								</div>
+								<div class="xenial-header-builder-col xenial-header-builder-tbottomop-col-2">
+									<div id="xenial-desktop-bottom-middle" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_bottom_middle_elements = $desktop_header_elements['bottom']['middle'];
+										if ( $desktop_header_bottom_middle_elements ) {
+											foreach ( $desktop_header_bottom_middle_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
+											}
+										}
+										?>
+									</div>
+								</div>
+								<div class="xenial-header-builder-col xenial-header-builder-bottom-col-3">
+									<div id="xenial-desktop-bottom-right" class="selected-elements-wrapper">
+										<?php
+										$desktop_header_bottom_right_elements = $desktop_header_elements['bottom']['right'];
+										if ( $desktop_header_bottom_right_elements ) {
+											foreach ( $desktop_header_bottom_right_elements as $element ) {
+												$get_element = $desktop_header_elements_choices[ $element ];
+												if ( $get_element ) {
+													$this->get_header_element_template( $element, $get_element, 'desktop' );
+												}
+											}
+										}
+										?>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="xenial-header-builder-row xenial-header-builder-bottom-row">
-						<div class="xenial-header-builder-row-inner xenial-header-builder-bottom-row-inner">
-							<?php $this->get_header_row_settings_template( 'xenial_bottom_header' ); ?>
-							<div class="xenial-header-builder-col xenial-header-builder-bottom-col-1">
-								<div id="xenial-bottom-left-header-elements-container" class="selected-elements-wrapper">
+					
+					<div id="xenial-mobile-header-builder-section" class="xenial-header-builder-section">
+						<div class="xenial-mobile-header-builder-section-inner">
+							<div class="xenial-mobile-header-builder-off-canvas-container">
+								<?php $this->get_header_row_settings_template( 'xenial_off_canvas' ); ?>
+								<div id="xenial-mobile-off-canvas" class="selected-elements-wrapper">
 									<?php
-									$bottomLeftElements = $headerElements['bottom']['left'];
-									if ( $bottomLeftElements ) {
-										foreach ( $bottomLeftElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
+									$mobile_header_canvas_elements = $mobile_header_elements['offcanvas'];
+									if ( $mobile_header_canvas_elements ) {
+										foreach ( $mobile_header_canvas_elements as $element ) {
+											$get_element = $mobile_header_elements_choices[ $element ];
+											if ( $get_element ) {
+												$this->get_header_element_template( $element, $get_element, 'mobile' );
 											}
 										}
 									}
 									?>
 								</div>
 							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-tbottomop-col-2">
-								<div id="xenial-bottom-middle-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$bottomMiddleElements = $headerElements['bottom']['middle'];
-									if ( $bottomMiddleElements ) {
-										foreach ( $bottomMiddleElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
+							<div class="xenial-mobile-header-builder-row-container">
+								<div class="xenial-header-builder-row xenial-header-builder-top-row">
+									<div class="xenial-header-builder-row-inner xenial-header-builder-top-row-inner">
+										<?php $this->get_header_row_settings_template( 'xenial_top_header' ); ?>
+										<div class="xenial-header-builder-col xenial-header-builder-top-col-1">
+											<div id="xenial-mobile-top-left" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_top_left_elements = $mobile_header_elements['top']['left'];
+												if ( $mobile_header_top_left_elements ) {
+													foreach ( $mobile_header_top_left_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+										<div class="xenial-header-builder-col xenial-header-builder-top-col-2">
+											<div id="xenial-mobile-top-middle" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_top_middle_elements = $mobile_header_elements['top']['middle'];
+												if ( $mobile_header_top_middle_elements ) {
+													foreach ( $mobile_header_top_middle_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+										<div class="xenial-header-builder-col xenial-header-builder-top-col-3">
+											<div id="xenial-mobile-top-right" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_top_right_elements = $mobile_header_elements['top']['right'];
+												if ( $mobile_header_top_right_elements ) {
+													foreach ( $mobile_header_top_right_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-bottom-col-3">
-								<div id="xenial-bottom-right-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$bottomRightElements = $headerElements['bottom']['right'];
-									if ( $bottomRightElements ) {
-										foreach ( $bottomRightElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
+								<div class="xenial-header-builder-row xenial-header-builder-middle-row">
+									<div class="xenial-header-builder-row-inner xenial-header-builder-middle-row-inner">
+										<?php $this->get_header_row_settings_template( 'xenial_middle_header' ); ?>
+										<div class="xenial-header-builder-col xenial-header-builder-middle-col-1">
+											<div id="xenial-mobile-middle-left" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_middle_left_elements = $mobile_header_elements['middle']['left'];
+												if ( $mobile_header_middle_left_elements ) {
+													foreach ( $mobile_header_middle_left_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+										<div class="xenial-header-builder-col xenial-header-builder-middle-col-2">
+											<div id="xenial-mobile-middle-middle" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_middle_middle_elements = $mobile_header_elements['middle']['middle'];
+												if ( $mobile_header_middle_middle_elements ) {
+													foreach ( $mobile_header_middle_middle_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+										<div class="xenial-header-builder-col xenial-header-builder-middle-col-3">
+											<div id="xenial-mobile-middle-right" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_middle_right_elements = $mobile_header_elements['middle']['right'];
+												if ( $mobile_header_middle_right_elements ) {
+													foreach ( $mobile_header_middle_right_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="xenial-mobile-header-builder-inner" class="xenial-header-builder-inner">
-					<div id="xenial-header-elements-selector-wrapper" class="xenial-header-elements-wrapper">
-						<div class="xenial-header-elements-wrapper-inner">
-							<?php 
-
-							$selected_header_elements = array();
-
-							foreach ( $headerElements as $positions ) {
-								foreach ( $positions as $position ) {
-									if ( $position ) {
-										$selected_header_elements = array_merge( $selected_header_elements, $position );
-									}
-								}
-							}
-							?>
-							<div id="xenial-header-elements-container" class="selected-elements-wrapper">
-								<?php
-								
-								if ( $headerElementsChoices ) {
-									foreach ( $headerElementsChoices as $key => $element ) {
-										if ( ! in_array( $key, $selected_header_elements ) ) {
-											$this->get_header_element_template( $key, $element );
-										}
-									}
-								}
-								?>
-							</div>
-						</div>
-					</div>
-					<div class="xenial-header-builder-row xenial-header-builder-top-row">
-						<div class="xenial-header-builder-row-inner xenial-header-builder-top-row-inner">
-							<?php $this->get_header_row_settings_template( 'xenial_top_header' ); ?>
-							<div class="xenial-header-builder-col xenial-header-builder-top-col-1">
-								<div id="xenial-top-left-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$topLeftElements = $headerElements['top']['left'];
-									if ( $topLeftElements ) {
-										foreach ( $topLeftElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-top-col-2">
-								<div id="xenial-top-middle-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$topMiddleElements = $headerElements['top']['middle'];
-									if ( $topMiddleElements ) {
-										foreach ( $topMiddleElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-top-col-3">
-								<div id="xenial-top-right-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$topRightElements = $headerElements['top']['right'];
-									if ( $topRightElements ) {
-										foreach ( $topRightElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="xenial-header-builder-row xenial-header-builder-middle-row">
-						<div class="xenial-header-builder-row-inner xenial-header-builder-middle-row-inner">
-							<?php $this->get_header_row_settings_template( 'xenial_middle_header' ); ?>
-							<div class="xenial-header-builder-col xenial-header-builder-middle-col-1">
-								<div id="xenial-middle-left-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$middleLeftElements = $headerElements['middle']['left'];
-									if ( $middleLeftElements ) {
-										foreach ( $middleLeftElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-middle-col-2">
-								<div id="xenial-middle-middle-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$middleMiddleElements = $headerElements['middle']['middle'];
-									if ( $middleMiddleElements ) {
-										foreach ( $middleMiddleElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-middle-col-3">
-								<div id="xenial-middle-right-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$middleRightElements = $headerElements['middle']['right'];
-									if ( $middleRightElements ) {
-										foreach ( $middleRightElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
+								<div class="xenial-header-builder-row xenial-header-builder-bottom-row">
+									<div class="xenial-header-builder-row-inner xenial-header-builder-bottom-row-inner">
+										<?php $this->get_header_row_settings_template( 'xenial_bottom_header' ); ?>
+										<div class="xenial-header-builder-col xenial-header-builder-bottom-col-1">
+											<div id="xenial-mobile-bottom-left" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_bottom_left_elements = $mobile_header_elements['bottom']['left'];
+												if ( $mobile_header_bottom_left_elements ) {
+													foreach ( $mobile_header_bottom_left_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+										<div class="xenial-header-builder-col xenial-header-builder-tbottomop-col-2">
+											<div id="xenial-mobile-bottom-middle" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_bottom_middle_elements = $mobile_header_elements['bottom']['middle'];
+												if ( $mobile_header_bottom_middle_elements ) {
+													foreach ( $mobile_header_bottom_middle_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+										<div class="xenial-header-builder-col xenial-header-builder-bottom-col-3">
+											<div id="xenial-mobile-bottom-right" class="selected-elements-wrapper">
+												<?php
+												$mobile_header_bottom_right_elements = $mobile_header_elements['bottom']['right'];
+												if ( $mobile_header_bottom_right_elements ) {
+													foreach ( $mobile_header_bottom_right_elements as $element ) {
+														$get_element = $mobile_header_elements_choices[ $element ];
+														if ( $get_element ) {
+															$this->get_header_element_template( $element, $get_element, 'mobile' );
+														}
+													}
+												}
+												?>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="xenial-header-builder-row xenial-header-builder-bottom-row">
-						<div class="xenial-header-builder-row-inner xenial-header-builder-bottom-row-inner">
-							<?php $this->get_header_row_settings_template( 'xenial_bottom_header' ); ?>
-							<div class="xenial-header-builder-col xenial-header-builder-bottom-col-1">
-								<div id="xenial-bottom-left-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$bottomLeftElements = $headerElements['bottom']['left'];
-									if ( $bottomLeftElements ) {
-										foreach ( $bottomLeftElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-tbottomop-col-2">
-								<div id="xenial-bottom-middle-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$bottomMiddleElements = $headerElements['bottom']['middle'];
-									if ( $bottomMiddleElements ) {
-										foreach ( $bottomMiddleElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-							<div class="xenial-header-builder-col xenial-header-builder-bottom-col-3">
-								<div id="xenial-bottom-right-header-elements-container" class="selected-elements-wrapper">
-									<?php
-									$bottomRightElements = $headerElements['bottom']['right'];
-									if ( $bottomRightElements ) {
-										foreach ( $bottomRightElements as $element ) {
-											$getElement = $headerElementsChoices[ $element ];
-											if ( $getElement ) {
-												$this->get_header_element_template( $element, $getElement );
-											}
-										}
-									}
-									?>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				
+				</div>				
 			</div>
 			<?php
 		}
@@ -495,20 +529,40 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 
 
 				let toBeSavedHeaderElements = {
-					top: {
-						left: null,
-						middle: null,
-						right: null
+					desktop: {
+						top: {
+							left: null,
+							middle: null,
+							right: null
+						},
+						middle: {
+							left: null,
+							middle: null,
+							right: null
+						},
+						bottom: {
+							left: null,
+							middle: null,
+							right: null
+						}
 					},
-					middle: {
-						left: null,
-						middle: null,
-						right: null
-					},
-					bottom: {
-						left: null,
-						middle: null,
-						right: null
+					mobile: {
+						top: {
+							left: null,
+							middle: null,
+							right: null
+						},
+						middle: {
+							left: null,
+							middle: null,
+							right: null
+						},
+						bottom: {
+							left: null,
+							middle: null,
+							right: null
+						},
+						offcanvas: null
 					}
 				};
 
@@ -517,16 +571,30 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 				const headerElements = document.querySelectorAll(".xenial-header-element-button");
 				const dropZones = document.querySelectorAll(".selected-elements-wrapper");
 
+				const mobileTabButton = document.getElementById( 'xenial-header-builder-mobile-tab-button' );
+				const desktopTabButton = document.getElementById( 'xenial-header-builder-desktop-tab-button' );
 
-				// const headerElementLinks = document.querySelectorAll('.xenial-header-element-label');
+				const desktopElementsWrapper = document.getElementById( 'xenial-desktop-header-elements' );
+				const mobileElementsWrapper = document.getElementById( 'xenial-mobile-header-elements' );
 
-				// [].forEach.call( headerElementLinks, (headerElementLink) => { 
-				// 	headerElementLink.addEventListener( 'click', (event) => {
-				// 		event.preventDefault();
-				// 		const sectionID = headerElementLink.getAttribute('data-section');
-				// 		wp.customize.section(sectionID).focus();
-				// 	});
-				// });
+				const desktopHeaderBuilderSection = document.getElementById( 'xenial-desktop-header-builder-section' );
+				const mobileHeaderBuilderSection = document.getElementById( 'xenial-mobile-header-builder-section' );
+
+				desktopTabButton.addEventListener( 'click', (event) => {
+					event.preventDefault();
+					mobileElementsWrapper.classList.remove('xenial-header-elements-active');
+					desktopElementsWrapper.classList.add('xenial-header-elements-active');
+					mobileHeaderBuilderSection.classList.remove('xenial-header-builder-section-active');
+					desktopHeaderBuilderSection.classList.add('xenial-header-builder-section-active');
+				} );
+
+				mobileTabButton.addEventListener( 'click', (event) => {
+					event.preventDefault();
+					desktopElementsWrapper.classList.remove('xenial-header-elements-active');
+					mobileElementsWrapper.classList.add('xenial-header-elements-active');
+					desktopHeaderBuilderSection.classList.remove('xenial-header-builder-section-active');
+					mobileHeaderBuilderSection.classList.add('xenial-header-builder-section-active');
+				} );
 
 				let draggedElement = null;
 
@@ -544,8 +612,6 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 							draggedElement = null;
 						});
 					} );
-
-					
 				} );
 
 
@@ -592,124 +658,258 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 				function xenialSaveHeaderElements() {
 
 					let toBeSavedHeaderElements = {
-						top: {
-							left: null,
-							middle: null,
-							right: null
+						desktop: {
+							top: {
+								left: null,
+								middle: null,
+								right: null
+							},
+							middle: {
+								left: null,
+								middle: null,
+								right: null
+							},
+							left: {
+								left: null,
+								middle: null,
+								right: null
+							}
 						},
-						middle: {
-							left: null,
-							middle: null,
-							right: null
-						},
-						left: {
-							left: null,
-							middle: null,
-							right: null
+						mobile: {
+							top: {
+								left: null,
+								middle: null,
+								right: null
+							},
+							middle: {
+								left: null,
+								middle: null,
+								right: null
+							},
+							left: {
+								left: null,
+								middle: null,
+								right: null
+							},
+							offcanvas: null
 						}
+						
 					};
 
 					const headerElementsSetting = document.getElementById('_customize-input-theme_header_elements');
 
-					const topheaderLeftElements = document.querySelectorAll('#xenial-top-left-header-elements-container .xenial-header-element-button');
+					const desktopTopHeaderLeftElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-top-left .xenial-header-element-button');
 					
-					if ( topheaderLeftElements.length > 0 ) {
+					if ( desktopTopHeaderLeftElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( topheaderLeftElements, (element) => {
+						[].forEach.call( desktopTopHeaderLeftElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.top.left = elements;
+							toBeSavedHeaderElements.desktop.top.left = elements;
 						}
 					}
 
 					
 
-					const topheaderMiddleElements = document.querySelectorAll('#xenial-top-middle-header-elements-container .xenial-header-element-button');
-					if ( topheaderMiddleElements.length > 0 ) {
+					const desktopTopHeaderMiddleElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-top-middle  .xenial-header-element-button');
+					if ( desktopTopHeaderMiddleElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( topheaderMiddleElements, (element) => {
+						[].forEach.call( desktopTopHeaderMiddleElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.top.middle = elements;
+							toBeSavedHeaderElements.desktop.top.middle = elements;
 						}
 					}
 
-					const topheadeRightElements = document.querySelectorAll('#xenial-top-right-header-elements-container .xenial-header-element-button');
-					if ( topheadeRightElements.length > 0 ) {
+					const desktopTopHeadeRightElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-top-right  .xenial-header-element-button');
+					if ( desktopTopHeadeRightElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( topheadeRightElements, (element) => {
+						[].forEach.call( desktopTopHeadeRightElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.top.right = elements;
+							toBeSavedHeaderElements.desktop.top.right = elements;
 						}
 					}
 
-					const middleheaderLeftElements = document.querySelectorAll('#xenial-middle-left-header-elements-container .xenial-header-element-button');
-					if ( middleheaderLeftElements.length > 0 ) {
+					const desktopMiddleHeaderLeftElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-middle-left  .xenial-header-element-button');
+					if ( desktopMiddleHeaderLeftElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( middleheaderLeftElements, (element) => {
+						[].forEach.call( desktopMiddleHeaderLeftElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.middle.left = elements;
+							toBeSavedHeaderElements.desktop.middle.left = elements;
 						}
 					}
 
-					const middleheaderMiddleElements = document.querySelectorAll('#xenial-middle-middle-header-elements-container .xenial-header-element-button');
-					if ( middleheaderMiddleElements.length > 0 ) {
+					const desktopMiddleHeaderMiddleElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-middle-middle .xenial-header-element-button');
+					if ( desktopMiddleHeaderMiddleElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( middleheaderMiddleElements, (element) => {
+						[].forEach.call( desktopMiddleHeaderMiddleElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.middle.middle = elements;
+							toBeSavedHeaderElements.desktop.middle.middle = elements;
 						}
 					}
 
-					const middleheadeRightElements = document.querySelectorAll('#xenial-middle-right-header-elements-container .xenial-header-element-button');
-					if ( middleheadeRightElements.length > 0 ) {
+					const desktopMiddleHeaderRightElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-middle-right  .xenial-header-element-button');
+					if ( desktopMiddleHeaderRightElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( middleheadeRightElements, (element) => {
+						[].forEach.call( desktopMiddleHeaderRightElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.middle.right = elements;
+							toBeSavedHeaderElements.desktop.middle.right = elements;
 						}
 					}
 
-					const bottomheaderLeftElements = document.querySelectorAll('#xenial-bottom-left-header-elements-container .xenial-header-element-button');
-					if ( bottomheaderLeftElements.length > 0 ) {
+					const desktopBottomHeaderLeftElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-bottom-left  .xenial-header-element-button');
+					if ( desktopBottomHeaderLeftElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( bottomheaderLeftElements, (element) => {
+						[].forEach.call( desktopBottomHeaderLeftElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.bottom.left = elements;
+							toBeSavedHeaderElements.desktop.bottom.left = elements;
 						}
 					}
 
-					const bottomheaderMiddleElements = document.querySelectorAll('#xenial-bottom-middle-header-elements-container .xenial-header-element-button');
-					if ( bottomheaderMiddleElements.length > 0 ) {
+					const desktopBottomHeaderMiddleElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-bottom-middle .xenial-header-element-button');
+					if ( desktopBottomHeaderMiddleElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( bottomheaderMiddleElements, (element) => {
+						[].forEach.call( desktopBottomHeaderMiddleElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.bottom.middle = elements;
+							toBeSavedHeaderElements.desktop.bottom.middle = elements;
 						}
 					}
 
-					const bottomheadeRightElements = document.querySelectorAll('#xenial-bottom-right-header-elements-container .xenial-header-element-button');
-					if ( bottomheadeRightElements.length > 0 ) {
+					const desktopBottomHeaderRightElements = document.querySelectorAll('#xenial-desktop-header-builder-section #xenial-desktop-bottom-right .xenial-header-element-button');
+					if ( desktopBottomHeaderRightElements.length > 0 ) {
 						let elements = [];
-						[].forEach.call( bottomheadeRightElements, (element) => {
+						[].forEach.call( desktopBottomHeaderRightElements, (element) => {
 							elements.push( element.getAttribute('data-element') );
 						} );
 						if ( elements.length > 0 ) {
-							toBeSavedHeaderElements.bottom.right = elements;
+							toBeSavedHeaderElements.desktop.bottom.right = elements;
+						}
+					}
+
+					const mobileTopHeaderLeftElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-top-left .xenial-header-element-button');
+					
+					if ( mobileTopHeaderLeftElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileTopHeaderLeftElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.top.left = elements;
+						}
+					}
+
+					
+
+					const mobileTopHeaderMiddleElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-top-middle  .xenial-header-element-button');
+					if ( mobileTopHeaderMiddleElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileTopHeaderMiddleElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.top.middle = elements;
+						}
+					}
+
+					const mobileTopHeadeRightElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-top-right  .xenial-header-element-button');
+					if ( mobileTopHeadeRightElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileTopHeadeRightElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.top.right = elements;
+						}
+					}
+
+					const mobileMiddleHeaderLeftElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-middle-left  .xenial-header-element-button');
+					if ( mobileMiddleHeaderLeftElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileMiddleHeaderLeftElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.middle.left = elements;
+						}
+					}
+
+					const mobileMiddleHeaderMiddleElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-middle-middle .xenial-header-element-button');
+					if ( mobileMiddleHeaderMiddleElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileMiddleHeaderMiddleElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.middle.middle = elements;
+						}
+					}
+
+					const mobileMiddleHeaderRightElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-middle-right  .xenial-header-element-button');
+					if ( mobileMiddleHeaderRightElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileMiddleHeaderRightElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.middle.right = elements;
+						}
+					}
+
+					const mobileBottomHeaderLeftElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-bottom-left  .xenial-header-element-button');
+					if ( mobileBottomHeaderLeftElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileBottomHeaderLeftElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.bottom.left = elements;
+						}
+					}
+
+					const mobileBottomHeaderMiddleElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-bottom-middle .xenial-header-element-button');
+					if ( mobileBottomHeaderMiddleElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileBottomHeaderMiddleElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.bottom.middle = elements;
+						}
+					}
+
+					const mobileBottomHeaderRightElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-bottom-right .xenial-header-element-button');
+					if ( mobileBottomHeaderRightElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileBottomHeaderRightElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.bottom.right = elements;
+						}
+					}
+
+					const mobileOffCanvasElements = document.querySelectorAll('#xenial-mobile-header-builder-section #xenial-mobile-off-canvas .xenial-header-element-button');
+					if ( mobileOffCanvasElements.length > 0 ) {
+						let elements = [];
+						[].forEach.call( mobileOffCanvasElements, (element) => {
+							elements.push( element.getAttribute('data-element') );
+						} );
+						if ( elements.length > 0 ) {
+							toBeSavedHeaderElements.mobile.offcanvas = elements;
 						}
 					}
 
@@ -719,13 +919,17 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 
 
 				const removeButtons = document.querySelectorAll('.xenial-header-element-remove');
-				const headerElementsContainer = document.getElementById('xenial-header-elements-container');
 				[].forEach.call( removeButtons, (element) => {
 					element.addEventListener('click', (event) => {
 						event.preventDefault();
 						parentElement = element.parentNode;
 						let parentElementClone = parentElement.cloneNode(true);
-						headerElementsContainer.append(parentElement);
+						var elementDevice = element.getAttribute('data-device');
+						if ( elementDevice == 'mobile' ) {
+							mobileElementsWrapper.append(parentElement);
+						} else {
+							desktopElementsWrapper.append(parentElement);
+						}
 						parentElementClone.remove();
 					});
 				} );

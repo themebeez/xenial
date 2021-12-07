@@ -16,7 +16,7 @@ xenial_text_field(
 		'priority' => 10,
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Header Elements', 'xenial' ),
-		'default' => ''
+		'default' => xenial_get_customize_default( 'header_elements' )
 	)
 );
 
