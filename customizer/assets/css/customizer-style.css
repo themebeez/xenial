@@ -642,7 +642,7 @@ body.rtl .customize-control .responsive-switchers li {
 /* Hidden Fields  */
 #customize-control-theme_header_elements {
 
-    display: none;
+    /*display: none;*/
 }
 
 /* -------------------------------------------------------------------------- 

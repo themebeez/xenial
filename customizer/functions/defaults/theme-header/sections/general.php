@@ -8,7 +8,7 @@ if ( ! function_exists( 'xenial_get_header_general_customize_defaults' ) ) {
 		return apply_filters(
 			'xenial_header_general_customize_defaults_filter',
 			array(
-				'header_elements' => '',
+				'header_elements' => '{"top":{"left":null,"middle":null,"right":null},"middle":{"left":["site_identity"],"middle":null,"right":["menu_1"]},"left":{"left":null,"middle":null,"right":null}}',
 				'header_margin' => array(
 					'desktop_top' => 0,
 	                'desktop_right' => 0,
