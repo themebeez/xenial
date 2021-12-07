@@ -11,22 +11,21 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
-	// init 
+	// Init functions
 	var xeInitAll = function () {
 
 		xeSmoothScroll();
-		//xeTabs();
 		xeToolTip();
 		xeToggleComment();
 		xeBackToTopButton();
+		//xeTabs();
 		//xeTabHiddenItems();
 		//initSwiper();
 	}
 
 	xeInitAll();
 
-	// smooth scroll
+	// Smooth scroll
 	function xeSmoothScroll() {
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
@@ -39,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
-	// tooltips
+	// Tooltip
 	function xeToolTip() {
 		tippy(".xe-tippy", {
 			content: "",
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 
-	// toggle comments
+	// Toggle comments
 	function xeToggleComment() {
 
 		var body = document.body;
@@ -70,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 
-	// back to top button 
+	// Back to top button 
 	function xeBackToTopButton() {
 
 		var backToTopTriggerBtn = document.getElementById("xe-backtotop-button");
@@ -79,20 +78,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 			var yAxisHeight = window.pageYOffset;
 
-			if (yAxisHeight > 600) {
+			if (yAxisHeight > 600 && backToTopTriggerBtn !== null || undefined) {
+
 				backToTopTriggerBtn.classList.add("visible");
+
 			} else {
+
 				backToTopTriggerBtn.classList.remove("visible");
 			}
 		});
 
-		backToTopTriggerBtn.addEventListener('click', function () {
-			window.scrollTo({
-				top: 0,
-				left: 0,
-				behavior: 'smooth'
+		if (backToTopTriggerBtn !== null || undefined) {
+
+			backToTopTriggerBtn.addEventListener('click', function () {
+
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
 			});
-		});
+		}
 	}
 
 

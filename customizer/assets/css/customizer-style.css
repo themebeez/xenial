@@ -681,7 +681,7 @@ body.rtl .customize-control .responsive-switchers li {
     font-size: 13px;
     line-height: 21px;
     font-weight: normal;
-    padding: 2px 7px 2px 7px;
+    padding: 1px 7px 1px 7px;
     border-radius: 2px;
 }
 
@@ -707,6 +707,6 @@ body.rtl .customize-control .responsive-switchers li {
 
 .tippy-box[data-animation=scale][data-state=hidden] {
 
-    transform: scale(.5);
+    transform: scale(0.5);
     opacity: 0
 }
