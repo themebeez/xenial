@@ -1,4 +1,6 @@
-/* Variables - Customizer */
+/* -------------------------------------------------------------------------- 
+	Variables - Customizer
+  -------------------------------------------------------------------------- */
 
 :root {
 
@@ -9,8 +11,9 @@
 
 }
 
-
-/* Forms - Customizer */
+/* -------------------------------------------------------------------------- 
+	Forms - Customizer 
+  -------------------------------------------------------------------------- */
 
 #customize-controls input[type="color"], 
 #customize-controls input[type="date"], 
@@ -249,7 +252,9 @@
 
 /* Shadow - Customizer */
 
-/* Controls - Customizer */
+/* -------------------------------------------------------------------------- 
+	Controls - Customizer
+  -------------------------------------------------------------------------- */
 
 #customize-controls .customize-control {
 
@@ -345,8 +350,9 @@ li#customize-controls-logo_position {
     margin-top: 20px;
 }
 
-
-/* Responsive Switcher */
+/* -------------------------------------------------------------------------- 
+	Responsive Switcher
+  -------------------------------------------------------------------------- */
 
 .customize-control.has-switchers .customize-control-title {
     display: block;
@@ -471,7 +477,6 @@ body.rtl .customize-control .responsive-switchers li {
     }
 }
 
-
 .customize-control-color,
 .customize-control-xenial-alpha-color {
     position: relative;
@@ -508,7 +513,9 @@ body.rtl .customize-control .responsive-switchers li {
     padding-left: 15px;
 }
 
-/* Sortable */
+/* -------------------------------------------------------------------------- 
+	Controls - Sortable
+  -------------------------------------------------------------------------- */
 
 .xenial-sortable-selector-control .selector-select-add-wrapper {
 
@@ -632,13 +639,51 @@ body.rtl .customize-control .responsive-switchers li {
 }
 
 
-
 /* Hidden Fields  */
 #customize-control-theme_header_elements {
+
     display: none;
 }
 
+/* -------------------------------------------------------------------------- 
+	Color Picker
+  -------------------------------------------------------------------------- */
 
+.customize-control-xenial-color-picker .xenial-color-field-wrapper {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.customize-control-xenial-color-picker .xenial-color-field-wrapper > li {
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* -------------------------------------------------------------------------- 
+	Tooltips
+  -------------------------------------------------------------------------- */
+
+[data-tippy-root] {
+
+    z-index: 1000000 !important;
+}
+
+.tippy-box {
+
+    position: relative;
+    font-size: 13px;
+    line-height: 21px;
+    font-weight: normal;
+    padding: 2px 7px 2px 7px;
+    border-radius: 2px;
+}
 
 .tippy-box[data-animation=scale][data-placement^=top] {
 
@@ -664,13 +709,4 @@ body.rtl .customize-control .responsive-switchers li {
 
     transform: scale(.5);
     opacity: 0
-}
-
-.tippy-box {
-
-    font-size: 13px;
-    line-height: 21px;
-    font-weight: normal;
-    padding: 4px 10px 4px 10px;
-    border-radius: 2px;
 }

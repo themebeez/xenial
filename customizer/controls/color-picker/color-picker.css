@@ -1,5 +1,6 @@
 .colors.control-wrap,
 .responsive-control-wrap {
+
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -7,39 +8,76 @@
 }
 
 .pcr-app[data-theme="nano"] {
+
 	width: 93%;
 }
 
 .pcr-app {
+
 	position: absolute;
 	left: 10px !important;
 	right: 10px !important;
 }
 
 .pcr-app.visible {
+
 	z-index: 999999;
 }
 
 .pcr-app[data-theme="nano"] .pcr-selection {
+
 	height: 18.5em;
 }
 
 .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-chooser, 
 .pcr-app[data-theme="nano"] .pcr-selection .pcr-color-opacity {
+
 	height: 0.6em;
 	margin: 0 1.6em;
 }
 
 .pickr .pcr-button {
+
 	padding: 0;
 	border-radius: 50%;
 	overflow: hidden;
 }
 
 .responsive-control-wrap {
+
 	display: none;
 }
 
 .responsive-control-wrap.active {
+
 	display: flex;
+}
+
+.pcr-app .pcr-interaction {
+
+	position: relative;
+}
+
+.pcr-app .pcr-interaction .pcr-result {
+
+	color: currentColor;
+	letter-spacing: 0;
+	background-color: #FFF;
+	padding-right: 30px !important;
+}
+
+.pcr-app .pcr-interaction .pcr-clear {
+
+	position: absolute;
+	z-index: 1;
+	top: 15px;
+	right: 15px;
+	font-size: 0;
+	height: 23px;
+	width: 23px;
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEyIDEwLjU4Nmw0Ljk1LTQuOTUgMS40MTQgMS40MTQtNC45NSA0Ljk1IDQuOTUgNC45NS0xLjQxNCAxLjQxNC00Ljk1LTQuOTUtNC45NSA0Ljk1LTEuNDE0LTEuNDE0IDQuOTUtNC45NS00Ljk1LTQuOTVMNy4wNSA1LjYzNnoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMSkiLz48L3N2Zz4=);
+	background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: center;
+	border-radius: 50%;
 }

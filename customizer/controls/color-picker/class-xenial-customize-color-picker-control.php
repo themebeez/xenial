@@ -203,7 +203,7 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 			<# if ( data.isResponsive ) { #>
 				<ul class="desktop responsive-control-wrap xenial-color-field-wrapper active">
 					<# if ( data.colors.desktop.initial.display ) { #>
-						<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Initial', 'xenial' ); ?>"> 
+						<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Initial', 'xenial' ); ?>">
 							<input type="hidden" name="desktop-initial-color-{{ data.id }}" value="{{ settingValue.desktop.initial }}" data-default="{{ data.colors.desktop.initial.default }}">
 							<div id="desktop-initial-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.desktop.initial }}"></div>
 						</li>

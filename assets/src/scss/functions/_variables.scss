@@ -165,7 +165,10 @@
 
   --xe_menu_toggle_button_color: var(--xe_base_text_color);
 
-  // spacing
+  /* -------------------------------------------------------------------------- 
+	  Spacing
+  -------------------------------------------------------------------------- */
+
   --xe_block_standard_spacing: 60px;
   --xe_woo_product_item_spacing: 30px;
 
@@ -173,17 +176,12 @@
 	  Icon font
   -------------------------------------------------------------------------- */
   --xe_iconfont: "themify";
-
-  //mobile design specific
   --xe_mobile_device_woo_product_title_font_size: 14px;
 
   /* -------------------------------------------------------------------------- 
-	  Icon font
+	  Zindex
   -------------------------------------------------------------------------- */
   --xe_site_navigation_zindex: 10000000;
   --xe_submenu_dropdown_zindex: 10000001;
   --xe_search_form_modal_zindex: 10000002;
-
-  // containers
-
 }
