@@ -16,6 +16,7 @@ require $xenial_customize_defaults_path . 'theme-header/sections/general.php';
 require $xenial_customize_defaults_path . 'theme-header/sections/top.php';
 require $xenial_customize_defaults_path . 'theme-header/sections/middle.php';
 require $xenial_customize_defaults_path . 'theme-header/sections/bottom.php';
+require $xenial_customize_defaults_path . 'theme-header/sections/offcanvas.php';
 
 require $xenial_customize_defaults_path . 'theme-header/elements/site-identity-logo.php';
 require $xenial_customize_defaults_path . 'theme-header/elements/button.php';
@@ -24,6 +25,8 @@ require $xenial_customize_defaults_path . 'theme-header/elements/social-links.ph
 require $xenial_customize_defaults_path . 'theme-header/elements/menu-1.php';
 require $xenial_customize_defaults_path . 'theme-header/elements/menu-2.php';
 require $xenial_customize_defaults_path . 'theme-header/elements/search.php';
+require $xenial_customize_defaults_path . 'theme-header/elements/mobile-menu.php';
+require $xenial_customize_defaults_path . 'theme-header/elements/offcanvas-toggle-button.php';
 
 
 require $xenial_customize_defaults_path . 'theme-pages/defaults-archive.php';

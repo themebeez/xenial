@@ -204,6 +204,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'header_top'            => xenial_theme_header_top_section_defaults(),
             'header_middle'         => xenial_theme_header_middle_section_defaults(),
             'header_bottom'         => xenial_theme_header_bottom_section_defaults(),
+            'offcanvas'             => xenial_theme_header_offcanvas_defaults(),
             'site_title_logo'       => xenial_theme_header_site_identity_logo_defaults(),
             'header_button'         => xenial_get_header_button_customize_defaults(),
             'header_html'           => xenial_get_header_html_customize_defaults(),

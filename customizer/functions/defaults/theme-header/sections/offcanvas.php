@@ -7,78 +7,118 @@ if ( ! function_exists( 'xenial_theme_header_offcanvas_defaults' ) ) {
 		return apply_filters(
 			'xenial_theme_header_offcanvas_defaults_filter',
 			array(
-				'header_canvas_width' => 250,
-				'header_canvas_position' => 'left',
-				'header_canvas_enable_background_overlay' => true,
-				'close_header_canvas_on_click_on_background_overlay' => true,
+				'offcanvas_layout' => 'side_panel',
+				'offcanvas_side_panel_width' => 30,
+				'offcanvas_side_panel_position' => 'left',
+				'enable_offcanvas_background_overlay' => true,
 				
-				'mobile_offcanvas_menu_padding' => array(
-	                'desktop_top' => 0,
-	                'desktop_right' => 0,
-	                'desktop_bottom' => 0,
-	                'desktop_left' => 0,
-	                'tablet_top' => 0,
-	                'tablet_right' => 0,
-	                'tablet_bottom' => 0,
-	                'tablet_left' => 0,
-	                'mobile_top' => 0,
-	                'mobile_right' => 0,
-	                'mobile_bottom' => 0,
-	                'mobile_left' => 0,
-	            ),
-	            'mobile_offcanvas_menu_margin' => array(
-	                'desktop_top' => 0,
-	                'desktop_right' => 0,
-	                'desktop_bottom' => 0,
-	                'desktop_left' => 0,
-	                'tablet_top' => 0,
-	                'tablet_right' => 0,
-	                'tablet_bottom' => 0,
-	                'tablet_left' => 0,
-	                'mobile_top' => 0,
-	                'mobile_right' => 0,
-	                'mobile_bottom' => 0,
-	                'mobile_left' => 0,
-	            ),
-	            'mobile_offcanvas_menu_background' => '',
-	            'mobile_offcanvas_menu_border_width' => array(
+				'offcanvas_padding' => array(
 	                'top' => 0,
 	                'right' => 0,
 	                'bottom' => 0,
 	                'left' => 0
 	            ),
-	            'mobile_offcanvas_menu_border_radius' => 0,
-	            'mobile_offcanvas_menu_border_color' => '',
+	            'offcanvas_margin' => array(
+	                'top' => 0,
+	                'right' => 0,
+	                'bottom' => 0,
+	                'left' => 0
+	            ),
+
+	            'offcanvas_background_type' => 'color',
+	            'offcanvas_background_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
+	            'offcanvas_gradient_background_color_1' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
+	            'offcanvas_gradient_location_1' => 30,
+	            'offcanvas_gradient_background_color_2' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
+	            'offcanvas_gradient_location_2' => 100,
+	            'offcanvas_gradient_type' => 'linear',
+	            'offcanvas_gradient_linear_angle' => 45,
+	            'offcanvas_gradient_radial_position' => 'center_center',
+	            'offcanvas_background_image' => '',
+	            'offcanvas_image_background_repeat' => 'no-repeat',
+	            'offcanvas_image_background_size' => 'auto',
+	            'offcanvas_image_background_position' => 'center-center',
+	            'offcanvas_image_background_attachment' => 'scroll',
+
+	            'offcanvas_border_width' => array(
+	                'top' => 0,
+	                'right' => 0,
+	                'bottom' => 0,
+	                'left' => 0
+	            ),
+	            'offcanvas_border_radius' => 0,
+	            'offcanvas_border_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
 	            
 	            
 	            
-	            'mobile_menu_offcanvas_overlay_color' => '',
+	            'offcanvas_overlay_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
 
 
-	            'mobile_menu_close_button_font_size' => array(
-	                'desktop' => 16,
-	                'tablet' => 16,
-	                'mobile' => 16
+	            'offcanvas_close_button_font_size' => 16,
+	            'offcanvas_close_button_spacing' => 0,
+	            'offcanvas_close_button_label_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'hover' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
 	            ),
-	            'mobile_menu_close_button_spacing' => array(
-	                'desktop' => 0,
-	                'tablet' => 0,
-	                'mobile' => 0
+	            'offcanvas_close_button_background_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'hover' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
 	            ),
-	            'mobile_menu_close_button_label_color' => '',
-	            'mobile_menu_close_button_hover_label_color' => '',
-	            'mobile_menu_close_button_background_color' => '',
-	            'mobile_menu_close_button_hover_background_color' => '',
-	            'mobile_menu_close_button_border_radius' => 0,
-	            'mobile_menu_close_button_border_style' => 'solid',
-	            'mobile_menu_close_button_border_width' => array(
+	            'offcanvas_close_button_border_radius' => 0,
+	            'offcanvas_close_button_border_style' => 'solid',
+	            'offcanvas_close_button_border_width' => array(
 	                'top' => 0,
 	                'right' => 0,
 	                'bottom' => 0,
 	                'left' =>0
 	            ),
-	            'mobile_menu_close_button_border_color' => '',
-	            'mobile_menu_close_button_hover_border_color' => '',  
+	            'offcanvas_close_button_border_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'hover' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
 			)
 		);
 	}

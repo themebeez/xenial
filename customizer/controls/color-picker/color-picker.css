@@ -81,3 +81,29 @@
     background-position: center;
 	border-radius: 50%;
 }
+
+
+.customize-control-xenial-color-picker .xenial-responsive-color-wrapper .xenial-color-field-wrapper {
+
+	display: none;
+}
+
+
+.customize-control-xenial-color-picker .xenial-responsive-color-wrapper .xenial-color-field-wrapper.active,
+.customize-control-xenial-color-picker .xenial-normal-color-wrapper .xenial-color-field-wrapper {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    position: relative;
+}
+
+.customize-control-xenial-color-picker .xenial-color-field-wrapper > li {
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
