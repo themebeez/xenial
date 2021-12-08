@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- 
+	Xenial Header Builder
+  -------------------------------------------------------------------------- */
 
 #xenial-header-builder * {
 
@@ -14,41 +17,42 @@
 	width: 100%;
 	max-width: 100%;
 	max-height: 350px;
-	margin-bottom: 0;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 	-webkit-transition-duration: 0.3s;
-	     -o-transition-duration: 0.3s;
-	        transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
 }
 
 #xenial-header-builder.xenial-hide-header-builder {
 
-	margin-bottom: -350px;
+	bottom: -350px;
 	-webkit-transition-duration: 0.3s;
-	     -o-transition-duration: 0.3s;
-	        transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
 }
 
 .xenial-header-builder-button-wrapper {
 
 	display: -webkit-box;
-
 	display: -ms-flexbox;
-
 	display: flex;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	-webkit-box-pack: end;
-	    -ms-flex-pack: end;
-	        justify-content: flex-end;
-			display: none;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	display: none;
 }
 
-/* Buttons */
+/* -------------------------------------------------------------------------- 
+	Buttons
+  -------------------------------------------------------------------------- */
 
 #xenial-header-builder .xenial-header-element-button,
 #xenial-header-builder #xenial-header-builder-hide-button,
@@ -63,10 +67,10 @@
 	display: -ms-inline-flexbox !important;
 	display: inline-flex !important;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	gap: 7px;
 	font-size: 13px;
 	font-weight: normal;
@@ -80,15 +84,13 @@
 #xenial-header-builder #xenial-header-builder-hide-button .dashicons {
 
 	display: -webkit-inline-box;
-
 	display: -ms-inline-flexbox;
-
 	display: inline-flex;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	font-size: 12px;
 	width: auto;
 	height: auto;
@@ -98,12 +100,10 @@
 #xenial-header-builder .xenial-header-element-button svg {
 
 	display: -webkit-inline-box;
-
 	display: -ms-inline-flexbox;
-
 	display: inline-flex;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	width: 14px;
 	height: 14px;
 	fill: white;
@@ -112,15 +112,13 @@
 #xenial-header-builder .xenial-header-element-button a {
 
 	display: -webkit-inline-box;
-
 	display: -ms-inline-flexbox;
-
 	display: inline-flex;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	color: white;
 }
 
@@ -131,7 +129,9 @@
 	border-left: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Top bar: Responsive Toggle */
+/* -------------------------------------------------------------------------- 
+	Responsive Toggle
+  -------------------------------------------------------------------------- */
 
 .xenial-header-builder-device-tab-wrapper {
 
@@ -161,7 +161,9 @@
 	height: 16px;
 }
 
-/* Inner */
+/* -------------------------------------------------------------------------- 
+	Inner Section
+  -------------------------------------------------------------------------- */
 
 .xenial-header-elements,
 .xenial-header-builder-section {
@@ -188,19 +190,21 @@
 	border-top: 2px solid #e8e8e8;
 	margin-bottom: 0;
 	-webkit-transition-duration: 0.3s;
-	     -o-transition-duration: 0.3s;
-	        transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
 }
 
 .xenial-header-builder-inner.xenial-hide-header-builder-inner {
 
 	margin-bottom: -320px;
 	-webkit-transition-duration: 0.3s;
-	     -o-transition-duration: 0.3s;
-	        transition-duration: 0.3s;
+	-o-transition-duration: 0.3s;
+	transition-duration: 0.3s;
 }
 
-/* Available elements */
+/* -------------------------------------------------------------------------- 
+	Available Elements
+  -------------------------------------------------------------------------- */
 
 #xenial-header-elements-selector-wrapper {
 
@@ -210,22 +214,20 @@
 #xenial-header-elements-selector-wrapper #xenial-header-elements-container {
 
 	display: -webkit-box;
-
 	display: -ms-flexbox;
-
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	-webkit-box-pack: start;
-	    -ms-flex-pack: start;
-	        justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
 	gap: 10px;
 }
 
@@ -234,10 +236,12 @@
 	display: none;
 }
 
-/* Row */
+/* -------------------------------------------------------------------------- 
+	Header Row
+  -------------------------------------------------------------------------- */
 
-.selected-elements-wrapper .xenial-header-element-button .xenail-header-element-setting-link,
-.selected-elements-wrapper .xenial-header-element-button .xenial-header-element-remove {
+.selected-elements-wrapper .xenial-header-element-button .xenial-header-element-remove,
+.selected-elements-wrapper .xenial-header-element-button .xenail-header-element-setting-link {
 
 	display: none;
 }
@@ -276,13 +280,13 @@
 	justify-content: space-between;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .xenial-header-row-setting-link {
@@ -315,8 +319,8 @@
 	display: inline-block;
 	line-height: 1;
 	-webkit-transform: translateY(-50%);
-	    -ms-transform: translateY(-50%);
-	        transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 .xenial-header-row-setting-link .xenial-header-row-setting-icon svg {
@@ -329,15 +333,13 @@
 .xenial-header-builder-col {
 
 	display: -webkit-box;
-
 	display: -ms-flexbox;
-
 	display: flex;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	gap: 10px;
 	width: 32%;
 	padding: 10px;
@@ -352,19 +354,17 @@
 .xenial-header-builder-col .selected-elements-wrapper {
 
 	display: -webkit-box;
-
 	display: -ms-flexbox;
-
 	display: flex;
 	-webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
-	    -ms-flex-direction: row;
-	        flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
 	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
 	gap: 10px;
 	height: 31px;
 	width: 100%;
@@ -402,6 +402,10 @@
     justify-content: space-between;
     align-items: center;
 }
+
+/* -------------------------------------------------------------------------- 
+	Mobile & Tablet
+  -------------------------------------------------------------------------- */
 
 #xenial-mobile-header-builder-section .xenial-mobile-header-builder-section-inner {
 

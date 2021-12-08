@@ -1,0 +1,176 @@
+/* -------------------------------------------------------------------------- 
+	Mobile Header & Canvas
+  -------------------------------------------------------------------------- */
+
+#xe-mobile-header {
+
+    @include flex();
+    align-items: center;
+}
+
+/* -------------------------------------------------------------------------- 
+    Canavas Trigger Button
+  -------------------------------------------------------------------------- */
+
+#xe-mobile-canvas-trigger-button {
+
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    height: 25px;
+    width: 25px;
+}
+
+#xe-mobile-canvas-trigger-button .menu-bar {
+
+    width: 20px;
+    height: 2px;
+    background-color: var(--xe_menu_toggle_button_color);
+    @include transation_delay_dymanic(0.3s);
+}
+
+/* -------------------------------------------------------------------------- 
+    Mobile Canvas & Mask
+  -------------------------------------------------------------------------- */
+
+#xe-mobile-canvas,
+#xe-mobile-canvas-mask {
+
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: var(--xe_mobile_canvas_width);
+    height: 100%;
+    min-height: 100vh;
+    background-color: #FFF;
+    overflow: scroll;
+    z-index: var(--xe_mobile_canvas_zindex);
+    @include visibility_hidden();
+    @include transation_delay_dymanic(0.2s);
+}
+
+#xe-mobile-canvas {
+
+    margin: 0;
+    padding: 0;
+    animation: xeFadeOut 0.2s ease-in-out;
+    box-shadow: 5px 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+#xe-mobile-canvas[xe-canvas-position=left] {
+
+    right: auto;
+    left: -100vw;
+}
+
+#xe-mobile-canvas[xe-canvas-position=right] {
+
+    left: auto;
+    right: -100vw;
+}
+
+#xe-mobile-canvas .canvas-header {
+
+    position: relative;
+    padding: 20px;
+    @include flex();
+    align-items: center;
+}
+
+#xe-mobile-canvas[xe-canvas-position=left] .canvas-header {
+
+    justify-content: flex-end;
+}
+
+#xe-mobile-canvas[xe-canvas-position=right] .canvas-header {
+
+    justify-content: flex-start;
+}
+
+#xe-mobile-canvas .canvas-inner {
+
+    padding: 40px;
+}
+
+#xe-mobile-canvas-mask {
+    
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba( 255, 255, 255, 0.9 );
+    z-index: var(--xe_mobile_canvas_mask_zindex);
+    @include visibility_hidden();
+}
+
+/* -------------------------------------------------------------------------- 
+    Canavas is Visible
+  -------------------------------------------------------------------------- */
+
+.xe-visible-mobile-canvas {
+
+    overflow: hidden;
+}
+
+.xe-visible-mobile-canvas #xe-mobile-canvas {
+
+    animation: xeFadeIn 0.2s ease-in;
+    @include visibility_visible();
+}
+
+.xe-visible-mobile-canvas #xe-mobile-canvas[xe-canvas-position="left"] {
+
+    right: auto;
+    left: 0;
+}
+
+.xe-visible-mobile-canvas #xe-mobile-canvas[xe-canvas-position="right"] {
+
+    left: auto;
+    right: 0;
+}
+
+.xe-visible-mobile-canvas #xe-mobile-canvas-mask {
+
+    display: block;
+    cursor: pointer;
+    @include visibility_visible();
+}
+
+/* -------------------------------------------------------------------------- 
+    Canavas Close Button
+  -------------------------------------------------------------------------- */
+
+#xe-mobile-canvas-close-button {
+
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    font-size: 10px;
+    font-weight: 700;
+    gap: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#xe-mobile-canvas-close-button svg {
+
+    fill: var(--xe_base_text_color);
+    width: 12px;
+    height: 12px;
+}
+
+#xe-mobile-canvas-close-button:hover svg {
+
+    fill: var(--xe_seconary_color);
+}

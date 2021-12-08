@@ -88,7 +88,7 @@
 								</div><!-- // col -->
 								<div class="xe-column xe-flex-alt xe-flex-center xe-justify-end xe-flex-grow-1">
 									<div class="xe-header-element is-menu is-primary">
-										<button id="xe-menu-toggle-button" class="xe-button xe-false-button" mobile-menu="active">
+										<button id="xe-mobile-canvas-trigger-button" class="xe-button xe-false-button">
 											<span class="menu-bar"></span>
 											<span class="menu-bar"></span>
 											<span class="menu-bar"></span>
@@ -162,9 +162,20 @@
 				</div><!-- // xe-bottom-header -->
 			</header><!-- // # mastheader -->
 
-			<aside id="mobile-canvas" class="mobile-header">
-
+			<aside id="xe-mobile-canvas" xe-canvas-position="left">
+				<div class="canvas-header">
+					<button class="xe-button xe-false-button" id="xe-mobile-canvas-close-button">
+						<span class="label">Close</span>
+							<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"y="0px" viewBox="0 0 64 64" xml:space="preserve">
+								<path d="M34.5,32L62.2,4.2c0.7-0.7,0.7-1.8,0-2.5c-0.7-0.7-1.8-0.7-2.5,0L32,29.5L4.2,1.8c-0.7-0.7-1.8-0.7-2.5,0c-0.7,0.7-0.7,1.8,0,2.5L29.5,32L1.8,59.8c-0.7,0.7-0.7,1.8,0,2.5c0.3,0.3,0.8,0.5,1.2,0.5s0.9-0.2,1.2-0.5L32,34.5l27.7,27.8c0.3,0.3,0.8,0.5,1.2,0.5c0.4,0,0.9-0.2,1.2-0.5c0.7-0.7,0.7-1.8,0-2.5L34.5,32z"/>
+							</svg>
+					</button>
+				</div><!-- // canvas-header -->
+				<div class="canvas-inner">
+					<!-- // @content here -->
+				</div><!-- // canvas-inner -->
 			</aside><!-- // #mobile-canvas -->
+			<aside id="xe-mobile-canvas-mask"></aside>
 
 			<aside id="xe-search-form">
 				<div class="xe-search-entry">
@@ -202,5 +213,34 @@
 					}
 				}
 
+				let mobileCanavsTriggerButton = document.getElementById('xe-mobile-canvas-trigger-button');
+				let mobileCanvasCloseButton = document.getElementById('xe-mobile-canvas-close-button');
+				let mobileCanavs = document.getElementById('xe-mobile-canvas');
+				let mobileCanavsMask = document.getElementById('xe-mobile-canvas-mask');
+
+				function mobileCanvas() {
+
+					if( mobileCanavsTriggerButton !== null && mobileCanavs !== null) {
+
+						mobileCanavsTriggerButton.addEventListener('click', function() {
+
+							body.classList.add('xe-visible-mobile-canvas');
+						});
+						mobileCanavsMask.addEventListener('click', function() {
+
+							body.classList.remove('xe-visible-mobile-canvas');
+						});
+					}
+
+					if( mobileCanvasCloseButton !== null ) {
+
+						mobileCanvasCloseButton.addEventListener('click', function() {
+
+							body.classList.remove('xe-visible-mobile-canvas');
+						});
+					}
+				}
+
 				showSearchBox();
+				mobileCanvas();
 			</script>

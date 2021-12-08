@@ -164,6 +164,7 @@
   --xe_navigation_dropdown_item_hover_color: var(--xe_seconary_color);
 
   --xe_menu_toggle_button_color: var(--xe_base_text_color);
+  --xe_mobile_canvas_width: 350px;
 
   /* -------------------------------------------------------------------------- 
 	  Spacing
@@ -184,4 +185,6 @@
   --xe_site_navigation_zindex: 10000000;
   --xe_submenu_dropdown_zindex: 10000001;
   --xe_search_form_modal_zindex: 10000002;
+  --xe_mobile_canvas_zindex: 1000001;
+  --xe_mobile_canvas_mask_zindex: 1000000;
 }
