@@ -63,12 +63,14 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 			?>
 			<div id="xenial-header-builder" class="xenial-hide-header-builder">
 				<div class="xenial-header-builder-device-tab-wrapper">
-					<button id="xenial-header-builder-desktop-tab-button" class="button button-primary xenial-header-builder-button preview-desktop active" data-device="desktop">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 5v11h16V5H4zm-2-.993C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007V18H2V4.007zM1 19h22v2H1v-2z" fill="rgba(255,255,255,1)"/></svg><span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Desktop', 'xenial' ); ?></span>
-					</button>
-					<button id="xenial-header-builder-mobile-tab-button" class="button button-primary xenial-header-builder-button preview-mobile" data-device="mobile">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7 4v16h10V4H7zM6 2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm6 15a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="rgba(255,255,255,1)"/></svg><span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Table/Mobile', 'xenial' ); ?></span>
-					</button>
+					<div id="xenial-header-builder-responsive-switcher" class="responsive-switchers">
+						<button id="xenial-header-builder-desktop-tab-button" class="button button-primary xenial-header-builder-button preview-desktop active" data-device="desktop">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 5v11h16V5H4zm-2-.993C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007V18H2V4.007zM1 19h22v2H1v-2z" fill="rgba(255,255,255,1)"/></svg><span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Desktop', 'xenial' ); ?></span>
+						</button>
+						<button id="xenial-header-builder-mobile-tab-button" class="button button-primary xenial-header-builder-button preview-mobile" data-device="mobile">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7 4v16h10V4H7zM6 2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm6 15a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" fill="rgba(255,255,255,1)"/></svg><span class="xeninal-header-builder-button-label"><?php echo esc_html__( 'Table/Mobile', 'xenial' ); ?></span>
+						</button>
+					</div>
 					<button id="xenial-header-builder-hide-button" class="button button-primary xenial-header-builder-button"><span class="dashicons dashicons-arrow-down-alt2"></span></button>
 				</div>
 				<div id="xenial-header-builder-inner" class="xenial-header-builder-inner">
@@ -486,6 +488,8 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 
 						var headerBuilderToggleBtn = jQuery('#xenial-header-builder-hide-button');
 						headerBuilderToggleBtn.on('click', function() {
+							var responsiveSwitcherEle = jQuery('#xenial-header-builder-responsive-switcher');
+							responsiveSwitcherEle.toggleClass('hide-responsive-switchers');
 							var headerBuilderInnerEle = jQuery('.xenial-header-builder-inner');
 							headerBuilderInnerEle.toggleClass('xenial-hide-header-builder-inner');
 							var headerBuilderToggleBtnIcon = jQuery(this).find('span');

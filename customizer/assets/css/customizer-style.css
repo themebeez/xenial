@@ -649,22 +649,7 @@ body.rtl .customize-control .responsive-switchers li {
 	Color Picker
   -------------------------------------------------------------------------- */
 
-.customize-control-xenial-color-picker .xenial-color-field-wrapper {
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-}
-
-.customize-control-xenial-color-picker .xenial-color-field-wrapper > li {
-
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
 
 /* -------------------------------------------------------------------------- 
 	Tooltips

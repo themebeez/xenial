@@ -16,7 +16,7 @@
 		function responsiveSwitcher() {
 
 			// Responsive switchers
-			jQuery('body').on('click', '.customize-control .responsive-switchers button', function (event) {
+			jQuery('body').on('click', '.responsive-switchers button', function (event) {
 
 				// Set up variables				var ,
 				var $device = jQuery(this).data('device'),

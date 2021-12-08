@@ -106,6 +106,16 @@ xenial_color_picker_field(
 		'priority' => 10,
 		'section' => 'xenial_layout',
 		'label' => esc_html__( 'Color Picker Test', 'xenial' ),
-		'is_responsive' => false
+		'is_responsive' => false,
+		'colors' => array(
+			'initial' => array(
+				'display' => true,
+				'default' => ''
+			),
+			'hover' => array(
+				'display' => true,
+				'default' => ''
+			)
+		)
 	)
 );

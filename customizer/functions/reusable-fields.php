@@ -883,63 +883,8 @@ if ( ! function_exists( 'xenial_color_picker_field' ) ) {
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
 					'input_attrs' => array(
-						'is_responsive' => true,
-						'colors' => array(
-							'desktop' => array(
-								'initial' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'link' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'hover' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'active' => array(
-									'display' => true,
-									'default' => ''
-								)
-							),
-							'tablet' => array(
-								'initial' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'link' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'hover' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'active' => array(
-									'display' => true,
-									'default' => ''
-								)
-							),
-							'mobile' => array(
-								'initial' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'link' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'hover' => array(
-									'display' => true,
-									'default' => ''
-								),
-								'active' => array(
-									'display' => true,
-									'default' => ''
-								)
-							)
-						)
+						'is_responsive' => ( isset( $args['is_responsive'] ) && $args['is_reponsive'] ) ? true : false,
+						'colors' => ( isset( $args['colors'] ) ) ? $args['colors'] : array()
 					)
 				)
 			)

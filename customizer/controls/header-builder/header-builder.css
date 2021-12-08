@@ -77,6 +77,11 @@
 	vertical-align: middle;
 }
 
+.xenial-header-builder-device-tab-wrapper .responsive-switchers.hide-responsive-switchers {
+
+	display: none;
+}
+
 #xenial-header-builder #xenial-header-builder-hide-button .dashicons {
 
 	display: -webkit-inline-box;
@@ -375,7 +380,8 @@
 	background-color: #e8e8e8;
 }
 
-.xenial-header-builder-col .xenial-header-element-button .xenial-header-element-icon {
+.xenial-header-builder-col .xenial-header-element-button .xenial-header-element-icon,
+#xenial-mobile-off-canvas .xenial-header-element-button .xenial-header-element-icon {
 
 	display: none;
 }
