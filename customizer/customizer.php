@@ -245,6 +245,8 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/elements/search.php';
 	require $customizer_fields_path . 'header/elements/secondary-menu.php';
 	require $customizer_fields_path . 'header/elements/social-links.php';
+	require $customizer_fields_path . 'header/elements/offcanvas-toggle-button.php';
+	require $customizer_fields_path . 'header/elements/offcanvas-menu.php';
 	// require $customizer_fields_path . 'header/elements/text.php';
 
 	require $customizer_fields_path . 'pages/inner-header.php';

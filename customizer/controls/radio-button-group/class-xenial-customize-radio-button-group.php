@@ -205,6 +205,15 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 									<span class="dashicons {{ choice.icon }}">{{{ choice.text }}}</span>
 								<# } #>
 
+								<# if ( data.item == 'svg' ) { #>
+									<span class="svg-icon">{{{ choice }}}</span>
+								<# } #>
+
+								<# if ( data.item == 'svg-text' ) { #>
+									<span class="svg-icon">{{{ choice.svg }}}</span>
+									<span class="svg-text">{{{ choice.text }}}</span>
+								<# } #>
+
 								<# if ( data.item == 'text' ) { #>
 									<span>{{{ choice }}}</span>
 								<# } #>
@@ -233,6 +242,15 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 
 								<# if ( data.item == 'icon-text' ) { #>
 									<span class="dashicons {{ choice.icon }}">{{{ choice.text }}}</span>
+								<# } #>
+
+								<# if ( data.item == 'svg' ) { #>
+									<span class="svg-icon">{{{ choice }}}</span>
+								<# } #>
+
+								<# if ( data.item == 'svg-text' ) { #>
+									<span class="svg-icon">{{{ choice.svg }}}</span>
+									<span class="svg-text">{{{ choice.text }}}</span>
 								<# } #>
 
 								<# if ( data.item == 'text' ) { #>
@@ -265,6 +283,15 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 									<span class="dashicons {{ choice.icon }}">{{{ choice.text }}}</span>
 								<# } #>
 
+								<# if ( data.item == 'svg' ) { #>
+									<span class="svg-icon">{{{ choice }}}</span>
+								<# } #>
+
+								<# if ( data.item == 'svg-text' ) { #>
+									<span class="svg-icon">{{{ choice.svg }}}</span>
+									<span class="svg-text">{{{ choice.text }}}</span>
+								<# } #>
+
 								<# if ( data.item == 'text' ) { #>
 									<span>{{{ choice }}}</span>
 								<# } #>
@@ -292,6 +319,15 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 
 							<# if ( data.item == 'icon-text' ) { #>
 								<span class="dashicons {{ choice.icon }}">{{{ choice.text }}}</span>
+							<# } #>
+
+							<# if ( data.item == 'svg' ) { #>
+								<span class="svg-icon">{{{ choice }}}</span>
+							<# } #>
+
+							<# if ( data.item == 'svg-text' ) { #>
+								<span class="svg-icon">{{{ choice.svg }}}</span>
+								<span class="svg-text">{{{ choice.text }}}</span>
 							<# } #>
 
 							<# if ( data.item == 'text' ) { #>

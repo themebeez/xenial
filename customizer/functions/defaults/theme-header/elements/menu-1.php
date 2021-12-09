@@ -79,39 +79,7 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_customize_defaults' ) ) 
 	            'primary_menu_dropdown_items_font_style' => 'normal',
 	            'primary_menu_dropdown_items_text_transform' => 'inherit',
 
-	            'primary_menu_alignment' => 'left',
-
-	            'offcanvas_menu_toggle_button_breakpoint' => 768,
-	            'offcanvas_menu_toggle_button_label' => '',
-	            'offcanvas_menu_position' => 'left',
-	            'enable_offcanvas_menu_overlay' => true,
-	            'close_offcanvas_menu_on_click_on_overlay' => true,
-	            
-
-	            'mobile_menu_toggle_button_font_size' => array(
-	                'desktop' => 16,
-	                'tablet' => 16,
-	                'mobile' => 16
-	            ),
-	            'mobile_menu_toggle_button_spacing' => array(
-	                'desktop' => 0,
-	                'tablet' => 0,
-	                'mobile' => 0
-	            ),
-	            'mobile_menu_toggle_button_label_color' => '',
-	            'mobile_menu_toggle_button_hover_label_color' => '',
-	            'mobile_menu_toggle_button_background_color' => '',
-	            'mobile_menu_toggle_button_hover_background_color' => '',
-	            'mobile_menu_toggle_button_border_radius' => 0,
-	            'mobile_menu_toggle_button_border_style' => 'solid',
-	            'mobile_menu_toggle_button_border_width' => array(
-	                'top' => 0,
-	                'right' => 0,
-	                'bottom' => 0,
-	                'left' => 0
-	            ),
-	            'mobile_menu_toggle_button_border_color' => '',
-	            'mobile_menu_toggle_button_hover_border_color' => '',
+	            'primary_menu_alignment' => 'left'	            
 			)
 		);
 	}
