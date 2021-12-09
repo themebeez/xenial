@@ -49,9 +49,9 @@
     top: 0;
     bottom: 0;
     width: var(--xe_mobile_canvas_width);
+    min-width: 300px;
     height: 100%;
     min-height: 100vh;
-    background-color: #FFF;
     overflow: scroll;
     z-index: var(--xe_mobile_canvas_zindex);
     @include visibility_hidden();
@@ -62,6 +62,7 @@
 
     margin: 0;
     padding: 0;
+    background: #FFFFFF;
     animation: xeFadeOut 0.2s ease-in-out;
     box-shadow: 5px 0 30px 0 rgba(0, 0, 0, 0.1);
 }
