@@ -75,10 +75,10 @@
 							<div class="xe-flex xe-flex-center xe-justify-space-between">
 								<div class="xe-column xe-flex-alt xe-justify-start">
 									<div class="xe-header-element is-site-title-logo">
-										<div class="xe-site-branding" xe-logo-position="bottom">
-											<a class="custom-logo-block" href="index.html">
+										<div class="xe-site-branding" xe-logo-position="none">
+											<!--<a class="custom-logo-block" href="index.html">
 												<img class="custom-logo" src="http://xenial.local/wp-content/uploads/2021/12/cc-logo-dark.png" alt="custom-logo">
-											</a>
+											</a>-->
 											<div class="site-title-block">
 												<span class="site-title"><a href="#">Xenial</a></span>
 												<p class="site-description">Local Xenial dev instance.</p>
@@ -88,11 +88,6 @@
 								</div><!-- // col -->
 								<div class="xe-column xe-flex-alt xe-flex-center xe-justify-end xe-flex-grow-1">
 									<div class="xe-header-element is-menu is-primary">
-										<button id="xe-mobile-canvas-trigger-button" class="xe-button xe-false-button">
-											<span class="menu-bar"></span>
-											<span class="menu-bar"></span>
-											<span class="menu-bar"></span>
-										</button>
 										<nav class="xe-site-navigation" xe-dropdown-animation="FadeInDown">
 											<!-- // Available options: None, FadeIn, FadeInUp & FadeInDown -->											
 											<ul class="menu">
@@ -146,7 +141,14 @@
 										<div class="xe-header-element is-button">
 											<a class="xe-button xe-header-element-button" href="#">Account</a>
 										</div><!-- // xe-header-element -->
-									</div><!-- // xe-header-element -->
+										<div class="xe-header-element is-canvas-button">
+											<button id="xe-mobile-canvas-trigger-button" class="xe-button xe-false-button">
+												<span class="menu-bar"></span>
+												<span class="menu-bar"></span>
+												<span class="menu-bar"></span>
+											</button>
+										</div><!-- // xe-header-element -->
+									</div><!-- // xe-header-elements -->
 								</div><!-- // col -->
 							</div><!-- // xe-flex -->
 						</div><!-- // xe-header-inner -->
