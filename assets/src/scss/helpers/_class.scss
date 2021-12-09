@@ -8,6 +8,48 @@
     @include visibility_hidden();
 }
 
+.hidden-desktop-device {
+
+    display: none;
+    @include visibility_hidden();
+}
+
+.visible-desktop-device {
+
+    display: block;
+    @include visibility_visible();
+}
+
+@media ( max-width: 768px ) {
+
+    .hidden-tablet-device {
+
+        display: none;
+        @include visibility_hidden();
+    }
+
+    .visible-tablet-device {
+
+        display: block;
+        @include visibility_visible();
+    }
+}
+
+@media ( max-width: 575px ) {
+
+    .hidden-mobile-device {
+
+        display: none;
+        @include visibility_hidden();
+    }
+
+    .visible-mobile-device {
+
+        display: block;
+        @include visibility_visible();
+    }
+}
+
 /* -------------------------------------------------------------------------- 
 	Helper: Carousel
   -------------------------------------------------------------------------- */

@@ -17,6 +17,42 @@
     text-align: right;
 }
 
+@media ( max-width: 768px ) {
+
+    .text-align-left-tablet-device {
+
+        text-align: left;
+    }
+
+    .text-align-right-tablet-device {
+
+        text-align: right;
+    }
+
+    .text-align-center-tablet-device {
+
+        text-align: center;
+    }
+}
+
+@media ( max-width: 575px ) {
+
+    .text-align-left-mobile-device {
+
+        text-align: left;
+    }
+
+    .text-align-right-mobile-device {
+
+        text-align: right;
+    }
+
+    .text-align-center-mobile-device {
+
+        text-align: center;
+    }
+}
+
 /* -------------------------------------------------------------------------- 
 	Float Alignments
   -------------------------------------------------------------------------- */
