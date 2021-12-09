@@ -340,14 +340,26 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
 	align-items: center;
 	gap: 10px;
 	width: 32%;
 	padding: 10px;
+}
+
+.xenial-header-builder-col[class*="-col-1"] .selected-elements-wrapper {
+
+	justify-content: flex-start;
+}
+
+.xenial-header-builder-col[class*="-col-2"] .selected-elements-wrapper {
+
+	justify-content: center;
+}
+
+.xenial-header-builder-col[class*="-col-3"] .selected-elements-wrapper {
+
+	justify-content: flex-end;
 }
 
 .xenial-header-builder-col:nth-child(3) {
