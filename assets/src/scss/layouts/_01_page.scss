@@ -40,8 +40,8 @@
 
 // default primary & secndary 
 
-#content #primary,
-#content #secondary {
+#primary,
+#secondary {
 
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -50,108 +50,96 @@
 
 // case: defaut width
 
-#content #primary {
+#primary {
 
 	width: var(--xe_default_primary_area_width); // i.e 100%
 }
 
-#content #secondary {
+#secondary {
 
 	width: var(--xe_default_sidebar_width); // i.e 35%
 }
 
-body:not(.xe-has-no-sidebar) #xe-page #primary  {
+body:not(.xe-has-no-sidebar) #primary  {
 
 	width: calc(100% - var(--xe_default_sidebar_width));
 }
 
-.xe-has-no-sidebar #xe-page #primary {
+.xe-has-no-sidebar #primary {
 
 	width: 100%;
 	margin-left: auto; // case: no sidebar
 	margin-right: auto; // case: no sidebar
 }
 
-.xe-has-no-sidebar #xe-page #secondary {
+.xe-has-no-sidebar #secondary {
 
 	display: none;
 }
 
 // case: sidebar position
 
-#content #primary {
+#primary {
 
 	order: 1;
 }
 
-#content #secondary {
+#secondary {
 
 	order: 2;
 }
 
 // Options (Sidebar Position: Default, Left, Right) & Mobile device sidebar position (Top & Bottom )
 
-.xe-sidebar-position-left #content #secondary {
+.xe-sidebar-position-left #secondary {
 
 	order: 1;
 }
 
-.xe-sidebar-position-left #content #primary {
+.xe-sidebar-position-left #primary {
 
 	order: 2;
 }
 
-.xe-sidebar-position-right #content #primary {
+.xe-sidebar-position-right #primary {
 
 	order: 1;
 }
 
-.xe-sidebar-position-right #content #secondary {
+.xe-sidebar-position-right #secondary {
 
 	order: 2;
 }
 
-body.xe-has-no-sidebar #xe-page #primary {
+body.xe-has-no-sidebar #primary {
 
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.xe-sidebar-position-left:not(.xe-has-no-sidebar) #content #primary {
+.xe-sidebar-position-left:not(.xe-has-no-sidebar) #primary {
 
 	padding-right: 0;
 	padding-left: 50px;
 }
 
-.xe-sidebar-position-right:not(.xe-has-no-sidebar) #content #primary {
+.xe-sidebar-position-right:not(.xe-has-no-sidebar) #primary {
 
 	padding-left: 0;
 	padding-right: 50px;
 }
 
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #content #primary,
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #content #secondary {
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #primary,
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #secondary {
 
 	order: 2;
 }
 
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #content #secondary,
-[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #content #primary {
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-top #secondary,
+[class*="xe-sidebar-position-"].xe-mobile-device-sidebar-bottom #primary {
 
 	order: 1;
 }
-
-
-// case: page layout ( default container, stretch container, boxed )
-
-.xe-layout-container-stretch .xe-container {
-
-	width: 100%;
-	max-width: 100%;
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
 
 /* -------------------------------------------------------------------------- 
 	Case: Boxed Layout
@@ -169,8 +157,8 @@ body.xe-has-no-sidebar #xe-page #primary {
 
 @media ( max-width: 575px ) {
 
-    #content #primary, 
-	#content #secondary {
+    #primary, 
+	#secondary {
 
 		margin-top: 40px;
 		margin-bottom: 40px;
