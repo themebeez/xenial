@@ -26,15 +26,18 @@ xenial_tab_field(
 	        		'offcanvas_side_panel_width' => '',
 	        		'offcanvas_side_panel_position' => '',
 	        		'offcanvas_field_divider_2' => '',
+	        		'offcanvas_close_button_icon' => '',
+	        		'offcanvas_close_button_label' => '',
+	        		'offcanvas_field_divider_3' => ''
 	        	) 
 	        ),
 	        'tab_2' => apply_filters( 
 	        	'xenial_header_off_canvas_tab_2_controls', 
 	        	array(	
 	        		'offcanvas_margin' => '',
-	        		'offcanvas_field_divider_3' => '',
-	        		'offcanvas_padding' => '',
 	        		'offcanvas_field_divider_4' => '',
+	        		'offcanvas_padding' => '',
+	        		'offcanvas_field_divider_5' => '',
 
 	        		'offcanvas_background_fields_title' => '',
 	        		'offcanvas_background_type' => '',
@@ -51,22 +54,22 @@ xenial_tab_field(
 	        		'offcanvas_image_background_size' => '',
 	        		'offcanvas_image_background_position' => '',
 	        		'offcanvas_image_background_attachment' => '',
-	        		'offcanvas_field_divider_5' => '',
+	        		'offcanvas_field_divider_6' => '',
 
 	        		'offcanvas_side_panel_border_fields_title' => '',
 	        		'offcanvas_border_width' => '',
 	        		'offcanvas_border_radius' => '',
 	        		'offcanvas_border_color' => '',
-	        		'offcanvas_field_divider_6' => '',
+	        		'offcanvas_field_divider_7' => '',
 
 	        		'offcanvas_side_panel_overlay_fields_title' => '',
 	        		'enable_offcanvas_background_overlay' => '',
 	        		'offcanvas_overlay_color' => '',
-	        		'offcanvas_field_divider_7' => '',
+	        		'offcanvas_field_divider_8' => '',
 
 	        		'offcanvas_close_button_fields_title' => '',
 	        		'offcanvas_close_button_font_size' => '',
-	        		'offcanvas_close_button_spacing' => '',
+	        		'offcanvas_close_button_pading' => '',
 	        		'offcanvas_close_button_label_color' => '',
 	        		'offcanvas_close_button_background_color' => '',
 	        		'offcanvas_close_button_border_style' => '',
@@ -158,20 +161,63 @@ xenial_divider_field(
 );
 
 
+xenial_radio_button_group_field(
+	'offcanvas_close_button_icon',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_off_canvas',
+		'label' => esc_html__( 'Close Button Icon', 'xenial' ),
+		'item' => 'svg',
+		'columns' => 3,
+		'choices' => array(
+			'button_1' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></svg>',
+			'button_2' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm0-9.414l2.828-2.829 1.415 1.415L13.414 12l2.829 2.828-1.415 1.415L12 13.414l-2.828 2.829-1.415-1.415L10.586 12 7.757 9.172l1.415-1.415L12 10.586z"/></svg>',
+			'button_3' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-11.414L9.172 7.757 7.757 9.172 10.586 12l-2.829 2.828 1.415 1.415L12 13.414l2.828 2.829 1.415-1.415L13.414 12l2.829-2.828-1.415-1.415L12 10.586z"/></svg>'
+		),
+		'default' => xenial_get_customize_default( 'offcanvas_close_button_icon')
+	),
+	false
+);
+
+
+xenial_text_field(
+	'offcanvas_close_button_label',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_off_canvas',
+		'label' => esc_html__( 'Close Button Label', 'xenial' ),
+		'default' => xenial_get_customize_default( 'offcanvas_close_button_label' )
+	)
+);
+
+xenial_divider_field( 
+	'offcanvas_field_divider_3', 
+	array(
+		'priority' => 10,
+		'section' => 'xenial_off_canvas', 
+	)
+);
+
+
 xenial_box_dimension_field(
 	'offcanvas_margin',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Margin (%)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 100, 
+			'step' => 1, 
+			'responsive' => false
+		),
 		'default' => xenial_get_customize_default( 'offcanvas_margin')
 	),
 	false
 );
 
 xenial_divider_field( 
-	'offcanvas_field_divider_3', 
+	'offcanvas_field_divider_4', 
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas', 
@@ -185,14 +231,19 @@ xenial_box_dimension_field(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Padding (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 100, 
+			'step' => 1, 
+			'responsive' => false
+		),
 		'default' => xenial_get_customize_default( 'offcanvas_padding')
 	),
 	false
 );
 
 xenial_divider_field( 
-	'offcanvas_field_divider_4', 
+	'offcanvas_field_divider_5', 
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas', 
@@ -215,7 +266,12 @@ xenial_box_dimension_field(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 100, 
+			'step' => 1, 
+			'responsive' => false
+		),
 		'defaults' => xenial_get_customize_default( 'offcanvas_border_width')
 	)
 );
@@ -226,7 +282,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 1000, 
+			'step' => 1, 
+			'responsive' => false
+		),
 		'default' => xenial_get_customize_default( 'offcanvas_border_radius')
 	)
 );
@@ -243,7 +304,7 @@ xenial_color_picker_field(
 );
 
 xenial_divider_field( 
-	'offcanvas_field_divider_5', 
+	'offcanvas_field_divider_6', 
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas', 
@@ -281,7 +342,7 @@ xenial_color_picker_field(
 );
 
 xenial_divider_field( 
-	'offcanvas_field_divider_6', 
+	'offcanvas_field_divider_7', 
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas', 
@@ -468,7 +529,7 @@ xenial_select_field(
 
 
 xenial_divider_field( 
-	'offcanvas_field_divider_7', 
+	'offcanvas_field_divider_8', 
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas', 
@@ -490,22 +551,33 @@ xenial_range_control_field(
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
-		'label' => esc_html__( 'Icon Size (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false),
+		'label' => esc_html__( 'Icon / Label Font Size (px)', 'xenial' ),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 100, 
+			'step' => 1, 
+			'responsive' => false
+		),
 		'default' => xenial_get_customize_default( 'offcanvas_close_button_font_size')
 	)
 );
 
 
-xenial_range_control_field(
-	'offcanvas_close_button_spacing',
+xenial_box_dimension_field(
+	'offcanvas_close_button_padding',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
-		'label' => esc_html__( 'Spacing (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false),
-		'default' => xenial_get_customize_default( 'offcanvas_close_button_spacing')
-	)
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 100, 
+			'step' => 1, 
+			'responsive' => false
+		),
+		'default' => xenial_get_customize_default( 'offcanvas_close_button_padding')
+	),
+	false
 );
 
 
@@ -527,7 +599,12 @@ xenial_box_dimension_field(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1, 'responsive' => false),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 100, 
+			'step' => 1, 
+			'responsive' => false
+		),
 		'defaults' => xenial_get_customize_default( 'offcanvas_close_button_border_width')
 	)
 );
@@ -540,7 +617,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 1000, 
+			'step' => 1, 
+			'responsive' => false
+		),
 		'default' => xenial_get_customize_default( 'offcanvas_close_button_border_radius')
 	)
 );

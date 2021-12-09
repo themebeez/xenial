@@ -25,7 +25,7 @@ require $xenial_customize_defaults_path . 'theme-header/elements/social-links.ph
 require $xenial_customize_defaults_path . 'theme-header/elements/menu-1.php';
 require $xenial_customize_defaults_path . 'theme-header/elements/menu-2.php';
 require $xenial_customize_defaults_path . 'theme-header/elements/search.php';
-require $xenial_customize_defaults_path . 'theme-header/elements/mobile-menu.php';
+require $xenial_customize_defaults_path . 'theme-header/elements/offcanvas-menu.php';
 require $xenial_customize_defaults_path . 'theme-header/elements/offcanvas-toggle-button.php';
 
 
