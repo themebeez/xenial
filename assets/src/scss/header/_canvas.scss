@@ -14,14 +14,19 @@
 
 #xe-mobile-canvas-trigger-button {
 
-    display: inline-flex;
+    @include flex();
     flex-direction: column;
-    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
     position: relative;
-    height: 25px;
-    width: 25px;
+    height: 35px;
+    width: 35px;
+    border-width: 0;
+    border-color: transparent;
+    border-style: solid;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 #xe-mobile-canvas-trigger-button .menu-bar {
@@ -73,6 +78,11 @@
     right: -100vw;
 }
 
+#xe-mobile-canvas[xe-canvas-position=full] {
+
+    width: 100%;
+}
+
 #xe-mobile-canvas .canvas-header {
 
     position: relative;
@@ -81,7 +91,8 @@
     align-items: center;
 }
 
-#xe-mobile-canvas[xe-canvas-position=left] .canvas-header {
+#xe-mobile-canvas[xe-canvas-position=left] .canvas-header,
+#xe-mobile-canvas[xe-canvas-position=full] .canvas-header {
 
     justify-content: flex-end;
 }
@@ -90,6 +101,7 @@
 
     justify-content: flex-start;
 }
+
 
 #xe-mobile-canvas .canvas-inner {
 
