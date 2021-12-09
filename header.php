@@ -76,9 +76,9 @@
 								<div class="xe-column xe-flex-alt xe-justify-start">
 									<div class="xe-header-element is-site-title-logo">
 										<div class="xe-site-branding" xe-logo-position="bottom">
-											<a class="custom-logo-block" href="index.html">
+											<!--<a class="custom-logo-block" href="index.html">
 												<img class="custom-logo" src="http://xenial.local/wp-content/uploads/2021/12/cc-logo-dark.png" alt="custom-logo">
-											</a>
+											</a>-->
 											<div class="site-title-block">
 												<span class="site-title"><a href="#">Xenial</a></span>
 												<p class="site-description">Local Xenial dev instance.</p>
