@@ -36,6 +36,8 @@ if ( ! function_exists( 'xenial_enqueue_styles' ) ) {
 
 		wp_enqueue_style( 'xenial-paid-membership-pro', $assets_url . 'css/compatibility/pmpro/pmpro.css', NULL, XENIAL_THEME_VERSION, 'all' );
 
+		wp_enqueue_style( 'xenial-bbpress', $assets_url . 'css/compatibility/bbpress/bbpress.css', NULL, XENIAL_THEME_VERSION, 'all' );
+
 		wp_enqueue_style( 'xenial-dokan', $assets_url . 'css/compatibility/dokan/dokan.css', NULL, XENIAL_THEME_VERSION, 'all' );
 
 		$dynamic_css = xenial_dynamic_css();

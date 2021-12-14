@@ -44,7 +44,7 @@ legend::before {
 
 label {
 
-    display: inline-flex;
+    display: inline-block;
     font-size: calc(var(--xe_base_font_size) - 1px);
     letter-spacing: var(--xe_base_letter_spacing);
     font-weight: normal;

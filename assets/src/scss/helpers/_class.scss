@@ -336,3 +336,13 @@
     display: inline-flex;
     flex-wrap: wrap;
 }
+
+/* -------------------------------------------------------------------------- 
+	Contact Form 7
+  -------------------------------------------------------------------------- */
+
+.wpcf7 label:not(.wpcf7-form-control-wrap) {
+
+    display: block;
+    margin: 0 0 5px 0;
+}
