@@ -26,7 +26,7 @@ xenial_tab_field(
 	        		'transparent_mobile_logo' => '',
 	        		'site_identity_logo_divider_2' => '',
 
-	        		'site_identity_logo_height' => '',
+	        		'site_identity_logo_width' => '',
 
 	        		'site_identity_title' => '',
 	        		'display_site_title' => '',
@@ -159,13 +159,13 @@ xenial_divider_field(
 
 
 xenial_range_control_field(
-	'site_identity_logo_height',
+	'site_identity_logo_width',
 	[
 		'priority' => 11,
 		'section' => 'title_tagline',
-		'label' => esc_html__( 'Logo Height (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 400, 'step' => 1, 'responsive' => true],
-		'defaults' => $xenial_customizer_defaults['site_identity_logo_height']
+		'label' => esc_html__( 'Logo Width (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 500, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['site_identity_logo_width']
 	]
 );
 

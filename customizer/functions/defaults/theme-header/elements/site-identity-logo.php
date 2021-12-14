@@ -10,10 +10,10 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 				'mobile_logo' => '',
 	            'transparent_desktop_logo' => '',
 	            'transparent_mobile_logo' => '',
-	            'site_identity_logo_height' => array(
-	                'desktop' => 90,
-	                'tablet' => 90,
-	                'mobile' => 90
+	            'site_identity_logo_width' => array(
+	                'desktop' => 200,
+	                'tablet' => '',
+	                'mobile' => ''
 	            ),
 	            'display_site_title' => true,
 	            'site_title_visibility' => 'default',

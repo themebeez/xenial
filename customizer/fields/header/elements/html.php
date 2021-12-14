@@ -21,7 +21,7 @@ xenial_tab_field(
 			'tab_1' => apply_filters(
 				'xenial_filter_header_html_tab_1_controls',
 				[
-					'header_html' => [],
+					'header_html_content' => [],
 					'header_html_alignment' => [],
 					'header_html_visibility' => [],
 
@@ -57,17 +57,17 @@ xenial_tab_field(
 
 
 xenial_tinymce_editor_field(
-	'header_html',
+	'header_html_content',
 	[
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Content', 'xenial' ),
 		'input_attrs' => [
-			'toolbar1' => 'formatselect bold italic underline strikethrough bullist numlist alignleft aligncenter alignright link unlink',
+			'toolbar1' => 'formatselect underline strikethrough bullist numlist alignleft aligncenter alignright link unlink',
 			'toolbar2' => '',
 			'mediaButtons' => false
 		],
-		'default' => $xenial_customizer_defaults['header_html']
+		'default' => $xenial_customizer_defaults['header_html_content']
 	]
 );
 
@@ -86,7 +86,7 @@ xenial_button_checkbox_field(
 	[
 		'priority' => 10,
 		'section' => 'xenial_header_html',
-		'label' => esc_html__( 'Visibility', 'xenial' ),
+		'label' => esc_html__( 'Hide on Devices', 'xenial' ),
 		'item' => 'icon',
 		'choices' => [
 			'desktop' => 'dashicons-desktop',

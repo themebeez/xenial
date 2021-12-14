@@ -8,7 +8,7 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_customize_defaults' ) ) 
 		return apply_filters(
 			'xenial_header_primary_menu_customize_defaults_filter',
 			array(
-				'primary_menu_display' => '',
+				'primary_menu' => '',
 
 	            'primary_desktop_top_level_menu_item_spacing' => 30,
 	            'primary_menu_top_level_items_color' => '',

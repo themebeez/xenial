@@ -30,7 +30,7 @@ xenial_tab_field(
 	        	array(	
 	        		'offcanvas_toggle_button_font_size' => '',
 	        		'offcanvas_toggle_button_field_divider_3' => '',
-	        		'offcanvas_toggle_button_spacing' => '',
+	        		'offcanvas_toggle_button_padding' => '',
 	        		'offcanvas_toggle_button_field_divider_4' => '',
 	        		'offcanvas_toggle_button_label_color' => '',
 	        		'offcanvas_toggle_button_field_divider_5' => '',
@@ -120,20 +120,21 @@ xenial_divider_field(
 );
 
 
-xenial_range_control_field(
-	'offcanvas_toggle_button_spacing',
+xenial_box_dimension_field(
+	'offcanvas_toggle_button_padding',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_offcanvas_toggle_button',
-		'label' => esc_html__( 'Spacing (px)', 'xenial' ),
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
 		'input_attrs' => array(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
 			'responsive' => false
 		),
-		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_spacing')
-	)
+		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_padding')
+	),
+	false
 );
 
 xenial_divider_field( 

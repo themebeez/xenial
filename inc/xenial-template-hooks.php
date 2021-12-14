@@ -11,6 +11,30 @@
 defined( 'ABSPATH' ) || exit;
 
 
+/**
+ * Theme header hooks.
+ * 
+ */
+add_action( 'xenial_theme_header', 'xenial_theme_header_template' ); 
+
+add_action( 'xenial_header_top_row', 'xenial_header_top_row_template' );
+add_action( 'xenial_header_middle_row', 'xenial_header_middle_row_template' );
+add_action( 'xenial_header_bottom_row', 'xenial_header_bottom_row_template' );
+add_action( 'xenial_offcanvas', 'xenial_offcanvas_template' );
+
+add_action( 'xenial_header_element_site_identity', 'xenial_header_element_site_identity_template' );
+add_action( 'xenial_header_element_html', 'xenial_header_element_html_template' );
+add_action( 'xenial_header_element_button', 'xenial_header_element_button_template' );
+add_action( 'xenial_header_element_offcanvas_toggle_button', 'xenial_header_element_offcanvas_toggle_button_template' );
+add_action( 'xenial_header_element_offcanvas_menu', 'xenial_header_element_offcanvas_menu_template' );
+add_action( 'xenial_header_element_social_links', 'xenial_header_element_social_links_template' );
+add_action( 'xenial_header_element_search', 'xenial_header_element_search_icon_template' );
+add_action( 'xenial_header_element_search_bar', 'xenial_header_element_search_bar_template' );
+add_action( 'xenial_header_element_search_modal', 'xenial_header_element_search_modal_template' );
+add_action( 'xenial_header_element_menu_1', 'xenial_header_element_menu_1_template' );
+add_action( 'xenial_header_element_menu_2', 'xenial_header_element_menu_2_template' );
+
+
 add_action( 'xenial_post_title', 'xenial_post_title_template' );
 
 add_action( 'xenial_linked_post_thumbnail', 'xenial_linked_post_thumbnail_template' );
