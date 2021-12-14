@@ -114,6 +114,7 @@ const source__files__folders__to__compress = {
         './*/**',
 
         '!./.gitignore',
+        '!./.vscode',
         '!./assets/src/**',
         '!./gulpfile.js',
         '!./package.json',
