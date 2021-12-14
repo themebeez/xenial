@@ -11,7 +11,7 @@ if ( ! function_exists( 'xenial_get_header_button_customize_defaults' ) ) {
 				'header_button_title' => esc_html__( 'Download', 'xenial' ),
 	            'header_button_link' => '#',
 	            'header_button_link_open_in_new_tab' => false,
-	            'header_button_visibility' => 'default',
+	            'header_button_visibility' => '',
 	            'header_button_alignment' => array(
 	                'desktop' => 'left',
 	                'tablet' => 'left', 

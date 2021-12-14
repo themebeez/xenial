@@ -15,10 +15,11 @@ if ( ! function_exists( 'xenial_offcanvas_toggle_button_customize_defaults' ) ) 
 	                'tablet' => 16,
 	                'offcanvas' => 16
 	            ),
-	            'offcanvas_toggle_button_spacing' => array(
-	                'desktop' => 0,
-	                'tablet' => 0,
-	                'offcanvas' => 0
+	            'offcanvas_toggle_button_padding' => array(
+	                'top' => '',
+	                'right' => '',
+	                'bottom' => '',
+	                'left' => ''
 	            ),
 	            'offcanvas_toggle_button_label_color' => array(
 	            	'initial' => array(

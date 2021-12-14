@@ -8,13 +8,13 @@ if ( ! function_exists( 'xenial_get_header_html_customize_defaults' ) ) {
 		return apply_filters(
 			'xenial_header_html_customize_defaults_filter',
 			array(
-				'header_html' => '',
+				'header_html_content' => '',
 	            'header_html_alignment' => array(
 	                'desktop' => 'left',
 	                'tablet' => 'left',
 	                'mobile' => 'left'
 	            ),
-	            'header_html_visibility' => 'desktop,tablet,mobile',
+	            'header_html_visibility' => '',
 	            'header_html_text_color' => '',
 	            'header_html_link_color' => '',
 	            'header_html_link_hover_color' => '',

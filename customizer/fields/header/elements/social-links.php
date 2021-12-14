@@ -103,7 +103,7 @@ xenial_button_checkbox_field(
 	[
 		'priority' => 10,
 		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Visibility', 'xenial' ),
+		'label' => esc_html__( 'Hide on Devices', 'xenial' ),
 		'item' => 'icon',
 		'choices' => [
 			'desktop' => 'dashicons-desktop',

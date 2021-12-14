@@ -100,3 +100,15 @@ if ( ! function_exists( 'xenial_get_thumbnail_size_array' ) ) {
 		return $default_thumbnail_size;
 	}
 }
+
+
+
+if ( ! function_exists( 'xenial_primary_menu_items_wrap' ) ) {
+
+	function xenial_primary_menu_items_wrap() {
+
+		$dropdown_animation = 'FadeIn'; // Available options: None, FadeIn, FadeInUp & FadeInDown
+		
+		return '<nav class="xe-site-navigation" xe-dropdown-animation="' . esc_attr( $dropdown_animation ) . '"><ul id="%1$s" class="%2$s">%3$s</ul></nav>';
+	}
+}
