@@ -163,8 +163,6 @@ if ( ! function_exists( 'xenial_offcanvas_template' ) ) {
 		}
 
 		$offcanvas_elements = xenial_get_theme_header_row_elements( 'mobile', 'offcanvas' );
-		
-		var_dump( $offcanvas_elements );
 
 		if ( $offcanvas_elements ) {
 			$template_args['elements'] = $offcanvas_elements;

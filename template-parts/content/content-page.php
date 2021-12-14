@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 
-$xenialPageContents = xenial_get_option( 'page_single_content_elements' );
+$xenialPageContents = ( xenial_get_option( 'page_single_content_elements' ) ) ? xenial_get_option( 'page_single_content_elements' ) : array();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php 
