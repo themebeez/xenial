@@ -2,6 +2,8 @@
 	#. PMPRO Variables
    -------------------------------------------------------------------------- */
 
+@use '../../functions/mixins' as *;
+
 :root {
 
     // Alert Colors
@@ -416,6 +418,52 @@ form.pmpro_form select,
 .pmpro_confirmation_wrap p:last-child {
 
     margin-bottom: 0;
+}
+
+#pmpro_form #pmpro_payment_method {
+
+    margin-bottom: 30px;
+}
+
+#pmpro_form #pmpro_payment_method .pmpro_checkout-fields {
+
+    @include flex();
+    align-items: center;
+}
+
+#pmpro_form #pmpro_payment_method .pmpro_checkout-fields [class*="gateway_"] {
+
+    padding: 20px;
+    border: 2px solid var(--xe_border_color);
+    border-radius: 3px;
+}
+
+.pmpro_checkout-fields .pmpro_payment-expiration {
+
+    @include flex();
+    align-items: center;
+}
+
+form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields .pmpro_payment-expiration label {
+
+    flex: 100%;
+}
+
+.pmpro_checkout-fields .pmpro_payment-expiration #ExpirationMonth {
+
+    width: 80px;
+}
+
+.pmpro_checkout-fields .pmpro_payment-expiration #ExpirationYear {
+
+    width: 100px;
+    margin-left: 10px;
+}
+
+.pmpro_checkout-fields .pmpro_payment-expiration .pmpro_asterisk {
+
+    margin-left: 5px;
+    margin-right: 10px;
 }
 
 /* -------------------------------------------------------------------------- 
