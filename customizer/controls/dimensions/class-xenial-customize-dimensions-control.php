@@ -49,7 +49,7 @@ if( ! class_exists( 'Xenial_Customize_Dimensions_Control' ) ) {
 				$asset_uri . 'dimensions.js',
 				array('jquery', 'customize-base'),
 				XENIAL_THEME_VERSION,
-				'all'
+				true
 			);
 
 			$xenialDimensionScriptObjArray = [
