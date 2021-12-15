@@ -209,6 +209,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'header_button'             => xenial_get_header_button_customize_defaults(),
             'header_html'               => xenial_get_header_html_customize_defaults(),
             'menu_1'                    => xenial_get_header_primary_menu_customize_defaults(),
+            'menu_1_dropdown'           => xenial_get_header_primary_menu_dropdown_customize_defaults(),
             'menu_2'                    => xenial_get_header_secondary_menu_customize_defaults(),
             'header_search'             => xenial_get_header_search_customize_defaults(),
             'header_social_links'       => xenial_get_header_social_links_customize_defaults(),

@@ -1,0 +1,16 @@
+.xenial-section-link-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  padding: 10px 5px 10px 10px;
+  transition-duration: 0.3s;
+}
+
+.xenial-section-link-button:hover {
+  color: #0085ba;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}

@@ -166,6 +166,12 @@ function xenial_customize_register( $wp_customize ) {
 	 */
 	require $controls_path . 'tinymce-editor/class-xenial-customize-tinymce-editor-control.php';
 
+
+	/**
+	 * Section link customize control.
+	 */
+	require $controls_path . 'section-link/class-xenial-customize-section-link-control.php';
+
 	/**
 	 * Button group customize control.
 	 */
@@ -241,6 +247,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/elements/button.php';
 	require $customizer_fields_path . 'header/elements/html.php';
 	require $customizer_fields_path . 'header/elements/primary-menu.php';
+	require $customizer_fields_path . 'header/elements/primary-menu-dropdown.php';
 	require $customizer_fields_path . 'header/elements/search.php';
 	require $customizer_fields_path . 'header/elements/secondary-menu.php';
 	require $customizer_fields_path . 'header/elements/social-links.php';

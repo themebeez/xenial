@@ -107,6 +107,38 @@ xenial_color_picker_field(
 		'section' => 'xenial_layout',
 		'label' => esc_html__( 'Color Picker Test', 'xenial' ),
 		'is_responsive' => false,
+		// 'colors' => array(
+		// 	'desktop' => array(
+		// 		'initial' => array(
+		// 			'display' => true,
+		// 			'default' => ''
+		// 		),
+		// 		'hover' => array(
+		// 			'display' => true,
+		// 			'default' => ''
+		// 		)
+		// 	),
+		// 	'tablet' => array(
+		// 		'initial' => array(
+		// 			'display' => true,
+		// 			'default' => ''
+		// 		),
+		// 		'hover' => array(
+		// 			'display' => true,
+		// 			'default' => ''
+		// 		)
+		// 	),
+		// 	'mobile' => array(
+		// 		'initial' => array(
+		// 			'display' => true,
+		// 			'default' => ''
+		// 		),
+		// 		'hover' => array(
+		// 			'display' => true,
+		// 			'default' => ''
+		// 		)
+		// 	)
+		// )
 		'colors' => array(
 			'initial' => array(
 				'display' => true,
@@ -117,5 +149,15 @@ xenial_color_picker_field(
 				'default' => ''
 			)
 		)
+	)
+);
+
+
+xenial_section_link_field(
+	'text_section_link',
+	array(
+		'section' => 'xenial_layout',
+		'section_link' => 'xenial_theme_elements',
+		'button_label' => 'Test Button'
 	)
 );

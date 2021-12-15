@@ -883,8 +883,44 @@ if ( ! function_exists( 'xenial_color_picker_field' ) ) {
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
 					'input_attrs' => array(
-						'is_responsive' => ( isset( $args['is_responsive'] ) && $args['is_reponsive'] ) ? true : false,
+						'is_responsive' => ( isset( $args['is_responsive'] ) && $args['is_responsive'] ) ? true : false,
 						'colors' => ( isset( $args['colors'] ) ) ? $args['colors'] : array()
+					)
+				)
+			)
+		);
+	}
+}
+
+
+
+
+if ( ! function_exists( 'xenial_section_link_field' ) ) {
+
+	function xenial_section_link_field( $id, $args ) {
+
+		global $wp_customize;
+
+		$wp_customize->add_setting( $id,
+			array(
+				'default' => '',
+				'sanitize_callback' => ''
+			) 
+		);
+
+		$wp_customize->add_control(
+			new Xenial_Customize_Section_Link_Control(
+				$wp_customize,
+				$id,
+				array(
+					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
+					'section' => isset( $args['section'] ) ? $args['section'] : '',
+					'label' => isset( $args['label'] ) ? $args['label'] : '',
+					'description' => isset( $args['description'] ) ? $args['description'] : '',
+					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
+					'input_attrs' => array(
+						'button_label' => isset( $args['button_label'] ) ? $args['button_label'] : '',
+						'section_link' => isset( $args['section_link'] ) ? $args['section_link'] : ''
 					)
 				)
 			)

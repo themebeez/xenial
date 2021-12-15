@@ -1,3 +1,13 @@
+.customize-control-xenial-color-picker:not(.has-switchers) {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+
 .colors.control-wrap,
 .responsive-control-wrap {
 
@@ -6,6 +16,10 @@
 	flex-wrap: nowrap;
 	gap: 10px;
 }
+
+.customize-control-xenial-color-picker:not(.has-switchers) .colors.control-wrap {
+	gap: 6px;
+} 
 
 .pcr-app[data-theme="nano"] {
 
