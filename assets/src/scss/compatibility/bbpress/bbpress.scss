@@ -5,20 +5,6 @@
 @import '../../functions/mixins';
 
 /* -------------------------------------------------------------------------- 
-	#. BBPress Variables
-   -------------------------------------------------------------------------- */
-
-:root {
-
-    // Alert Colors
-    --xe_bbpress_info_border_color: #0999ef;
-    --xe_bbpress_success_border_color: #4DC76D;
-    --xe_bbpress_alert_border_color: #FFD783;
-    --xe_bbpress_error_border_color: #F94646;
-     --xe_bbpress_notice_background_color: transparent;  
-}
-
-/* -------------------------------------------------------------------------- 
 	#. BBPress Reset
    -------------------------------------------------------------------------- */
 
@@ -28,6 +14,7 @@
     font-family: var(--xe_base_font_family);
     font-size: var(--xe_base_font_size);
     line-height: var(--xe_base_font_line_height);
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -44,6 +31,7 @@
 #bbpress-forums div.bbp-breadcrumb {
 
     font-size: calc( var(--xe_base_font_size) - 20%);
+    margin-bottom: 30px;
 }
 
 #bbpress-forums .bbp-pagination {
@@ -63,22 +51,48 @@
     margin-bottom: 30px;
 }
 
-#bbpress-forums li.bbp-footer, 
+#bbpress-forums ul.bbp-forums,
+#bbpress-forums ul.bbp-topics,
 #bbpress-forums li.bbp-header,
-#bbpress-forums li.bbp-body ul.forum {
+#bbpress-forums li.bbp-footer {
+
+    border: none;
+}
+
+#bbpress-forums li.bbp-header,
+#bbpress-forums li.bbp-footer {
+
+    background: #F5F5F5;
+}
+
+#bbpress-forums li.bbp-body ul.forum, 
+#bbpress-forums li.bbp-body ul.topic {
+
+    border-top-color: var(--xe_border_color);
+}
+
+#bbpress-forums li.bbp-body ul.forum:first-child, 
+#bbpress-forums li.bbp-body ul.topic:first-child {
+
+    border-top-color: transparent;
+} 
+
+#bbpress-forums li.bbp-footer, 
+#bbpress-forums li.bbp-header {
 
     padding: 10px 20px;
+}
+
+#bbpress-forums li.bbp-body ul.forum,
+#bbpress-forums li.bbp-body ul.topic  {
+
+    padding: 30px 0;
 }
 
 #bbpress-forums li.bbp-header {
 
     font-size: 13px;
     text-transform: uppercase;
-}
-
-#bbpress-forums li.bbp-body ul.topic {
-
-    padding: 30px 20px;
 }
 
 #bbpress-forums p.bbp-topic-meta img.avatar,
@@ -93,6 +107,10 @@
     border-radius: 50%;
     margin-right: 3px;
 }
+
+/* -------------------------------------------------------------------------- 
+	#. BBPress Above Forum Toggles
+   -------------------------------------------------------------------------- */
 
 #bbpress-forums #favorite-toggle, 
 #bbpress-forums #subscription-toggle {
@@ -133,8 +151,8 @@
     color: var(--xe_base_text_color);
     border-style: solid;
     border-width: 2px;
-    border-color: var(--xe_bbpress_info_border_color);
-    background-color: var(--xe_bbpress_notice_background_color);
+    border-color: #ffe69b;
+    background-color: #ffeaaf;
     border-radius: 3px;
 }
 
@@ -155,25 +173,10 @@
     line-height: var(--xe_base_line_height);
 }
 
-#bbpress-forums div.bbp-template-notice.notice {
-
-    color: var(--xe_base_text_color);
-    border-color: var(--xe_bbpress_info_border_color);
-    background-color: var(--xe_bbpress_notice_background_color);
-}
-
-#bbpress-forums div.bbp-template-notice.warning {
-
-    color: var(--xe_base_text_color);
-    border-color: var(--xe_bbpress_warning_border_color);
-    background-color: var(--xe_bbpress_notice_background_color);
-}
-
 #bbpress-forums div.bbp-template-notice.error {
 
-    color: var(--xe_base_text_color);
-    border-color: var(--xe_bbpress_error_border_color);
-    background-color: var(--xe_bbpress_notice_background_color);
+    background-color: #ffd1d1;
+    border-color: #ffc0c0;
 }
 
 
@@ -347,24 +350,20 @@
     border-radius: 50%;
 }
 
-#bbpress-forums div.bbp-forum-content, 
-#bbpress-forums div.bbp-reply-content, 
-#bbpress-forums div.bbp-topic-content {
-
-
-}
-
 #bbpress-forums .bbp-replies .bbp-body .hentry {
 
     margin: 0;
+}
+
+#bbpress-forums .bbp-reply-content ul.bbp-reply-revision-log, 
+#bbpress-forums .bbp-reply-content ul.bbp-topic-revision-log, 
+#bbpress-forums .bbp-topic-content ul.bbp-topic-revision-log {
+
+    color: #7c7c7c;
+    border-top-color: var(--xe_border_color);
 }
 
 
 /* -------------------------------------------------------------------------- 
     #. BBPress profile
    -------------------------------------------------------------------------- */
-
-#bbpress-forums .bbp-user-wrapper {
-
-   
-}
