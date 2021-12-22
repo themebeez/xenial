@@ -6,7 +6,7 @@
   "scripts": {
     "test": "gulp",
     "dev": "run-p dev:browsersync dev:gulpassets",
-    "dev:browsersync": "browser-sync start --proxy 'xenial.local' --files './assets/build/**' './customizer/assets/**'",
+    "dev:browsersync": "browser-sync start --proxy 'xenial.local' --files './assets/build/**'",
     "dev:gulpassets": "gulp assets"
   },
   "repository": {

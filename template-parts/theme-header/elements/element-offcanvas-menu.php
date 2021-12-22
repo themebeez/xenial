@@ -1,7 +1,8 @@
 <?php 
 
 ?>
-<div class="xe-header-element is-menu is-offcanvas-menu">
+<div class="xe-header-element is-menu is-offcanvas-menu" xe-submenu-style="revealing">
+	<!-- // options: default & revealing -->
 	<?php
 	wp_nav_menu( 
 		array(
