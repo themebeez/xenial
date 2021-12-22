@@ -122,6 +122,35 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
 
+		// Attribute xe-submenu-style="" | options = default | revealing
+		var mobileCanvasSubMenuStyleEle = document.querySelector("#xe-mobile-canvas .is-offcanvas-menu");
+		var mobileCanvasSubMenuStyleEleAttribute = mobileCanvasSubMenuStyleEle.getAttribute('xe-submenu-style');
+
+		if (mobileCanvasSubMenuStyleEleAttribute == "revealing") {
+
+			var mobileCanvasSubMenuBackButton = '<li class="goback"><button class="xe-button xe-false-button xe-canvassubmenu-goback-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13v7l-8-8 8-8v7h8v2z" fill="rgba(105,105,105,1)"/></svg> <span class="text">Go Back</span></button></li>';
+			var mobileCanvasSubMenuEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu");
+
+			mobileCanvasSubMenuEle.forEach(function (childEle) {
+
+				childEle.insertAdjacentHTML('afterbegin', mobileCanvasSubMenuBackButton);
+			});
+
+			var mobileCanvasSubMenuBackButtonEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu .xe-canvassubmenu-goback-button");
+
+			if (mobileCanvasSubMenuBackButtonEle !== null || undefined) {
+
+				mobileCanvasSubMenuBackButtonEle.forEach(function (backBtn) {
+
+					backBtn.addEventListener('click', function () {
+
+						this.parentElement.parentElement.parentElement.classList.remove("xe-submenu-open");
+					});
+				});
+			}
+		}
+
+		// Canvas submenu toggle button
 		var mobileCanvasSubMenuToggleBtn = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .menu-item-has-children .xe-toggle-canvassubmenu");
 
 		if (mobileCanvasSubMenuToggleBtn !== null || undefined) {
@@ -133,16 +162,19 @@ document.addEventListener("DOMContentLoaded", function () {
 					this.classList.toggle("active");
 					this.parentElement.classList.toggle("xe-submenu-open");
 
-					// Toggle plus/minus icon.
-					if (this.classList.contains("active")) {
+					if (mobileCanvasSubMenuStyleEleAttribute !== "revealing") {
 
-						this.querySelector("i").classList.remove(subMenuTooglePlusIconClass);
-						this.querySelector("i").classList.add(subMenuToogleMinusIconClass);
+						// Toggle plus/minus icon.
+						if (this.classList.contains("active")) {
 
-					} else {
+							this.querySelector("i").classList.remove(subMenuTooglePlusIconClass);
+							this.querySelector("i").classList.add(subMenuToogleMinusIconClass);
 
-						this.querySelector("i").classList.remove(subMenuToogleMinusIconClass);
-						this.querySelector("i").classList.add(subMenuTooglePlusIconClass);
+						} else {
+
+							this.querySelector("i").classList.remove(subMenuToogleMinusIconClass);
+							this.querySelector("i").classList.add(subMenuTooglePlusIconClass);
+						}
 					}
 				});
 			});
