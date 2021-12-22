@@ -145,7 +145,7 @@
   --xe_site_description_text_transform: inherit;
 
 
-    /* -------------------------------------------------------------------------- 
+  /* -------------------------------------------------------------------------- 
 	  Menu & Navigation
   -------------------------------------------------------------------------- */
 
@@ -163,8 +163,33 @@
   --xe_navigation_dropdown_item_seperator_color: transparent;
   --xe_navigation_dropdown_item_hover_color: var(--xe_seconary_color);
 
+  /* -------------------------------------------------------------------------- 
+	  Canvas & Mobile navigation
+  -------------------------------------------------------------------------- */
+
   --xe_menu_toggle_button_color: var(--xe_base_text_color);
   --xe_mobile_canvas_width: 350px;
+  --xe_canvas_background_color: #FFFFFF;
+  --xe_canvas_border_color: #E5E5E5;
+  --xe_canvas_border_width: 1px;
+  --xe_canvas_border_radius: 0px;
+  --xe_canvas_menu_item_color: var(--xe_navigation_item_color);
+  --xe_canvas_menu_item_color_hover: var(--xe_navigation_item_hover_color);
+  --xe_canvas_menu_item_color_active: var(--xe_navigation_item_hover_color);
+  --xe_canvas_menu_item_seperator_color: var(--xe_border_color);
+  --xe_canvas_menu_item_seperator_width: 1px;
+  --xe_canvas_menu_item_seperator_style: solid;
+
+  --xe_canvas_menu_item_font_size: 14px;
+  --xe_canvas_menu_item_font_weight: normal;
+  --xe_canvas_menu_item_line_height: 1em;
+
+  --xe_canvas_menu_item_top_padding: 12px;
+  --xe_canvas_menu_item_bottom_padding: 12px;
+  --xe_canvas_menu_submenu_toggle_button_color: var(--xe_canvas_menu_item_color);
+  --xe_canvas_menu_submenu_toggle_button_background_color: transparent;
+  --xe_canvas_menu_submenu_toggle_button_border_radius: 0px;
+  --xe_canvas_menu_submenu_toggle_button_distance: 8px;
 
   /* -------------------------------------------------------------------------- 
 	  Spacing

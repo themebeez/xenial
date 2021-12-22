@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		xeToolTip();
 		xeToggleComment();
 		xeBackToTopButton();
+		xeCanvasNavigationSubMenuToggleBtn();
 		//xeTabs();
 		//xeTabHiddenItems();
 		//initSwiper();
@@ -101,6 +102,52 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 
+	// Append toggle button in mobile canvas navigation dropdown
+	function xeCanvasNavigationSubMenuToggleBtn() {
+
+		var mobileCanvas = document.getElementById("xe-mobile-canvas");
+		var mobileCanvasNavChildren = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation li.menu-item-has-children");
+		var subMenuTooglePlusIconClass = "ti-plus";
+		var subMenuToogleMinusIconClass = "ti-minus";
+		var appendSubMenuToggleBtn = '<button class="xe-button xe-false-button xe-toggle-canvassubmenu"><i class="ti-plus"></button>';
+
+		if (mobileCanvas !== null || undefined) {
+
+			if (mobileCanvasNavChildren !== null || undefined) {
+
+				mobileCanvasNavChildren.forEach(function (child) {
+
+					child.insertAdjacentHTML('beforeend', appendSubMenuToggleBtn);
+				});
+			}
+		}
+
+		var mobileCanvasSubMenuToggleBtn = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .menu-item-has-children .xe-toggle-canvassubmenu");
+
+		if (mobileCanvasSubMenuToggleBtn !== null || undefined) {
+
+			mobileCanvasSubMenuToggleBtn.forEach(function (toggleBtn) {
+
+				toggleBtn.addEventListener('click', function () {
+
+					this.classList.toggle("active");
+					this.parentElement.classList.toggle("xe-submenu-open");
+
+					// Toggle plus/minus icon.
+					if (this.classList.contains("active")) {
+
+						this.querySelector("i").classList.remove(subMenuTooglePlusIconClass);
+						this.querySelector("i").classList.add(subMenuToogleMinusIconClass);
+
+					} else {
+
+						this.querySelector("i").classList.remove(subMenuToogleMinusIconClass);
+						this.querySelector("i").classList.add(subMenuTooglePlusIconClass);
+					}
+				});
+			});
+		}
+	}
 
 	// tab
 	//function xeTabs() {

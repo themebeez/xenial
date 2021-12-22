@@ -262,6 +262,42 @@
     #. BBPress Topics & Posts
    -------------------------------------------------------------------------- */
 
+#bbpress-forums .bbp-reply-header .bbp-meta {
+
+    @include flex();
+    align-items: center;
+}
+
+#bbpress-forums .bbp-reply-header .bbp-meta .bbp-admin-links{
+
+    float: none;
+}
+
+#bbpress-forums .bbp-reply-header .bbp-meta .bbp-admin-links a,
+#bbpress-forums .bbp-reply-header .bbp-meta .bbp-reply-permalink  {
+
+    font-size: 10px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#bbpress-forums .bbp-reply-header .bbp-meta .bbp-reply-permalink {
+
+    font-size: 12px;
+    order: 3;
+    font-weight: bold;
+}
+
+#bbpress-forums .bbp-reply-header .bbp-meta .bbp-admin-links {
+
+    @include flex();
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    order: 2;
+    gap: 5px;
+}
+
 #bbpress-forums .bbp-forums .bbp-body .type-forum .bbp-forum-info,
 #bbpress-forums .bbp-topics .bbp-body .type-topic .bbp-topic-title {
 
