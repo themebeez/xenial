@@ -695,3 +695,15 @@ body.rtl .customize-control .responsive-switchers li {
     transform: scale(0.5);
     opacity: 0
 }
+
+/* -------------------------------------------------------------------------- 
+	Mobile preview
+  -------------------------------------------------------------------------- */
+
+.preview-mobile .wp-full-overlay-main {
+
+    left: 50%;
+    width: 380px;
+    margin: 30px auto;
+    transform: translateX(-50%);
+}

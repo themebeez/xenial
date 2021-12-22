@@ -7,8 +7,8 @@
 		array(
 			'menu' => $args['menu_slug'],
 			'container' => 'nav',
-			'container_class' => 'xe-site-navigation',
-			'menu_class' => 'offcanvas-menu'
+			'container_class' => 'xe-offcanvas-navigation',
+			'menu_class' => 'xe-offcanvas-menu'
 		) 
 	); 
 	?>
