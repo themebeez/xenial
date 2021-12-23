@@ -64,7 +64,7 @@
     background: #FFFFFF;
     overflow: hidden;
     overflow-y: auto;
-    animation: xeFadeOut 0.2s ease-in-out;
+    @include transation_delay_dymanic(0.5s);
     box-shadow: 5px 0 30px 0 rgba(0, 0, 0, 0.1);
 }
 
@@ -135,7 +135,6 @@
 
 .xe-visible-mobile-canvas #xe-mobile-canvas {
 
-    animation: xeFadeIn 0.2s ease-in;
     @include visibility_visible();
 }
 
@@ -143,12 +142,14 @@
 
     right: auto;
     left: 0;
+    animation: slideInright 0.5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .xe-visible-mobile-canvas #xe-mobile-canvas[xe-canvas-position="right"] {
 
     left: auto;
     right: 0;
+    animation: slideInLeft 0.5s cubic-bezier(0.4, 0, 1, 1);
 }
 
 .xe-visible-mobile-canvas #xe-mobile-canvas-mask {
