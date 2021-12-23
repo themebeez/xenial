@@ -3,7 +3,9 @@
 
 ?>
 <div class="xe-header-element is-social">
-	<ul class="xe-header-element-social">
+	<ul class="xe-header-element-social" xe-icon-color-type="official" xe-has-icon-label="false">
+	<!-- Attribute "xe-icon-color-type": default, official -->
+	<!-- Attribute "xe-has-icon-label": true, false -->
 		<?php 
 		foreach ( $args['social_links'] as $social_network ) {
 			?>

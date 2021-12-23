@@ -22,24 +22,246 @@
 
     .xe-header-element-social li a {
 
+        fill: var(--xe_base_text_color);
         color: var(--xe_base_text_color);
+        @include transation_delay_dymanic(0.5s);
+    }
+
+    .xe-header-element-social li a:hover {
+
+        fill: inherit;
+        color: inherit;
+    }
+
+    .xe-header-element-social[xe-has-icon-label="true"] li a {
+
+        gap: 3px;
     }
 
     .xe-header-element-social li a svg {
 
         display: inline-flex;
-        fill: var(--xe_base_text_color);
-        width: 16px;
-        height: 16px;
-        @include transation_delay();
+        width: var(--xe_social_icon_size);
+        height: var(--xe_social_icon_size);
     }
 
-    .xe-header-element-social li a:hover {
 
-        color: var(--xe_seconary_color);
-    }
+/* -------------------------------------------------------------------------- 
+	Social icons official colors
+  -------------------------------------------------------------------------- */
 
-    .xe-header-element-social li a:hover svg {
+.xe-header-element-social[xe-icon-color-type="official"] li a .facebook {
 
-        fill: var(--xe_seconary_color);
-    }
+    fill: #1c7ff6;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .twitter {
+
+    fill: #00aced;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .instagram {
+
+    fill: #e1306c;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .pinterest {
+
+    fill: #bd081c;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .youtube {
+
+    fill: #ff0000;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .linkedin {
+
+    fill: #007bb6;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .tumblr {
+
+    fill: #35465c;
+}
+
+.xe-header-element-social[xe-icon-color-type=official] li a .flickr {
+
+    fill: #ff0084;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .dribbble {
+
+    fill: #ea4c89;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .vimeo {
+
+    fill: #45bbff;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .github {
+
+    fill: #333333;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .behance {
+
+    fill: #4a00ff;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .gitlab {
+
+    fill: #fe4900;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .codepen {
+
+    fill: #04ce69;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .discord {
+
+    fill: #6100f0;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .email {
+
+    fill: #333333;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .foursquare {
+
+    fill: #6300ff;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .line {
+
+    fill: #00d44f;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .medium {
+
+    fill: #222222;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .odnoklassniki {
+
+    fill: #f97b00;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .phone {
+
+    fill: #333333;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .qq {
+
+    fill: #cf9605;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .rss {
+
+    fill: #333333;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .reddit {
+
+    fill: #ff0000;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .skype {
+
+    fill: #00a0ed;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .slack {
+
+    fill: #5e0056;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .snapchat {
+
+    fill: #f5ff00;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .soundcloud {
+
+    fill: #ff2400;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .spotify {
+
+    fill: #00ec5c;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .telegram {
+
+    fill: #13a6eb;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .tiktok {
+
+    fill: #000000;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .tripadvisor {
+
+    fill: #00f0a0;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .twitch {
+
+    fill: #a600fa;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .twitch {
+
+    fill: #a600fa;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .unsplash {
+
+    fill: #333333;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .vk {
+
+    fill: #335e9b;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .wechat {
+
+    fill: #00f162;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .weibo {
+
+    fill: #f0001f;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .whatsapp {
+
+    fill: #00d955;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .wordpress {
+
+    fill: #333333;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .xing {
+
+    fill: #b1ff66;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .yelp {
+
+    fill: #ea0000;
+}
+
+.xe-header-element-social[xe-icon-color-type="official"] li a .yelp {
+
+    fill: #ea0000;
+}
+
