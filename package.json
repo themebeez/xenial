@@ -1,7 +1,7 @@
 {
   "name": "xenial",
   "version": "1.0.0",
-  "description": "=== Xenial ===",
+  "description": "A Light-weight, Flexible Page Builder Optimized Multi-Purpose WordPress Theme.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp",
