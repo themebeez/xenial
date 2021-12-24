@@ -1,4 +1,8 @@
-// Gulp file to compile Fascinate Pro SCSS & JS files
+/* ------------------------------------------------------------------------------------
+    # 
+    # Xenial gulpfile to compile assets, zip prduction files & make POT file
+    #
+  ------------------------------------------------------------------------------------ */
 
 const gulp = require('gulp');
 const zip = require('gulp-zip');
@@ -21,8 +25,8 @@ const shell = require('gulp-shell');
 *
 # npm update
 # npm init
-# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename -globally
-# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename --save-dev
+# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename -g
+# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename --save-dev
 *
 */
 
@@ -96,7 +100,11 @@ var php___files__path = {
 
     php___files__src: [
 
+        './*.php',
+        './**.php',
         './**/*.php',
+        '!./node_modules/*.php',
+        '!./.git/*.php',
         '!./inc/plugin-recommendation.php',
         '!./third-party/class-tgm-plugin-activation.php',
     ],
@@ -264,7 +272,7 @@ gulp.task('zipProductionFiles', function () {
 
 gulp.task('default', shell.task(
 
-    'echo ====================== ⛔️ Hello Stranger, gulp default command is disabled in this project. These are the available commands gulp zip, gulp makepot & gulp assets. If you need additional info refer gulpfile.js 250. Cheers 😜 ======================',
+    'echo ====================== ⛔️ Ooops!, gulp default command is disabled in this project. These are the available commands gulp zip, gulp makepot & gulp assets. If you need additional info refer gulpfile.js 267. Cheers. ======================',
 
 ));
 
