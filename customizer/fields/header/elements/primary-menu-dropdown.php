@@ -27,7 +27,7 @@ xenial_tab_field(
 	        	) 
 	        ),
 	        'tab_2' => apply_filters( 
-	        	'xenial_header_primary_menu_dropdown_dropdown_tab_2_controls', 
+	        	'xenial_header_primary_menu_dropdown_tab_2_controls', 
 	        	array(
 	        		'primary_menu_dropdown_top_offset' => '',
 	        		'primary_menu_dropdown_styles_divider_1' => '',

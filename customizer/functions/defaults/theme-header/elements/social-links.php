@@ -50,14 +50,134 @@ if ( ! function_exists( 'xenial_get_header_social_links_customize_defaults' ) ) 
 	                'mobile' => 1,
 	            ),
 	            'header_social_link_icon_color_type' => 'custom',
-	            'header_social_link_icon_color' => '',
-	            'header_social_link_title_color' => '',
-	            'header_social_link_background_color' => '',
-	            'header_social_link_border_color' => '',
-	            'header_social_link_hover_icon_color' => '',
-	            'header_social_link_hover_title_color' => '',
-	            'header_social_link_hover_background_color' => '',
-	            'header_social_link_hover_border_color' => '',
+	            'header_social_link_icon_color' => array(
+	            	'desktop' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'tablet' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'mobile' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	)
+	            ),
+	            'header_social_link_title_color' => array(
+	            	'desktop' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'tablet' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'mobile' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	)
+	            ),
+	            'header_social_link_background_color' => array(
+	            	'desktop' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'tablet' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'mobile' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	)
+	            ),
+	            'header_social_link_border_color' => array(
+            		'desktop' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'tablet' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	),
+	            	'mobile' => array(
+	            		'initial' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		),
+	            		'hover' => array(
+	            			'display' => true,
+	            			'default' => ''
+	            		)
+	            	)
+            	),
 			)
 		);
 	}

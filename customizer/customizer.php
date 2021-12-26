@@ -203,6 +203,14 @@ function xenial_customize_register( $wp_customize ) {
 
 	$wp_customize->register_section_type( 'Xenial_Customize_Color_Picker_Control' );
 
+
+	/**
+	 * Load custom customizer control for box border
+	 */
+	require $controls_path . 'box-border/class-xenial-customize-box-border-control.php';
+
+	$wp_customize->register_section_type( 'Xenial_Customize_Box_Border_Control' );
+
 	
 
 

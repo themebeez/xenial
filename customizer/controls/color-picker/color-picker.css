@@ -8,8 +8,8 @@
 
 
 
-.colors.control-wrap,
-.responsive-control-wrap {
+.customize-control-xenial-color-picker .colors.control-wrap,
+.customize-control-xenial-color-picker .responsive-control-wrap {
 
 	display: flex;
 	flex-direction: row;
@@ -57,12 +57,12 @@
 	overflow: hidden;
 }
 
-.responsive-control-wrap {
+.customize-control-xenial-color-picker .responsive-control-wrap {
 
 	display: none;
 }
 
-.responsive-control-wrap.active {
+.customize-control-xenial-color-picker .responsive-control-wrap.active {
 
 	display: flex;
 }

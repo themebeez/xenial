@@ -927,3 +927,39 @@ if ( ! function_exists( 'xenial_section_link_field' ) ) {
 		);
 	}
 }
+
+
+
+
+if ( ! function_exists( 'xenial_box_border_field' ) ) {
+
+	function xenial_box_border_field( $id, $args ) {
+
+		global $wp_customize;
+
+		$wp_customize->add_setting( $id,
+			array(
+				'default' => $args['default'],
+				'sanitize_callback' => ''
+			) 
+		);
+
+		$wp_customize->add_control(
+			new Xenial_Customize_Box_Border_Control(
+				$wp_customize,
+				$id,
+				array(
+					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
+					'section' => isset( $args['section'] ) ? $args['section'] : '',
+					'label' => isset( $args['label'] ) ? $args['label'] : '',
+					'description' => isset( $args['description'] ) ? $args['description'] : '',
+					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
+					'input_attrs' => array(
+						'is_responsive' => ( isset( $args['is_responsive'] ) && $args['is_responsive'] == true ) ? true : false,
+						'allowed_fields' => isset( $args['allowed_fields'] ) ? $args['allowed_fields'] : array()
+					)
+				)
+			)
+		);
+	}
+}
