@@ -22,7 +22,9 @@ xenial_tab_field(
 			'tab_1' => apply_filters( 
 	        	'xenial_header_social_links_tab_1_controls', 
 	        	[
+
 	        		'header_social_links' => '',
+	        		'header_social_link_general_section_link' => '',
 	        		'header_social_link_general_divider_1' => '',
 
 	        		'header_social_link_visibility' => '',
@@ -38,45 +40,36 @@ xenial_tab_field(
 	        'tab_2' => apply_filters( 
 	        	'xenial_header_social_links_tab_2_controls', 
 	        	[
+	        		'header_social_link_item_styles_fields_title' => '',
 	        		'header_social_link_item_spacing' => '',
 	        		'header_social_link_style_divider_1' => '',
+	        		'header_social_link_icon_background_spacing' => '',
+	        		'header_social_link_background_color' => '',
+	        		'header_social_link_style_divider_2' => '',
+	        		'header_social_link_icon_border_style' => '',
+		            'header_social_link_icon_border_width' => '',
+		            'header_social_link_icon_border_radius' => '',
+		            'header_social_link_border_color' => '',
+		            'header_social_link_style_divider_3' => '',
 
 	        		'header_social_link_icon' => '',
 		            'header_social_link_icon_size' => '',
-		            'header_social_link_icon_background_spacing' => '',
-		            'header_social_link_style_divider_2' => '',
-
-		            'header_social_link_icon_border_style' => '',
-		            'header_social_link_icon_border_width' => '',
-		            'header_social_link_icon_border_radius' => '',
-		            'header_social_link_style_divider_3' => '',
+		            'header_social_link_icon_color_type' => '',
+		            'header_social_link_icon_color' => '',		            
+		            'header_social_link_style_divider_4' => '',
 
 		            'header_social_link_title' => '',
 		            'header_social_link_title_font_size' => '',
 		            'header_social_link_title_line_height' => '',
-		            'header_social_link_style_divider_4' => '',
-
-		            'header_social_link_color' => '',
-		            'header_social_link_icon_color_type' => '',
-		            'header_social_link_style_divider_5' => '',
-
-		            'header_social_link_default_state_color' => '',
-		            'header_social_link_icon_color' => '',
 		            'header_social_link_title_color' => '',
-		            'header_social_link_background_color' => '',
-		            'header_social_link_border_color' => '',
-		            'header_social_link_style_divider_6' => '',
-
-		            'header_social_link_hover_state_color' => '',
-		            'header_social_link_hover_icon_color' => '',
-		            'header_social_link_hover_title_color' => '',
-		            'header_social_link_hover_background_color' => '',
-		            'header_social_link_hover_border_color' => '',
+		            'header_social_link_style_divider_5' => '',
 	        	] 
 	        )
 		]
 	]
 );
+
+
 
 
 xenial_sortable_selector_field(
@@ -86,6 +79,15 @@ xenial_sortable_selector_field(
 		'section' => 'xenial_header_social_links',
 		'label' => esc_html__( 'Social Links', 'xenial' ),
 		'choices' => xenial_get_social_networks()
+	)
+);
+
+xenial_section_link_field(
+	'header_social_link_general_section_link',
+	array(
+		'section' => 'xenial_header_social_links',
+		'section_link' => 'xenial_social_network_links',
+		'button_label' => esc_html__( 'Configure Social Network Links', 'xenial' ) 
 	)
 );
 
@@ -173,7 +175,14 @@ xenial_divider_field(
 
 
 
-
+xenial_info_field(
+	'header_social_link_item_styles_fields_title',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_social_links',
+		'label' => esc_html__( 'Social Link Items', 'xenial' )
+	]
+);
 
 xenial_range_control_field(
 	'header_social_link_item_spacing',
@@ -186,7 +195,6 @@ xenial_range_control_field(
 	]
 );
 
-
 xenial_divider_field( 
 	'header_social_link_style_divider_1', 
 	[ 
@@ -194,30 +202,6 @@ xenial_divider_field(
 		'section' => 'xenial_header_social_links', 
 	] 
 );
-
-
-
-xenial_info_field(
-	'header_social_link_icon',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Social Icon', 'xenial' )
-	]
-);
-
-
-xenial_range_control_field(
-	'header_social_link_icon_size',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Size (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
-		'defaults' => $xenial_customizer_defaults['header_social_link_icon_size']
-	]
-);
-
 
 xenial_range_control_field(
 	'header_social_link_icon_background_spacing',
@@ -230,6 +214,16 @@ xenial_range_control_field(
 	]
 );
 
+xenial_color_picker_field(
+	'header_social_link_background_color',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_header_social_links',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'is_responsive' => true,
+		'colors' => xenial_get_customize_default( 'header_social_link_background_color' )
+	)
+);
 
 xenial_divider_field( 
 	'header_social_link_style_divider_2', 
@@ -238,7 +232,6 @@ xenial_divider_field(
 		'section' => 'xenial_header_social_links', 
 	] 
 );
-
 
 xenial_select_field(
 	'header_social_link_icon_border_style',
@@ -276,8 +269,89 @@ xenial_range_control_field(
 	]
 );
 
+xenial_color_picker_field(
+	'header_social_link_border_color',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_header_social_links',
+		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'is_responsive' => true,
+		'colors' => xenial_get_customize_default( 'header_social_link_border_color' )
+	)
+);
+
 xenial_divider_field( 
 	'header_social_link_style_divider_3', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_header_social_links', 
+	] 
+);
+
+
+
+
+xenial_info_field(
+	'header_social_link_icon',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_social_links',
+		'label' => esc_html__( 'Social Icon', 'xenial' )
+	]
+);
+
+
+xenial_range_control_field(
+	'header_social_link_icon_size',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_social_links',
+		'label' => esc_html__( 'Size (px)', 'xenial' ),
+		'input_attrs' => ['min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true],
+		'defaults' => $xenial_customizer_defaults['header_social_link_icon_size']
+	]
+);
+
+
+xenial_radio_button_group_field(
+	'header_social_link_icon_color_type',
+	[
+		'priority' => 10,
+		'section' => 'xenial_header_social_links',
+		'label' => esc_html__( 'Icon Color Type', 'xenial' ),
+		'item' => 'text',
+		'columns' => 2,
+		'choices' => [
+			'custom' => esc_html__( 'Custom', 'xenial' ),
+			'official' => esc_html__( 'Official', 'xenial' )
+		],
+		'default' => $xenial_customizer_defaults['header_social_link_icon_color_type']
+	],
+	false
+);
+
+
+xenial_color_picker_field(
+	'header_social_link_icon_color',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_header_social_links',
+		'label' => esc_html__( 'Icon Color', 'xenial' ),
+		'is_responsive' => true,
+		'colors' => xenial_get_customize_default( 'header_social_link_icon_color' )
+	)
+);
+
+
+
+
+
+
+
+
+
+xenial_divider_field( 
+	'header_social_link_style_divider_4', 
 	[ 
 		'priority' => 10,
 		'section' => 'xenial_header_social_links', 
@@ -320,42 +394,17 @@ xenial_range_control_field(
 	]
 );
 
-
-xenial_divider_field( 
-	'header_social_link_style_divider_4', 
-	[ 
-		'priority' => 10,
-		'section' => 'xenial_header_social_links', 
-	] 
-);
-
-
-
-xenial_info_field(
-	'header_social_link_color',
-	[
+xenial_color_picker_field(
+	'header_social_link_title_color',
+	array(
 		'priority' => 10,
 		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Colors', 'xenial' )
-	]
+		'label' => esc_html__( 'Title Color', 'xenial' ),
+		'is_responsive' => true,
+		'colors' => xenial_get_customize_default( 'header_social_link_title_color' )
+	)
 );
 
-xenial_radio_button_group_field(
-	'header_social_link_icon_color_type',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Icon Color Type', 'xenial' ),
-		'item' => 'text',
-		'columns' => 2,
-		'choices' => [
-			'custom' => esc_html__( 'Custom', 'xenial' ),
-			'official' => esc_html__( 'Official', 'xenial' )
-		],
-		'default' => $xenial_customizer_defaults['header_social_link_icon_color_type']
-	],
-	false
-);
 
 xenial_divider_field( 
 	'header_social_link_style_divider_5', 
@@ -363,130 +412,4 @@ xenial_divider_field(
 		'priority' => 10,
 		'section' => 'xenial_header_social_links', 
 	] 
-);
-
-
-xenial_info_field(
-	'header_social_link_default_state_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Default State Colors', 'xenial' )
-	]
-);
-
-
-xenial_color_field(
-	'header_social_link_icon_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Icon Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_icon_color']
-	],
-	false
-);
-
-
-xenial_color_field(
-	'header_social_link_title_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Title Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_title_color']
-	],
-	false
-);
-
-
-xenial_color_field(
-	'header_social_link_background_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Background Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_background_color']
-	],
-	true
-);
-
-
-xenial_color_field(
-	'header_social_link_border_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Border Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_border_color']
-	],
-	true
-);
-
-
-xenial_divider_field( 
-	'header_social_link_style_divider_6', 
-	[ 
-		'priority' => 10,
-		'section' => 'xenial_header_social_links', 
-	] 
-);
-
-
-
-xenial_info_field(
-	'header_social_link_hover_state_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Hover State Colors', 'xenial' )
-	]
-);
-
-
-xenial_color_field(
-	'header_social_link_hover_icon_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Icon Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_hover_icon_color']
-	],
-	false
-);
-
-
-xenial_color_field(
-	'header_social_link_hover_title_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Title Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_hover_title_color']
-	],
-	false
-);
-
-
-xenial_color_field(
-	'header_social_link_hover_background_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Background Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_hover_background_color']
-	],
-	true
-);
-
-
-xenial_color_field(
-	'header_social_link_hover_border_color',
-	[
-		'priority' => 10,
-		'section' => 'xenial_header_social_links',
-		'label' => esc_html__( 'Border Color', 'xenial' ),
-		'default' => $xenial_customizer_defaults['header_social_link_hover_border_color']
-	],
-	true
 );

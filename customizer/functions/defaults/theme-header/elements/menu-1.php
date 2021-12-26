@@ -11,12 +11,35 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_customize_defaults' ) ) 
 				'primary_menu' => '',
 
 	            'primary_desktop_top_level_menu_item_spacing' => 30,
-	            'primary_menu_top_level_items_color' => '',
-	            'primary_menu_top_level_items_hover_color' => '',
-	            'primary_menu_top_level_items_active_color' => '',
-	            'primary_menu_top_level_items_background_color' => '',
-	            'primary_menu_top_level_items_hover_background_color' => '',
-	            'primary_menu_top_level_items_active_background_color' => '',
+	            'primary_desktop_top_level_menu_item_stretch' => false,
+	            'primary_menu_top_level_items_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'hover' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'active' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
+	            'primary_menu_top_level_items_background_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'hover' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'active' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
 	            'primary_menu_top_level_items_padding' => array(
 	                'top' => 0,
 	                'right' => 0,
@@ -31,9 +54,20 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_customize_defaults' ) ) 
 	                'left' => 0
 	            ),
 	            'primary_menu_top_level_items_border_radius' => 0,
-	            'primary_menu_top_level_items_border_color' => '',
-	            'primary_menu_top_level_items_hover_border_color' => '',
-	            'primary_menu_top_level_items_active_border_color' => '',
+	            'primary_menu_top_level_items_border_color' => array(
+	            	'initial' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'hover' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	),
+	            	'active' => array(
+	            		'display' => true,
+	            		'default' => ''
+	            	)
+	            ),
 	            
 	            'primary_menu_top_level_items_font_weight' => '400',
 	            'primary_menu_top_level_items_font_size' => 16,
