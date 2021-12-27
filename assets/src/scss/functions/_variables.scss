@@ -150,7 +150,13 @@
   -------------------------------------------------------------------------- */
 
   --xe_navigation_item_font_size: 0.875rem;
+  --xe_navigation_first_level_item_font_size: 0.875rem;
   --xe_navigation_item_font_weight: normal;
+  --xe_navigation_first_level_item_font_weight: normal;
+  --xe_navigation_item_letter_spacing: 0;
+  --xe_navigation_first_level_item_letter_spacing: 0;
+  --xe_navigation_item_line_height: 1em;
+  --xe_navigation_first_level_item_line_height: 1em;
   --xe_navigation_dropdown_top_spacing: 20px;
 
   --xe_navigation_item_color: var(--xe_base_text_color);

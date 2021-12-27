@@ -8,7 +8,7 @@
 		array(
 			'menu' => $args['menu_slug'],
 			'container' => '',
-			'menu_class' => 'menu',
+			'menu_class' => 'xe-main-navigation',
 			'items_wrap' => xenial_primary_menu_items_wrap()
 		) 
 	); 
