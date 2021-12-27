@@ -142,7 +142,7 @@
 
 #customize-controls input[type=checkbox].tgl-ios:checked + .tgl-btn {
 
-    background: #32c10f;
+    background: var(--xe_customizer_primary_color);
 }
 
 #customize-controls .ss-main .ss-single-selected .ss-arrow span {

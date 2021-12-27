@@ -64,7 +64,8 @@
     line-height: 1;
     letter-spacing: 0;
     margin: 0;
-    padding: 12px 0;
+    padding: 0 10px;
+    height: 40px;
     width: 100%;
     background-color: white;
     border: 2px solid var(--xe_customizer_primary_color);

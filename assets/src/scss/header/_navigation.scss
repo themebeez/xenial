@@ -32,10 +32,20 @@
     font-size: var(--xe_navigation_item_font_size);
     font-weight: var(--xe_navigation_item_font_weight);
     text-decoration: none;
-    line-height: 1em;
+    letter-spacing: var(--xe_navigation_item_letter_spacing);
+    line-height: var(--xe_navigation_item_line_height);
     color: var(--xe_base_text_color);
     word-wrap: break-word;
     @include transation_delay_dymanic(0.3s);
+}
+
+.xe-site-navigation > ul > li > a {
+
+    font-size: var(--xe_navigation_first_level_item_font_size);
+    font-weight: var(--xe_navigation_first_level_item_font_weight);
+    letter-spacing: var(--xe_navigation_first_level_item_letter_spacing);
+    line-height: var(--xe_navigation_first_level_item_line_height);
+    text-decoration: none;
 }
 
 .xe-site-navigation ul li a:hover {
