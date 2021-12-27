@@ -1,83 +1,126 @@
 .customize-control-xenial-radio-button-group-control .control-wrap,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap {
+
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    border: 1px solid #f9f9fe;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label {
+
     cursor: pointer;
     text-align: center;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap.columns-1 label, 
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap.columns-1 label {
+
     width: 100%;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap.columns-2 label,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap.columns-2 label {
+
     width: 50%;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap.columns-3 label,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap.columns-3 label {
+
     width: 33.33%;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap.columns-4 label,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap.columns-4 label {
+
     width: 25%;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap.columns-5 label,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap.columns-5 label {
+
     width: 20%;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label > input,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label > input {
+
     display: none;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label span,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label span {
+
+    position: relative;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    font-weight: 500;
-    border: 2px solid #f9f9fe;
+    font-size: var(--xe_customizer_text_fontsize);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: 0;
     margin: 0;
-    background-color: #eee;
-    padding: 10px 0;
-    display: inline-block;
+    padding: 12px 0;
     width: 100%;
+    background-color: white;
+    border: 2px solid var(--xe_customizer_primary_color);
+    transition: 0.3s ease-in;
+}
+
+.customize-control-xenial-radio-button-group-control .control-wrap label:not(:last-child) span,
+.customize-control-xenial-radio-button-group-control .responsive-control-wrap label:not(:last-child) span {
+
+    border-right: transparent;
+}
+
+.customize-control-xenial-radio-button-group-control .control-wrap label:first-child span,
+.customize-control-xenial-radio-button-group-control .responsive-control-wrap label:first-child span {
+
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.customize-control-xenial-radio-button-group-control .control-wrap label:last-child span,
+.customize-control-xenial-radio-button-group-control .responsive-control-wrap label:last-child span {
+
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label span:hover,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label span:hover {
-    background-color: rgba(255, 255, 255, .2);
-    color: #2885bb;
+
+    background-color: var(--xe_customizer_control_hover_background_color);
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label > input:checked + span,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label > input:checked + span {
-    background-color: #2084bd;
-    color: #fff;
+
+    background-color: var(--xe_customizer_primary_color);
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label > input:checked + span:hover,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label > input:checked + span:hover {
-    color: #fff;
+
+    background-color: var(--xe_customizer_primary_color);
+    color: white;
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label > img,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label > img {
+
     cursor: pointer;
-    border: 3px solid #ddd;
+    border: 2px solid var(--xe_customizer_border_color);
 }
 
 .customize-control-xenial-radio-button-group-control .control-wrap label > input:checked + img,
 .customize-control-xenial-radio-button-group-control .responsive-control-wrap label > input:checked + img {
-    border: 3px solid #2885bb;
+    
+    border-color: var(--xe_customizer_primary_color);
 }
