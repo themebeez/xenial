@@ -1,8 +1,5 @@
-/* ------------------------------------------------------------------------------------
-    # 
-    # Xenial gulpfile to compile assets, zip prduction files & make POT file
-    #
-  ------------------------------------------------------------------------------------ */
+
+// Xenial gulpfile to compile assets, zip prduction files & make POT file.
 
 const gulp = require('gulp');
 const zip = require('gulp-zip');
@@ -247,14 +244,6 @@ gulp.task('zipProductionFiles', function () {
 });
 
 
-/*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-=
-= Run All tasks
-=
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-*/
-
 //=========================================
 // = C O M M A N D S                      = 
 //=========================================
@@ -269,8 +258,7 @@ gulp.task('zipProductionFiles', function () {
 
 gulp.task('default', shell.task(
 
-    'echo ====================== ⛔️ Ooops!, gulp default command is disabled in this project. These are the available commands gulp zip, gulp makepot & gulp assets. If you need additional info refer gulpfile.js 274. Cheers. ======================',
-
+    'echo ===== ⛔️ Ooops! gulp default command is disabled in this project. These are the available commands: gulp zip, gulp makepot & gulp assets. =====',
 ));
 
 // #1 Run Task: Zip production files
