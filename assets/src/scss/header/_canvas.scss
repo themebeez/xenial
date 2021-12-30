@@ -246,6 +246,7 @@
 
 .xe-offcanvas-navigation ul li a {
 
+    position: relative;
     display: inline-block;
     color: var(--xe_canvas_menu_item_color);
     font-size: var(--xe_canvas_menu_item_font_size);
@@ -256,6 +257,21 @@
     margin: 0;
     word-wrap: break-word;
     @include transation_delay_dymanic(0.3s);
+}
+
+.xe-offcanvas-navigation .menu-item-description {
+
+    top: 50%;
+    right: auto;
+    left: calc( 100% + 5px );
+    border-radius: 2px;
+    transform: translateY(-50%);
+}
+
+.xe-offcanvas-navigation .menu-item-description::before {
+
+    content: "";
+    display: none;
 }
 
 .xe-offcanvas-navigation ul li .sub-menu li a,

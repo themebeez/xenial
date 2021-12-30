@@ -25,6 +25,7 @@
 
 .xe-site-navigation ul li a {
 
+    position: relative;
     @include flex();
     align-items: center;
     padding: 0 10px;
@@ -208,6 +209,43 @@
 
     content: "";
     display: none;
+}
+
+/* -------------------------------------------------------------------------- 
+	Navigation menu item description
+  -------------------------------------------------------------------------- */
+
+.menu-item-description {
+
+    display: inline-block;
+    position: absolute;
+    top: -25px;
+    left: auto;
+    right: 0;
+    padding: 4px 7px;
+    font-size: 12px;
+    line-height: 1em;
+    font-weight: normal;
+    letter-spacing: 0;
+    color: white;
+    background-color: var(--xe_primary_color);
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.menu-item-description::before {
+
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 0;
+    left: 0;
+    right: auto;
+    width: 0;
+    border-top: 10px solid var(--xe_primary_color);
+    border-left: 0 solid transparent;
+    border-right: 10px solid transparent;
 }
 
 
