@@ -1,8 +1,5 @@
-/* ------------------------------------------------------------------------------------
-    # 
-    # Xenial gulpfile to compile assets, zip prduction files & make POT file
-    #
-  ------------------------------------------------------------------------------------ */
+
+// Xenial gulpfile to compile assets, zip prduction files & make POT file.
 
 const gulp = require('gulp');
 const zip = require('gulp-zip');
@@ -96,19 +93,16 @@ var compatibility__sass__path = {
 var project__name = 'Xenial';
 var project__text__domain = 'xenial';
 
-var php___files__path = {
+var php__file__path = [
 
-    php___files__src: [
-
-        './*.php',
-        './**.php',
-        './**/*.php',
-        '!./node_modules/*.php',
-        '!./.git/*.php',
-        '!./inc/plugin-recommendation.php',
-        '!./third-party/class-tgm-plugin-activation.php',
-    ],
-}
+    './*.php',
+    './**.php',
+    './**/*.php',
+    '!./node_modules/*.php',
+    '!./.git/*.php',
+    '!./inc/plugin-recommendation.php',
+    '!./third-party/class-tgm-plugin-activation.php',
+]
 
 // #4 zip files & folders for production 
 
@@ -233,12 +227,12 @@ gulp.task('compatibilitySassTask', function () {
 // # 3 Generate WordPress POT file
 
 gulp.task('xenialPotFile', function () {
-    return gulp.src(php___files__src.php___files__path)
+    return gulp.src(php__file__path)
         .pipe(wpPot({
             domain: project__text__domain,
             package: project__name
         }))
-        .pipe(gulp.dest('languages/xenial.pot'));
+        .pipe(gulp.dest('languages/' + project__text__domain + '.pot'));
 });
 
 // # 4 Generate Production Zip File 
@@ -249,14 +243,6 @@ gulp.task('zipProductionFiles', function () {
         .pipe(gulp.dest(source__files__folders__to__compress.path__to__save__production__zip))
 });
 
-
-/*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-=
-= Run All tasks
-=
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-*/
 
 //=========================================
 // = C O M M A N D S                      = 
@@ -272,8 +258,7 @@ gulp.task('zipProductionFiles', function () {
 
 gulp.task('default', shell.task(
 
-    'echo ====================== ⛔️ Ooops!, gulp default command is disabled in this project. These are the available commands gulp zip, gulp makepot & gulp assets. If you need additional info refer gulpfile.js 267. Cheers. ======================',
-
+    'echo ===== ⛔️ Ooops! gulp default command is disabled in this project. These are the available commands: gulp zip, gulp makepot & gulp assets. =====',
 ));
 
 // #1 Run Task: Zip production files
@@ -287,7 +272,6 @@ gulp.task('zip', gulp.series('zipProductionFiles', (done) => {
 
 gulp.task('makepot', gulp.series('xenialPotFile', (done) => {
 
-    gulp.watch(php___files__path.php___files__src, gulp.series('xenialPotFile'));
     done();
 }));
 
