@@ -1,91 +1,116 @@
 .xenial-section-link-control-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
-  padding: 10px 5px 10px 10px;
-  transition-duration: 0.3s;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 10px;
+    height: 45px;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1em;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    border: 2px solid var(--xe_customizer_border_color);
+    transition: 0.5s all ease;
 }
 
-.xenial-section-link-control-wrapper.xenial-switch-enabled:hover,
-.xenial-section-link-control-wrapper.xenial-has-no-switch:hover {
-  color: #0085ba;
-  cursor: pointer;
-  transition-duration: 0.3s;
+.xenial-section-link-control-wrapper:hover {
+
+    border-color: var(--xe_border_color_active);
 }
 
+.xenial-section-link-control-wrapper .checkbox-and-icon-wrapper {
 
-.checkbox-and-icon-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
+.xenial-section-link-control-wrapper .switch {
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 36px;
-  height: 18px;
+    position: relative;
+    display: inline-flex;
+    width: 36px;
+    height: 20px;
 }
 
-.switch input.xenial-section-link-input-checkbox { 
-  opacity: 0;
-  width: 0;
-  height: 0;
+.xenial-section-link-control-wrapper .switch input.xenial-section-link-input-checkbox { 
+
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .3s;
-  transition: .3s;
+.xenial-section-link-control-wrapper .slider {
+
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CCCCCC;
+    transition: 0.3s all ease;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 12px;
-  width: 12px;
-  left: 4px;
-  bottom: 3px;
-  background-color: white;
-  -webkit-transition: .3s;
-  transition: .3s;
+.xenial-section-link-control-wrapper .slider::before {
+
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s all ease;
 }
 
-input.xenial-section-link-input-checkbox:checked + .slider {
-  background-color: #2196F3;
+.xenial-section-link-control-wrapper input.xenial-section-link-input-checkbox:checked + .slider {
+
+    background-color: var(--xe_customizer_primary_color);
 }
 
-input.xenial-section-link-input-checkbox:checked + .slider:before {
-  -webkit-transform: translateX(16px);
-  -ms-transform: translateX(16px);
-  transform: translateX(16px);
+.xenial-section-link-control-wrapper input.xenial-section-link-input-checkbox:checked + .slider:before {
+
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
 }
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
+.xenial-section-link-control-wrapper .slider.round {
+
+    border-radius: 15px;
 }
 
-.slider.round:before {
-  border-radius: 50%;
+.xenial-section-link-control-wrapper .slider.round::before {
+
+    content: "";
+    border-radius: 50%;
 }
 
-.xenial-section-link-icon {
-  visibility: hidden;
-  line-height: 1;
+.xenial-section-link-control-wrapper .xenial-section-link-icon {
+
+    visibility: hidden;
 }
 
 .xenial-section-link-control-wrapper.xenial-switch-enabled .xenial-section-link-icon,
 .xenial-section-link-control-wrapper.xenial-has-no-switch .xenial-section-link-icon {
-  visibility: visible;
+
+    display: inline-flex;
+    visibility: visible;
+}
+
+.xenial-section-link-control-wrapper .xenial-section-link-icon {
+
+    fill: grey;
+    transition: 0.3 ease all;
+}
+
+.xenial-section-link-control-wrapper:hover .xenial-section-link-icon {
+
+    fill: var(--xe_customizer_primary_color);
 }

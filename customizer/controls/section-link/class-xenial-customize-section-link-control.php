@@ -87,7 +87,7 @@ if ( ! class_exists( 'Xenial_Customize_Section_Link_Control' ) ) {
 							  	<span class="slider round"></span>
 							</label>
 						<?php } ?>
-						<span class="xenial-section-link-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg></span>						
+						<span class="xenial-section-link-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"/><path d="M12.172 12L9.343 9.172l1.414-1.415L15 12l-4.243 4.243-1.414-1.415z"/></svg></span>						
 					</div>					
 				</div>
 				<?php
