@@ -1,193 +1,218 @@
 <?php 
 
-$xenial_customizer_defaults = xenial_get_customizer_defaults();
-
-
-xenial_controls_wrapper_field(
-	'post_single_related_posts_general',
-	[
-		'priority' => 10,
-		'section' => 'xenial_post_single',
-		'label' => esc_html__( 'Related Posts', 'xenial' ),
-		'class' => esc_attr( 'post-single-related-posts-general' ),
-		'controls_to_wrap' => 4,
-	],
-	false
-);
-
-
-xenial_switch_field(
+xenial_section_link_field(
 	'post_single_display_related_posts',
-	[
+	array(
 		'priority' => 10,
 		'section' => 'xenial_post_single',
-		'label' => esc_html__( 'Display Related Posts', 'xenial' ),
-		'default' => $xenial_customizer_defaults['post_single_display_related_posts']
-	]
+		'section_link' => 'xenial_post_single_related_posts',
+		'button_label' => esc_html__( 'Related Posts', 'xenial' ),
+		'enable_switch' => true,
+		'default' => xenial_get_customize_default( 'post_single_display_related_posts' )
+	)
 );
 
-
-
-xenial_divider_field( 
-	'post_single_related_posts_divider_1', 
-	[ 
+xenial_section_field( 
+	'xenial_post_single_related_posts',
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single', 
-	] 
+		'panel' => 'xenial_site_pages',
+		'title'	=> esc_html__( 'Related Posts', 'xenial' )
+	)
+);
+
+xenial_tab_field(
+	'xenial_post_single_related_posts_tab',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_post_single_related_posts',
+		'tabs' => xenial_get_tab_control_2_labels(),
+		'controls' => array(
+			'tab_1' => apply_filters( 
+	        	'xenial_post_single_related_posts_tab_1_controls', 
+	        	array(
+	        		'post_single_related_posts_section_title' => '',
+	        		'post_single_related_posts_divider_1' => '',
+	        		'post_single_related_posts_section_title_alignment' => '',
+	        		'post_single_related_posts_divider_2' => '',
+	        		'post_single_related_posts_elements' => '',
+	        		'post_single_related_posts_divider_3' => '',
+	        		'post_single_related_posts_meta' => '',
+	        		'post_single_related_posts_divider_4' => '',
+	        		'post_single_related_posts_number' => '',
+	        		'post_single_related_posts_divider_5' => '',
+	        		'post_single_related_posts_content_alignment' => '',
+	        		'post_single_related_posts_divider_6' => '',
+	        		'post_single_related_posts_by' => '',
+	        	) 
+	        ),
+	        'tab_2' => apply_filters( 
+	        	'xenial_post_single_related_posts_tab_2_controls', 
+	        	array(	
+	        		
+	        	) 
+	        )
+		)
+	)
 );
 
 
 xenial_text_field(
 	'post_single_related_posts_section_title',
-	[
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single',
+		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Section Title', 'xenial' ),
-		'default' => $xenial_customizer_defaults['post_single_related_posts_section_title']
-	]
+		'default' => xenial_get_customize_default( 'post_single_related_posts_section_title' )
+	)
 );
 
 
 xenial_divider_field( 
-	'post_single_related_posts_divider_2', 
-	[ 
+	'post_single_related_posts_divider_1', 
+	array( 
 		'priority' => 10,
-		'section' => 'xenial_post_single', 
-	] 
+		'section' => 'xenial_post_single_related_posts', 
+	) 
 );
 
 
 
 xenial_radio_button_group_field(
 	'post_single_related_posts_section_title_alignment',
-	[
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single',
+		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Section Title Alignment', 'xenial' ),
 		'item' => 'icon',
 		'columns' => 3,
-		'choices' => [
+		'choices' => array(
 			'left' => 'dashicons-align-left',
 			'center' => 'dashicons-align-center',
 			'right' => 'dashicons-align-right'
-		],
-		'default' => $xenial_customizer_defaults['post_single_related_posts_section_title_alignment']
-	],
+		),
+		'default' => xenial_get_customize_default( 'post_single_related_posts_section_title_alignment' )
+	),
 	false
 );
 
 
 xenial_divider_field( 
-	'post_single_related_posts_divider_3', 
-	[ 
+	'post_single_related_posts_divider_2', 
+	array( 
 		'priority' => 10,
-		'section' => 'xenial_post_single', 
-	] 
+		'section' => 'xenial_post_single_related_posts', 
+	) 
 );
 
 
 xenial_sortable_checkbox_field(
 	'post_single_related_posts_elements',
-	[
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single',
+		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Post Elements', 'xenial' ),
 		'choices' => apply_filters( 
 			'xenial_filter_related_posts_content_structure',  
-			[
+			array(
 				'image' => esc_html__( 'Featured Image', 'xenial' ),
 				'title' => esc_html__( 'Title', 'xenial' ),
 				'read_more' => esc_html__( 'Read More', 'xenial' ),
-			]
+			)
 		),
-		'input_attrs' => [ 'sortable' => false, 'fullwidth' => true ]
-	]
+		'input_attrs' => array( 'sortable' => false, 'fullwidth' => true )
+	)
 );
 
 
-/*xenial_divider_field( 
-	'post_single_related_posts_divider_4', 
-	[ 
+xenial_divider_field( 
+	'post_single_related_posts_divider_3', 
+	array( 
 		'priority' => 10,
-		'section' => 'xenial_post_single', 
-	] 
+		'section' => 'xenial_post_single_related_posts', 
+	) 
 );
 
 
 xenial_sortable_checkbox_field(
 	'post_single_related_posts_meta',
-	[
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single',
+		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Meta Elements', 'xenial' ),
 		'choices' => xenial_get_post_meta_structure(),
-		'input_attrs' => [ 'sortable' => true, 'fullwidth' => true ]
-	]
-);*/
+		'input_attrs' => array( 'sortable' => true, 'fullwidth' => true )
+	)
+);
 
 
 xenial_divider_field( 
-	'post_single_related_posts_divider_5', 
-	[ 
+	'post_single_related_posts_divider_4', 
+	array( 
 		'priority' => 10,
-		'section' => 'xenial_post_single', 
-	] 
+		'section' => 'xenial_post_single_related_posts', 
+	) 
 );
 
 
 xenial_range_control_field(
 	'post_single_related_posts_number',
-	[
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single',
+		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Number of Posts', 'xenial' ),
-		'input_attrs' => ['min' => 2, 'max' => 4, 'step' => 1, 'responsive' => false],
-		'default' => $xenial_customizer_defaults['post_single_related_posts_number']
-	]
+		'input_attrs' => array(
+			'min' => 2, 
+			'max' => 4, 
+			'step' => 1, 
+			'responsive' => false
+		),
+		'default' => xenial_get_customize_default( 'post_single_related_posts_number' )
+	)
 );
 
 
 xenial_divider_field( 
-	'post_single_related_posts_divider_6', 
-	[ 
+	'post_single_related_posts_divider_5', 
+	array( 
 		'priority' => 10,
-		'section' => 'xenial_post_single', 
-	] 
+		'section' => 'xenial_post_single_related_posts', 
+	) 
 );
 
 
 xenial_radio_button_group_field(
 	'post_single_related_posts_content_alignment',
-	[
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single',
+		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Content Alignment', 'xenial' ),
 		'item' => 'icon',
 		'columns' => 3,
-		'choices' => [
+		'choices' => array(
 			'left' => 'dashicons-align-left',
 			'center' => 'dashicons-align-center',
 			'right' => 'dashicons-align-right'
-		],
-		'default' => $xenial_customizer_defaults['post_single_related_posts_content_alignment']
-	],
+		),
+		'default' => xenial_get_customize_default( 'post_single_related_posts_content_alignment' )
+	),
 	false
 );
 
 
 xenial_divider_field( 
-	'post_single_related_posts_divider_7', 
-	[ 
+	'post_single_related_posts_divider_6', 
+	array( 
 		'priority' => 10,
-		'section' => 'xenial_post_single', 
-	] 
+		'section' => 'xenial_post_single_related_posts', 
+	) 
 );
 
 xenial_radio_button_group_field(
 	'post_single_related_posts_by',
-	[
+	array(
 		'priority' => 10,
-		'section' => 'xenial_post_single',
+		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Related Posts By', 'xenial' ),
 		'item' => 'text',
 		'columns' => 2,
@@ -195,7 +220,7 @@ xenial_radio_button_group_field(
 			'categories' => esc_html__( 'Categories', 'xenial' ),
 			'tag' => esc_html__( 'Tags', 'xenial' )
 		),
-		'default' => $xenial_customizer_defaults['post_single_related_posts_by']
-	],
+		'default' => xenial_get_customize_default( 'post_single_related_posts_by' )
+	),
 	false
 );
