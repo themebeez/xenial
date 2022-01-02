@@ -903,7 +903,7 @@ if ( ! function_exists( 'xenial_section_link_field' ) ) {
 
 		$wp_customize->add_setting( $id,
 			array(
-				'default' => '',
+				'default' => $args['default'],
 				'sanitize_callback' => ''
 			) 
 		);
@@ -920,7 +920,8 @@ if ( ! function_exists( 'xenial_section_link_field' ) ) {
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
 					'input_attrs' => array(
 						'button_label' => isset( $args['button_label'] ) ? $args['button_label'] : '',
-						'section_link' => isset( $args['section_link'] ) ? $args['section_link'] : ''
+						'section_link' => isset( $args['section_link'] ) ? $args['section_link'] : '',
+						'enable_switch' => ( isset( $args['enable_switch'] ) && $args['enable_switch'] == true ) ? true : false
 					)
 				)
 			)

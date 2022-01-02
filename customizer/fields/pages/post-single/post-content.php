@@ -99,3 +99,11 @@ xenial_switch_field(
 		'default' => $xenial_customizer_defaults['post_single_show_icons_in_post_meta']
 	]
 );
+
+xenial_divider_field( 
+	'post_single_content_divider_4', 
+	[ 
+		'priority' => 10,
+		'section' => 'xenial_post_single', 
+	] 
+);

@@ -158,6 +158,7 @@ xenial_section_link_field(
 	array(
 		'section' => 'xenial_layout',
 		'section_link' => 'xenial_theme_elements',
-		'button_label' => 'Test Button'
+		'button_label' => 'Test Button',
+		'enable_switch' => false
 	)
 );
