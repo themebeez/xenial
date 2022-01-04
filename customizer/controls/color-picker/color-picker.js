@@ -38,27 +38,26 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 
 		var control = this;
 
+		var controlContainer = control.container;
+
+		var controlContainerEle = controlContainer[0];
+
 		var settingID = control.setting.id;
 
 		var colorPickersEle = control.container.find( '.xenial-picker' );
 
 		var colorPickerSettingEle = control.container.find('input[name="xenial-color-picker-setting-input"]');
 
-		colorPickersEle.each( function( index, object ) {
+		var colorFields = controlContainerEle.querySelectorAll( '.xe-color-picker' );
 
-			var currentEleID = this.id;
-
-			var currentEleColorValue = this.getAttribute('data-color');
-
-			var colorValue = ( currentEleColorValue ) ? currentEleColorValue : 'rgba(0,0,0,0)';
-
-			var currentEleParentNode = object.parentNode;
-
-			var currentHiddenInput = currentEleParentNode.querySelector('input[name="' + currentEleID + '"]')
-
-			const colorPickerInit = Pickr.create({
-				el: '#' + currentEleID,
-				container: '#' + control.container.attr('id'),
+		[].forEach.call( colorFields, ( colorField ) => {
+			let colorInitWrapperEle = colorField.nextElementSibling;
+			let colorInitWrapperEleID = colorInitWrapperEle.id;
+			let currentEleParentNode = colorField.parentNode;
+			let colorValue = colorInitWrapperEle.getAttribute("data-color");
+			const xeColorPickerInit = Pickr.create({
+				el: '#'+colorInitWrapperEleID,
+				container: '#' + controlContainerEle.id,
 				theme: 'nano',
 				default: colorValue,
 				components: {
@@ -66,6 +65,7 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 					opacity: true,
 					hue: true,
 					interaction: {
+						rgba: true,
 						input: true,
 						clear: true,
 						save: false
@@ -73,12 +73,12 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 				}
 			});
 
-			colorPickerInit.on( 'change', ( color, source, instance ) => {
-				var currentColorPickerToggleButton = currentEleParentNode.querySelector('button.pcr-button');
+			xeColorPickerInit.on( 'change', ( color, source, instance ) => {
+				let currentColorPickerToggleButton = currentEleParentNode.querySelector('button.pcr-button');
 				if ( color ) {
 					var rgbaColorValue = color.toRGBA().toString(0);
-					currentColorPickerToggleButton.style.setProperty( '--pcr-color', color.toRGBA().toString(0) );
-					currentHiddenInput.value = rgbaColorValue;
+					currentColorPickerToggleButton.style.setProperty( '--pcr-color', rgbaColorValue );
+					colorField.value = rgbaColorValue;
 					if ( xenialColorPickerScriptObj.isResponsive ) {
 						xenialSaveResponsiveColors();
 					} else {

@@ -27,7 +27,7 @@ get_header();
                 <h3 class="xe-subtitle"><?php echo esc_html__( 'Oops! the page couldn&rsquo;t be found.', 'xenial' ); ?></h3>
                 <p class="xe-excerpt"><?php echo esc_html__( 'The page that you are trying to access either has been moved or doesn&rsquo;t exist.', 'xenial' ); ?></p>
                 <p class="xe-gohome">
-                    <a href="index.html" class="xe-button"><?php echo esc_html__( 'Go back to homepage', 'xenial' ); ?> <span class="icon"><i class="ti-shift-right"></i></span></a>
+                    <a href="<?php echo esc_url( home_url() ); ?>" class="xe-button"><?php echo esc_html__( 'Go back to homepage', 'xenial' ); ?> <span class="icon"><i class="ti-shift-right"></i></span></a>
                 </p>
             </article>
         </main> <!-- #site-main -->

@@ -2,50 +2,48 @@
 
 if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
 	function xenial_dynamic_breadcrumbs_css() {
-		$customizerDefaults = xenial_get_customizer_defaults();
 
-		$breadcrumbsDesktopFontSize = xenial_get_option( 'breadcrumbs_font_size_desktop' );
+		$breadcrumbs_desktop_font_size = xenial_get_option( 'breadcrumbs_font_size_desktop' );
 
-		$breadcrumbsTabletFontSize = xenial_get_option( 'breadcrumbs_font_size_tablet' );
+		$breadcrumbs_tablet_font_size = xenial_get_option( 'breadcrumbs_font_size_tablet' );
 
-		$breadcrumbsMobileFontSize = xenial_get_option( 'breadcrumbs_font_size_mobile' );
+		$breadcrumbs_mobile_font_size = xenial_get_option( 'breadcrumbs_font_size_mobile' );
 
-		$breadcrumbsFontColor = xenial_get_option( 'breadcrumbs_text_color' );
-		$breadcrumbsFontHoverColor = xenial_get_option( 'breadcrumbs_link_hover_color' );
-
+		$breadcrumbs_font_color = xenial_get_option( 'breadcrumbs_text_color' );
+		$breadcrumbs_font_hover_color = xenial_get_option( 'breadcrumbs_link_hover_color' );
 
 		$css = '';
 
-		if ( $breadcrumbsDesktopFontSize ) {
+		if ( $breadcrumbs_desktop_font_size ) {
 			$css .= '.xe-breadcrumb .trail-item > a, .xe-breadcrumb .trail-item > span {
-				font-size: ' . absint( $breadcrumbsDesktopFontSize ) . 'px;
+				font-size: ' . absint( $breadcrumbs_desktop_font_size ) . 'px;
 			}';
 		}
 
-		if ( $breadcrumbsFontColor ) {
-			$css .= '.xe-breadcrumb .trail-item a {
-				color: ' . esc_attr( $breadcrumbsFontColor ) . ';
+		if ( $breadcrumbs_font_color ) {
+			$css .= '.xe-breadcrumb .trail-item a, .xe-breadcrumb .trail-item::after {
+				color: ' . esc_attr( $breadcrumbs_font_color ) . ';
 			}';
 		}
 
-		if ( $breadcrumbsFontHoverColor ) {
+		if ( $breadcrumbs_font_hover_color ) {
 			$css .= '.xe-breadcrumb .trail-item a:hover {
-				color: ' . esc_attr( $breadcrumbsFontHoverColor ) . ';
+				color: ' . esc_attr( $breadcrumbs_font_hover_color ) . ';
 			}';
 		}
 
-		if ( $breadcrumbsTabletFontSize ) {
+		if ( $breadcrumbs_tablet_font_size ) {
 			$css .= '@media screen and (max-width: 768px) {
 				.xe-breadcrumb .trail-item > a, .xe-breadcrumb .trail-item > span {
-					font-size: ' . absint( $breadcrumbsTabletFontSize ) . 'px;
+					font-size: ' . absint( $breadcrumbs_tablet_font_size ) . 'px;
 				}
 			}';
 		}
 
-		if ( $breadcrumbsMobileFontSize ) {
+		if ( $breadcrumbs_mobile_font_size ) {
 			$css .= '@media screen and (max-width: 576px) {
 				.xe-breadcrumb .trail-item > a, .xe-breadcrumb .trail-item > span {
-					font-size: ' . absint( $breadcrumbsMobileFontSize ) . 'px;
+					font-size: ' . absint( $breadcrumbs_mobile_font_size ) . 'px;
 				}	
 			}';
 		}

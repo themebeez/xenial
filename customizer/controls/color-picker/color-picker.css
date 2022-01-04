@@ -96,6 +96,10 @@
 	border-radius: 50%;
 }
 
+.pcr-app .pcr-interaction input[data-type="RGBA"] {
+	display: none;
+}
+
 
 .customize-control-xenial-color-picker .xenial-responsive-color-wrapper .xenial-color-field-wrapper {
 

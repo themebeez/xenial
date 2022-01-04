@@ -14,7 +14,6 @@ if ( ! function_exists( 'xenial_dynamic_layout_css' ) ) {
 			--xe_default_primary_area_width: calc( 100% - ' . absint( $sidebarWidth ) . '% );
 			--xe_default_sidebar_width: ' . absint( $sidebarWidth ) .  '%;
 			--xe_container_width_narrow: ' . absint( $narrowcontentAreaWidth ) . 'px;
-			--xe_container_width: ' . absint( $siteContainerWidth ) . 'px;
 		}';
 
 		return $css;

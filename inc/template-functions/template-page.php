@@ -5,21 +5,13 @@ if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
 	function xenial_single_page_header_template() {
 
 		$templateArgs = array(
+			'display_title' => false,
 			'current_page' => 'page',
 			'container_width' => '',
-			'before_title' => '',
-			'after_title' => '',
 			'display_breadcrumbs' => false
 		);
 
 		$containerWidth = xenial_get_option( 'page_single_header_width' );
-
-		$titleTag = xenial_get_option( 'page_single_title_tag' );
-
-		if ( $titleTag ) {
-			$templateArgs['before_title'] = '<' . $titleTag . ' class="xe-title">';
-			$templateArgs['after_title'] = '</' . $titleTag . '>';  
-		}
 
 		$displayBreadcrumbs = xenial_get_option( 'page_single_display_breadcrumbs' );
 		$templateArgs['display_breadcrumbs'] = ( $displayBreadcrumbs == true ) ? true : false;
@@ -78,5 +70,27 @@ if ( ! function_exists( 'xenial_page_single_content_container_classes' ) ) {
 		$contentContainerClasses = apply_filters( 'xenial_page_single_content_container_classes', $contentContainerClasses );
 
 		echo esc_attr( implode( ' ', $contentContainerClasses ) );
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_page_title_template' ) ) {
+
+	function xenial_page_title_template() {
+
+		$page_title_tag = xenial_get_option( 'page_single_title_tag' );
+		?>
+		<div class="xe-post-title xe-entry-title">
+			<?php 
+			printf( 
+				/* translators: 1: Heading Tag, 2: Page title. */
+				__( '<%1$s class="xe-title">%2$s</%1$s>', 'xenial' ), 
+				$page_title_tag, 
+				wp_kses_post( get_the_title() ) 
+			);
+			?>
+	    </div>
+		<?php
 	}
 }

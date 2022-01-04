@@ -6,13 +6,13 @@
  *
  * @package Xenial
  */
-if ( $args['current_page'] == 'single' && $args['display_breadcrumbs'] == false ) {
+if ( $args['display_title'] == false && $args['display_breadcrumbs'] == false ) {
     return;
 }
 ?>
 <header class="xe-pageheader">
     <div class="<?php echo esc_attr( $args['classes'] ); ?>">
-        <?php if ( $args['current_page'] != 'single' ) { ?>
+        <?php if ( $args['display_title'] == true ) { ?>
             <aside class="xe-pagetitle-holder">
                 <?php
                 switch ( $args['current_page'] ) {

@@ -5,6 +5,7 @@ if ( ! function_exists( 'xenial_archive_page_header_template' ) ) {
 	function xenial_archive_page_header_template() {
 
 		$templateArgs = array(
+			'display_title' => true,
 			'current_page' => '',
 			'container_width' => '',
 			'before_title' => '',
