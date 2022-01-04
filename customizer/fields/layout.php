@@ -106,49 +106,49 @@ xenial_color_picker_field(
 		'priority' => 10,
 		'section' => 'xenial_layout',
 		'label' => esc_html__( 'Color Picker Test', 'xenial' ),
-		'is_responsive' => false,
-		// 'colors' => array(
-		// 	'desktop' => array(
-		// 		'initial' => array(
-		// 			'display' => true,
-		// 			'default' => ''
-		// 		),
-		// 		'hover' => array(
-		// 			'display' => true,
-		// 			'default' => ''
-		// 		)
-		// 	),
-		// 	'tablet' => array(
-		// 		'initial' => array(
-		// 			'display' => true,
-		// 			'default' => ''
-		// 		),
-		// 		'hover' => array(
-		// 			'display' => true,
-		// 			'default' => ''
-		// 		)
-		// 	),
-		// 	'mobile' => array(
-		// 		'initial' => array(
-		// 			'display' => true,
-		// 			'default' => ''
-		// 		),
-		// 		'hover' => array(
-		// 			'display' => true,
-		// 			'default' => ''
-		// 		)
-		// 	)
-		// )
+		'is_responsive' => true,
 		'colors' => array(
-			'initial' => array(
-				'display' => true,
-				'default' => ''
+			'desktop' => array(
+				'initial' => array(
+					'display' => true,
+					'default' => ''
+				),
+				'hover' => array(
+					'display' => true,
+					'default' => ''
+				)
 			),
-			'hover' => array(
-				'display' => true,
-				'default' => ''
+			'tablet' => array(
+				'initial' => array(
+					'display' => true,
+					'default' => ''
+				),
+				'hover' => array(
+					'display' => true,
+					'default' => ''
+				)
+			),
+			'mobile' => array(
+				'initial' => array(
+					'display' => true,
+					'default' => ''
+				),
+				'hover' => array(
+					'display' => true,
+					'default' => ''
+				)
 			)
 		)
+		// 'colors' => array(
+		// 	'initial' => array(
+		// 		'display' => true,
+		// 		'default' => ''
+		// 	),
+		// 	'hover' => array(
+		// 		'display' => true,
+		// 		'default' => ''
+		// 	)
+		// )
 	)
 );
 

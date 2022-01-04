@@ -123,6 +123,8 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 			$this->json['value'] = $this->value();
 
 			$this->json['link'] = $this->get_link();
+
+			$this->json['labels'] = $this->get_labels();
 		}
 
 		/**
@@ -204,120 +206,84 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 
 			<# if ( data.isResponsive ) { #>
 				<div class="xenial-responsive-color-wrapper">
-					
+					<# let desktopColors = data.colors.desktop; #>
+					<# let savedDesktopColors = settingValue.desktop; #>
 					<ul class="desktop responsive-control-wrap xenial-color-field-wrapper active">
-						<# if ( data.colors.desktop.initial && data.colors.desktop.initial.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Initial', 'xenial' ); ?>">
-								<input type="hidden" name="desktop-initial-color-{{ data.id }}" value="{{ settingValue.desktop.initial }}" data-default="{{ data.colors.desktop.initial.default }}">
-								<div id="desktop-initial-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.desktop.initial }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.desktop.link && data.colors.desktop.link.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Link', 'xenial' ); ?>">
-								<input type="hidden" name="desktop-link-color-{{ data.id }}" value="{{ settingValue.desktop.link }}" data-default="{{ data.colors.desktop.link.default }}">
-								<div id="desktop-link-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.desktop.link }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.desktop.hover && data.colors.desktop.hover.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Hover', 'xenial' ); ?>">
-								<input type="hidden" name="desktop-hover-color-{{ data.id }}" value="{{ settingValue.desktop.hover }}" data-default="{{ data.colors.desktop.hover.default }}">
-								<div id="desktop-hover-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.desktop.hover }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.desktop.active && data.colors.desktop.active.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Active', 'xenial' ); ?>">
-								<input type="hidden" name="desktop-active-color-{{ data.id }}" value="{{ settingValue.desktop.active }}" data-default="{{ data.colors.desktop.active.default }}">
-								<div id="desktop-active-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.desktop.active }}"></div>
-							</li>
-						<# } #>
+						<# _.each( desktopColors, function( value, key ) {
+							if ( value.display ) {
+								#>
+								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
+									<input type="hidden" name="desktop-{{ key }}-color-{{ data.id }}" value="{{ savedDesktopColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
+									<div id="desktop-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedDesktopColors[ key ] }}"></div>
+								</li>
+								<#
+							}
+						} ); #>
 					</ul>
+					<# let tabletColors = data.colors.tablet; #>
+					<# let savedTabletColors = settingValue.tablet; #>
 					<ul class="tablet responsive-control-wrap xenial-color-field-wrapper">
-						<# if ( data.colors.tablet.initial && data.colors.tablet.initial.display  ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Initial', 'xenial' ); ?>"> 
-								<input type="hidden" name="tablet-initial-color-{{ data.id }}" value="{{ settingValue.tablet.initial }}" data-default="{{ data.colors.tablet.initial.default }}">
-								<div id="tablet-initial-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.tablet.initial }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.tablet.link && data.colors.tablet.link.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Link', 'xenial' ); ?>">
-								<input type="hidden" name="tablet-link-color-{{ data.id }}" value="{{ settingValue.tablet.initial }}" data-default="{{ data.colors.tablet.link.default }}">
-								<div id="tablet-link-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.tablet.link }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.tablet.hover && data.colors.tablet.hover.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Hover', 'xenial' ); ?>">
-								<input type="hidden" name="tablet-hover-color-{{ data.id }}" value="{{ settingValue.tablet.hover }}" data-default="{{ data.colors.tablet.hover.default }}">
-								<div id="tablet-hover-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.tablet.hover }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.tablet.active && data.colors.tablet.active.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Active', 'xenial' ); ?>">
-								<input type="hidden" name="tablet-active-color-{{ data.id }}" value="{{ settingValue.tablet.active }}" data-default="{{ data.colors.tablet.active.default }}">
-								<div id="tablet-active-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.tablet.active }}"></div>
-							</li>
-						<# } #>
+						<# _.each( tabletColors, function( value, key ) {
+							if ( value.display ) {
+								#>
+								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
+									<input type="hidden" name="tablet-{{ key }}-color-{{ data.id }}" value="{{ savedTabletColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
+									<div id="tablet-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedTabletColors[ key ] }}"></div>
+								</li>
+								<#
+							}
+						} ); #>
 					</ul>
+					<# let mobileColors = data.colors.mobile; #>
+					<# let savedMobileColors = settingValue.mobile; #>
 					<ul class="mobile responsive-control-wrap xenial-color-field-wrapper">
-						<# if ( data.colors.mobile.initial && data.colors.mobile.initial.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Initial', 'xenial' ); ?>"> 
-								<input type="hidden" name="mobile-initial-color-{{ data.id }}" value="{{ settingValue.mobile.initial }}" data-default="{{ data.colors.mobile.initial.default }}">
-								<div id="mobile-initial-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.mobile.initial }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.mobile.link && data.colors.mobile.link.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Link', 'xenial' ); ?>">
-								<input type="hidden" name="mobile-link-color-{{ data.id }}" value="{{ settingValue.mobile.link }}" data-default="{{ data.colors.mobile.link.default }}">
-								<div id="mobile-link-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.mobile.link }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.mobile.hover && data.colors.mobile.hover.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Hover', 'xenial' ); ?>">
-								<input type="hidden" name="mobile-hover-color-{{ data.id }}" value="{{ settingValue.mobile.hover }}" data-default="{{ data.colors.mobile.hover.default }}">
-								<div id="mobile-hover-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.mobile.hover }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.mobile.active && data.colors.mobile.active.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Active', 'xenial' ); ?>">
-								<input type="hidden" name="mobile-active-color-{{ data.id }}" value="{{ settingValue.mobile.active }}" data-default="{{ data.colors.mobile.active.default }}">
-								<div id="mobile-active-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.mobile.active }}"></div>
-							</li>
-						<# } #>
+						<# _.each( mobileColors, function( value, key ) {
+							if ( value.display ) {
+								#>
+								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
+									<input type="hidden" name="tablet-{{ key }}-color-{{ data.id }}" value="{{ savedMobileColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
+									<div id="tablet-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedMobileColors[ key ] }}"></div>
+								</li>
+								<#
+							}
+						} ); #>
 					</ul>
 				</div>
 				
 			<# } else { #>
 				<div class="xenial-normal-color-wrapper">
+					<# let normalColors = data.colors; #>
+					<# let savedNormalColors = settingValue; #>
 					<ul class="colors control-wrap xenial-color-field-wrapper">
-						<# if ( data.colors.initial && data.colors.initial.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Initial', 'xenial' ); ?>"> 
-								<input type="hidden" name="initial-color-{{ data.id }}" value="{{ settingValue.initial }}" data-default="{{ data.colors.initial.default }}">
-								<div id="initial-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.initial }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.link && data.colors.link.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Link', 'xenial' ); ?>">
-								<input type="hidden" name="link-color-{{ data.id }}" value="{{ settingValue.link }}" data-default="{{ data.colors.link.default }}">
-								<div id="link-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.link }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.hover && data.colors.hover.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Hover', 'xenial' ); ?>">
-								<input type="hidden" name="hover-color-{{ data.id }}" value="{{ settingValue.hover }}" data-default="{{ data.colors.hover.default }}">
-								<div id="hover-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.hover }}"></div>
-							</li>
-						<# } #>
-						<# if ( data.colors.active &&  data.colors.active.display ) { #>
-							<li class="xe-customize-tippy" data-tippy-content="<?php echo esc_html__( 'Active', 'xenial' ); ?>">
-								<input type="hidden" name="active-color-{{ data.id }}" value="{{ settingValue.active }}" data-default="{{ data.colors.active.default }}">
-								<div id="active-color-{{ data.id }}" class="xenial-picker" data-color="{{ settingValue.active }}"></div>
-							</li>
-						<# } #>
+						<# _.each( normalColors, function( value, key ) {
+							if ( value.display ) {
+								#>
+								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
+									<input type="hidden" name="{{ key }}-color-{{ data.id }}" value="{{ savedNormalColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
+									<div id="{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedNormalColors[ key ] }}"></div>
+								</li>
+								<#
+							}
+						} ); #>
 					</ul>
-				</div>
-				
+				</div>				
 			<# } #>
 			<input type="hidden" name="xenial-color-picker-setting-input" id="xenial-color-picker-setting-input-{{ data.id }}" value="{{ data.value }}" {{ data.link }}>
 			<?php
+		}
+
+
+
+		public function get_labels() {
+			return apply_filters(
+				'xenial_color_labels_filter',
+				array(
+					'initial' => esc_html__( 'Initial', 'xenial' ),
+					'link' => esc_html__( 'Link', 'xenial' ),
+					'hover' => esc_html__( 'Hover', 'xenial' ),
+					'active' => esc_html__( 'Active', 'xenial' )
+				)
+			);
 		}
 	}
 }

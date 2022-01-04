@@ -867,7 +867,7 @@ if ( ! function_exists( 'xenial_color_picker_field' ) ) {
 
 		$wp_customize->add_setting( $id,
 			array(
-				'default' => '',
+				'default' => $args['default'],
 				'sanitize_callback' => ''
 			) 
 		);
@@ -884,7 +884,8 @@ if ( ! function_exists( 'xenial_color_picker_field' ) ) {
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
 					'input_attrs' => array(
 						'is_responsive' => ( isset( $args['is_responsive'] ) && $args['is_responsive'] ) ? true : false,
-						'colors' => ( isset( $args['colors'] ) ) ? $args['colors'] : array()
+						'colors' => ( isset( $args['colors'] ) ) ? $args['colors'] : array(),
+						'allowed_fields' => ( isset( $args['allowed_fields'] ) ) ? $args['allowed_fields'] : array()
 					)
 				)
 			)

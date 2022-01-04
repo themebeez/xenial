@@ -179,6 +179,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 					opacity: true,
 					hue: true,
 					interaction: {
+						rgba: true,
 						input: true,
 						clear: true,
 						save: false
