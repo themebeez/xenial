@@ -6,7 +6,21 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 
 		var settingValue, stringifySettingValue;
 
-		if ( xenialColorPickerScriptObj.isResponsive ) {
+		var control = this;
+
+		var controlContainer = control.container;
+
+		var controlContainerEle = controlContainer[0];
+
+		var settingID = control.setting.id;
+
+		var colorPickersEle = control.container.find( '.xenial-picker' );
+
+		var responsiveEle = controlContainerEle.querySelector( "#xenial-color-picker-responsive-" + settingID );
+
+		var responsiveEleVal = responsiveEle.value;
+
+		if ( responsiveEleVal == "true" ) {
 			settingValue = {
 				desktop: {
 					initial: '',
@@ -35,16 +49,6 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 				active: ''
 			};
 		}
-
-		var control = this;
-
-		var controlContainer = control.container;
-
-		var controlContainerEle = controlContainer[0];
-
-		var settingID = control.setting.id;
-
-		var colorPickersEle = control.container.find( '.xenial-picker' );
 
 		var colorPickerSettingEle = control.container.find('input[name="xenial-color-picker-setting-input"]');
 
@@ -79,7 +83,7 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 					var rgbaColorValue = color.toRGBA().toString(0);
 					currentColorPickerToggleButton.style.setProperty( '--pcr-color', rgbaColorValue );
 					colorField.value = rgbaColorValue;
-					if ( xenialColorPickerScriptObj.isResponsive ) {
+					if ( responsiveEleVal == "true" ) {
 						xenialSaveResponsiveColors();
 					} else {
 						xenialSaveNormalColors();

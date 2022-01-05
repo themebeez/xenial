@@ -33,11 +33,7 @@ xenial_tab_field(
 	        		'primary_menu_dropdown_styles_divider_1' => '',
 	        		'primary_menu_dropdown_padding' => '',
 	        		'primary_menu_dropdown_styles_divider_2' => '',
-	        		'primary_menu_dropdown_border_fields_title' => '',
-	        		'primary_menu_dropdown_border_style' => '',
-	        		'primary_menu_dropdown_border_width' => '',
-	        		'primary_menu_dropdown_border_radius' => '',
-	        		'primary_menu_dropdown_border_color' => '',
+	        		'primary_menu_dropdown_border' => '',
 	        		
 
 	        		'primary_menu_dropdown_styles_wrapper' => '',
@@ -160,71 +156,18 @@ xenial_divider_field(
 	)
 );
 
-xenial_info_field(
-	'primary_menu_dropdown_border_fields_title',
+xenial_box_border_field(
+	'primary_menu_dropdown_border',
 	array(
-		'priority' => 10,
 		'section' => 'xenial_header_primary_menu_dropdown',
-		'label' => esc_html__( 'Dropdown Border', 'xenial' )
-	)
-);
-
-
-xenial_select_field(
-	'primary_menu_dropdown_border_style',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_primary_menu_dropdown',
-		'label' => esc_html__( 'Border Style', 'xenial' ),
-		'choices' => xenial_get_border_styles(),
-		'default' => xenial_get_customize_default( 'primary_menu_dropdown_border_style' )
-	)
-);
-
-
-xenial_box_dimension_field(
-	'primary_menu_dropdown_border_width',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_primary_menu_dropdown',
-		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 10, 
-			'step' => 1, 
-			'responsive' => false
-		),
-		'defaults' => xenial_get_customize_default( 'primary_menu_dropdown_border_width' )
-	),
-	false
-);
-
-
-xenial_range_control_field(
-	'primary_menu_dropdown_border_radius',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_primary_menu_dropdown',
-		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 1000, 
-			'step' => 1, 
-			'responsive' => false
-		),
-		'default' => xenial_get_customize_default( 'primary_menu_dropdown_border_radius' )
-	)
-);
-
-
-xenial_color_picker_field(
-	'primary_menu_dropdown_border_color',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_primary_menu_dropdown',
-		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'label' => esc_html__( 'Dropdown Border', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'primary_menu_dropdown_border_color' )
+		'allowed_fields' => array(
+			'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
+			'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
+			'border_colors' => array( 'top', 'right', 'bottom', 'left' )
+		),
+		'default' => xenial_get_customize_default( 'primary_menu_dropdown_border' )
 	)
 );
 

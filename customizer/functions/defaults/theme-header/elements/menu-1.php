@@ -46,6 +46,7 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_customize_defaults' ) ) 
 	                'bottom' => 0,
 	                'left' => 0
 	            ),
+	            'primary_menu_top_level_items_border' => '{"expanded":false,"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}',
 	            'primary_menu_top_level_items_border_style' => 'solid',
 	            'primary_menu_top_level_items_border_width' => array(
 	                'top' => 0,
@@ -100,6 +101,7 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_dropdown_customize_defau
 	                'bottom' => 0,
 	                'left' => 0,
 	            ),
+	            'primary_menu_dropdown_border' => '{"expanded":false,"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}',
 	            'primary_menu_dropdown_border_style' => 'solid',
 	            'primary_menu_dropdown_border_width' => array(
 	                'top' => 0,
