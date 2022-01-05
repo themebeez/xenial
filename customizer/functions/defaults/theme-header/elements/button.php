@@ -17,24 +17,71 @@ if ( ! function_exists( 'xenial_get_header_button_customize_defaults' ) ) {
 	                'tablet' => 'left', 
 	                'mobile' => 'left'
 	            ),
-	            'header_button_font_color' => '',
-	            'header_button_hover_font_color' => '',
-	            'header_button_background_color' => '',
-	            'header_button_hover_background_color' => '',
-	            'header_button_border_radius' => array(
-	                'desktop' => 0,
-	                'tablet' => 0,
-	                'mobile' => 0
+	            'header_button_font_color' => array(
+	                'desktop' => array(
+	            		'initial' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	),
+		            	'hover' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	)
+	            	),
+	            	'tablet' => array(
+	            		'initial' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	),
+		            	'hover' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	)
+	            	),
+	            	'mobile' => array(
+	            		'initial' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	),
+		            	'hover' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	)
+	            	)
 	            ),
-	            'header_button_border_style' => 'solid',
-	            'header_button_border_width' => array(
-	                'top' => 1,
-	                'right' => 1,
-	                'bottom' => 1,
-	                'left' => 1
+	            'header_button_background_color' => array(
+	                'desktop' => array(
+	            		'initial' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	),
+		            	'hover' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	)
+	            	),
+	            	'tablet' => array(
+	            		'initial' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	),
+		            	'hover' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	)
+	            	),
+	            	'mobile' => array(
+	            		'initial' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	),
+		            	'hover' => array(
+		            		'display' => true,
+		            		'default' => '#000000'
+		            	)
+	            	)
 	            ),
-	            'header_button_border_color' => '',
-	            'header_button_hover_border_color' => '',
+	            'header_button_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}',
 	            'header_button_padding' => array(
 	                'desktop_top' => 0,
 	                'desktop_right' => 0,

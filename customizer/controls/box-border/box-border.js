@@ -4,8 +4,6 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 
 		"use strict";
 
-		const localizeScriptData = xenial_boder_box_local_script_data;
-
 		var control = this;
 
 		var settingID = control.setting.id;
@@ -14,14 +12,19 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 
 		var controlContainerEle = controlContainer[0];
 
-		let settingSaveData;
+		var responsiveEle = controlContainerEle.querySelector( '#xenial-box-border-responsive-' + settingID );
+		
+		var savedEle = controlContainerEle.querySelector( '#' + settingID + '-box-border-value' );
 
-		if ( localizeScriptData.saved_value ) {
-			settingSaveData = JSON.parse( localizeScriptData.saved_value );
-		}
+		var responsiveEleVal = responsiveEle.value;
+
+		var savedEleVal = savedEle.value;
+
+		let settingSaveData = JSON.parse( savedEleVal ); 
+		
 
 		if ( settingSaveData == null ) {
-			if ( localizeScriptData.is_responsive == "1" ) {
+			if ( responsiveEleVal == "true" ) {
 				settingSaveData = {
 					'expanded' : true,
 					'desktop': {
@@ -48,7 +51,8 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 							'bottom' : '',
 							'left' : '',
 							'initial' : '',
-							'hover' : ''
+							'hover' : '',
+							'active' : ''
 						}
 					},
 					'tablet': {
@@ -75,7 +79,8 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 							'bottom' : '',
 							'left' : '',
 							'initial' : '',
-							'hover' : ''
+							'hover' : '',
+							'active' : ''
 						}
 					},
 					'mobile': {
@@ -102,7 +107,8 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 							'bottom' : '',
 							'left' : '',
 							'initial' : '',
-							'hover' : ''
+							'hover' : '',
+							'active' : ''
 						}
 					}
 				}
@@ -132,7 +138,8 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 						'bottom' : '',
 						'left' : '',
 						'initial' : '',
-						'hover' : ''
+						'hover' : '',
+						'active' : ''
 					}
 				}
 			}
@@ -152,7 +159,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 			var borderControlsWrapperEle = controlContainerEle.querySelector( '.xenial-box-border-controls-wrapper' );
 			borderControlsWrapperEle.classList.toggle('box-border-hidden');
 
-			if ( localizeScriptData.is_responsive == "1" ) {
+			if ( responsiveEleVal == "true" ) {
 				var switcherWrapperEle = controlContainerEle.querySelector( '.responsive-switchers' );
 				switcherWrapperEle.classList.toggle('box-border-hidden');
 			}			
@@ -169,7 +176,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 			let colorInitWrapperEleID = colorInitWrapperEle.id;
 			let currentEleParentNode = borderColorFieldEle.parentNode;
 			let colorValue = colorInitWrapperEle.getAttribute("data-color");
-			const colorPickerInit = Pickr.create({
+			let colorPickerInit = Pickr.create({
 				el: '#'+colorInitWrapperEleID,
 				container: '#' + controlContainerEle.id,
 				theme: 'nano',
@@ -198,7 +205,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 			} );
 
 			borderColorFieldEle.addEventListener( 'change', ( event ) => {
-				if ( localizeScriptData.is_responsive == "1" ) {
+				if ( responsiveEleVal == "true" ) {
 					let device = borderColorFieldEle.getAttribute("data-device");
 					let value = borderColorFieldEle.value;
 					let side = borderColorFieldEle.getAttribute("data-color");
@@ -241,7 +248,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 				event.preventDefault();
 				let lockButtonEle = event.target;				
 				let borderAttribute = lockButtonEle.getAttribute("data-border");
-				if ( localizeScriptData.is_responsive == "1" ) {
+				if ( responsiveEleVal == "true" ) {
 					let borderAttribute = lockButtonEle.getAttribute("data-border");
 					let deviceAttribute = lockButtonEle.getAttribute("data-device");
 					let lockButtonValue = lockButtonEle.value;
@@ -310,7 +317,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 					xenialUpdateAllLockedBorderInputFields( event.target, borderInputFieldEleVal );
 					console.log( settingSaveData );
 				} else {
-					if ( localizeScriptData.is_responsive == "1" ) {
+					if ( responsiveEleVal == "true" ) {
 						let borderAttribute = borderInputFieldEle.getAttribute("data-border");
 						let deviceAttribute = borderInputFieldEle.getAttribute("data-device");
 						let sideAttribute = borderInputFieldEle.getAttribute("data-side");
@@ -353,7 +360,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 					xenialUpdateAllLockedBorderInputFields( event.target, borderInputFieldEleVal );
 					console.log( settingSaveData );
 				} else {
-					if ( localizeScriptData.is_responsive == "1" ) {
+					if ( responsiveEleVal == "true" ) {
 						let borderAttribute = borderInputFieldEle.getAttribute("data-border");
 						let deviceAttribute = borderInputFieldEle.getAttribute("data-device");
 						let sideAttribute = borderInputFieldEle.getAttribute("data-side");
@@ -409,7 +416,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 			let borderInputFieldEles = fieldsWrapperEle.querySelectorAll( '.box-border-input-field' );
 			[].forEach.call( borderInputFieldEles, ( borderInputFieldEle ) => {
 				borderInputFieldEle.value = value;
-				if ( localizeScriptData.is_responsive == "1" ) {
+				if ( responsiveEleVal == "true" ) {
 					let borderAttribute = borderInputFieldEle.getAttribute("data-border");
 					let deviceAttribute = borderInputFieldEle.getAttribute("data-device");
 					let sideAttribute = borderInputFieldEle.getAttribute("data-side");
@@ -518,7 +525,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 
 		function xenialBeforeBorderStyleDataSave( element, value ) {
 
-			if ( localizeScriptData.is_responsive == "1" ) {
+			if ( responsiveEleVal == "true" ) {
 
 				let dropdownAttribute = element.getAttribute("data-dropdown");
 				let deviceAttribute = element.getAttribute("data-device");
@@ -635,6 +642,9 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 						case "hover" :
 							settingSaveData.desktop.border_colors.hover = value;
 							break;
+						case "active" :
+							settingSaveData.desktop.border_colors.active = value;
+							break;
 						default :
 							break;
 					}
@@ -659,6 +669,9 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 						case "hover" :
 							settingSaveData.tablet.border_colors.hover = value;
 							break;
+						case "active" :
+							settingSaveData.tablet.border_colors.active = value;
+							break;
 						default :
 							break;
 					}
@@ -682,6 +695,9 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 							break;
 						case "hover" :
 							settingSaveData.mobile.border_colors.hover = value;
+							break;
+						case "active" :
+							settingSaveData.mobile.border_colors.active = value;
 							break;
 						default :
 							break;
@@ -877,6 +893,9 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 					break;
 				case "hover" :
 					settingSaveData.border_colors.hover = value;
+					break;
+				case "active" :
+					settingSaveData.border_colors.active = value;
 					break;
 				default :
 					break;

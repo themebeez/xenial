@@ -55,17 +55,6 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 				XENIAL_THEME_VERSION,
 				true
 			);
-
-			$box_border_local_script_data = array(
-				'is_responsive' => $this->is_responsive,
-				'saved_value' => $this->value()
-			);
-
-			wp_localize_script( 
-				XENIAL_THEME_SLUG . '-box-border',
-				'xenial_boder_box_local_script_data', 
-				$box_border_local_script_data
-			);
 		}
 
 		protected function render() {
@@ -124,6 +113,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 			}
 			let allowedFields = data.allowed_fields; #>
 			<# let collapseClass = ( savedValue.expanded == true ) ? '' : 'box-border-hidden'; #>
+			<input type="hidden" id="xenial-box-border-responsive-{{ data.id }}" name="xenial-box-border-responsive-{{ data.id }}" value="{{ data.is_responsive }}">
 			<span class="customize-control-title">
 				<# if ( data.label ) { #>
 					<span class="control-title">{{{ data.label }}}</span>
@@ -153,7 +143,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 					</button>
 				</div>
 			</span>
-			<input type="hidden" id="{{{ data.id }}}-box-border-value" name="{{{ data.id }}}-box-border-value" value="{{{ data.value }}}" {{ data.link }}>
+			<input type="hidden" id="{{ data.id }}-box-border-value" name="{{{ data.id }}}-box-border-value" value="{{ data.value }}" {{ data.link }}>
 			
 			<# if ( data.is_responsive ) { #>
 				<div class="xenial-box-border-controls-wrapper xenial-responsive-box-border-controls-wrapper {{ collapseClass }}">
@@ -163,17 +153,17 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						desktopBorderOptionHideClass = 'box-border-hidden';
 					} #>
 					<ul class="desktop responsive-control-wrap active {{ collapseClass }}">
-						<li id="{{{ data.id }}}-desktop-box-border-style-li" class="box-border-item box-border-style-item">
+						<li id="{{ data.id }}-desktop-box-border-style-li" class="box-border-item box-border-style-item">
 							<span class="box-border-control-label"><?php echo esc_html__( 'Style', 'xenial' ); ?></span>
 							<div class="box-border-style-inputs-wrapper">
 								<# let savedDesktopBorderStyle = ( ( 'border_style' in savedValue.desktop ) && ( savedValue.desktop.border_style != '' ) ) ? savedValue.desktop.border_style : 'none'; #>
-								<button id="{{{ data.id }}}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedDesktopBorderStyle }}" data-device="desktop" data-dropdown="border-style">
+								<button id="{{ data.id }}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedDesktopBorderStyle }}" data-device="desktop" data-dropdown="border-style">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let desktopBorderStyleActiveClass = ( key == savedDesktopBorderStyle ) ? 'active' : ''; #>
 										<span class="box-border-style {{ desktopBorderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 									<# } ); #>
 								</button>
-								<div id="{{{ data.id }}}-border-style-options" class="box-border-style-options box-border-dropdown">
+								<div id="{{ data.id }}-border-style-options" class="box-border-style-options box-border-dropdown">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let desktopBorderStyleActiveClass = ( key == savedDesktopBorderStyle ) ? 'active' : ''; #>
 										<button class="button box-border-button box-border-style {{ desktopBorderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -183,7 +173,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						</li>
 						<# if ( 'border_widths' in desktopAllowedFields ) { #>
 							<# let desktopBorderWidths = desktopAllowedFields.border_widths; #>
-							<li id="{{{ data.id }}}-desktop-box-border-widths-li" class="box-border-item box-border-widths-item {{ desktopBorderOptionHideClass }}">
+							<li id="{{ data.id }}-desktop-box-border-widths-li" class="box-border-item box-border-widths-item {{ desktopBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Width', 'xenial' ); ?></span>
 								<div class="box-border-width-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -207,14 +197,14 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											</button>
 										</div>
 										<div class="box-border-input-control box-border-unit-wrapper box-border-width-input-control box-border-width-unit">
-											<button id="{{{ data.id }}}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-device="desktop" value="{{ savedDesktopBorderWidths.unit }}" data-dropdown="border-width-unit">
+											<button id="{{ data.id }}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-device="desktop" value="{{ savedDesktopBorderWidths.unit }}" data-dropdown="border-width-unit">
 												<# _.each( data.units, function( value, key ) { #>
 													<# let desktopBorderWidthUnitActiveClass = ( key == savedDesktopBorderWidths.unit ) ? 'active' : ''; #>
 													<span class="box-border-unit-value {{ desktopBorderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 												<# } ); #>
 											</button>
 											
-											<div id="{{{ data.id }}}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
+											<div id="{{ data.id }}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
 												<# _.each( data.units, function( value, key ) { #>
 													<# let desktopBorderWidthUnitActiveClass = ( key == savedDesktopBorderWidths.unit ) ? 'active' : ''; #>
 													<button class="button box-border-button box-border-unit-value {{ desktopBorderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -227,7 +217,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_radius' in desktopAllowedFields ) { #>
 							<# let desktopBorderRadius = desktopAllowedFields.border_radius; #>
-							<li id="{{{ data.id }}}-desktop-box-border-radius-li" class="box-border-item box-border-radius-item {{ desktopBorderOptionHideClass }}">
+							<li id="{{ data.id }}-desktop-box-border-radius-li" class="box-border-item box-border-radius-item {{ desktopBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Radius', 'xenial' ); ?></span>
 								<div class="box-border-radius-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -270,7 +260,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_colors' in desktopAllowedFields ) { #>
 							<# let desktopBorderColors = desktopAllowedFields.border_colors; #>
-							<li id="{{{ data.id }}}-desktop-box-border-colors-li" class="box-border-item box-border-colors-item {{ desktopBorderOptionHideClass }}">
+							<li id="{{ data.id }}-desktop-box-border-colors-li" class="box-border-item box-border-colors-item {{ desktopBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Border Color', 'xenial' ); ?></span>
 								<div class="box-border-colors-inputs-wrapper">
 									<ul class="box-border-colors">
@@ -279,7 +269,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											<# if ( desktopBorderColors.includes( key ) ) { #>
 												<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
 													<input type="hidden" name="{{{ data.id }}}-desktop-border-top-color" class="border-box-color-field" data-color="{{ key }}" data-device="desktop"  value="{{ value }}" data-default="">
-													<div id="{{{ data.id }}}-desktop-border-{{ key }}-color" class="xenial-color-picker" data-color="{{ value }}"></div>
+													<div id="{{ data.id }}-desktop-border-{{ key }}-color" class="xenial-color-picker" data-color="{{ value }}"></div>
 												</li>
 											<# } #>
 										<# } ); #>
@@ -295,17 +285,17 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						tabletBorderOptionHideClass = 'box-border-hidden';
 					} #>
 					<ul class="tablet responsive-control-wrap">
-						<li id="{{{ data.id }}}-tablet-box-border-style-li" class="box-border-item box-border-style-item">
+						<li id="{{ data.id }}-tablet-box-border-style-li" class="box-border-item box-border-style-item">
 							<span class="box-border-control-label"><?php echo esc_html__( 'Style', 'xenial' ); ?></span>
 							<div class="box-border-style-inputs-wrapper">
 								<# let savedTabletBorderStyle = ( ( 'border_style' in savedValue.tablet ) && ( savedValue.tablet.border_style != '' ) ) ? savedValue.tablet.border_style : 'none'; #>
-								<button id="{{{ data.id }}}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedTabletBorderStyle }}" data-device="tablet" data-dropdown="border-style">
+								<button id="{{ data.id }}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedTabletBorderStyle }}" data-device="tablet" data-dropdown="border-style">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let tabletBorderStyleActiveClass = ( key == savedTabletBorderStyle ) ? 'active' : ''; #>
 										<span class="box-border-style {{ tabletBorderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 									<# } ); #>
 								</button>
-								<div id="{{{ data.id }}}-border-style-options" class="box-border-style-options box-border-dropdown">
+								<div id="{{ data.id }}-border-style-options" class="box-border-style-options box-border-dropdown">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let tabletBorderStyleActiveClass = ( key == savedTabletBorderStyle ) ? 'active' : ''; #>
 										<button class="button box-border-button box-border-style {{ tabletBorderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -315,7 +305,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						</li>
 						<# if ( 'border_widths' in tabletAllowedFields ) { #>
 							<# let tabletBorderWidths = tabletAllowedFields.border_widths; #>
-							<li id="{{{ data.id }}}-tablet-box-border-widths-li" class="box-border-item box-border-widths-item {{ tabletBorderOptionHideClass }}">
+							<li id="{{ data.id }}-tablet-box-border-widths-li" class="box-border-item box-border-widths-item {{ tabletBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Width', 'xenial' ); ?></span>
 								<div class="box-border-width-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -339,14 +329,14 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											</button>
 										</div>
 										<div class="box-border-input-control box-border-unit-wrapper box-border-width-input-control box-border-width-unit">
-											<button id="{{{ data.id }}}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-device="tablet" value="{{ savedTabletBorderWidths.unit }}" data-dropdown="border-width-unit">
+											<button id="{{ data.id }}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-device="tablet" value="{{ savedTabletBorderWidths.unit }}" data-dropdown="border-width-unit">
 												<# _.each( data.units, function( value, key ) { #>
 													<# let tabletBorderWidthUnitActiveClass = ( key == savedTabletBorderWidths.unit ) ? 'active' : ''; #>
 													<span class="box-border-unit-value {{ tabletBorderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 												<# } ); #>
 											</button>
 											
-											<div id="{{{ data.id }}}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
+											<div id="{{ data.id }}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
 												<# _.each( data.units, function( value, key ) { #>
 													<# let tabletBorderWidthUnitActiveClass = ( key == savedTabletBorderWidths.unit ) ? 'active' : ''; #>
 													<button class="button box-border-button box-border-unit-value {{ tabletBorderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -359,7 +349,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_radius' in tabletAllowedFields ) { #>
 							<# let tabletBorderRadius = tabletAllowedFields.border_radius; #>
-							<li id="{{{ data.id }}}-tablet-box-border-radius-li" class="box-border-item box-border-radius-item {{ tabletBorderOptionHideClass }}">
+							<li id="{{ data.id }}-tablet-box-border-radius-li" class="box-border-item box-border-radius-item {{ tabletBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Radius', 'xenial' ); ?></span>
 								<div class="box-border-radius-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -402,7 +392,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_colors' in tabletAllowedFields ) { #>
 							<# let tabletBorderColors = tabletAllowedFields.border_colors; #>
-							<li id="{{{ data.id }}}-tablet-box-border-colors-li" class="box-border-item box-border-colors-item {{ tabletBorderOptionHideClass }}">
+							<li id="{{ data.id }}-tablet-box-border-colors-li" class="box-border-item box-border-colors-item {{ tabletBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Border Color', 'xenial' ); ?></span>
 								<div class="box-border-colors-inputs-wrapper">
 									<ul class="box-border-colors">
@@ -411,7 +401,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											<# if ( tabletBorderColors.includes( key ) ) { #>
 												<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
 													<input type="hidden" name="{{{ data.id }}}-tablet-border-top-color" class="border-box-color-field" data-color="{{ key }}" data-device="tablet"  value="{{ value }}" data-default="">
-													<div id="{{{ data.id }}}-tablet-border-{{ key }}-color" class="xenial-color-picker" data-color="{{ value }}"></div>
+													<div id="{{ data.id }}-tablet-border-{{ key }}-color" class="xenial-color-picker" data-color="{{ value }}"></div>
 												</li>
 											<# } #>
 										<# } ); #>
@@ -427,17 +417,17 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						mobileBorderOptionHideClass = 'box-border-hidden';
 					} #>
 					<ul class="mobile responsive-control-wrap">
-						<li id="{{{ data.id }}}-mobile-box-border-style-li" class="box-border-item box-border-style-item">
+						<li id="{{ data.id }}-mobile-box-border-style-li" class="box-border-item box-border-style-item">
 							<span class="box-border-control-label"><?php echo esc_html__( 'Style', 'xenial' ); ?></span>
 							<div class="box-border-style-inputs-wrapper">
 								<# let savedMobileBorderStyle = ( ( 'border_style' in savedValue.mobile ) && ( savedValue.mobile.border_style != '' ) ) ? savedValue.mobile.border_style : 'none'; #>
-								<button id="{{{ data.id }}}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedMobileBorderStyle }}" data-device="mobile" data-dropdown="border-style">
+								<button id="{{ data.id }}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedMobileBorderStyle }}" data-device="mobile" data-dropdown="border-style">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let mobileBorderStyleActiveClass = ( key == savedMobileBorderStyle ) ? 'active' : ''; #>
 										<span class="box-border-style {{ mobileBorderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 									<# } ); #>
 								</button>
-								<div id="{{{ data.id }}}-border-style-options" class="box-border-style-options box-border-dropdown">
+								<div id="{{ data.id }}-border-style-options" class="box-border-style-options box-border-dropdown">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let mobileBorderStyleActiveClass = ( key == savedMobileBorderStyle ) ? 'active' : ''; #>
 										<button class="button box-border-button box-border-style {{ mobileBorderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -447,7 +437,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						</li>
 						<# if ( 'border_widths' in mobileAllowedFields ) { #>
 							<# let mobileBorderWidths = mobileAllowedFields.border_widths; #>
-							<li id="{{{ data.id }}}-mobile-box-border-widths-li" class="box-border-item box-border-widths-item {{ mobileBorderOptionHideClass }}">
+							<li id="{{ data.id }}-mobile-box-border-widths-li" class="box-border-item box-border-widths-item {{ mobileBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Width', 'xenial' ); ?></span>
 								<div class="box-border-width-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -471,14 +461,14 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											</button>
 										</div>
 										<div class="box-border-input-control box-border-unit-wrapper box-border-width-input-control box-border-width-unit">
-											<button id="{{{ data.id }}}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-device="mobile" value="{{ savedMobileBorderWidths.unit }}" data-dropdown="border-width-unit">
+											<button id="{{ data.id }}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-device="mobile" value="{{ savedMobileBorderWidths.unit }}" data-dropdown="border-width-unit">
 												<# _.each( data.units, function( value, key ) { #>
 													<# let mobileBorderWidthUnitActiveClass = ( key == savedMobileBorderWidths.unit ) ? 'active' : ''; #>
 													<span class="box-border-unit-value {{ mobileBorderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 												<# } ); #>
 											</button>
 											
-											<div id="{{{ data.id }}}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
+											<div id="{{ data.id }}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
 												<# _.each( data.units, function( value, key ) { #>
 													<# let mobileBorderWidthUnitActiveClass = ( key == savedMobileBorderWidths.unit ) ? 'active' : ''; #>
 													<button class="button box-border-button box-border-unit-value {{ mobileBorderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -491,7 +481,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_radius' in mobileAllowedFields ) { #>
 							<# let mobileBorderRadius = mobileAllowedFields.border_radius; #>
-							<li id="{{{ data.id }}}-mobile-box-border-radius-li" class="box-border-item box-border-radius-item {{ mobileBorderOptionHideClass }}">
+							<li id="{{ data.id }}-mobile-box-border-radius-li" class="box-border-item box-border-radius-item {{ mobileBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Radius', 'xenial' ); ?></span>
 								<div class="box-border-radius-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -534,7 +524,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_colors' in mobileAllowedFields ) { #>
 							<# let mobileBorderColors = mobileAllowedFields.border_colors; #>
-							<li id="{{{ data.id }}}-mobile-box-border-colors-li" class="box-border-item box-border-colors-item {{ mobileBorderOptionHideClass }}">
+							<li id="{{ data.id }}-mobile-box-border-colors-li" class="box-border-item box-border-colors-item {{ mobileBorderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Border Color', 'xenial' ); ?></span>
 								<div class="box-border-colors-inputs-wrapper">
 									<ul class="box-border-colors">
@@ -543,7 +533,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											<# if ( mobileBorderColors.includes( key ) ) { #>
 												<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
 													<input type="hidden" name="{{{ data.id }}}-mobile-border-top-color" class="border-box-color-field" data-color="{{ key }}" data-device="mobile"  value="{{ value }}" data-default="">
-													<div id="{{{ data.id }}}-mobile-border-{{ key }}-color" class="xenial-color-picker" data-color="{{ value }}"></div>
+													<div id="{{ data.id }}-mobile-border-{{ key }}-color" class="xenial-color-picker" data-color="{{ value }}"></div>
 												</li>
 											<# } #>
 										<# } ); #>
@@ -562,17 +552,17 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 				} #>
 				<div class="xenial-box-border-controls-wrapper xenial-normal-box-border-controls-wrapper {{ collapseClass }}">
 					<ul class="normal-control active">
-						<li id="{{{ data.id }}}-box-border-style-li" class="box-border-item box-border-style-item">
+						<li id="{{ data.id }}-box-border-style-li" class="box-border-item box-border-style-item">
 							<span class="box-border-control-label"><?php echo esc_html__( 'Style', 'xenial' ); ?></span>
 							<div class="box-border-style-inputs-wrapper">
 								<# let savedBorderStyle = ( ( 'border_style' in savedValue ) && ( savedValue.border_style != '' ) ) ? savedValue.border_style : 'none'; #>
-								<button id="{{{ data.id }}}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedBorderStyle }}" data-dropdown="border-style">
+								<button id="{{ data.id }}-border-style-button" class="button box-border-button box-border-style-input box-border-dropdown-toggle-button" value="{{ savedBorderStyle }}" data-dropdown="border-style">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let borderStyleActiveClass = ( key == savedBorderStyle ) ? 'active' : ''; #>
 										<span class="box-border-style {{ borderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 									<# } ); #>
 								</button>
-								<div id="{{{ data.id }}}-border-style-options" class="box-border-style-options box-border-dropdown">
+								<div id="{{ data.id }}-border-style-options" class="box-border-style-options box-border-dropdown">
 									<# _.each( data.border_styles, function( value, key ) { #>
 										<# let borderStyleActiveClass = ( key == savedBorderStyle ) ? 'active' : ''; #>
 										<button class="button box-border-button box-border-style {{ borderStyleActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -582,7 +572,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						</li>
 						<# if ( 'border_widths' in allowedFields ) { #>
 							<# let borderWidths = allowedFields.border_widths; #>
-							<li id="{{{ data.id }}}-box-border-widths-li" class="box-border-item box-border-widths-item {{ borderOptionHideClass }}">
+							<li id="{{ data.id }}-box-border-widths-li" class="box-border-item box-border-widths-item {{ borderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Width', 'xenial' ); ?></span>
 								<div class="box-border-width-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -606,14 +596,14 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											</button>
 										</div>
 										<div class="box-border-input-control box-border-unit-wrapper box-border-width-input-control box-border-width-unit">
-											<button id="{{{ data.id }}}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-dropdown="border-width-unit" value="{{ savedBorderWidths.unit }}">
+											<button id="{{ data.id }}-border-width-unit-input" class="button box-border-button box-border-width-input box-border-dropdown-toggle-button" data-dropdown="border-width-unit" value="{{ savedBorderWidths.unit }}">
 											<# _.each( data.units, function( value, key ) { #>
 												<# let borderWidthUnitActiveClass = ( key == savedBorderWidths.unit ) ? 'active' : ''; #>
 												<span class="box-border-unit-value {{ borderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</span>
 											<# } ); #>
 											</button>
 											
-											<div id="{{{ data.id }}}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
+											<div id="{{ data.id }}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
 											<# _.each( data.units, function( value, key ) { #>
 												<# let borderWidthUnitActiveClass = ( key == savedBorderWidths.unit ) ? 'active' : ''; #>
 													<button class="button box-border-button box-border-unit-value {{ borderWidthUnitActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -626,7 +616,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_radius' in allowedFields ) { #>
 							<# let borderRadius = allowedFields.border_radius; #>
-							<li id="{{{ data.id }}}-box-border-radius-li" class="box-border-item box-border-radius-item {{ borderOptionHideClass }}">
+							<li id="{{ data.id }}-box-border-radius-li" class="box-border-item box-border-radius-item {{ borderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Radius', 'xenial' ); ?></span>
 								<div class="box-border-radius-inputs-wrapper">
 									<div class="box-border-inputs">
@@ -656,7 +646,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 												<# } ); #>
 											</button>
 												
-											<div id="{{{ data.id }}}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
+											<div id="{{ data.id }}-border-width-unit-dropdown" class="box-border-unit-dropdown box-border-unit-value-options box-border-dropdown">
 												<# _.each( data.units, function( value, key ) { #>
 													<# let borderRadiusUnitActiveClass = ( key == savedBorderRadius.unit ) ? 'active' : ''; #>
 														<button class="button box-border-button box-border-unit-value {{ borderRadiusUnitActiveClass }}" data-value="{{ key }}">{{ value }}</button>
@@ -669,7 +659,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 						<# } #>
 						<# if ( 'border_colors' in allowedFields ) { #>
 							<# let borderColors = allowedFields.border_colors; #>
-							<li id="{{{ data.id }}}-box-border-colors-li" class="box-border-item box-border-colors-item {{ borderOptionHideClass }}">
+							<li id="{{ data.id }}-box-border-colors-li" class="box-border-item box-border-colors-item {{ borderOptionHideClass }}">
 								<span class="box-border-control-label"><?php echo esc_html__( 'Border Color', 'xenial' ); ?></span>
 								<div class="box-border-colors-inputs-wrapper">
 									<ul class="box-border-colors">
@@ -678,7 +668,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 											<# if ( allowedFields.border_colors.includes( key ) ) { #>
 												<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
 													<input type="hidden" name="{{{ data.id }}}-border-top-color" class="border-box-color-field" value="{{ value }}" data-color="{{ key }}" data-default="">
-													<div id="{{{ data.id }}}-border-top-color" class="xenial-color-picker" data-color="{{ value }}"></div>
+													<div id="{{ data.id }}-border-top-color" class="xenial-color-picker" data-color="{{ value }}"></div>
 												</li>
 											<# } #>
 										<# } ); #>
@@ -747,6 +737,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 					'left' => esc_html__( 'Left', 'xenial' ),
 					'initial' => esc_html__( 'Initial', 'xenial' ),
 					'hover' => esc_html__( 'Hover', 'xenial' ),
+					'active' => esc_html__( 'Active', 'xenial' ),
 				)
 			);
 		}

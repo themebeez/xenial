@@ -73,16 +73,6 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 				XENIAL_THEME_VERSION,
 				'all'
 			);
-
-			$xenialColorPickerScriptObjArray = [
-				'isResponsive' => ( isset( $this->input_attrs['is_responsive'] ) && $this->input_attrs['is_responsive'] == true ) ? true : false
-			];
-
-			wp_localize_script( 
-				XENIAL_THEME_SLUG . '-color-picker', 
-				'xenialColorPickerScriptObj', 
-				$xenialColorPickerScriptObjArray
-			);
 		}
 
 		/**
@@ -269,6 +259,7 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 				</div>				
 			<# } #>
 			<input type="hidden" name="xenial-color-picker-setting-input" id="xenial-color-picker-setting-input-{{ data.id }}" value="{{ data.value }}" {{ data.link }}>
+			<input type="hidden" name="xenial-color-picker-responsive-{{ data.id }}" id="xenial-color-picker-responsive-{{ data.id }}" value="{{ data.isResponsive }}">
 			<?php
 		}
 
