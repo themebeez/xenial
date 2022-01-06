@@ -9,18 +9,28 @@ if ( ! function_exists( 'xenial_theme_header_middle_section_defaults' ) ) {
 			array(
 				'header_middle_section_width' => 'container',
 				'header_middle_section_device_visibility' => '',
-				'header_middle_section_min_width' => array(
-					'desktop' => 50,
-					'tablet' => '',
-					'mobile' => ''
+				'header_middle_section_min_width' => '',
+				'header_middle_section_background_color' => array(
+					'desktop' => array(
+	                    'initial' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    )
+	                ),
+	                'tablet' => array(
+	                    'initial' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    )
+	                ),
+	                'mobile' => array(
+	                    'initial' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    )
+	                )
 				),
-				'header_middle_section_background_color' => '',
-				'header_middle_section_border_top_style' => 'solid',
-				'header_middle_section_border_top_width' => 0,
-				'header_middle_section_border_top_color' => '',
-				'header_middle_section_border_bottom_style' => 'solid',
-				'header_middle_section_border_bottom_width' => 0,
-				'header_middle_section_border_bottom_color' => '' 
+				'header_middle_section_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}',
 			)
 		);
 	}

@@ -36,10 +36,7 @@ xenial_tab_field(
 	        		'offcanvas_toggle_button_field_divider_5' => '',
 	        		'offcanvas_toggle_button_background_color' => '',
 	        		'offcanvas_toggle_button_field_divider_6' => '',
-	        		'offcanvas_toggle_button_border_style' => '',
-	        		'offcanvas_toggle_button_border_width' => '',
-	        		'offcanvas_toggle_button_border_radius' => '',
-	        		'offcanvas_toggle_button_border_color' => ''
+	        		'offcanvas_toggle_button_border' => ''
 	        	) 
 	        )
 		)
@@ -183,61 +180,17 @@ xenial_divider_field(
 	)
 );
 
-
-xenial_select_field(
-	'offcanvas_toggle_button_border_style',
+xenial_box_border_field(
+	'offcanvas_toggle_button_border',
 	array(
-		'priority' => 10,
 		'section' => 'xenial_offcanvas_toggle_button',
-		'label' => esc_html__( 'Border Style', 'xenial' ),
-		'choices' => xenial_get_border_styles(),
-		'defaults' => xenial_get_customize_default( 'offcanvas_toggle_button_border_style')
-	)
-);
-
-
-xenial_box_dimension_field(
-	'offcanvas_toggle_button_border_width',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_offcanvas_toggle_button',
-		'label' => esc_html__( 'Border Width (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => false
-		),
-		'defaults' => xenial_get_customize_default( 'offcanvas_toggle_button_border_width')
-	)
-);
-
-
-
-xenial_range_control_field(
-	'offcanvas_toggle_button_border_radius',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_offcanvas_toggle_button',
-		'label' => esc_html__( 'Border Radius (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 1000,
-			'step' => 1,
-			'responsive' => false
-		),
-		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_border_radius')
-	)
-);
-
-
-xenial_color_picker_field(
-	'offcanvas_toggle_button_border_color',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_offcanvas_toggle_button',
-		'label' => esc_html__( 'Border Color', 'xenial' ),
+		'label' => esc_html__( 'Button Border', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_toggle_button_border_color' )
+		'allowed_fields' => array(
+			'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
+			'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
+			'border_colors' => array( 'initial', 'hover' )
+		),
+		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_border' )
 	)
 );

@@ -42,24 +42,7 @@ if ( ! function_exists( 'xenial_offcanvas_toggle_button_customize_defaults' ) ) 
 	            	)
 	            ),
 	            
-	            'offcanvas_toggle_button_border_style' => 'solid',
-	            'offcanvas_toggle_button_border_width' => array(
-	                'top' => 0,
-	                'right' => 0,
-	                'bottom' => 0,
-	                'left' => 0
-	            ),
-	            'offcanvas_toggle_button_border_radius' => 0,
-	            'offcanvas_toggle_button_border_color' => array(
-	            	'initial' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	),
-	            	'hover' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	)
-	            ),
+	            'offcanvas_toggle_button_border' => '{"expanded":false,"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}',
 			)
 		);
 	}
