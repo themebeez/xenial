@@ -46,10 +46,78 @@ if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) 
             //     'mobile' => ''
             // ),
             'archive_page_display_breadcrumbs' => true,
-            'archive_page_header_background_color' => '',
-            'archive_page_header_title_color' => '',
-            'archive_page_header_breadcrumb_text_color' => '',
-            'archive_page_header_breadcrumb_link_hover_color' => '',
+            'archive_page_header_background_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
+            ),
+            'archive_page_header_title_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
+            ),
+            'archive_page_header_breadcrumb_text_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
+            ),
 
             'archive_content_container_width' => 'container',
             'archive_post_structure_one' => array( 'image', 'category', 'title', 'meta', 'excerpt', 'read_more' ),
@@ -84,6 +152,7 @@ if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) 
             'archive_page_title_text_transform' => 'inherit',
 
             'archive_post_card_background_color' => '',
+            'archive_post_card_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}',
             'archive_post_card_border_style' => 'none',
             'archive_post_card_border_width' => array(
                 'top' => 0,
@@ -125,8 +194,38 @@ if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) 
             'archive_post_title_font_weight' => '400',
             'archive_post_title_font_style' => 'normal',
             'archive_post_title_text_transform' => 'inherit',
-            'archive_post_title_font_color' => '',
-            'archive_post_title_font_hover_color' => '',
+            'archive_post_title_font_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
+            ),
 
             'archive_post_excerpt_font_size' => array(
                 'desktop' => '',
@@ -146,27 +245,38 @@ if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) 
             'archive_post_excerpt_font_weight' => '400',
             'archive_post_excerpt_font_style' => 'normal',
             'archive_post_excerpt_text_transform' => 'inherit',
-            'archive_post_excerpt_color' => '',
-
-            'archive_post_excerpt_font_size' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => ''
+            'archive_post_excerpt_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
             ),
-            'archive_post_excerpt_line_height' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_excerpt_letter_spacing' => array(
-                'desktop' => '',
-                'tablet' => '',
-                'mobile' => '',
-            ),
-            'archive_post_excerpt_font_weight' => '400',
-            'archive_post_excerpt_font_style' => 'normal',
-            'archive_post_excerpt_text_transform' => 'inherit',
-            'archive_post_excerpt_color' => '',
 
 
             'archive_post_meta_font_size' => array(
@@ -187,9 +297,58 @@ if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) 
             'archive_post_meta_font_weight' => '400',
             'archive_post_meta_font_style' => 'normal',
             'archive_post_meta_text_transform' => 'inherit',
-            'archive_post_meta_color' => '',
-            'archive_post_meta_hover_color' => '',
-            'archive_post_meta_separator_color' => '',
+            'archive_post_meta_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
+            ),
+            'archive_post_meta_separator_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
+            ),
 
 
 
@@ -222,23 +381,95 @@ if ( ! function_exists( 'xenial_get_customizer_default_archive_page_values' ) ) 
                 'tablet' => '',
                 'mobile' => ''
             ),
-            'archive_pagination_item_initial_background_color' => '',
-            'archive_pagination_item_active_background_color' => '',
-            'archive_pagination_item_hover_background_color' => '',
-            'archive_pagination_item_initial_font_color' => '',
-            'archive_pagination_item_active_font_color' => '',
-            'archive_pagination_item_hover_font_color' => '',
-            'archive_pagination_item_border_style' => 'none',
-            'archive_pagination_item_border_width' => array(
-                'top' => 0,
-                'right' => 0,
-                'bottom' => 0,
-                'left' => 0
+            'archive_pagination_item_background_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'active' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'active' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'active' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
             ),
-            'archive_pagination_item_border_radius' => 0,
-            'archive_pagination_item_border_color' => '#000000',
-            'archive_pagination_item_border_hover_color' => '#16c1ff',
-            'archive_pagination_item_border_active_color' => '#16c1ff'
+            'archive_pagination_item_font_color' => array(
+                'desktop' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'active' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'tablet' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'active' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                ),
+                'mobile' => array(
+                    'initial' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'hover' => array(
+                        'display' => true,
+                        'default' => ''
+                    ),
+                    'active' => array(
+                        'display' => true,
+                        'default' => ''
+                    )
+                )
+            ),
+            'archive_pagination_item_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}'
         );
     }
 }

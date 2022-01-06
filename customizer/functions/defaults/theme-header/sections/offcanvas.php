@@ -57,19 +57,7 @@ if ( ! function_exists( 'xenial_theme_header_offcanvas_defaults' ) ) {
 	            'offcanvas_image_background_position' => 'center-center',
 	            'offcanvas_image_background_attachment' => 'scroll',
 
-	            'offcanvas_border_width' => array(
-	                'top' => 0,
-	                'right' => 0,
-	                'bottom' => 0,
-	                'left' => 0
-	            ),
-	            'offcanvas_border_radius' => 0,
-	            'offcanvas_border_color' => array(
-	            	'initial' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	)
-	            ),
+	            'offcanvas_border' => '{"expanded":false,"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}',
 	            
 	            
 	            
@@ -108,24 +96,7 @@ if ( ! function_exists( 'xenial_theme_header_offcanvas_defaults' ) ) {
 	            		'default' => ''
 	            	)
 	            ),	            
-	            'offcanvas_close_button_border_style' => 'solid',
-	            'offcanvas_close_button_border_width' => array(
-	                'top' => 0,
-	                'right' => 0,
-	                'bottom' => 0,
-	                'left' =>0
-	            ),
-	            'offcanvas_close_button_border_radius' => 0,
-	            'offcanvas_close_button_border_color' => array(
-	            	'initial' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	),
-	            	'hover' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	)
-	            ),
+	            'offcanvas_close_button_border' => '{"expanded":false,"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}'
 			)
 		);
 	}

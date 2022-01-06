@@ -31,14 +31,7 @@ if ( ! function_exists( 'xenial_get_header_social_links_customize_defaults' ) ) 
 	                'tablet' => 15,
 	                'mobile' => 15,
 	            ),
-	            'header_social_link_icon_border_style' => '',
-	            'header_social_link_icon_border_width' => array(
-	                'top' => 0,
-	                'right' => 0,
-	                'bottom' => 0,
-	                'left' => 0
-	            ),
-	            'header_social_link_icon_border_radius' => 0,
+	            'header_social_link_icon_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}',
 	            'header_social_link_title_font_size' => array(
 	                'desktop' => 16,
 	                'tablet' => 16,

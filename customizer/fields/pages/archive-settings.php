@@ -77,15 +77,12 @@ xenial_tab_field(
 	        		'archive_page_header_styles_divider_2' => '',
 	        		'archive_page_header_breadcrumb_styles' => '',
 	        		'archive_page_header_breadcrumb_text_color' => '',
-	        		'archive_page_header_breadcrumb_link_hover_color' => '',
 
 
 	        		'archive_page_header_post_cards_styles' => '',
 	        		'archive_post_card_background_color' => '',
 	        		'archive_page_header_post_card_divider_1' => '',
-		            'archive_post_card_border_style' => '',
-		            'archive_post_card_border_width' => '',
-		            'archive_post_card_border_radius' => '',
+		            'archive_post_card_border' => '',
 		            'archive_post_card_border_color' => '',
 		            'archive_page_header_post_card_divider_2' => '',
 
@@ -99,7 +96,6 @@ xenial_tab_field(
 		            'archive_page_header_post_card_divider_3' => '',
 		            'archive_page_header_post_title_color' => '',
 		            'archive_post_title_font_color' => '',
-		            'archive_post_title_font_hover_color' => '',
 		            'archive_page_header_post_card_divider_4' => '',
 
 		            'archive_page_header_post_card_divider_4' => '',
@@ -113,7 +109,6 @@ xenial_tab_field(
 		            'archive_page_header_post_card_divider_5' => '',
 		            'archive_page_header_post_meta_color' => '',
 		            'archive_post_meta_color' => '',
-		            'archive_post_meta_hover_color' => '',
 		            'archive_post_meta_separator_color' => '',
 
 
@@ -134,17 +129,9 @@ xenial_tab_field(
 		            'archive_pagination_items_spacing' => '',
 		            'archive_pagination_items_padding' => '',
 		            'archive_pagination_font_size' => '',
-		            'archive_pagination_item_initial_background_color' => '',
-		            'archive_pagination_item_active_background_color' => '',
-		            'archive_pagination_item_hover_background_color' => '',
-		            'archive_pagination_item_initial_font_color' => '',
-		            'archive_pagination_item_active_font_color' => '',
-		            'archive_pagination_item_hover_font_color' => '',
-		            'archive_pagination_item_border_style' => '',
-		            'archive_pagination_item_border_width' => '',
-		            'archive_pagination_item_border_radius' => '',
-		            'archive_pagination_item_border_color' => '',
-		            'archive_pagination_item_border_hover_color' => ''
+		            'archive_pagination_item_background_color' => '',
+		            'archive_pagination_item_font_color' => '',
+		            'archive_pagination_item_border' => ''
 	        	] 
 	        )
 		]

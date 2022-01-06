@@ -107,16 +107,15 @@ xenial_divider_field(
 	)
 );
 
-
-xenial_color_field(
+xenial_color_picker_field(
 	'header_background_color',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
-		'default' => xenial_get_customize_default( 'header_background_color')
-	),
-	true
+		'is_responsive' => false,
+		'colors' => xenial_get_customize_default( 'header_background_color' )
+	)
 );
 
 
@@ -128,16 +127,15 @@ xenial_divider_field(
 	)
 );
 
-
-xenial_color_field(
+xenial_color_picker_field(
 	'header_gradient_background_color_1',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Gradient Color One', 'xenial' ),
-		'default' => xenial_get_customize_default( 'header_gradient_background_color_1')
-	),
-	true
+		'is_responsive' => false,
+		'colors' => xenial_get_customize_default( 'header_gradient_background_color_1' )
+	)
 );
 
 
@@ -157,16 +155,15 @@ xenial_range_control_field(
 	)
 );
 
-
-xenial_color_field(
+xenial_color_picker_field(
 	'header_gradient_background_color_2',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Gradient Color Two', 'xenial' ),
-		'default' => xenial_get_customize_default( 'header_gradient_background_color_2')
-	),
-	true
+		'is_responsive' => false,
+		'colors' => xenial_get_customize_default( 'header_gradient_background_color_2' )
+	)
 );
 
 
