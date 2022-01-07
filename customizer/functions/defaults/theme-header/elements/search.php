@@ -28,46 +28,8 @@ if ( ! function_exists( 'xenial_get_header_search_customize_defaults' ) ) {
 	                'mobile' => ''
 	            ),   
 	            'header_search_bar_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}',       
-	            'header_search_bar_background_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)	
-	            ),
-	            'header_search_bar_text_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)
-	            ),
+	            'header_search_bar_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+	            'header_search_bar_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 	            'header_search_bar_font_size' => array(
 	                'desktop' => '',
 	                'tablet' => '',
@@ -102,70 +64,8 @@ if ( ! function_exists( 'xenial_get_header_search_customize_defaults' ) ) {
 	                'tablet' => '',
 	                'mobile' => ''
 	            ),
-	            'header_search_modal_toggle_button_text_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)	
-	            ),         
-	            'header_search_modal_toggle_button_background_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)	
-	            ),
+	            'header_search_modal_toggle_button_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',         
+	            'header_search_modal_toggle_button_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 	            
 	            'header_search_bar_submit_button_height' => array(
 	                'desktop' => '',
@@ -189,77 +89,10 @@ if ( ! function_exists( 'xenial_get_header_search_customize_defaults' ) ) {
 	                'tablet' => '',
 	                'mobile' => ''
 	            ),
-	            'header_search_bar_submit_button_text_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)	
-	            ),          
-	            'header_search_bar_submit_button_background_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)	
-	            ),
+	            'header_search_bar_submit_button_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',          
+	            'header_search_bar_submit_button_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 
-	            'header_search_modal_background_color' => array(
-	                'initial' => array(
-	                    'display' => true,
-	                    'default' => ''
-	                )
-	            ),
+	            'header_search_modal_background_color' => '{"initial":"","link":"","hover":"","active":""}',
 
 	            'header_search_modal_close_button_height' => array(
 	                'desktop' => '',
@@ -282,70 +115,8 @@ if ( ! function_exists( 'xenial_get_header_search_customize_defaults' ) ) {
 	                'tablet' => '',
 	                'mobile' => ''
 	            ),
-	            'header_search_modal_close_button_text_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)	
-	            ),          
-	            'header_search_modal_close_button_background_color' => array(
-	            	'desktop' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                ),
-		                'hover' => array(
-		                    'display' => true,
-		                    'default' => ''
-		                )
-	            	)	                
-	            ),
+	            'header_search_modal_close_button_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',          
+	            'header_search_modal_close_button_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 			)
 		);
 	}

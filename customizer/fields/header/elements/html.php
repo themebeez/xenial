@@ -234,6 +234,7 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Text / Link Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_html_text_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_html_text_color' ),
+		'default' => xenial_get_customize_default( 'header_html_text_color' )
 	)
 );

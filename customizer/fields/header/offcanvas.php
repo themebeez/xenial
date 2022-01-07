@@ -289,7 +289,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Overlay Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_overlay_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_overlay_color' ),
+		'default' => xenial_get_customize_default( 'offcanvas_overlay_color' )
 	)
 );
 
@@ -330,7 +331,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_background_color' ),
+		'default' => xenial_get_customize_default( 'offcanvas_background_color' )
 	)
 );
 
@@ -342,7 +344,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Gradient Color One', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_gradient_background_color_1' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_gradient_background_color_1' ),
+		'default' => xenial_get_customize_default( 'offcanvas_gradient_background_color_1' )
 	)
 );
 
@@ -370,7 +373,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Gradient Color Two', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_gradient_background_color_2' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_gradient_background_color_2' ),
+		'default' => xenial_get_customize_default( 'offcanvas_gradient_background_color_2' )
 	)
 );
 
@@ -554,7 +558,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Icon / Label Color Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_close_button_label_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_close_button_label_color' ),
+		'default' => xenial_get_customize_default( 'offcanvas_close_button_label_color' )
 	)
 );
 
@@ -565,6 +570,7 @@ xenial_color_picker_field(
 		'section' => 'xenial_off_canvas',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_close_button_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_close_button_background_color' ),
+		'default' => xenial_get_customize_default( 'offcanvas_close_button_background_color' )
 	)
 );

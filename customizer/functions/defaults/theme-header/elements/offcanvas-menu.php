@@ -17,26 +17,8 @@ if ( ! function_exists( 'xenial_offcanvas_menu_customize_defaults' ) ) {
 	            ),
 	            'display_offcanvas_menu_item_divider' => false,
 	            'offcanvas_menu_item_divider_width' => 1,
-	            'offcanvas_menu_item_divider_color' => array(
-	            	'initial' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	)
-	            ),
-	            'offcanvas_menu_item_color' => array(
-	            	'initial' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	),
-	            	'hover' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	),
-	            	'active' => array(
-	            		'display' => true,
-	            		'default' => ''
-	            	)
-	            ),
+	            'offcanvas_menu_item_divider_color' => '{"initial":"","link":"","hover":"","active":""}',
+	            'offcanvas_menu_item_color' => '{"initial":"","link":"","hover":"","active":""}',
 
 	            'offcanvas_menu_item_font_size' => '',
 	            'offcanvas_menu_item_font_weight' => '400',

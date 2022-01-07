@@ -166,19 +166,19 @@ wp.customize.controlConstructor['xenial-color-picker'] = wp.customize.Control.ex
 			}
 
 			if ( mobileInitialColorInput.length >= 1 && mobileInitialColorInput.val() ) {
-				settingValue.desktop.initial = mobileInitialColorInput.val();
+				settingValue.mobile.initial = mobileInitialColorInput.val();
 			}
 
 			if ( mobileLinkColorInput.length >= 1 && mobileLinkColorInput.val() ) {
-				settingValue.desktop.link = mobileLinkColorInput.val();
+				settingValue.mobile.link = mobileLinkColorInput.val();
 			}
 
 			if ( mobileHoverColorInput.length >= 1 && mobileHoverColorInput.val() ) {
-				settingValue.desktop.hover = mobileHoverColorInput.val();
+				settingValue.mobile.hover = mobileHoverColorInput.val();
 			}
 
 			if ( mobileActiveColorInput.length >= 1 && mobileActiveColorInput.val() ) {
-				settingValue.desktop.active = mobileActiveColorInput.val();
+				settingValue.mobile.active = mobileActiveColorInput.val();
 			}
 
 			stringifySettingValue = JSON.stringify( settingValue );

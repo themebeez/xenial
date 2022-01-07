@@ -15,50 +15,7 @@ if ( ! function_exists( 'xenial_get_header_html_customize_defaults' ) ) {
 	                'mobile' => 'left'
 	            ),
 	            'header_html_visibility' => '',
-	            'header_html_text_color' => array(
-	                'desktop' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'link' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'hover' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'link' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'hover' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'link' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'hover' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	)
-	            ),
+	            'header_html_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 	            'header_html_text_font_size' => array(
 	                'desktop' => 16,
 	                'tablet' => 16,

@@ -198,7 +198,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Post Card Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_post_card_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_post_card_background_color' ),
+		'default' => xenial_get_customize_default( 'archive_post_card_background_color' )
 	)
 );
 
@@ -383,7 +384,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Post Title Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_post_title_font_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_post_title_font_color' ),
+		'default' => xenial_get_customize_default( 'archive_post_title_font_color' )
 	)
 );
 
@@ -531,7 +533,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Meta Font Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_post_meta_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_post_meta_color' ),
+		'default' => xenial_get_customize_default( 'archive_post_meta_color' )
 	)
 );
 
@@ -543,7 +546,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Meta Separator Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_post_meta_separator_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_post_meta_separator_color' ),
+		'default' => xenial_get_customize_default( 'archive_post_meta_separator_color' )
 	)
 );
 
@@ -693,6 +697,7 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Post Excerpt Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_post_excerpt_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_post_excerpt_color' ),
+		'default' => xenial_get_customize_default( 'archive_post_excerpt_color' )
 	)
 );

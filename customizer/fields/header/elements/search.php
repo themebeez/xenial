@@ -212,7 +212,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Modal Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'header_search_modal_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_modal_background_color' ),
+		'default' => xenial_get_customize_default( 'header_search_modal_background_color' )
 	)
 );
 
@@ -286,7 +287,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_bar_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_bar_background_color' ),
+		'default' => xenial_get_customize_default( 'header_search_bar_background_color' )
 	)
 );
 
@@ -385,7 +387,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_bar_text_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_bar_text_color' ),
+		'default' => xenial_get_customize_default( 'header_search_bar_text_color' )
 	)
 );
 
@@ -537,7 +540,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_modal_toggle_button_text_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_modal_toggle_button_text_color' ),
+		'default' => xenial_get_customize_default( 'header_search_modal_toggle_button_text_color' )
 	)
 );
 
@@ -556,7 +560,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_modal_toggle_button_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_modal_toggle_button_background_color' ),
+		'default' => xenial_get_customize_default( 'header_search_modal_toggle_button_background_color' )
 	)
 );
 
@@ -700,7 +705,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_bar_submit_button_text_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_bar_submit_button_text_color' ),
+		'default' => xenial_get_customize_default( 'header_search_bar_submit_button_text_color' )
 	)
 );
 
@@ -719,7 +725,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_bar_submit_button_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_bar_submit_button_background_color' ),
+		'default' => xenial_get_customize_default( 'header_search_bar_submit_button_background_color' )
 	)
 );
 
@@ -867,7 +874,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_modal_close_button_text_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_modal_close_button_text_color' ),
+		'default' => xenial_get_customize_default( 'header_search_modal_close_button_text_color' )
 	)
 );
 
@@ -886,6 +894,7 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_search_modal_close_button_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_search_modal_close_button_background_color' ),
+		'default' => xenial_get_customize_default( 'header_search_modal_close_button_background_color' )
 	)
 );

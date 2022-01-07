@@ -8,78 +8,9 @@ if ( ! function_exists( 'xenial_get_customizer_defaults_page_single_values' ) ) 
             'page_single_title_tag' => 'h1',
             'page_single_display_breadcrumbs' => true,
 
-            'page_single_header_background_color' => array(
-                'desktop' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                ),
-                'tablet' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                ),
-                'mobile' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                )
-            ),
-            'page_single_header_title_color' => array(
-                'desktop' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                ),
-                'tablet' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                ),
-                'mobile' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                )
-            ),
-            'page_single_header_breadcrumb_text_color' => array(
-                'desktop' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    ),
-                    'hover' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                ),
-                'tablet' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    ),
-                    'hover' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                ),
-                'mobile' => array(
-                    'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    ),
-                    'hover' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-                )
-            ),
+            'page_single_header_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+            'page_single_header_title_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+            'page_single_header_breadcrumb_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 
             'page_single_title_font_size' => array(
                 'desktop' => '',

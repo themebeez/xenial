@@ -14,26 +14,7 @@ if ( ! function_exists( 'xenial_theme_header_top_section_defaults' ) ) {
 					'tablet' => '',
 					'mobile' => ''
 				),
-				'header_top_section_background_color' => array(
-					'desktop' => array(
-	                    'initial' => array(
-	                        'display' => true,
-	                        'default' => ''
-	                    )
-	                ),
-	                'tablet' => array(
-	                    'initial' => array(
-	                        'display' => true,
-	                        'default' => ''
-	                    )
-	                ),
-	                'mobile' => array(
-	                    'initial' => array(
-	                        'display' => true,
-	                        'default' => ''
-	                    )
-	                )
-				),
+				'header_top_section_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 				'header_top_section_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}' 
 			)
 		);

@@ -103,7 +103,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_menu',
 		'label' => esc_html__( 'Menu Item Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_menu_item_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_menu_item_color' ),
+		'default' => xenial_get_customize_default( 'offcanvas_menu_item_color' )
 	)
 );
 
@@ -161,7 +162,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_menu',
 		'label' => esc_html__( 'Divider Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'offcanvas_menu_item_divider_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_menu_item_divider_color' ),
+		'default' => xenial_get_customize_default( 'offcanvas_menu_item_divider_color' )
 	)
 );
 

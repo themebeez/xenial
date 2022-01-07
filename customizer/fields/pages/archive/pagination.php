@@ -255,7 +255,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Item Font Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_pagination_item_font_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_pagination_item_font_color' ),
+		'default' => xenial_get_customize_default( 'archive_pagination_item_font_color' )
 	)
 );
 
@@ -275,7 +276,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Item Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_pagination_item_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_pagination_item_background_color' ),
+		'default' => xenial_get_customize_default( 'archive_pagination_item_background_color' )
 	)
 );
 

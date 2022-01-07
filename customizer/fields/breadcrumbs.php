@@ -32,7 +32,6 @@ xenial_tab_field(
 	        		'breadcrumbs_font_size' => '',
 	        		'breadcrumbs_style_divider_1' => '',
 	        		'breadcrumbs_text_color' => '',
-	        		'breadcrumbs_link_hover_color' => '',
 	        		'breadcrumbs_style_divider_2' => ''
 	        	) 
 	        )
@@ -136,7 +135,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_breadcrumbs',
 		'label' => esc_html__( 'Font Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'breadcrumbs_text_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'breadcrumbs_text_color' ),
+		'default' => xenial_get_customize_default( 'breadcrumbs_text_color' )
 	)
 );
 

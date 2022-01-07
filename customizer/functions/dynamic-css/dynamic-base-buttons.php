@@ -2,56 +2,68 @@
 
 
 if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
+	
 	function xenial_dynamic_general_button_css() {
-		$css = '.generalButtonSelector {';
-			$paddingTop = xenial_get_option( 'btn_padding_top' );
-			$paddingRight = xenial_get_option( 'btn_padding_right' );
-			$paddingBottom = xenial_get_option( 'btn_padding_bottom' );
-			$paddingLeft = xenial_get_option( 'btn_padding_left' );
-			$css .= '
-				padding: ' . ( ( $paddingTop ) ? absint( $paddingTop ) : 0 ) . 'px ' . ( ( $paddingRight ) ? absint( $paddingRight ) : 0 ) . 'px ' . ( ( $paddingBottom ) ? absint( $paddingBottom ) : 0 ) . 'px ' . ( ( $paddingLeft ) ? absint( $paddingLeft ) : 0 ) . 'px;
-			';
 
-			$boderStyle = xenial_get_option( 'btn_border_style' );
-			if ( $borderStyle != 'none' ) {
+		$global_button_padding = array(
+			'top' => xenial_get_option( 'btn_padding_top' ),
+			'right' => xenial_get_option( 'btn_padding_right' ),
+			'bottom' => xenial_get_option( 'btn_padding_bottom' ),
+			'left' => xenial_get_option( 'btn_padding_left' )
+		);
+
+		$global_button_label_colors = xenial_json_decode( xenial_get_option( 'btn_txt_color' ) );
+
+		$global_button_background_colors = xenial_json_decode( xenial_get_option( 'btn_bg_color' ) );
+
+		$global_button_border = xenial_json_decode( xenial_get_option( 'btn_border' ) );
+
+		// Dynamic CSS for global button initial state.
+
+		$css = 'button, input[type="button"], input[type="reset"], input[type="submit"], .xe-button {';
+
+			$css .= xenial_dynamic_padding_css( $global_button_padding );
+
+			if ( $global_button_label_colors['initial'] ) {
 				$css .= '
-					border-style: ' . esc_attr( $borderStyle ) . ';
-				';
-				$borderTopWidth = xenial_get_option( 'btn_border_width_top' );
-				$borderRightWidth = xenial_get_option( 'btn_border_width_right' );
-				$borderBottomWidth = xenial_get_option( 'btn_border_width_bottom' );
-				$borderLeftWidth = xenial_get_option( 'btn_border_width_left' );
-				$css .= '
-					border-width: ' . ( ( $borderTopWidth ) ? absint( $borderTopWidth ) : 0 ) . 'px ' . ( ( $borderRightWidth ) ? absint( $borderRightWidth ) : 0 ) . 'px ' . ( ( $borderBottomWidth ) ? absint( $borderBottomWidth ) : 0 ) . 'px ' . ( ( $borderLeftWidth ) ? absint( $borderLeftWidth ) : 0 ) . 'px;
+					color: ' . esc_attr( $global_button_label_colors['initial'] ) . ';
 				';
 			}
 
-			$boderRadius = xenial_get_option( 'btn_border_radius' );
-			$css .= '
-				border-radius: ' . absint( $borderRadius ) . 'px;
-			';
+			if ( $global_button_background_colors['initial'] ) {
+				$css .= '
+					background-color: ' . esc_attr( $global_button_background_colors['initial'] ) . ';
+				';
+			}
 
-			$fontColor = xenial_get_option( 'btn_txt_color' );
-			$backgroundColor = xenial_get_option( 'btn_bg_color' );
-			$borderColor = xenial_get_option( 'btn_border_color' );
-			$css .= '
-				color: ' . esc_attr( $fontColor ) . ';
-				background-color: ' . esc_attr( $backgroundColor ) . ';
-				border-color: ' . esc_attr( $borderColor ) . ';
-			';
+			$css .= xenial_dynamic_border_css( $global_button_border ); 
 		$css .= '}';
 
-		$hoverFontColor = xenial_get_option( 'btn_txt_hover_color' );
-		$hoverBackgroundColor = xenial_get_option( 'btn_bg_hover_color' );
-		$hoverBorderColor = xenial_get_option( 'btn_border_hover_color' );
 
-		$css .= '
-			.generalButtonSelector:hover {
-				color: ' . esc_attr( $hoverFontColor ) . ';
-				background-color: ' . esc_attr( $hoverBackgroundColor ) . ';
-				border-color: ' . esc_attr( $hoverBorderColor ) . ';
- 			}	
-		';
+		// Dynamic CSS for global button hover state.
+
+		$css .= 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .xe-button:hover {';
+
+			if ( $global_button_label_colors['hover'] ) {
+				$css .= '
+					color: ' . esc_attr( $global_button_label_colors['hover'] ) . ';
+				';
+			}
+
+			if ( $global_button_background_colors['hover'] ) {
+				$css .= '
+					background-color: ' . esc_attr( $global_button_background_colors['hover'] ) . ';
+				';
+			}
+
+			if ( $global_button_border['border_colors']['hover'] ) {
+				$css .= '
+					background-color: ' . esc_attr( $global_button_border['border_colors']['hover'] ) . ';
+				';
+			}
+		$css .= '}';
+
+		return $css;
 	}
 }
 
@@ -59,55 +71,55 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 
 
 if ( ! function_exists( 'xenial_dynamic_text_button_css' ) ) {
-	function xenial_dynamic_text_button_css() {
-		$css = '.textButtonSelector {';
-			$paddingTop = xenial_get_option( 'txt_button_padding_top' );
-			$paddingRight = xenial_get_option( 'txt_button_padding_right' );
-			$paddingBottom = xenial_get_option( 'txt_button_padding_bottom' );
-			$paddingLeft = xenial_get_option( 'txt_button_padding_left' );
-			$css .= '
-				padding: ' . ( ( $paddingTop ) ? absint( $paddingTop ) : 0 ) . 'px ' . ( ( $paddingRight ) ? absint( $paddingRight ) : 0 ) . 'px ' . ( ( $paddingBottom ) ? absint( $paddingBottom ) : 0 ) . 'px ' . ( ( $paddingLeft ) ? absint( $paddingLeft ) : 0 ) . 'px;
-			';
 
-			$boderStyle = xenial_get_option( 'txt_button_style' );
-			if ( $borderStyle != 'none' ) {
+	function xenial_dynamic_text_button_css() {
+
+		$global_text_button_label_colors = xenial_json_decode( xenial_get_option( 'txt_btn_txt_color' ) );
+
+		$global_text_button_background_colors = xenial_json_decode( xenial_get_option( 'txt_btn_border_color' ) );
+
+		$global_text_button_bottom_border_width = xenial_get_option( 'txt_btn_border_width' );
+
+		// Initial state button CSS
+		$css = '.xe-button.xe-false-button {';
+			if ( $global_text_button_label_colors['initial'] ) {
 				$css .= '
-					border-style: ' . esc_attr( $borderStyle ) . ';
+					color: ' . esc_attr( $global_text_button_label_colors['initial'] ) . ';
 				';
-				$borderTopWidth = xenial_get_option( 'txt_btn_border_width_top' );
-				$borderRightWidth = xenial_get_option( 'txt_btn_border_width_right' );
-				$borderBottomWidth = xenial_get_option( 'txt_btn_border_width_bottom' );
-				$borderLeftWidth = xenial_get_option( 'txt_btn_border_width_left' );
+			}
+		$css .= '}';
+
+		$css .= '.xe-false-button.has-underline::before, .xe-false-button.has-underline::after {';
+			if ( $global_text_button_bottom_border_width ) {
 				$css .= '
-					border-width: ' . ( ( $borderTopWidth ) ? absint( $borderTopWidth ) : 0 ) . 'px ' . ( ( $borderRightWidth ) ? absint( $borderRightWidth ) : 0 ) . 'px ' . ( ( $borderBottomWidth ) ? absint( $borderBottomWidth ) : 0 ) . 'px ' . ( ( $borderLeftWidth ) ? absint( $borderLeftWidth ) : 0 ) . 'px;
+					height: ' . esc_attr( $global_text_button_bottom_border_width ) . 'px;
 				';
 			}
 
-			$boderRadius = xenial_get_option( 'txt_btn_border_radius' );
-			$css .= '
-				border-radius: ' . absint( $borderRadius ) . 'px;
-			';
-
-			$fontColor = xenial_get_option( 'txt_btn_txt_color' );
-			$backgroundColor = xenial_get_option( 'txt_btn_bg_color' );
-			$borderColor = xenial_get_option( 'txt_btn_border_color' );
-			$css .= '
-				color: ' . esc_attr( $fontColor ) . ';
-				background-color: ' . esc_attr( $backgroundColor ) . ';
-				border-color: ' . esc_attr( $borderColor ) . ';
-			';
+			if ( $global_text_button_background_colors['initial'] ) {
+				$css .= '
+					background-color: ' . esc_attr( $global_text_button_background_colors['initial'] ) . ';
+				';
+			}
 		$css .= '}';
 
-		$hoverFontColor = xenial_get_option( 'txt_btn_txt_hover_color' );
-		$hoverBackgroundColor = xenial_get_option( 'txt_btn_bg_hover_color' );
-		$hoverBorderColor = xenial_get_option( 'txt_btn_border_hover_color' );
+		// Hover state button CSS
+		$css .= '.xe-button.xe-false-button:hover {';
+			if ( $global_text_button_label_colors['hover'] ) {
+				$css .= '
+					color: ' . esc_attr( $global_text_button_label_colors['hover'] ) . ';
+				';
+			}
+		$css .= '}';		
 
-		$css .= '
-			.textButtonSelector:hover {
-				color: ' . esc_attr( $hoverFontColor ) . ';
-				background-color: ' . esc_attr( $hoverBackgroundColor ) . ';
-				border-color: ' . esc_attr( $hoverBorderColor ) . ';
- 			}	
-		';
+		$css .= '.xe-false-button.has-underline:hover::before, .xe-false-button.has-underline:hover::after {';
+			if ( $global_text_button_background_colors['hover'] ) {
+				$css .= '
+					background-color: ' . esc_attr( $global_text_button_background_colors['hover'] ) . ';
+				';
+			}
+		$css .= '}';
+
+		return $css;
 	}
 }

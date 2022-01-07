@@ -48,7 +48,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_buttons',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'btn_txt_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'btn_txt_color' ),
+		'default' => xenial_get_customize_default( 'btn_txt_color' )
 	)
 );
 
@@ -67,7 +68,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_buttons',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'btn_bg_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'btn_bg_color' ),
+		'default' => xenial_get_customize_default( 'btn_bg_color' )
 	)
 );
 
@@ -124,7 +126,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_buttons',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'txt_btn_txt_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'txt_btn_txt_color' ),
+		'default' => xenial_get_customize_default( 'txt_btn_txt_color' )
 	)
 );
 
@@ -166,6 +169,7 @@ xenial_color_picker_field(
 		'section' => 'xenial_buttons',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'txt_btn_border_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'txt_btn_border_color' ),
+		'default' => xenial_get_customize_default( 'txt_btn_border_color' )
 	)
 );

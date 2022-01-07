@@ -96,7 +96,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Page Header Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_page_header_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_page_header_background_color' ),
+		'default' => xenial_get_customize_default( 'archive_page_header_background_color' )
 	)
 );
 
@@ -238,7 +239,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Page Title Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_page_header_title_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_page_header_title_color' ),
+		'default' => xenial_get_customize_default( 'archive_page_header_title_color' )
 	)
 );
 
@@ -268,6 +270,7 @@ xenial_color_picker_field(
 		'section' => 'xenial_archive_pages',
 		'label' => esc_html__( 'Breadcrumbs Font Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'archive_page_header_breadcrumb_text_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'archive_page_header_breadcrumb_text_color' ),
+		'default' => xenial_get_customize_default( 'archive_page_header_breadcrumb_text_color' )
 	)
 );
