@@ -25,38 +25,7 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	                'tablet' => 'left',
 	                'mobile' => 'left'
 	            ),
-	            'site_title_color' => array(
-	            	'desktop' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'hover' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'hover' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	),
-		            	'hover' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	)
-	            ),
+	            'site_title_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 	            'site_identity_font_type' => 'system_font',
 	            'site_identity_system_font_family' => 'arial',
 	            'site_identity_system_font_weight' => '400',
@@ -92,26 +61,7 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	            ),
 	            'site_description_font_style' => 'normal',
 	            'site_description_text_transform' => 'inherit',
-	            'site_description_color' => array(
-	            	'desktop' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-		            		'display' => true,
-		            		'default' => '#000000'
-		            	)
-	            	)
-	            ),
+	            'site_description_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 			)
 		);
 	}

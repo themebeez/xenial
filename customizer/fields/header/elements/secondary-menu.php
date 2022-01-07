@@ -259,6 +259,7 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_secondary_menu',
 		'label' => esc_html__( 'Link Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_secondary_menu_link_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_secondary_menu_link_color' ),
+		'default' => xenial_get_customize_default( 'header_secondary_menu_link_color' )
 	)
 );

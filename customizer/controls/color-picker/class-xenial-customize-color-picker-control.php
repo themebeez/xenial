@@ -104,13 +104,17 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 
 			$is_responsive = ( $this->input_attrs['is_responsive'] == true ) ? true : false;
 
+			$saved_values = ( $this->value() ) ? $this->value() : '';
+
+			$default_values = $this->setting->default;
+
 			$this->json['colors'] = isset( $this->input_attrs['colors'] ) ? $this->input_attrs['colors'] : array();
 
 			$this->json['id'] 		= $this->id;
 
 			$this->json['isResponsive'] = $is_responsive;			
 
-			$this->json['value'] = $this->value();
+			$this->json['value'] = ( $saved_values ) ? $saved_values : $default_values;
 
 			$this->json['link'] = $this->get_link();
 
@@ -163,7 +167,10 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 			}
 			if ( data.value ) {
 				settingValue = JSON.parse( data.value );
-			}
+			} 
+			// console.log( data.id );
+			// console.log( data.value );
+			
 			#>
 			<# if ( data.label ) { #>
 				<span class="customize-control-title">
@@ -231,8 +238,8 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 							if ( value.display ) {
 								#>
 								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
-									<input type="hidden" name="tablet-{{ key }}-color-{{ data.id }}" value="{{ savedMobileColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
-									<div id="tablet-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedMobileColors[ key ] }}"></div>
+									<input type="hidden" name="mobile-{{ key }}-color-{{ data.id }}" value="{{ savedMobileColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
+									<div id="mobile-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedMobileColors[ key ] }}"></div>
 								</li>
 								<#
 							}

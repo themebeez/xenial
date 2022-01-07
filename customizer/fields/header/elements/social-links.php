@@ -226,7 +226,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_social_links',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_social_link_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_social_link_background_color' ),
+		'default' => xenial_get_customize_default( 'header_social_link_background_color' )
 	)
 );
 
@@ -328,7 +329,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_social_links',
 		'label' => esc_html__( 'Icon Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_social_link_icon_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_social_link_icon_color' ),
+		'default' => xenial_get_customize_default( 'header_social_link_icon_color' )
 	)
 );
 
@@ -401,7 +403,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_social_links',
 		'label' => esc_html__( 'Title Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_social_link_title_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_social_link_title_color' ),
+		'default' => xenial_get_customize_default( 'header_social_link_title_color' )
 	)
 );
 

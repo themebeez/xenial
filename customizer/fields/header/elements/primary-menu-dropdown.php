@@ -207,7 +207,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_primary_menu_dropdown',
 		'label' => esc_html__( 'Divider Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'primary_menu_dropdown_items_divider_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'primary_menu_dropdown_items_divider_color' ),
+		'default' => xenial_get_customize_default( 'primary_menu_dropdown_items_divider_color' )
 	)
 );
 
@@ -254,7 +255,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_primary_menu_dropdown',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'primary_menu_dropdown_items_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'primary_menu_dropdown_items_color' ),
+		'default' => xenial_get_customize_default( 'primary_menu_dropdown_items_color' )
 	)
 );
 
@@ -274,7 +276,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_primary_menu_dropdown',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_default( 'primary_menu_dropdown_items_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'primary_menu_dropdown_items_background_color' ),
+		'default' => xenial_get_customize_default( 'primary_menu_dropdown_items_background_color' )
 	)
 );
 

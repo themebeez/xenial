@@ -38,25 +38,10 @@ if ( ! function_exists( 'xenial_get_header_general_customize_defaults' ) ) {
 	                'mobile_left' => 0,
 				),
 				'header_background_type' => 'color',
-	            'header_background_color' => array(
-					'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-				),
-	            'header_gradient_background_color_1' => array(
-					'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-				),
+	            'header_background_color' => '{"initial":"","link":"","hover":"","active":""}',
+	            'header_gradient_background_color_1' => '{"initial":"","link":"","hover":"","active":""}',
 	            'header_gradient_location_1' => 30,
-	            'header_gradient_background_color_2' => array(
-					'initial' => array(
-                        'display' => true,
-                        'default' => ''
-                    )
-				),
+	            'header_gradient_background_color_2' => '{"initial":"","link":"","hover":"","active":""}',
 	            'header_gradient_location_2' => 100,
 	            'header_gradient_type' => 'linear',
 	            'header_gradient_linear_angle' => 45,

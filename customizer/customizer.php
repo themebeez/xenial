@@ -328,6 +328,7 @@ require XENIAL_THEME_DIR . '/customizer/functions/active-callbacks.php';
 /**
  * Load function to load customizer field's default values.
  */
+require XENIAL_THEME_DIR . '/customizer/functions/defaults/allowed-fields.php';
 require XENIAL_THEME_DIR . '/customizer/functions/defaults/defaults.php';
 
 
@@ -348,6 +349,7 @@ require XENIAL_THEME_DIR . '/customizer/functions/customizer-choices.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-layout.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-typo.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-colors.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-buttons.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-breadcrumbs.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-header.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-pagination.php';

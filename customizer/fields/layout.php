@@ -107,6 +107,38 @@ xenial_color_picker_field(
 		'section' => 'xenial_layout',
 		'label' => esc_html__( 'Color Picker Test', 'xenial' ),
 		'is_responsive' => true,
+		'allowed_fields' => array(
+			'desktop' => array(
+				'initial' => array(
+					'display' => true,
+					'default' => ''
+				),
+				'hover' => array(
+					'display' => true,
+					'default' => ''
+				)
+			),
+			'tablet' => array(
+				'initial' => array(
+					'display' => true,
+					'default' => ''
+				),
+				'hover' => array(
+					'display' => true,
+					'default' => ''
+				)
+			),
+			'mobile' => array(
+				'initial' => array(
+					'display' => true,
+					'default' => ''
+				),
+				'hover' => array(
+					'display' => true,
+					'default' => ''
+				)
+			)
+		),
 		'colors' => array(
 			'desktop' => array(
 				'initial' => array(
@@ -138,7 +170,7 @@ xenial_color_picker_field(
 					'default' => ''
 				)
 			)
-		)
+		),
 		// 'colors' => array(
 		// 	'initial' => array(
 		// 		'display' => true,

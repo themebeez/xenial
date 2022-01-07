@@ -33,38 +33,7 @@ if ( ! function_exists( 'xenial_get_header_secondary_menu_customize_defaults' ) 
 	            'header_secondary_menu_font_weight' => '400',
 	            'header_secondary_menu_font_style' => 'normal',
 	            'header_secondary_menu_text_transform' => 'inherit',
-	            'header_secondary_menu_link_color' => array(
-	            	'desktop' => array(
-	            		'initial' => array(
-	            			'display' => true,
-	            			'default' => ''
-	            		),
-	            		'hover' => array(
-	            			'display' => true,
-	            			'default' => ''
-	            		)
-	            	),
-	            	'tablet' => array(
-	            		'initial' => array(
-	            			'display' => true,
-	            			'default' => ''
-	            		),
-	            		'hover' => array(
-	            			'display' => true,
-	            			'default' => ''
-	            		)
-	            	),
-	            	'mobile' => array(
-	            		'initial' => array(
-	            			'display' => true,
-	            			'default' => ''
-	            		),
-	            		'hover' => array(
-	            			'display' => true,
-	            			'default' => ''
-	            		)
-	            	)
-	            ),
+	            'header_secondary_menu_link_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 			)
 		);
 	}

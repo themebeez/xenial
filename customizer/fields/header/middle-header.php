@@ -92,7 +92,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_middle_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'header_middle_section_background_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'header_middle_section_background_color' ),
+		'default' => xenial_get_customize_default( 'header_middle_section_background_color' )
 	)
 );
 

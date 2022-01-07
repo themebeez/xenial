@@ -478,7 +478,8 @@ xenial_color_picker_field(
 		'section' => 'title_tagline',
 		'label' => esc_html__( 'Site Title Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'site_title_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'site_title_color' ),
+		'default' => xenial_get_customize_default( 'site_title_color' )
 	)
 );
 
@@ -593,6 +594,7 @@ xenial_color_picker_field(
 		'section' => 'title_tagline',
 		'label' => esc_html__( 'Site Tagline Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_default( 'site_description_color' )
+		'colors' => xenial_get_customize_allowed_fields( 'site_description_color' ),
+		'default' => xenial_get_customize_default( 'site_description_color' )
 	)
 );

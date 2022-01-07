@@ -9,8 +9,7 @@ if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
 
 		$breadcrumbs_mobile_font_size = xenial_get_option( 'breadcrumbs_font_size_mobile' );
 
-		$breadcrumbs_font_color = xenial_get_option( 'breadcrumbs_text_color' );
-		$breadcrumbs_font_hover_color = xenial_get_option( 'breadcrumbs_link_hover_color' );
+		$breadcrumbs_font_colors = xenial_json_decode( xenial_get_option( 'breadcrumbs_text_color' ) );
 
 		$css = '';
 
@@ -20,15 +19,15 @@ if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
 			}';
 		}
 
-		if ( $breadcrumbs_font_color ) {
+		if ( $breadcrumbs_font_colors['initial'] ) {
 			$css .= '.xe-breadcrumb .trail-item a, .xe-breadcrumb .trail-item::after {
-				color: ' . esc_attr( $breadcrumbs_font_color ) . ';
+				color: ' . esc_attr( $breadcrumbs_font_colors['initial'] ) . ';
 			}';
 		}
 
-		if ( $breadcrumbs_font_hover_color ) {
+		if ( $breadcrumbs_font_colors['hover'] ) {
 			$css .= '.xe-breadcrumb .trail-item a:hover {
-				color: ' . esc_attr( $breadcrumbs_font_hover_color ) . ';
+				color: ' . esc_attr( $breadcrumbs_font_colors['hover'] ) . ';
 			}';
 		}
 
