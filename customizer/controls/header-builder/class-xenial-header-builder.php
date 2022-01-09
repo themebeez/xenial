@@ -422,7 +422,7 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 												?>
 											</div>
 										</div>
-										<div class="xenial-header-builder-col xenial-header-builder-tbottomop-col-2">
+										<div class="xenial-header-builder-col xenial-header-builder-bottom-col-2">
 											<div id="xenial-mobile-bottom-middle" class="selected-elements-wrapper">
 												<?php
 												$mobile_header_bottom_middle_elements = $mobile_header_elements['bottom']['middle'];
@@ -669,7 +669,7 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 								middle: null,
 								right: null
 							},
-							left: {
+							bottom: {
 								left: null,
 								middle: null,
 								right: null
@@ -686,7 +686,7 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 								middle: null,
 								right: null
 							},
-							left: {
+							bottom: {
 								left: null,
 								middle: null,
 								right: null

@@ -261,17 +261,4 @@ if ( class_exists( 'WooCommerce' ) ) {
 
 
 add_action( 'wp_head', function() {
-	// $breadcrumbs_font_colors = xenial_get_option( 'breadcrumbs_text_color' );
-	// $site_title_colors = xenial_get_option( 'site_title_color' );
-	// $breadcrumbs_font_colors = xenial_json_decode( $breadcrumbs_font_colors );
-
-	// $global_button_border = xenial_get_option( 'btn_border' );
-	// $global_button_border = xenial_json_decode( $global_button_border );
-
-	// $archive_page_header_background_color = xenial_get_option( 'archive_page_header_background_color' );
-	// $archive_page_header_background_color = xenial_json_decode( $archive_page_header_background_color );
-
-	// $page_title_font_color = xenial_json_decode( xenial_get_option( 'archive_page_header_title_color' ) );
-	
-	// var_dump( $page_title_font_color );
 } );
