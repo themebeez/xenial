@@ -61,7 +61,7 @@ xenial_divider_field(
 
 
 xenial_range_control_field(
-	'header_middle_section_min_width',
+	'header_middle_section_min_height',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_middle_header',
@@ -72,7 +72,7 @@ xenial_range_control_field(
 			'step' => 1, 
 			'responsive' => true
 		),
-		'defaults' => xenial_get_customize_default( 'header_middle_section_min_width' )
+		'defaults' => xenial_get_customize_default( 'header_middle_section_min_height' )
 	)
 );
 

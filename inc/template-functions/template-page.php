@@ -2,6 +2,7 @@
 
 
 if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
+
 	function xenial_single_page_header_template() {
 
 		$templateArgs = array(
@@ -80,6 +81,8 @@ if ( ! function_exists( 'xenial_page_title_template' ) ) {
 	function xenial_page_title_template() {
 
 		$page_title_tag = xenial_get_option( 'page_single_title_tag' );
+
+		$page_title_tag = ( $page_title_tag ) ? $page_title_tag : 'h1';  
 		?>
 		<div class="xe-post-title xe-entry-title">
 			<?php 

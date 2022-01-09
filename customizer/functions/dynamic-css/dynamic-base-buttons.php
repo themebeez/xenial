@@ -6,10 +6,10 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 	function xenial_dynamic_general_button_css() {
 
 		$global_button_padding = array(
-			'top' => xenial_get_option( 'btn_padding_top' ),
-			'right' => xenial_get_option( 'btn_padding_right' ),
-			'bottom' => xenial_get_option( 'btn_padding_bottom' ),
-			'left' => xenial_get_option( 'btn_padding_left' )
+			'padding-top' => xenial_get_option( 'btn_padding_top' ),
+			'padding-right' => xenial_get_option( 'btn_padding_right' ),
+			'padding-bottom' => xenial_get_option( 'btn_padding_bottom' ),
+			'padding-left' => xenial_get_option( 'btn_padding_left' )
 		);
 
 		$global_button_label_colors = xenial_json_decode( xenial_get_option( 'btn_txt_color' ) );
@@ -22,7 +22,7 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 
 		$css = 'button, input[type="button"], input[type="reset"], input[type="submit"], .xe-button {';
 
-			$css .= xenial_dynamic_padding_css( $global_button_padding );
+			$css .= xenial_dynamic_spacing_css( $global_button_padding );
 
 			if ( $global_button_label_colors['initial'] ) {
 				$css .= '

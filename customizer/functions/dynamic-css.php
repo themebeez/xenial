@@ -1,5 +1,13 @@
 <?php
 
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-general.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-top.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-middle.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-bottom.php';
+
 /**
  * Function to load dynamic styles.
  *
@@ -25,6 +33,14 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
         $css .= xenial_dynamic_text_button_css();
 
         $css .= xenial_dynamic_breadcrumbs_css();
+
+        $css .= xenial_dynamic_header_general_css();
+
+        $css .= xenial_dynamic_header_top_css();
+
+        $css .= xenial_dynamic_header_middle_css();
+
+        $css .= xenial_dynamic_header_bottom_css();
 
         $css .= xenial_dynamic_archive_header_css();
 
@@ -78,22 +94,20 @@ if ( ! function_exists( 'xenial_px_to_rem' ) ) {
 }
 
 
-if ( ! function_exists( 'xenial_dynamic_padding_css' ) ) {
+if ( ! function_exists( 'xenial_dynamic_spacing_css' ) ) {
 
-	function xenial_dynamic_padding_css( $padding_values ) {
+	function xenial_dynamic_spacing_css( $spacing_values ) {
 
-		if ( ! is_array( $padding_values ) || empty( $padding_values ) ) {
+		if ( ! is_array( $spacing_values ) || empty( $spacing_values ) ) {
 			return;
 		}
 
 		$css = '';
 
-		foreach ( $padding_values as $side => $value ) {
+		foreach ( $spacing_values as $property => $value ) {
 
 			if ( $value != '' ) {
-				$css .= '
-					padding-' . $side . ': ' . esc_attr( $value ) . 'px;
-				';
+				$css .= $property . ': ' . esc_attr( $value ) . 'px;';
 			}
 		}
 
@@ -183,7 +197,7 @@ if ( ! function_exists( 'xenial_dynamic_border_css' ) ) {
 
 		$css = '';
 
-		if ( $border_values['border_style'] ) {
+		if ( $border_values['border_style'] == 'none' ) {
 			$css .= '
 				border-style: ' . esc_attr( $border_values['border_style'] ) . ';
 			';
@@ -198,7 +212,11 @@ if ( ! function_exists( 'xenial_dynamic_border_css' ) ) {
 				$side == 'bottom' || 
 				$side == 'left' 
 			) {
-				if ( $value != '' ) {
+				if ( $border_values['border_style'] != 'none' && $value != '' ) {
+					$css .= '
+						border-' . $side . '-style: ' . esc_attr( $border_values['border_style'] ) . ';
+					';
+
 					$css .= '
 						border-'. esc_attr( $side ) .'-width: ' . esc_attr( $value ) . esc_attr( $border_width_unit ) . ';
 					';
@@ -206,18 +224,21 @@ if ( ! function_exists( 'xenial_dynamic_border_css' ) ) {
 			}
 		}
 
-		$border_radius_unit = $border_values['border_widths']['unit'];
+		$border_radius_unit = $border_values['border_radius']['unit'];
 
-		foreach ( $border_values['border_widths'] as $corner => $value ) {
+		foreach ( $border_values['border_radius'] as $corner => $value ) {
 			if ( 
 				$corner == 'top_left' || 
 				$corner == 'top_right' || 
 				$corner == 'bottom_left' || 
 				$corner == 'bottom_right' 
 			) {
-				$css .= '
-					border-'. esc_attr( str_replace( "_", "-", $corner ) ) .'-radius: ' . esc_attr( $value ) . esc_attr( $border_radius_unit ) . ';
-				';
+
+				if ( $value != '' ) {
+					$css .= '
+						border-'. esc_attr( str_replace( "_", "-", $corner ) ) .'-radius: ' . esc_attr( $value ) . esc_attr( $border_radius_unit ) . ';
+					';
+				}				
 			}
 		}
 
@@ -239,6 +260,57 @@ if ( ! function_exists( 'xenial_dynamic_border_css' ) ) {
 				$css .= '
 					border-color: ' . esc_attr( $value ) . ';
 				';
+			}
+		}
+
+		return $css;
+	}
+}
+
+
+if ( ! function_exists( 'xenial_dynamic_gradient_css' ) ) {
+
+	function xenial_dynamic_gradient_css( $gradient_values ) {
+
+		if ( ! is_array( $gradient_values ) || empty( $gradient_values ) ) {
+			return;
+		}
+
+		$css = '';
+
+		if ( $gradient_values['gradient-type'] == 'linear' ) {
+			$css .= '
+				background-image: linear-gradient(' . esc_attr( $gradient_values['angle'] ) . 'deg, ' . esc_attr( $gradient_values['color-1'] ) . ' ' . esc_attr( $gradient_values['location-1'] ) . '%, ' . esc_attr( $gradient_values['color-2'] ) . ' ' . esc_attr( $gradient_values['location-2'] ) . '%);
+				';
+		} else {
+			$css .= '
+				background-image: radial-gradient(' . esc_attr( $gradient_values['color-1'] ) . ' ' . esc_attr( $gradient_values['location-1'] ) . '%, ' . esc_attr( $gradient_values['color-2'] ) . ' ' . esc_attr( $gradient_values['location-2'] ) . '%);
+				';
+		}
+
+		return $css;
+	}
+}
+
+
+if ( ! function_exists( 'xenial_dynamic_background_image_css' ) ) {
+
+	function xenial_dynamic_background_image_css( $background_image_values ) {
+
+		if ( ! is_array( $background_image_values ) || empty( $background_image_values ) ) {
+			return;
+		}
+
+		$css = '';
+
+		foreach ( $background_image_values as $background_property => $value ) {
+
+			if ( $background_property == 'background-image' ) {
+
+				$css .= $background_property . ': url(' . esc_attr( $value ) . ');';
+			} else {
+
+				$css .= $background_property . ': ' . esc_attr( $value ) . ';';
 			}
 		}
 
