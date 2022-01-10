@@ -73,33 +73,32 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Back to top button 
 	function xeBackToTopButton() {
 
-		var backToTopTriggerBtn = document.getElementById("xe-backtotop-button");
+		var yAxisHeight = window.pageYOffset;
+		var backToTopBtn = document.getElementById("xe-backtotop-button");
 
 		window.addEventListener('scroll', function () {
 
-			var yAxisHeight = window.pageYOffset;
+			if (backToTopBtn !== null || undefined) {
 
-			if (yAxisHeight > 600 && backToTopTriggerBtn !== null || undefined) {
+				if (yAxisHeight > 600) {
 
-				backToTopTriggerBtn.classList.add("visible");
+					backToTopBtn.classList.add("visible");
 
-			} else {
+				} else {
 
-				backToTopTriggerBtn.classList.remove("visible");
+					backToTopBtn.classList.remove("visible");
+				}
+
+				backToTopBtn.addEventListener('click', function () {
+
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				});
 			}
 		});
-
-		if (backToTopTriggerBtn !== null || undefined) {
-
-			backToTopTriggerBtn.addEventListener('click', function () {
-
-				window.scrollTo({
-					top: 0,
-					left: 0,
-					behavior: 'smooth'
-				});
-			});
-		}
 	}
 
 	// Append toggle button in mobile canvas navigation dropdown
@@ -124,29 +123,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		// Attribute xe-submenu-style="" | options = default | revealing
 		var mobileCanvasSubMenuStyleEle = document.querySelector("#xe-mobile-canvas .is-offcanvas-menu");
-		var mobileCanvasSubMenuStyleEleAttribute = mobileCanvasSubMenuStyleEle.getAttribute('xe-submenu-style');
 
-		if (mobileCanvasSubMenuStyleEleAttribute == "revealing") {
+		if (mobileCanvasSubMenuStyleEle !== null || undefined) {
 
-			var mobileCanvasSubMenuBackButton = '<li class="goback"><button class="xe-button xe-false-button xe-canvassubmenu-goback-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13v7l-8-8 8-8v7h8v2z" fill="rgba(105,105,105,1)"/></svg> <span class="text">Go Back</span></button></li>';
-			var mobileCanvasSubMenuEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu");
+			var mobileCanvasSubMenuStyleEleAttribute = mobileCanvasSubMenuStyleEle.getAttribute('xe-submenu-style');
 
-			mobileCanvasSubMenuEle.forEach(function (childEle) {
+			if (mobileCanvasSubMenuStyleEleAttribute == "revealing") {
 
-				childEle.insertAdjacentHTML('afterbegin', mobileCanvasSubMenuBackButton);
-			});
+				var mobileCanvasSubMenuBackButton = '<li class="goback"><button class="xe-button xe-false-button xe-canvassubmenu-goback-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13v7l-8-8 8-8v7h8v2z" fill="rgba(105,105,105,1)"/></svg> <span class="text">Go Back</span></button></li>';
+				var mobileCanvasSubMenuEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu");
 
-			var mobileCanvasSubMenuBackButtonEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu .xe-canvassubmenu-goback-button");
+				if (mobileCanvasSubMenuEle !== null || undefined) {
 
-			if (mobileCanvasSubMenuBackButtonEle !== null || undefined) {
+					mobileCanvasSubMenuEle.forEach(function (childEle) {
 
-				mobileCanvasSubMenuBackButtonEle.forEach(function (backBtn) {
-
-					backBtn.addEventListener('click', function () {
-
-						this.parentElement.parentElement.parentElement.classList.remove("xe-submenu-open");
+						childEle.insertAdjacentHTML('afterbegin', mobileCanvasSubMenuBackButton);
 					});
-				});
+				}
+
+				var mobileCanvasSubMenuBackButtonEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu .xe-canvassubmenu-goback-button");
+
+				if (mobileCanvasSubMenuBackButtonEle !== null || undefined) {
+
+					mobileCanvasSubMenuBackButtonEle.forEach(function (backBtn) {
+
+						backBtn.addEventListener('click', function () {
+
+							this.parentElement.parentElement.parentElement.classList.remove("xe-submenu-open");
+						});
+					});
+				}
 			}
 		}
 
