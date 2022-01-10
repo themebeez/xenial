@@ -45,6 +45,10 @@ if ( ! function_exists( 'xenial_enqueue_styles' ) ) {
 			wp_enqueue_style( 'xenial-dokan', $assets_url . 'css/compatibility/dokan/dokan.css', NULL, XENIAL_THEME_VERSION, 'all' );
 		}
 
+		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+			wp_enqueue_style( 'xenial-edd', $assets_url . 'css/compatibility/edd/edd.css', NULL, XENIAL_THEME_VERSION, 'all' );
+		}
+
 		$dynamic_css = xenial_dynamic_css();
 
 		wp_add_inline_style( 'xenial-base', $dynamic_css );

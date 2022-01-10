@@ -30,6 +30,16 @@
   --xe_button_background_color: #ef2c2c;
   --xe_button_hover_text_color: #ffffff;
   --xe_button_hover_background_color: #1e73be;
+  --xe_button_border_color: transparent;
+  --xe_button_hover_border_color: transparent;
+  --xe_button_border_width: 0;
+  --xe_button_border_style: solid;
+
+  --xe_text_button_color: var(--xe_primary_color);
+  --xe_text_button_hover_color: var(--xe_seconary_color);
+  --xe_text_button_underline_color: var(--xe_primary_color);
+  --xe_text_button_hover_underline_color: var(--xe_seconary_color);
+
   --xe_button_is_link_style_text_color: #ef2c2c;
   --xe_button_is_link_style_hover_text_color: #1e73be;
   --xe_button_is_link_style_underline_color: #ef2c2c;

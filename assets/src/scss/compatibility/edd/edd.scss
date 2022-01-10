@@ -1,0 +1,488 @@
+/* -------------------------------------------------------------------------- 
+	#. EDD Variables
+   -------------------------------------------------------------------------- */
+
+@use '../../functions/mixins' as *;
+
+:root {
+
+   --xe_edd_border_color: var(--xe_button_hover_text_color); 
+   --xe_edd_message_background_color: transparent;
+   --xe_edd_message_color: #4DC76D;
+   --xe_edd_message_alert_color: #FFD783;
+   --xe_edd_message_error_color: #F94646;  
+}
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Alerts
+   -------------------------------------------------------------------------- */
+
+   .edd-alert {
+
+      @include flex();
+      gap: 5px;
+      margin: 30px 0;
+      padding: 10px 15px;
+      font-size: calc( var(--xe_base_font_size) - 10% );
+      font-weight: var(--xe_base_font_weight);
+      line-height: var(--xe_base_font_line_height);
+      color: var(--xe_base_text_color);
+      border: none;
+      border: 2px solid var(--xe_edd_message_color);
+      border-radius: 4px;
+      background-color: var(--xe_edd_message_background_color);
+   }
+
+   .edd-alert p {
+
+      @include flex();
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+   }
+
+   .edd-alert p:before {
+
+      content: "\e6b8";
+      font-weight: normal;
+      font-style: normal;
+      font-family: var(--xe_iconfont);
+   }
+
+   .edd-alert.edd-alert-error {
+
+      color: var(--xe_base_text_color);
+      border-color: var(--xe_edd_message_error_color);
+   }
+
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Forms & Buttons
+   -------------------------------------------------------------------------- */
+
+   .edd-submit,
+   .edd-submit.button,
+   .edd-submit.button.blue,
+   .edd-submit.button.gray,
+   .edd-submit.button.red,
+   .edd-submit.button.green,
+   .edd-submit.button.black,
+   #edd-purchase-button, 
+   [type=submit].edd-submit,
+   .edd_purchase_submit_wrapper a.edd-add-to-cart,
+   .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {
+
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+      color: var(--xe_button_text_color);
+      background: var(--xe_button_background_color);
+      border-width: var(--xe_button_border_width);
+      border-style: var(--xe_button_border_style);
+      border-color: var(--xe_button_border_color);
+      font-size: var(--xe_button_font_size);
+      font-weight: normal;
+      height: 48px;
+      padding: 0 20px;
+      border-radius: var(--xe_buttons_border_radius);
+      box-shadow: none;
+   }
+
+   .edd-submit:hover,
+   .edd-submit.button:hover, 
+   .edd-submit.button.blue:hover,
+   .edd-submit.button.gray:hover,
+   .edd-submit.button.red:hover,
+   .edd-submit.button.green:hover,
+   .edd-submit.button.black:hover,
+   #edd-purchase-button:hover, 
+   [type=submit].edd-submit:hover,
+   .edd_purchase_submit_wrapper a.edd-add-to-cart:hover,
+   .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js:hover {
+
+      color: var(--xe_button_hover_text_color);
+      background: var(--xe_button_hover_background_color);
+      border-color: var(--xe_button_hover_border_color);
+   }
+
+   // Text button
+
+   .edd_checkout_register_login {
+
+      position: relative;
+      display: inline-flex;
+      flex-wrap: wrap;
+      float: none;
+      height: auto;
+      margin: 0;
+      padding: 0 0 2px 0;
+      color: var(--xe_text_button_color);
+      background-color: transparent;
+      text-decoration: none;
+   }
+
+   .edd_checkout_register_login:hover {
+
+      color: var(--xe_text_button_hover_color);
+      background-color: transparent;
+      text-decoration: none;
+   }
+
+   .edd_checkout_register_login:focus {
+
+      outline: none;
+   }
+
+   .edd_checkout_register_login:after,
+   .edd_checkout_register_login:before {
+
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+   }
+
+   .edd_checkout_register_login:before {
+
+      content: "";
+      z-index: 1;
+      background-color: currentColor;
+      transform-origin: right center;
+      transform: scaleX(0);
+      will-change: scale;
+      transition: transform .26s cubic-bezier(.25,.8,.25,1);
+      -webkit-backface-visibility: hidden;
+   }
+
+   .edd_checkout_register_login:after {
+
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      opacity: 0.5;
+      margin: 0;
+      background-color: currentColor;
+   }
+
+   .edd_checkout_register_login:hover:before {
+
+      transform: scale(1);
+      transform-origin: left center;
+      background-color: var(--xe_text_button_hover_underline_color);
+   }
+
+   .edd_form legend,
+   #edd_checkout_form_wrap legend {
+
+      display: table;
+      font-size: var(--xe_base_font_size);
+      font-weight: var(--xe_base_font_weight);
+      line-height: var(--xe_base_font_line_height);
+      letter-spacing: var(--xe_base_letter_spacing);
+      margin: 0;
+      padding: 0 20px;
+      width: auto;
+   }
+
+   .edd_form fieldset,
+   #edd_checkout_form_wrap fieldset {
+
+      margin: 0 0 30px 0;
+   }
+
+   .edd_form fieldset fieldset,
+   #edd_checkout_form_wrap fieldset fieldset {
+
+      padding: 30px;
+      border: 1px solid var(--xe_border_color);
+   }
+
+   #edd_checkout_form_wrap fieldset {
+
+      border-color: var(--xe_border_color);
+   }
+
+   .edd_form label,
+   #edd_checkout_form_wrap label {
+
+      display: block;
+      font-size: calc(var(--xe_base_font_size) - 10%);
+      font-weight: var(--xe_base_font_weight);
+      line-height: var(--xe_base_font_line_height);
+      letter-spacing: var(--xe_base_letter_spacing);
+      margin: 0 0 5px 0;
+   }
+
+   .edd_form .edd-description {
+
+      font-style: italic;
+   }
+
+   .edd_form input[type=email],
+   #edd_checkout_form_wrap textarea,
+   #edd_checkout_form_wrap input.edd-input, 
+   #edd_checkout_form_wrap textarea.edd-input,
+   #edd_checkout_form_wrap input[type=email],
+   #edd_checkout_form_wrap input[type=email], 
+   #edd_checkout_form_wrap input[type=password], 
+   #edd_checkout_form_wrap input[type=tel], 
+   #edd_checkout_form_wrap input[type=text] {
+
+      width: 100%;
+      color: var(--xe_input_text_color);
+      padding: 14px 15px;
+   }
+
+   .edd_form input[type=radio],
+   .edd_form input[type=checkbox],
+   #edd_checkout_form_wrap input[type=radio] {
+
+      border: 2px solid var(--xe_inputs_border_color);
+      margin: 0 3px 0 0 !important;
+   }
+
+   .edd_form input[type=radio]:checked,
+   .edd_form input[type=checkbox]:checked,
+   #edd_checkout_form_wrap input[type=radio]:checked,
+   #edd_checkout_form_wrap input[type=checkbox]:checked {
+
+      border-color: var(--xe_primary_color);
+   }
+
+
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Table
+   -------------------------------------------------------------------------- */
+
+   table[id*=edd_],
+   table[class*=edd_] {
+
+      margin-bottom: 30px;
+   }
+
+   table[id*=edd_],
+   table[class*=edd_],
+   #edd_checkout_cart,
+   #edd_checkout_cart .edd_cart_header_row {
+
+      th,
+      td {
+
+         font-size: var(--xe_base_font_size);
+         font-weight: var(--xe_base_font_weight);
+         line-height: var(--xe_base_font_line_height);
+         letter-spacing: var(--xe_base_letter_spacing);
+         border-width: 0 1px 1px 0;
+         border-bottom: 1px solid var(--xe_border_color);
+         padding: 15px 10px;
+         text-align: left;
+         vertical-align: middle;
+      }
+   }
+
+   #edd_checkout_cart {
+
+      margin-bottom: 30px;
+   }
+
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Pricing
+   -------------------------------------------------------------------------- */
+
+   .edd_download_purchase_form .edd_price_options {
+
+      margin-bottom: 30px;
+   }
+
+   .edd_download_purchase_form .edd_price_options ul {
+
+      @include flex();
+      flex-direction: column;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+   }  
+
+   .edd_download_purchase_form .edd_price_options ul li {
+
+      display: block;
+   }
+
+   .edd_download_purchase_form .edd_price_options ul li label {
+
+      display: block;
+      margin: 0;
+   }
+
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Cart
+   -------------------------------------------------------------------------- */
+
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Checkout
+   -------------------------------------------------------------------------- */
+
+
+   // Cart
+
+   #edd_checkout_cart input.edd-item-quantity {
+
+      display: inline-flex;
+      width: 80px;
+      padding: 14px 15px;
+      margin-right: 5px;
+   }
+
+   a.edd_cart_remove_item_btn {
+
+      display: inline-flex;
+      font-size: 0;
+   }
+
+   a.edd_cart_remove_item_btn:hover {
+      
+      text-decoration: none;
+   }
+
+   a.edd_cart_remove_item_btn:focus {
+
+      outline: none;
+   }
+
+   a.edd_cart_remove_item_btn::before {
+
+      content: "\e605";
+      font-family: var(--xe_iconfont);
+      font-size: 20px;
+      font-style: normal;
+      line-height: 1;
+   }
+
+   // Payment Icons
+
+   #edd_checkout_form_wrap .edd-payment-icons {
+
+      @include flex();
+      align-items: center;
+      gap: 5px;
+      height: auto;
+      margin-bottom: 30px;
+   }
+
+   #edd_checkout_form_wrap .edd-payment-icons img.payment-icon {
+
+      float: none;
+      max-height: 32px;
+   }
+
+   // payment methord
+
+   #edd_payment_mode_select_wrap #edd-payment-mode-wrap {
+
+      @include flex();
+      align-items: center;
+      gap: 20px;
+   }
+
+   #edd_checkout_form_wrap #edd-payment-mode-wrap label {
+
+      @include flex();
+      align-items: center;
+      gap: 5px;
+      margin: 0;
+      cursor: pointer;
+      line-height: 1;
+      padding: 16px 20px;
+      border: 2px solid var(--xe_border_color);
+      border-radius: 4px;
+   }
+
+   #edd_checkout_form_wrap #edd_payment_mode_select {
+
+      margin-bottom: 30px;
+   }
+
+   #edd_checkout_form_wrap #edd-payment-mode-wrap label.edd-gateway-option-selected {
+
+      border-color: var(--xe_primary_color);
+   }
+
+   // Login form
+
+   #edd_checkout_form_wrap #edd-new-account-wrap,
+   #edd_checkout_form_wrap #edd-login-account-wrap {
+
+      @include flex();
+      align-items: center;
+      gap: 5px;
+      padding: 0;
+      margin: 0 0 20px 0;
+      font-size: calc( var(--xe_base_font_size) - 10% );
+      color: var(--xe_base_text_color);
+      background: transparent;
+   }
+
+   
+
+
+   // Register form 
+
+   #edd_checkout_form_wrap #edd_register_account_fields {
+
+      padding: 30px;
+      border: 1px solid var(--xe_border_color);
+   }
+
+   // Terms 
+
+   #edd_checkout_form_wrap #edd_terms_agreement #edd_show_terms {
+
+      margin-bottom: 15px;
+   }
+   
+   #edd_checkout_form_wrap #edd_terms_agreement #edd_show_terms .edd_terms_links {
+
+      font-size: calc( var(--xe_base_font_size) - 10% );
+   }
+
+   #edd_checkout_form_wrap #edd_terms_agreement {
+
+      margin-bottom: 20px;
+   }
+
+   // Final pricing
+
+   #edd_checkout_form_wrap #edd_final_total_wrap {
+
+      border: none;
+      padding: 0;
+      color: var(--xe_base_text_color);
+      background: transparent;
+   }
+
+   #edd_checkout_form_wrap #edd_final_total_wrap strong {
+
+      font-weight: var(--xe_base_font_weight);
+   }
+
+   #edd_checkout_form_wrap #edd_final_total_wrap .edd_cart_amount {
+
+      font-weight: bold;
+   }
+
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Account
+   -------------------------------------------------------------------------- */
