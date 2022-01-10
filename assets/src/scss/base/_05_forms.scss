@@ -300,7 +300,7 @@ input[type="checkbox"] {
 
     &:hover {
 
-        border-color: var(--xe_seconary_color);
+        border-color: var(--xe_primary_color);
         opacity: 1;
         background-color: transparent;
         box-shadow: none;
@@ -337,8 +337,8 @@ input[type="checkbox"] {
 
     &:checked {
 
-        border-color: var(--xe_seconary_color);
-        background-color: var(--xe_seconary_color);
+        border-color: var(--xe_primary_color);
+        background-color: var(--xe_primary_color);
         opacity: 1 !important;
         box-shadow: none !important;
 
