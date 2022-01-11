@@ -57,7 +57,7 @@
 
 
 /* -------------------------------------------------------------------------- 
-	#. EDD Forms & Buttons
+	#. EDD Buttons
    -------------------------------------------------------------------------- */
 
    .edd-submit,
@@ -69,6 +69,7 @@
    .edd-submit.button.black,
    #edd-purchase-button, 
    [type=submit].edd-submit,
+   .edd_download_file_link,
    .edd_purchase_submit_wrapper a.edd-add-to-cart,
    .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js {
 
@@ -98,6 +99,7 @@
    .edd-submit.button.black:hover,
    #edd-purchase-button:hover, 
    [type=submit].edd-submit:hover,
+   .edd_download_file_link:hover,
    .edd_purchase_submit_wrapper a.edd-add-to-cart:hover,
    .edd_purchase_submit_wrapper a.edd-add-to-cart.edd-has-js:hover {
 
@@ -178,6 +180,28 @@
       background-color: var(--xe_text_button_hover_underline_color);
    }
 
+    // Download button at purchase history.
+
+   .edd_download_file_link {
+
+      gap: 10px;
+   }
+
+   .edd_download_file_link:before {
+
+      content: "\e632";
+      font-family: var(--xe_iconfont);
+   }
+
+   .edd_download_file_link:hover {
+
+      text-decoration: none;
+   }
+
+/* -------------------------------------------------------------------------- 
+	#. EDD Form
+   -------------------------------------------------------------------------- */
+
    .edd_form legend,
    #edd_checkout_form_wrap legend {
 
@@ -257,7 +281,6 @@
    }
 
 
-
 /* -------------------------------------------------------------------------- 
 	#. EDD Table
    -------------------------------------------------------------------------- */
@@ -265,7 +288,12 @@
    table[id*=edd_],
    table[class*=edd_] {
 
-      margin-bottom: 30px;
+      border-collapse: collapse;
+      border-spacing: 0;
+      border-width: 0;
+      padding: 0;
+      margin: 0 0 30px 0;
+      width: 100%;
    }
 
    table[id*=edd_],
@@ -276,15 +304,20 @@
       th,
       td {
 
-         font-size: var(--xe_base_font_size);
+         font-size: calc( var(--xe_base_font_size) - 5% );
          font-weight: var(--xe_base_font_weight);
          line-height: var(--xe_base_font_line_height);
-         letter-spacing: var(--xe_base_letter_spacing);
-         border-width: 0 1px 1px 0;
-         border-bottom: 1px solid var(--xe_border_color);
-         padding: 15px 10px;
+         border-width: 1px;
+         border-style: solid;
+         border-color: var(--xe_border_color);
+         padding: 10px 15px;
          text-align: left;
          vertical-align: middle;
+      }
+
+      th {
+
+         font-weight: var(--xe_base_font_weight);
       }
    }
 
@@ -324,11 +357,12 @@
       margin: 0;
    }
 
+   .edd_download_purchase_form .edd_price_options .eddr-notice.variable-prices {
 
-/* -------------------------------------------------------------------------- 
-	#. EDD Cart
-   -------------------------------------------------------------------------- */
-
+      font-size: calc( var(--xe_base_font_size) - 20% );
+      font-style: italic;
+      margin: 1px 0 0 25px;
+   }
 
 /* -------------------------------------------------------------------------- 
 	#. EDD Checkout
@@ -434,9 +468,6 @@
       background: transparent;
    }
 
-   
-
-
    // Register form 
 
    #edd_checkout_form_wrap #edd_register_account_fields {
@@ -482,7 +513,64 @@
       font-weight: bold;
    }
 
+   // Final Payment button
+
+   #edd_purchase_submit #edd-purchase-button {
+
+      height: 58px;
+      padding-left: 40px;
+      padding-right: 40px;
+   }
+
 
 /* -------------------------------------------------------------------------- 
 	#. EDD Account
    -------------------------------------------------------------------------- */
+
+   // Login & Register
+
+   #edd_login_form fieldset, 
+   #edd_register_form fieldset {
+
+      border: 1px solid var(--xe_border_color);
+   }
+
+   #edd_login_form legend, 
+   #edd_register_form legend {
+
+      font-size: var(--xe_base_font_size);
+      margin: 0;
+   }
+
+   #edd_login_form fieldset p:last-child,
+   #edd_register_form fieldset p:last-child {
+
+      margin: 0;
+   }
+
+   // Purchase receipt
+
+   table#edd_purchase_receipt_products .edd_purchase_receipt_product_name {
+
+      font-weight: var(--xe_base_font_weight);
+   }
+
+   table#edd_purchase_receipt_products li {
+
+      margin: 5px 0 0 0;
+   }
+
+   // Subscription
+
+   #edd_user_history {
+
+      margin-bottom: 30px;
+   }
+
+   #edd_user_history td, 
+   #edd_user_history th {
+
+      padding: 10px 15px;
+   }
+
+   // Software Licensing
