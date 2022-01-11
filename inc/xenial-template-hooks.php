@@ -121,3 +121,6 @@ add_action( 'xenial_single_page_header', 'xenial_single_page_header_template' );
 add_action( 'xenial_page_title', 'xenial_page_title_template' );
 
 add_action( 'xenial_scroll_top', 'xenial_scroll_top_template' );
+
+
+add_action( 'xenial_header_element_edd_minicart', 'xenial_header_element_edd_minicart_template' );

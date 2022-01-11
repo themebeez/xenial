@@ -32,6 +32,9 @@ if ( ! function_exists( 'xenial_print_header_element' ) ) {
 			case 'offcanvas_toggle_button' :
 				do_action( 'xenial_header_element_offcanvas_toggle_button' );
 				break;
+			case 'edd_minicart' :
+				do_action( 'xenial_header_element_edd_minicart' );
+				break;
 			default :
 				break;
 		}
@@ -398,5 +401,14 @@ if ( ! function_exists( 'xenial_header_element_social_links_template' ) ) {
 		$template_args = apply_filters( 'xenial_header_element_social_links_template_args', $template_args );
 
 		get_template_part( 'template-parts/theme-header/elements/element', 'social-links', $template_args );
+	}
+}
+
+
+if ( ! function_exists( 'xenial_header_element_edd_minicart_template' ) ) {
+
+	function xenial_header_element_edd_minicart_template() {
+		
+		get_template_part( 'template-parts/theme-header/elements/element', 'edd-minicart' );
 	}
 }
