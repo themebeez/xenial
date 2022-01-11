@@ -19,6 +19,8 @@
 
 <script>
 
+	let body = document.body;
+
 	let searchButton = document.getElementById('xe-header-element-search-button');
 	let closeSearchBoxButton = document.getElementById('xe-close-search-box');
 

@@ -1557,9 +1557,9 @@ if ( ! function_exists( 'xenial_get_dropdown_reveal_effects' ) ) {
 			'xenial_dropdown_reveal_effects_filter',
 			array(
 				'none' => esc_html__( 'None', 'xenial' ),
-				'fade_in' => esc_html__( 'Fade In', 'xenial' ),
-				'fade_in_up' => esc_html__( 'Fade In Up', 'xenial' ),
-				'fade_in_down' => esc_html__( 'Fade In Down', 'xenial' )
+				'FadeIn' => esc_html__( 'Fade In', 'xenial' ),
+				'FadeInUp' => esc_html__( 'Fade In Up', 'xenial' ),
+				'FadeInDown' => esc_html__( 'Fade In Down', 'xenial' )
 			)
 		);
 	}
