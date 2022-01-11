@@ -8,6 +8,20 @@ require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/secti
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-bottom.php';
 
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-site-identity.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-button.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-html.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-secondary-menu.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-social-links.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu-dropdown.php';
+
 /**
  * Function to load dynamic styles.
  *
@@ -41,6 +55,20 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
         $css .= xenial_dynamic_header_middle_css();
 
         $css .= xenial_dynamic_header_bottom_css();
+        
+        $css .= xenial_dynamic_header_site_identity_css();
+
+        $css .= xenial_dynamic_header_button_css();
+
+        $css .= xenial_dynamic_header_html_css();
+
+        $css .= xenial_dynamic_header_secondary_menu_css();
+
+        $css .= xenial_dynamic_header_primary_menu_css();
+        
+        $css .= xenial_dynamic_header_primary_menu_dropdown_css();
+
+        $css .= xenial_dynamic_header_social_links_css();
 
         $css .= xenial_dynamic_archive_header_css();
 
@@ -129,51 +157,19 @@ if ( ! function_exists( 'xenial_dynamic_font_css' ) ) {
 		foreach ( $font_values as $font_property => $value ) {
 			switch ( $font_property ) {
 				case 'font-size' :
-					if ( $value != '' ) {
-						$css .= '
-							font-size: ' . esc_attr( $value ) . 'px;
-						';
-					}
-					break;
-				case 'font-weight' :
-					if ( $value != '' ) {
-						$css .= '
-							font-weight: ' . esc_attr( $value ) . ';
-						';
-					}
-					break;
 				case 'letter-spacing' :
 					if ( $value != '' ) {
-						$css .= '
-							letter-spacing: ' . esc_attr( $value ) . 'px;
-						';
+						$css .= $font_property . ': ' . esc_attr( $value ) . 'px;';
 					}
 					break;
+				case 'font-family' :
+				case 'font-weight' :
 				case 'line-height' :
-					if ( $value != '' ) {
-						$css .= '
-							line-height: ' . esc_attr( $value ) . ';
-						';
-					}
-					break;
 				case 'font-style' :
-					if ( $value != '' ) {
-						$css .= '
-							font-style: ' . esc_attr( $value ) . ';
-						';
-					}
-					break;
 				case 'text-transform' :
-					if ( $value != '' ) {
-						$css .= '
-							text-transform: ' . esc_attr( $value ) . ';
-						';
-					}
-					break;
 				case 'color' :
 					if ( $value != '' ) {
-						$css .= '
-							color: ' . esc_attr( $value ) . ';
+						$css .= $font_property . ': ' . esc_attr( $value ) . ';
 						';
 					}
 					break;

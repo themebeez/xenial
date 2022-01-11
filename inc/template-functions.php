@@ -107,7 +107,7 @@ if ( ! function_exists( 'xenial_primary_menu_items_wrap' ) ) {
 
 	function xenial_primary_menu_items_wrap() {
 
-		$dropdown_animation = 'FadeIn'; // Available options: None, FadeIn, FadeInUp & FadeInDown
+		$dropdown_animation = ( xenial_get_option( 'primary_menu_dropdown_reveal_effect' ) != 'none' ) ? xenial_get_option( 'primary_menu_dropdown_reveal_effect' ) : 'FadeIn'; // Available options: None, FadeIn, FadeInUp & FadeInDown
 		
 		return '<nav class="xe-site-navigation" xe-dropdown-animation="' . esc_attr( $dropdown_animation ) . '"><ul id="%1$s" class="%2$s">%3$s</ul></nav>';
 	}

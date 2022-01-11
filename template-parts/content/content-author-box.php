@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <section class="xe-author-box">
     <div class="author-avatar">
-        <?php echo get_avatar( get_the_author_meta( 'email' ), 75 ); ?>
+        <?php echo get_avatar( get_the_author_meta( 'ID' ), 75 ); ?>
     </div><!-- .author-avatar -->
     <div class="author-meta-data">
         <div class="name">

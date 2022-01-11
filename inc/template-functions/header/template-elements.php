@@ -369,6 +369,7 @@ if ( ! function_exists( 'xenial_header_element_social_links_template' ) ) {
 		$template_args = array(
 			'social_links' => $social_links,
 			'display_social_title' => xenial_get_option( 'header_social_link_display_title' ),
+			'icon_color_type' => xenial_get_option( 'header_social_link_icon_color_type' ),
 			'classes' => array()
 		);
 

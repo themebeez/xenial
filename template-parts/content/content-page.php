@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $xenialPageContents = ( xenial_get_option( 'page_single_content_elements' ) ) ? xenial_get_option( 'page_single_content_elements' ) : array();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php do_action( 'xenial_page_title' ); ?>
+    <?php // do_action( 'xenial_page_title' ); ?>
     <?php 
     if ( in_array( 'image', $xenialPageContents ) ) {
         do_action( 'xenial_single_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_page_size_thumbnail_size', 'full' ) ) );

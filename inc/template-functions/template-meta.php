@@ -7,7 +7,7 @@ if ( ! function_exists( 'xenial_get_post_author' ) ) {
 
 	function xenial_get_post_author() {
 		?>
-		<span class="xe-authorthumb"><?php echo get_avatar( get_the_author_meta( 'email' ), 30, 'avatar_default', get_the_author_meta( 'display_name' ), array( 'class' => 'xe-avatar' ) ); ?></span>
+		<span class="xe-authorthumb"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30, 'avatar_default', get_the_author_meta( 'display_name' ), array( 'class' => 'xe-avatar' ) ); ?></span>
 		<span><?php echo esc_html__( 'Author:' ); ?></span>
 		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="author"><?php echo esc_html( get_the_author() ); ?></a>
 		<?php

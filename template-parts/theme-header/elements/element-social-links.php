@@ -3,7 +3,7 @@
 
 ?>
 <div class="xe-header-element is-social">
-	<ul class="xe-header-element-social" xe-icon-color-type="official" xe-has-icon-label="false">
+	<ul class="xe-header-element-social" xe-icon-color-type="<?php echo esc_attr( $args['icon_color_type'] ); ?>" xe-has-icon-label="false">
 	<!-- Attribute "xe-icon-color-type": default, official -->
 	<!-- Attribute "xe-has-icon-label": true, false -->
 		<?php 
