@@ -4,7 +4,7 @@
 
     <div class="xe-header-element is-edd-minicart">
        <div class="xe-edd-minicart-outer">
-            <a class="xe-button xe-false-button xe-edd-minicart-button">
+            <a id="xe-edd-minicart-button" class="xe-button xe-false-button" href="http://xenial.local/edd-checkout/">
                 <span class="items-count">2</span>
             </a>
        </div>
