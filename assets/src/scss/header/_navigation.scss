@@ -263,7 +263,7 @@
 .xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .sub-menu li:focus > ul,
 .xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .children li:focus > ul {
 
-    animation: xeFadeIn 0.5s 0s ease-in;
+    animation: xeFadeIn 0.3s 0s ease;
 }
 
 .xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li:hover > .sub-menu,
@@ -275,7 +275,7 @@
 .xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .sub-menu li:focus > ul,
 .xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .children li:focus > ul {
 
-    animation: xeButtonFadeInUp 0.5s 0s ease-in;
+    animation: xeButtonFadeInUp 0.3s 0s ease;
 }
 
 .xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li:hover > .sub-menu,
@@ -287,7 +287,7 @@
 .xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li .sub-menu li:focus > ul,
 .xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li .children li:focus > ul {
 
-    animation: xeButtonFadeDown 0.5s 0s ease-in-out;
+    animation: xeButtonFadeDown 0.3s 0s ease-in-out;
 }
 
 /* -------------------------------------------------------------------------- 

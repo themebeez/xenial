@@ -117,6 +117,7 @@
 #comments .comment-list li .comment-author-info {
 
     display: block;
+    font-size: calc( var(--xe_base_font_size) - 20% );
     margin-left: 42px;
 }
 
@@ -124,7 +125,6 @@
 #comments .comment-list li .comment-author-info .comment-meta  {
 
     display: inline-block;
-    font-size: 14px;
     font-weight: normal;
 }
 
@@ -142,7 +142,7 @@
 #comments .comment-list li .comment-author-info a.comment-edit-link {
 
     display: inline-block;
-    font-size: 11px;
+    font-size: calc( var(--xe_base_font_size) - 30% );
     font-weight: bold;
     line-height: 1;
     letter-spacing: 0.50px;
