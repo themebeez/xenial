@@ -5,7 +5,7 @@
 	<div class="canvas-header">
 		<button class="xe-button xe-false-button" id="xe-mobile-canvas-close-button">
 			<?php if ( $args['close_button_label'] ) { ?>
-				<span class="label">Close</span>
+				<span class="label"><?php echo esc_html( $args['close_button_label'] ); ?></span>
 			<?php } ?>
 			<?php echo $args['close_button_icon']; ?>
 		</button>

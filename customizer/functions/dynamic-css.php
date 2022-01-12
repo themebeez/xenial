@@ -8,6 +8,8 @@ require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/secti
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-bottom.php';
 
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-off-canvas.php';
+
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-site-identity.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-button.php';
@@ -19,6 +21,12 @@ require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/eleme
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-social-links.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-search.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-off-canvas-toggle-button.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-off-canvas-menu.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu-dropdown.php';
 
@@ -55,6 +63,8 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
         $css .= xenial_dynamic_header_middle_css();
 
         $css .= xenial_dynamic_header_bottom_css();
+
+        $css .= xenial_dynamic_header_off_canvas_css();
         
         $css .= xenial_dynamic_header_site_identity_css();
 
@@ -69,6 +79,12 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
         $css .= xenial_dynamic_header_primary_menu_dropdown_css();
 
         $css .= xenial_dynamic_header_social_links_css();
+        
+        $css .= xenial_dynamic_header_search_css();
+
+        $css .= xenial_dynamic_header_off_canvas_toggle_button_css();
+        
+        $css .= xenial_dynamic_header_off_canvas_menu_css();
 
         $css .= xenial_dynamic_archive_header_css();
 

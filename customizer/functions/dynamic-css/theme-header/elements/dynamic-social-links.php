@@ -165,7 +165,7 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['initial'] ) . ';';
 				}
 
-				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['tablet']['initial'] ) . ';';
+				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['mobile']['initial'] ) . ';';
 
 				$css .= xenial_dynamic_border_css( $header_social_links_items_borders['mobile'] );
 
@@ -181,7 +181,7 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['hover'] ) . ';';
 				}
 
-				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['tablet']['hover'] ) . ';';
+				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['mobile']['hover'] ) . ';';
 
 				$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['mobile']['border_colors']['hover'] ) . ';';
 			$css .= '}';
