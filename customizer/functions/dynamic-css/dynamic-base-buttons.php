@@ -76,48 +76,18 @@ if ( ! function_exists( 'xenial_dynamic_text_button_css' ) ) {
 
 		$global_text_button_label_colors = xenial_json_decode( xenial_get_option( 'txt_btn_txt_color' ) );
 
-		$global_text_button_background_colors = xenial_json_decode( xenial_get_option( 'txt_btn_border_color' ) );
+		$global_text_button_border_colors = xenial_json_decode( xenial_get_option( 'txt_btn_border_color' ) );
 
 		$global_text_button_bottom_border_width = xenial_get_option( 'txt_btn_border_width' );
 
-		// Initial state button CSS
-		$css = '.xe-button.xe-false-button {';
-			if ( $global_text_button_label_colors['initial'] ) {
-				$css .= '
-					color: ' . esc_attr( $global_text_button_label_colors['initial'] ) . ';
-				';
-			}
-		$css .= '}';
+		$css = '';
 
-		$css .= '.xe-false-button.has-underline::before, .xe-false-button.has-underline::after {';
-			if ( $global_text_button_bottom_border_width ) {
-				$css .= '
-					height: ' . esc_attr( $global_text_button_bottom_border_width ) . 'px;
-				';
-			}
-
-			if ( $global_text_button_background_colors['initial'] ) {
-				$css .= '
-					background-color: ' . esc_attr( $global_text_button_background_colors['initial'] ) . ';
-				';
-			}
-		$css .= '}';
-
-		// Hover state button CSS
-		$css .= '.xe-button.xe-false-button:hover {';
-			if ( $global_text_button_label_colors['hover'] ) {
-				$css .= '
-					color: ' . esc_attr( $global_text_button_label_colors['hover'] ) . ';
-				';
-			}
-		$css .= '}';		
-
-		$css .= '.xe-false-button.has-underline:hover::before, .xe-false-button.has-underline:hover::after {';
-			if ( $global_text_button_background_colors['hover'] ) {
-				$css .= '
-					background-color: ' . esc_attr( $global_text_button_background_colors['hover'] ) . ';
-				';
-			}
+		$css .= ':root {';
+			$css .= '--xe_text_button_color: ' . esc_attr( $global_text_button_label_colors['initial'] ) . ';';
+			$css .= '--xe_text_button_hover_color: ' . esc_attr( $global_text_button_label_colors['initial'] ) . ';';
+			$css .= '--xe_text_button_underline_height: ' . esc_attr( $global_text_button_bottom_border_width ) . 'px;';
+			$css .= '--xe_text_button_underline_color: ' . esc_attr( $global_text_button_border_colors['initial'] ) . ';';
+			$css .= '--xe_text_button_hover_underline_color: ' . esc_attr( $global_text_button_border_colors['hover'] ) . ';';
 		$css .= '}';
 
 		return $css;

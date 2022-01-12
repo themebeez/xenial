@@ -43,11 +43,21 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_dropdown_css' ) ) {
 
 		$css = '';
 
+		$css .= ':root {';
+			$css .= '--xe_navigation_dropdown_background_color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['initial'] ) . ';';
+			$css .= '--xe_navigation_dropdown_top_border_color: ' . esc_attr( $header_primary_menu_dropdown_borders['border_widths']['top'] ) . esc_attr( $header_primary_menu_dropdown_borders['border_widths']['unit'] ) . ';';
+			$css .= '--xe_navigation_dropdown_top_spacing: ' . esc_attr( $header_primary_menu_dropdown_top_offset ) . 'px;';
+			$css .= '--xe_navigation_dropdown_width: ' . esc_attr( $header_primary_menu_dropdown_width ) . 'px;';
+		$css .= '}';
+
 		$css .= '.xe-site-navigation ul li .children, .xe-site-navigation ul li .sub-menu {';
-			$css .= 'width: ' . esc_attr( $header_primary_menu_dropdown_width ) . 'px;';
-			$css .= 'margin-top: ' . esc_attr( $header_primary_menu_dropdown_top_offset ) . 'px;';
 			$css .= xenial_dynamic_spacing_css( $header_primary_menu_dropdown_padding );
 			$css .= xenial_dynamic_border_css( $header_primary_menu_dropdown_borders );
+		$css .= '}';
+
+		$css .= '.xe-site-navigation ul li ul.children li, .xe-site-navigation ul li ul.sub-menu li {';
+			$css .= 'border-bottom-width: ' . esc_attr( $header_primary_menu_dropdown_items_divider_width ) . 'px;';
+			$css .= 'border-bottom-color: ' . esc_attr( $header_primary_menu_dropdown_items_divider_colors['initial'] ) . ';';
 		$css .= '}';
 
 		$css .= '.xe-site-navigation ul li .children li a, .xe-site-navigation ul li .sub-menu li a {';

@@ -50,7 +50,7 @@ if ( ! function_exists( 'xenial_theme_header_offcanvas_defaults' ) ) {
 
 
 	            'offcanvas_close_button_font_size' => 16,
-	            'offcanvas_close_button_pading' => array(
+	            'offcanvas_close_button_padding' => array(
 	            	'top' => '',
 	            	'right' => '',
 	            	'bottom' => '',

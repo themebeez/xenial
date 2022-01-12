@@ -21,7 +21,12 @@ if ( ! function_exists( 'xenial_print_header_element' ) ) {
 				do_action( 'xenial_header_element_menu_2' );
 				break;
 			case 'search' :
-				do_action( 'xenial_header_element_search' );
+				$search_layout = xenial_get_option( 'header_search_display' );
+				if ( $search_layout == 'default' ) {
+					do_action( 'xenial_header_element_search_bar' );
+				} else {
+					do_action( 'xenial_header_element_search' );
+				}				
 				break;
 			case 'social_links' :
 				do_action( 'xenial_header_element_social_links' );
@@ -134,13 +139,14 @@ if ( ! function_exists( 'xenial_header_element_offcanvas_toggle_button_template'
 
 		$template_args = array(
 			'label'				=> xenial_get_option( 'offcanvas_toggle_button_label' ),
-			'classes' 			=> array()
+			'classes' 			=> array(),
+			'button-style'		=> ''
 		);
 
 		$icon 	= xenial_get_option( 'offcanvas_toggle_button_icon' );
 
 		if ( $icon ) {
-			$template_args['classes'][] = 'xe-offcanvas-trigger-' . $icon;
+			$template_args['button-style'] = 'xe-' . $icon;
 		}
 
 		$template_args = apply_filters( 'xenial_header_element_offcanvas_toggle_button_template_args', $template_args );

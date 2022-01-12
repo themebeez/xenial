@@ -10,11 +10,7 @@ if ( ! function_exists( 'xenial_offcanvas_toggle_button_customize_defaults' ) ) 
 			array(
 				'offcanvas_toggle_button_icon' => 'button_1',
 				'offcanvas_toggle_button_label' => '',
-	            'offcanvas_toggle_button_font_size' => array(
-	                'desktop' => 16,
-	                'tablet' => 16,
-	                'offcanvas' => 16
-	            ),
+	            'offcanvas_toggle_button_font_size' => '',
 	            'offcanvas_toggle_button_padding' => array(
 	                'top' => '',
 	                'right' => '',

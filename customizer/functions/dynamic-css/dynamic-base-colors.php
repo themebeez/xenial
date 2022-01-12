@@ -48,6 +48,10 @@ if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
 				$css .= '--xe_base_link_color: ' . esc_attr( $links_color['initial'] ) . ';';
 			}
 
+			if ( $links_color['hover'] ) {
+				$css .= '--xe_base_link_hover_color: ' . esc_attr( $links_color['hover'] ) . ';';
+			}
+
 			if ( $button_label_color['initial'] ) {
 				$css .= '--xe_button_text_color: ' . esc_attr( $button_label_color['initial'] ) . ';';
 			}
