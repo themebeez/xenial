@@ -45,10 +45,10 @@
     margin-bottom: 15px;
 }
  
-.search article .xe-post-metas, 
-.search article .xe-post-title,
-.search article .xe-post-excerpt,
-.search article .xe-continue-reading {
+.search article.has-post-thumbnail .xe-post-metas, 
+.search article.has-post-thumbnail .xe-post-title,
+.search article.has-post-thumbnail .xe-post-excerpt,
+.search article.has-post-thumbnail .xe-continue-reading {
 
     margin-left: 5%;
     margin-right: 5%;

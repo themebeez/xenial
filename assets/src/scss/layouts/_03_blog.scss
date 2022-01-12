@@ -30,10 +30,10 @@
     border-radius: 3px;
 }
 
-.hentry .xe-post-title,
-.hentry .xe-post-metas,
-.hentry .xe-post-excerpt,
-.hentry .xe-continue-reading {
+.hentry.has-post-thumbnail .xe-post-title,
+.hentry.has-post-thumbnail .xe-post-metas,
+.hentry.has-post-thumbnail .xe-post-excerpt,
+.hentry.has-post-thumbnail .xe-continue-reading {
 
     margin-left: 5%;
     margin-right: 5%;

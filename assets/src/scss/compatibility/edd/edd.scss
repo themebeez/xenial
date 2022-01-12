@@ -9,7 +9,7 @@
    --xe_edd_border_color: var(--xe_button_hover_text_color); 
    --xe_edd_message_background_color: transparent;
    --xe_edd_message_color: #4DC76D;
-   --xe_edd_message_alert_color: #FFD783;
+   --xe_edd_message_alert_color: #EFBD1D;
    --xe_edd_message_error_color: #F94646;  
 
    // mini cart
@@ -53,7 +53,8 @@
       width: 100%;
    }
 
-   .edd-alert p:before {
+   .edd-alert p::before,
+   .edd-alert.edd-alert-warn::before {
 
       content: "\e6b8";
       font-weight: normal;
@@ -67,6 +68,13 @@
       color: var(--xe_base_text_color);
       border-color: var(--xe_edd_message_error_color);
    }
+
+   .edd-alert.edd-alert-warn {
+
+      align-items: center;
+      border-color: var(--xe_edd_message_alert_color);
+   }
+   
 
 
 /* -------------------------------------------------------------------------- 
@@ -617,7 +625,7 @@
          display: inline-flex;
          line-height: 1;
 
-         .xe-edd-minicart-button {
+         #xe-edd-minicart-button {
 
             position: relative;
             justify-content: center;
@@ -634,7 +642,7 @@
             color: var(--xe_primary_color);
             background-color: transparent;
 
-            ::before {
+            &::before {
 
                content: "";
                position: absolute;
@@ -671,16 +679,11 @@
          border: 1px solid var(--xe_edd_mini_cart_border_color);
          border-radius: var(--xe_edd_mini_cart_border_radius);
          background-color: var(--xe_edd_mini_cart_background_color);
-         box-shadow: 0 4px 10px -2px rgba(0,0,0,0.1);
+         box-shadow: 0 10px 36px -3px rgba(0, 0, 0, 0.12);
          @include visibility_hidden();
          @include transation_delay_dymanic(0.3s);
 
-         ::before {
-
-            content: "";
-         }
-
-         ::after {
+         &::after {
 
             content: "";
             position: absolute;
@@ -699,9 +702,11 @@
             font-size: calc( var(--xe_base_font_size) - 15% );
             font-weight: normal;
          }
+         
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
 
          .xe-edd-cart-items {
 
