@@ -21,13 +21,13 @@ a {
 
 a:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_base_link_hover_color);
     text-decoration: underline;
 }
 
 a:focus {
 
-    outline: 1px dotted;
+    outline: 1px dotted currentColor;
     text-decoration: none;
 }
 
@@ -54,7 +54,8 @@ a:not([href]):not([tabindex]):focus {
     outline: 0 !important;
 }
 
-.wp-block-button__link {
+.wp-block-button__link,
+.wp-block-button__link:hover {
 
     text-decoration: none;
 }

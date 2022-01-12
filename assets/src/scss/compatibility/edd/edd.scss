@@ -21,7 +21,7 @@
    --xe_edd_mini_cart_item_seperator_color: var(--xe_border_color);
    --xe_edd_mini_cart_remove_item_color: #888888;
    --xe_edd_mini_cart_remove_item_hover_color: var(--xe_base_link_hover_color);
-   --xe_edd_mini_cart_subtotal_amount_color: red;
+   --xe_edd_mini_cart_subtotal_amount_color: var(--xe_primary_color);
 
 }
 
@@ -58,6 +58,7 @@
       content: "\e6b8";
       font-weight: normal;
       font-style: normal;
+      line-height: 1;
       font-family: var(--xe_iconfont);
    }
 
@@ -325,6 +326,11 @@
          padding: 10px 15px;
          text-align: left;
          vertical-align: middle;
+
+         strong {
+
+            font-weight: normal;
+         }
       }
 
       th {
@@ -562,6 +568,14 @@
 
    // Purchase receipt
 
+   table#edd_purchase_receipt ul, 
+   table#edd_purchase_receipt_products ul.edd_purchase_receipt_files {
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+   }
+
    table#edd_purchase_receipt_products .edd_purchase_receipt_product_name {
 
       font-weight: var(--xe_base_font_weight);
@@ -583,6 +597,7 @@
    #edd_user_history th {
 
       padding: 10px 15px;
+      font-weight: normal;
    }
 
    // Software Licensing
@@ -614,7 +629,7 @@
             border-color: var(--xe_primary_color);
             border-radius: 0 0 3px 3px;
             width: 30px;
-            height: 28px;
+            height: 30px;
             cursor: pointer;
             color: var(--xe_primary_color);
             background-color: transparent;
@@ -744,23 +759,28 @@
 
             .action {
 
-               flex: 0 0 22px;
+               width: 25px;
 
                .edd-remove-from-cart {
+
+                  align-items: center;
+                  justify-content: center;
+                  width: 25px;
+                  height: 25px;
+                  fill: var(--xe_edd_mini_cart_remove_item_color);
+                  border: 1px solid var(--xe_edd_mini_cart_remove_item_color);
+                  border-radius: 100%;
                   
                   svg {
-                     
-                     fill: var(--xe_edd_mini_cart_remove_item_color);
-                     width: 22px;
-                     height: 22px;
+                  
+                     width: 18px;
+                     height: 18px;
                   }
 
                   &:hover {
 
-                     svg {
-
-                        fill: var(--xe_edd_mini_cart_remove_item_hover_color);
-                     }
+                     fill: var(--xe_edd_mini_cart_remove_item_hover_color);
+                     border-color: var(--xe_edd_mini_cart_remove_item_hover_color);
                   } 
                }
             }
