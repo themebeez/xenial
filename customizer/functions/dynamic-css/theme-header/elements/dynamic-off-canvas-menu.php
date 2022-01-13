@@ -30,7 +30,7 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 			$css .= '--xe_canvas_menu_item_color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
 			$css .= '--xe_canvas_menu_item_font_size: ' . esc_attr( $header_off_canvas_menu_items_font['font-size'] ) . 'px;';
 			$css .= '--xe_canvas_menu_item_font_weight: ' . esc_attr( $header_off_canvas_menu_items_font['font-weight'] ) . ';';
-			$css .= '--var(--xe_canvas_menu_item_line_height): ' . esc_attr( $header_off_canvas_menu_items_font['line-height'] ) . ';';
+			$css .= '--xe_canvas_menu_item_line_height: ' . esc_attr( $header_off_canvas_menu_items_font['line-height'] ) . ';';
 
 			$css .= '--xe_canvas_menu_item_top_padding: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-top'] ) . 'px;';
 			$css .= '--xe_canvas_menu_item_bottom_padding: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-bottom'] ) . 'px;';
@@ -38,9 +38,19 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 			if ( $display_header_off_canvas_menu_items_divider ) {
 				$header_off_canvas_menu_items_divider_width = xenial_get_option( 'offcanvas_menu_item_divider_width' );
 				$header_off_canvas_menu_items_divider_color = xenial_json_decode( xenial_get_option( 'offcanvas_menu_item_divider_color' ) );
-				$css .= '--var(--xe_canvas_menu_item_seperator_width): ' . esc_attr( $header_off_canvas_menu_items_divider_width ) . 'px;';
-				$css .= '--var(--xe_canvas_menu_item_seperator_color): ' . esc_attr( $header_off_canvas_menu_items_divider_color['initial'] ) . ';';
+				$css .= '--xe_canvas_menu_item_seperator_width: ' . esc_attr( $header_off_canvas_menu_items_divider_width ) . 'px;';
+				$css .= '--xe_canvas_menu_item_seperator_color: ' . esc_attr( $header_off_canvas_menu_items_divider_color['initial'] ) . ';';
+			} else {
+				$css .= '--xe_canvas_menu_item_seperator_width: 0;';
 			}
+		$css .= '}';
+
+		$css .= '[xe-submenu-style="revealing"] .xe-button.xe-canvassubmenu-goback-button {';
+			$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
+		$css .= '}';
+
+		$css .= '[xe-submenu-style="revealing"] .xe-button.xe-canvassubmenu-goback-button svg {';
+			$css .= 'fill: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
 		$css .= '}';
 
 		$css .= '.xe-offcanvas-navigation ul li {';

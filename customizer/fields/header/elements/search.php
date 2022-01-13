@@ -39,7 +39,6 @@ xenial_tab_field(
 					'header_search_bar_border' => '',
 					'header_search_bar_border_color' => '',
 					'header_search_bar_font_size' => '',
-					'header_search_bar_line_height' => '',
 					'header_search_bar_text_color' => '',
 					'header_search_bar_divider_1' => '',
 					'header_search_bar_divider_2' => '',
@@ -48,11 +47,9 @@ xenial_tab_field(
 					'header_search_bar_divider_5' => '',
 
 					'header_search_modal_toggle_button_wrapper' => '',
-					'header_search_modal_toggle_button_height' => '',
-		            'header_search_modal_toggle_button_width' => '',
+					'header_search_modal_toggle_button_padding' => '',
 		            'header_search_modal_toggle_button_border' => '',  
 		            'header_search_modal_toggle_button_font_size' => '',
-		            'header_search_modal_toggle_button_line_height' => '',
 		            'header_search_modal_toggle_button_text_color' => '',
 		            'header_search_modal_toggle_button_background_color' => '',	            
 		            'header_search_modal_toggle_button_divider_1' => '',
@@ -60,27 +57,17 @@ xenial_tab_field(
 		            'header_search_modal_toggle_button_divider_3' => '',
 		            'header_search_modal_toggle_button_divider_4' => '',
 
-		            'header_search_bar_submit_button_wrapper' => '',
-		            'header_search_bar_submit_button_height' => '',
-		            'header_search_bar_submit_button_width' => '',
-		            'header_search_bar_submit_button_border' => '',  
+		            'header_search_bar_submit_button_wrapper' => '',  
 		            'header_search_bar_submit_button_font_size' => '',
-		            'header_search_bar_submit_button_line_height' => '',
 		            'header_search_bar_submit_button_text_color' => '',
-		            'header_search_bar_submit_button_background_color' => '',  
 		            'header_search_bar_submit_button_divider_1' => '',
-		            'header_search_bar_submit_button_divider_2' => '',
-		            'header_search_bar_submit_button_divider_3' => '',
-		            'header_search_bar_submit_button_divider_4' => '',
 
 		            'header_search_modal_background_color' => '',
 
 		            'header_search_modal_close_button_wrapper' => '',
-		            'header_search_modal_close_button_height' => '',
-		            'header_search_modal_close_button_width' => '',
+		            'header_search_modal_close_button_padding' => '',
 		            'header_search_modal_close_button_border' => '', 
 		            'header_search_modal_close_button_font_size' => '',
-		            'header_search_modal_close_button_line_height' => '',
 		            'header_search_modal_close_button_text_color' => '',
 		            'header_search_modal_close_button_background_color' => '',
 		            'header_search_modal_close_button_divider_1' => '',
@@ -355,23 +342,6 @@ xenial_range_control_field(
 );
 
 
-xenial_range_control_field(
-	'header_search_bar_line_height',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 10, 
-			'step' => 0.01, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_bar_line_height' )
-	)
-);
-
-
 xenial_divider_field( 
 	'header_search_bar_divider_5', 
 	array( 
@@ -403,39 +373,23 @@ xenial_controls_wrapper_field(
 	false
 );
 
-
-xenial_range_control_field(
-	'header_search_modal_toggle_button_height',
+xenial_box_dimension_field(
+	'header_search_modal_toggle_button_padding',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Height (px)', 'xenial' ),
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
 		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 100, 
+			'min' => 0, 
+			'max' => 1000, 
 			'step' => 1, 
 			'responsive' => true
 		),
-		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_height' )
-	)
+		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_padding' )
+	),
+	true
 );
 
-
-xenial_range_control_field(
-	'header_search_modal_toggle_button_width',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Width (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => false
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_width' )
-	)
-);
 
 xenial_divider_field( 
 	'header_search_modal_toggle_button_divider_1', 
@@ -498,22 +452,6 @@ xenial_range_control_field(
 	)
 );
 
-xenial_range_control_field(
-	'header_search_modal_toggle_button_line_height',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 10, 
-			'step' => 0.01, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_line_height' )
-	)
-);
-
 xenial_divider_field( 
 	'header_search_modal_toggle_button_divider_3', 
 	array( 
@@ -522,16 +460,6 @@ xenial_divider_field(
 	) 
 );
 
-
-
-xenial_info_field(
-	'header_search_modal_toggle_button_default_state_color',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Default State', 'xenial' )
-	)
-);
 
 xenial_color_picker_field(
 	'header_search_modal_toggle_button_text_color',
@@ -580,85 +508,6 @@ xenial_controls_wrapper_field(
 
 
 xenial_range_control_field(
-	'header_search_bar_submit_button_height',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Height (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_bar_submit_button_height' )
-	)
-);
-
-
-xenial_range_control_field(
-	'header_search_bar_submit_button_width',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Width (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_bar_submit_button_width' )
-	)
-);
-
-xenial_divider_field( 
-	'header_search_bar_submit_button_divider_1', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_header_search', 
-	) 
-);
-
-
-xenial_box_border_field(
-	'header_search_bar_submit_button_border',
-	array(
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Button Border', 'xenial' ),
-		'is_responsive' => true,
-		'allowed_fields' => array(
-			'desktop' => array(
-				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
-				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
-				'border_colors' => array( 'initial', 'hover' )
-			),
-			'tablet' => array(
-				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
-				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
-				'border_colors' => array( 'initial', 'hover' )
-			),
-			'mobile' => array( 
-				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
-				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
-				'border_colors' => array( 'initial', 'hover' )
-			)
-		),
-		'default' => xenial_get_customize_default( 'header_search_bar_submit_button_border' )
-	)
-);
-
-
-xenial_divider_field( 
-	'header_search_bar_submit_button_divider_2', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_header_search', 
-	) 
-);
-
-
-xenial_range_control_field(
 	'header_search_bar_submit_button_font_size',
 	array(
 		'priority' => 10,
@@ -674,24 +523,8 @@ xenial_range_control_field(
 	)
 );
 
-xenial_range_control_field(
-	'header_search_bar_submit_button_line_height',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 10, 
-			'step' => 0.01, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_bar_submit_button_line_height' )
-	)
-);
-
 xenial_divider_field( 
-	'header_search_bar_submit_button_divider_3', 
+	'header_search_bar_submit_button_divider_1', 
 	array( 
 		'priority' => 10,
 		'section' => 'xenial_header_search', 
@@ -707,26 +540,6 @@ xenial_color_picker_field(
 		'is_responsive' => true,
 		'colors' => xenial_get_customize_allowed_fields( 'header_search_bar_submit_button_text_color' ),
 		'default' => xenial_get_customize_default( 'header_search_bar_submit_button_text_color' )
-	)
-);
-
-xenial_divider_field( 
-	'header_search_bar_submit_button_divider_4', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_header_search', 
-	) 
-);
-
-xenial_color_picker_field(
-	'header_search_bar_submit_button_background_color',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Background Color', 'xenial' ),
-		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'header_search_bar_submit_button_background_color' ),
-		'default' => xenial_get_customize_default( 'header_search_bar_submit_button_background_color' )
 	)
 );
 
@@ -749,37 +562,21 @@ xenial_controls_wrapper_field(
 );
 
 
-xenial_range_control_field(
-	'header_search_modal_close_button_height',
+xenial_box_dimension_field(
+	'header_search_modal_close_button_padding',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Height (px)', 'xenial' ),
+		'label' => esc_html__( 'Padding (px)', 'xenial' ),
 		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 100, 
+			'min' => 0, 
+			'max' => 1000, 
 			'step' => 1, 
 			'responsive' => true
 		),
-		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_height' )
-	)
-);
-
-
-xenial_range_control_field(
-	'header_search_modal_close_button_width',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Width (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_width' )
-	)
+		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_padding' )
+	),
+	true
 );
 
 xenial_divider_field( 
@@ -840,22 +637,6 @@ xenial_range_control_field(
 			'responsive' => true
 		),
 		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_font_size' )
-	)
-);
-
-xenial_range_control_field(
-	'header_search_modal_close_button_line_height',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_search',
-		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 10, 
-			'step' => 0.01, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_line_height' )
 	)
 );
 
