@@ -903,7 +903,7 @@ if ( ! function_exists( 'xenial_section_link_field' ) ) {
 
 		$wp_customize->add_setting( $id,
 			array(
-				'default' => $args['default'],
+				'default' => '',
 				'sanitize_callback' => ''
 			) 
 		);

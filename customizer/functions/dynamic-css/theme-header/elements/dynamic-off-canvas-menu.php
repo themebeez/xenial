@@ -27,51 +27,94 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 		$css = '';
 
 		$css .= ':root {';
-			$css .= '--xe_canvas_menu_item_color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
-			$css .= '--xe_canvas_menu_item_font_size: ' . esc_attr( $header_off_canvas_menu_items_font['font-size'] ) . 'px;';
-			$css .= '--xe_canvas_menu_item_font_weight: ' . esc_attr( $header_off_canvas_menu_items_font['font-weight'] ) . ';';
-			$css .= '--xe_canvas_menu_item_line_height: ' . esc_attr( $header_off_canvas_menu_items_font['line-height'] ) . ';';
-
-			$css .= '--xe_canvas_menu_item_top_padding: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-top'] ) . 'px;';
-			$css .= '--xe_canvas_menu_item_bottom_padding: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-bottom'] ) . 'px;';
+			if ( $header_off_canvas_menu_items_font_colors['initial'] ) {
+				$css .= '--xe_canvas_menu_item_color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
+			}
+			
+			if ( $header_off_canvas_menu_items_font['font-size'] ) {
+				$css .= '--xe_canvas_menu_item_font_size: ' . esc_attr( $header_off_canvas_menu_items_font['font-size'] ) . 'px;';
+			}
+			
+			if ( $header_off_canvas_menu_items_font['font-weight'] ) {
+				$css .= '--xe_canvas_menu_item_font_weight: ' . esc_attr( $header_off_canvas_menu_items_font['font-weight'] ) . ';';
+			}
+			
+			if ( $header_off_canvas_menu_items_font['line-height'] ) {
+				$css .= '--xe_canvas_menu_item_line_height: ' . esc_attr( $header_off_canvas_menu_items_font['line-height'] ) . ';';
+			}
+			
+			if ( $header_off_canvas_menu_items_padding['padding-top'] ) {
+				$css .= '--xe_canvas_menu_item_top_padding: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-top'] ) . 'px;';
+			}
+			
+			if ( $header_off_canvas_menu_items_padding['padding-bottom'] ) {
+				$css .= '--xe_canvas_menu_item_bottom_padding: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-bottom'] ) . 'px;';
+			}			
 
 			if ( $display_header_off_canvas_menu_items_divider ) {
 				$header_off_canvas_menu_items_divider_width = xenial_get_option( 'offcanvas_menu_item_divider_width' );
 				$header_off_canvas_menu_items_divider_color = xenial_json_decode( xenial_get_option( 'offcanvas_menu_item_divider_color' ) );
-				$css .= '--xe_canvas_menu_item_seperator_width: ' . esc_attr( $header_off_canvas_menu_items_divider_width ) . 'px;';
-				$css .= '--xe_canvas_menu_item_seperator_color: ' . esc_attr( $header_off_canvas_menu_items_divider_color['initial'] ) . ';';
+
+				if ( $header_off_canvas_menu_items_divider_width ) {
+					$css .= '--xe_canvas_menu_item_seperator_width: ' . esc_attr( $header_off_canvas_menu_items_divider_width ) . 'px;';
+				}
+				
+				if ( $header_off_canvas_menu_items_divider_color['initial'] ) {
+					$css .= '--xe_canvas_menu_item_seperator_color: ' . esc_attr( $header_off_canvas_menu_items_divider_color['initial'] ) . ';';
+				}				
 			} else {
 				$css .= '--xe_canvas_menu_item_seperator_width: 0;';
 			}
 		$css .= '}';
 
-		$css .= '[xe-submenu-style="revealing"] .xe-button.xe-canvassubmenu-goback-button {';
-			$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
-		$css .= '}';
+		if ( $header_off_canvas_menu_items_font_colors['initial'] ) {
+			$css .= '[xe-submenu-style="revealing"] .xe-button.xe-canvassubmenu-goback-button {';
+				$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
+			$css .= '}';	
+		}		
 
-		$css .= '[xe-submenu-style="revealing"] .xe-button.xe-canvassubmenu-goback-button svg {';
-			$css .= 'fill: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
-		$css .= '}';
+		if ( $header_off_canvas_menu_items_font_colors['initial'] ) {
+			$css .= '[xe-submenu-style="revealing"] .xe-button.xe-canvassubmenu-goback-button svg {';
+				$css .= 'fill: ' . esc_attr( $header_off_canvas_menu_items_font_colors['initial'] ) . ';';
+			$css .= '}';
+		}		
 
-		$css .= '.xe-offcanvas-navigation ul li {';
-			$css .= 'padding-left: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-left'] ) . 'px;';
-			$css .= 'padding-right: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-right'] ) . 'px;';
-		$css .= '}';
+		if ( $header_off_canvas_menu_items_padding['padding-left'] || $header_off_canvas_menu_items_padding['padding-right'] ) {
+			$css .= '.xe-offcanvas-navigation ul li {';
+				if ( $header_off_canvas_menu_items_padding['padding-left'] ) {
+					$css .= 'padding-left: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-left'] ) . 'px;';
+				}
+				
+				if ( $header_off_canvas_menu_items_padding['padding-right'] ) {
+					$css .= 'padding-right: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-right'] ) . 'px;';
+				}				
+			$css .= '}';	
+		}
+		
 
+		if ( $header_off_canvas_menu_items_font['font-style'] || $header_off_canvas_menu_items_font['text-transform'] ) {
+			$css .= '.xe-offcanvas-navigation ul li a {';
+				if ( $header_off_canvas_menu_items_font['font-style'] ) {
+					$css .= 'font-style: ' . esc_attr( $header_off_canvas_menu_items_font['font-style'] ) . ';';
+				}
+				
+				if ( $header_off_canvas_menu_items_font['text-transform'] ) {
+					$css .= 'text-transform: ' . esc_attr( $header_off_canvas_menu_items_font['text-transform'] ) . ';';
+				}				
+			$css .= '}';
+		}		
 
-		$css .= '.xe-offcanvas-navigation ul li a {';
-			$css .= 'font-style: ' . esc_attr( $header_off_canvas_menu_items_font['font-style'] ) . ';';
-			$css .= 'text-transform: ' . esc_attr( $header_off_canvas_menu_items_font['text-transform'] ) . ';';
-		$css .= '}';
+		if ( $header_off_canvas_menu_items_font_colors['hover'] ) {
+			$css .= '.xe-offcanvas-navigation ul li a:hover {';
+				$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['hover'] ) . ';';
+			$css .= '}';	
+		}		
 
-		$css .= '.xe-offcanvas-navigation ul li a:hover {';
-			$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['hover'] ) . ';';
-		$css .= '}';
-
-		$css .= '.xe-offcanvas-navigation ul li.current-menu-item a {';
-			$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['active'] ) . ';';
-		$css .= '}';
-
+		if ( $header_off_canvas_menu_items_font_colors['active'] ) {
+			$css .= '.xe-offcanvas-navigation ul li.current-menu-item a {';
+				$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['active'] ) . ';';
+			$css .= '}';	
+		}
 
 		return $css;
 	}

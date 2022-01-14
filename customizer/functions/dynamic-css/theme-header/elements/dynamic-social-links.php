@@ -30,46 +30,98 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 		
 		$css = '';
 
-		$css .= '.xe-header-element-social {';
-			$css .= 'gap: ' . esc_attr( $header_social_links_desktop['items-spacing'] ) . 'px;';
-		$css .= '}';
-		
+		if ( $header_social_links_desktop['items-spacing'] ) {
+			$css .= '.xe-header-element-social {';
+				$css .= 'gap: ' . esc_attr( $header_social_links_desktop['items-spacing'] ) . 'px;';
+			$css .= '}';
+		}			
 
 		$css .= '.xe-header-element-social li a {';
-			$css .= 'padding: ' . esc_attr( $header_social_links_desktop['background-spacing'] ) . 'px;';
 
-			if ( $header_social_links_icon_color_type == 'custom' ) {
-				$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['desktop']['initial'] ) . ';';
-				$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['initial'] ) . ';';
-			} else {
-				$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['initial'] ) . ';';
+			if ( $header_social_links_desktop['background-spacing'] ) {
+				$css .= 'padding: ' . esc_attr( $header_social_links_desktop['background-spacing'] ) . 'px;';
 			}
 
-			$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['desktop']['initial'] ) . ';';
+			if ( $header_social_links_icon_color_type == 'custom' ) {
+
+				if ( $header_social_links_icon_colors['desktop']['initial'] ) {
+					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['desktop']['initial'] ) . ';';
+				}
+				
+				if ( $header_social_links_title_colors['desktop']['initial'] ) {
+					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['initial'] ) . ';';
+				}
+				
+			} else {
+
+				if ( $header_social_links_title_colors['desktop']['initial'] ) {
+					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['initial'] ) . ';';
+				}
+				
+			}
+
+			if ( $header_social_links_items_background_colors['desktop']['initial'] ) {
+				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['desktop']['initial'] ) . ';';
+			}
+			
 
 			$css .= xenial_dynamic_border_css( $header_social_links_items_borders['desktop'] );
 
-			$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['desktop']['border_colors']['initial'] ) . ';';
+			if ( $header_social_links_items_borders['desktop']['border_colors']['initial'] ) {
+				$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['desktop']['border_colors']['initial'] ) . ';';
+			}
+			
 		$css .= '}';
 
 		$css .= '.xe-header-element-social li a:hover {';
+
 			if ( $header_social_links_icon_color_type == 'custom' ) {
-				$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['desktop']['hover'] ) . ';';
-				$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['hover'] ) . ';';
+
+				if ( $header_social_links_icon_colors['desktop']['hover'] ) {
+					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['desktop']['hover'] ) . ';';
+				}
+				
+				if ( $header_social_links_title_colors['desktop']['hover'] ) {
+					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['hover'] ) . ';';
+				}	
+				
 			} else {
-				$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['desktop']['hover'] ) . ';';
-				$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['hover'] ) . ';';
+				
+				if ( $header_social_links_icon_colors['desktop']['hover'] ) {
+					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['desktop']['hover'] ) . ';';
+				}
+				
+				if ( $header_social_links_title_colors['desktop']['hover'] ) {
+					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['desktop']['hover'] ) . ';';
+				}
+				
 			}
 
-			$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['desktop']['hover'] ) . ';';
+			if ( $header_social_links_items_background_colors['desktop']['hover'] ) {
+				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['desktop']['hover'] ) . ';';
+			}
+			
 
-			$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['desktop']['border_colors']['hover'] ) . ';';
+			if ( $header_social_links_items_borders['desktop']['border_colors']['hover'] ) {
+				$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['desktop']['border_colors']['hover'] ) . ';';
+			}
+			
 		$css .= '}';
 
-		$css .= '.xe-header-element-social li a svg {';
-			$css .= 'height: ' . esc_attr( $header_social_links_desktop['icon-size'] ) . 'px;';
-			$css .= 'width: ' . esc_attr( $header_social_links_desktop['icon-size'] ) . 'px;';
-		$css .= '}';
+		if ( $header_social_links_desktop['icon-size'] || $header_social_links_desktop['icon-size'] ) {
+
+			$css .= '.xe-header-element-social li a svg {';
+
+				if ( $header_social_links_desktop['icon-size'] ) {
+					$css .= 'height: ' . esc_attr( $header_social_links_desktop['icon-size'] ) . 'px;';
+				}
+				
+				if ( $header_social_links_desktop['icon-size'] ) {
+					$css .= 'width: ' . esc_attr( $header_social_links_desktop['icon-size'] ) . 'px;';
+				}
+				
+			$css .= '}';
+		}		
 
 		$css .= '.xe-header-element-social li a .xe-social-title {';
 			$css .= xenial_dynamic_font_css( $header_social_links_title_font_desktop );
@@ -87,48 +139,94 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 		);	
 
 
-        $css .= '@media screen and (max-width: 768px) {';    
+        $css .= '@media screen and (max-width: 768px) {';  
 
-        	$css .= '.xe-header-element-social {';
-				$css .= 'gap: ' . esc_attr( $header_social_links_tablet['items-spacing'] ) . 'px;';
-			$css .= '}';
-			
+        	if ( $header_social_links_tablet['items-spacing'] ) {
+				$css .= '.xe-header-element-social {';
+					$css .= 'gap: ' . esc_attr( $header_social_links_tablet['items-spacing'] ) . 'px;';
+				$css .= '}';
+			}
 
 			$css .= '.xe-header-element-social li a {';
-				$css .= 'padding: ' . esc_attr( $header_social_links_tablet['background-spacing'] ) . 'px;';
+				if ( $header_social_links_tablet['background-spacing'] ) {
+					$css .= 'padding: ' . esc_attr( $header_social_links_tablet['background-spacing'] ) . 'px;';
+				}				
 
 				if ( $header_social_links_icon_color_type == 'custom' ) {
-					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['tablet']['initial'] ) . ';';
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['initial'] ) . ';';
+
+					if ( $header_social_links_icon_colors['tablet']['initial'] ) {
+						$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['tablet']['initial'] ) . ';';
+					}
+					
+					if ( $header_social_links_title_colors['tablet']['initial'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['initial'] ) . ';';
+					}
+					
 				} else {
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['initial'] ) . ';';
+					if ( $header_social_links_title_colors['tablet']['initial'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['initial'] ) . ';';
+					}					
 				}
 
-				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['tablet']['initial'] ) . ';';
+				if ( $header_social_links_items_background_colors['tablet']['initial'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['tablet']['initial'] ) . ';';
+				}				
 
 				$css .= xenial_dynamic_border_css( $header_social_links_items_borders['tablet'] );
 
-				$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['tablet']['border_colors']['initial'] ) . ';';
+				if ( $header_social_links_items_borders['tablet']['border_colors']['initial'] ) {
+					$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['tablet']['border_colors']['initial'] ) . ';';
+				}
+				
 			$css .= '}';
 
 			$css .= '.xe-header-element-social li a:hover {';
+
 				if ( $header_social_links_icon_color_type == 'custom' ) {
-					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['tablet']['hover'] ) . ';';
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['hover'] ) . ';';
+
+					if ( $header_social_links_icon_colors['tablet']['hover'] ) {
+						$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['tablet']['hover'] ) . ';';
+					}
+					
+					if ( $header_social_links_title_colors['tablet']['hover'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['hover'] ) . ';';
+					}
+					
 				} else {
-					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['tablet']['hover'] ) . ';';
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['hover'] ) . ';';
+					if ( $header_social_links_icon_colors['tablet']['hover'] ) {
+						$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['tablet']['hover'] ) . ';';
+					}
+					
+					if ( $header_social_links_title_colors['tablet']['hover'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['tablet']['hover'] ) . ';';
+					}					
 				}
 
-				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['tablet']['hover'] ) . ';';
+				if ( $header_social_links_items_background_colors['tablet']['hover'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['tablet']['hover'] ) . ';';
+				}				
 
-				$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['tablet']['border_colors']['hover'] ) . ';';
+				if ( $header_social_links_items_borders['tablet']['border_colors']['hover'] ) {
+					$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['tablet']['border_colors']['hover'] ) . ';';
+				}
+				
 			$css .= '}';
 
-			$css .= '.xe-header-element-social li a svg {';
-				$css .= 'height: ' . esc_attr( $header_social_links_tablet['icon-size'] ) . 'px;';
-				$css .= 'width: ' . esc_attr( $header_social_links_tablet['icon-size'] ) . 'px;';
-			$css .= '}';
+			if ( $header_social_links_tablet['icon-size'] || $header_social_links_tablet['icon-size'] ) {
+
+				$css .= '.xe-header-element-social li a svg {';
+
+					if ( $header_social_links_tablet['icon-size'] ) {
+						$css .= 'height: ' . esc_attr( $header_social_links_tablet['icon-size'] ) . 'px;';
+					}
+					
+					if ( $header_social_links_tablet['icon-size'] ) {
+						$css .= 'width: ' . esc_attr( $header_social_links_tablet['icon-size'] ) . 'px;';
+					}
+					
+				$css .= '}';
+			}
+			
 
 			$css .= '.xe-header-element-social li a .xe-social-title {';
 				$css .= xenial_dynamic_font_css( $header_social_links_title_font_tablet );
@@ -150,46 +248,89 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 
         $css .= '@media screen and (max-width: 576px) {';
 
-        	$css .= '.xe-header-element-social {';
-				$css .= 'gap: ' . esc_attr( $header_social_links_mobile['items-spacing'] ) . 'px;';
-			$css .= '}';
-			
+        	if ( $header_social_links_mobile['items-spacing'] ) {
+				$css .= '.xe-header-element-social {';
+					$css .= 'gap: ' . esc_attr( $header_social_links_mobile['items-spacing'] ) . 'px;';
+				$css .= '}';
+			}
 
 			$css .= '.xe-header-element-social li a {';
-				$css .= 'padding: ' . esc_attr( $header_social_links_mobile['background-spacing'] ) . 'px;';
+
+				if ( $header_social_links_mobile['background-spacing'] ) {
+					$css .= 'padding: ' . esc_attr( $header_social_links_mobile['background-spacing'] ) . 'px;';
+				}					
 
 				if ( $header_social_links_icon_color_type == 'custom' ) {
-					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['mobile']['initial'] ) . ';';
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['initial'] ) . ';';
+
+					if ( $header_social_links_icon_colors['mobile']['initial'] ) {
+						$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['mobile']['initial'] ) . ';';
+					}
+					
+					if ( $header_social_links_title_colors['mobile']['initial'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['initial'] ) . ';';
+					}					
 				} else {
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['initial'] ) . ';';
+
+					if ( $header_social_links_title_colors['mobile']['initial'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['initial'] ) . ';';
+					}					
 				}
 
-				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['mobile']['initial'] ) . ';';
+				if ( $header_social_links_items_background_colors['mobile']['initial'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['mobile']['initial'] ) . ';';
+				}				
 
 				$css .= xenial_dynamic_border_css( $header_social_links_items_borders['mobile'] );
 
-				$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['mobile']['border_colors']['initial'] ) . ';';
+				if ( $header_social_links_items_borders['mobile']['border_colors']['initial'] ) {
+					$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['mobile']['border_colors']['initial'] ) . ';';
+				}				
 			$css .= '}';
 
 			$css .= '.xe-header-element-social li a:hover {';
+
 				if ( $header_social_links_icon_color_type == 'custom' ) {
-					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['mobile']['hover'] ) . ';';
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['hover'] ) . ';';
+					if ( $header_social_links_icon_colors['mobile']['hover'] ) {
+						$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['mobile']['hover'] ) . ';';
+					}
+					
+					if ( $header_social_links_title_colors['mobile']['hover'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['hover'] ) . ';';
+					}					
 				} else {
-					$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['mobile']['hover'] ) . ';';
-					$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['hover'] ) . ';';
+					if ( $header_social_links_icon_colors['mobile']['hover'] ) {
+						$css .= 'fill: ' . esc_attr( $header_social_links_icon_colors['mobile']['hover'] ) . ';';
+					}
+					
+					if ( $header_social_links_title_colors['mobile']['hover'] ) {
+						$css .= 'color: ' . esc_attr( $header_social_links_title_colors['mobile']['hover'] ) . ';';
+					}					
 				}
 
-				$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['mobile']['hover'] ) . ';';
+				if ( $header_social_links_items_background_colors['mobile']['hover'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_social_links_items_background_colors['mobile']['hover'] ) . ';';
+				}				
 
-				$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['mobile']['border_colors']['hover'] ) . ';';
+				if ( $header_social_links_items_borders['mobile']['border_colors']['hover'] ) {
+					$css .= 'border-color: ' . esc_attr( $header_social_links_items_borders['mobile']['border_colors']['hover'] ) . ';';
+				}
+				
 			$css .= '}';
 
-			$css .= '.xe-header-element-social li a svg {';
-				$css .= 'height: ' . esc_attr( $header_social_links_mobile['icon-size'] ) . 'px;';
-				$css .= 'width: ' . esc_attr( $header_social_links_mobile['icon-size'] ) . 'px;';
-			$css .= '}';
+			if ( $header_social_links_mobile['icon-size'] || $header_social_links_mobile['icon-size'] ) {
+
+				$css .= '.xe-header-element-social li a svg {';
+			
+					if ( $header_social_links_mobile['icon-size'] ) {
+						$css .= 'height: ' . esc_attr( $header_social_links_mobile['icon-size'] ) . 'px;';
+					}
+					
+					if ( $header_social_links_mobile['icon-size'] ) {
+						$css .= 'width: ' . esc_attr( $header_social_links_mobile['icon-size'] ) . 'px;';
+					}
+					
+				$css .= '}';
+			}
 
 			$css .= '.xe-header-element-social li a .xe-social-title {';
 				$css .= xenial_dynamic_font_css( $header_social_links_title_font_mobile );

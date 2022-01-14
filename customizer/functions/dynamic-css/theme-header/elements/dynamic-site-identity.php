@@ -60,23 +60,67 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         	'color' => $site_description_colors['desktop']['initial']
         );
 
-        $css = ':root{
-        	--xe_site_title_font_family: ' . esc_attr( $site_title_font_desktop['font-family'] ) . ';
-        	--xe_site_title_font_weight: ' . esc_attr( $site_title_font_desktop['font-weight'] ) . ';
-        	--xe_site_title_font_size: ' . esc_attr( $site_title_font_desktop['font-size'] ) . 'px;
-        	--xe_site_title_line_height: ' . esc_attr( $site_title_font_desktop['line-height'] ) . ';
-        	--xe_site_title_font_syle: ' . esc_attr( $site_title_font_desktop['font-style'] ) . ';
-        	--xe_site_title_text_transform: ' . esc_attr( $site_title_font_desktop['text-transform'] ) . ';
-        	--xe_site_title_color: ' . esc_attr( $site_title_font_desktop['color'] ) . ';
-        	--xe_site_title_hover_color: ' . esc_attr( $site_title_font_desktop['hover-color'] ) . ';
-        	--xe_site_description_font_size: ' . esc_attr( $site_description_font_desktop['font-size'] ) . ';
-			--xe_site_description_font_weight: normal;
-			--xe_site_description_letter_spacing: 0;
-			--xe_site_description_line_height: ' . esc_attr( $site_description_font_desktop['line-height'] ) . ';
-			--xe_site_description_color: ' . esc_attr( $site_description_font_desktop['color'] ) . ';
-			--xe_site_description_font_syle: ' . esc_attr( $site_description_font_desktop['font-style'] ) . ';
-			--xe_site_description_text_transform: ' . esc_attr( $site_description_font_desktop['text-transform'] ) . ';
-        }';
+        $css = '';
+
+        $css .= ':root{';
+
+        	if ( $site_title_font_desktop['font-family'] ) {
+        		$css .= '--xe_site_title_font_family: ' . esc_attr( $site_title_font_desktop['font-family'] ) . ';';
+        	}
+        	
+        	if ( $site_title_font_desktop['font-weight'] ) {
+        		$css .= '--xe_site_title_font_weight: ' . esc_attr( $site_title_font_desktop['font-weight'] ) . ';';
+        	}
+        	
+        	if ( $site_title_font_desktop['font-size'] ) {
+        		$css .= '--xe_site_title_font_size: ' . esc_attr( $site_title_font_desktop['font-size'] ) . 'px;';
+        	}
+        	
+        	if ( $site_title_font_desktop['line-height'] ) {
+        		$css .= '--xe_site_title_line_height: ' . esc_attr( $site_title_font_desktop['line-height'] ) . ';';
+        	}
+        	
+        	if ( $site_title_font_desktop['font-style'] ) {
+        		$css .= '--xe_site_title_font_syle: ' . esc_attr( $site_title_font_desktop['font-style'] ) . ';';
+        	}
+        	
+        	if ( $site_title_font_desktop['text-transform'] ) {
+        		$css .= '--xe_site_title_text_transform: ' . esc_attr( $site_title_font_desktop['text-transform'] ) . ';';
+        	}
+        	
+        	if ( $site_title_font_desktop['color'] ) {
+        		$css .= '--xe_site_title_color: ' . esc_attr( $site_title_font_desktop['color'] ) . ';';
+        	}
+        	
+        	if ( $site_title_font_desktop['hover-color'] ) {
+        		$css .= '--xe_site_title_hover_color: ' . esc_attr( $site_title_font_desktop['hover-color'] ) . ';';
+        	}
+        	
+        	if ( $site_description_font_desktop['font-size'] ) {
+        		$css .= '--xe_site_description_font_size: ' . esc_attr( $site_description_font_desktop['font-size'] ) . ';';
+        	}
+        	
+			$css .= '--xe_site_description_font_weight: normal;';
+
+			$css .= '--xe_site_description_letter_spacing: 0;';
+
+			if ( $site_description_font_desktop['line-height'] ) {
+        		$css .= '--xe_site_description_line_height: ' . esc_attr( $site_description_font_desktop['line-height'] ) . ';';
+        	}
+			
+			if ( $site_description_font_desktop['color'] ) {
+        		$css .= '--xe_site_description_color: ' . esc_attr( $site_description_font_desktop['color'] ) . ';';
+        	}
+			
+			if ( $site_description_font_desktop['font-style'] ) {
+        		$css .= '--xe_site_description_font_syle: ' . esc_attr( $site_description_font_desktop['font-style'] ) . ';';
+        	}
+			
+			if ( $site_description_font_desktop['text-transform'] ) {
+        		$css .= '--xe_site_description_text_transform: ' . esc_attr( $site_description_font_desktop['text-transform'] ) . ';';
+        	}
+        				
+        $css .= '}';
 
         $site_title_font_tablet = array(
         	'font-size' => xenial_get_option( 'site_identity_font_size_tablet' ),
@@ -95,13 +139,17 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         		$css .= xenial_dynamic_font_css( $site_title_font_tablet );
         	$css .= '}';
 
-        	$css .= '.xe-site-branding .site-title a {';
-        		$css .= 'color: ' . esc_attr( $site_title_colors['tablet']['initial'] ) . ';';
-        	$css .= '}';
+        	if ( $site_title_colors['tablet']['initial'] ) {
+        		$css .= '.xe-site-branding .site-title a {';
+	        		$css .= 'color: ' . esc_attr( $site_title_colors['tablet']['initial'] ) . ';';
+	        	$css .= '}';
+        	}
 
-        	$css .= '.xe-site-branding .site-title a:hover {';
-        		$css .= 'color: ' . esc_attr( $site_title_colors['tablet']['hover'] ) . ';';
-        	$css .= '}';
+        	if ( $site_title_colors['tablet']['hover'] ) {
+        		$css .= '.xe-site-branding .site-title a:hover {';
+	        		$css .= 'color: ' . esc_attr( $site_title_colors['tablet']['hover'] ) . ';';
+	        	$css .= '}';
+        	}        	
 
         	$css .= '.xe-site-branding .site-description {';
         		$css .= xenial_dynamic_font_css( $site_description_font_tablet );
@@ -126,17 +174,22 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         		$css .= xenial_dynamic_font_css( $site_title_font_mobile );
         	$css .= '}';
 
-        	$css .= '.xe-site-branding .site-title a {';
-        		$css .= 'color: ' . esc_attr( $site_title_colors['mobile']['initial'] ) . ';';
-        	$css .= '}';
+        	if ( $site_title_colors['mobile']['initial'] ) {
+        		$css .= '.xe-site-branding .site-title a {';
+	        		$css .= 'color: ' . esc_attr( $site_title_colors['mobile']['initial'] ) . ';';
+	        	$css .= '}';
+        	}
 
-        	$css .= '.xe-site-branding .site-title a:hover {';
-        		$css .= 'color: ' . esc_attr( $site_title_colors['mobile']['hover'] ) . ';';
-        	$css .= '}';
+        	if ( $site_title_colors['mobile']['hover'] ) {
+        		$css .= '.xe-site-branding .site-title a:hover {';
+	        		$css .= 'color: ' . esc_attr( $site_title_colors['mobile']['hover'] ) . ';';
+	        	$css .= '}';
+        	}
 
         	$css .= '.xe-site-branding .site-description {';
         		$css .= xenial_dynamic_font_css( $site_description_font_mobile );
         	$css .= '}';
+        	
 
         $css .= '}';
 

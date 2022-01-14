@@ -181,6 +181,7 @@ xenial_color_picker_field(
 		// 		'default' => ''
 		// 	)
 		// )
+		'default' => ''
 	)
 );
 
@@ -191,6 +192,7 @@ xenial_section_link_field(
 		'section' => 'xenial_layout',
 		'section_link' => 'xenial_theme_elements',
 		'button_label' => 'Test Button',
-		'enable_switch' => false
+		'enable_switch' => false,
+		'default' => ''
 	)
 );

@@ -150,7 +150,7 @@ if ( ! function_exists( 'xenial_offcanvas_template' ) ) {
 		$layout = xenial_get_option( 'offcanvas_layout' );
 
 		if ( $layout ) {
-			switch ( $layou ) {
+			switch ( $layout ) {
 				case 'modal' :
 					$template_args['classes'][] = 'xe-canvas-layout-modal';
 					break;

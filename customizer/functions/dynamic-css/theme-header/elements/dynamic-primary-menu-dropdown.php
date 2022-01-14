@@ -44,10 +44,22 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_dropdown_css' ) ) {
 		$css = '';
 
 		$css .= ':root {';
-			$css .= '--xe_navigation_dropdown_background_color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['initial'] ) . ';';
-			$css .= '--xe_navigation_dropdown_top_border_color: ' . esc_attr( $header_primary_menu_dropdown_borders['border_widths']['top'] ) . esc_attr( $header_primary_menu_dropdown_borders['border_widths']['unit'] ) . ';';
-			$css .= '--xe_navigation_dropdown_top_spacing: ' . esc_attr( $header_primary_menu_dropdown_top_offset ) . 'px;';
-			$css .= '--xe_navigation_dropdown_width: ' . esc_attr( $header_primary_menu_dropdown_width ) . 'px;';
+			if ( $header_primary_menu_dropdown_items_background_colors['initial'] ) {
+				$css .= '--xe_navigation_dropdown_background_color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['initial'] ) . ';';
+			}
+			
+			if ( $header_primary_menu_dropdown_borders['border_widths']['top'] ) {
+				$css .= '--xe_navigation_dropdown_top_border_color: ' . esc_attr( $header_primary_menu_dropdown_borders['border_widths']['top'] ) . esc_attr( $header_primary_menu_dropdown_borders['border_widths']['unit'] ) . ';';
+			}
+			
+			if ( $header_primary_menu_dropdown_top_offset ) {
+				$css .= '--xe_navigation_dropdown_top_spacing: ' . esc_attr( $header_primary_menu_dropdown_top_offset ) . 'px;';
+			}
+			
+			if ( $header_primary_menu_dropdown_width ) {
+				$css .= '--xe_navigation_dropdown_width: ' . esc_attr( $header_primary_menu_dropdown_width ) . 'px;';
+			}
+			
 		$css .= '}';
 
 		$css .= '.xe-site-navigation ul li .children, .xe-site-navigation ul li .sub-menu {';
@@ -55,26 +67,56 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_dropdown_css' ) ) {
 			$css .= xenial_dynamic_border_css( $header_primary_menu_dropdown_borders );
 		$css .= '}';
 
-		$css .= '.xe-site-navigation ul li ul.children li, .xe-site-navigation ul li ul.sub-menu li {';
-			$css .= 'border-bottom-width: ' . esc_attr( $header_primary_menu_dropdown_items_divider_width ) . 'px;';
-			$css .= 'border-bottom-color: ' . esc_attr( $header_primary_menu_dropdown_items_divider_colors['initial'] ) . ';';
-		$css .= '}';
+		if ( $header_primary_menu_dropdown_items_divider_width || $header_primary_menu_dropdown_items_divider_colors['initial'] ) {
+			$css .= '.xe-site-navigation ul li ul.children li, .xe-site-navigation ul li ul.sub-menu li {';
+				if ( $header_primary_menu_dropdown_items_divider_width ) {
+					$css .= 'border-bottom-width: ' . esc_attr( $header_primary_menu_dropdown_items_divider_width ) . 'px;';
+				}
+				
+				if ( $header_primary_menu_dropdown_items_divider_colors['initial'] ) {
+					$css .= 'border-bottom-color: ' . esc_attr( $header_primary_menu_dropdown_items_divider_colors['initial'] ) . ';';
+				}
+				
+			$css .= '}';
+		}
+
 
 		$css .= '.xe-site-navigation ul li .children li a, .xe-site-navigation ul li .sub-menu li a {';
-			$css .= 'color: ' . esc_attr( $header_primary_menu_dropdown_items_font_colors['initial'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['initial'] ) . ';';
+			if ( $header_primary_menu_dropdown_items_font_colors['initial'] ) {
+				$css .= 'color: ' . esc_attr( $header_primary_menu_dropdown_items_font_colors['initial'] ) . ';';
+			}
+			
+			if ( $header_primary_menu_dropdown_items_background_colors['initial'] ) {
+				$css .= 'background-color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['initial'] ) . ';';
+			}
+			
 			$css .= xenial_dynamic_font_css( $header_primary_menu_dropdown_items_fonts );
 		$css .= '}';
 
-		$css .= '.xe-site-navigation ul li .children li a:hover, .xe-site-navigation ul li .sub-menu li a:hover {';
-			$css .= 'color: ' . esc_attr( $header_primary_menu_dropdown_items_font_colors['hover'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['hover'] ) . ';';
-		$css .= '}';
+		if ( $header_primary_menu_dropdown_items_font_colors['hover'] || $header_primary_menu_dropdown_items_background_colors['hover'] ) {
+			$css .= '.xe-site-navigation ul li .children li a:hover, .xe-site-navigation ul li .sub-menu li a:hover {';
+				if ( $header_primary_menu_dropdown_items_font_colors['hover'] ) {
+					$css .= 'color: ' . esc_attr( $header_primary_menu_dropdown_items_font_colors['hover'] ) . ';';
+				}
+				
+				if ( $header_primary_menu_dropdown_items_background_colors['hover'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['hover'] ) . ';';
+				}
+				
+			$css .= '}';
+		}		
 
-		$css .= '.xe-site-navigation ul li .children li.current-menu-item a, .xe-site-navigation ul li .sub-menu li.current-menu-item a {';
-			$css .= 'color: ' . esc_attr( $header_primary_menu_dropdown_items_font_colors['active'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['active'] ) . ';';
-		$css .= '}';
+		if ( $header_primary_menu_dropdown_items_font_colors['active'] || $header_primary_menu_dropdown_items_background_colors['active'] ) {
+			$css .= '.xe-site-navigation ul li .children li.current-menu-item a, .xe-site-navigation ul li .sub-menu li.current-menu-item a {';
+				if ( $header_primary_menu_dropdown_items_font_colors['active'] ) {
+					$css .= 'color: ' . esc_attr( $header_primary_menu_dropdown_items_font_colors['active'] ) . ';';
+				}
+				
+				if ( $header_primary_menu_dropdown_items_background_colors['active'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_primary_menu_dropdown_items_background_colors['active'] ) . ';';
+				}				
+			$css .= '}';
+		}		
 
 		return $css;
 	}
