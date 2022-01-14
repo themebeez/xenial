@@ -20,6 +20,23 @@
 }
 
 /* -------------------------------------------------------------------------- 
+	Search Text
+  -------------------------------------------------------------------------- */
+
+  #xe-search-form .xe-search-box-text-outer {
+
+      @include flex();
+      justify-content: center;
+      margin-bottom: 20px;
+  }
+
+  #xe-search-form .xe-search-box-text-outer .xe-search-box-text {
+
+      font-size: 18px;
+      margin: 0;
+  }
+
+/* -------------------------------------------------------------------------- 
 	Search form
   -------------------------------------------------------------------------- */
 
@@ -103,4 +120,34 @@
     position: absolute;
     top: 12px;
     right: 15px;
+}
+
+/* -------------------------------------------------------------------------- 
+	Search bar [no modal]
+  -------------------------------------------------------------------------- */
+
+.xe-header-element-search-bar form {
+
+    position: relative;
+    margin: 0;
+}
+
+.xe-header-element-search-bar form .xe-search-form-search-bar {
+
+    display: inline-flex;
+    align-items: center;
+    height: 40px;
+    padding: 8px 15px;
+    border-radius: 3px;
+}
+
+.xe-header-element-search-bar .xe-search-form-submit-btn {
+
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    height: 18px;
+    width: 18px;
+    fill: currentColor;
+    transform: translateY(-50%);
 }
