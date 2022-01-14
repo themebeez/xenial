@@ -10,7 +10,8 @@ if ( ! function_exists( 'xenial_single_header_template' ) ) {
 			'before_title' => '',
 			'after_title' => '',
 			'display_breadcrumbs' => false,
-			'classes' => 'xe-container'
+			'classes' => 'xe-container',
+			'display_title' => false
 		);
 
 		$containerWidth = xenial_get_option( 'post_single_breadcrumbs_width' );

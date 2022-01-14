@@ -17,20 +17,24 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			'text-transform' => xenial_get_option( 'header_secondary_menu_text_transform' )
 		);
 
-		$css = '#menu-secondary-menu {';
-			$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_desktop ) . 'px;';
-		$css .= '}';
+		if ( $header_secondary_menu_items_spacing_desktop ) {
+			$css = '#menu-secondary-menu {';
+				$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_desktop ) . 'px;';
+			$css .= '}';
+		}		
 
 		$css .= '#menu-secondary-menu > li > a {';
 			$css .= xenial_dynamic_font_css( $header_secondary_menu_font_desktop );
-			$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['desktop']['initial'] ) . ';';
+			if ( $header_secondary_menu_font_colors['desktop']['initial'] ) {
+				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['desktop']['initial'] ) . ';';
+			}			
 		$css .= '}';
 
-		$css .= '#menu-secondary-menu > li > a:hover {';
-			$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['desktop']['hover'] ) . ';';
-		$css .= '}';
-
-		
+		if ( $header_secondary_menu_font_colors['desktop']['hover'] ) {
+			$css .= '#menu-secondary-menu > li > a:hover {';
+				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['desktop']['hover'] ) . ';';
+			$css .= '}';
+		}
 
 		$header_secondary_menu_items_spacing_tablet = xenial_get_option( 'header_secondary_menu_items_spacing_tablet' );
 
@@ -39,24 +43,28 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			'line-height' => xenial_get_option( 'header_secondary_menu_line_height_tablet' )
         );
 
-
         $css .= '@media screen and (max-width: 768px) {';
 
-        	$css .= '#menu-secondary-menu {';
-				$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_tablet ) . 'px;';
-			$css .= '}';
+        	if ( $header_secondary_menu_items_spacing_tablet ) {
+        		$css .= '#menu-secondary-menu {';
+					$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_tablet ) . 'px;';
+				$css .= '}';
+			}        	
 
 			$css .= '#menu-secondary-menu > li > a {';
 				$css .= xenial_dynamic_font_css( $header_secondary_menu_font_tablet );
-				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['tablet']['initial'] ) . ';';
+				if ( $header_secondary_menu_font_colors['tablet']['initial'] ) {
+					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['tablet']['initial'] ) . ';';
+				}				
 			$css .= '}';
 
-			$css .= '#menu-secondary-menu > li > a:hover {';
-				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['tablet']['hover'] ) . ';';
-			$css .= '}';
+			if ( $header_secondary_menu_font_colors['tablet']['hover'] ) {
+				$css .= '#menu-secondary-menu > li > a:hover {';
+					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['tablet']['hover'] ) . ';';
+				$css .= '}';
+			}			
 
         $css .= '}';
-
 
         $header_secondary_menu_items_spacing_mobile = xenial_get_option( 'header_secondary_menu_items_spacing_mobile' );
 
@@ -67,18 +75,25 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 
         $css .= '@media screen and (max-width: 576px) {';
 
-        	$css .= '#menu-secondary-menu {';
-				$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_mobile ) . 'px;';
-			$css .= '}';
-
+        	if ( $header_secondary_menu_items_spacing_mobile ) {
+        		$css .= '#menu-secondary-menu {';
+					$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_mobile ) . 'px;';
+				$css .= '}';
+			}
+        	
 			$css .= '#menu-secondary-menu > li > a {';
 				$css .= xenial_dynamic_font_css( $header_secondary_menu_font_mobile );
-				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['mobile']['initial'] ) . ';';
+				if ( $header_secondary_menu_font_colors['mobile']['initial'] ) {
+					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['mobile']['initial'] ) . ';';
+				}
+				
 			$css .= '}';
 
-			$css .= '#menu-secondary-menu > li > a:hover {';
-				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['mobile']['hover'] ) . ';';
-			$css .= '}';
+			if ( $header_secondary_menu_font_colors['mobile']['hover'] ) {
+				$css .= '#menu-secondary-menu > li > a:hover {';
+					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['mobile']['hover'] ) . ';';
+				$css .= '}';
+			}
 
         $css .= '}';
 

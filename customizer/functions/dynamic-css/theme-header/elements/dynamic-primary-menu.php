@@ -31,29 +31,65 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_css' ) ) {
 
 		$css = '';
 
-		$css .= '.xe-site-navigation > ul.xe-main-navigation {';
-			$css .= 'gap: ' . esc_attr( $header_primary_menu_items_spacing ) . 'px;';
-		$css .= '}';
-
+		if ( $header_primary_menu_items_spacing ) {
+			$css .= '.xe-site-navigation > ul.xe-main-navigation {';
+				$css .= 'gap: ' . esc_attr( $header_primary_menu_items_spacing ) . 'px;';
+			$css .= '}';
+		}
+		
 		$css .= '.xe-site-navigation > ul > li > a {';
 			$css .= xenial_dynamic_spacing_css( $header_primary_menu_items_padding );
 			$css .= xenial_dynamic_border_css( $header_primary_menu_item_borders );
 			$css .= xenial_dynamic_font_css( $header_primary_menu_items_font );
-			$css .= 'color: ' . esc_attr( $header_primary_menu_item_font_colors['initial'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_primary_menu_item_background_colors['initial'] ) . ';';
+			if ( $header_primary_menu_item_font_colors['initial'] ) {
+				$css .= 'color: ' . esc_attr( $header_primary_menu_item_font_colors['initial'] ) . ';';
+			}
+			
+			if ( $header_primary_menu_item_background_colors['initial'] ) {
+				$css .= 'background-color: ' . esc_attr( $header_primary_menu_item_background_colors['initial'] ) . ';';
+			}
+			
 		$css .= '}';
 
-		$css .= '.xe-site-navigation > ul > li > a:hover {';
-			$css .= 'color: ' . esc_attr( $header_primary_menu_item_font_colors['hover'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_primary_menu_item_background_colors['hover'] ) . ';';
-			$css .= 'border-color: ' . esc_attr( $header_primary_menu_item_borders['border_colors']['hover'] ) . ';';
-		$css .= '}';
+		if ( $header_primary_menu_item_font_colors['hover'] || $header_primary_menu_item_background_colors['hover'] || $header_primary_menu_item_borders['border_colors']['hover'] ) {
 
-		$css .= '.xe-site-navigation > ul > li.current-menu-item > a {';
-			$css .= 'color: ' . esc_attr( $header_primary_menu_item_font_colors['active'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_primary_menu_item_background_colors['active'] ) . ';';
-			$css .= 'border-color: ' . esc_attr( $header_primary_menu_item_borders['border_colors']['active'] ) . ';';
-		$css .= '}';
+			$css .= '.xe-site-navigation > ul > li > a:hover {';
+
+				if ( $header_primary_menu_item_font_colors['hover'] ) {
+					$css .= 'color: ' . esc_attr( $header_primary_menu_item_font_colors['hover'] ) . ';';
+				}
+				
+				if ( $header_primary_menu_item_background_colors['hover'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_primary_menu_item_background_colors['hover'] ) . ';';
+				}
+				
+				if ( $header_primary_menu_item_borders['border_colors']['hover'] ) {
+					$css .= 'border-color: ' . esc_attr( $header_primary_menu_item_borders['border_colors']['hover'] ) . ';';
+				}
+				
+			$css .= '}';
+		}
+		
+
+		if ( $header_primary_menu_item_font_colors['active'] || $header_primary_menu_item_background_colors['active'] || $header_primary_menu_item_borders['border_colors']['active'] ) {
+
+			$css .= '.xe-site-navigation > ul > li.current-menu-item > a {';
+
+				if ( $header_primary_menu_item_font_colors['active'] ) {
+					$css .= 'color: ' . esc_attr( $header_primary_menu_item_font_colors['active'] ) . ';';
+				}
+				
+				if ( $header_primary_menu_item_background_colors['active'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_primary_menu_item_background_colors['active'] ) . ';';
+				}
+				
+				if ( $header_primary_menu_item_borders['border_colors']['active'] ) {
+					$css .= 'border-color: ' . esc_attr( $header_primary_menu_item_borders['border_colors']['active'] ) . ';';
+				}
+
+			$css .= '}';
+		}
+
 
 		return $css;
 	}

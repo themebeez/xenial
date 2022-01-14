@@ -22,24 +22,48 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_toggle_button_css' ) )
 
 		$css = '';
 
-		$css .= ':root {';
-			$css .= '--xe_menu_toggle_button_color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['initial'] ) . ';';
-		$css .= '}';
+		if ( $header_off_canvas_toggle_button_label_colors['initial'] ) {
+			$css .= ':root {';
+				$css .= '--xe_menu_toggle_button_color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['initial'] ) . ';';
+			$css .= '}';
+		}
+		
 
 		$css .= '#xe-mobile-canvas-trigger-button {';
 			$css .= xenial_dynamic_spacing_css( $header_off_canvas_toggle_button_padding );
-			$css .= 'font-size: ' . esc_attr( $header_off_canvas_toggle_button_font_size ) . 'px;';
-			$css .= 'color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['initial'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_background_colors['initial'] ) . ';';
+			if ( $header_off_canvas_toggle_button_font_size ) {
+				$css .= 'font-size: ' . esc_attr( $header_off_canvas_toggle_button_font_size ) . 'px;';
+			}
+			
+			if ( $header_off_canvas_toggle_button_label_colors['initial'] ) {
+				$css .= 'color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['initial'] ) . ';';
+			}
+			
+			if ( $header_off_canvas_toggle_button_background_colors['initial'] ) {
+				$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_background_colors['initial'] ) . ';';
+			}
+			
 			$css .= xenial_dynamic_border_css( $header_off_canvas_toggle_button_borders );
 		$css .= '}';
 
+		if ( $header_off_canvas_toggle_button_label_colors['hover'] || $header_off_canvas_toggle_button_background_colors['hover'] || $header_off_canvas_toggle_button_borders['border_colors']['hover'] ) {
 
-		$css .= '#xe-mobile-canvas-trigger-button:hover {';
-			$css .= 'color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['hover'] ) . ';';
-			$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_background_colors['hover'] ) . ';';
-			$css .= 'border-color: ' . esc_attr( $header_off_canvas_toggle_button_borders['border_colors']['hover'] ) . ';';
-		$css .= '}';
+			$css .= '#xe-mobile-canvas-trigger-button:hover {';
+			
+				if ( $header_off_canvas_toggle_button_label_colors['hover'] ) {
+					$css .= 'color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['hover'] ) . ';';
+				}
+				
+				if ( $header_off_canvas_toggle_button_background_colors['hover'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_background_colors['hover'] ) . ';';
+				}
+				
+				if ( $header_off_canvas_toggle_button_borders['border_colors']['hover'] ) {
+					$css .= 'border-color: ' . esc_attr( $header_off_canvas_toggle_button_borders['border_colors']['hover'] ) . ';';
+				}
+				
+			$css .= '}';
+		}		
 
 		return $css;
 	}

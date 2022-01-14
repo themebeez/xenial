@@ -17,17 +17,24 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
 
 		$css = '.xe-header-element.is-html {';
 			$css .= xenial_dynamic_font_css( $header_html_font_desktop );
-			$css .= 'color: ' . esc_attr( $header_html_font_colors['desktop']['initial'] ) . ';';
+			if ( $header_html_font_colors['desktop']['initial']  ) {
+				$css .= 'color: ' . esc_attr( $header_html_font_colors['desktop']['initial'] ) . ';';
+			}
+			
 		$css .= '}';
 
-		$css .= '.xe-header-element.is-html a {';
-			$css .= 'color: ' . esc_attr( $header_html_font_colors['desktop']['link'] ) . ';';
-		$css .= '}';
-
-		$css .= '.xe-header-element.is-html a:hover {';
-			$css .= 'color: ' . esc_attr( $header_html_font_colors['desktop']['hover'] ) . ';';
-		$css .= '}';
-
+		if ( $header_html_font_colors['desktop']['link'] ) {
+			$css .= '.xe-header-element.is-html a {';
+				$css .= 'color: ' . esc_attr( $header_html_font_colors['desktop']['link'] ) . ';';
+			$css .= '}';
+		}
+		
+		if ( $header_html_font_colors['desktop']['hover'] ) {
+			$css .= '.xe-header-element.is-html a:hover {';
+				$css .= 'color: ' . esc_attr( $header_html_font_colors['desktop']['hover'] ) . ';';
+			$css .= '}';	
+		}
+		
 		$header_html_font_tablet = array(
         	'font-size' => xenial_get_option( 'header_html_text_font_size_tablet' ),
 			'line-height' => xenial_get_option( 'header_html_text_line_height_tablet' )
@@ -38,16 +45,22 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
 
         	$css .= '.xe-header-element.is-html {';
 				$css .= xenial_dynamic_font_css( $header_html_font_tablet );
-				$css .= 'color: ' . esc_attr( $header_html_font_colors['tablet']['initial'] ) . ';';
+				if ( $header_html_font_colors['tablet']['initial'] ) {
+					$css .= 'color: ' . esc_attr( $header_html_font_colors['tablet']['initial'] ) . ';';
+				}				
 			$css .= '}';
 
-			$css .= '.xe-header-element.is-html a {';
-				$css .= 'color: ' . esc_attr( $header_html_font_colors['tablet']['link'] ) . ';';
-			$css .= '}';
-
-			$css .= '.xe-header-element.is-html a:hover {';
-				$css .= 'color: ' . esc_attr( $header_html_font_colors['tablet']['hover'] ) . ';';
-			$css .= '}';
+			if ( $header_html_font_colors['tablet']['link'] ) {
+				$css .= '.xe-header-element.is-html a {';
+					$css .= 'color: ' . esc_attr( $header_html_font_colors['tablet']['link'] ) . ';';
+				$css .= '}';
+			}
+			
+			if ( $header_html_font_colors['tablet']['hover'] ) {
+				$css .= '.xe-header-element.is-html a:hover {';
+					$css .= 'color: ' . esc_attr( $header_html_font_colors['tablet']['hover'] ) . ';';
+				$css .= '}';
+			}
 
         $css .= '}';
 
@@ -60,16 +73,23 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
 
         	$css .= '.xe-header-element.is-html {';
 				$css .= xenial_dynamic_font_css( $header_html_font_mobile );
-				$css .= 'color: ' . esc_attr( $header_html_font_colors['mobile']['initial'] ) . ';';
+				if ( $header_html_font_colors['mobile']['initial'] ) {
+					$css .= 'color: ' . esc_attr( $header_html_font_colors['mobile']['initial'] ) . ';';
+				}
+				
 			$css .= '}';
 
-			$css .= '.xe-header-element.is-html a {';
-				$css .= 'color: ' . esc_attr( $header_html_font_colors['mobile']['link'] ) . ';';
-			$css .= '}';
-
-			$css .= '.xe-header-element.is-html a:hover {';
-				$css .= 'color: ' . esc_attr( $header_html_font_colors['mobile']['hover'] ) . ';';
-			$css .= '}';
+			if ( $header_html_font_colors['mobile']['link'] ) {
+				$css .= '.xe-header-element.is-html a {';
+					$css .= 'color: ' . esc_attr( $header_html_font_colors['mobile']['link'] ) . ';';
+				$css .= '}';
+			}
+			
+			if ( $header_html_font_colors['mobile']['hover'] ) {
+				$css .= '.xe-header-element.is-html a:hover {';
+					$css .= 'color: ' . esc_attr( $header_html_font_colors['mobile']['hover'] ) . ';';
+				$css .= '}';
+			}		
 
         $css .= '}';
 

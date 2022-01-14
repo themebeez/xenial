@@ -990,6 +990,38 @@ if ( ! function_exists( 'xenial_get_customize_allowed_fields' ) ) {
 	                    )
 	                )
 	            ),
+	            'archive_post_card_background_color' => array(
+	                'desktop' => array(
+	                    'initial' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    ),
+	                    'hover' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    )
+	                ),
+	                'tablet' => array(
+	                    'initial' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    ),
+	                    'hover' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    )
+	                ),
+	                'mobile' => array(
+	                    'initial' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    ),
+	                    'hover' => array(
+	                        'display' => true,
+	                        'default' => ''
+	                    )
+	                )
+	            ),
 	            'archive_post_excerpt_color' => array(
 	                'desktop' => array(
 	                    'initial' => array(
