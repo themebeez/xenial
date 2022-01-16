@@ -259,6 +259,10 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/third-party/woocommerce/woocommerce-hooks.php';
 }
 
+if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+	require get_template_directory() . '/inc/third-party/edd/edd-functions.php';
+}
+
 
 add_action( 'wp_head', function() {
 } );

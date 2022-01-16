@@ -7,6 +7,16 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 
 		wp_enqueue_script( 'xenial-bundle', $assets_url . 'js/xenial-script.min.js', NULL, XENIAL_THEME_VERSION, true );
 
+		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+
+			wp_enqueue_script( 'xenial-edd-script', $assets_url . 'js/compatibility/edd.min.js', NULL, XENIAL_THEME_VERSION, true );
+
+			wp_localize_script( 'xenial-edd-script', 'xenial_edd_script', array(
+				'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+				'nonce' => wp_create_nonce( 'xenial_edd_cart_item_remove' )
+			) );
+		}
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 
 			wp_enqueue_script( 'comment-reply' );
@@ -29,6 +39,7 @@ if ( ! function_exists( 'xenial_enqueue_styles' ) ) {
 		wp_enqueue_style( 'themify', $assets_url . 'font/themify-icons/themify-icons.css' );
 
 		wp_enqueue_style( 'xenial-base', $assets_url . 'css/xenial-style.css', NULL, XENIAL_THEME_VERSION, 'all' );
+
 		if ( class_exists( 'WooCommerce' ) ) { 
 			wp_enqueue_style( 'xenial-woocommerce', $assets_url . 'css/woocommerce/woocommerce.css', NULL, XENIAL_THEME_VERSION, 'all' );
 		}
