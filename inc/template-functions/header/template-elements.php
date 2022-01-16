@@ -414,7 +414,14 @@ if ( ! function_exists( 'xenial_header_element_social_links_template' ) ) {
 if ( ! function_exists( 'xenial_header_element_edd_minicart_template' ) ) {
 
 	function xenial_header_element_edd_minicart_template() {
+
+		$template_args = array(
+			'edd-cart-items-count' => edd_get_cart_quantity(),
+			'edd-cart-content-details' => edd_get_cart_contents()
+		);
+
+		$template_args = apply_filters( 'xenial_header_element_edd_minicart_template_args', $template_args );
 		
-		get_template_part( 'template-parts/theme-header/elements/element', 'edd-minicart' );
+		get_template_part( 'template-parts/theme-header/elements/element', 'edd-minicart', $template_args );
 	}
 }

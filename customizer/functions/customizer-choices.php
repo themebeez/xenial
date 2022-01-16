@@ -1219,51 +1219,45 @@ if ( ! function_exists( 'xenial_get_desktop_header_elements' ) ) {
 
 	function xenial_get_desktop_header_elements() {
 
-		return apply_filters(
-			'xenial_desktop_header_elements_filter',
-			array(
-				'site_identity' => array(
-					'section' => 'title_tagline',
-					'label' => esc_html__( 'Site Identity &amp; Logo', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 14a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>'
-				),
-				'button' => array(
-					'section' => 'xenial_header_button',
-					'label' => esc_html__( 'Button', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6 6V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>'
-				),
-				'html' => array(
-					'section' => 'xenial_header_html',
-					'label' => esc_html__( 'HTML', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18.178l4.62-1.256.623-6.778H9.026L8.822 7.89h8.626l.227-2.211H6.325l.636 6.678h7.82l-.261 2.866-2.52.667-2.52-.667-.158-1.844h-2.27l.329 3.544L12 18.178zM3 2h18l-1.623 18L12 22l-7.377-2L3 2z"/></svg>'
-				),
-				'menu_1' => array(
-					'section' => 'xenial_header_primary_menu',
-					'label' => esc_html__( 'Menu 1', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 15l-.001 3H21v2h-3.001L18 23h-2l-.001-3H13v-2h2.999L16 15h2zm-7 3v2H3v-2h8zm10-7v2H3v-2h18zm0-7v2H3V4h18z"/></svg>'
-				),
-				'menu_2' => array(
-					'section' => 'xenial_header_secondary_menu',
-					'label' => esc_html__( 'Menu 2', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 15l-.001 3H21v2h-3.001L18 23h-2l-.001-3H13v-2h2.999L16 15h2zm-7 3v2H3v-2h8zm10-7v2H3v-2h18zm0-7v2H3V4h18z"/></svg>'
-				),
-				'search' => array(
-					'section' => 'xenial_header_search',
-					'label' => esc_html__( 'Search', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>'
-				),
-				'social_links' => array(
-					'section' => 'xenial_header_social_links',
-					'label' => esc_html__( 'Social', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
-				),
-				'edd_minicart' => array(
-					'section' => 'xenial_header_edd_minicart',
-					'label' => esc_html__( 'EDD Minicart', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
-				)
+		$desktop_header_elements = array(
+			'site_identity' => array(
+				'section' => 'title_tagline',
+				'label' => esc_html__( 'Site Identity &amp; Logo', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 14a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>'
+			),
+			'button' => array(
+				'section' => 'xenial_header_button',
+				'label' => esc_html__( 'Button', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6 6V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>'
+			),
+			'html' => array(
+				'section' => 'xenial_header_html',
+				'label' => esc_html__( 'HTML', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18.178l4.62-1.256.623-6.778H9.026L8.822 7.89h8.626l.227-2.211H6.325l.636 6.678h7.82l-.261 2.866-2.52.667-2.52-.667-.158-1.844h-2.27l.329 3.544L12 18.178zM3 2h18l-1.623 18L12 22l-7.377-2L3 2z"/></svg>'
+			),
+			'menu_1' => array(
+				'section' => 'xenial_header_primary_menu',
+				'label' => esc_html__( 'Menu 1', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 15l-.001 3H21v2h-3.001L18 23h-2l-.001-3H13v-2h2.999L16 15h2zm-7 3v2H3v-2h8zm10-7v2H3v-2h18zm0-7v2H3V4h18z"/></svg>'
+			),
+			'menu_2' => array(
+				'section' => 'xenial_header_secondary_menu',
+				'label' => esc_html__( 'Menu 2', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 15l-.001 3H21v2h-3.001L18 23h-2l-.001-3H13v-2h2.999L16 15h2zm-7 3v2H3v-2h8zm10-7v2H3v-2h18zm0-7v2H3V4h18z"/></svg>'
+			),
+			'search' => array(
+				'section' => 'xenial_header_search',
+				'label' => esc_html__( 'Search', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>'
+			),
+			'social_links' => array(
+				'section' => 'xenial_header_social_links',
+				'label' => esc_html__( 'Social', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
 			)
 		);
+
+		return apply_filters( 'xenial_desktop_header_elements_filter', $desktop_header_elements );
 	}
 }
 
@@ -1272,51 +1266,45 @@ if ( ! function_exists( 'xenial_get_mobile_header_elements' ) ) {
 
 	function xenial_get_mobile_header_elements() {
 
-		return apply_filters(
-			'xenial_mobile_header_elements_filter',
-			array(
-				'site_identity' => array(
-					'section' => 'title_tagline',
-					'label' => esc_html__( 'Site Identity &amp; Logo', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 14a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>'
-				),
-				'button' => array(
-					'section' => 'xenial_header_button',
-					'label' => esc_html__( 'Button', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6 6V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>'
-				),
-				'html' => array(
-					'section' => 'xenial_header_html',
-					'label' => esc_html__( 'HTML', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18.178l4.62-1.256.623-6.778H9.026L8.822 7.89h8.626l.227-2.211H6.325l.636 6.678h7.82l-.261 2.866-2.52.667-2.52-.667-.158-1.844h-2.27l.329 3.544L12 18.178zM3 2h18l-1.623 18L12 22l-7.377-2L3 2z"/></svg>'
-				),
-				'offcanvas_menu' => array(
-					'section' => 'xenial_offcanvas_menu',
-					'label' => esc_html__( 'Off-Canvas Menu', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 15l-.001 3H21v2h-3.001L18 23h-2l-.001-3H13v-2h2.999L16 15h2zm-7 3v2H3v-2h8zm10-7v2H3v-2h18zm0-7v2H3V4h18z"/></svg>'
-				),
-				'search' => array(
-					'section' => 'xenial_header_search',
-					'label' => esc_html__( 'Search', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>'
-				),
-				'social_links' => array(
-					'section' => 'xenial_header_social_links',
-					'label' => esc_html__( 'Social', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
-				),
-				'offcanvas_toggle_button' => array(
-					'section' => 'xenial_offcanvas_toggle_button',
-					'label' => esc_html__( 'Off-Canvas Toggle', 'xenial' ),
-					'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/></svg>'
-				),
-				'edd_minicart' => array(
-					'section' => 'xenial_header_edd_minicart',
-					'label' => esc_html__( 'EDD Minicart', 'xenial' ),
-					'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
-				)
+		$mobile_header_elements = array(
+			'site_identity' => array(
+				'section' => 'title_tagline',
+				'label' => esc_html__( 'Site Identity &amp; Logo', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 14a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>'
+			),
+			'button' => array(
+				'section' => 'xenial_header_button',
+				'label' => esc_html__( 'Button', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h14V5H5zm6 6V7h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>'
+			),
+			'html' => array(
+				'section' => 'xenial_header_html',
+				'label' => esc_html__( 'HTML', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18.178l4.62-1.256.623-6.778H9.026L8.822 7.89h8.626l.227-2.211H6.325l.636 6.678h7.82l-.261 2.866-2.52.667-2.52-.667-.158-1.844h-2.27l.329 3.544L12 18.178zM3 2h18l-1.623 18L12 22l-7.377-2L3 2z"/></svg>'
+			),
+			'offcanvas_menu' => array(
+				'section' => 'xenial_offcanvas_menu',
+				'label' => esc_html__( 'Off-Canvas Menu', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 15l-.001 3H21v2h-3.001L18 23h-2l-.001-3H13v-2h2.999L16 15h2zm-7 3v2H3v-2h8zm10-7v2H3v-2h18zm0-7v2H3V4h18z"/></svg>'
+			),
+			'search' => array(
+				'section' => 'xenial_header_search',
+				'label' => esc_html__( 'Search', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z"/></svg>'
+			),
+			'social_links' => array(
+				'section' => 'xenial_header_social_links',
+				'label' => esc_html__( 'Social', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
+			),
+			'offcanvas_toggle_button' => array(
+				'section' => 'xenial_offcanvas_toggle_button',
+				'label' => esc_html__( 'Off-Canvas Toggle', 'xenial' ),
+				'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/></svg>'
 			)
 		);
+
+		return apply_filters( 'xenial_mobile_header_elements_filter', $mobile_header_elements );
 	}
 }
 
