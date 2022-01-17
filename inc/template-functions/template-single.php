@@ -59,7 +59,7 @@ if ( ! function_exists( 'xenial_single_content_footer_template' ) ) {
 				<?php
 			} 
 
-			if ( in_array( 'updated_date', $contents ) ) {
+			if ( in_array( 'updated_date', $contents ) && get_post_type() == 'post' ) {
 				?>
 				<div class="xe-lastupdated-info">
 		            <p class="no-margin">
