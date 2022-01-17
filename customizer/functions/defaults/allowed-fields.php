@@ -324,6 +324,26 @@ if ( ! function_exists( 'xenial_get_customize_allowed_fields' ) ) {
             		'default' => ''
             	)
             ),
+            'offcanvas_menu_submenu_toggle_button_background_color' => array(
+            	'initial' => array(
+            		'display' => true,
+            		'default' => ''
+            	),
+            	'hover' => array(
+            		'display' => true,
+            		'default' => ''
+            	)
+            ),
+            'offcanvas_menu_submenu_toggle_button_label_color' => array(
+            	'initial' => array(
+            		'display' => true,
+            		'default' => ''
+            	),
+            	'hover' => array(
+            		'display' => true,
+            		'default' => ''
+            	)
+            ),
             'offcanvas_toggle_button_label_color' => array(
             	'initial' => array(
             		'display' => true,

@@ -162,6 +162,12 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_css' ) ) {
 			
 		$css .= '}';
 
+		$css .= '#xe-mobile-canvas-close-button svg {';
+			if ( $header_off_canvas_close_button_label_colors['initial'] ) {
+				$css .= 'fill: ' . esc_attr( $header_off_canvas_close_button_label_colors['initial'] ) . ';';
+			}
+		$css .= '}';
+
 		$css .= '#xe-mobile-canvas-close-button:hover {';
 			if ( $header_off_canvas_close_button_label_colors['hover'] ) {
 				$css .= 'color: ' . esc_attr( $header_off_canvas_close_button_label_colors['hover'] ) . ';';

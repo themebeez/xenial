@@ -11,7 +11,8 @@ if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
 			'container_width' => '',
 			'before_title' => '',
 			'after_title' => '',
-			'display_breadcrumbs' => false
+			'display_breadcrumbs' => false,
+			'classes' => ''
 		);
 
 		$containerWidth = xenial_get_option( 'page_single_header_width' );
@@ -26,18 +27,17 @@ if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
 		$displayBreadcrumbs = xenial_get_option( 'page_single_display_breadcrumbs' );
 		$templateArgs['display_breadcrumbs'] = ( $displayBreadcrumbs == true ) ? true : false;
 
-		if ( $displayBreadcrumbs ) {
-			$breadcrumbsWidth = xenial_get_option( 'page_single_header_width' );
-			switch ( $breadcrumbsWidth ) {
-				case 'wide' :
-					$templateArgs['classes'] = 'xe-container-wide';
-					break;
-				case 'narrow' :
-					$templateArgs['classes'] = 'xe-container-narrow';
-					break;
-				default :
-					$templateArgs['classes'] = 'xe-container';
-			}
+		
+		$page_header_width = xenial_get_option( 'page_single_header_width' );
+		switch ( $page_header_width ) {
+			case 'wide' :
+				$templateArgs['classes'] = 'xe-container-wide';
+				break;
+			case 'narrow' :
+				$templateArgs['classes'] = 'xe-container-narrow';
+				break;
+			default :
+				$templateArgs['classes'] = 'xe-container';
 		}
 
 		get_template_part( 'template-parts/page-header/content', 'header', $templateArgs );	
