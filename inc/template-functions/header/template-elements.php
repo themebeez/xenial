@@ -37,10 +37,8 @@ if ( ! function_exists( 'xenial_print_header_element' ) ) {
 			case 'offcanvas_toggle_button' :
 				do_action( 'xenial_header_element_offcanvas_toggle_button' );
 				break;
-			case 'edd_minicart' :
-				do_action( 'xenial_header_element_edd_minicart' );
-				break;
 			default :
+				do_action( "xenial_header_element_{$element}" );
 				break;
 		}
 	}

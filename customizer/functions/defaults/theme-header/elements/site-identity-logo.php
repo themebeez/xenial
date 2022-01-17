@@ -47,6 +47,11 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	                'tablet' => 1.5,
 	                'mobile' => 1.5,
 	            ),
+	            'site_identity_letter_spacing' => array(
+	                'desktop' => '',
+	                'tablet' => '',
+	                'mobile' => ''
+	            ),
 	            'site_identity_font_style' => 'normal',
 	            'site_identity_text_transform' => 'inherit',
 	            'site_description_font_size' => array(
@@ -59,6 +64,12 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	                'tablet' => 1.5,
 	                'mobile' => 1.5,
 	            ),
+	            'site_description_letter_spacing' => array(
+	                'desktop' => '',
+	                'tablet' => '',
+	                'mobile' => ''
+	            ),
+	            'site_description_font_weight' => '400',
 	            'site_description_font_style' => 'normal',
 	            'site_description_text_transform' => 'inherit',
 	            'site_description_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',

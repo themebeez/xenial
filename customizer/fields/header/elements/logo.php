@@ -54,6 +54,7 @@ xenial_tab_field(
 		            'site_identity_google_font' => '',
 		            'site_identity_font_size' => '',
 		            'site_identity_line_height' => '',
+		            'site_identity_letter_spacing' => '',
 		            'site_identity_font_style' => '',
 		            'site_identity_text_transform' => '',
 
@@ -69,6 +70,8 @@ xenial_tab_field(
 	        		'site_description_typo' => '',
 	        		'site_description_font_size' => '',
 		            'site_description_line_height' => '',
+		            'site_description_letter_spacing' => '',
+		            'site_description_font_weight' => '',
 		            'site_description_font_style' => '',
 		            'site_description_text_transform' => '',
 
@@ -426,6 +429,23 @@ xenial_range_control_field(
 );
 
 
+xenial_range_control_field(
+	'site_identity_letter_spacing',
+	array(
+		'priority' => 18,
+		'section' => 'title_tagline',
+		'label' => esc_html__( 'Letter Spacing', 'xenial' ),
+		'input_attrs' => array(
+			'min' => 1, 
+			'max' => 10, 
+			'step' => 1, 
+			'responsive' => true
+		),
+		'defaults' => xenial_get_customize_default( 'site_identity_letter_spacing' )
+	)
+);
+
+
 xenial_radio_button_group_field(
 	'site_identity_font_style',
 	array(
@@ -537,6 +557,35 @@ xenial_range_control_field(
 			'responsive' => true
 		),
 		'defaults' => xenial_get_customize_default( 'site_description_line_height' )
+	)
+);
+
+
+xenial_range_control_field(
+	'site_description_letter_spacing',
+	array(
+		'priority' => 19,
+		'section' => 'title_tagline',
+		'label' => esc_html__( 'Letter Spacing', 'xenial' ),
+		'input_attrs' => array(
+			'min' => 1, 
+			'max' => 10, 
+			'step' => 1, 
+			'responsive' => true
+		),
+		'defaults' => xenial_get_customize_default( 'site_description_letter_spacing' )
+	)
+);
+
+
+xenial_select_field(
+	'site_description_font_weight',
+	array(
+		'priority' => 19,
+		'section' => 'title_tagline',
+		'label' => esc_html__( 'Font Weight', 'xenial' ),
+		'choices' => xenial_get_standard_font_weights(),
+		'default' => xenial_get_customize_default( 'site_description_font_weight' )
 	)
 );
 
