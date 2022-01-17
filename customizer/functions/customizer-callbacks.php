@@ -241,9 +241,9 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
         foreach ( $customize_defaults as $customize_default ) {
 
             $defaults = array_merge( $defaults, $customize_default );
-        }
+        }       
 
-        return apply_filters( 'xenial_customizer_defaults', $defaults );
+        return apply_filters( 'xenial_customize_defaults', $defaults );
     }
 }
 

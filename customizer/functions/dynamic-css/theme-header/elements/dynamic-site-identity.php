@@ -15,6 +15,7 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
 			'font-weight' => '',
 			'font-size' => xenial_get_option( 'site_identity_font_size_desktop' ),
 			'line-height' => xenial_get_option( 'site_identity_line_height_desktop' ),
+			'letter-spacing' => xenial_get_option( 'site_identity_letter_spacing_desktop' ),
 			'font-style' => xenial_get_option( 'site_identity_font_style' ),
 			'text-transform' => xenial_get_option( 'site_identity_text_transform' ),
 			'color' => $site_title_colors['desktop']['initial'],
@@ -55,6 +56,8 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         $site_description_font_desktop = array(
         	'font-size' => xenial_get_option( 'site_description_font_size_desktop' ),
         	'line-height' => xenial_get_option( 'site_description_line_height_desktop' ),
+        	'letter-spacing' => xenial_get_option( 'site_description_letter_spacing_desktop' ),
+        	'font-weight' => xenial_get_option( 'site_description_font_weight' ),
         	'font-style' => xenial_get_option( 'site_description_font_style' ),
         	'text-transform' => xenial_get_option( 'site_description_text_transform' ),
         	'color' => $site_description_colors['desktop']['initial']
@@ -79,6 +82,10 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         	if ( $site_title_font_desktop['line-height'] ) {
         		$css .= '--xe_site_title_line_height: ' . esc_attr( $site_title_font_desktop['line-height'] ) . ';';
         	}
+
+        	if ( $site_title_font_desktop['letter-spacing'] ) {
+        		$css .= '--xe_site_title_letter_spacing: ' . esc_attr( $site_title_font_desktop['letter-spacing'] ) . ';';
+        	}
         	
         	if ( $site_title_font_desktop['font-style'] ) {
         		$css .= '--xe_site_title_font_syle: ' . esc_attr( $site_title_font_desktop['font-style'] ) . ';';
@@ -100,9 +107,13 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         		$css .= '--xe_site_description_font_size: ' . esc_attr( $site_description_font_desktop['font-size'] ) . ';';
         	}
         	
-			$css .= '--xe_site_description_font_weight: normal;';
+        	if ( $site_description_font_desktop['font-weight'] ) {	
+				$css .= '--xe_site_description_font_weight: ' . esc_attr( $site_description_font_desktop['font-weight'] ) . ';';
+			}
 
-			$css .= '--xe_site_description_letter_spacing: 0;';
+			if ( $site_description_font_desktop['letter-spacing'] ) {	
+				$css .= '--xe_site_description_letter_spacing: ' . $site_description_font_desktop['letter-spacing'] . 'px;';
+			}
 
 			if ( $site_description_font_desktop['line-height'] ) {
         		$css .= '--xe_site_description_line_height: ' . esc_attr( $site_description_font_desktop['line-height'] ) . ';';
@@ -124,12 +135,14 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
 
         $site_title_font_tablet = array(
         	'font-size' => xenial_get_option( 'site_identity_font_size_tablet' ),
-			'line-height' => xenial_get_option( 'site_identity_line_height_tablet' )
+			'line-height' => xenial_get_option( 'site_identity_line_height_tablet' ),
+			'letter-spacing' => xenial_get_option( 'site_identity_letter_spacing_tablet' )
         );
 
         $site_description_font_tablet = array(
         	'font-size' => xenial_get_option( 'site_description_font_size_tablet' ),
         	'line-height' => xenial_get_option( 'site_description_line_height_tablet' ),
+        	'letter-spacing' => xenial_get_option( 'site_description_letter_spacing_tablet' ),
         	'color' => $site_description_colors['tablet']['initial']
         );
 
@@ -159,12 +172,14 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
 
         $site_title_font_mobile = array(
         	'font-size' => xenial_get_option( 'site_identity_font_size_mobile' ),
-			'line-height' => xenial_get_option( 'site_identity_line_height_mobile' )
+			'line-height' => xenial_get_option( 'site_identity_line_height_mobile' ),
+			'letter-spacing' => xenial_get_option( 'site_identity_letter_spacing_mobile' )
         );
 
         $site_description_font_mobile = array(
         	'font-size' => xenial_get_option( 'site_description_font_size_mobile' ),
         	'line-height' => xenial_get_option( 'site_description_line_height_mobile' ),
+        	'letter-spacing' => xenial_get_option( 'site_description_letter_spacing_mobile' ),
         	'color' => $site_description_colors['mobile']['initial']
         );
 
