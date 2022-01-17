@@ -24,6 +24,16 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 
 		$header_off_canvas_menu_items_font_colors = xenial_json_decode( xenial_get_option( 'offcanvas_menu_item_color' ) );
 
+
+
+		$header_off_canvas_menu_submenu_toggle_button_background_colors = xenial_json_decode( xenial_get_option( 'offcanvas_menu_submenu_toggle_button_background_color' ) );
+
+		$header_off_canvas_menu_submenu_toggle_button_font_colors = xenial_json_decode( xenial_get_option( 'offcanvas_menu_submenu_toggle_button_label_color' ) );
+
+		$header_off_canvas_menu_submenu_toggle_button_top_offset = xenial_get_option( 'offcanvas_menu_submenu_toggle_button_top_offset' );
+
+		$header_off_canvas_menu_submenu_toggle_button_borders = xenial_json_decode( xenial_get_option( 'offcanvas_menu_submenu_toggle_button_border' ) );
+
 		$css = '';
 
 		$css .= ':root {';
@@ -49,7 +59,19 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 			
 			if ( $header_off_canvas_menu_items_padding['padding-bottom'] ) {
 				$css .= '--xe_canvas_menu_item_bottom_padding: ' . esc_attr( $header_off_canvas_menu_items_padding['padding-bottom'] ) . 'px;';
-			}			
+			}	
+
+			if ( $header_off_canvas_menu_submenu_toggle_button_background_colors['initial'] )	{
+				$css .= '--xe_canvas_menu_submenu_toggle_button_background_color: ' . esc_attr( $header_off_canvas_menu_submenu_toggle_button_background_colors['initial'] ) . ';';
+			}
+
+			if ( $header_off_canvas_menu_submenu_toggle_button_font_colors['initial'] )	{
+				$css .= '--xe_canvas_menu_submenu_toggle_button_color: ' . esc_attr( $header_off_canvas_menu_submenu_toggle_button_font_colors['initial'] ) . ';';
+			}
+
+			if ( $header_off_canvas_menu_submenu_toggle_button_top_offset )	{
+				$css .= '--xe_canvas_menu_submenu_toggle_button_distance: ' . esc_attr( $header_off_canvas_menu_submenu_toggle_button_top_offset ) . 'px;';
+			}	
 
 			if ( $display_header_off_canvas_menu_items_divider ) {
 				$header_off_canvas_menu_items_divider_width = xenial_get_option( 'offcanvas_menu_item_divider_width' );
@@ -115,6 +137,24 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 				$css .= 'color: ' . esc_attr( $header_off_canvas_menu_items_font_colors['active'] ) . ';';
 			$css .= '}';	
 		}
+
+
+
+		$css .= '.xe-offcanvas-navigation .xe-toggle-canvassubmenu {';
+			$css .= xenial_dynamic_border_css( $header_off_canvas_menu_submenu_toggle_button_borders );
+		$css .= '}';
+
+		$css .= '.xe-offcanvas-navigation .xe-toggle-canvassubmenu:hover {';
+			if ( $header_off_canvas_menu_submenu_toggle_button_background_colors['hover'] ) {
+				$css .= 'background-color: ' . esc_attr( $header_off_canvas_menu_submenu_toggle_button_background_colors['hover'] ) . ';';
+			}
+			if ( $header_off_canvas_menu_submenu_toggle_button_font_colors['hover'] ) {
+				$css .= 'color: ' . esc_attr( $header_off_canvas_menu_submenu_toggle_button_font_colors['hover'] ) . ';';
+			}	
+			if ( $header_off_canvas_menu_submenu_toggle_button_borders['border_colors']['hover'] ) {
+				$css .= 'border-color: ' . esc_attr( $header_off_canvas_menu_submenu_toggle_button_borders['border_colors']['hover'] ) . ';';
+			}		
+		$css .= '}';
 
 		return $css;
 	}
