@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Init functions
 	var xeInitAll = function () {
 
-		xeSmoothScroll();
 		xeToolTip();
 		xeToggleComment();
 		xeBackToTopButton();
@@ -25,30 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	xeInitAll();
-
-	// Smooth scroll
-	function xeSmoothScroll() {
-
-		var anchorLinks = document.querySelectorAll('a[href^="#"]');
-		// check if anchor link with # in href exists.
-		if (anchorLinks.length) {
-			// add click event to all anchor links with # in href
-			for (var i = 0; i < anchorLinks.length; i++) {
-				anchorLinks[i].addEventListener('click', function (e) {
-					// prevent default anchor click behavior
-					e.preventDefault();
-					// store hash
-					var hash = this.hash;
-					// animate
-					var scrollTo = document.querySelector(hash);
-					scrollTo.scrollIntoView({
-						behavior: 'smooth',
-						block: 'start'
-					});
-				});
-			}
-		}
-	}
 
 	// Tooltip
 	function xeToolTip() {
