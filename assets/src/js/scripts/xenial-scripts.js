@@ -28,15 +28,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	// Smooth scroll
 	function xeSmoothScroll() {
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
 
-				document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth'
+		var anchorLinks = document.querySelectorAll('a[href^="#"]');
+		// check if anchor link with # in href exists.
+		if (anchorLinks.length) {
+			// add click event to all anchor links with # in href
+			for (var i = 0; i < anchorLinks.length; i++) {
+				anchorLinks[i].addEventListener('click', function (e) {
+					// prevent default anchor click behavior
+					e.preventDefault();
+					// store hash
+					var hash = this.hash;
+					// animate
+					var scrollTo = document.querySelector(hash);
+					scrollTo.scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
 				});
-			});
-		});
+			}
+		}
 	}
 
 	// Tooltip

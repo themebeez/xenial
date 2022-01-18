@@ -195,7 +195,6 @@
 .xe-site-navigation ul li .sub-menu li a:hover,
 .xe-site-navigation ul li .children li a:hover {
 
-    margin-left: 5px;
     color: var(--xe_navigation_dropdown_item_hover_color);
 }
 
@@ -263,7 +262,7 @@
 .xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .sub-menu li:focus > ul,
 .xe-site-navigation[xe-dropdown-animation=FadeIn] ul li .children li:focus > ul {
 
-    animation: xeFadeIn 0.3s 0s ease;
+    animation: xeFadeIn 0.3s 0s ease-in;
 }
 
 .xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li:hover > .sub-menu,
@@ -275,7 +274,7 @@
 .xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .sub-menu li:focus > ul,
 .xe-site-navigation[xe-dropdown-animation=FadeInUp] ul li .children li:focus > ul {
 
-    animation: xeButtonFadeInUp 0.3s 0s ease;
+    animation: xeButtonFadeInUp 0.3s 0s ease-in-out;
 }
 
 .xe-site-navigation[xe-dropdown-animation=FadeInDown] ul li:hover > .sub-menu,
