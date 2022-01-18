@@ -350,10 +350,10 @@
 	Case: content layouts narrow container width
    -------------------------------------------------------------------------- */
 
-   .single .xe-entry-title,
-   .single .xe-entry-categories,
-   .single .hentry .xe-entry-metas,
-   .single .hentry .xe-entry-excerpt {
+   .single .hentry.has-post-thumbnail .xe-entry-title,
+   .single .hentry.has-post-thumbnail .xe-entry-metas,
+   .single .hentry.has-post-thumbnail .xe-entry-excerpt,
+   .single .hentry.has-post-thumbnail .xe-entry-categories {
 
        margin-left: 5%;
        margin-right: 5%;
