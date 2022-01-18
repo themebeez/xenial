@@ -13,7 +13,8 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 
 			// Register post meta fields and save meta fields values.
 			add_action( 'admin_init', array( $this, 'register_post_meta' ) );
-			add_action( 'save_post', array( $this, 'save_theme_post_meta' ) );
+			add_action( 'save_post', array( $this, 'save_theme_elements_post_meta' ) );
+			add_action( 'save_post', array( $this, 'save_page_content_elements_post_meta' ) );
 		}
 
 		/**
@@ -24,31 +25,86 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		public function register_post_meta() {   
 
 		    add_meta_box( 
-		    	'theme_post_meta', 
-		    	__( 'Xenial Options', 'xenial' ), 
-		    	array( $this, 'theme_post_meta_template' ), 
+		    	'xenial_theme_elements_post_meta', 
+		    	esc_html__( 'Xenial Theme Elements', 'xenial' ), 
+		    	array( $this, 'theme_elements_post_meta_template' ), 
+		    	array( 'post', 'page' ), 
+		    	'side', 
+		    	'default' 
+		    );
+
+		    add_meta_box( 
+		    	'xenial_page_content_meta', 
+		    	esc_html__( 'Xenial Page Content Elements', 'xenial' ), 
+		    	array( $this, 'page_content_elements_meta_template' ), 
 		    	array( 'page' ), 
 		    	'side', 
 		    	'default' 
 		    );
 		}
 
-		/**
-		 * Custom Sidebar Post Meta.
-		 *
-		 * @since    1.0.0
-		 */
-		public function theme_post_meta_template() {
+		
 
-			global $post;
+		public function theme_elements_post_meta_template( $post ) {
 
-			$sidebar_position = get_post_meta( $post->ID, 'xenial_post_sidebar_position', true );
+			$header_display_value = get_post_meta( $post->ID, 'xenial_theme_header_display', true );
+
+			$sidebar_position_value = get_post_meta( $post->ID, 'xenial_post_sidebar_position', true );
+
+			$footer_display_value = get_post_meta( $post->ID, 'xenial_theme_footer_display', true );
+
+			$sidebar_positions = $this->get_sidebar_position_choices();
+
+			$display_choices = $this->get_display_choices();
+
+			wp_nonce_field( 'xenial_theme_elements_post_meta_nonce', 'xenial_theme_elements_post_meta_nonce_id' );
+			?>
+			<table class="options xe-pagemeta-table">
+				<tr>
+		        	<td>
+		        		<label for="xenial-default-header-meta"><?php echo esc_html__( 'Display Header', 'xenial' ); ?>
+		        		</label>
+		        		<select name="xenial-default-header-meta" id="xenial-default-header-meta" class="xenial-select-field">
+		        			<?php foreach ( $display_choices as $value => $label ) { ?>
+		        				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, $header_display_value ); ?>><?php echo esc_html( $label ); ?></option>
+		        			<?php } ?>
+		        		</select>
+		        	</td>
+		        </tr>
+
+		        <tr>
+		        	<td>
+		        		<label for="xenial-sidebar-position-meta"><?php echo esc_html__( 'Display Sidebar', 'xenial' ); ?></label>
+			        	<select name="xenial-sidebar-position-meta" id="xenial-sidebar-position-meta" class="xenial-select-field">
+			        		<?php
+			        		foreach( $sidebar_positions as $value => $label ) {
+			        			?>
+			        			<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $sidebar_position_value, $value ); ?>><?php echo esc_html( $label ); ?></option>
+			        			<?php
+			        		}
+			        		?>
+			        	</select>
+		        	</td>
+		        </tr>
+
+		        <tr>
+		        	<td>
+		        		<label for="xenial-default-footer-meta"><?php echo esc_html__( 'Display Footer', 'xenial' ); ?>
+		        		</label>
+		        		<select name="xenial-default-footer-meta" id="xenial-default-footer-meta" class="xenial-select-field">
+		        			<?php foreach ( $display_choices as $value => $label ) { ?>
+		        				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, $footer_display_value ); ?>><?php echo esc_html( $label ); ?></option>
+		        			<?php } ?>
+		        		</select>
+		        	</td>
+		        </tr>
+		    </table>
+		    <?php
+		}
+
+		public function page_content_elements_meta_template( $post ) {
 
 			$content_layout = get_post_meta( $post->ID, 'xenial_post_content_layout', true );
-
-			$theme_header_display_value = get_post_meta( $post->ID, 'xenial_theme_header_display', true );
-
-			$theme_footer_display_value = get_post_meta( $post->ID, 'xenial_theme_footer_display', true );
 
 			$disable_page_header = get_post_meta( $post->ID, 'xenial_post_disable_page_header', true );
 
@@ -60,82 +116,25 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 
 			$disable_featured_img = get_post_meta( $post->ID, 'xenial_post_disable_featured_image', true );
 
-		    wp_nonce_field( 'xenial_post_meta_nonce', 'xenial_post_meta_nonce_id' );
+			$display_choices = $this->get_display_choices();
 
-		    $sidebar_choices = array(
-		    	'default' => esc_html__( 'Default', 'xenial' ),
-		        'right-sidebar' => esc_html__( 'Right Sidebar', 'xenial' ),
-		        'left-sidebar' => esc_html__( 'Left Sidebar', 'xenial' ),
-		        'no-sidebar' => esc_html__( 'No Sidebar', 'xenial' )
-		    );
+			$container_choices = $this->get_container_width_choices();
 
-		    $content_layout_choices = array(
-		    	'default' => esc_html__( 'Default', 'xenial' ),
-		        'wide' => esc_html__( 'Wide', 'xenial' ),
-				'container' => esc_html__( 'Container', 'xenial' ),
-				'narrow' => esc_html__( 'Narrow', 'xenial' )
-		    );
-
-		    $display_choices = array(
-		    	'default' => esc_html__( 'Default', 'xenial' ),
-		    	'enable' => esc_html__( 'Enable', 'xenial' ),
-		    	'disable' => esc_html__( 'Disable', 'xenial' )
-		    );
-		    ?>
-		    <table class="options xe-pagemeta-table">
-		        <tr>
-		        	<td>
-		        		<label for="xenial-sidebar-position-meta"><?php echo esc_html__( 'Theme Sidebar Display', 'xenial' ); ?></label>
-			        	<select name="xenial-sidebar-position-meta" id="xenial-sidebar-position-meta" class="xenial-select-field">
-			        		<?php
-			        		foreach( $sidebar_choices as $key => $choice ) {
-			        			?>
-			        			<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $sidebar_position, $key ); ?>><?php echo esc_html( $choice ); ?></option>
-			        			<?php
-			        		}
-			        		?>
-			        	</select>
-		        	</td>
-		        </tr>
-
+			wp_nonce_field( 'xenial_content_elements_post_meta_nonce', 'xenial_content_elements_post_meta_nonce_id' );
+			?>
+			<table class="options xe-pagemeta-table">
 		        <tr>
 		        	<td>
 		        		<label for="xenial-content-layout-position-meta"><?php echo esc_html__( 'Content Width', 'xenial' ); ?></label>
 			        	<select name="xenial-content-layout-position-meta" id="xenial-content-layout-position-meta" class="xenial-select-field">
 			        		<?php
-			        		foreach( $content_layout_choices as $key => $choice ) {
+			        		foreach( $container_choices as $value => $label ) {
 			        			?>
-			        			<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $content_layout, $key ); ?>><?php echo esc_html( $choice ); ?></option>
+			        			<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $content_layout, $value ); ?>><?php echo esc_html( $label ); ?></option>
 			        			<?php
 			        		}
 			        		?>
 			        	</select>
-		        	</td>
-		        </tr>
-
-		        <tr>
-		        	<td>
-		        		<label for="xenial-default-header-meta"><?php echo esc_html__( 'Theme Header', 'xenial' ); ?>
-		        		</label>
-		        		<select name="xenial-default-header-meta" id="xenial-default-header-meta" class="xenial-select-field">
-		        			<?php foreach ( $display_choices as $value => $label ) { ?>
-		        				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, $theme_header_display_value ); ?>><?php echo esc_html( $label ); ?></option>
-		        			<?php } ?>
-		        		</select>
-			        	
-		        	</td>
-		        </tr>
-
-		        <tr>
-		        	<td>
-		        		<label for="xenial-default-footer-meta"><?php echo esc_html__( 'Theme Footer', 'xenial' ); ?>
-		        		</label>
-		        		<select name="xenial-default-footer-meta" id="xenial-default-footer-meta" class="xenial-select-field">
-		        			<?php foreach ( $display_choices as $value => $label ) { ?>
-		        				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, $theme_header_display_value ); ?>><?php echo esc_html( $label ); ?></option>
-		        			<?php } ?>
-		        		</select>
-			        	
 		        	</td>
 		        </tr>
 
@@ -153,9 +152,9 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        		<label for="xenial-page-header-width-meta"><?php echo esc_html__( 'Page Header Width', 'xenial' ); ?></label>
 			        	<select name="xenial-page-header-width-meta" id="xenial-page-header-width-meta" class="xenial-select-field">
 			        		<?php
-			        		foreach( $content_layout_choices as $key => $choice ) {
+			        		foreach( $container_choices as $value => $label ) {
 			        			?>
-			        			<option value="<?php echo esc_attr( $key ); ?>" <?php selected( $page_header_width, $key ); ?>><?php echo esc_html( $choice ); ?></option>
+			        			<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $page_header_width, $value ); ?>><?php echo esc_html( $label ); ?></option>
 			        			<?php
 			        		}
 			        		?>
@@ -193,18 +192,42 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        		</label>
 		        	</td>
 		        </tr> 
-		    </table>   
-		    <?php   
+		    </table>
+			<?php
 		}
 
-		/**
-		 * Save Custom Sidebar Position Post Meta.
-		 *
-		 * @since    1.0.0
-		 */
-		public function save_theme_post_meta() {
+		public function save_theme_elements_post_meta( $post_id ) { 
 
-		    global $post;  
+		    // Bail if we're doing an auto save
+		    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		        return;
+		    }
+		    
+		    // if our nonce isn't there, or we can't verify it, bail
+		    if ( ! isset( $_POST['xenial_theme_elements_post_meta_nonce_id'] ) || ! wp_verify_nonce( sanitize_key( $_POST['xenial_theme_elements_post_meta_nonce_id'] ), 'xenial_theme_elements_post_meta_nonce' ) ) {
+		        return;
+		    }
+		    
+		    // if our current user can't edit this post, bail
+		    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		        return;
+		    } 
+
+		    if ( isset( $_POST['xenial-sidebar-position-meta'] ) ) {
+
+				update_post_meta( $post_id, 'xenial_post_sidebar_position', sanitize_text_field( wp_unslash( $_POST['xenial-sidebar-position-meta'] ) ) ); 
+			}
+
+			if ( isset( $_POST['xenial-default-header-meta'] ) ) {
+				update_post_meta( $post_id, 'xenial_theme_header_display', sanitize_text_field( wp_unslash( $_POST['xenial-default-header-meta'] ) ) ); 
+			}
+
+			if ( isset( $_POST['xenial-default-footer-meta'] ) ) {
+				update_post_meta( $post_id, 'xenial_theme_footer_display', sanitize_text_field( wp_unslash( $_POST['xenial-default-footer-meta'] ) ) ); 
+			}
+		}
+
+		public function save_page_content_elements_post_meta( $post_id ) { 
 
 		    // Bail if we're doing an auto save
 		    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -213,49 +236,63 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		    }
 		    
 		    // if our nonce isn't there, or we can't verify it, bail
-		    if ( ! isset( $_POST['xenial_post_meta_nonce_id'] ) || ! wp_verify_nonce( sanitize_key( $_POST['xenial_post_meta_nonce_id'] ), 'xenial_post_meta_nonce' ) ) {
+		    if ( ! isset( $_POST['xenial_content_elements_post_meta_nonce_id'] ) || ! wp_verify_nonce( sanitize_key( $_POST['xenial_content_elements_post_meta_nonce_id'] ), 'xenial_content_elements_post_meta_nonce' ) ) {
 
 		        return;
 		    }
 		    
 		    // if our current user can't edit this post, bail
-		    if ( ! current_user_can( 'edit_post', $post->ID ) ) {
-
+		    if ( ! current_user_can( 'edit_post', $post_id ) ) {
 		        return;
 		    } 
 
-		    if ( isset( $_POST['xenial-sidebar-position-meta'] ) ) {
-
-				update_post_meta( $post->ID, 'xenial_post_sidebar_position', sanitize_text_field( wp_unslash( $_POST['xenial-sidebar-position-meta'] ) ) ); 
-			}
-
 			if ( isset( $_POST['xenial-content-layout-position-meta'] ) ) {
+				update_post_meta( $post_id, 'xenial_post_content_layout', sanitize_text_field( wp_unslash( $_POST['xenial-content-layout-position-meta'] ) ) ); 
+			}			
 
-				update_post_meta( $post->ID, 'xenial_post_content_layout', sanitize_text_field( wp_unslash( $_POST['xenial-content-layout-position-meta'] ) ) ); 
-			}
-
-			if ( isset( $_POST['xenial-default-header-meta'] ) ) {
-				update_post_meta( $post->ID, 'xenial_theme_header_display', sanitize_text_field( wp_unslash( $_POST['xenial-default-header-meta'] ) ) ); 
-			}
-
-			if ( isset( $_POST['xenial-default-footer-meta'] ) ) {
-				update_post_meta( $post->ID, 'xenial_theme_footer_display', sanitize_text_field( wp_unslash( $_POST['xenial-default-footer-meta'] ) ) ); 
-			}
-			
-
-			update_post_meta( $post->ID, 'xenial_post_disable_page_header', ( ( isset( $_POST['xenial-page-header-meta']  ) ) ? true : false ) );
+			update_post_meta( $post_id, 'xenial_post_disable_page_header', ( ( isset( $_POST['xenial-page-header-meta']  ) ) ? true : false ) );
 
 			if ( isset( $_POST['xenial-page-header-width-meta'] ) ) {
-				update_post_meta( $post->ID, 'xenial_page_header_width', sanitize_text_field( wp_unslash( $_POST['xenial-page-header-width-meta'] ) ) );
+				update_post_meta( $post_id, 'xenial_page_header_width', sanitize_text_field( wp_unslash( $_POST['xenial-page-header-width-meta'] ) ) );
 			}
 
-			update_post_meta( $post->ID, 'xenial_post_disable_page_title', ( ( isset( $_POST['xenial-page-title-meta']  ) ) ? true : false ) );
+			update_post_meta( $post_id, 'xenial_post_disable_page_title', ( ( isset( $_POST['xenial-page-title-meta']  ) ) ? true : false ) );
 
 			if ( isset( $_POST['xenial-breadcrumb-meta'] ) ) {
-				update_post_meta( $post->ID, 'xenial_breadcrumbs_display', sanitize_text_field( wp_unslash( $_POST['xenial-breadcrumb-meta'] ) ) );
+				update_post_meta( $post_id, 'xenial_breadcrumbs_display', sanitize_text_field( wp_unslash( $_POST['xenial-breadcrumb-meta'] ) ) );
 			}		
 
-			update_post_meta( $post->ID, 'xenial_post_disable_featured_image', ( ( isset( $_POST['xenial-featured-img-meta']  ) ) ? true : false ) );
+			update_post_meta( $post_id, 'xenial_post_disable_featured_image', ( ( isset( $_POST['xenial-featured-img-meta']  ) ) ? true : false ) );
+		}
+
+
+		public function get_sidebar_position_choices() {
+
+			return array(
+		    	'default' 		=> esc_html__( 'Default', 'xenial' ),
+		        'right-sidebar' => esc_html__( 'Right Sidebar', 'xenial' ),
+		        'left-sidebar' 	=> esc_html__( 'Left Sidebar', 'xenial' ),
+		        'no-sidebar' 	=> esc_html__( 'No Sidebar', 'xenial' )
+		    );
+		}
+
+		public function get_container_width_choices() {
+
+			return array(
+		    	'default' 		=> esc_html__( 'Default', 'xenial' ),
+		        'wide' 			=> esc_html__( 'Wide', 'xenial' ),
+				'container' 	=> esc_html__( 'Container', 'xenial' ),
+				'narrow' 		=> esc_html__( 'Narrow', 'xenial' )
+		    );
+		}
+
+		public function get_display_choices() {
+
+			return array(
+		    	'default' 		=> esc_html__( 'Default', 'xenial' ),
+		    	'enable' 		=> esc_html__( 'Enable', 'xenial' ),
+		    	'disable' 		=> esc_html__( 'Disable', 'xenial' )
+		    );
 		}
 	}
 endif;

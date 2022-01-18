@@ -5,9 +5,9 @@ if ( ! function_exists( 'xenial_theme_header_template' ) ) {
 
 	function xenial_theme_header_template() {
 
-		$disable_theme_header = xenial_get_option( 'disable_theme_header' );
+		$is_header_enabled = xenial_is_theme_header_active();
 
-		if ( $disable_theme_header ) {
+		if ( $is_header_enabled == false ) {
 			return;
 		}		
 
