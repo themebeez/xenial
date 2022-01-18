@@ -15,7 +15,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 
 			parent::__construct( $manager, $id, $args );
 
-			$this->is_responsive = $args['input_attrs']['is_responsive'];
+			$this->is_responsive = isset( $args['input_attrs']['is_responsive'] ) ? $args['input_attrs']['is_responsive'] : false;
 		}
 
 		public function enqueue() {
