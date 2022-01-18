@@ -75,7 +75,11 @@
       border-color: var(--xe_edd_message_alert_color);
    }
    
+   .eddr-notice {
 
+      text-align: left;
+      margin: 5px 0;
+   }
 
 /* -------------------------------------------------------------------------- 
 	#. EDD Buttons
@@ -636,11 +640,12 @@
             border-style: solid;
             border-color: var(--xe_primary_color);
             border-radius: 0 0 3px 3px;
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             cursor: pointer;
             color: var(--xe_primary_color);
             background-color: transparent;
+            @include transation_delay_dymanic(0.3s);
 
             &::before {
 
@@ -656,6 +661,7 @@
                border-style: solid;
                border-radius: 50% 50% 0 0;
                transform: translateX(-50%);
+               @include transation_delay_dymanic(0.3s);
             }
 
             .items-count {
@@ -759,6 +765,11 @@
                   font-weight: normal;
                   font-style: italic;
                   line-height: 1.3em;
+
+                  .eddr-notice {
+
+                     text-align: left;
+                  }
                }
             }
 
@@ -766,7 +777,7 @@
 
                width: 25px;
 
-               .edd-remove-from-cart {
+               .xe-edd-remove-from-cart {
 
                   align-items: center;
                   justify-content: center;

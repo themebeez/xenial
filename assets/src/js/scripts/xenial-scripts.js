@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Init functions
 	var xeInitAll = function () {
 
-		xeSmoothScroll();
 		xeToolTip();
 		xeToggleComment();
 		xeBackToTopButton();
@@ -25,19 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	xeInitAll();
-
-	// Smooth scroll
-	function xeSmoothScroll() {
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-
-				document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth'
-				});
-			});
-		});
-	}
 
 	// Tooltip
 	function xeToolTip() {
