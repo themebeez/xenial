@@ -17,8 +17,10 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			'text-transform' => xenial_get_option( 'header_secondary_menu_text_transform' )
 		);
 
+		$css = '';
+
 		if ( $header_secondary_menu_items_spacing_desktop ) {
-			$css = '#menu-secondary-menu {';
+			$css .= '#menu-secondary-menu {';
 				$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_desktop ) . 'px;';
 			$css .= '}';
 		}		
