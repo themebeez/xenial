@@ -15,9 +15,7 @@ if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
 			'classes' => ''
 		);
 
-		$disable_page_header_meta = get_post_meta( get_the_ID(), 'xenial_post_disable_page_header', true );
-
-		if ( $disable_page_header_meta == true ) {
+		if ( xenial_page_has_header_enabled() == false ) {
 			return;
 		}
 
@@ -57,25 +55,7 @@ if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
 			$template_args['display_title'] = false;
 		}
 
-		$display_breadcrumbs = false;
-
-		$display_breadcrumbs_meta = get_post_meta( get_the_ID(), 'xenial_breadcrumbs_display', true );
-
-		if ( $display_breadcrumbs_meta ) {
-			switch ( $display_breadcrumbs_meta ) {
-				case 'default' :
-					$display_breadcrumbs = xenial_get_option( 'page_single_display_breadcrumbs' );
-					$template_args['display_breadcrumbs'] = ( $display_breadcrumbs == true ) ? true : false; 
-					break;
-				default :
-					$display_breadcrumbs = $display_breadcrumbs_meta;
-					$template_args['display_breadcrumbs'] = ( $display_breadcrumbs == 'enable' ) ? true : false;
-					break;
-			}
-		} else {
-			$display_breadcrumbs = xenial_get_option( 'page_single_display_breadcrumbs' );
-			$template_args['display_breadcrumbs'] = ( $display_breadcrumbs == true ) ? true : false;
-		}		
+		$template_args['display_breadcrumbs'] = ( xenial_page_header_has_breadcrumbs_enabled() ) ? true : false;		
 
 		$template_args = apply_filters( 'xenial_filter_page_header_template_arguments', $template_args );		
 

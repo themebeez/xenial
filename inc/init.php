@@ -12,6 +12,8 @@ require $xenial_helper_functions_path . '/helpers-breadcrumbs.php';
 
 require $xenial_helper_functions_path . '/helpers-theme-header.php';
 
+require $xenial_helper_functions_path . '/helpers-page.php';
+
 
 $xenial_template_functions_path = XENIAL_THEME_DIR . '/inc/template-functions';
 

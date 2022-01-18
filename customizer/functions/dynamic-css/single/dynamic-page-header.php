@@ -33,7 +33,7 @@ if ( ! function_exists( 'xenial_dynamic_page_header_css' ) ) {
 		);
 
 
-		$display_breadcrumbs = xenial_get_option( 'page_single_display_breadcrumbs' );
+		$display_breadcrumbs = xenial_page_header_has_breadcrumbs_enabled();
 
 		$breadcrumbs_font_color = xenial_json_decode( xenial_get_option( 'page_single_header_breadcrumb_text_color' ) );
 
