@@ -25,7 +25,7 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 
 		    add_meta_box( 
 		    	'theme_post_meta', 
-		    	__( 'Post Options', 'xenial' ), 
+		    	__( 'Xenial Options', 'xenial' ), 
 		    	array( $this, 'theme_post_meta_template' ), 
 		    	array( 'page' ), 
 		    	'side', 
@@ -82,7 +82,7 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		    	'disable' => esc_html__( 'Disable', 'xenial' )
 		    );
 		    ?>
-		    <table border="0" class="options" cellspacing="5" cellpadding="5">
+		    <table class="options xe-pagemeta-table">
 		        <tr>
 		        	<td>
 		        		<label for="xenial-sidebar-position-meta"><?php echo esc_html__( 'Theme Sidebar Display', 'xenial' ); ?></label>
@@ -96,10 +96,6 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 			        		?>
 			        	</select>
 		        	</td>
-		        </tr>
-
-		        <tr>
-		        	<td><hr/></td>
 		        </tr>
 
 		        <tr>
@@ -118,10 +114,6 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        </tr>
 
 		        <tr>
-		        	<td><hr/></td>
-		        </tr>
-
-		        <tr>
 		        	<td>
 		        		<label for="xenial-default-header-meta"><?php echo esc_html__( 'Theme Header', 'xenial' ); ?>
 		        		</label>
@@ -135,10 +127,6 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        </tr>
 
 		        <tr>
-		        	<td><hr/></td>
-		        </tr>
-
-		        <tr>
 		        	<td>
 		        		<label for="xenial-default-footer-meta"><?php echo esc_html__( 'Theme Footer', 'xenial' ); ?>
 		        		</label>
@@ -149,10 +137,6 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        		</select>
 			        	
 		        	</td>
-		        </tr>
-
-		        <tr>
-		        	<td><hr/></td>
 		        </tr>
 
 		        <tr>
@@ -199,11 +183,7 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        		</select>
 			        	
 		        	</td>
-		        </tr>
-
-		        <tr>
-		        	<td><hr/></td>
-		        </tr>		       
+		        </tr>	       
 
 		        <tr>
 		        	<td>
