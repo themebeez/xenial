@@ -45,7 +45,7 @@
       background-color: var(--xe_edd_message_background_color);
    }
 
-   .edd-alert p {
+   .edd-alert .edd_error {
 
       @include flex();
       align-items: center;
@@ -53,7 +53,7 @@
       width: 100%;
    }
 
-   .edd-alert p::before,
+   .edd-alert .edd_error::before,
    .edd-alert.edd-alert-warn::before {
 
       content: "\e6b8";
@@ -79,6 +79,11 @@
 
       text-align: left;
       margin: 5px 0;
+   }
+
+   .edd-alert .edd_error {
+
+      padding: 0;
    }
 
 /* -------------------------------------------------------------------------- 
@@ -449,6 +454,58 @@
 
       float: none;
       max-height: 32px;
+   }
+
+   // Discount code
+
+   #edd_checkout_form_wrap #edd_show_discount,
+   #edd_checkout_form_wrap #edd_final_total_wrap,
+   #edd_checkout_form_wrap #edd-discount-code-wrap {
+
+      border-color: var(--xe_border_color);
+   }
+
+   #edd_checkout_form_wrap #edd_show_discount {
+
+      color: var(--xe_base_text_color);
+      margin: 0;
+      padding: 10px 15px;
+      background: transparent;
+   }
+
+   #edd_checkout_form_wrap #edd-discount-code-wrap, 
+   #edd_checkout_form_wrap #edd_final_total_wrap, 
+   #edd_checkout_form_wrap #edd_show_discount {
+
+      border-color: var(--xe_border_color);
+      padding: 20px;
+      border-radius: 5px;
+   }
+
+   #edd_checkout_form_wrap #edd_show_discount {
+
+      padding: 10px 15px;
+      border-radius: 3px;
+   }
+
+   #edd_checkout_form_wrap .edd-discount-code-field-wrap {
+
+      @include flex();
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+   }
+
+   #edd_checkout_form_wrap .edd-discount-code-field-wrap input.edd-input {
+
+      flex: 1;
+   }
+
+   #edd_checkout_form_wrap .edd-discount-code-field-wrap input.edd-submit {
+
+      display: inline-flex;
+      padding: 0 20px;
+      margin: 0 0 0 10px;
    }
 
    // payment methord
