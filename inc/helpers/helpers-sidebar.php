@@ -34,7 +34,7 @@ if ( ! function_exists( 'xenial_get_page_sidebar_position' ) ) {
 
 		$global_sidebar_position = xenial_get_option( 'sidebar_default_position' );
 
-		$sidebar_position_post_meta = get_post_meta( 'xenial_post_sidebar_position', true );
+		$sidebar_position_post_meta = get_post_meta( get_the_ID(), 'xenial_post_sidebar_position', true );
 
 		$sidebar_position_customizer = xenial_get_option( 'sidebar_page_single_position' );
 			
@@ -58,7 +58,7 @@ if ( ! function_exists( 'xenial_get_post_sidebar_position' ) ) {
 
 		$global_sidebar_position = xenial_get_option( 'sidebar_default_position' );
 
-		$sidebar_position_post_meta = get_post_meta( 'xenial_post_sidebar_position', true );
+		$sidebar_position_post_meta = get_post_meta( get_the_ID(), 'xenial_post_sidebar_position', true );
 
 		$sidebar_position_customizer = xenial_get_option( 'sidebar_post_single_position' );
 			

@@ -8,43 +8,7 @@ if ( ! function_exists( 'xenial_get_header_general_customize_defaults' ) ) {
 		return apply_filters(
 			'xenial_header_general_customize_defaults_filter',
 			array(
-				'theme_header_elements' => '{
-				  	"desktop": {
-					    "top": {
-					      "left": null,
-					      "middle": null,
-					      "right": null
-					    },
-					    "middle": {
-					      "left": null,
-					      "middle": null,
-					      "right": null
-					    },
-					    "bottom": {
-					      "left": null,
-					      "middle": null,
-					      "right": null
-					    }
-				  	},
-					"mobile": {
-					    "top": {
-					      "left": null,
-					      "middle": null,
-					      "right": null
-					    },
-					    "middle": {
-					      "left": null,
-					      "middle": null,
-					      "right": null
-					    },
-					    "bottom": {
-					      "left": null,
-					      "middle": null,
-					      "right": null
-					    },
-					    "offcanvas": null
-					}
-				}',
+				'theme_header_elements' => '{"desktop":{"top":{"left":null,"middle":null,"right":null},"middle":{"left":["site_identity"],"middle":null,"right":["menu_1"]},"bottom":{"left":null,"middle":null,"right":null}},"mobile":{"top":{"left":null,"middle":null,"right":null},"middle":{"left":null,"middle":null,"right":null},"bottom":{"left":null,"middle":null,"right":null},"offcanvas":null}}',
 				'header_margin' => array(
 					'desktop_top' => 0,
 	                'desktop_right' => 0,

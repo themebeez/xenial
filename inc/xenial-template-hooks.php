@@ -120,7 +120,7 @@ add_action( 'xenial_single_content_footer', 'xenial_single_content_footer_templa
 add_action( 'xenial_single_page_header', 'xenial_single_page_header_template' );
 add_action( 'xenial_page_title', 'xenial_page_title_template' );
 
-add_action( 'xenial_scroll_top', 'xenial_scroll_top_template' );
+add_action( 'wp_body_open', 'xenial_scroll_top_template' );
 
 
 add_action( 'xenial_header_element_edd_minicart', 'xenial_header_element_edd_minicart_template' );

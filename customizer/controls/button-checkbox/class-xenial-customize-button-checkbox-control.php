@@ -46,10 +46,12 @@ if ( ! class_exists( 'Xenial_Customize_Button_Checkbox_Control' ) ) {
  		 */
   		public function render_content() {
 
-  			$values = $this->value();
+  			$saved_values = $this->value();
 
-  			if ( $values ) {
-  				$values = explode( ',', $values );
+  			$values = array();
+
+  			if ( $saved_values ) {
+  				$values = explode( ',', $saved_values );
   			}
 
   			$item = isset( $this->input_attrs['item'] ) ? $this->input_attrs['item'] : 'text';
@@ -72,7 +74,7 @@ if ( ! class_exists( 'Xenial_Customize_Button_Checkbox_Control' ) ) {
  					<?php 
  				} 
  				?>
-				<input type="hidden" id="<?php echo esc_attr( $this->id ); ?>" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $values ); ?>" class="customize-control-multi-button-checkbox" <?php $this->link(); ?> />
+				<input type="hidden" id="<?php echo esc_attr( $this->id ); ?>" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $saved_values ); ?>" class="customize-control-multi-button-checkbox" <?php $this->link(); ?> />
 				<div class="button-checkboxes">
 					<?php 
 	 				if ( $choices ) {

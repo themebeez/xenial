@@ -10,7 +10,7 @@ if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' 
             'post_single_breadcrumb_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
 
             'post_single_content_width' => 'container',
-            'post_single_content_elements' => array( 'title', 'image', 'categories', 'tags', 'meta', 'updated_date' ),
+            'post_single_content_elements' => array( 'title', 'image', 'categories', 'tags', 'meta', 'updated_date', 'content' ),
             'post_single_meta_elements' => array( 'author', 'date', 'comment', 'categories' ),
             'post_single_show_icons_in_post_meta' => false,
 

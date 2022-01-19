@@ -50,8 +50,7 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 		
 		public function display_header_builder() {
 
-			$headerElements = get_theme_mod( 'theme_header_elements', xenial_get_customize_default( 'header_elements' ) );
-			$headerElements = json_decode( $headerElements, true ); 
+			$headerElements = xenial_json_decode( xenial_get_option( 'theme_header_elements' ) );
 
 			$desktop_header_elements = $headerElements['desktop']; 
 

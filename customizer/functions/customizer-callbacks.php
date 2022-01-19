@@ -198,7 +198,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'miscellaneous'             => xenial_get_customizer_defaults_miscellaneous_values(),
             'breadcrumbs'               => xenial_get_customizer_default_breadcrumbs_values(),
             'archive_template'          => xenial_get_customizer_default_archive_page_values(),
-            'page_template'             => xenial_get_customizer_default_post_single_page_values(),
+            'page_template'             => xenial_get_customizer_defaults_page_single_values(),
             'post_template'             => xenial_get_customizer_default_post_single_page_values(),
             'header_general'            => xenial_get_header_general_customize_defaults(),
             'header_top'                => xenial_theme_header_top_section_defaults(),
