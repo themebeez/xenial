@@ -18,10 +18,6 @@ if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
 
 		$button_background_color = xenial_json_decode( xenial_get_option( 'btn_bg_color' ) );
 
-		$button_hover_label_color = xenial_json_decode( xenial_get_option( 'btn_txt_hover_color' ) );
-
-		$button_hover_background_color = xenial_json_decode( xenial_get_option( 'btn_bg_hover_color' ) );
-
 		$global_border_color = xenial_json_decode( xenial_get_option( 'border_color' ) );
 
 		$global_input_field_border_color = xenial_json_decode( xenial_get_option( 'input_fields_border_color' ) );
@@ -60,12 +56,12 @@ if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
 				$css .= '--xe_button_background_color: ' . esc_attr( $button_background_color['initial'] ) . ';';
 			}
 
-			if ( $button_hover_label_color['initial'] ) {
-				$css .= '--xe_button_hover_text_color: ' . esc_attr( $button_hover_label_color['initial'] ) . ';';
+			if ( $button_label_color['hover'] ) {
+				$css .= '--xe_button_hover_text_color: ' . esc_attr( $button_label_color['hover'] ) . ';';
 			}
 
-			if ( $button_hover_background_color['initial'] ) {
-				$css .= '--xe_button_hover_background_color: ' . esc_attr( $button_hover_background_color['initial'] ) . ';';
+			if ( $button_background_color['hover'] ) {
+				$css .= '--xe_button_hover_background_color: ' . esc_attr( $button_background_color['hover'] ) . ';';
 			}
 
 			if ( $global_border_color['initial'] ) {

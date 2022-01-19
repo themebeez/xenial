@@ -16,9 +16,9 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	                'mobile' => ''
 	            ),
 	            'display_site_title' => true,
-	            'site_title_visibility' => 'default',
+	            'site_title_visibility' => '',
 	            'display_site_description' => true,
-	            'site_description_visibility' => 'default',
+	            'site_description_visibility' => '',
 	            'logo_position' => 'left',
 	            'site_identity_alignment' => array(
 	                'desktop' => 'left',

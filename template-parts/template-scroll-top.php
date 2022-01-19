@@ -13,5 +13,4 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
 }
 ?>
-
-    <button class="xe-button circle" id="xe-backtotop-button"><i class="ti-angle-up"></i></button><!-- .xe-button -->
+<button class="xe-button circle <?php echo esc_attr( implode( ' ', $args['classes'] ) ); ?>" id="xe-backtotop-button"><i class="ti-angle-up"></i></button><!-- .xe-button -->

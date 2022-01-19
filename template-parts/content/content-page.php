@@ -19,10 +19,10 @@ $xenialPageContents = ( xenial_get_option( 'page_single_content_elements' ) ) ? 
     <?php // do_action( 'xenial_page_title' ); ?>
     <?php 
     if ( in_array( 'image', $xenialPageContents ) ) {
-        do_action( 'xenial_single_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_page_size_thumbnail_size', 'full' ) ) );
+        if ( xenial_page_has_featured_image_enabled() ) {
+            do_action( 'xenial_single_post_thumbnail', array( 'thumbnail_size' => apply_filters( 'xenial_page_size_thumbnail_size', 'full' ) ) );
+        }
     }
     ?>
-    <div class="xe-entry-content">
-        <?php do_action( 'xenial_post_content' ); ?>
-    </div><!-- .xe-entry-content -->
+    <?php do_action( 'xenial_post_content' ); ?>
 </article><!-- #post-<?php the_ID(); ?> -->

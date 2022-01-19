@@ -76,25 +76,18 @@ $wp_customize->add_control(
 	) 
 );
 
-
-$wp_customize->add_setting( 
-	'scroll_top_btn_device_visibility',
-	array(
-		'default' => $xenial_customizer_defaults['scroll_top_btn_device_visibility'],
-		'sanitize_callback' => 'xenial_sanitize_select'
-	) 
-);
-
-$wp_customize->add_control( 
-	new Xenial_Customize_SlimSelect_Control( 
-		$wp_customize,
-		'scroll_top_btn_device_visibility',
-		array(
-			'label' => esc_html__( 'Device Visibility', 'xenial' ),
-			'section' => 'xenial_miscellaneous',
-			'choices' => xenial_get_device_visibility(),
-			'priority' => 12,
-			'active_callback' => 'xenial_is_scroll_top_button_enabled'
-		) 
+xenial_button_checkbox_field(
+	'scroll_top_button_visibility',
+array(
+		'priority' => 12,
+		'section' => 'xenial_miscellaneous',
+		'label' => esc_html__( 'Hide On Devices', 'xenial' ),
+		'item' => 'icon',
+		'choices' => array(
+			'desktop' => 'dashicons-desktop',
+			'tablet' => 'dashicons-tablet',
+			'mobile' => 'dashicons-smartphone'
+		),
+		'default' => xenial_get_customize_default( 'scroll_top_button_visibility' )
 	)
 );

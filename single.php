@@ -8,6 +8,8 @@
  */
 
 get_header();
+
+$display_featured_image_meta = get_post_meta( get_the_ID(), 'xenial_post_disable_featured_image', true );
 ?>
 <?php do_action( 'xenial_single_header' ); ?>
 <div class="<?php xenial_post_single_content_container_classes(); ?>">
