@@ -9,7 +9,6 @@
     margin-bottom: 30px;
 }
 
-
 /* -------------------------------------------------------------------------- 
 	#. Search
    -------------------------------------------------------------------------- */
@@ -21,28 +20,92 @@
 
 .wp-block-search .wp-block-search__button  {
 
-    position: absolute;
-    top: 4px;
-    right: 5px;
-    font-size: 0;
-    width: 40px;
-    height: 40px;
-    padding: 0;
+    padding: 0 20px;
+    color: var(--xe_button_text_color);
+    border-style: var(--xe_button_border_style);
+    border-width: var(--xe_button_border_width);
+    border-color: var(--xe_button_border_color); 
+    background-color: var(--xe_button_background_color);
     border-radius: 3px;
 }
 
-.wp-block-search .wp-block-search__button::after {
+.wp-block-search .wp-block-search__button:hover {
+
+    color: var(--xe_button_hover_text_color);
+    border-color: var(--xe_button_hover_border_color);
+    background-color: var(--xe_seconary_color);
+}
+
+.wp-block-search .wp-block-search__button.has-icon {
+
+    font-size: 0;
+    width: 40px;
+    height: 40px;
+}
+
+.wp-block-search .wp-block-search__button.has-icon::after {
 
     content: "\e610";
-    font-size: 14px;
+    font-size: 18px;
     font-family: var(--xe_iconfont);
+    position: absolute;
+    left: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.wp-block-search input.wp-block-search__input {
+.wp-block-search .wp-block-search__button.has-icon svg {
 
-    padding-right: 55px;
+    display: none;
 }
 
+.wp-block-search .wp-block-search__input,
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+
+    border-color: var(--xe_inputs_border_color);
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+
+    border-radius: 3px;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input {
+
+    padding: 10px 0 10px 15px;
+    border-color: transparent;
+}
+
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__input:focus {
+
+    box-shadow: none;
+    outline: 1px solid var(--xe_inputs_border_color);
+}
+
+.wp-block-search.wp-block-search__button-outside .wp-block-search__button.has-icon,
+.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper .wp-block-search__button {
+
+    padding: 0 15px;
+}
+
+.wp-block-search.wp-block-search__button-outside .wp-block-search__button.has-icon {
+
+    position: relative;
+    width: 45px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.wp-block-search.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__inside-wrapper {
+
+    align-items: center;
+}
+
+.wp-block-search.wp-block-search__button-inside.wp-block-search__icon-button .wp-block-search__inside-wrapper .wp-block-search__button.has-icon {
+
+    position: relative;
+    margin-left: 10px; 
+}
 
 /* -------------------------------------------------------------------------- 
 	#. Tag cloud
@@ -160,6 +223,16 @@
 .widget_block .wp-block-categories li:last-child {
 
     padding-bottom: 0;
+}
+
+.widget_block .wp-block-categories li a {
+
+    color: var(--xe_base_text_color);
+}
+
+.widget_block .wp-block-categories li a:hover {
+
+    color: var(--xe_base_link_hover_color);
 }
 
 
