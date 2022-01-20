@@ -1,10 +1,12 @@
 <?php 
- 
+ if ( $args['display-section'] == false ) {
+	return;
+}
 ?>
 <div class="xe-middle-header">
 	<div class="<?php echo esc_attr( implode( ' ', $args['container_classes'] ) ); ?>">
 		<div class="xe-header-inner">
-			<div class="xe-flex xe-grid xe-grid-columns-three xe-flex-center">
+			<div class="<?php echo esc_attr( implode( ' ', $args['col-container-classes'] ) ); ?>">
 				<?php 
 				if ( $args['left_column']['elements'] ) { 
 					?>
