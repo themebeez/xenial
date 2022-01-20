@@ -10,6 +10,50 @@ xenial_section_field(
 );
 
 
+xenial_tab_field(
+	'xenial_header_general_tab',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_header_general',
+		'tabs' => xenial_get_tab_control_2_labels(),
+		'controls' => array(
+			'tab_1' => apply_filters( 
+	        	'xenial_header_general_tab_1_controls', 
+	        	array(
+	        		'theme_header_elements' => '',
+	        	) 
+	        ),
+	        'tab_2' => apply_filters( 
+	        	'xenial_header_general_tab_2_controls', 
+	        	array(	
+	        		'header_spacing_field_wrapper' => '',
+	        		'header_margin' => '',
+	        		'header_field_divider_1' => '',
+	        		'header_padding' => '',
+	        		'header_background_fields_wrapper' => '',
+	        		'header_background_type' => '',
+	        		'header_field_divider_2' => '',
+	        		'header_background_color' => '',
+	        		'header_field_divider_3' => '',
+	        		'header_gradient_background_color_1' => '',
+	        		'header_gradient_location_1' => '',
+	        		'header_gradient_background_color_2' => '',
+	        		'header_gradient_location_2' => '',
+	        		'header_gradient_type' => '',
+	        		'header_gradient_linear_angle' => '',
+	        		'header_field_divider_4' => '',
+	        		'header_background_image' => '',
+	        		'header_image_background_repeat' => '',
+	        		'header_image_background_size' => '',
+	        		'header_image_background_position' => '',
+	        		'header_image_background_attachment' => ''
+	        	) 
+	        )
+		)
+	)
+);
+
+
 xenial_text_field(
 	'theme_header_elements',
 	array(

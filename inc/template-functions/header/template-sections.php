@@ -48,7 +48,9 @@ if ( ! function_exists( 'xenial_header_top_row_template' ) ) {
 
 		$row_container = xenial_get_option( 'header_top_section_width' );
 
-		$template_args['container_classes'][] = xenial_get_row_container_class( $row_container );  
+		$template_args['container_classes'][] = xenial_get_row_container_class( $row_container ); 
+
+		$template_args = array_merge( $template_args, xenial_get_header_section_args( $row_elements ) );
 
 		$template_args = apply_filters( 'xenial_header_top_row_template_args', $template_args );
 
@@ -89,6 +91,8 @@ if ( ! function_exists( 'xenial_header_middle_row_template' ) ) {
 
 		$template_args['container_classes'][] = xenial_get_row_container_class( $row_container );
 
+		$template_args = array_merge( $template_args, xenial_get_header_section_args( $row_elements ) );
+
 		$template_args = apply_filters( 'xenial_header_middle_row_template_args', $template_args );
 
 		get_template_part( 'template-parts/theme-header/sections/section', 'middle-header', $template_args );  
@@ -126,7 +130,9 @@ if ( ! function_exists( 'xenial_header_bottom_row_template' ) ) {
 
 		$row_container = xenial_get_option( 'header_bottom_section_width' );
 
-		$template_args['container_classes'][] = xenial_get_row_container_class( $row_container );  
+		$template_args['container_classes'][] = xenial_get_row_container_class( $row_container );
+		
+		$template_args = array_merge( $template_args, xenial_get_header_section_args( $row_elements ) );  
 
 		$template_args = apply_filters( 'xenial_header_bottom_row_template_args', $template_args );
 
