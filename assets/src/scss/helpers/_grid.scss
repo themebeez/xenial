@@ -55,6 +55,29 @@
     display: inline-flex;
 }
 
+.xe-grid,
+.xe-flex.xe-grid,
+.xe-flex-alt.xe-grid {
+
+    display: grid;
+}
+
+.xe-grid-columns-one {
+
+    grid-template-columns: auto;
+}
+
+.xe-grid-columns-two {
+
+    grid-template-columns: auto auto;
+}
+
+.xe-grid-columns-three {
+
+    grid-template-columns: 1fr auto 1fr;
+}
+
+
 /* -------------------------------------------------------------------------- 
 	Flex Alignments
   -------------------------------------------------------------------------- */
