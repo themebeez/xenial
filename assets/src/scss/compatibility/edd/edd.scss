@@ -406,6 +406,14 @@
 
    // Cart
 
+   #edd_checkout_cart .edd_cart_item_image {
+
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+   }
+
    #edd_checkout_cart input.edd-item-quantity {
 
       display: inline-flex;
@@ -462,7 +470,7 @@
    #edd_checkout_form_wrap #edd_final_total_wrap,
    #edd_checkout_form_wrap #edd-discount-code-wrap {
 
-      border-color: var(--xe_border_color);
+      border: 1px solid var(--xe_border_color);
    }
 
    #edd_checkout_form_wrap #edd_show_discount {
@@ -477,15 +485,26 @@
    #edd_checkout_form_wrap #edd_final_total_wrap, 
    #edd_checkout_form_wrap #edd_show_discount {
 
-      border-color: var(--xe_border_color);
+      border: 1px solid var(--xe_border_color);
       padding: 20px;
       border-radius: 5px;
    }
 
+   #edd_checkout_form_wrap #edd_discount_code {
+
+      padding: 0;
+      border: none;
+   }
+   
    #edd_checkout_form_wrap #edd_show_discount {
 
       padding: 10px 15px;
       border-radius: 3px;
+   }
+
+   #edd_checkout_form_wrap #edd-discount-code-wrap {
+
+      margin: 0;
    }
 
    #edd_checkout_form_wrap .edd-discount-code-field-wrap {
