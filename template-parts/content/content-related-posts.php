@@ -19,15 +19,16 @@ if ( ! $xenialRelatedPostsContent ) {
 <section class="xe-related-posts">
 	<?php if ( xenial_get_option( 'post_single_related_posts_section_title' ) ) { ?>
 		<div class="xe-block-title">
-		    <h3 class="xe-title"><?php echo esc_html( xenial_get_option( 'post_single_related_posts_section_title' ) ); ?></h3><!-- .xe-title -->
+		    <h3 class="xe-title xe-related-posts-title"><?php echo esc_html( xenial_get_option( 'post_single_related_posts_section_title' ) ); ?></h3><!-- .xe-title -->
 		</div><!-- .xe-block-title -->
 	<?php } ?>
-	<div class="xe-flex">
+	<div class="xe-grid xe-grid-columns" xe-desktop-columns="2" xe-tablet-columns="2" xe-mobile-columns="1">
+		<!-- // xe-desktop-columns max 4 | xe-tablet-columns max 3 | xe-mobile-columns max 2 -->
 		<?php 
 		while( $args['posts']->have_posts() ) { 
 			$args['posts']->the_post();
 			?>
-		    <div class="xe-col-xl-6 xe-col-lg-6 xe-col-md-12 xe-col-sm-12 xe-col-xs-12">
+		    <div class="xe-aricles">
 		        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		        	<?php 
 		        	if ( has_post_thumbnail() && in_array( 'image', $xenialRelatedPostsContent ) ) { 

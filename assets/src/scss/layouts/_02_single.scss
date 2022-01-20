@@ -331,19 +331,95 @@
     margin-top: 40px;
 }
 
+.xe-related-posts .xe-grid-columns {
+
+    grid-row-gap: 40px;
+    grid-column-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.xe-related-posts .xe-grid-columns[xe-desktop-columns="1"] {
+
+    grid-column-gap: 0;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.xe-related-posts .xe-grid-columns[xe-desktop-columns="2"] {
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.xe-related-posts .xe-grid-columns[xe-desktop-columns="3"] {
+
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.xe-related-posts .xe-grid-columns[xe-desktop-columns="4"] {
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .xe-related-posts .xe-block-title .xe-title {
 
     font-size: 20px;
 }
 
-.xe-related-posts .hentry {
+#primary .xe-related-posts .hentry {
 
-    margin-bottom: 40px;
+    margin: 0;
 }
 
 .xe-related-posts .hentry .xe-post-title .xe-title {
 
     font-size: 18px;
+}
+
+@media ( max-width: 768px ) {
+
+    .xe-related-posts .xe-grid-columns[xe-tablet-columns="1"] {
+
+        grid-column-gap: 0;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .xe-related-posts .xe-grid-columns[xe-tablet-columns="2"] {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .xe-related-posts .xe-grid-columns[xe-tablet-columns="3"] {
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .xe-related-posts .xe-grid-columns[xe-tablet-columns="4"] {
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media ( max-width: 575px ) {
+
+    .xe-related-posts .xe-grid-columns[xe-mobile-columns="1"] {
+
+        grid-column-gap: 0;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .xe-related-posts .xe-grid-columns[xe-mobile-columns="2"] {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .xe-related-posts .xe-grid-columns[xe-mobile-columns="3"] {
+
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .xe-related-posts .xe-grid-columns[xe-mobile-columns="4"] {
+
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 /* -------------------------------------------------------------------------- 
