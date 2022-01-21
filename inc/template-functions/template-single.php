@@ -14,11 +14,11 @@ if ( ! function_exists( 'xenial_single_header_template' ) ) {
 			'display_title' => false
 		);
 
-		$titleTag = 'h1';
+		$title_tag = 'h1';
 
-		if ( $titleTag ) {
-			$template_args['before_title'] = '<' . $titleTag . ' class="xe-title">';
-			$template_args['after_title'] = '<' . $titleTag . '>';  
+		if ( $title_tag ) {
+			$template_args['before_title'] = '<' . $title_tag . ' class="xe-title">';
+			$template_args['after_title'] = '<' . $title_tag . '>';  
 		}
 
 		$display_breadcrumbs = xenial_post_header_has_breadcrumbs_enabled();
@@ -90,11 +90,15 @@ if ( ! function_exists( 'xenial_single_content_footer_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_author_box_template' ) ) {
+
 	function xenial_author_box_template() {
-		$displayAuthorBox = xenial_get_option( 'post_single_display_author_box' );
-		if ( ! $displayAuthorBox ) {
+
+		$display_author_box = xenial_get_option( 'post_single_display_author_box' );
+
+		if ( ! $display_author_box ) {
 			return;
 		}
+
 		$args = [];
 		get_template_part( 'template-parts/content/content', 'author-box', $args );
 	}
@@ -102,13 +106,16 @@ if ( ! function_exists( 'xenial_author_box_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_post_navigation_template' ) ) {
+
 	function xenial_post_navigation_template() {
-		$displayPostNavigation = xenial_get_option( 'post_single_display_posts_navigation' );
-		if ( ! $displayPostNavigation ) {
+
+		$display_post_navigation = xenial_get_option( 'post_single_display_posts_navigation' );
+
+		if ( ! $display_post_navigation ) {
 			return;
 		}
 
-		$args = [
+		$args = array(
 			'previousFormat' => '<div class="nav-previous">%link</div>',
 			'previousLink' => sprintf(
 	            '<div class="nav-content"><span>%s</span></div>',
@@ -119,21 +126,21 @@ if ( ! function_exists( 'xenial_post_navigation_template' ) ) {
 	            '<div class="nav-content"><span>%s</span></div>',
 	            '%title'
 	        )
-		];
+		);
 
-		$previousPostLinkTitle = xenial_get_option( 'post_single_prev_post_link_title_label' );
-		$nextPostLinkTitle = xenial_get_option( 'post_single_next_post_link_title_label' );
-		$displayImage = xenial_get_option( 'post_single_display_post_image_in_post_navigation' );
+		$previous_post_link_title = xenial_get_option( 'post_single_prev_post_link_title_label' );
+		$next_post_link_title = xenial_get_option( 'post_single_next_post_link_title_label' );
+		$display_image = xenial_get_option( 'post_single_display_post_image_in_post_navigation' );
 
-		if ( $previousPostLinkTitle ) {
-			$args['previousFormat'] = '<div class="nav-previous"><h6 class="nav-title">' . esc_html( $previousPostLinkTitle ) . '</h6>%link</div>';
+		if ( $previous_post_link_title ) {
+			$args['previousFormat'] = '<div class="nav-previous"><h6 class="nav-title">' . esc_html( $previous_post_link_title ) . '</h6>%link</div>';
 		} 
 
-		if ( $nextPostLinkTitle ) {
-			$args['nextFormat'] = '<div class="nav-next"><h6 class="nav-title">' . esc_html( $nextPostLinkTitle ) . '</h6>%link</div>';
+		if ( $next_post_link_title ) {
+			$args['nextFormat'] = '<div class="nav-next"><h6 class="nav-title">' . esc_html( $next_post_link_title ) . '</h6>%link</div>';
 		}
 
-		if ( $displayImage ) {
+		if ( $display_image ) {
 			$args['previousLink'] = sprintf(
 	            '<div class="nav-content">%1$s <span>%2$s</span></div>',
 	            get_the_post_thumbnail( get_previous_post(), array( 75, 75 ) ),
@@ -154,67 +161,83 @@ if ( ! function_exists( 'xenial_post_navigation_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_related_posts_template' ) ) {
+
 	function xenial_related_posts_template() {
 
-		$displayRelatedPosts = xenial_get_option( 'post_single_display_related_posts' );
+		$display_related_posts = xenial_get_option( 'post_single_display_related_posts' );
 
-		if ( ! $displayRelatedPosts ) {
+		$related_posts_content = xenial_get_option( 'post_single_related_posts_elements' );
+
+		if ( ! $display_related_posts || ! $related_posts_content ) {
 			return;
 		}
 
-		$postCardElements = xenial_get_option( 'post_single_related_posts_elements' );
-		$postMetaElements = xenial_get_option( 'post_single_related_posts_meta' );
-		$postsPerPage = ( xenial_get_option( 'post_single_related_posts_number' ) ) ? absint( xenial_get_option( 'post_single_related_posts_number' ) ) : 2;
-		$queryPostsBy = xenial_get_option( 'post_single_related_posts_by' );
+		$post_meta_elements = xenial_get_option( 'post_single_related_posts_meta' );
 
-		$args = [];
+		$posts_per_page = ( xenial_get_option( 'post_single_related_posts_number' ) ) ? absint( xenial_get_option( 'post_single_related_posts_number' ) ) : 2;
 
-		$currentPostID = get_queried_object_id();
+		$content_alignment = xenial_get_option( 'post_single_related_posts_content_alignment' );
 
-		
+		$query_posts_by = xenial_get_option( 'post_single_related_posts_by' );
 
-		$queryArgs = [
+		$args = array(
+			'section-title' => xenial_get_option( 'post_single_related_posts_section_title' ),
+			'post-content' => $related_posts_content,
+			'desktop-cols' => xenial_get_option( 'post_single_related_posts_number_of_cols_desktop' ),
+			'tablet-cols' => xenial_get_option( 'post_single_related_posts_number_of_cols_tablet' ),
+			'mobile-cols' => xenial_get_option( 'post_single_related_posts_number_of_cols_mobile' ),
+			'content-align-class' => xenial_get_text_align_class( $content_alignment )
+		);
+
+		$current_post_id = get_queried_object_id();
+
+		$query_args = array(
 			'post_type' => 'post',
-			'post__not_in' => [ $currentPostID ],
-			'posts_per_page' => $postsPerPage,
+			'post__not_in' => array( $current_post_id ),
+			'posts_per_page' => $posts_per_page,
 			'ignore_sticky_posts' => true
-		];
+		);
 
-		$taxQuery = [];
+		$tax_query = array();
 
-		if ( $queryPostsBy == 'categories' ) {
+		if ( $query_posts_by == 'categories' ) {
 
-			$currentPostCategories = wp_get_post_categories( $currentPostID );
+			$current_post_categories = wp_get_post_categories( $current_post_id );
 
-			if ( $currentPostCategories ) {
-				$taxQuery[] = [
+			if ( $current_post_categories ) {
+				$tax_query[] = array(
 	                'taxonomy' => 'category',
 	                'field'    => 'term_id',
-	                'terms'    => $currentPostCategories,
+	                'terms'    => $current_post_categories,
 	                'operator' => 'IN',
-	            ];
+	            );
 			}
 		} else {
 
-			$currentPostTags = wp_get_post_tags( $currentPostID );
+			$current_post_tags = wp_get_post_tags( $current_post_id );
 			
-			if ( $currentPostTags ) {
-				$tagTerms = [];
-				foreach( $currentPostTags as $currentPostTag ) {
-					$tagTerms[] = $currentPostTag->term_id;
+			if ( $current_post_tags ) {
+				$tag_terms = array();
+				foreach( $current_post_tags as $current_post_tag ) {
+					$tag_terms[] = $current_post_tag->term_id;
 				}
-				$taxQuery[] = [
+				$tax_query[] = array(
 	                'taxonomy' => 'post_tag',
 	                'field'    => 'term_id',
-	                'terms'    => $tagTerms,
+	                'terms'    => $tag_terms,
 	                'operator' => 'IN',
-	            ];
+	            );
 			}
 		}
 
-		$queryArgs['tax_query'] = [ 'relation' => 'OR', $taxQuery ];
+		$query_args['tax_query'] = array( 'relation' => 'OR', $tax_query );
 
-		$posts = new WP_Query( $queryArgs );
+		$posts = new WP_Query( $query_args );
+
+		if ( ! $posts->have_posts() ) {
+			return;
+		}
+
 		$args['posts'] = $posts;
 
 		get_template_part( 'template-parts/content/content', 'related-posts', $args );
@@ -223,17 +246,19 @@ if ( ! function_exists( 'xenial_related_posts_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_single_grouped_post_meta_template' ) ) {
+
 	function xenial_single_grouped_post_meta_template() {
-		$postMetas = xenial_get_option( 'post_single_meta_elements' );
-		if ( ! $postMetas ) {
+
+		$post_metas = xenial_get_option( 'post_single_meta_elements' );
+		if ( ! $post_metas ) {
 			return;
 		}
 		?>
 		<div class="xe-post-metas xe-entry-metas slanted-seperator">
             <ul class="list-unstyled">
             	<?php
-				foreach ( $postMetas as $postMeta ) {
-					switch ( $postMeta ) {
+				foreach ( $post_metas as $post_meta ) {
+					switch ( $post_meta ) {
 						case 'author' :
 							?>
 							<li class="meta author">
@@ -285,12 +310,12 @@ if ( ! function_exists( 'xenial_post_single_content_container_classes' ) ) {
 
 	function xenial_post_single_content_container_classes() {
 
-		$contentContainerClasses = array();
+		$content_container_classes = array();
 
 		if ( xenial_has_sidebar() ) {
 
-			$contentContainerClasses[] = 'xe-container';
-			$contentContainerClasses[] = 'xe-flex-alt';
+			$content_container_classes[] = 'xe-container';
+			$content_container_classes[] = 'xe-flex-alt';
 		} else {
 			$post_container_width = 'container';
 
@@ -305,23 +330,23 @@ if ( ! function_exists( 'xenial_post_single_content_container_classes' ) ) {
 			if ( $post_container_width ) {
 				switch ( $post_container_width ) {
 					case 'wide' :
-						$contentContainerClasses[] = 'xe-container-wide';
+						$content_container_classes[] = 'xe-container-wide';
 						break;
 					case 'narrow' :
-						$contentContainerClasses[] = 'xe-container-narrow';
+						$content_container_classes[] = 'xe-container-narrow';
 						break;
 					default :
-						$contentContainerClasses[] = 'xe-container';
-						$contentContainerClasses[] = 'xe-flex-alt';
+						$content_container_classes[] = 'xe-container';
+						$content_container_classes[] = 'xe-flex-alt';
 				}
 			} else {
-				$contentContainerClasses[] = 'xe-container';
-				$contentContainerClasses[] = 'xe-flex-alt';
+				$content_container_classes[] = 'xe-container';
+				$content_container_classes[] = 'xe-flex-alt';
 			}
 		}
 
-		$contentContainerClasses = apply_filters( 'xenial_post_single_content_container_classes', $contentContainerClasses );
+		$content_container_classes = apply_filters( 'xenial_post_single_content_container_classes', $content_container_classes );
 
-		echo esc_attr( implode( ' ', $contentContainerClasses ) );
+		echo esc_attr( implode( ' ', $content_container_classes ) );
 	}
 }

@@ -1,27 +1,25 @@
 <?php
 
-$xenial_customizer_defaults = xenial_get_customizer_defaults();
-
 xenial_section_field( 
 	'xenial_post_single',
-	[
+	array(
 		'priority' => 10,
 		'panel' => 'xenial_site_pages',
 		'title'	=> esc_html__( 'Post Single', 'xenial' )
-	]
+	)
 );
 
 
 xenial_tab_field(
 	'xenial_post_single_tab',
-	[
+	array(
 		'priority' => 10,
 		'section' => 'xenial_post_single',
 		'tabs' => xenial_get_tab_control_2_labels(),
-		'controls' => [
+		'controls' => array(
 			'tab_1' => apply_filters( 
 	        	'xenial_post_single_tab_1_controls', 
-	        	[
+	        	array(
 	        		'post_single_breadcrumbs_general' => '',
 	        		'post_single_display_breadcrumbs' => '',
 	        		'post_single_breadcrumbs_divider_1' => '',
@@ -42,19 +40,19 @@ xenial_tab_field(
 		            'post_single_display_posts_navigation' => '',
 		            'post_single_display_comments' => '',
 		            'post_single_display_related_posts' => '',
-	        	] 
+	        	) 
 	        ),
 	        'tab_2' => apply_filters( 
 	        	'xenial_post_single_tab_2_controls', 
-	        	[
+	        	array(
 	        		'post_single_breadcrumbs_styles' => '',
 	        		'post_single_breadcrumb_background_color' => '',
 		            'post_single_breadcrumb_text_color' => '',
 		            'post_single_breadcrumb_link_hover_color' => '',
-	        	] 
+	        	) 
 	        )
-		]
-	]
+		)
+	)
 );
 
 

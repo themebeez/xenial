@@ -1,7 +1,5 @@
 <?php 
 
-$xenial_customizer_defaults = xenial_get_customizer_defaults();
-
 xenial_controls_wrapper_field(
 	'post_single_content_general',
 	array(
