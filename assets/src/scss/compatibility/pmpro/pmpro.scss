@@ -466,6 +466,23 @@ form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields .pmpro_
     margin-right: 10px;
 }
 
+.pmpro_checkout-fields #pmpro_license {
+
+    height: 250px;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    border-style: dashed;
+    border-width: 2px 0 2px 2px;
+    border-color: var(--xe_border_color);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 5px;
+    color: inherit;
+    background: transparent;
+}
+
+
+
 /* -------------------------------------------------------------------------- 
 	#. PMPRO Invoice
    -------------------------------------------------------------------------- */
