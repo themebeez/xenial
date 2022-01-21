@@ -24,6 +24,25 @@
 }
 
 /* -------------------------------------------------------------------------- 
+	Mixin: Grid
+  -------------------------------------------------------------------------- */
+
+@mixin grid() {
+
+    display: grid;
+}
+
+@mixin grid_column_gap($gap) {
+
+    grid-column-gap: #{$gap};
+}
+
+@mixin grid_row_gap($gap) {
+
+    grid-row-gap: #{$gap};
+}
+
+/* -------------------------------------------------------------------------- 
 	Mixin: Transitions
   -------------------------------------------------------------------------- */
 
@@ -71,4 +90,72 @@
     margin-left: $margin_value;
     margin-right: $margin_value;
     max-width: var(--xe_narrow_section_base_width);
+}
+
+/* -------------------------------------------------------------------------- 
+	Mixin: WooCommerce product columns.
+  -------------------------------------------------------------------------- */
+
+@mixin grid_columns($columns) {
+
+  @if $columns == 1 {
+      grid-template-columns: repeat(1, 1fr);
+  }
+  @else if $columns == 2 {
+      grid-template-columns: repeat(2, 1fr);
+  }
+  @else if $columns == 3 {
+      grid-template-columns: repeat(3, 1fr);
+  }
+  @else if $columns == 4 {
+      grid-template-columns: repeat(4, 1fr);
+  }
+  @else if $columns == 5 {
+      grid-template-columns: repeat(5, 1fr);
+  }
+  @else if $columns == 6 {
+      grid-template-columns: repeat(6, 1fr);
+  }
+  @else {
+      grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Screen reader text
+  -------------------------------------------------------------------------- */
+
+@mixin screen_reader_text() {
+
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+/* -------------------------------------------------------------------------- 
+	Mixin: Clearfix
+  -------------------------------------------------------------------------- */
+
+@mixin clearfix() {
+
+  &::before,
+	&::after {
+
+		content: "";
+		display: table;
+	}
+
+	&::after {
+
+		clear: both;
+	}
 }
