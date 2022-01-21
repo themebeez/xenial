@@ -22,7 +22,7 @@
 .woocommerce-page ul.products {
 
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	grid-row-gap: var(--xe_woocommerce_product_row_gap);
 	grid-column-gap: var(--xe_woocommerce_product_column_gap);
 	position: relative;
