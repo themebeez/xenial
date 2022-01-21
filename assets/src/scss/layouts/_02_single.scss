@@ -99,6 +99,18 @@
     margin-bottom: 40px;
 }
 
+.single:not([class*="xe-sidebar-position-"]) .xe-container-narrow .hentry .xe-entry-thumbnail {
+
+    position: relative;
+    @include flex();
+    justify-content: center;
+    width: 99vw;
+    max-width: 99vw;
+    margin-right: auto;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
 .single .hentry .xe-entry-thumbnail > .xe-thumb {
 
     margin-top: 0;
