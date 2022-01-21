@@ -32,9 +32,9 @@ if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' 
             'post_single_related_posts_elements' => array( 'image', 'title', 'read_more' ),
             'post_single_related_posts_meta' => array( 'author', 'date', 'comment', 'categories' ),
             'post_single_related_posts_number_of_cols' => array(
-                'desktop'   => '',
-                'tablet'    => '',
-                'mobile'    => ''
+                'desktop'   => '4',
+                'tablet'    => '3',
+                'mobile'    => '2'
             ),
             'post_single_related_posts_posts' => 3,
             'post_single_related_posts_content_alignment' => 'left',
