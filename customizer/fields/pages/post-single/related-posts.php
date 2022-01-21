@@ -39,10 +39,12 @@ xenial_tab_field(
 	        		'post_single_related_posts_divider_3' => '',
 	        		'post_single_related_posts_meta' => '',
 	        		'post_single_related_posts_divider_4' => '',
-	        		'post_single_related_posts_number' => '',
+	        		'post_single_related_posts_number_of_cols' => '',
 	        		'post_single_related_posts_divider_5' => '',
-	        		'post_single_related_posts_content_alignment' => '',
+	        		'post_single_related_posts_number' => '',
 	        		'post_single_related_posts_divider_6' => '',
+	        		'post_single_related_posts_content_alignment' => '',
+	        		'post_single_related_posts_divider_7' => '',
 	        		'post_single_related_posts_by' => '',
 	        	) 
 	        ),
@@ -156,14 +158,51 @@ xenial_divider_field(
 
 
 xenial_range_control_field(
+	'post_single_related_posts_number_of_cols',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_post_single_related_posts',
+		'label' => esc_html__( 'Number of Columns', 'xenial' ),
+		'input_attrs' => array(
+			'desktop' => array(
+				'min' => 1, 
+				'max' => 4, 
+				'step' => 1
+			),
+			'tablet' => array(
+				'min' => 1, 
+				'max' => 3, 
+				'step' => 1
+			),
+			'mobile' => array(
+				'min' => 1, 
+				'max' => 2, 
+				'step' => 1
+			),			 
+			'responsive' => true
+		),
+		'default' => xenial_get_customize_default( 'post_single_related_posts_number_of_cols' )
+	)
+);
+
+
+xenial_divider_field( 
+	'post_single_related_posts_divider_5', 
+	array( 
+		'priority' => 10,
+		'section' => 'xenial_post_single_related_posts', 
+	) 
+);
+
+xenial_range_control_field(
 	'post_single_related_posts_number',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Number of Posts', 'xenial' ),
 		'input_attrs' => array(
-			'min' => 2, 
-			'max' => 4, 
+			'min' => 1, 
+			'max' => 12, 
 			'step' => 1, 
 			'responsive' => false
 		),
@@ -173,7 +212,7 @@ xenial_range_control_field(
 
 
 xenial_divider_field( 
-	'post_single_related_posts_divider_5', 
+	'post_single_related_posts_divider_6', 
 	array( 
 		'priority' => 10,
 		'section' => 'xenial_post_single_related_posts', 
@@ -201,7 +240,7 @@ xenial_radio_button_group_field(
 
 
 xenial_divider_field( 
-	'post_single_related_posts_divider_6', 
+	'post_single_related_posts_divider_7', 
 	array( 
 		'priority' => 10,
 		'section' => 'xenial_post_single_related_posts', 

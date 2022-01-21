@@ -153,14 +153,7 @@ if ( ! function_exists( 'xenial_get_customizer_defaults' ) ) {
             'main_navigation_mobile_breakpoint' => 768,
             'main_navigation_mobile_menu_button_label' => '',
             'main_navigation_alignment' => 'left',
-            'enable_transparent_header' => false,
-            'enable_transparent_header_on_pages' => '',
-            'transparent_header_alternative_logo' => '',
-            'transparent_header_site_title_color' => '#ffffff',
-            'transparent_header_tagline_color' => '#ffffff',
-            'transparent_header_text_color' => '#ffffff',
-            'transparent_header_link_hover_color' => '#16c1ff',
-            'transparent_header_border_color' => '#eeeeee',
+            
             
 
             'sidebar_default_position' => 'no-sidebar',

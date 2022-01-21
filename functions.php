@@ -296,4 +296,8 @@ add_action( 'wp_head', function() {
 	// 	var_dump( $subscription->get_status() );
 	// }
 	// echo '</pre>';
+
+	$content_alignment = xenial_get_option( 'post_single_related_posts_content_alignment' );
+
+	var_dump( $content_alignment );
 } );

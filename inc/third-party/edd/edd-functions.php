@@ -83,7 +83,7 @@ add_action( 'wp_ajax_nopriv_xenial_edd_mini_cart_update', 'xenial_edd_mini_cart_
 
 
 /**
- * Add customize default values for EDD customize contorls.
+ * Add customize default values for EDD customize controls.
  * 
  * @since 1.0.0
  * @return array 
@@ -91,7 +91,8 @@ add_action( 'wp_ajax_nopriv_xenial_edd_mini_cart_update', 'xenial_edd_mini_cart_
 function xenial_edd_customize_defaults( $customize_defaults ) {
 
 	$edd_customize_defaults = array(
-		'edd_mini_cart_font_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}'
+		'edd_mini_cart_font_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+		'transparent_header_edd_mini_cart_font_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}'
 	);
 
 	$customize_defaults = array_merge( $customize_defaults, $edd_customize_defaults );
@@ -102,7 +103,7 @@ add_filter( 'xenial_customize_defaults', 'xenial_edd_customize_defaults' );
 
 
 /**
- * Add allowed field values for EDD customize contorls.
+ * Add allowed field values for EDD customize controls.
  * 
  * @since 1.0.0
  * @return array 
@@ -111,6 +112,38 @@ function xenial_edd_allowed_customize_fields( $allowed_customize_fields ) {
 
 	$edd_allowed_customize_fields = array(
 		'edd_mini_cart_font_color' => array(
+			'desktop' => array(
+				'initial' => array(
+	                'display' => true,
+	                'default' => ''
+	            ),
+	            'hover' => array(
+	                'display' => true,
+	                'default' => ''
+	            )
+			),
+			'tablet' => array(
+				'initial' => array(
+	                'display' => true,
+	                'default' => ''
+	            ),
+	            'hover' => array(
+	                'display' => true,
+	                'default' => ''
+	            )
+			),
+			'mobile' => array(
+				'initial' => array(
+	                'display' => true,
+	                'default' => ''
+	            ),
+	            'hover' => array(
+	                'display' => true,
+	                'default' => ''
+	            )
+			)
+		),
+		'transparent_header_edd_mini_cart_font_color' => array(
 			'desktop' => array(
 				'initial' => array(
 	                'display' => true,
@@ -180,9 +213,50 @@ function xenial_edd_customize_register( $wp_customize ) {
 			'default' => xenial_get_customize_default( 'edd_mini_cart_font_color' )
 		)
 	);
+
+	xenial_controls_wrapper_field(
+		'transparent_header_edd_mini_cart_wrapper',
+		array(
+			'priority' => 10,
+			'section' => 'xenial_transparent_header',
+			'label' => esc_html__( 'EDD Mini Cart', 'xenial' )
+		),
+		false
+	);
+
+	xenial_color_picker_field(
+		'transparent_header_edd_mini_cart_font_color',
+		array(
+			'priority' => 10,
+			'section' => 'xenial_transparent_header',
+			'label' => esc_html__( 'Font Color', 'xenial' ),
+			'is_responsive' => true,
+			'colors' => xenial_get_customize_allowed_fields( 'transparent_header_edd_mini_cart_font_color' ),
+			'default' => xenial_get_customize_default( 'transparent_header_edd_mini_cart_font_color' )
+		)
+	);
 }
 add_action( 'customize_register', 'xenial_edd_customize_register' );
 
+
+/**
+ * Add fields in the transparent header section style tab.
+ * 
+ * @since 1.0.0
+ * @return array 
+ */
+function xenial_transparent_header_style_tab_edd_fields( $style_tab_fields ) {
+
+	$edd_style_fields = array(
+		'transparent_header_edd_mini_cart_wrapper' => '',
+		'transparent_header_edd_mini_cart_font_color' => ''
+	);
+
+	$style_tab_fields = array_merge( $style_tab_fields, $edd_style_fields );
+
+	return $style_tab_fields;
+}
+add_filter( 'xenial_transparent_header_tab_2_controls', 'xenial_transparent_header_style_tab_edd_fields' );
 
 /**
  * Print customize dynamic CSS of EDD elements.
