@@ -101,7 +101,33 @@ if ( ! function_exists( 'xenial_get_thumbnail_size_array' ) ) {
 	}
 }
 
+if ( ! function_exists( 'xenial_get_text_align_class' ) ) {
 
+	function xenial_get_text_align_class( $align ) {
+
+		if ( ! $align ) {
+			return;
+		}
+
+		$class = '';
+
+		switch ( $align ) {
+			case 'left' :
+				$class = 'text-align-left';
+				break;
+			case 'center' :
+				$class = 'text-align-center';
+				break;
+			case 'right' :
+				$class = 'text-align-right';
+				break;
+			default :
+				break;
+		}
+
+		return $class;
+	}
+}  
 
 if ( ! function_exists( 'xenial_primary_menu_items_wrap' ) ) {
 

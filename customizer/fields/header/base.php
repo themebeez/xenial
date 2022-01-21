@@ -21,6 +21,7 @@ xenial_tab_field(
 	        	'xenial_header_general_tab_1_controls', 
 	        	array(
 	        		'theme_header_elements' => '',
+	        		'enable_transparent_header' => ''
 	        	) 
 	        ),
 	        'tab_2' => apply_filters( 

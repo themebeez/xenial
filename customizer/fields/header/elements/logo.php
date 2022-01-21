@@ -19,10 +19,10 @@ xenial_tab_field(
 	        		'mobile_logo' => '',
 	        		'site_identity_logo_divider_1' => '',
 
-	        		'transparent_header_state_site_identity_logo' => '',
-	        		'transparent_desktop_logo' => '',
-	        		'transparent_mobile_logo' => '',
-	        		'site_identity_logo_divider_2' => '',
+	        		// 'transparent_header_state_site_identity_logo' => '',
+	        		// 'transparent_desktop_logo' => '',
+	        		// 'transparent_mobile_logo' => '',
+	        		// 'site_identity_logo_divider_2' => '',
 
 	        		'site_identity_logo_width' => '',
 
@@ -118,45 +118,45 @@ xenial_divider_field(
 );
 
 
-xenial_info_field(
-	'transparent_header_state_site_identity_logo',
-	array(
-		'priority' => 11,
-		'section' => 'title_tagline',
-		'label' => esc_html__( 'Transparent Header State', 'xenial' )
-	)
-);
+// xenial_info_field(
+// 	'transparent_header_state_site_identity_logo',
+// 	array(
+// 		'priority' => 11,
+// 		'section' => 'title_tagline',
+// 		'label' => esc_html__( 'Transparent Header State', 'xenial' )
+// 	)
+// );
 
 
-xenial_image_upload_field(
-	'transparent_desktop_logo',
-	array(
-		'priority' => 11,
-		'section' => 'title_tagline',
-		'label' => esc_html__( 'Desktop Logo', 'xenial' ),
-		'default' => xenial_get_customize_default( 'transparent_desktop_logo' )
-	)
-);
+// xenial_image_upload_field(
+// 	'transparent_desktop_logo',
+// 	array(
+// 		'priority' => 11,
+// 		'section' => 'title_tagline',
+// 		'label' => esc_html__( 'Desktop Logo', 'xenial' ),
+// 		'default' => xenial_get_customize_default( 'transparent_desktop_logo' )
+// 	)
+// );
 
 
-xenial_image_upload_field(
-	'transparent_mobile_logo',
-	array(
-		'priority' => 11,
-		'section' => 'title_tagline',
-		'label' => esc_html__( 'Mobile Logo', 'xenial' ),
-		'default' => xenial_get_customize_default( 'transparent_mobile_logo' )
-	)
-);
+// xenial_image_upload_field(
+// 	'transparent_mobile_logo',
+// 	array(
+// 		'priority' => 11,
+// 		'section' => 'title_tagline',
+// 		'label' => esc_html__( 'Mobile Logo', 'xenial' ),
+// 		'default' => xenial_get_customize_default( 'transparent_mobile_logo' )
+// 	)
+// );
 
 
-xenial_divider_field( 
-	'site_identity_logo_divider_2', 
-	array( 
-		'priority' => 11,
-		'section' => 'title_tagline', 
-	) 
-);
+// xenial_divider_field( 
+// 	'site_identity_logo_divider_2', 
+// 	array( 
+// 		'priority' => 11,
+// 		'section' => 'title_tagline', 
+// 	) 
+// );
 
 
 xenial_range_control_field(

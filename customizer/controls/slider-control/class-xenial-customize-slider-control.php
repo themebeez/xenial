@@ -95,17 +95,70 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 
 			$this->json['id'] 		= $this->id;
 
+			$is_responsive = ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) ? true : false;
+
+			$input_attrs = $this->input_attrs;
+
 			$this->json['inputAttrs'] = '';
 
-			foreach ( $this->input_attrs as $attr => $value ) {
-				if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
-					$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+			if ( $is_responsive ) {
+
+				if ( isset( $input_attrs['desktop'] ) ) {
+					foreach ( $input_attrs['desktop'] as $attr => $value ) {
+						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+							$this->json['desktopInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+						}
+					}
+				} else {
+					foreach ( $input_attrs as $attr => $value ) {
+						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+							$this->json['desktopInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+						}
+					}
+				}
+
+
+				if ( isset( $input_attrs['tablet'] ) ) {
+					foreach ( $input_attrs['tablet'] as $attr => $value ) {
+						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+							$this->json['tabletInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+						}
+					}
+				} else {
+					foreach ( $input_attrs as $attr => $value ) {
+						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+							$this->json['tabletInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+						}
+					}
+				}
+
+				if ( isset( $input_attrs['mobile'] ) ) {
+					foreach ( $input_attrs['mobile'] as $attr => $value ) {
+						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+							$this->json['mobileInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+						}
+					}
+				} else {
+					foreach ( $input_attrs as $attr => $value ) {
+						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+							$this->json['mobileInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+						}
+					}
+				}
+			} else {
+				foreach ( $input_attrs as $attr => $value ) {
+					if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
+						$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
+					}
 				}
 			}
 
-			$this->json['isResponsive'] = ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) ? true : false;
+			
 
-			if ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) {
+			$this->json['isResponsive'] = $is_responsive;
+
+			if ( $is_responsive == true ) {
+
 				$this->json['desktop'] = [];
 			    $this->json['tablet']  = [];
 			    $this->json['mobile']  = [];
@@ -171,7 +224,7 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 					<div class="desktop responsive-control-wrap active">
 						<div class="xenial-slider desktop-slider"></div>
 						<div class="xenial-slider-input">
-							<input {{{ data.inputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
+							<input {{{ data.desktopInputAttrs }}} type="number" class="slider-input desktop-input" value="{{ data.desktop.value }}" {{{ data.desktop.link }}} />
 						</div>
 			    	</div>
 			    <# } #>
@@ -180,7 +233,7 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 					<div class="tablet responsive-control-wrap">
 						<div class="xenial-slider tablet-slider"></div>
 						<div class="xenial-slider-input">
-							<input {{{ data.inputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
+							<input {{{ data.tabletInputAttrs }}} type="number" class="slider-input tablet-input" value="{{ data.tablet.value }}" {{{ data.tablet.link }}} />
 						</div>
 			    	</div>
 			    <# } #>
@@ -189,7 +242,7 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 					<div class="mobile responsive-control-wrap">
 						<div class="xenial-slider mobile-slider"></div>
 						<div class="xenial-slider-input">
-							<input {{{ data.inputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
+							<input {{{ data.mobileInputAttrs }}} type="number" class="slider-input mobile-input" value="{{ data.mobile.value }}" {{{ data.mobile.link }}} />
 						</div>
 			    	</div>
 			    <# } #>
