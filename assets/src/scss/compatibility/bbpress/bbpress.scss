@@ -14,8 +14,9 @@
     font-family: var(--xe_base_font_family);
     font-size: var(--xe_base_font_size);
     line-height: var(--xe_base_font_line_height);
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 #bbpress-forums a {
@@ -30,8 +31,13 @@
 
 #bbpress-forums div.bbp-breadcrumb {
 
-    font-size: calc( var(--xe_base_font_size) - 20%);
+    font-size: calc( var(--xe_base_font_size) - 10%);
     margin-bottom: 30px;
+}
+
+#bbpress-forums div.bbp-breadcrumb > p {
+
+    margin: 0;
 }
 
 #bbpress-forums .bbp-pagination {
@@ -115,25 +121,58 @@
 #bbpress-forums #favorite-toggle, 
 #bbpress-forums #subscription-toggle {
 
-
+    color: transparent;
 }
 
 #bbpress-forums #favorite-toggle a, 
 #bbpress-forums #subscription-toggle a {
 
-    color: var(--xe_base_text_color);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    font-size: calc( var(--xe_base_font_size) - 5% );
+    font-style: normal;
+    line-height: 1;
+    border: 1px solid currentColor;
+    border-radius: 25px;
+    @include transation_delay_dymanic(0.3s);
 }
 
 #bbpress-forums #favorite-toggle a:hover, 
 #bbpress-forums #subscription-toggle a:hover {
 
-    color: var(--xe_secondary_text_color);
+    text-decoration: none;
 }
 
-#bbpress-forums #subscription-toggle span.is-subscribed {
+#bbpress-forums #favorite-toggle span.is-favorite a::before, 
+#bbpress-forums #subscription-toggle span.is-subscribed a::before {
 
-
+    content: "\e64c";
+    font-family: var(--xe_iconfont);
 }
+
+#bbpress-forums #bbp-user-subscriptions #subscription-toggle span.is-subscribed a::before {
+
+    content: "";
+    display: none;
+}
+
+#bbpress-forums #bbp-user-subscriptions #subscription-toggle span.is-subscribed a {
+
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    line-height: 30px;
+    border-radius: 3px;
+}
+
+#bbpress-forums div.bbp-topic-tags p {
+
+    margin: 0 0 20px 0;
+}
+
 
 /* -------------------------------------------------------------------------- 
 	#. BBPress Notices
@@ -246,6 +285,44 @@
 #bbpress-forums p.bbp-topic-meta {
 
     display: block;
+}
+
+// bbPress search form
+
+.bbp-search-form {
+
+    form {
+
+        position: relative;
+
+        div {
+
+            position: relative;
+
+            #bbp_search {
+
+                display: block;
+                width: 100%;
+                height: 48px;
+                padding-right: 45px;
+            }
+
+            #bbp_search_submit {
+
+                position: absolute;
+                top: 7px;
+                right: 7px;
+                padding: 0 15px;
+                font-size: 0;
+                width: 35px;
+                height: 35px;
+                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAUZJREFUOE+tk1tVA0EQRG8pAAk4gCiAKAAUQBQACggKiAOCAkABQQE4SBwQB8WpPbOcSbIbnv2zHztzu7q6RvxTqY9j+wg4LP8XwIukfDtrA2T7BLgF9jpuTIErScv1fysg22PgOt2BiaTHXLB9AKTBJfAODNfVfYKKkgfgXtJ5l/4CnAFzSYP6TA3K/AtJ8aa3infPwEhSRm2qAVU/T9txvoC9laYZdwXUeCOpd4s12PYEuKjPt4p+Cto434Ji7h0wkBTZW8t2DKf2swUlM3PgRlK6bTM7Z1+Bp3q79daygeOSkV5VRU1ydVBnqQbtAgHsANleI78t21GS8ROPmaRhZ45KDHI4ad4v0MDyHHI5KtI4zfIGp5JGK+tfN8R2zE9GMmoqTyaBHWcc27HhrIZ9KzddzlewZkG/BhUrsuE87uWfQLXSD70xjBMeWl8CAAAAAElFTkSuQmCC');
+                background-size: 18px;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+        }
+    }
 }
 
 /* -------------------------------------------------------------------------- 
@@ -377,12 +454,18 @@
     font-size: calc( var(--xe_base_font_size) - 20% );
 }
 
+#bbpress-forums div.bbp-reply-author .bbp-author-link {
+
+    display: inline-block;
+}
+
 #bbpress-forums div.bbp-forum-author img.avatar, 
 #bbpress-forums div.bbp-reply-author img.avatar, 
 #bbpress-forums div.bbp-topic-author img.avatar {
 
     display: inline-block;
     margin: 0;
+    max-width: 52px;
     border-radius: 50%;
 }
 
@@ -403,3 +486,9 @@
 /* -------------------------------------------------------------------------- 
     #. BBPress profile
    -------------------------------------------------------------------------- */
+
+#bbpress-forums #bbp-single-user-details #bbp-user-avatar img.avatar {
+
+    display: inline-flex;
+    border-radius: 50%;
+}

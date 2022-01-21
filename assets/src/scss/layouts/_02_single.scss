@@ -99,6 +99,8 @@
     margin-bottom: 40px;
 }
 
+// Increase the featured image container size if narrow container is selected.
+
 .single:not([class*="xe-sidebar-position-"]) .xe-container-narrow .hentry .xe-entry-thumbnail {
 
     position: relative;
