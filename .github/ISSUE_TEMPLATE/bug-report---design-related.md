@@ -1,5 +1,5 @@
 ---
-name: Bug Report - Design Related
+name: Bug report - design related.
 about: Create a report to help us improve Xenial UI design.
 title: ''
 labels: Bug

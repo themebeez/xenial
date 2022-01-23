@@ -1,5 +1,5 @@
 ---
-name: Bug Report - Code Related
+name: Bug report - code related.
 about: Create a report to help us improve Xenial code.
 title: ''
 labels: Bug
