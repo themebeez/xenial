@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-23T11:11:56+00:00\n"
+"POT-Creation-Date: 2022-01-23T11:54:06+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: xenial\n"
@@ -94,9 +94,9 @@ msgstr ""
 #: customizer/functions/customizer-choices.php:840
 #: customizer/functions/customizer-choices.php:1110
 #: customizer/functions/customizer-choices.php:1126
-#: inc/custom-fields.php:412
-#: inc/custom-fields.php:422
-#: inc/custom-fields.php:432
+#: inc/custom-fields.php:428
+#: inc/custom-fields.php:438
+#: inc/custom-fields.php:448
 msgid "Default"
 msgstr ""
 
@@ -686,8 +686,8 @@ msgstr ""
 #: customizer/functions/customizer-choices.php:466
 #: customizer/functions/customizer-choices.php:481
 #: customizer/functions/customizer-choices.php:647
-#: inc/custom-fields.php:138
-#: inc/custom-fields.php:238
+#: inc/custom-fields.php:150
+#: inc/custom-fields.php:250
 msgid "Content Width"
 msgstr ""
 
@@ -1952,8 +1952,8 @@ msgstr ""
 #: customizer/fields/pages/archive/header.php:63
 #: customizer/fields/pages/page-single/header.php:63
 #: customizer/fields/pages/post-single/header.php:19
-#: inc/custom-fields.php:186
-#: inc/custom-fields.php:268
+#: inc/custom-fields.php:198
+#: inc/custom-fields.php:280
 msgid "Display Breadcrumbs"
 msgstr ""
 
@@ -2586,17 +2586,17 @@ msgid "Numeric"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:663
-#: inc/custom-fields.php:423
+#: inc/custom-fields.php:439
 msgid "Wide"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:664
-#: inc/custom-fields.php:424
+#: inc/custom-fields.php:440
 msgid "Container"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:665
-#: inc/custom-fields.php:425
+#: inc/custom-fields.php:441
 msgid "Narrow"
 msgstr ""
 
@@ -2698,19 +2698,19 @@ msgstr ""
 
 #: customizer/functions/customizer-choices.php:806
 #: customizer/functions/customizer-choices.php:823
-#: inc/custom-fields.php:415
+#: inc/custom-fields.php:431
 msgid "No Sidebar"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:807
 #: customizer/functions/customizer-choices.php:824
-#: inc/custom-fields.php:414
+#: inc/custom-fields.php:430
 msgid "Left Sidebar"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:808
 #: customizer/functions/customizer-choices.php:825
-#: inc/custom-fields.php:413
+#: inc/custom-fields.php:429
 msgid "Right Sidebar"
 msgstr ""
 
@@ -2878,44 +2878,48 @@ msgstr ""
 msgid "Xenial Post Content Elements"
 msgstr ""
 
-#: inc/custom-fields.php:75
+#: inc/custom-fields.php:77
 msgid "Display Header"
 msgstr ""
 
 #: inc/custom-fields.php:87
+msgid "Display Transparent Header"
+msgstr ""
+
+#: inc/custom-fields.php:99
 msgid "Display Sidebar"
 msgstr ""
 
-#: inc/custom-fields.php:102
+#: inc/custom-fields.php:114
 msgid "Display Footer"
 msgstr ""
 
-#: inc/custom-fields.php:155
+#: inc/custom-fields.php:167
 msgid "Disable Page Header"
 msgstr ""
 
-#: inc/custom-fields.php:162
+#: inc/custom-fields.php:174
 msgid "Page Header Width"
 msgstr ""
 
-#: inc/custom-fields.php:179
+#: inc/custom-fields.php:191
 msgid "Disable Page Title"
 msgstr ""
 
-#: inc/custom-fields.php:199
-#: inc/custom-fields.php:281
+#: inc/custom-fields.php:211
+#: inc/custom-fields.php:293
 msgid "Display Featured Image"
 msgstr ""
 
-#: inc/custom-fields.php:253
+#: inc/custom-fields.php:265
 msgid "Breadcrumbs Width"
 msgstr ""
 
-#: inc/custom-fields.php:433
+#: inc/custom-fields.php:449
 msgid "Enable"
 msgstr ""
 
-#: inc/custom-fields.php:434
+#: inc/custom-fields.php:450
 msgid "Disable"
 msgstr ""
 
