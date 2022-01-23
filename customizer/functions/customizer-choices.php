@@ -235,11 +235,11 @@ if ( ! function_exists( 'xenial_get_general_pages' ) ) {
 	function xenial_get_general_pages() {
 
 		$general_pages = array(
-			'blog_page' => esc_html__( 'Blog Page', 'xenial' ),
-			'archive_page' => esc_html__( 'Archive Page', 'xenial' ),
-			'search_page' => esc_html__( 'Search Page', 'xenial' ),
-			'post_single' => esc_html__( 'Post Single', 'xenial' ),
-			'page_single' => esc_html__( 'Page Single', 'xenial' ),
+			'blog' => esc_html__( 'Blog Page', 'xenial' ),
+			'archive' => esc_html__( 'Archive Page', 'xenial' ),
+			'search' => esc_html__( 'Search Page', 'xenial' ),
+			'post' => esc_html__( 'Post Single', 'xenial' ),
+			'page' => esc_html__( 'Page Single', 'xenial' ),
 			'page_404' => esc_html__( '404 Page', 'xenial' ),
 		);
 

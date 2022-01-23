@@ -297,4 +297,11 @@ add_action( 'wp_head', function() {
 	// }
 	// echo '</pre>';
 
+	// $t_header_enabled_pages = xenial_get_option( 'enable_transparent_header_on_pages' );
+
+	// var_dump( $t_header_enabled_pages );
+
+	// $is_t_header_enabled = xenial_is_transparent_header_active();
+
+	// var_dump( $is_t_header_enabled );
 } );

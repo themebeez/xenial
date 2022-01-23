@@ -58,6 +58,8 @@ function xenial_body_classes( $classes ) {
 		$classes[] = 'xe-comment-toggle-btn-enabled';
 	}
 
+	$classes[] = ( xenial_is_transparent_header_active() ) ? 'xe-transparent-header-enabled' : '';
+
 	return $classes;
 }
 add_filter( 'body_class', 'xenial_body_classes' );

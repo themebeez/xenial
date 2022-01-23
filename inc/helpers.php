@@ -603,3 +603,5 @@ if ( ! function_exists( 'xenial_get_woocommerce_sidebar_position' ) ) {
 		return 'no-sidebar';
 	}
 } 
+
+
