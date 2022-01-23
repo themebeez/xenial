@@ -98,6 +98,7 @@ var php__file__path = [
     './*.php',
     './**.php',
     './**/*.php',
+    '!./github/**',
     '!./node_modules/*.php',
     '!./.git/*.php',
     '!./inc/plugin-recommendation.php',
@@ -116,6 +117,7 @@ const source__files__folders__to__compress = {
         './*/**',
 
         '!./.gitignore',
+        '!./.github/**',
         '!./.vscode',
         '!./assets/src/**',
         '!./gulpfile.js',
