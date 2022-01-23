@@ -59,6 +59,8 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 
 			$header_display_value = get_post_meta( $post->ID, 'xenial_theme_header_display', true );
 
+			$transparent_header_display_value = get_post_meta( $post->ID, 'xenial_transparent_header_display', true );
+
 			$sidebar_position_value = get_post_meta( $post->ID, 'xenial_post_sidebar_position', true );
 
 			$footer_display_value = get_post_meta( $post->ID, 'xenial_theme_footer_display', true );
@@ -77,6 +79,16 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 		        		<select name="xenial-default-header-meta" id="xenial-default-header-meta" class="xenial-select-field">
 		        			<?php foreach ( $display_choices as $value => $label ) { ?>
 		        				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, $header_display_value ); ?>><?php echo esc_html( $label ); ?></option>
+		        			<?php } ?>
+		        		</select>
+
+		        		<hr/>
+
+		        		<label for="xenial-transparent-header-meta"><?php echo esc_html__( 'Display Transparent Header', 'xenial' ); ?>
+		        		</label>
+		        		<select name="xenial-transparent-header-meta" id="xenial-transparent-header-meta" class="xenial-select-field">
+		        			<?php foreach ( $display_choices as $value => $label ) { ?>
+		        				<option value="<?php echo esc_attr( $value ); ?>" <?php selected( $value, $transparent_header_display_value ); ?>><?php echo esc_html( $label ); ?></option>
 		        			<?php } ?>
 		        		</select>
 		        	</td>
@@ -322,6 +334,10 @@ if( ! class_exists( 'Xenial_Custom_Fields' ) ) :
 
 			if ( isset( $_POST['xenial-default-header-meta'] ) ) {
 				update_post_meta( $post_id, 'xenial_theme_header_display', sanitize_text_field( wp_unslash( $_POST['xenial-default-header-meta'] ) ) ); 
+			}
+
+			if ( isset( $_POST['xenial-transparent-header-meta'] ) ) {
+				update_post_meta( $post_id, 'xenial_transparent_header_display', sanitize_text_field( wp_unslash( $_POST['xenial-transparent-header-meta'] ) ) ); 
 			}
 
 			if ( isset( $_POST['xenial-default-footer-meta'] ) ) {

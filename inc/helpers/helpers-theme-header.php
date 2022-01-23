@@ -4,7 +4,10 @@ if ( ! function_exists( 'xenial_is_theme_header_active' ) ) {
 
 	function xenial_is_theme_header_active() {
 
-		if ( is_single() && get_post_type() == 'post' ) {
+		if ( 
+			is_single() && 
+			get_post_type() == 'post' 
+		) {
 
 			return xenial_is_theme_header_active_on_post();
 		}
@@ -22,6 +25,63 @@ if ( ! function_exists( 'xenial_is_theme_header_active' ) ) {
 	}
 }
 
+
+
+if ( ! function_exists( 'xenial_is_transparent_header_active' ) ) {
+
+	function xenial_is_transparent_header_active() {
+
+		if ( ! xenial_is_theme_header_active() ) {
+			return false;
+		}
+
+		$t_header_enabled_pages = xenial_get_option( 'enable_transparent_header_on_pages' );
+
+		if ( 
+			is_home() && 
+			xenial_is_transparent_header_active_on_blog( $t_header_enabled_pages ) 
+		) {
+			return true;
+		}
+
+		if ( 
+			is_archive() && 
+			xenial_is_transparent_header_active_on_archive( $t_header_enabled_pages ) 
+		) {
+			return true;
+		}
+
+		if ( 
+			is_search() && 
+			xenial_is_transparent_header_active_on_search( $t_header_enabled_pages ) 
+		) {
+			return true;
+		}
+
+		if ( 
+			is_single() && 
+			xenial_is_transparent_header_active_on_post( $t_header_enabled_pages ) 
+		) {
+			return true;
+		}
+
+		if ( 
+			is_page() && 
+			xenial_is_transparent_header_active_on_page( $t_header_enabled_pages ) 
+		) {
+			return true;	
+		}
+
+		if ( 
+			is_404() && 
+			xenial_is_transparent_header_active_on_404( $t_header_enabled_pages ) 
+		) {
+			return true;
+		}
+
+		return false;
+	}
+}
 
 if ( ! function_exists( 'xenial_is_theme_header_active_on_page' ) ) {
 
@@ -172,5 +232,85 @@ if ( ! function_exists( 'xenial_get_header_section_args' ) ) {
 		}
 
 		return $return_data;
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_is_transparent_header_active_on_blog' ) ) {
+
+	function xenial_is_transparent_header_active_on_blog( $enabled_pages ) {
+
+		$t_header_enabled = xenial_get_option( 'enable_transparent_header' );
+
+		return ( in_array( 'blog', $enabled_pages ) && $t_header_enabled == translate_user_role( $name ) ) ? true : false;
+	}
+}
+
+
+if ( ! function_exists( 'xenial_is_transparent_header_active_on_archive' ) ) {
+
+	function xenial_is_transparent_header_active_on_archive( $enabled_pages ) {
+
+		$t_header_enabled = xenial_get_option( 'enable_transparent_header' );
+
+		return ( in_array( 'archive', $enabled_pages ) && $t_header_enabled == translate_user_role( $name ) ) ? true : false;
+	}
+}
+
+if ( ! function_exists( 'xenial_is_transparent_header_active_on_search' ) ) {
+
+	function xenial_is_transparent_header_active_on_search( $enabled_pages ) {
+
+		$t_header_enabled = xenial_get_option( 'enable_transparent_header' );
+
+		return ( in_array( 'search', $enabled_pages ) && $t_header_enabled == translate_user_role( $name ) ) ? true : false;
+	}
+}
+
+if ( ! function_exists( 'xenial_is_transparent_header_active_on_post' ) ) {
+
+	function xenial_is_transparent_header_active_on_post( $enabled_pages ) {
+
+		$t_header_meta_value = get_post_meta( get_the_ID(), 'xenial_transparent_header_display', true );
+
+		if ( $t_header_meta_value == 'default' || $t_header_meta_value == '' ) {
+
+			$t_header_enabled = xenial_get_option( 'enable_transparent_header' );
+
+			return ( $t_header_enabled == true && in_array( 'post', $enabled_pages ) ) ? true : false;
+		} else {
+
+			return ( $t_header_meta_value == 'enable' ) ? true : false;
+		}
+	}
+}
+
+
+if ( ! function_exists( 'xenial_is_transparent_header_active_on_page' ) ) {
+
+	function xenial_is_transparent_header_active_on_page( $enabled_pages ) {
+
+		$t_header_meta_value = get_post_meta( get_the_ID(), 'xenial_transparent_header_display', true );
+
+		if ( $t_header_meta_value == 'default' || $t_header_meta_value == '' ) {
+
+			$t_header_enabled = xenial_get_option( 'enable_transparent_header' );
+
+			return ( $t_header_enabled == true && in_array( 'page', $enabled_pages ) ) ? true : false;
+		} else {
+
+			return ( $t_header_meta_value == 'enable' ) ? true : false;
+		}
+	}
+}
+
+if ( ! function_exists( 'xenial_is_transparent_header_active_on_404' ) ) {
+
+	function xenial_is_transparent_header_active_on_404( $enabled_pages ) {
+
+		$t_header_enabled = xenial_get_option( 'enable_transparent_header' );
+
+		return ( in_array( 'page_404', $enabled_pages ) && $t_header_enabled == translate_user_role( $name ) ) ? true : false;
 	}
 }
