@@ -16,4 +16,4 @@ jobs:
                   slug: "xenial"
                   text_domain: "xenial"
               env:
-                  GITHUB_TOKEN: ${{ secrets.WPPOT_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
