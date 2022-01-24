@@ -100,7 +100,7 @@ if ( ! class_exists( 'Xenial_Customize_Button_Checkbox_Control' ) ) {
 		 								echo '<span class="dashicons ' . esc_attr( $value['icon'] ) . '"> ' . esc_html( $value['text'] ) . '</span>';
 		 								break;
 		 							default :
-		 								echo '<span>' . esc_html( $value ) . '</span>';
+		 								echo '<span class="' . $item . '-item">' . $value . '</span>';
 		 						}
 		 						?> 						
 		 					</label>

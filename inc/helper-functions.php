@@ -1,5 +1,12 @@
 <?php 
 
+if ( ! function_exists( 'xenial_calculate' ) ) {
+
+	function xenial_calculate( $arg_1, $args_2, $arg_3 ) {
+
+		return absint( ( $arg_1 / $args_2 ) * $arg_3 );
+	}
+}
 
 if ( ! function_exists( 'xenial_has_post_thumbnail' ) ) {
 	function xenial_has_post_thumbnail( $currentPage ) {

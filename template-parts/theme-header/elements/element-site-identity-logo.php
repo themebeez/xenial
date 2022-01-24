@@ -7,10 +7,7 @@ $xenial_display_tagline = get_bloginfo( 'description', 'display' );
 <div class="xe-header-element is-site-title-logo">
 	<div class="xe-site-branding" xe-logo-position="<?php echo esc_attr( $args['logo_position'] ); ?>">
 		<?php 
-		if ( has_custom_logo() ) {
-			
-			the_custom_logo();
-		}
+		do_action( 'xenial_header_logo' );		
 
 		if ( $xenial_display_site_title || $xenial_display_tagline ) { 
 			?>

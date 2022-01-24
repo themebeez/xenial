@@ -165,7 +165,10 @@ if ( ! function_exists( 'xenial_header_element_site_identity_template' ) ) {
 			'container_classes' => array(),
 			'site_title_classes' => array( 'site-title' ),
 			'tagline_classes' => array( 'site-description' ),
-			'logo_position' => 'none'
+			'logo_position' => 'none',
+			'display-site-title' => xenial_get_option( 'display_site_title' ),
+			'display-site-description' => xenial_get_option( 'display_site_description' ),
+			'enabled-transparent-header' => xenial_get_option( '' )
 		);
 
 		$site_title_device_visibility = xenial_get_option( 'site_title_visibility' );
@@ -421,5 +424,85 @@ if ( ! function_exists( 'xenial_header_element_edd_minicart_template' ) ) {
 		$template_args = apply_filters( 'xenial_header_element_edd_minicart_template_args', $template_args );
 		
 		get_template_part( 'template-parts/theme-header/elements/element', 'edd-minicart', $template_args );
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_header_logo_template' ) ) {
+
+	function xenial_header_logo_template() {
+
+		$desktop_logo_width = xenial_get_option( 'site_identity_logo_width_desktop' );
+
+		$tablet_logo_width = xenial_get_option( 'site_identity_logo_width_tablet' );
+
+		if ( xenial_is_transparent_header_active() ) {
+			?>
+			<a href="<?php echo esc_attr( home_url() ); ?>" class="xe-transparent-header-logo-link" rel="home" aria-current="page">
+				<?php
+				// Print transparent header desktop logo
+				if ( xenial_get_option( 'transparent_desktop_header_logo' ) ) {
+					$t_d_h_l_a_id = attachment_url_to_postid( xenial_get_option( 'transparent_desktop_header_logo' ) );
+					$t_d_h_l_a = wp_get_attachment_image_src( $t_d_h_l_a_id );
+					$t_d_h_l_calculate = xenial_calculate( $t_d_h_l_a[1], $t_d_h_l_a[2], $desktop_logo_width );
+					$t_d_h_l_attachment = wp_get_attachment_image_src( $t_d_h_l_a_id, array( $desktop_logo_width, $t_d_h_l_calculate ) );  
+					?>
+					<img src="<?php echo esc_url( $t_d_h_l_attachment[0] ); ?>" class="xe-logo xe-transparent-desktop-logo hidden-tablet-device hidden-mobile-device" width="<?php echo esc_attr( $t_d_h_l_attachment[1] ); ?>" height="<?php echo esc_attr( $t_d_h_l_attachment[2] ) ?>">
+					<?php
+				}
+
+				// Print transparent header mobile logo
+				if ( xenial_get_option( 'transparent_mobile_header_logo' ) ) {
+					$t_m_h_l_a_id = attachment_url_to_postid( xenial_get_option( 'transparent_desktop_header_logo' ) );
+					$t_m_h_l_a = wp_get_attachment_image_src( $t_m_h_l_a_id );
+					$t_m_h_l_calculate = xenial_calculate( $t_m_h_l_a[1], $t_d_h_l_a[2], $tablet_logo_width );
+					$t_m_h_l_attachment = wp_get_attachment_image_src( $t_m_h_l_a_id, array( $tablet_logo_width, $t_m_h_l_calculate ) );
+					?>
+					<img src="<?php echo esc_url( $t_m_h_l_attachment[0] ); ?>" class="xe-logo xe-transparent-mobile-logo hidden-desktop-device visible-tablet-device visible-mobile-device" width="<?php echo esc_attr( $t_m_h_l_attachment[1] ); ?>" height="<?php echo esc_attr( $t_m_h_l_attachment[2] ); ?>">
+					<?php
+				}
+				?>
+			</a>
+			<?php
+		}
+
+		if ( get_theme_mod( 'custom_logo' ) || xenial_get_option( 'mobile_logo' ) ) {
+			?>
+			<a href="<?php echo esc_attr( home_url() ); ?>" class="custom-logo-link" rel="home" aria-current="page">
+				<?php
+				if ( get_theme_mod( 'custom_logo' ) ) {
+					$d_d_h_l_a = wp_get_attachment_image_src( absint( get_theme_mod( 'custom_logo' ) ) );
+					$d_d_h_l_calculate = xenial_calculate( $d_d_h_l_a[1], $d_d_h_l_a[2], $desktop_logo_width );
+					$d_d_h_l_attachment = wp_get_attachment_image_src( absint( get_theme_mod( 'custom_logo' ) ), array( $desktop_logo_width, $d_d_h_l_calculate ) );  
+					?>
+					<img src="<?php echo esc_url( $d_d_h_l_attachment[0] ); ?>" class="xe-logo xe-transparent-desktop-logo hidden-tablet-device hidden-mobile-device" width="<?php echo esc_attr( $d_d_h_l_attachment[1] ); ?>" height="<?php echo esc_attr( $d_d_h_l_attachment[2] ) ?>">
+					<?php
+				}
+
+				if ( xenial_get_option( 'mobile_logo' ) ) {
+					$d_m_h_l_a_id = attachment_url_to_postid( xenial_get_option( 'mobile_logo' ) );
+					$d_m_h_l_a = wp_get_attachment_image_src( $d_m_h_l_a_id );
+					$d_m_h_l_calculate = xenial_calculate( $d_m_h_l_a[1], $d_d_h_l_a[2], $tablet_logo_width );
+					$d_m_h_l_attachment = wp_get_attachment_image_src( $d_m_h_l_a_id, array( $tablet_logo_width, $d_m_h_l_calculate ) );
+					?>
+					<img src="<?php echo esc_url( $d_m_h_l_attachment[0] ); ?>" class="xe-logo xe-transparent-mobile-logo hidden-desktop-device visible-tablet-device visible-mobile-device" width="<?php echo esc_attr( $d_m_h_l_attachment[1] ); ?>" height="<?php echo esc_attr( $d_m_h_l_attachment[2] ); ?>">
+					<?php
+				}
+				?>
+			</a>
+			<?php
+		}
+	}
+}
+
+
+
+
+if ( ! function_exists( 'xenial_transparent_header_logo_template' ) ) {
+
+	function xenial_transparent_header_logo_template() {
+
+		
 	}
 }

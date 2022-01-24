@@ -2,12 +2,11 @@
 
 
 /**
- * Add customize default values for EDD customize controls.
+ * Add customize default values for transparent header customize controls.
  * 
  * @since 1.0.0
  * @return array 
  */ 
-
 if ( ! function_exists( 'xenial_get_transparent_header_customize_defaults' ) ) {
 
 	function xenial_get_transparent_header_customize_defaults( $customize_defaults ) {
@@ -18,6 +17,7 @@ if ( ! function_exists( 'xenial_get_transparent_header_customize_defaults' ) ) {
 
 		$transparent_header_customize_defaults = array(
 			'enable_transparent_header' => false,
+			'enable_transparent_header_on_devices' => 'desktop,tablet,mobile',
             'enable_transparent_header_on_pages' => '',
             // Transparent header general
             'transparent_header_border_color' => $reponsive_default_color,

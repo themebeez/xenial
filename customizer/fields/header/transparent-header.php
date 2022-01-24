@@ -33,12 +33,14 @@ xenial_tab_field(
 	        	array(
 	        		'transparent_header_back_top_header_general' => '',
 	        		'transparent_header_general_divider_1' => '',
-	        		'enable_transparent_header_on_pages' => '',
+	        		'enable_transparent_header_on_devices' => '',
 	        		'transparent_header_general_divider_2' => '',
+	        		'enable_transparent_header_on_pages' => '',
+	        		'transparent_header_general_divider_3' => '',
 	        		'enable_transparent_header_logo' => '',
 	        		'transparent_desktop_header_logo' => '',
 	        		'transparent_mobile_header_logo' => '',
-	        		'transparent_header_general_divider_3' => ''
+	        		'transparent_header_general_divider_4' => ''
 	        	) 
 	        ),
 	        'tab_2' => apply_filters( 
@@ -114,6 +116,32 @@ xenial_divider_field(
 );
 
 
+xenial_button_checkbox_field(
+	'enable_transparent_header_on_devices',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_transparent_header',
+		'label' => esc_html__( 'Enable On', 'xenial' ),
+		'item' => 'svg',
+		'choices' => array(
+			'desktop' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 16h16V5H4v11zm9 2v2h4v2H7v-2h4v-2H2.992A.998.998 0 0 1 2 16.993V4.007C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007v12.986c0 .556-.455 1.007-.992 1.007H13z"/></svg>',
+			'tablet' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M6 4v16h12V4H6zM5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm7 15a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>',
+			'mobile' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7 4v16h10V4H7zM6 2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm6 15a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>'
+		),
+		'default' => xenial_get_customize_default( 'enable_transparent_header_on_devices' )
+	)
+);
+
+
+xenial_divider_field( 
+	'transparent_header_general_divider_2', 
+	array( 
+		'priority' => 10,
+		'section' => 'xenial_transparent_header', 
+	) 
+);
+
+
 xenial_sortable_checkbox_field(
 	'enable_transparent_header_on_pages',
 	array(
@@ -127,7 +155,7 @@ xenial_sortable_checkbox_field(
 
 
 xenial_divider_field( 
-	'transparent_header_general_divider_2', 
+	'transparent_header_general_divider_3', 
 	array( 
 		'priority' => 10,
 		'section' => 'xenial_transparent_header', 
@@ -166,7 +194,7 @@ xenial_image_upload_field(
 );
 
 xenial_divider_field( 
-	'transparent_header_general_divider_3', 
+	'transparent_header_general_divider_4', 
 	array( 
 		'priority' => 10,
 		'section' => 'xenial_transparent_header', 
