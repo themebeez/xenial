@@ -7,10 +7,7 @@ $xenial_display_tagline = get_bloginfo( 'description', 'display' );
 <div class="xe-header-element is-site-title-logo">
 	<div class="xe-site-branding" xe-logo-position="<?php echo esc_attr( $args['logo_position'] ); ?>">
 		<?php 
-		if ( has_custom_logo() ) {
-			
-			the_custom_logo();
-		}
+		do_action( 'xenial_header_logo' );		
 
 		if ( $xenial_display_site_title || $xenial_display_tagline ) { 
 			?>
@@ -22,7 +19,7 @@ $xenial_display_tagline = get_bloginfo( 'description', 'display' );
 					<?php
 				} 
 
-				if ( $xenial_display_tagline || is_customize_preview() ) {
+				if ( $args['display-site-description'] ) {
 					?>
 					<p class="<?php echo esc_attr( implode( ' ', $args['tagline_classes'] ) ); ?>"><?php echo $xenial_display_tagline; // phpcs:ignore. ?></p>
 					<?php

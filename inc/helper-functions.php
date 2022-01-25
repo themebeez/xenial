@@ -1,5 +1,55 @@
 <?php 
 
+if ( ! function_exists( 'xenial_get_attachment_src' ) ) {
+
+	function xenial_get_attachment_src( $url = '', $id = '', $width = '' ) {
+
+		// If both id and url are not present retrun.
+		if ( $id == '' || $url = '' ) {
+			return false;
+		}
+
+		// If id is present, assign it to variable $attachment_id.
+		$attachment_id = ( $id ) ? absint( $id ) : '';
+
+		// If id is not present, get attachment id with attachment url.
+		if ( $attachment_id == '' ) {
+			$attachment_id = ( $url != '' ) ? attachment_url_to_postid( $url ) : '';
+		}
+
+		// Return if attachment id is not found.
+		if ( $attachment_id == '' ) {
+			return false;
+		}
+
+		// Get actual image data url, width, and height.
+		$attachment_src = wp_get_attachment_image_src( $attachment_id );
+
+		if ( $attachment_src ) {
+			// If width is present calculate height and get and return new image data using the width and calculated height. Else, return the original image data.
+			if ( $width ) {
+
+				$height = absint( ( $attachment_src[1] / $attachment_src[2] ) * absint( $width ) );
+
+				$new_attachment_src = wp_get_attachment_image_src( $attachment_id, array( $width, $height ) );
+
+				return ( $new_attachment_src ) ? $new_attachment_src : false;
+			} else {
+				return $attachment_src;
+			}
+		} else {
+			return false;
+		}
+	} 
+}
+
+if ( ! function_exists( 'xenial_calculate' ) ) {
+
+	function xenial_calculate( $arg_1, $args_2, $arg_3 ) {
+
+		return absint( ( $arg_1 / $args_2 ) * $arg_3 );
+	}
+}
 
 if ( ! function_exists( 'xenial_has_post_thumbnail' ) ) {
 	function xenial_has_post_thumbnail( $currentPage ) {

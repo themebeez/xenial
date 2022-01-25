@@ -43,8 +43,13 @@
 	padding: 10px 0;
 	display: inline-block;
 	width: 100%;
+	line-height: 1;
 }
 
+.xenial-button-checkbox-control .checkbox-label span svg {
+	height: 20px;
+	widows: 20px;
+}
 
 .xenial-button-checkbox-control .checkbox-label span:hover {
 	background-color: rgba(255, 255, 255, .2);
@@ -55,11 +60,13 @@
 .xenial-button-checkbox-control .checkbox-label > input:checked + span {
 	background-color: #2084bd;
 	color: #fff;
+	fill: #fff;
 }
 
 
 .xenial-button-checkbox-control .checkbox-label > input:checked + span:hover {
 	color: #fff;
+
 }
 
 .xenial-button-checkbox-control .checkbox-label > img {

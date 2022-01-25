@@ -103,6 +103,10 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 
 			if ( $is_responsive ) {
 
+				$this->json['desktopInputAttrs'] = '';
+				$this->json['tabletInputAttrs'] = '';
+				$this->json['mobileInputAttrs'] = '';
+
 				if ( isset( $input_attrs['desktop'] ) ) {
 					foreach ( $input_attrs['desktop'] as $attr => $value ) {
 						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {

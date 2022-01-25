@@ -22,6 +22,10 @@ add_action( 'xenial_header_middle_row', 'xenial_header_middle_row_template' );
 add_action( 'xenial_header_bottom_row', 'xenial_header_bottom_row_template' );
 add_action( 'xenial_offcanvas', 'xenial_offcanvas_template' );
 
+
+add_action( 'xenial_header_logo', 'xenial_header_logo_template' );
+add_action( 'xenial_transparent_header_logo', 'xenial_transparent_header_logo_template' );
+
 add_action( 'xenial_header_element_site_identity', 'xenial_header_element_site_identity_template' );
 add_action( 'xenial_header_element_html', 'xenial_header_element_html_template' );
 add_action( 'xenial_header_element_button', 'xenial_header_element_button_template' );
