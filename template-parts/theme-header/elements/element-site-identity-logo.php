@@ -19,7 +19,7 @@ $xenial_display_tagline = get_bloginfo( 'description', 'display' );
 					<?php
 				} 
 
-				if ( $xenial_display_tagline || is_customize_preview() ) {
+				if ( $args['display-site-description'] ) {
 					?>
 					<p class="<?php echo esc_attr( implode( ' ', $args['tagline_classes'] ) ); ?>"><?php echo $xenial_display_tagline; // phpcs:ignore. ?></p>
 					<?php

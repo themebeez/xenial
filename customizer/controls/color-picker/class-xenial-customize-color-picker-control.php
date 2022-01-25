@@ -88,9 +88,11 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 				$class .= ' has-switchers';
 			}
 
-			?><li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
+			?>
+			<li id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>">
 				<?php $this->render_content(); ?>
-			</li><?php
+			</li>
+			<?php
 		}
 
 		/**

@@ -8,8 +8,6 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 			'xenial_theme_header_site_identity_logo_defaults_filter',
 			array(
 				'mobile_logo' => '',
-	            'transparent_desktop_logo' => '',
-	            'transparent_mobile_logo' => '',
 	            'site_identity_logo_width' => array(
 	                'desktop' => 200,
 	                'tablet' => '',
