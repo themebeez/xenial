@@ -5,20 +5,25 @@ if ( ! function_exists( 'xenial_get_attachment_src' ) ) {
 	function xenial_get_attachment_src( $url = '', $id = '', $width = '' ) {
 
 		// If both id and url are not present retrun.
-		if ( $id == '' || $url = '' ) {
+		if ( ! $id && ! $url ) {
 			return false;
 		}
 
+		$attachment_id = null;
+
 		// If id is present, assign it to variable $attachment_id.
-		$attachment_id = ( $id ) ? absint( $id ) : '';
+
+		if ( $id ) {
+			$attachment_id = absint( $id );
+		}
 
 		// If id is not present, get attachment id with attachment url.
-		if ( $attachment_id == '' ) {
-			$attachment_id = ( $url != '' ) ? attachment_url_to_postid( $url ) : '';
+		if ( ! $attachment_id ) {
+			$attachment_id = attachment_url_to_postid( $url );
 		}
 
 		// Return if attachment id is not found.
-		if ( $attachment_id == '' ) {
+		if ( ! $attachment_id ) {
 			return false;
 		}
 

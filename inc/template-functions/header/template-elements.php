@@ -433,21 +433,23 @@ if ( ! function_exists( 'xenial_header_logo_template' ) ) {
 
 	function xenial_header_logo_template() {
 
-		$transparent_desktop_header_logo_url = xenial_get_option( 'transparent_desktop_header_logo' );
-
-		$transparent_mobile_header_logo_url = xenial_get_option( 'transparent_mobile_header_logo' );
-
 		$default_logo_id = get_theme_mod( 'custom_logo' );
 
 		$default_mobile_header_logo_url = xenial_get_option( 'mobile_logo' );
 
 		$desktop_logo_width = xenial_get_option( 'site_identity_logo_width_desktop' );
 
-		$tablet_logo_width = xenial_get_option( 'site_identity_logo_width_tablet' );
+		$tablet_logo_width = xenial_get_option( 'site_identity_logo_width_tablet' ) ? xenial_get_option( 'site_identity_logo_width_tablet' ) : $desktop_logo_width;
 
-		$mobile_logo_width = xenial_get_option( 'site_identity_logo_width_mobile' );
+		$mobile_logo_width = xenial_get_option( 'site_identity_logo_width_mobile' ) ? xenial_get_option( 'site_identity_logo_width_mobile' ) : $desktop_logo_width;
 
 		if ( xenial_is_transparent_header_active() ) {
+
+			$enable_transparent_logo = xenial_get_option( 'enable_transparent_header_logo' );
+
+			$transparent_desktop_header_logo_url = xenial_get_option( 'transparent_desktop_header_logo' );
+
+			$transparent_mobile_header_logo_url = xenial_get_option( 'transparent_mobile_header_logo' );
 			?>
 			<a href="<?php echo esc_attr( home_url() ); ?>" class="xe-transparent-header-logo-link" rel="home" aria-current="page">
 				<?php
@@ -456,7 +458,7 @@ if ( ! function_exists( 'xenial_header_logo_template' ) ) {
 				$transparent_desktop_header_logo = '';
 				
 
-				if ( $transparent_desktop_header_logo_url ) {
+				if ( $transparent_desktop_header_logo_url && $enable_transparent_logo ) {
 					$transparent_desktop_header_logo = xenial_get_attachment_src( $transparent_desktop_header_logo_url, '', $desktop_logo_width );
 				} else {
 					if ( $default_logo_id ) {
@@ -474,11 +476,11 @@ if ( ! function_exists( 'xenial_header_logo_template' ) ) {
 				$transparent_tablet_header_logo = '';
 				$transparent_mobile_header_logo = '';
 
-				if ( $transparent_mobile_header_logo_url ) {
+				if ( $transparent_mobile_header_logo_url && $enable_transparent_logo ) {
 					$transparent_tablet_header_logo = xenial_get_attachment_src( $transparent_mobile_header_logo_url, '', $tablet_logo_width );
 					$transparent_mobile_header_logo = xenial_get_attachment_src( $transparent_mobile_header_logo_url, '', $mobile_logo_width );
 				} else {
-					if ( $transparent_desktop_header_logo_url ) {
+					if ( $transparent_desktop_header_logo_url && $enable_transparent_logo ) {
 						$transparent_tablet_header_logo = xenial_get_attachment_src( $transparent_desktop_header_logo_url, '', $tablet_logo_width );
 						$transparent_mobile_header_logo = xenial_get_attachment_src( $transparent_desktop_header_logo_url, '', $mobile_logo_width );
 					} else {
