@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-27T06:15:34+00:00\n"
+"POT-Creation-Date: 2022-01-27T07:03:24+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: xenial\n"
@@ -3484,7 +3484,7 @@ msgid "View all posts"
 msgstr ""
 
 #: template-parts/theme-header/elements/element-search-modal.php:15
-msgid "Please enter something & hit enter."
+msgid "Please enter search keyword & hit enter."
 msgstr ""
 
 #. Template Name of the theme
