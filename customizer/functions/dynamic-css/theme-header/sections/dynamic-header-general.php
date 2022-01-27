@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header general.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_general_css' ) ) {
 
-	function xenial_dynamic_header_general_css() {
+	function xenial_dynamic_header_general_css( $css ) {
 
 		$header_margin_desktop = array(
 			'margin-top' => xenial_get_option( 'header_margin_desktop_top' ),
@@ -51,7 +55,7 @@ if ( ! function_exists( 'xenial_dynamic_header_general_css' ) ) {
 
 		$header_background_type = xenial_get_option( 'header_background_type' );
 
-		$css = '#xe-mastheader {';
+		$css .= '#xe-mastheader {';
 			if ( $header_margin_desktop ) {
 				$css .= xenial_dynamic_spacing_css( $header_margin_desktop );
 			}
@@ -134,3 +138,4 @@ if ( ! function_exists( 'xenial_dynamic_header_general_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_general_css' );

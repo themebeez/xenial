@@ -1,7 +1,13 @@
 <?php 
-
+/**
+ * Dyynamic CSS for breadcrumbs.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
-	function xenial_dynamic_breadcrumbs_css() {
+
+	function xenial_dynamic_breadcrumbs_css( $css ) {
 
 		$breadcrumbs_desktop_font_size = xenial_get_option( 'breadcrumbs_font_size_desktop' );
 
@@ -10,8 +16,6 @@ if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
 		$breadcrumbs_mobile_font_size = xenial_get_option( 'breadcrumbs_font_size_mobile' );
 
 		$breadcrumbs_font_colors = xenial_json_decode( xenial_get_option( 'breadcrumbs_text_color' ) );
-
-		$css = '';
 
 		if ( $breadcrumbs_desktop_font_size ) {
 			$css .= '.xe-breadcrumb .trail-item > a, .xe-breadcrumb .trail-item > span {
@@ -50,3 +54,4 @@ if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_breadcrumbs_css' );

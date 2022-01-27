@@ -1,10 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header site identity element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
 
-	function xenial_dynamic_header_site_identity_css() {
-
+	function xenial_dynamic_header_site_identity_css( $css ) {
 
 		// Site title typography and colors
 
@@ -62,8 +65,6 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         	'text-transform' => xenial_get_option( 'site_description_text_transform' ),
         	'color' => $site_description_colors['desktop']['initial']
         );
-
-        $css = '';
 
         $css .= ':root{';
 
@@ -211,3 +212,4 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_site_identity_css' );

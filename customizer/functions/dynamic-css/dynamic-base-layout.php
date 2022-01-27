@@ -1,15 +1,25 @@
 <?php 
-
+/**
+ * Dyynamic CSS for site layout.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_layout_css' ) ) {
-	function xenial_dynamic_layout_css() {
+
+	function xenial_dynamic_layout_css( $css ) {
+
 		$siteLayout = xenial_get_option( 'site_layout' );
+
 		$siteContainerWidth = xenial_get_option( 'site_container_width' );
+
 		$contentAreaWidth = xenial_get_option( 'container_width' );
+
 		$narrowcontentAreaWidth = xenial_get_option( 'narrow_container_width' );
 
 		$sidebarWidth = xenial_get_option( 'sidebar_width' );
 
-		$css = ':root {
+		$css .= ':root {
 			--xe_container_width: ' . absint( $contentAreaWidth ) . 'px;
 			--xe_default_primary_area_width: calc( 100% - ' . absint( $sidebarWidth ) . '% );
 			--xe_default_sidebar_width: ' . absint( $sidebarWidth ) .  '%;
@@ -19,3 +29,4 @@ if ( ! function_exists( 'xenial_dynamic_layout_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_layout_css' );

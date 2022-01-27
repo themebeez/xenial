@@ -1,28 +1,34 @@
 <?php 
-
+/**
+ * Dyynamic CSS for site sidebar.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_sidebar_css' ) ) {
-	function xenial_dynamic_sidebar_css() {
 
-		$hasSidebar = xenial_has_sidebar();
-		if ( ! $hasSidebar ) {
-			return;
+	function xenial_dynamic_sidebar_css( $css ) {
+
+		$has_sidebar = xenial_has_sidebar();
+
+		if ( ! $has_sidebar ) {
+			return $css ;
 		}
 
-		$sidebarWidth = xenial_get_option( 'sidebar_width' );
+		$sidebar_width = xenial_get_option( 'sidebar_width' );
 
-		$css = '';
-
-		if ( $sidebarWidth ) {
+		if ( $sidebar_width ) {
 			$css .= '
 			#xe-page #primary {
-				width: calc( 100% - ' . absint( $sidebarWidth ) . '% );
+				width: calc( 100% - ' . absint( $sidebar_width ) . '% );
 			}
 
 			#xe-page #secondary {
-				width: ' . absint( $sidebarWidth ) . '%;
+				width: ' . absint( $sidebar_width ) . '%;
 			}';
 		}
 
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_sidebar_css' );

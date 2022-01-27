@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header bottom section.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_bottom_css' ) ) {
 
-	function xenial_dynamic_header_bottom_css() {
+	function xenial_dynamic_header_bottom_css( $css ) {
 
 		$bottom_header_height_desktop = xenial_get_option( 'header_bottom_section_min_width_desktop' );
 		$bottom_header_height_tablet = xenial_get_option( 'header_bottom_section_min_width_tablet' );
@@ -13,7 +17,7 @@ if ( ! function_exists( 'xenial_dynamic_header_bottom_css' ) ) {
 
 		$bottom_header_border = xenial_json_decode( xenial_get_option( 'header_bottom_section_border' ) );
 
-		$css = '.xe-bottom-header {';
+		$css .= '.xe-bottom-header {';
 
 			if ( $bottom_header_height_desktop ) {
 				$css .= '
@@ -93,3 +97,4 @@ if ( ! function_exists( 'xenial_dynamic_header_bottom_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_bottom_css' );

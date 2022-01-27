@@ -1,17 +1,19 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for post single header.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_single_header_css' ) ) {
 
-	function xenial_dynamic_single_header_css() {
+	function xenial_dynamic_single_header_css( $css ) {
 
 		$page_header_background_color = xenial_json_decode( xenial_get_option( 'post_single_breadcrumb_background_color' ) );
 
 		$display_breadcrumbs = xenial_get_option( 'post_single_display_breadcrumbs' );
 
 		$breadcrumbs_font_color = xenial_json_decode( xenial_get_option( 'post_single_breadcrumb_text_color' ) );
-
-		$css = '';
 
 		// Page header background color
 		if ( $page_header_background_color['desktop']['initial'] ) {
@@ -91,3 +93,4 @@ if ( ! function_exists( 'xenial_dynamic_single_header_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_single_header_css' );

@@ -1,5 +1,9 @@
 <?php
 
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-layout.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-typo.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-colors.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-base-buttons.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-general.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-header-top.php';
@@ -16,11 +20,11 @@ require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/eleme
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-html.php';
 
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu.php';
+
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-secondary-menu.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-social-links.php';
-
-require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-search.php';
 
@@ -30,6 +34,16 @@ require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/eleme
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu-dropdown.php';
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-transparent-header.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-breadcrumbs.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-header.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-pagination.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/archive/dynamic-archive-post-card.php';
+
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/single/dynamic-page-header.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/single/dynamic-single-header.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/dynamic-sidebar.php';
+
+
 
 /**
  * Function to load dynamic styles.
@@ -44,58 +58,6 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
         $customizer_defaults = xenial_get_customizer_defaults();
 
 		$css = '';
-
-		$css .= xenial_dynamic_layout_css();
-		
-        $css .= xenial_dynamic_typo_css();
-
-        $css .= xenial_dynamic_color_css();
-
-        $css .= xenial_dynamic_general_button_css();
-
-        $css .= xenial_dynamic_text_button_css();
-
-        $css .= xenial_dynamic_breadcrumbs_css();
-
-        $css .= xenial_dynamic_header_general_css();
-
-        $css .= xenial_dynamic_header_top_css();
-
-        $css .= xenial_dynamic_header_middle_css();
-
-        $css .= xenial_dynamic_header_bottom_css();
-
-        $css .= xenial_dynamic_header_off_canvas_css();
-        
-        $css .= xenial_dynamic_header_site_identity_css();
-
-        $css .= xenial_dynamic_header_button_css();
-
-        $css .= xenial_dynamic_header_html_css();
-
-        $css .= xenial_dynamic_header_secondary_menu_css();
-
-        $css .= xenial_dynamic_header_primary_menu_css();
-        
-        $css .= xenial_dynamic_header_primary_menu_dropdown_css();
-
-        $css .= xenial_dynamic_header_social_links_css();
-        
-        $css .= xenial_dynamic_header_search_css();
-
-        $css .= xenial_dynamic_header_off_canvas_toggle_button_css();
-        
-        $css .= xenial_dynamic_header_off_canvas_menu_css();
-
-        $css .= xenial_dynamic_archive_header_css();
-
-        $css .= xenial_dynamic_page_header_css();
-
-        $css .= xenial_dynamic_single_header_css();
-
-        // $css .= xenial_dynamic_sidebar_css();
-
-		// End styles for mobile devices
 
 		// Allow CSS to be filtered.
 		$css = apply_filters( 'xenial_dynamic_css', $css ); 

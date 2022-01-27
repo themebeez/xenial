@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for archive header.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_archive_header_css' ) ) {
 
-	function xenial_dynamic_archive_header_css() {
+	function xenial_dynamic_archive_header_css( $css ) {
 
 		$page_header_background_color = xenial_json_decode( xenial_get_option( 'archive_page_header_background_color' ) );
 
@@ -37,8 +41,6 @@ if ( ! function_exists( 'xenial_dynamic_archive_header_css' ) ) {
 		$display_breadcrumbs = xenial_get_option( 'archive_page_display_breadcrumbs' );
 
 		$breadcrumbs_font_color = xenial_json_decode( xenial_get_option( 'archive_page_header_breadcrumb_text_color' ) );
-
-		$css = '';
 
 		// Page header background color
 		if ( $page_header_background_color['desktop']['initial'] ) {
@@ -133,3 +135,4 @@ if ( ! function_exists( 'xenial_dynamic_archive_header_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_archive_header_css' );

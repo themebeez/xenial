@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header secondary menu element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 
-	function xenial_dynamic_header_secondary_menu_css() {
+	function xenial_dynamic_header_secondary_menu_css( $css ) {
 
 		$header_secondary_menu_font_colors = xenial_json_decode( xenial_get_option( 'header_secondary_menu_link_color' ) );
 
@@ -17,15 +21,13 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			'text-transform' => xenial_get_option( 'header_secondary_menu_text_transform' )
 		);
 
-		$css = '';
-
 		if ( $header_secondary_menu_items_spacing_desktop ) {
-			$css .= '#menu-secondary-menu {';
+			$css .= '.is-secondary .xe-site-navigation {';
 				$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_desktop ) . 'px;';
 			$css .= '}';
 		}		
 
-		$css .= '#menu-secondary-menu > li > a {';
+		$css .= '.is-secondary .xe-site-navigation ul > li > a {';
 			$css .= xenial_dynamic_font_css( $header_secondary_menu_font_desktop );
 			if ( $header_secondary_menu_font_colors['desktop']['initial'] ) {
 				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['desktop']['initial'] ) . ';';
@@ -33,7 +35,7 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 		$css .= '}';
 
 		if ( $header_secondary_menu_font_colors['desktop']['hover'] ) {
-			$css .= '#menu-secondary-menu > li > a:hover {';
+			$css .= '.is-secondary .xe-site-navigation ul > li > a:hover {';
 				$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['desktop']['hover'] ) . ';';
 			$css .= '}';
 		}
@@ -48,12 +50,12 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
         $css .= '@media screen and (max-width: 768px) {';
 
         	if ( $header_secondary_menu_items_spacing_tablet ) {
-        		$css .= '#menu-secondary-menu {';
+        		$css .= '.is-secondary .xe-site-navigation {';
 					$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_tablet ) . 'px;';
 				$css .= '}';
 			}        	
 
-			$css .= '#menu-secondary-menu > li > a {';
+			$css .= '.is-secondary .xe-site-navigation ul > li > a {';
 				$css .= xenial_dynamic_font_css( $header_secondary_menu_font_tablet );
 				if ( $header_secondary_menu_font_colors['tablet']['initial'] ) {
 					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['tablet']['initial'] ) . ';';
@@ -61,7 +63,7 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			$css .= '}';
 
 			if ( $header_secondary_menu_font_colors['tablet']['hover'] ) {
-				$css .= '#menu-secondary-menu > li > a:hover {';
+				$css .= '.is-secondary .xe-site-navigation ul > li > a:hover {';
 					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['tablet']['hover'] ) . ';';
 				$css .= '}';
 			}			
@@ -78,12 +80,12 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
         $css .= '@media screen and (max-width: 576px) {';
 
         	if ( $header_secondary_menu_items_spacing_mobile ) {
-        		$css .= '#menu-secondary-menu {';
+        		$css .= '.is-secondary .xe-site-navigation {';
 					$css .= 'gap: ' . esc_attr( $header_secondary_menu_items_spacing_mobile ) . 'px;';
 				$css .= '}';
 			}
         	
-			$css .= '#menu-secondary-menu > li > a {';
+			$css .= '.is-secondary .xe-site-navigation ul > li > a {';
 				$css .= xenial_dynamic_font_css( $header_secondary_menu_font_mobile );
 				if ( $header_secondary_menu_font_colors['mobile']['initial'] ) {
 					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['mobile']['initial'] ) . ';';
@@ -92,7 +94,7 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			$css .= '}';
 
 			if ( $header_secondary_menu_font_colors['mobile']['hover'] ) {
-				$css .= '#menu-secondary-menu > li > a:hover {';
+				$css .= '.is-secondary .xe-site-navigation ul > li > a:hover {';
 					$css .= 'color: ' . esc_attr( $header_secondary_menu_font_colors['mobile']['hover'] ) . ';';
 				$css .= '}';
 			}
@@ -102,3 +104,4 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
         return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_secondary_menu_css' );

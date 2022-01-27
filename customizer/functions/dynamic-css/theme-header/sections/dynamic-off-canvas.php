@@ -1,11 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for off canvas section.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_off_canvas_css' ) ) {
 
-	function xenial_dynamic_header_off_canvas_css() {
-
-		$css = '';
+	function xenial_dynamic_header_off_canvas_css( $css ) {
 
 		$header_off_canvas_width = xenial_get_option( 'offcanvas_side_panel_width' );
 
@@ -191,3 +193,4 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_off_canvas_css' );
