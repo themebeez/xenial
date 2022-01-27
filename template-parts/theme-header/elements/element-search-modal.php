@@ -12,7 +12,7 @@
 			</button>
 		</div><!-- // search-box-header -->
 		<div class="xe-search-box-text-outer">
-			<p class="xe-search-box-text"><?php echo __('Please enter something & hit enter.', 'xenial'); ?></p>
+			<p class="xe-search-box-text"><?php echo __('Please enter search keyword & hit enter.', 'xenial'); ?></p>
 		</div><!-- // search-box-text-outer -->
 		<?php get_search_form(); ?>
 	</div>
