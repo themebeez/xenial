@@ -46,6 +46,8 @@ xenial_tab_field(
 	        'tab_2' => apply_filters( 
 	        	'xenial_transparent_header_tab_2_controls', 
 	        	array(
+	        		'transparent_header_background_color' => '',
+	        		'transparent_header_style_divider_1' => '',
 	        		'transparent_header_border_color' => '',
 
 	        		'transparent_header_site_identity_wrapper' => '',
@@ -70,7 +72,7 @@ xenial_tab_field(
 	        		'transparent_header_search_modal_toggle_button_text_color' => '',
 	        		'transparent_header_search_modal_toggle_button_background_color' => '',
 	        		'transparent_header_search_modal_toggle_button_border_color' => '',
-	        		'transparent_header_style_divider_1' => '',
+	        		'transparent_header_style_divider_2' => '',
 	        		'transparent_header_element_search_bar_title' => '',
 	        		'transparent_header_search_bar_background_color' => '',
 	        		'transparent_header_search_bar_text_color' => '',
@@ -202,9 +204,25 @@ xenial_divider_field(
 );
 
 
+xenial_color_picker_field(
+	'transparent_header_background_color',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_transparent_header',
+		'label' => esc_html__( 'Background Color', 'xenial' ),
+		'is_responsive' => true,
+		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_background_color' ),
+		'default' => xenial_get_customize_default( 'transparent_header_background_color' )
+	)
+);
 
-
-
+xenial_divider_field( 
+	'transparent_header_style_divider_1', 
+	array( 
+		'priority' => 10,
+		'section' => 'xenial_transparent_header', 
+	) 
+);
 
 
 xenial_color_picker_field(
@@ -440,7 +458,7 @@ xenial_color_picker_field(
 
 
 xenial_divider_field( 
-	'transparent_header_style_divider_1', 
+	'transparent_header_style_divider_2', 
 	array( 
 		'priority' => 10,
 		'section' => 'xenial_transparent_header', 

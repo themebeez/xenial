@@ -134,6 +134,18 @@
    --xe_default_layout_container_stretch_width: 100%;
   --xe_default_layout_container_stretch_maxwidth: 1920px;
 
+
+  /* -------------------------------------------------------------------------- 
+    Transparent header 
+  -------------------------------------------------------------------------- */
+  --xe_transparent_header_background_color_desktop: rgba(255,255,255,0);
+  --xe_transparent_header_background_color_tablet: rgba(255,255,255,0);
+  --xe_transparent_header_background_color_mobile: rgba(255,255,255,0);
+  --xe_transparent_header_border_color_desktop: var(--xe_border_color);
+  --xe_transparent_header_border_color_tablet: var(--xe_border_color);
+  --xe_transparent_header_border_color_mobile: var(--xe_border_color);
+
+
    /* -------------------------------------------------------------------------- 
 	  Site title & description
   -------------------------------------------------------------------------- */

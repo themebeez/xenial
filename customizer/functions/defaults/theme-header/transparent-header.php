@@ -20,6 +20,7 @@ if ( ! function_exists( 'xenial_get_transparent_header_customize_defaults' ) ) {
 			'enable_transparent_header_on_devices' => 'desktop,tablet,mobile',
             'enable_transparent_header_on_pages' => '',
             // Transparent header general
+            'transparent_header_background_color' => $reponsive_default_color,
             'transparent_header_border_color' => $reponsive_default_color,
             // Site Logo
             'enable_transparent_header_logo' => false,
@@ -80,6 +81,26 @@ if ( ! function_exists( 'xenial_transparent_header_allowed_customize_fields' ) )
 
 		$transparent_header_allowed_customize_fields = array(
 			// Transparent header general
+			'transparent_header_background_color' => array(
+                'desktop' => array(
+            		'initial' => array(
+	            		'display' => true,
+	            		'default' => '#000000'
+	            	)
+            	),
+            	'tablet' => array(
+            		'initial' => array(
+	            		'display' => true,
+	            		'default' => '#000000'
+	            	)
+            	),
+            	'mobile' => array(
+            		'initial' => array(
+	            		'display' => true,
+	            		'default' => '#000000'
+	            	)
+            	)
+            ),
             'transparent_header_border_color' => array(
                 'desktop' => array(
             		'initial' => array(

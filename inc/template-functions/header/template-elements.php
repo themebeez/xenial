@@ -459,8 +459,10 @@ if ( ! function_exists( 'xenial_header_logo_template' ) ) {
 				
 
 				if ( $transparent_desktop_header_logo_url && $enable_transparent_logo ) {
+					// If transparent header desktop logo is present and transparent header logo enabled get transparent header desktop logo data
 					$transparent_desktop_header_logo = xenial_get_attachment_src( $transparent_desktop_header_logo_url, '', $desktop_logo_width );
 				} else {
+					// If transparent header desktop logo is not present or transparent header logo is not enabled get default header desktop logo data
 					if ( $default_logo_id ) {
 						$transparent_desktop_header_logo = xenial_get_attachment_src( '', $default_logo_id, $desktop_logo_width );
 					}
@@ -477,13 +479,16 @@ if ( ! function_exists( 'xenial_header_logo_template' ) ) {
 				$transparent_mobile_header_logo = '';
 
 				if ( $transparent_mobile_header_logo_url && $enable_transparent_logo ) {
+					// If transparent header mobile logo is present and transparent header logo enabled get transparent header mobile logo data
 					$transparent_tablet_header_logo = xenial_get_attachment_src( $transparent_mobile_header_logo_url, '', $tablet_logo_width );
 					$transparent_mobile_header_logo = xenial_get_attachment_src( $transparent_mobile_header_logo_url, '', $mobile_logo_width );
 				} else {
+					// If transparent header desktop logo is present and transparent header logo is enabled get transparent header desktop logo data
 					if ( $transparent_desktop_header_logo_url && $enable_transparent_logo ) {
 						$transparent_tablet_header_logo = xenial_get_attachment_src( $transparent_desktop_header_logo_url, '', $tablet_logo_width );
 						$transparent_mobile_header_logo = xenial_get_attachment_src( $transparent_desktop_header_logo_url, '', $mobile_logo_width );
 					} else {
+						// If transparent header tablet logo is not present or transparent header logo is not enabled get default header tablet logo data
 						if ( $default_logo_id ) {
 							$transparent_tablet_header_logo = xenial_get_attachment_src( '', $default_logo_id, $tablet_logo_width );
 							$transparent_mobile_header_logo = xenial_get_attachment_src( '', $default_logo_id, $mobile_logo_width );
@@ -511,6 +516,7 @@ if ( ! function_exists( 'xenial_header_logo_template' ) ) {
 			?>
 			<a href="<?php echo esc_attr( home_url() ); ?>" class="custom-logo-link" rel="home" aria-current="page">
 				<?php
+				// If default header logo is present, print default header logo.
 				if ( $default_logo_id ) {
 
 					$default_deskop_header_logo = xenial_get_attachment_src( '', $default_logo_id, $desktop_logo_width );
@@ -525,7 +531,8 @@ if ( ! function_exists( 'xenial_header_logo_template' ) ) {
 				$default_tablet_header_logo = '';
 				$default_mobile_header_logo = '';
 
-				if ( $default_mobile_header_logo_url != '' ) {
+				// Print default mobile header logo if present else print default desktop header.
+				if ( $default_mobile_header_logo_url ) {
 					$default_tablet_header_logo = xenial_get_attachment_src( $default_mobile_header_logo_url, '', $tablet_logo_width );
 					$default_mobile_header_logo = xenial_get_attachment_src( $default_mobile_header_logo_url, '', $mobile_logo_width );
 				} else {
