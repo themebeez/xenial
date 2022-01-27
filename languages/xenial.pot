@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-01-25T08:05:36+00:00\n"
+"POT-Creation-Date: 2022-01-27T06:15:34+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0\n"
 "X-Domain: xenial\n"
@@ -276,13 +276,13 @@ msgstr ""
 #: customizer/fields/footer/middle-footer.php:348
 #: customizer/fields/footer/top-footer.php:290
 #: customizer/fields/footer/top-footer.php:348
-#: customizer/fields/header/transparent-header.php:215
-#: customizer/fields/header/transparent-header.php:299
-#: customizer/fields/header/transparent-header.php:373
-#: customizer/fields/header/transparent-header.php:434
-#: customizer/fields/header/transparent-header.php:491
-#: customizer/fields/header/transparent-header.php:554
-#: customizer/fields/header/transparent-header.php:626
+#: customizer/fields/header/transparent-header.php:233
+#: customizer/fields/header/transparent-header.php:317
+#: customizer/fields/header/transparent-header.php:391
+#: customizer/fields/header/transparent-header.php:452
+#: customizer/fields/header/transparent-header.php:509
+#: customizer/fields/header/transparent-header.php:572
+#: customizer/fields/header/transparent-header.php:644
 msgid "Border Color"
 msgstr ""
 
@@ -504,8 +504,8 @@ msgstr ""
 
 #: customizer/fields/breadcrumbs.php:136
 #: customizer/fields/header/elements/offcanvas-menu.php:318
-#: customizer/fields/header/transparent-header.php:323
-#: customizer/fields/header/transparent-header.php:465
+#: customizer/fields/header/transparent-header.php:341
+#: customizer/fields/header/transparent-header.php:483
 #: inc/third-party/edd/edd-functions.php:210
 #: inc/third-party/edd/edd-functions.php:232
 msgid "Font Color"
@@ -571,12 +571,13 @@ msgstr ""
 #: customizer/fields/header/offcanvas.php:332
 #: customizer/fields/header/offcanvas.php:571
 #: customizer/fields/header/top-header.php:93
-#: customizer/fields/header/transparent-header.php:287
-#: customizer/fields/header/transparent-header.php:360
-#: customizer/fields/header/transparent-header.php:421
-#: customizer/fields/header/transparent-header.php:478
-#: customizer/fields/header/transparent-header.php:541
-#: customizer/fields/header/transparent-header.php:613
+#: customizer/fields/header/transparent-header.php:212
+#: customizer/fields/header/transparent-header.php:305
+#: customizer/fields/header/transparent-header.php:378
+#: customizer/fields/header/transparent-header.php:439
+#: customizer/fields/header/transparent-header.php:496
+#: customizer/fields/header/transparent-header.php:559
+#: customizer/fields/header/transparent-header.php:631
 #: customizer/fields/pages/inner-header.php:389
 #: customizer/fields/pages/page-single/header.php:96
 #: customizer/fields/pages/post-single/header.php:75
@@ -651,7 +652,7 @@ msgid "Enable Banner"
 msgstr ""
 
 #: customizer/fields/fields-banner.php:49
-#: customizer/fields/header/transparent-header.php:124
+#: customizer/fields/header/transparent-header.php:126
 #: customizer/fields/pages/breadcrumbs.php:76
 #: customizer/fields/pages/inner-header.php:131
 msgid "Enable On"
@@ -1107,8 +1108,8 @@ msgstr ""
 #: customizer/fields/footer/elements/widget-5.php:143
 #: customizer/fields/footer/elements/widget-6.php:143
 #: customizer/fields/header/elements/secondary-menu.php:260
-#: customizer/fields/header/transparent-header.php:578
-#: customizer/fields/header/transparent-header.php:600
+#: customizer/fields/header/transparent-header.php:596
+#: customizer/fields/header/transparent-header.php:618
 msgid "Link Color"
 msgstr ""
 
@@ -1226,7 +1227,7 @@ msgstr ""
 #: customizer/fields/footer/elements/social-links.php:85
 #: customizer/fields/header/elements/social-links.php:8
 #: customizer/fields/header/elements/social-links.php:75
-#: customizer/fields/header/transparent-header.php:505
+#: customizer/fields/header/transparent-header.php:523
 #: customizer/functions/customizer-choices.php:498
 msgid "Social Links"
 msgstr ""
@@ -1304,15 +1305,15 @@ msgstr ""
 #: customizer/fields/footer/elements/social-links.php:429
 #: customizer/fields/footer/elements/social-links.php:497
 #: customizer/fields/header/elements/social-links.php:330
-#: customizer/fields/header/transparent-header.php:408
-#: customizer/fields/header/transparent-header.php:515
+#: customizer/fields/header/transparent-header.php:426
+#: customizer/fields/header/transparent-header.php:533
 msgid "Icon Color"
 msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:441
 #: customizer/fields/footer/elements/social-links.php:509
 #: customizer/fields/header/elements/social-links.php:404
-#: customizer/fields/header/transparent-header.php:528
+#: customizer/fields/header/transparent-header.php:546
 #: customizer/fields/pages/archive/header.php:230
 #: customizer/fields/pages/page-single/header.php:214
 msgid "Title Color"
@@ -1434,7 +1435,7 @@ msgid "Radio Settings"
 msgstr ""
 
 #: customizer/fields/header/elements/button.php:8
-#: customizer/fields/header/transparent-header.php:264
+#: customizer/fields/header/transparent-header.php:282
 #: customizer/functions/customizer-choices.php:511
 #: customizer/functions/customizer-choices.php:1230
 #: customizer/functions/customizer-choices.php:1277
@@ -1464,7 +1465,7 @@ msgid "Button Border"
 msgstr ""
 
 #: customizer/fields/header/elements/button.php:333
-#: customizer/fields/header/transparent-header.php:274
+#: customizer/fields/header/transparent-header.php:292
 msgid "Label Color"
 msgstr ""
 
@@ -1488,12 +1489,12 @@ msgid "Logo"
 msgstr ""
 
 #: customizer/fields/header/elements/logo.php:99
-#: customizer/fields/header/transparent-header.php:180
+#: customizer/fields/header/transparent-header.php:182
 msgid "Desktop Logo"
 msgstr ""
 
 #: customizer/fields/header/elements/logo.php:106
-#: customizer/fields/header/transparent-header.php:191
+#: customizer/fields/header/transparent-header.php:193
 msgid "Mobile Logo"
 msgstr ""
 
@@ -1540,7 +1541,7 @@ msgid "Letter Spacing"
 msgstr ""
 
 #: customizer/fields/header/elements/logo.php:499
-#: customizer/fields/header/transparent-header.php:239
+#: customizer/fields/header/transparent-header.php:257
 msgid "Site Title Color"
 msgstr ""
 
@@ -1596,7 +1597,7 @@ msgid "Top Offset (px)"
 msgstr ""
 
 #: customizer/fields/header/elements/offcanvas-toggle-button.php:8
-#: customizer/fields/header/transparent-header.php:336
+#: customizer/fields/header/transparent-header.php:354
 msgid "Off-Canvas Toggle Button"
 msgstr ""
 
@@ -1647,7 +1648,7 @@ msgstr ""
 
 #: customizer/fields/header/elements/primary-menu.php:8
 #: customizer/fields/header/elements/primary-menu.php:64
-#: customizer/fields/header/transparent-header.php:590
+#: customizer/fields/header/transparent-header.php:608
 msgid "Primary Menu"
 msgstr ""
 
@@ -1680,7 +1681,7 @@ msgid "Menu Item Background Color"
 msgstr ""
 
 #: customizer/fields/header/elements/search.php:7
-#: customizer/fields/header/transparent-header.php:387
+#: customizer/fields/header/transparent-header.php:405
 #: customizer/functions/customizer-choices.php:510
 #: customizer/functions/customizer-choices.php:1250
 #: customizer/functions/customizer-choices.php:1292
@@ -1694,7 +1695,7 @@ msgstr ""
 
 #: customizer/fields/header/elements/search.php:96
 #: customizer/fields/header/elements/search.php:213
-#: customizer/fields/header/transparent-header.php:455
+#: customizer/fields/header/transparent-header.php:473
 #: customizer/functions/customizer-choices.php:1324
 #: customizer/functions/customizer-choices.php:1334
 #: customizer/functions/customizer-choices.php:1344
@@ -1753,7 +1754,7 @@ msgid "Search Bar Border"
 msgstr ""
 
 #: customizer/fields/header/elements/search.php:371
-#: customizer/fields/header/transparent-header.php:398
+#: customizer/fields/header/transparent-header.php:416
 msgid "Search Modal Toggle Button"
 msgstr ""
 
@@ -1767,7 +1768,7 @@ msgstr ""
 
 #: customizer/fields/header/elements/secondary-menu.php:7
 #: customizer/fields/header/elements/secondary-menu.php:57
-#: customizer/fields/header/transparent-header.php:568
+#: customizer/fields/header/transparent-header.php:586
 msgid "Secondary Menu"
 msgstr ""
 
@@ -1864,31 +1865,31 @@ msgstr ""
 msgid "Transparent Header"
 msgstr ""
 
-#: customizer/fields/header/transparent-header.php:104
+#: customizer/fields/header/transparent-header.php:106
 msgid "Go back to Header > General"
 msgstr ""
 
-#: customizer/fields/header/transparent-header.php:150
+#: customizer/fields/header/transparent-header.php:152
 msgid "Enable On Templates"
 msgstr ""
 
-#: customizer/fields/header/transparent-header.php:170
+#: customizer/fields/header/transparent-header.php:172
 msgid "Different Logo For Transparent Header?"
 msgstr ""
 
-#: customizer/fields/header/transparent-header.php:228
+#: customizer/fields/header/transparent-header.php:246
 msgid "Site Identity"
 msgstr ""
 
-#: customizer/fields/header/transparent-header.php:251
+#: customizer/fields/header/transparent-header.php:269
 msgid "Site Description Color"
 msgstr ""
 
-#: customizer/fields/header/transparent-header.php:313
+#: customizer/fields/header/transparent-header.php:331
 msgid "HTML/Text"
 msgstr ""
 
-#: customizer/fields/header/transparent-header.php:347
+#: customizer/fields/header/transparent-header.php:365
 msgid "Icon / Label Color"
 msgstr ""
 
