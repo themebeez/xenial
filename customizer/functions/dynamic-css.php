@@ -29,6 +29,7 @@ require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/eleme
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-off-canvas-menu.php';
 
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/elements/dynamic-primary-menu-dropdown.php';
+require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css/theme-header/sections/dynamic-transparent-header.php';
 
 /**
  * Function to load dynamic styles.
