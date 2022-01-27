@@ -34,6 +34,49 @@
 }
 
 /* -------------------------------------------------------------------------- 
+	Transparent Header
+  -------------------------------------------------------------------------- */
+
+.xe-transparent-header-enabled {
+
+    #xe-mastheader  {
+
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        z-index: var(--xe_sticky_header_zindex);
+        background-color: transparent;
+
+        .xe-top-header,
+        .xe-middle-header,
+        .xe-bottom-header {
+
+            background-color: transparent;
+        }
+    }
+}
+
+.logged-in.xe-transparent-header-enabled {
+
+    #xe-mastheader  {
+
+        top: 32px;
+    }
+}
+
+.elementor-editor-active.xe-transparent-header-enabled {
+
+    #xe-mastheader {
+
+        display: none;
+    } 
+}
+
+/* -------------------------------------------------------------------------- 
 	Desktop Header
   -------------------------------------------------------------------------- */
 
@@ -90,5 +133,10 @@
     #xe-mobile-header {
 
         display: block;
+    }
+
+    .logged-in.xe-transparent-header-enabled #xe-mastheader {
+
+        top: 48px
     }
 }
