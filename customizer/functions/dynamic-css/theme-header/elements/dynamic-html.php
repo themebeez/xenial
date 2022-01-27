@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header HTML/Text element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
 
-	function xenial_dynamic_header_html_css() {
+	function xenial_dynamic_header_html_css( $css ) {
 
 		$header_html_font_colors = xenial_json_decode( xenial_get_option( 'header_html_text_color' ) );
 
@@ -15,7 +19,7 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
 			'text-transform' => xenial_get_option( 'header_html_text_text_transform' )
 		);
 
-		$css = '.xe-header-element.is-html {';
+		$css .= '.xe-header-element.is-html {';
 			$css .= xenial_dynamic_font_css( $header_html_font_desktop );
 			if ( $header_html_font_colors['desktop']['initial']  ) {
 				$css .= 'color: ' . esc_attr( $header_html_font_colors['desktop']['initial'] ) . ';';
@@ -96,3 +100,4 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
         return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_html_css' );

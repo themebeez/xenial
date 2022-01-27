@@ -1,7 +1,7 @@
 <?php 
 ?>
 <div class="xe-header-element is-site-title-logo">
-	<div class="xe-site-branding" xe-logo-position="<?php echo esc_attr( $args['logo_position'] ); ?>">
+	<div class="<?php echo esc_attr( implode( ' ', $args['classes'] ) ); ?>" xe-logo-position="<?php echo esc_attr( $args['logo_position'] ); ?>">
 		<?php 
 		do_action( 'xenial_header_logo' );		
 

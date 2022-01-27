@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header top section.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_top_css' ) ) {
 
-	function xenial_dynamic_header_top_css() {
+	function xenial_dynamic_header_top_css( $css ) {
 
 		$top_header_height_desktop = xenial_get_option( 'header_top_section_min_width_desktop' );
 		$top_header_height_tablet = xenial_get_option( 'header_top_section_min_width_tablet' );
@@ -13,7 +17,7 @@ if ( ! function_exists( 'xenial_dynamic_header_top_css' ) ) {
 
 		$top_header_border = xenial_json_decode( xenial_get_option( 'header_top_section_border' ) );
 
-		$css = '.xe-top-header {';
+		$css .= '.xe-top-header {';
 
 			if ( $top_header_height_desktop ) {
 				$css .= '
@@ -93,3 +97,4 @@ if ( ! function_exists( 'xenial_dynamic_header_top_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_top_css' );

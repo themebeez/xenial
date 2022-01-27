@@ -1,12 +1,13 @@
 <?php 
-
-
-
+/**
+ * Dyynamic CSS for header search element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 
-	function xenial_dynamic_header_search_css() {
-
-		$css = '';
+	function xenial_dynamic_header_search_css( $css ) {
 
 		$search_modal_background_colors = xenial_json_decode( xenial_get_option( 'header_search_modal_background_color' ) );
 
@@ -660,6 +661,6 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 		$css .= '}';
 
 		return $css;
-		
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_search_css' );

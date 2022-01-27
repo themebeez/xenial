@@ -1,12 +1,15 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for general typography.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
-	function xenial_dynamic_typo_css() {
+
+	function xenial_dynamic_typo_css( $css ) {
 
 		$customizer_defaults = xenial_get_customizer_defaults();
-
-		$css = '';
 
         $body_font_family = null;
         $body_font_size = null;
@@ -735,7 +738,7 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
         return $css;
 	}
 }
-
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_typo_css' );
 
 
 if ( ! function_exists( 'xenial_google_font_weight' ) ) {

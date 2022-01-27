@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header primary menu element dropdown.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_primary_menu_dropdown_css' ) ) {
 
-	function xenial_dynamic_header_primary_menu_dropdown_css() {
+	function xenial_dynamic_header_primary_menu_dropdown_css( $css ) {
 
 		$header_primary_menu_dropdown_width = xenial_get_option( 'primary_menu_dropdown_width' );
 
@@ -40,8 +44,6 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_dropdown_css' ) ) {
 			'font-style' => xenial_get_option( 'primary_menu_dropdown_items_font_style' ),
 			'text-transform' => xenial_get_option( 'primary_menu_dropdown_items_text_transform' )
 		);
-
-		$css = '';
 
 		$css .= ':root {';
 			if ( $header_primary_menu_dropdown_items_background_colors['initial'] ) {
@@ -121,3 +123,4 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_dropdown_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_primary_menu_dropdown_css' ); 

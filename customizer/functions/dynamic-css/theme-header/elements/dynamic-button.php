@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header button element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_button_css' ) ) {
 
-	function xenial_dynamic_header_button_css() {
+	function xenial_dynamic_header_button_css( $css ) {
 
 		$header_button_padding_desktop = array(
 			'padding-top' => xenial_get_option( 'header_button_padding_desktop_top' ),
@@ -27,7 +31,7 @@ if ( ! function_exists( 'xenial_dynamic_header_button_css' ) ) {
 		$header_button_background_colors = xenial_json_decode( xenial_get_option( 'header_button_background_color' ) );
 
 
-		$css = '.xe-header-element-button {';
+		$css .= '.xe-header-element-button {';
 
 			$css .= xenial_dynamic_spacing_css( $header_button_padding_desktop );
 
@@ -167,3 +171,4 @@ if ( ! function_exists( 'xenial_dynamic_header_button_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_button_css' );

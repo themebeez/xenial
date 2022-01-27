@@ -1,6 +1,11 @@
 <?php 
 
-
+/**
+ * Dyynamic CSS for transparent header.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 
 	function xenial_dynamic_transparent_header_css( $css ) {

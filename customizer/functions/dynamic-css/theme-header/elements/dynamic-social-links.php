@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header social link element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 
-	function xenial_dynamic_header_social_links_css() {
+	function xenial_dynamic_header_social_links_css( $css )  {
 
 		$header_social_links_items_background_colors = xenial_json_decode( xenial_get_option( 'header_social_link_background_color' ) );
 
@@ -26,9 +30,6 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 			'font-size' => xenial_get_option( 'header_social_link_title_font_size_desktop' ),
 			'line-height' => xenial_get_option( 'header_social_link_title_line_height_desktop' )
 		);	
-
-		
-		$css = '';
 
 		if ( $header_social_links_desktop['items-spacing'] ) {
 			$css .= '.xe-header-element-social {';
@@ -341,3 +342,4 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
         return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_social_links_css' );

@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for general buttons.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 	
-	function xenial_dynamic_general_button_css() {
+	function xenial_dynamic_general_button_css( $css ) {
 
 		$global_button_padding = array(
 			'padding-top' => xenial_get_option( 'btn_padding_top' ),
@@ -20,7 +24,7 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 
 		// Dynamic CSS for global button initial state.
 
-		$css = 'button, input[type="button"], input[type="reset"], input[type="submit"], .xe-button {';
+		$css .= 'button, input[type="button"], input[type="reset"], input[type="submit"], .xe-button {';
 
 			$css .= xenial_dynamic_spacing_css( $global_button_padding );
 
@@ -66,21 +70,25 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_general_button_css' );
 
 
 
-
+/**
+ * Dyynamic CSS for general text buttons.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_text_button_css' ) ) {
 
-	function xenial_dynamic_text_button_css() {
+	function xenial_dynamic_text_button_css( $css ) {
 
 		$global_text_button_label_colors = xenial_json_decode( xenial_get_option( 'txt_btn_txt_color' ) );
 
 		$global_text_button_border_colors = xenial_json_decode( xenial_get_option( 'txt_btn_border_color' ) );
 
 		$global_text_button_bottom_border_width = xenial_get_option( 'txt_btn_border_width' );
-
-		$css = '';
 
 		$css .= ':root {';
 			$css .= '--xe_text_button_color: ' . esc_attr( $global_text_button_label_colors['initial'] ) . ';';
@@ -93,3 +101,4 @@ if ( ! function_exists( 'xenial_dynamic_text_button_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_text_button_css' );

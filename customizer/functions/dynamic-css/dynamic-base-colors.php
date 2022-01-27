@@ -1,8 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for general theme colors.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
-	function xenial_dynamic_color_css() {
+
+	function xenial_dynamic_color_css( $css ) {
 
 		$primary_color = xenial_json_decode( xenial_get_option( 'primary_color' ) );
 
@@ -22,7 +27,7 @@ if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
 
 		$global_input_field_border_color = xenial_json_decode( xenial_get_option( 'input_fields_border_color' ) );
 
-		$css = ':root {';
+		$css .= ':root {';
 
 			if ( $primary_color['initial'] ) {
 				$css .= '--xe_primary_color: ' . esc_attr( $primary_color['initial'] ) . ';';
@@ -77,3 +82,4 @@ if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_color_css' );

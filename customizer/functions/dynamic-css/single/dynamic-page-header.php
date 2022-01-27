@@ -1,8 +1,13 @@
 <?php 
-
+/**
+ * Dyynamic CSS for page single header.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_page_header_css' ) ) {
 
-	function xenial_dynamic_page_header_css() {
+	function xenial_dynamic_page_header_css( $css ) {
 
 		$page_header_background_color = xenial_json_decode( xenial_get_option( 'page_single_header_background_color' ) );
 
@@ -36,8 +41,6 @@ if ( ! function_exists( 'xenial_dynamic_page_header_css' ) ) {
 		$display_breadcrumbs = xenial_page_header_has_breadcrumbs_enabled();
 
 		$breadcrumbs_font_color = xenial_json_decode( xenial_get_option( 'page_single_header_breadcrumb_text_color' ) );
-
-		$css = '';
 
 		// Page header background color
 		if ( $page_header_background_color['desktop']['initial'] ) {
@@ -132,3 +135,4 @@ if ( ! function_exists( 'xenial_dynamic_page_header_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_page_header_css' );

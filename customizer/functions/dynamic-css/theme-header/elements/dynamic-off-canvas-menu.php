@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header off canvas menu element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 
-	function xenial_dynamic_header_off_canvas_menu_css() {
+	function xenial_dynamic_header_off_canvas_menu_css( $css ) {
 
 		$header_off_canvas_menu_items_padding = array(
 			'padding-top' => xenial_get_option( 'offcanvas_menu_item_padding_top' ),
@@ -24,8 +28,6 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 
 		$header_off_canvas_menu_items_font_colors = xenial_json_decode( xenial_get_option( 'offcanvas_menu_item_color' ) );
 
-
-
 		$header_off_canvas_menu_submenu_toggle_button_background_colors = xenial_json_decode( xenial_get_option( 'offcanvas_menu_submenu_toggle_button_background_color' ) );
 
 		$header_off_canvas_menu_submenu_toggle_button_font_colors = xenial_json_decode( xenial_get_option( 'offcanvas_menu_submenu_toggle_button_label_color' ) );
@@ -33,8 +35,6 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 		$header_off_canvas_menu_submenu_toggle_button_top_offset = xenial_get_option( 'offcanvas_menu_submenu_toggle_button_top_offset' );
 
 		$header_off_canvas_menu_submenu_toggle_button_borders = xenial_json_decode( xenial_get_option( 'offcanvas_menu_submenu_toggle_button_border' ) );
-
-		$css = '';
 
 		$css .= ':root {';
 			if ( $header_off_canvas_menu_items_font_colors['initial'] ) {
@@ -159,3 +159,4 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_off_canvas_menu_css' );

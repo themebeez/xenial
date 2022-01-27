@@ -48,6 +48,82 @@ if ( ! function_exists( 'xenial_get_attachment_src' ) ) {
 	} 
 }
 
+
+
+if ( ! function_exists( 'xenial_get_content_alignment_class' ) ) {
+
+	function xenial_get_content_alignment_class( $position = 'left', $device = '' ) {
+		$class = '';
+
+		if ( $device ) {
+			switch ( $device ) {
+				case 'tablet' :
+					switch ( $position ) {
+						case 'left' :
+							$class = 'text-align-left-tablet-device';
+							break;
+						case 'center' :
+							$class = 'text-align-center-tablet-device';
+							break;
+						case 'right' :
+							$class = 'text-align-right-tablet-device';
+							break;
+						default :
+							break;
+					}
+					break;
+				case 'mobile' :
+					switch ( $position ) {
+						case 'left' :
+							$class = 'text-align-left-mobile-device';
+							break;
+						case 'center' :
+							$class = 'text-align-center-mobile-device';
+							break;
+						case 'right' :
+							$class = 'text-align-right-mobile-device';
+							break;
+						default :
+							break;
+					}
+					break;
+				default :
+					switch ( $position ) {
+						case 'left' :
+							$class = 'text-align-left';
+							break;
+						case 'center' :
+							$class = 'text-align-center';
+							break;
+						case 'right' :
+							$class = 'text-align-right';
+							break;
+						default :
+							break;
+					}
+					break;
+			}
+		} else {
+			switch ( $position ) {
+				case 'left' :
+					$class = 'text-align-left';
+					break;
+				case 'center' :
+					$class = 'text-align-center';
+					break;
+				case 'right' :
+					$class = 'text-align-right';
+					break;
+				default :
+					break;
+			}
+		}
+		
+
+		return $class;
+	}
+}
+
 if ( ! function_exists( 'xenial_calculate' ) ) {
 
 	function xenial_calculate( $arg_1, $args_2, $arg_3 ) {

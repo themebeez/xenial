@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header off canvas toggle button element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_off_canvas_toggle_button_css' ) ) {
 
-	function xenial_dynamic_header_off_canvas_toggle_button_css() {
+	function xenial_dynamic_header_off_canvas_toggle_button_css( $css ) {
 
 		$header_off_canvas_toggle_button_padding = array(
 			'padding-top' => xenial_get_option( 'offcanvas_toggle_button_padding_top' ),
@@ -19,8 +23,6 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_toggle_button_css' ) )
 		$header_off_canvas_toggle_button_background_colors = xenial_json_decode( xenial_get_option( 'offcanvas_toggle_button_background_color' ) );
 
 		$header_off_canvas_toggle_button_borders = xenial_json_decode( xenial_get_option( 'offcanvas_toggle_button_border' ) );
-
-		$css = '';
 
 		if ( $header_off_canvas_toggle_button_label_colors['initial'] ) {
 			$css .= ':root {';
@@ -68,3 +70,4 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_toggle_button_css' ) )
 		return $css;
 	}
 }  
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_off_canvas_toggle_button_css' );

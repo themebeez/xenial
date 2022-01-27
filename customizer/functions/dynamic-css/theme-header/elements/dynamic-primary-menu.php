@@ -1,9 +1,13 @@
 <?php 
-
-
+/**
+ * Dyynamic CSS for header primary menu element.
+ *  
+ * @param string 
+ * @return string
+ */
 if ( ! function_exists( 'xenial_dynamic_header_primary_menu_css' ) ) {
 
-	function xenial_dynamic_header_primary_menu_css() {
+	function xenial_dynamic_header_primary_menu_css( $css ) {
 
 		$header_primary_menu_items_padding = array(
 			'padding-top' => xenial_get_option( 'primary_menu_top_level_items_padding_top' ),
@@ -27,9 +31,6 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_css' ) ) {
 		$header_primary_menu_item_font_colors = xenial_json_decode( xenial_get_option( 'primary_menu_top_level_items_color' ) );
 
 		$header_primary_menu_item_background_colors = xenial_json_decode( xenial_get_option( 'primary_menu_top_level_items_background_color' ) );
-
-
-		$css = '';
 
 		if ( $header_primary_menu_items_spacing ) {
 			$css .= '.xe-site-navigation > ul.xe-main-navigation {';
@@ -94,3 +95,4 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_css' ) ) {
 		return $css;
 	}
 }
+add_filter( 'xenial_dynamic_css', 'xenial_dynamic_header_primary_menu_css' );
