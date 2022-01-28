@@ -58,13 +58,13 @@
             background-color: transparent;
         }
     }
-}
 
-.logged-in.xe-transparent-header-enabled {
+    .xe-site-branding {
 
-    #xe-mastheader  {
+        .custom-logo-link {
 
-        top: 32px;
+            display: none;
+        }
     }
 }
 
@@ -133,10 +133,5 @@
     #xe-mobile-header {
 
         display: block;
-    }
-
-    .logged-in.xe-transparent-header-enabled #xe-mastheader {
-
-        top: 48px
     }
 }
