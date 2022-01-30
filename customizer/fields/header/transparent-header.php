@@ -211,7 +211,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_background_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_background_color' )
 	)
 );
@@ -232,7 +231,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_border_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_border_color' )
 	)
 );
@@ -256,7 +254,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Site Title Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_site_title_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_site_title_color' )
 	)
 );
@@ -268,7 +265,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Site Description Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_description_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_description_color' )
 	)
 );
@@ -291,7 +287,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Label Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_button_font_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_button_font_color' )
 	)
 );
@@ -304,7 +299,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_button_background_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_button_background_color' )
 	)
 );
@@ -316,7 +310,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_button_border_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_button_border_color' )
 	)
 );
@@ -340,7 +333,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Font Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_html_text_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_html_text_color' )
 	)
 );
@@ -364,7 +356,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Icon / Label Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_offcanvas_toggle_button_label_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_offcanvas_toggle_button_label_color' )
 	)
 );
@@ -377,7 +368,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_offcanvas_toggle_button_background_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_offcanvas_toggle_button_background_color' )
 	)
 );
@@ -390,7 +380,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_offcanvas_toggle_button_border_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_offcanvas_toggle_button_border_color' )
 	)
 );
@@ -425,7 +414,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Icon Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_search_modal_toggle_button_text_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_search_modal_toggle_button_text_color' )
 	)
 );
@@ -438,7 +426,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_search_modal_toggle_button_background_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_search_modal_toggle_button_background_color' )
 	)
 );
@@ -451,7 +438,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_search_modal_toggle_button_border_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_search_modal_toggle_button_border_color' )
 	)
 );
@@ -482,7 +468,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Font Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_search_bar_text_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_search_bar_text_color' )
 	)
 );
@@ -495,7 +480,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_search_bar_background_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_search_bar_background_color' )
 	)
 );
@@ -508,7 +492,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_search_bar_border_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_search_bar_border_color' )
 	)
 );
@@ -532,7 +515,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Icon Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_social_link_icon_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_social_link_icon_color' )
 	)
 );
@@ -545,7 +527,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Title Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_social_link_title_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_social_link_title_color' )
 	)
 );
@@ -558,7 +539,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_social_link_background_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_social_link_background_color' )
 	)
 );
@@ -571,7 +551,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_social_link_border_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_social_link_border_color' )
 	)
 );
@@ -595,7 +574,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Link Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_secondary_menu_link_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_secondary_menu_link_color' )
 	)
 );
@@ -617,7 +595,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Link Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_primary_menu_top_level_items_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_primary_menu_top_level_items_color' )
 	)
 );
@@ -630,7 +607,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_primary_menu_top_level_items_background_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_primary_menu_top_level_items_background_color' )
 	)
 );
@@ -643,7 +619,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_transparent_header',
 		'label' => esc_html__( 'Border Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'transparent_header_primary_menu_top_level_items_border_color' ),
 		'default' => xenial_get_customize_default( 'transparent_header_primary_menu_top_level_items_border_color' )
 	)
 );

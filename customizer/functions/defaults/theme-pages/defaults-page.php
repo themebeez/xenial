@@ -8,9 +8,9 @@ if ( ! function_exists( 'xenial_get_customizer_defaults_page_single_values' ) ) 
             'page_single_title_tag' => 'h1',
             'page_single_display_breadcrumbs' => true,
 
-            'page_single_header_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
-            'page_single_header_title_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
-            'page_single_header_breadcrumb_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+            'page_single_header_background_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
+            'page_single_header_title_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
+            'page_single_header_breadcrumb_text_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
 
             'page_single_title_font_size' => array(
                 'desktop' => '',

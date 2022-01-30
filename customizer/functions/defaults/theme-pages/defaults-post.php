@@ -6,8 +6,8 @@ if ( ! function_exists( 'xenial_get_customizer_default_post_single_page_values' 
             'post_single_display_breadcrumbs' => true,
             'post_single_breadcrumbs_width' => 'container',
 
-            'post_single_breadcrumb_background_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
-            'post_single_breadcrumb_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+            'post_single_breadcrumb_background_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
+            'post_single_breadcrumb_text_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
 
             'post_single_content_width' => 'container',
             'post_single_content_elements' => array( 'title', 'image', 'categories', 'tags', 'meta', 'updated_date', 'content' ),

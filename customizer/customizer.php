@@ -197,11 +197,11 @@ function xenial_customize_register( $wp_customize ) {
 
 
 	/**
-	 * Load custom customizer control for upsell
+	 * Load custom customizer control for rgba color picker.
 	 */
 	require $controls_path . 'color-picker/class-xenial-customize-color-picker-control.php';
 
-	$wp_customize->register_section_type( 'Xenial_Customize_Color_Picker_Control' );
+	$wp_customize->register_section_type( 'Xenial_Color_Picker_Customize_Control' );
 
 
 	/**
@@ -251,7 +251,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/transparent-header.php';
 
 	require $customizer_fields_path . 'header/elements/logo.php';
-	// require $customizer_fields_path . 'header/elements/ad.php';
+	// // require $customizer_fields_path . 'header/elements/ad.php';
 	require $customizer_fields_path . 'header/elements/button.php';
 	require $customizer_fields_path . 'header/elements/html.php';
 	require $customizer_fields_path . 'header/elements/primary-menu.php';
@@ -263,8 +263,8 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/elements/offcanvas-menu.php';
 	// require $customizer_fields_path . 'header/elements/text.php';
 
-	require $customizer_fields_path . 'pages/inner-header.php';
-	// require $customizer_fields_path . 'pages/breadcrumbs.php';
+	// require $customizer_fields_path . 'pages/inner-header.php';
+	// // require $customizer_fields_path . 'pages/breadcrumbs.php';
 	require $customizer_fields_path . 'pages/archive-settings.php';
 	require $customizer_fields_path . 'pages/archive/header.php';
 	require $customizer_fields_path . 'pages/archive/post-card.php';
@@ -328,7 +328,6 @@ require XENIAL_THEME_DIR . '/customizer/functions/active-callbacks.php';
 /**
  * Load function to load customizer field's default values.
  */
-require XENIAL_THEME_DIR . '/customizer/functions/defaults/allowed-fields.php';
 require XENIAL_THEME_DIR . '/customizer/functions/defaults/defaults.php';
 
 
@@ -390,3 +389,33 @@ add_action( 'customize_preview_init', 'xenial_customize_preview_js' );
 
 
 
+function xenial_get_customize_responsive_icon_desktop() {
+	?>
+	<li class="desktop">
+		<button type="button" class="preview-desktop active" data-device="desktop">
+			<?php echo apply_filters( 'xenial_filter_responsive_icon_desktop', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M4 5v11h16V5H4zm-2-.993C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007V18H2V4.007zM1 19h22v2H1v-2z"/></svg>' ); ?>
+		</button>
+	</li>
+	<?php
+}
+
+
+function xenial_get_customize_responsive_icon_tablet() {
+	?>
+	<li class="tablet">
+		<button type="button" class="preview-tablet" data-device="tablet">
+			<?php echo apply_filters( 'xenial_filter_responsive_icon_tablet', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M6 4v16h12V4H6zM5 2h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm7 15a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>' ); ?>
+		</button>
+	</li>
+	<?php
+}
+
+function xenial_get_customize_responsive_icon_mobile() {
+	?>
+	<li class="tablet">
+		<button type="button" class="preview-mobile" data-device="mobile">
+			<?php echo apply_filters( 'xenial_filter_responsive_icon_mobile', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M7 4v16h10V4H7zM6 2h12a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm6 15a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>' ); ?>
+		</button>
+	</li>
+	<?php
+}

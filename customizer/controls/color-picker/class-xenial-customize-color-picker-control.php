@@ -13,9 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Buttonset control
  */
-if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
+if( ! class_exists( 'Xenial_Color_Picker_Customize_Control' ) ) {
 
-	class Xenial_Customize_Color_Picker_Control extends WP_Customize_Control {
+	class Xenial_Color_Picker_Customize_Control extends WP_Customize_Control {
 
 		/**
 		 * The control type.
@@ -25,12 +25,8 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 		 */
 		public $type = 'xenial-color-picker';
 
-		public $value;
-
 		public function __construct( $manager, $id, $args = array(), $options = array() ) {
 			parent::__construct( $manager, $id, $args );
-
-			$this->value = $this->value();
 		}
 
 		/**
@@ -51,7 +47,7 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 			);
 
 			wp_enqueue_style(
-				XENIAL_THEME_SLUG . '-color-picker',
+				XENIAL_THEME_SLUG . 'color-picker',
 				$asset_uri . 'color-picker.css',
 				null,
 				XENIAL_THEME_VERSION,
@@ -67,7 +63,7 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 			);
 
 			wp_enqueue_script(
-				XENIAL_THEME_SLUG . '-color-picker',
+				XENIAL_THEME_SLUG . 'color-picker',
 				$asset_uri . 'color-picker.js',
 				array('jquery', 'pickr'),
 				XENIAL_THEME_VERSION,
@@ -121,6 +117,8 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 			$this->json['link'] = $this->get_link();
 
 			$this->json['labels'] = $this->get_labels();
+
+			$this->json['defaults'] = $default_values;
 		}
 
 		/**
@@ -136,64 +134,23 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 		protected function content_template() {
 			?>
 			<#
-			var settingValue;
-
-			if ( data.isResponsive ) {
-				settingValue = {
-					desktop: {
-						initial: '',
-						link: '',
-						hover: '',
-						active: ''
-					},
-					tablet: {
-						initial: '',
-						link: '',
-						hover: '',
-						active: ''
-					},
-					mobile: {
-						initial: '',
-						link: '',
-						hover: '',
-						active: ''		
-					}
-				};
-			} else {
-				settingValue = {
-					initial: '',
-					link: '',
-					hover: '',
-					active: ''
-				};
-			}
-			if ( data.value ) {
-				settingValue = JSON.parse( data.value );
-			} 
-			// console.log( data.id );
-			// console.log( data.value );
-			
+			var defaults = JSON.parse( data.defaults );
+			var values = JSON.parse( data.value );			
 			#>
 			<# if ( data.label ) { #>
 				<span class="customize-control-title">
 					<span>{{{ data.label }}}</span>
 					<# if ( data.isResponsive ) { #>
 						<ul class="responsive-switchers">
-							<li class="desktop">
-								<button type="button" class="preview-desktop active" data-device="desktop">
-									<i class="dashicons dashicons-desktop"></i>
-								</button>
-							</li>
-							<li class="tablet">
-								<button type="button" class="preview-tablet" data-device="tablet">
-									<i class="dashicons dashicons-tablet"></i>
-								</button>
-							</li>
-							<li class="mobile">
-								<button type="button" class="preview-mobile" data-device="mobile">
-									<i class="dashicons dashicons-smartphone"></i>
-								</button>
-							</li>
+							<# if ( 'desktop' in defaults ) { #>
+								<?php xenial_get_customize_responsive_icon_desktop(); ?>
+							<# } #>
+							<# if ( 'tablet' in defaults ) { #>
+								<?php xenial_get_customize_responsive_icon_tablet(); ?>
+							<# } #>
+							<# if ( 'mobile' in defaults ) { #>
+								<?php xenial_get_customize_responsive_icon_mobile(); ?>
+							<# } #>
 						</ul>
 					<# } #>
 				</span>
@@ -205,70 +162,58 @@ if( ! class_exists( 'Xenial_Customize_Color_Picker_Control' ) ) {
 
 			<# if ( data.isResponsive ) { #>
 				<div class="xenial-responsive-color-wrapper">
-					<# let desktopColors = data.colors.desktop; #>
-					<# let savedDesktopColors = settingValue.desktop; #>
-					<ul class="desktop responsive-control-wrap xenial-color-field-wrapper active">
-						<# _.each( desktopColors, function( value, key ) {
-							if ( value.display ) {
+					<# if ( 'desktop' in defaults ) { #>
+						<ul class="desktop responsive-control-wrap xenial-color-field-wrapper active">
+							<# _.each( defaults.desktop, function( value, key ) {
 								#>
 								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
-									<input type="hidden" name="desktop-{{ key }}-color-{{ data.id }}" value="{{ savedDesktopColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
-									<div id="desktop-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedDesktopColors[ key ] }}"></div>
+									<input type="hidden" name="desktop-{{ key }}-color-{{ data.id }}" value="{{ values.desktop[ key ] }}" data-default="{{ value }}" class="xe-color-picker" data-device="desktop" data-state="{{ key }}">
+									<div id="desktop-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ values.desktop[ key ] }}"></div>
 								</li>
 								<#
-							}
-						} ); #>
-					</ul>
-					<# let tabletColors = data.colors.tablet; #>
-					<# let savedTabletColors = settingValue.tablet; #>
-					<ul class="tablet responsive-control-wrap xenial-color-field-wrapper">
-						<# _.each( tabletColors, function( value, key ) {
-							if ( value.display ) {
+							} ); #>
+						</ul>
+					<# } #>
+					<# if ( 'tablet' in defaults ) { #>
+						<ul class="tablet responsive-control-wrap xenial-color-field-wrapper">
+							<# _.each( defaults.tablet, function( value, key ) {
 								#>
 								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
-									<input type="hidden" name="tablet-{{ key }}-color-{{ data.id }}" value="{{ savedTabletColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
-									<div id="tablet-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedTabletColors[ key ] }}"></div>
+									<input type="hidden" name="tablet-{{ key }}-color-{{ data.id }}" value="{{ values.tablet[ key ] }}" data-default="{{ value }}" class="xe-color-picker" data-device="tablet" data-state="{{ key }}">
+									<div id="tablet-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ values.tablet[ key ] }}"></div>
 								</li>
 								<#
-							}
-						} ); #>
-					</ul>
-					<# let mobileColors = data.colors.mobile; #>
-					<# let savedMobileColors = settingValue.mobile; #>
-					<ul class="mobile responsive-control-wrap xenial-color-field-wrapper">
-						<# _.each( mobileColors, function( value, key ) {
-							if ( value.display ) {
+							} ); #>
+						</ul>
+					<# } #>
+					<# if ( 'mobile' in defaults ) { #>
+						<ul class="mobile responsive-control-wrap xenial-color-field-wrapper">
+							<# _.each( defaults.mobile, function( value, key ) {
 								#>
 								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
-									<input type="hidden" name="mobile-{{ key }}-color-{{ data.id }}" value="{{ savedMobileColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
-									<div id="mobile-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedMobileColors[ key ] }}"></div>
+									<input type="hidden" name="mobile-{{ key }}-color-{{ data.id }}" value="{{ values.mobile[ key ] }}" data-default="{{ value }}" class="xe-color-picker" data-device="mobile" data-state="{{ key }}">
+									<div id="mobile-{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ values.mobile[ key ] }}"></div>
 								</li>
 								<#
-							}
-						} ); #>
-					</ul>
+							} ); #>
+						</ul>
+					<# } #>
 				</div>
-				
 			<# } else { #>
 				<div class="xenial-normal-color-wrapper">
-					<# let normalColors = data.colors; #>
-					<# let savedNormalColors = settingValue; #>
 					<ul class="colors control-wrap xenial-color-field-wrapper">
-						<# _.each( normalColors, function( value, key ) {
-							if ( value.display ) {
-								#>
-								<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
-									<input type="hidden" name="{{ key }}-color-{{ data.id }}" value="{{ savedNormalColors[ key ] }}" data-default="{{ value.default }}" class="xe-color-picker">
-									<div id="{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ savedNormalColors[ key ] }}"></div>
-								</li>
-								<#
-							}
+						<# _.each( defaults, function( value, key ) {
+							#>
+							<li class="xe-customize-tippy" data-tippy-content="{{ data.labels[ key ] }}">
+								<input type="hidden" name="{{ key }}-color-{{ data.id }}" value="{{ values[ key ] }}" data-default="{{ value }}" class="xe-color-picker" data-device="normal" data-state="{{ key }}">
+								<div id="{{ key }}-color-{{ data.id }}" class="xenial-picker" data-color="{{ values[ key ] }}"></div>
+							</li>
+							<#
 						} ); #>
 					</ul>
 				</div>				
 			<# } #>
 			<input type="hidden" name="xenial-color-picker-setting-input" id="xenial-color-picker-setting-input-{{ data.id }}" value="{{ data.value }}" {{ data.link }}>
-			<input type="hidden" name="xenial-color-picker-responsive-{{ data.id }}" id="xenial-color-picker-responsive-{{ data.id }}" value="{{ data.isResponsive }}">
 			<?php
 		}
 

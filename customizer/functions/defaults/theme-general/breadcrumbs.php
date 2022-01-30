@@ -12,7 +12,7 @@ if ( ! function_exists( 'xenial_get_customizer_default_breadcrumbs_values' ) ) {
                 'tablet' => '',
                 'mobile' => '',
             ),
-            'breadcrumbs_text_color' => '{"initial":"","link":"","hover":"","active":""}'
+            'breadcrumbs_text_color' => '{"initial":"","hover":""}'
         );
     }
 }
