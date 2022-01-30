@@ -95,7 +95,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_page_single',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'page_single_header_background_color' ),
 		'default' => xenial_get_customize_default( 'page_single_header_background_color' )
 	)
 );
@@ -223,7 +222,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_page_single',
 		'label' => esc_html__( 'Header Page Title Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'page_single_header_title_color' ),
 		'default' => xenial_get_customize_default( 'page_single_header_title_color' )
 	)
 );
@@ -254,7 +252,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_page_single',
 		'label' => esc_html__( 'Breadcrumbs Font Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'page_single_header_breadcrumb_text_color' ),
 		'default' => xenial_get_customize_default( 'page_single_header_breadcrumb_text_color' )
 	)
 );

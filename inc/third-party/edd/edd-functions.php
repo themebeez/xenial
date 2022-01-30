@@ -91,8 +91,8 @@ add_action( 'wp_ajax_nopriv_xenial_edd_mini_cart_update', 'xenial_edd_mini_cart_
 function xenial_edd_customize_defaults( $customize_defaults ) {
 
 	$edd_customize_defaults = array(
-		'edd_mini_cart_font_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
-		'transparent_header_edd_mini_cart_font_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}'
+		'edd_mini_cart_font_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
+		'transparent_header_edd_mini_cart_font_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}'
 	);
 
 	$customize_defaults = array_merge( $customize_defaults, $edd_customize_defaults );
@@ -100,88 +100,6 @@ function xenial_edd_customize_defaults( $customize_defaults ) {
 	return $customize_defaults;
 }
 add_filter( 'xenial_customize_defaults', 'xenial_edd_customize_defaults' );
-
-
-/**
- * Add allowed field values for EDD customize controls.
- * 
- * @since 1.0.0
- * @return array 
- */ 
-function xenial_edd_allowed_customize_fields( $allowed_customize_fields ) {
-
-	$edd_allowed_customize_fields = array(
-		'edd_mini_cart_font_color' => array(
-			'desktop' => array(
-				'initial' => array(
-	                'display' => true,
-	                'default' => ''
-	            ),
-	            'hover' => array(
-	                'display' => true,
-	                'default' => ''
-	            )
-			),
-			'tablet' => array(
-				'initial' => array(
-	                'display' => true,
-	                'default' => ''
-	            ),
-	            'hover' => array(
-	                'display' => true,
-	                'default' => ''
-	            )
-			),
-			'mobile' => array(
-				'initial' => array(
-	                'display' => true,
-	                'default' => ''
-	            ),
-	            'hover' => array(
-	                'display' => true,
-	                'default' => ''
-	            )
-			)
-		),
-		'transparent_header_edd_mini_cart_font_color' => array(
-			'desktop' => array(
-				'initial' => array(
-	                'display' => true,
-	                'default' => ''
-	            ),
-	            'hover' => array(
-	                'display' => true,
-	                'default' => ''
-	            )
-			),
-			'tablet' => array(
-				'initial' => array(
-	                'display' => true,
-	                'default' => ''
-	            ),
-	            'hover' => array(
-	                'display' => true,
-	                'default' => ''
-	            )
-			),
-			'mobile' => array(
-				'initial' => array(
-	                'display' => true,
-	                'default' => ''
-	            ),
-	            'hover' => array(
-	                'display' => true,
-	                'default' => ''
-	            )
-			)
-		)
-	);
-
-	$allowed_customize_fields = array_merge( $allowed_customize_fields, $edd_allowed_customize_fields );
-
-	return $allowed_customize_fields;
-}
-add_filter( 'xenial_get_customize_allowed_fields_filter', 'xenial_edd_allowed_customize_fields' );
 
 
 /**

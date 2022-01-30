@@ -109,7 +109,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_menu',
 		'label' => esc_html__( 'Menu Item Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_menu_item_color' ),
 		'default' => xenial_get_customize_default( 'offcanvas_menu_item_color' )
 	)
 );
@@ -168,7 +167,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_menu',
 		'label' => esc_html__( 'Divider Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_menu_item_divider_color' ),
 		'default' => xenial_get_customize_default( 'offcanvas_menu_item_divider_color' )
 	)
 );
@@ -304,7 +302,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_menu',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_menu_submenu_toggle_button_background_color' ),
 		'default' => xenial_get_customize_default( 'offcanvas_menu_submenu_toggle_button_background_color' )
 	)
 );
@@ -317,7 +314,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_menu',
 		'label' => esc_html__( 'Font Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_menu_submenu_toggle_button_label_color' ),
 		'default' => xenial_get_customize_default( 'offcanvas_menu_submenu_toggle_button_label_color' )
 	)
 );

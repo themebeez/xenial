@@ -33,7 +33,7 @@ if ( ! function_exists( 'xenial_get_header_secondary_menu_customize_defaults' ) 
 	            'header_secondary_menu_font_weight' => '400',
 	            'header_secondary_menu_font_style' => 'normal',
 	            'header_secondary_menu_text_transform' => 'inherit',
-	            'header_secondary_menu_link_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+	            'header_secondary_menu_link_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
 			)
 		);
 	}

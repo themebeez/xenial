@@ -156,21 +156,9 @@ if( ! class_exists( 'Xenial_Customize_Radio_Button_Group_Control' ) ) {
 
 					<# if ( data.isResponsive ) { #>
 						<ul class="responsive-switchers">
-							<li class="desktop">
-								<button type="button" class="preview-desktop active" data-device="desktop">
-									<i class="dashicons dashicons-desktop"></i>
-								</button>
-							</li>
-							<li class="tablet">
-								<button type="button" class="preview-tablet" data-device="tablet">
-									<i class="dashicons dashicons-tablet"></i>
-								</button>
-							</li>
-							<li class="mobile">
-								<button type="button" class="preview-mobile" data-device="mobile">
-									<i class="dashicons dashicons-smartphone"></i>
-								</button>
-							</li>
+							<?php xenial_get_customize_responsive_icon_desktop(); ?>
+							<?php xenial_get_customize_responsive_icon_tablet(); ?>
+							<?php xenial_get_customize_responsive_icon_mobile(); ?>
 						</ul>
 					<# } #>
 

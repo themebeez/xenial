@@ -74,7 +74,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_post_single',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'post_single_breadcrumb_background_color' ),
 		'default' => xenial_get_customize_default( 'post_single_breadcrumb_background_color' )
 	)
 );
@@ -87,7 +86,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_post_single',
 		'label' => esc_html__( 'Breadcrumbs Font Color', 'xenial' ),
 		'is_responsive' => true,
-		'colors' => xenial_get_customize_allowed_fields( 'post_single_breadcrumb_text_color' ),
 		'default' => xenial_get_customize_default( 'post_single_breadcrumb_text_color' )
 	)
 );

@@ -26,7 +26,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_colors',
 		'label' => esc_html__( 'Primary Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'primary_color' ),
 		'default' => xenial_get_customize_default( 'primary_color' )
 	)
 );
@@ -38,7 +37,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_colors',
 		'label' => esc_html__( 'Secondary Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'secondary_color' ),
 		'default' => xenial_get_customize_default( 'secondary_color' )
 	)
 );
@@ -69,7 +67,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_colors',
 		'label' => esc_html__( 'Text Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'text_color' ),
 		'default' => xenial_get_customize_default( 'text_color' )
 	)
 );
@@ -82,7 +79,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_colors',
 		'label' => esc_html__( 'Headings(H1-H6) Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'headings_color' ),
 		'default' => xenial_get_customize_default( 'headings_color' )
 	)
 );
@@ -95,7 +91,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_colors',
 		'label' => esc_html__( 'Links Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'link_color' ),
 		'default' => xenial_get_customize_default( 'link_color' )
 	)
 );
@@ -126,7 +121,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_colors',
 		'label' => esc_html__( 'General Border Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'border_color' ),
 		'default' => xenial_get_customize_default( 'border_color' )
 	)
 );
@@ -139,7 +133,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_colors',
 		'label' => esc_html__( 'Form Input Fields Border Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'input_fields_border_color' ),
 		'default' => xenial_get_customize_default( 'input_fields_border_color' )
 	)
 );

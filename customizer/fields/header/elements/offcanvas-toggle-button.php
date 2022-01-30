@@ -149,7 +149,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_toggle_button',
 		'label' => esc_html__( 'Icon / Label Color Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_toggle_button_label_color' ),
 		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_label_color' )
 	)
 );
@@ -169,7 +168,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_offcanvas_toggle_button',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'offcanvas_toggle_button_background_color' ),
 		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_background_color' )
 	)
 );

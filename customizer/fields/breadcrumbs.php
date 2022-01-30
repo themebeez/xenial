@@ -135,7 +135,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_breadcrumbs',
 		'label' => esc_html__( 'Font Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'breadcrumbs_text_color' ),
 		'default' => xenial_get_customize_default( 'breadcrumbs_text_color' )
 	)
 );

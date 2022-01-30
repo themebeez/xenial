@@ -269,7 +269,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_primary_menu',
 		'label' => esc_html__( 'Menu Item Font Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'primary_menu_top_level_items_color' ),
 		'default' => xenial_get_customize_default( 'primary_menu_top_level_items_color' )
 	)
 );
@@ -289,7 +288,6 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_primary_menu',
 		'label' => esc_html__( 'Menu Item Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'colors' => xenial_get_customize_allowed_fields( 'primary_menu_top_level_items_background_color' ),
 		'default' => xenial_get_customize_default( 'primary_menu_top_level_items_background_color' )
 	)
 );

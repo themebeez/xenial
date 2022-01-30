@@ -4,13 +4,13 @@
 if ( ! function_exists( 'xenial_get_customizer_default_color_values' ) ) {
     function xenial_get_customizer_default_color_values() {
         return array(
-            'primary_color' => '{"initial":"","link":"","hover":"","active":""}',
-            'secondary_color' => '{"initial":"","link":"","hover":"","active":""}',
-            'text_color' => '{"initial":"","link":"","hover":"","active":""}',
-            'headings_color' => '{"initial":"","link":"","hover":"","active":""}',
-            'link_color' => '{"initial":"","link":"","hover":"","active":""}',
-            'border_color' => '{"initial":"","link":"","hover":"","active":""}',
-            'input_fields_border_color' => '{"initial":"","link":"","hover":"","active":""}'
+            'primary_color' => '{"initial":""}',
+            'secondary_color' => '{"initial":""}',
+            'text_color' => '{"initial":""}',
+            'headings_color' => '{"initial":""}',
+            'link_color' => '{"initial":"","hover":""}',
+            'border_color' => '{"initial":""}',
+            'input_fields_border_color' => '{"initial":""}'
         );
     }
 }

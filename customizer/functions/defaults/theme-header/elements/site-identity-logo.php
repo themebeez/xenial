@@ -23,7 +23,7 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	                'tablet' => 'left',
 	                'mobile' => 'left'
 	            ),
-	            'site_title_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+	            'site_title_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
 	            'site_identity_font_type' => 'system_font',
 	            'site_identity_system_font_family' => 'arial',
 	            'site_identity_system_font_weight' => '400',
@@ -70,7 +70,7 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	            'site_description_font_weight' => '400',
 	            'site_description_font_style' => 'normal',
 	            'site_description_text_transform' => 'inherit',
-	            'site_description_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+	            'site_description_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
 			)
 		);
 	}

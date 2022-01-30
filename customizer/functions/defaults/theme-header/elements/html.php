@@ -15,7 +15,7 @@ if ( ! function_exists( 'xenial_get_header_html_customize_defaults' ) ) {
 	                'mobile' => 'left'
 	            ),
 	            'header_html_visibility' => '',
-	            'header_html_text_color' => '{"desktop":{"initial":"","link":"","hover":"","active":""},"tablet":{"initial":"","link":"","hover":"","active":""},"mobile":{"initial":"","link":"","hover":"","active":""}}',
+	            'header_html_text_color' => '{"desktop":{"initial":"","link":"","hover":""},"tablet":{"initial":"","link":"","hover":""},"mobile":{"initial":"","link":"","hover":""}}',
 	            'header_html_text_font_size' => array(
 	                'desktop' => 16,
 	                'tablet' => 16,
