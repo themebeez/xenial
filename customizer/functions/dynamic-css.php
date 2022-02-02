@@ -60,7 +60,7 @@ if ( ! function_exists( 'xenial_dynamic_css' ) ) {
 		$css = '';
 
 		// Allow CSS to be filtered.
-		$css = apply_filters( 'xenial_dynamic_css', $css ); 
+		$css .= apply_filters( 'xenial_dynamic_css', $css ); 
 
 		// Minify the CSS code.
 		$css = xenial_minify_css( $css );

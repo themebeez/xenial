@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 
 	function xenial_dynamic_header_secondary_menu_css( $css ) {
 
+		if ( ! xenial_is_header_element_active( 'menu_2' ) ) {
+			return $css;
+		}
+
 		$header_secondary_menu_font_colors = xenial_json_decode( xenial_get_option( 'header_secondary_menu_link_color' ) );
 
 		$header_secondary_menu_items_spacing_desktop = xenial_get_option( 'header_secondary_menu_items_spacing_desktop' );

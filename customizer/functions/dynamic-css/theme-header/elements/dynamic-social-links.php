@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 
 	function xenial_dynamic_header_social_links_css( $css )  {
 
+		if ( ! xenial_is_header_element_active( 'social_links' ) ) {
+			return $css;
+		}
+
 		$header_social_links_items_background_colors = xenial_json_decode( xenial_get_option( 'header_social_link_background_color' ) );
 
 		$header_social_links_items_borders = xenial_json_decode( xenial_get_option( 'header_social_link_icon_border' ) );

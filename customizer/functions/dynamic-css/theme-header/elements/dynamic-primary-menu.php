@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_primary_menu_css' ) ) {
 
 	function xenial_dynamic_header_primary_menu_css( $css ) {
 
+		if ( ! xenial_is_header_element_active( 'menu_1' ) ) {
+			return $css;
+		}
+
 		$header_primary_menu_items_padding = array(
 			'padding-top' => xenial_get_option( 'primary_menu_top_level_items_padding_top' ),
 			'padding-right' => xenial_get_option( 'primary_menu_top_level_items_padding_right' ),

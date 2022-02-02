@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_menu_css' ) ) {
 
 	function xenial_dynamic_header_off_canvas_menu_css( $css ) {
 
+		if ( ! xenial_is_header_element_active( 'offcanvas_menu' ) ) {
+			return $css;
+		}
+
 		$header_off_canvas_menu_items_padding = array(
 			'padding-top' => xenial_get_option( 'offcanvas_menu_item_padding_top' ),
 			'padding-right' => xenial_get_option( 'offcanvas_menu_item_padding_right' ),

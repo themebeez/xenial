@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_toggle_button_css' ) )
 
 	function xenial_dynamic_header_off_canvas_toggle_button_css( $css ) {
 
+		if ( ! xenial_is_header_element_active( 'offcanvas_toggle_button' ) ) {
+			return $css;
+		}
+
 		$header_off_canvas_toggle_button_padding = array(
 			'padding-top' => xenial_get_option( 'offcanvas_toggle_button_padding_top' ),
 			'padding-right' => xenial_get_option( 'offcanvas_toggle_button_padding_right' ),
