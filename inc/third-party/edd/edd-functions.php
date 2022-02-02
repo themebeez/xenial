@@ -18,6 +18,27 @@ function xenial_add_edd_mini_cart_header_element( $header_elements ) {
 add_filter( 'xenial_desktop_header_elements_filter', 'xenial_add_edd_mini_cart_header_element' );
 add_filter( 'xenial_mobile_header_elements_filter', 'xenial_add_edd_mini_cart_header_element' );
 
+/**
+ * Prints EDD mini cart header element.
+ * 
+ * @since 1.0.0
+ * @return void 
+ */ 
+if ( ! function_exists( 'xenial_header_element_edd_minicart_template' ) ) {
+
+	function xenial_header_element_edd_minicart_template() {
+
+		$template_args = array(
+			'edd-cart-items-count' => edd_get_cart_quantity(),
+			'edd-cart-content-details' => edd_get_cart_contents()
+		);
+
+		$template_args = apply_filters( 'xenial_header_element_edd_minicart_template_args', $template_args );
+		
+		get_template_part( 'template-parts/theme-header/elements/element', 'edd-minicart', $template_args );
+	}
+}
+add_action( 'xenial_header_element_edd_minicart', 'xenial_header_element_edd_minicart_template' );
 
 /**
  * Prints EDD cart content of EDD mini cart header element.
@@ -127,7 +148,6 @@ function xenial_edd_customize_register( $wp_customize ) {
 			'section' => 'xenial_header_edd_minicart',
 			'label' => esc_html__( 'Font Color', 'xenial' ),
 			'is_responsive' => true,
-			'colors' => xenial_get_customize_allowed_fields( 'edd_mini_cart_font_color' ),
 			'default' => xenial_get_customize_default( 'edd_mini_cart_font_color' )
 		)
 	);
@@ -149,7 +169,6 @@ function xenial_edd_customize_register( $wp_customize ) {
 			'section' => 'xenial_transparent_header',
 			'label' => esc_html__( 'Font Color', 'xenial' ),
 			'is_responsive' => true,
-			'colors' => xenial_get_customize_allowed_fields( 'transparent_header_edd_mini_cart_font_color' ),
 			'default' => xenial_get_customize_default( 'transparent_header_edd_mini_cart_font_color' )
 		)
 	);

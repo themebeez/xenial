@@ -2,6 +2,7 @@
 
 
 if ( ! function_exists( 'xenial_single_header_template' ) ) {
+
 	function xenial_single_header_template() {
 
 		$template_args = array(
@@ -53,7 +54,9 @@ if ( ! function_exists( 'xenial_single_header_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_single_content_footer_template' ) ) {
+
 	function xenial_single_content_footer_template() {
+		
 		$contents = xenial_get_option( 'post_single_content_elements' );
 		?>
 		<section class="xe-post-tags">

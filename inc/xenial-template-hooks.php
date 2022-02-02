@@ -32,8 +32,7 @@ add_action( 'xenial_header_element_button', 'xenial_header_element_button_templa
 add_action( 'xenial_header_element_offcanvas_toggle_button', 'xenial_header_element_offcanvas_toggle_button_template' );
 add_action( 'xenial_header_element_offcanvas_menu', 'xenial_header_element_offcanvas_menu_template' );
 add_action( 'xenial_header_element_social_links', 'xenial_header_element_social_links_template' );
-add_action( 'xenial_header_element_search', 'xenial_header_element_search_icon_template' );
-add_action( 'xenial_header_element_search_bar', 'xenial_header_element_search_bar_template' );
+add_action( 'xenial_header_element_search', 'xenial_header_element_search_template' );
 add_action( 'xenial_header_element_search_modal', 'xenial_header_element_search_modal_template' );
 add_action( 'xenial_header_element_menu_1', 'xenial_header_element_menu_1_template' );
 add_action( 'xenial_header_element_menu_2', 'xenial_header_element_menu_2_template' );
@@ -127,4 +126,3 @@ add_action( 'xenial_page_title', 'xenial_page_title_template' );
 add_action( 'wp_body_open', 'xenial_scroll_top_template' );
 
 
-add_action( 'xenial_header_element_edd_minicart', 'xenial_header_element_edd_minicart_template' );

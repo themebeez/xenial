@@ -6,7 +6,15 @@
 if ( ! function_exists( 'xenial_get_post_author' ) ) {
 
 	function xenial_get_post_author() {
-		$avatar = get_avatar( get_the_author_meta( 'ID' ), 30, '', get_the_author_meta( 'display_name' ), array( 'class' => 'xe-avatar', 'force_display' => false ) );
+
+		$avatar = get_avatar( 
+			get_the_author_meta( 'ID' ), 
+			30, 
+			'', 
+			get_the_author_meta( 'display_name' ), 
+			array( 'class' => 'xe-avatar', 'force_display' => false ) 
+		);
+
 		if ( $avatar ) {
 			?>
 			<span class="xe-authorthumb"><?php echo $avatar; ?></span>
@@ -39,6 +47,7 @@ if ( ! function_exists( 'xenial_get_posted_date' ) ) {
 if ( ! function_exists( 'xenial_get_post_updated_date' ) ) {
 
 	function xenial_get_post_updated_date() {
+
 		return get_the_modified_date(); 
 	}
 }
@@ -50,13 +59,14 @@ if ( ! function_exists( 'xenial_get_post_updated_date' ) ) {
 if ( ! function_exists( 'xenial_get_post_comments' ) ) {
 
 	function xenial_get_post_comments() {
+
 		if ( post_password_required() && ! ( comments_open() || get_comments_number() ) ) {
 			return;
 		}
 
 		$comments_count = get_comments_number();
 		?>
-		<a class="xe-link" href="<?php echo esc_url( get_permalink() ) ; ?>">
+		<a class="xe-link" href="<?php echo esc_url( get_permalink() ) . '#comments' ; ?>">
 			<?php
 			if ( $comments_count != '0' ) {
 				printf( // phpcs:ignore.
@@ -65,7 +75,7 @@ if ( ! function_exists( 'xenial_get_post_comments' ) ) {
 					number_format_i18n( $comments_count )
 				);
 			} else {
-				echo __( 'No Comments', 'maximo' );
+				echo esc_html__( 'No Comments', 'xenial' );
 			}
 			?>
 		</a>
@@ -73,13 +83,16 @@ if ( ! function_exists( 'xenial_get_post_comments' ) ) {
 	}
 }
 
+
 /**
  * Prints HTML with meta information for the categories.
  */
 if ( ! function_exists( 'xenial_get_post_categories' ) ) {
 
 	function xenial_get_post_categories() {
+
 		$categories_list = get_the_category_list(); 
+
 		if ( $categories_list ) {
 			echo $categories_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -93,7 +106,9 @@ if ( ! function_exists( 'xenial_get_post_categories' ) ) {
 if ( ! function_exists( 'xenial_get_post_tags' ) ) {
 
 	function xenial_get_post_tags() {
+
 		$tags_list = get_the_tag_list();
+
 		if ( $tags_list ) {
 			echo $tags_list; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
@@ -107,6 +122,7 @@ if ( ! function_exists( 'xenial_get_post_tags' ) ) {
 if ( ! function_exists( 'xenial_get_post_read_time' ) ) {
 
 	function xenial_get_post_read_time() {
+
 		$content = get_the_content();
 
 		if ( $content ) {

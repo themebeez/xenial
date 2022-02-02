@@ -1,51 +1,25 @@
 <?php 
-
+/**
+ * Call hook actions for header elements.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_print_header_element' ) ) {
 
 	function xenial_print_header_element( $element ) {
 
-		switch ( $element ) {
-			case 'site_identity' :
-				do_action( 'xenial_header_element_site_identity' );
-				break;
-			case 'button' :
-				do_action( 'xenial_header_element_button' );
-				break;
-			case 'html' :
-				do_action( 'xenial_header_element_html' );
-				break;
-			case 'menu_1' :
-				do_action( 'xenial_header_element_menu_1' );
-				break;
-			case 'menu_2' :
-				do_action( 'xenial_header_element_menu_2' );
-				break;
-			case 'search' :
-				$search_layout = xenial_get_option( 'header_search_display' );
-				if ( $search_layout == 'default' ) {
-					do_action( 'xenial_header_element_search_bar' );
-				} else {
-					do_action( 'xenial_header_element_search' );
-				}				
-				break;
-			case 'social_links' :
-				do_action( 'xenial_header_element_social_links' );
-				break;
-			case 'offcanvas_menu' :
-				do_action( 'xenial_header_element_offcanvas_menu' );
-				break;
-			case 'offcanvas_toggle_button' :
-				do_action( 'xenial_header_element_offcanvas_toggle_button' );
-				break;
-			default :
-				do_action( "xenial_header_element_{$element}" );
-				break;
-		}
+		do_action( "xenial_header_element_{$element}" );
 	}
 }
 
 
-
+/**
+ * Prints HTML template for header button.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_button_template' ) ) {
 
 	function xenial_header_element_button_template() {
@@ -66,23 +40,17 @@ if ( ! function_exists( 'xenial_header_element_button_template' ) ) {
 			}
 		}
 
-		$device_alignment_desktop 	= xenial_get_option( 'header_button_alignment_desktop' );
+		$alignments = array(
+			'desktop' 	=> xenial_get_option( 'header_button_alignment_desktop' ),
+			'tablet' 	=> xenial_get_option( 'header_button_alignment_tablet' ),
+			'mobile'	=> xenial_get_option( 'header_button_alignment_mobile' )
+		);
 
-		if ( $device_alignment_desktop ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'desktop', $device_alignment_desktop );
-		} 
-
-		$device_alignment_tablet 	= xenial_get_option( 'header_button_alignment_tablet' );
-
-		if ( $device_alignment_tablet ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'tablet', $device_alignment_tablet );
-		} 
-
-		$device_alignment_mobile 	= xenial_get_option( 'header_button_alignment_mobile' );
-
-		if ( $device_alignment_mobile ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'mobile', $device_alignment_mobile );
-		} 		
+		foreach ( $alignments as $device => $alignment ) {
+			if ( $alignment ) {
+				$template_args['classes'][] = xenial_get_device_alignment_class( $device, $alignment );
+			}
+		}  		
 
 		$template_args = apply_filters( 'xenial_header_element_button_template_args', $template_args );
 
@@ -91,7 +59,12 @@ if ( ! function_exists( 'xenial_header_element_button_template' ) ) {
 }
 
 
-
+/**
+ * Prints HTML template for header HTML/Text.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_html_template' ) ) {
 
 	function xenial_header_element_html_template() {
@@ -110,17 +83,16 @@ if ( ! function_exists( 'xenial_header_element_html_template' ) ) {
 			}
 		} 
 
-		$device_alignment_desktop 	= xenial_get_option( 'header_html_alignment_desktop' );
-		if ( $device_alignment_desktop ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'desktop', $device_alignment_desktop );
-		} 
-		$device_alignment_tablet 	= xenial_get_option( 'header_html_alignment_tablet' );
-		if ( $device_alignment_tablet ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'tablet', $device_alignment_tablet );
-		}
-		$device_alignment_mobile 	= xenial_get_option( 'header_html_alignment_mobile' );
-		if ( $device_alignment_mobile ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'mobile', $device_alignment_mobile );
+		$alignments = array(
+			'desktop' 	=> xenial_get_option( 'header_html_alignment_desktop' ),
+			'tablet' 	=> xenial_get_option( 'header_html_alignment_tablet' ),
+			'mobile'	=> xenial_get_option( 'header_html_alignment_mobile' )
+		);
+
+		foreach ( $alignments as $device => $alignment ) {
+			if ( $alignment ) {
+				$template_args['classes'][] = xenial_get_device_alignment_class( $device, $alignment );
+			}
 		}
 
 		$template_args = apply_filters( 'xenial_header_element_html_template_args', $template_args );
@@ -130,7 +102,12 @@ if ( ! function_exists( 'xenial_header_element_html_template' ) ) {
 }
 
 
-
+/**
+ * Prints HTML template for header offcanvas toggle button.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_offcanvas_toggle_button_template' ) ) {
 
 	function xenial_header_element_offcanvas_toggle_button_template() {
@@ -154,13 +131,12 @@ if ( ! function_exists( 'xenial_header_element_offcanvas_toggle_button_template'
 }
 
 
-
-
-
-
-
-
-
+/**
+ * Prints HTML template for offcanvas menu.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_offcanvas_menu_template' ) ) {
 
 	function xenial_header_element_offcanvas_menu_template() {
@@ -188,6 +164,12 @@ if ( ! function_exists( 'xenial_header_element_offcanvas_menu_template' ) ) {
 }
 
 
+/**
+ * Prints HTML template for header primary navigation.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_menu_1_template' ) ) {
 
 	function xenial_header_element_menu_1_template() {
@@ -215,6 +197,12 @@ if ( ! function_exists( 'xenial_header_element_menu_1_template' ) ) {
 }
 
 
+/**
+ * Prints HTML template for header secondary navigation.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_menu_2_template' ) ) {
 
 	function xenial_header_element_menu_2_template() {
@@ -245,17 +233,16 @@ if ( ! function_exists( 'xenial_header_element_menu_2_template' ) ) {
 			}
 		} 
 
-		$device_alignment_desktop 	= xenial_get_option( 'header_secondary_menu_alignment_desktop' );
-		if ( $device_alignment_desktop ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'desktop', $device_alignment_desktop );
-		} 
-		$device_alignment_tablet 	= xenial_get_option( 'header_secondary_menu_alignment_tablet' );
-		if ( $device_alignment_tablet ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'tablet', $device_alignment_tablet );
-		}
-		$device_alignment_mobile 	= xenial_get_option( 'header_secondary_menu_alignment_mobile' );
-		if ( $device_alignment_mobile ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'mobile', $device_alignment_mobile );
+		$alignments = array(
+			'desktop' 	=> xenial_get_option( 'header_secondary_menu_alignment_desktop' ),
+			'tablet' 	=> xenial_get_option( 'header_secondary_menu_alignment_tablet' ),
+			'mobile'	=> xenial_get_option( 'header_secondary_menu_alignment_mobile' )
+		);
+
+		foreach ( $alignments as $device => $alignment ) {
+			if ( $alignment ) {
+				$template_args['classes'][] = xenial_get_device_alignment_class( $device, $alignment );
+			}
 		} 
 
 		$template_args = apply_filters( 'xenial_header_element_menu_2_template_args', $template_args );
@@ -264,55 +251,64 @@ if ( ! function_exists( 'xenial_header_element_menu_2_template' ) ) {
 	}
 }
 
-if ( ! function_exists( 'xenial_header_element_search_bar_template' ) ) {
 
-	function xenial_header_element_search_bar_template() {
+/**
+ * Prints HTML template for header seach element.
+ * 
+ * @param void
+ * @return void
+ */
+if ( ! function_exists( 'xenial_header_element_search_template' ) ) {
+
+	function xenial_header_element_search_template() {
+
+		$search_layout = xenial_get_option( 'header_search_display' );
 
 		$template_args = array();
 
-		get_template_part( 'template-parts/theme-header/elements/element', 'search-bar', $template_args );	
-	}
-}
+		if ( $search_layout == 'default' ) {
 
+			get_template_part( 'template-parts/theme-header/elements/element', 'search-bar', $template_args );
+		} else {
+			$template_args = array(
+				'classes' => array()
+			);
 
+			$device_visibilities = xenial_get_option( 'header_search_visibility' );
 
-if ( ! function_exists( 'xenial_header_element_search_icon_template' ) ) {
+			if ( $device_visibilities ) {
+				$device_visibilities = explode( ',', $device_visibilities );
+				foreach ( $device_visibilities as $device_visibility ) {
+					$template_args['classes'][] = xenial_get_device_visibility_class( $device_visibility );
+				}
+			} 
 
-	function xenial_header_element_search_icon_template() {
+			$alignments = array(
+				'desktop' 	=> xenial_get_option( 'header_search_alignment_desktop' ),
+				'tablet' 	=> xenial_get_option( 'header_search_alignment_tablet' ),
+				'mobile'	=> xenial_get_option( 'header_search_alignment_mobile' )
+			);
 
-		$template_args = array(
-			'classes' => array()
-		);
-
-		$device_visibilities = xenial_get_option( 'header_search_visibility' );
-
-		if ( $device_visibilities ) {
-			$device_visibilities = explode( ',', $device_visibilities );
-			foreach ( $device_visibilities as $device_visibility ) {
-				$template_args['classes'][] = xenial_get_device_visibility_class( $device_visibility );
+			foreach ( $alignments as $device => $alignment ) {
+				if ( $alignment ) {
+					$template_args['classes'][] = xenial_get_device_alignment_class( $device, $alignment );
+				}
 			}
-		} 
 
-		$device_alignment_desktop 	= xenial_get_option( 'header_search_alignment_desktop' );
-		if ( $device_alignment_desktop ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'desktop', $device_alignment_desktop );
-		} 
-		$device_alignment_tablet 	= xenial_get_option( 'header_search_alignment_tablet' );
-		if ( $device_alignment_tablet ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'tablet', $device_alignment_tablet );
+			$template_args = apply_filters( 'xenial_header_element_search_icon_template_args', $template_args );
+
+			get_template_part( 'template-parts/theme-header/elements/element', 'search-icon', $template_args );
 		}
-		$device_alignment_mobile 	= xenial_get_option( 'header_search_alignment_mobile' );
-		if ( $device_alignment_mobile ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'mobile', $device_alignment_mobile );
-		}
-
-		$template_args = apply_filters( 'xenial_header_element_search_icon_template_args', $template_args );
-
-		get_template_part( 'template-parts/theme-header/elements/element', 'search-icon', $template_args );	
 	}
 }
 
 
+/**
+ * Prints HTML template for search modal.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_search_modal_template' ) ) {
 
 	function xenial_header_element_search_modal_template() {
@@ -324,6 +320,12 @@ if ( ! function_exists( 'xenial_header_element_search_modal_template' ) ) {
 }
 
 
+/**
+ * Prints HTML template for social links.
+ * 
+ * @param void
+ * @return void
+ */
 if ( ! function_exists( 'xenial_header_element_social_links_template' ) ) {
 
 	function xenial_header_element_social_links_template() {
@@ -348,17 +350,17 @@ if ( ! function_exists( 'xenial_header_element_social_links_template' ) ) {
 			}
 		} 
 
-		$device_alignment_desktop 	= xenial_get_option( 'header_social_link_alignment_desktop' );
-		if ( $device_alignment_desktop ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'desktop', $device_alignment_desktop );
-		} 
-		$device_alignment_tablet 	= xenial_get_option( 'header_social_link_alignment_tablet' );
-		if ( $device_alignment_tablet ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'tablet', $device_alignment_tablet );
-		}
-		$device_alignment_mobile 	= xenial_get_option( 'header_social_link_alignment_mobile' );
-		if ( $device_alignment_mobile ) {
-			$template_args['classes'][] = xenial_get_device_alignment_class( 'mobile', $device_alignment_mobile );
+
+		$alignments = array(
+			'desktop' 	=> xenial_get_option( 'header_social_link_alignment_desktop' ),
+			'tablet' 	=> xenial_get_option( 'header_social_link_alignment_tablet' ),
+			'mobile'	=> xenial_get_option( 'header_social_link_alignment_mobile' )
+		);
+
+		foreach ( $alignments as $device => $alignment ) {
+			if ( $alignment ) {
+				$template_args['classes'][] = xenial_get_device_alignment_class( $device, $alignment );
+			}
 		} 
 
 		$template_args = apply_filters( 'xenial_header_element_social_links_template_args', $template_args );
@@ -366,23 +368,6 @@ if ( ! function_exists( 'xenial_header_element_social_links_template' ) ) {
 		get_template_part( 'template-parts/theme-header/elements/element', 'social-links', $template_args );
 	}
 }
-
-
-if ( ! function_exists( 'xenial_header_element_edd_minicart_template' ) ) {
-
-	function xenial_header_element_edd_minicart_template() {
-
-		$template_args = array(
-			'edd-cart-items-count' => edd_get_cart_quantity(),
-			'edd-cart-content-details' => edd_get_cart_contents()
-		);
-
-		$template_args = apply_filters( 'xenial_header_element_edd_minicart_template_args', $template_args );
-		
-		get_template_part( 'template-parts/theme-header/elements/element', 'edd-minicart', $template_args );
-	}
-}
-
 
 
 /**
@@ -437,11 +422,10 @@ if ( ! function_exists( 'xenial_header_element_site_identity_template' ) ) {
 			'mobile' => xenial_get_option( 'site_identity_alignment_mobile' ),
 		);
 
-		if ( $content_alignments ) {
-
-			foreach ( $content_alignments as $device => $alignment ) {
-				$template_args['classes'][] = xenial_get_content_alignment_class( $alignment, $device );
-			}			 
+		foreach ( $content_alignments as $device => $alignment ) {
+			if ( $alignment ) {
+				$template_args['classes'][] = xenial_get_content_alignment_class( $device, $alignment );
+			}
 		}
 
 
