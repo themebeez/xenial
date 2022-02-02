@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-02-02T06:21:29+00:00\n"
+"POT-Creation-Date: 2022-02-02T10:12:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: xenial\n"
@@ -506,8 +506,8 @@ msgstr ""
 #: customizer/fields/header/elements/offcanvas-menu.php:315
 #: customizer/fields/header/transparent-header.php:334
 #: customizer/fields/header/transparent-header.php:469
-#: inc/third-party/edd/edd-functions.php:128
-#: inc/third-party/edd/edd-functions.php:150
+#: inc/third-party/edd/edd-functions.php:149
+#: inc/third-party/edd/edd-functions.php:170
 msgid "Font Color"
 msgstr ""
 
@@ -2930,13 +2930,17 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
+#: inc/template-functions/template-meta.php:78
+msgid "No Comments"
+msgstr ""
+
 #. translators: 1: Heading Tag, 2: Page title.
 #: inc/template-functions/template-page.php:128
 msgid "<%1$s class=\"xe-title\">%2$s</%1$s>"
 msgstr ""
 
 #. translators: %s: post updated date.
-#: inc/template-functions/template-single.php:77
+#: inc/template-functions/template-single.php:80
 msgid "Last updated on %s"
 msgstr ""
 
@@ -3440,23 +3444,23 @@ msgstr ""
 msgid "EDD Minicart"
 msgstr ""
 
-#: inc/third-party/edd/edd-functions.php:65
+#: inc/third-party/edd/edd-functions.php:86
 #: template-parts/theme-header/elements/element-edd-minicart.php:34
 msgid "Subtotal:"
 msgstr ""
 
-#: inc/third-party/edd/edd-functions.php:69
+#: inc/third-party/edd/edd-functions.php:90
 #: template-parts/theme-header/elements/element-edd-minicart.php:38
 msgid "Checkout"
 msgstr ""
 
-#: inc/third-party/edd/edd-functions.php:75
+#: inc/third-party/edd/edd-functions.php:96
 #: template-parts/theme-header/elements/element-edd-minicart.php:44
 msgid "Your cart is empty."
 msgstr ""
 
-#: inc/third-party/edd/edd-functions.php:119
 #: inc/third-party/edd/edd-functions.php:140
+#: inc/third-party/edd/edd-functions.php:160
 msgid "EDD Mini Cart"
 msgstr ""
 
