@@ -613,8 +613,6 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 					} );
 				} );
 
-
-
 				[].forEach.call( dropZones, (dropZone) => {
 					dropZone.addEventListener('dragenter', xenialHeaderDropZoneDragenter)
 				    dropZone.addEventListener('dragover', xenialHeaderDropZoneDragover);
@@ -694,6 +692,8 @@ if ( ! class_exists( 'Xenial_Header_Builder' ) ) {
 						}
 						
 					};
+
+					console.log( wp.customize('theme_header_elements').get() );
 
 					const headerElementsSetting = document.getElementById('_customize-input-theme_header_elements');
 

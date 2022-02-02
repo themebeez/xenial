@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_button_css' ) ) {
 
 	function xenial_dynamic_header_button_css( $css ) {
 
+		if ( ! xenial_is_header_element_active( 'button' ) ) {
+			return $css;
+		}
+
 		$header_button_padding_desktop = array(
 			'padding-top' => xenial_get_option( 'header_button_padding_desktop_top' ),
 			'padding-right' => xenial_get_option( 'header_button_padding_desktop_right' ),

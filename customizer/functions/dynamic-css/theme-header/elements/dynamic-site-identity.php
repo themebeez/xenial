@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
 
 	function xenial_dynamic_header_site_identity_css( $css ) {
 
+		if ( ! xenial_is_header_element_active( 'site_identity' ) ) {
+			return $css;
+		}
+
 		// Site title typography and colors
 
 		$site_title_colors = xenial_json_decode( xenial_get_option( 'site_title_color' ) );
@@ -85,7 +89,7 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         	}
 
         	if ( $site_title_font_desktop['letter-spacing'] ) {
-        		$css .= '--xe_site_title_letter_spacing: ' . esc_attr( $site_title_font_desktop['letter-spacing'] ) . ';';
+        		$css .= '--xe_site_title_letter_spacing: ' . esc_attr( $site_title_font_desktop['letter-spacing'] ) . 'px;';
         	}
         	
         	if ( $site_title_font_desktop['font-style'] ) {

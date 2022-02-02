@@ -12,8 +12,10 @@
 	</div><!-- // canvas-header -->
 	<div class="canvas-inner">
 		<?php
-		foreach ( $args['elements'] as $element ) {
-			xenial_print_header_element( $element );
+		if ( $args['elements'] ) {
+			foreach ( $args['elements'] as $element ) {
+				xenial_print_header_element( $element );
+			}
 		}
 		?>
 	</div><!-- // canvas-inner -->

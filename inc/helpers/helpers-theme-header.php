@@ -318,3 +318,47 @@ if ( ! function_exists( 'xenial_is_transparent_header_active_on_404' ) ) {
 		return ( in_array( 'page_404', $enabled_pages ) && $t_header_enabled == true ) ? true : false;
 	}
 }
+
+
+
+
+if ( ! function_exists( 'xenial_is_header_element_active' ) ) {
+
+	function xenial_is_header_element_active( $header_element ) {
+
+		$header_elements = xenial_json_decode( xenial_get_option( 'theme_header_elements' ) );
+
+		$active_header_elements = array();
+
+		$active_header_elements = ( $header_elements['desktop']['top']['left'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['top']['left'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['desktop']['top']['middle'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['top']['middle'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['desktop']['top']['right'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['top']['right'] ) : $active_header_elements;
+
+		$active_header_elements = ( $header_elements['desktop']['middle']['left'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['middle']['left'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['desktop']['middle']['middle'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['middle']['middle'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['desktop']['middle']['right'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['middle']['right'] ) : $active_header_elements;
+
+		$active_header_elements = ( $header_elements['desktop']['bottom']['left'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['bottom']['left'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['desktop']['bottom']['middle'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['bottom']['middle'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['desktop']['bottom']['right'] ) ? array_merge( $active_header_elements, $header_elements['desktop']['bottom']['right'] ) : $active_header_elements;
+
+
+		$active_header_elements = ( $header_elements['mobile']['top']['left'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['top']['left'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['mobile']['top']['middle'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['top']['middle'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['mobile']['top']['right'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['top']['right'] ) : $active_header_elements;
+
+		$active_header_elements = ( $header_elements['mobile']['middle']['left'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['middle']['left'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['mobile']['middle']['middle'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['middle']['middle'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['mobile']['middle']['right'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['middle']['right'] ) : $active_header_elements;
+
+		$active_header_elements = ( $header_elements['mobile']['bottom']['left'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['bottom']['left'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['mobile']['bottom']['middle'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['bottom']['middle'] ) : $active_header_elements;
+		$active_header_elements = ( $header_elements['mobile']['bottom']['right'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['bottom']['right'] ) : $active_header_elements;
+
+		$active_header_elements = ( $header_elements['mobile']['offcanvas'] ) ? array_merge( $active_header_elements, $header_elements['mobile']['offcanvas'] ) : $active_header_elements;
+
+		$active_header_elements = array_unique( $active_header_elements );
+
+		return ( in_array( $header_element, $active_header_elements ) ) ? true : false;
+	}	
+}

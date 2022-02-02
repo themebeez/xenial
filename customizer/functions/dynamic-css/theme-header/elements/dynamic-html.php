@@ -9,6 +9,10 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
 
 	function xenial_dynamic_header_html_css( $css ) {
 
+		if ( ! xenial_is_header_element_active( 'html' ) ) {
+			return $css;
+		}
+
 		$header_html_font_colors = xenial_json_decode( xenial_get_option( 'header_html_text_color' ) );
 
 		$header_html_font_desktop = array(
