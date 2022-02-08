@@ -132,6 +132,7 @@ class Xenial_Customize_Google_Font_Selector_Control extends WP_Customize_Control
 			$fontListStr = '';
 
 			if ( ! empty( $this->fontList ) ) {
+				$font_variants = $this->fontList[$this->fontListIndex]->variants;
 				?>
 				<div class="google_fonts_select_control">
 					<?php 
@@ -183,10 +184,21 @@ class Xenial_Customize_Google_Font_Selector_Control extends WP_Customize_Control
 					<div class="weight-style">
 						<select class="google-fonts-regularweight-style" id="google-font-weights-<?php echo esc_attr( $this->id ); ?>" multiple>
 							<?php
-							foreach ( $this->fontList[$this->fontListIndex]->variants as $key => $value ) {
-								?>
-								<option value="<?php echo esc_attr( $value ); ?>" <?php echo  ( $value && in_array( $value, $this->fontValues->regularweight ) ? 'selected="selected"' : '' ); ?>><?php echo esc_html( $this->getReadableFontWeight( $value ) ); ?></option>
-								<?php
+							
+							if ( $font_variants ) {
+								$font_weights = $this->fontValues->regularweight;
+								foreach ( $font_variants as $key => $value ) {
+									$selected = '';
+									if ( 
+										is_array( $font_weights ) && 
+										in_array( $value, $font_weights ) 
+									) {
+										$selected = 'selected="selected"';
+									}
+									?>
+									<option value="<?php echo esc_attr( $value ); ?>" <?php echo $selected; ?>><?php echo esc_html( $this->getReadableFontWeight( $value ) ); ?></option>
+									<?php
+								}
 							}
 							?>
 						</select>
@@ -198,9 +210,22 @@ class Xenial_Customize_Google_Font_Selector_Control extends WP_Customize_Control
 						<select class="google-fonts-weights" id="google-font-weight-<?php echo esc_attr( $this->id ); ?>">
 							<?php
 							$optionCount = 0;
-							foreach ( $this->fontList[$this->fontListIndex]->variants as $key => $value ) {
-								echo '<option value="' . $value . '" ' . selected( $this->fontValues->boldweight, $value, false ) . '>' . esc_html( $this->getReadableFontWeight( $value ) ) . '</option>';
-								$optionCount++;
+							if ( 
+								is_array( $font_variants ) &&
+								$font_variants
+							) { 
+								$bold_weights = $this->fontValues->boldweight;
+								foreach ( $font_variants as $key => $value ) {
+									$selected = '';
+									if ( 
+										is_array( $bold_weights ) && 
+										in_array( $value, $bold_weights ) 
+									) {
+										$selected = 'selected="selected"';
+									}
+									echo '<option value="' . $value . '" '. $selected . '>' . esc_html( $this->getReadableFontWeight( $value ) ) . '</option>';
+									$optionCount++;
+								}
 							}
 							// This should never evaluate as there'll always be at least a 'regular' weight
 							if( $optionCount == 0 ) {

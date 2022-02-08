@@ -19,8 +19,6 @@
     // dynamic_sidebar('footer_widget_area_6');
     ?>
 	</div><!-- #content -->
-
-    <?php do_action( 'xenial_scroll_top' ); ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

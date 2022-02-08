@@ -59,12 +59,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Back to top button 
 	function xeBackToTopButton() {
 
-		var yAxisHeight = window.pageYOffset;
 		var backToTopBtn = document.getElementById("xe-backtotop-button");
 
 		window.addEventListener('scroll', function () {
 
-			if (backToTopBtn !== null || undefined) {
+			var yAxisHeight = window.pageYOffset;
+			
+			if ( backToTopBtn != null || backToTopBtn != undefined ) {
 
 				if (yAxisHeight > 600) {
 

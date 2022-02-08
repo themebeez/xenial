@@ -30,6 +30,20 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 		 */
 		public $type = 'xenial-slider';
 
+
+		public $responsive = false;
+
+		public $responsive_input_attrs = array();
+
+		public function __construct( $manager, $id, $args = array() ) {
+
+			parent::__construct( $manager, $id, $args );
+
+			$responsive = isset( $args['responsive'] ) ? $args['responsive'] : false;
+
+			$responsive_input_attrs = isset( $args['responsive_input_attrs'] ) ? $args['responsive_input_attrs'] : array();
+		}
+
 		/**
 		 * Enqueue control related scripts/styles.
 		 *
@@ -53,16 +67,6 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 				XENIAL_THEME_VERSION, 
 				true 
 			);
-
-			$xenialSliderScriptObjArray = [
-				'isResponsive' => ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) ? true : false
-			];
-
-			wp_localize_script( 
-				XENIAL_THEME_SLUG . '-slider-control', 
-				'xenialSliderScriptObj', 
-				$xenialSliderScriptObjArray
-			);
 		}
 
 		/**
@@ -75,7 +79,7 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 			$id    = 'customize-control-' . str_replace( array( '[', ']' ), array( '-', '' ), $this->id );
 			$class = 'customize-control customize-control-' . $this->type;
 
-			if ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) {
+			if ( $this->responsive == true ) {
 				$class .= ' has-switchers';
 			}
 
@@ -95,26 +99,24 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 
 			$this->json['id'] 		= $this->id;
 
-			$is_responsive = ( isset( $this->input_attrs['responsive'] ) && $this->input_attrs['responsive'] == true ) ? true : false;
-
 			$input_attrs = $this->input_attrs;
 
 			$this->json['inputAttrs'] = '';
 
-			if ( $is_responsive ) {
-
+			if ( $this->responsive ) {
+				
 				$this->json['desktopInputAttrs'] = '';
 				$this->json['tabletInputAttrs'] = '';
 				$this->json['mobileInputAttrs'] = '';
 
-				if ( isset( $input_attrs['desktop'] ) ) {
-					foreach ( $input_attrs['desktop'] as $attr => $value ) {
+				if ( isset( $this->responsive_input_attrs['desktop'] ) ) {
+					foreach ( $this->responsive_input_attrs['desktop'] as $attr => $value ) {
 						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
 							$this->json['desktopInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 						}
 					}
 				} else {
-					foreach ( $input_attrs as $attr => $value ) {
+					foreach ( $this->responsive_input_attrs as $attr => $value ) {
 						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
 							$this->json['desktopInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 						}
@@ -122,35 +124,35 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 				}
 
 
-				if ( isset( $input_attrs['tablet'] ) ) {
-					foreach ( $input_attrs['tablet'] as $attr => $value ) {
+				if ( isset( $this->responsive_input_attrs['tablet'] ) ) {
+					foreach ( $this->responsive_input_attrs['tablet'] as $attr => $value ) {
 						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
 							$this->json['tabletInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 						}
 					}
 				} else {
-					foreach ( $input_attrs as $attr => $value ) {
+					foreach ( $this->responsive_input_attrs as $attr => $value ) {
 						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
 							$this->json['tabletInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 						}
 					}
 				}
 
-				if ( isset( $input_attrs['mobile'] ) ) {
-					foreach ( $input_attrs['mobile'] as $attr => $value ) {
+				if ( isset( $this->responsive_input_attrs['mobile'] ) ) {
+					foreach ( $this->responsive_input_attrs['mobile'] as $attr => $value ) {
 						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
 							$this->json['mobileInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 						}
 					}
 				} else {
-					foreach ( $input_attrs as $attr => $value ) {
+					foreach ( $this->responsive_input_attrs as $attr => $value ) {
 						if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
 							$this->json['mobileInputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 						}
 					}
 				}
 			} else {
-				foreach ( $input_attrs as $attr => $value ) {
+				foreach ( $this->input_attrs as $attr => $value ) {
 					if ( $attr == 'min' || $attr == 'max' || $attr == 'step' ) {
 						$this->json['inputAttrs'] .= $attr . '="' . esc_attr( $value ) . '" ';
 					}
@@ -159,25 +161,25 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 
 			
 
-			$this->json['isResponsive'] = $is_responsive;
+			$this->json['isResponsive'] = $this->responsive;
 
-			if ( $is_responsive == true ) {
+			if ( $this->responsive == true ) {
 
-				$this->json['desktop'] = [];
-			    $this->json['tablet']  = [];
-			    $this->json['mobile']  = [];
+				$this->json['desktop'] = array();
+			    $this->json['tablet']  = array();
+			    $this->json['mobile']  = array();
 
 			    foreach ( $this->settings as $setting_key => $setting ) {
-			        $this->json[ $setting_key ] = [
+			        $this->json[ $setting_key ] = array(
 			            'id'        => $setting->id,
 			            'default'   => $setting->default,
 			            'link'      => $this->get_link( $setting_key ),
 			            'value'     => $this->value( $setting_key ),
-			        ];
+			        );
 			    }
 			} else {
 				$this->json['value'] = $this->value();
-				$this->json['defaultValue'] = $this->setting->default;
+				// $this->json['defaultValue'] = $this->setting->default;
 			}
 		}
 
