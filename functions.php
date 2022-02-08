@@ -252,7 +252,7 @@ require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
 
 require get_template_directory() . '/inc/assets.php';
 
-require get_template_directory() . '/dump.php';
+// require get_template_directory() . '/dump.php';
 
 
 require get_template_directory() . '/inc/third-party/breadcrumbs.php';
@@ -266,36 +266,3 @@ if ( class_exists( 'WooCommerce' ) ) {
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 	require get_template_directory() . '/inc/third-party/edd/edd-functions.php';
 }
-
-
-add_action( 'wp_head', function() {
-	// $user_purchases = edd_get_users_purchases( 1 );
-	// $user_purchased_products = edd_get_users_purchased_products( 1 );
-	// $user_meta = get_user_meta( 1 );
-	// $user_payment_meta = edd_get_payment_meta( $user_purchased_products->ID );
-	// echo '<pre>';
-	// var_dump( $user_purchases );
-	// var_dump( $user_meta );
-	// var_dump( $user_purchased_products );
-
-	// $subscriber = new EDD_Recurring_Subscriber( 1 );
-
-	// var_dump( $subscriber->has_active_subscription() );
-
-	// foreach ( $user_purchased_products as $product ) {
-	// 	var_dump( $subscriber->get_status() );
-	// }
-	// var_dump( $user_payment_meta );
-
-	// 
-
-	// var_dump( $subscriber->has_active_subscription( $ ) ) 
-
-	// foreach ( $user_purchases as $payment ) {
-	// 	$paymentObj = edd_get_payment( $payment->ID );
-	// 	$subscription_id = edd_get_payment_meta( $payment->ID, '_edd_subscription_payment', true );
-	// 	$subscription = new EDD_Subscription( $subscription_id );
-	// 	var_dump( $subscription->get_status() );
-	// }
-	// echo '</pre>';
-} );

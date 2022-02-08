@@ -267,8 +267,8 @@ function xenial_customize_register( $wp_customize ) {
 	// // require $customizer_fields_path . 'pages/breadcrumbs.php';
 	require $customizer_fields_path . 'pages/archive-settings.php';
 	require $customizer_fields_path . 'pages/archive/header.php';
-	require $customizer_fields_path . 'pages/archive/post-card.php';
-	require $customizer_fields_path . 'pages/archive/pagination.php';
+	// require $customizer_fields_path . 'pages/archive/post-card.php';
+	// require $customizer_fields_path . 'pages/archive/pagination.php';
 	require $customizer_fields_path . 'pages/single-settings.php';
 	require $customizer_fields_path . 'pages/single-post.php';
 	require $customizer_fields_path . 'pages/post-single/header.php';
