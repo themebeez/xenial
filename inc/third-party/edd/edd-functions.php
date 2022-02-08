@@ -67,10 +67,16 @@ function xenial_edd_mini_cart_update_template() {
 	if ( $cart_items ) { 
 		?>
 		<ul class="edd-cart">
-            <?php foreach ( $cart_items as $key => $item ) { ?>
+            <?php 
+            foreach ( $cart_items as $key => $item ) { 
+            	$item_price = edd_cart_item_price( $item['id'] );
+                if ( edd_has_variable_prices( $item['id'] ) ) {
+                    $item_price = edd_cart_item_price( $item['id'], $item['options'] );
+                }
+                ?>
                 <li class="edd-cart-item">
                     <div class="item-summary">
-                        <span class="edd-cart-item-title"><?php echo wp_kses_post( edd_get_cart_item_name( $item ) ); ?> <span class="edd-cart-item-price">- <?php echo esc_html( edd_cart_item_price( $item['id'] ) ); ?></span></span>
+                        <span class="edd-cart-item-title"><?php echo wp_kses_post( edd_get_cart_item_name( $item ) ); ?> <span class="edd-cart-item-price">- <?php echo esc_html( $item_price ); ?></span></span>
                         <?php if ( class_exists( 'EDD_Recurring' ) ) { ?>
                             <span class="edd-terms-notice"><?php do_action( 'edd_purchase_link_end', $item['id'], array() );?></span>
                         <?php } ?>
