@@ -436,7 +436,10 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 			'responsive' => false
 		];
 
-		if ( isset( $args['input_attrs']['responsive'] ) && $args['input_attrs']['responsive'] == true ) {
+		if ( 
+			isset( $args['responsive'] ) && 
+			$args['responsive'] == true 
+		) {
 			
 			$settings = [];
 
@@ -451,10 +454,10 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 				foreach ( $settings as $device => $setting ) {
 					$wp_customize->add_setting(
 						$setting,
-						[
-							'default' => isset( $args['defaults'][$device] ) ? $args['defaults'][$device] : '',
+						array(
+							'default' => isset( $args['default'][$device] ) ? $args['default'][$device] : '',
 							'sanitize_callback' => isset( $args['sanitize_callback'] ) ? $args['sanitize_callback'] : ''
-						]
+						)
 					);
 				}
 
@@ -462,15 +465,16 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 					new Xenial_Customize_Slider_Control( 
 						$wp_customize, 
 						$id, 
-						[
+						array(
 							'settings' => $settings,
 							'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 							'section' => isset( $args['section'] ) ? $args['section'] : '',
 							'label' => isset( $args['label'] ) ? $args['label'] : '',
 							'description' => isset( $args['description'] ) ? $args['description'] : '',
-							'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : $default_input_attrs,
-							'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-						]
+							'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
+							'responsive' => isset( $args['responsive'] ) ? $args['responsive'] : false,
+							'responsive_input_attrs' => isset( $args['responsive_input_attrs'] ) ? $args['responsive_input_attrs'] : $default_input_attrs
+						)
 					) 
 				);
 			}
@@ -954,47 +958,10 @@ if ( ! function_exists( 'xenial_box_border_field' ) ) {
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
-					'input_attrs' => array(
-						'is_responsive' => ( isset( $args['is_responsive'] ) && $args['is_responsive'] == true ) ? true : false,
-						'allowed_fields' => isset( $args['allowed_fields'] ) ? $args['allowed_fields'] : array()
-					)
+					'responsive' => ( isset( $args['is_responsive'] ) && $args['is_responsive'] == true ) ? true : false,
+					'allowed_fields' => isset( $args['allowed_fields'] ) ? $args['allowed_fields'] : array()
 				)
 			)
 		);
 	}
 }
-
-
-
-
-// if ( ! function_exists( 'xenial_rgba_color_picker_field' ) ) {
-
-// 	function xenial_rgba_color_picker_field( $id, $args ) {
-
-// 		global $wp_customize;
-
-// 		$wp_customize->add_setting( $id,
-// 			array(
-// 				'default' => $args['default'],
-// 				'sanitize_callback' => ''
-// 			) 
-// 		);
-
-// 		$wp_customize->add_control(
-// 			new Xenial_RGBA_Color_Picker_Customize_Control(
-// 				$wp_customize,
-// 				$id,
-// 				array(
-// 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
-// 					'section' => isset( $args['section'] ) ? $args['section'] : '',
-// 					'label' => isset( $args['label'] ) ? $args['label'] : '',
-// 					'description' => isset( $args['description'] ) ? $args['description'] : '',
-// 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
-// 					'input_attrs' => array(
-// 						'is_responsive' => ( isset( $args['is_responsive'] ) && $args['is_responsive'] ) ? true : false
-// 					)
-// 				)
-// 			)
-// 		);
-// 	}
-// }

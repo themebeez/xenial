@@ -11,11 +11,17 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 
 		public $is_responsive = false;
 
-		public function __construct( $manager, $id, $args = array(), $options = array() ) {
+		public $responsive = false;
+
+		public $allowed_fields = array();
+
+		public function __construct( $manager, $id, $args = array() ) {
 
 			parent::__construct( $manager, $id, $args );
 
-			$this->is_responsive = isset( $args['input_attrs']['is_responsive'] ) ? $args['input_attrs']['is_responsive'] : false;
+			$this->responsive = isset( $args['responsive'] ) ? $args['responsive'] : false;
+
+			$this->allowed_fields = isset( $args['allowed_fields'] ) ? $args['allowed_fields'] : array();
 		}
 
 		public function enqueue() {
@@ -64,7 +70,7 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 				'customize-control-' . $this->type,
 			);
 
-			if ( $this->is_responsive ) {
+			if ( $this->responsive ) {
 				$control_class[] = 'has-switchers';
 			}
 			?>
@@ -78,15 +84,13 @@ if ( ! class_exists( 'Xenial_Customize_Box_Border_Control' ) ) {
 
 			parent::to_json();
 
-			$allowed_fields = isset( $this->input_attrs['allowed_fields'] ) ? $this->input_attrs['allowed_fields'] : array();
-
 			$default = $this->setting->default;
 
-			$this->json['is_responsive'] = $this->is_responsive;
+			$this->json['is_responsive'] = $this->responsive;
 
 			$this->json['id'] = $this->id;
 
-			$this->json['allowed_fields'] = $allowed_fields;
+			$this->json['allowed_fields'] = $this->allowed_fields;
 
 			$this->json['units'] = $this->get_units();
 

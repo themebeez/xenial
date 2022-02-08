@@ -163,7 +163,8 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_post_single_related_posts',
 		'label' => esc_html__( 'Number of Columns', 'xenial' ),
-		'input_attrs' => array(
+		'responsive' => true,
+		'responsive_input_attrs' => array(
 			'desktop' => array(
 				'min' => 1, 
 				'max' => 4, 
@@ -178,8 +179,7 @@ xenial_range_control_field(
 				'min' => 1, 
 				'max' => 2, 
 				'step' => 1
-			),			 
-			'responsive' => true
+			)
 		),
 		'default' => xenial_get_customize_default( 'post_single_related_posts_number_of_cols' )
 	)
