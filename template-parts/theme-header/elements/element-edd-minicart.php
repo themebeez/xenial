@@ -3,12 +3,12 @@
 
     <div class="xe-header-element is-edd-minicart">
        <div class="xe-edd-minicart-outer">
-            <a id="xe-edd-minicart-button" class="xe-button xe-false-button" href="<?php echo esc_url( edd_get_checkout_uri() ); ?>?data=edd-checkout-no-cache">
-                <span class="items-count" xe-data-cache-brust="<?php echo time(); ?>" ajax="true" reload="1"><?php echo esc_html( edd_get_cart_quantity() ); ?></span>
+            <a id="xe-edd-minicart-button" class="xe-button xe-false-button" href="<?php echo esc_url( edd_get_checkout_uri() ); ?>">
+                <span class="items-count"><?php echo esc_html( edd_get_cart_quantity() ); ?></span>
             </a>
             <input type="hidden" name="xe-edd-minicart-quantity" id="xe-edd-minicart-quantity" value="<?php echo esc_attr( edd_get_cart_quantity() ); ?>">
        </div>
-        <div class="xe-edd-cart-items" xe-data-cache-brust="<?php echo time(); ?>"  ajax="true" reload="1">
+        <div class="xe-edd-cart-items">
             <?php 
             $cart_items = edd_get_cart_contents();
 
@@ -47,7 +47,7 @@
                 <?php 
             } else { 
                 ?>
-                <p class="empty" xe-data-cache-brust="<?php echo time(); ?>"  ajax="true" reload="1"><?php echo esc_html__( 'Your cart is empty.', 'xenial' ); ?></p>
+                <p class="empty"><?php echo esc_html__( 'Your cart is empty.', 'xenial' ); ?></p>
                 <?php
             }
             ?>
