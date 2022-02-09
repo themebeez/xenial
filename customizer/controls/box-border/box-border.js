@@ -164,7 +164,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 				switcherWrapperEle.classList.toggle('box-border-hidden');
 			}			
 
-			console.log( settingSaveData );
+			// console.log( settingSaveData );
 
 			xenialSaveControlsValue();
 		} );
@@ -215,7 +215,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 					let side = borderColorFieldEle.getAttribute("data-color");
 					xenialSaveBorderColorsData( side, value );
 				}
-				console.log( settingSaveData );
+				// console.log( settingSaveData );
 			} );
 		});
 
@@ -302,7 +302,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 							break;
 					}
 				}
-				console.log( settingSaveData );
+				// console.log( settingSaveData );
 				lockEle.classList.toggle('locked');
 			} );
 		} );
@@ -315,7 +315,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 				let isBorderInputFieldsLocked = xenialCheckIsInputFieldsLocked( event.target );
 				if ( isBorderInputFieldsLocked ) {
 					xenialUpdateAllLockedBorderInputFields( event.target, borderInputFieldEleVal );
-					console.log( settingSaveData );
+					// console.log( settingSaveData );
 				} else {
 					if ( responsiveEleVal == "true" ) {
 						let borderAttribute = borderInputFieldEle.getAttribute("data-border");
@@ -349,7 +349,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 								break;
 						}
 					}
-					console.log( settingSaveData );
+					// console.log( settingSaveData );
 				}
 			} );
 
@@ -358,7 +358,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 				let isBorderInputFieldsLocked = xenialCheckIsInputFieldsLocked( event.target );
 				if ( isBorderInputFieldsLocked ) {
 					xenialUpdateAllLockedBorderInputFields( event.target, borderInputFieldEleVal );
-					console.log( settingSaveData );
+					// console.log( settingSaveData );
 				} else {
 					if ( responsiveEleVal == "true" ) {
 						let borderAttribute = borderInputFieldEle.getAttribute("data-border");
@@ -392,7 +392,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 								break;
 						}
 					}
-					console.log( settingSaveData );
+					// console.log( settingSaveData );
 				}
 			} );
 		} );
@@ -457,7 +457,7 @@ wp.customize.controlConstructor['xenial-box-border'] = wp.customize.Control.exte
 
 			xenialBeforeBorderStyleDataSave( buttonEle, value );
 
-			console.log( settingSaveData );
+			// console.log( settingSaveData );
 		}
 
 

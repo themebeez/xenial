@@ -161,9 +161,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' => true,
-		    )
+		        'step'  => 1 
+		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -209,9 +209,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 10,
-		        'step'  => 0.1,
-		        'responsive' => true
-		    )
+		        'step'  => 0.1
+		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -223,7 +223,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'input_attrs' => [
+			'min' => 0, 
+			'max' => 5, 
+			'step' => 0.05, 
+		],
+		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['body_letter_spacing']
 	]
 );
@@ -403,9 +408,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' =>true
+		        'step'  => 1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -451,9 +456,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 10,
-		        'step'  => 0.1,
-		        'responsive' => true
+		        'step'  => 0.1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -464,7 +469,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'input_attrs' => [
+			'min' => 0, 
+			'max' => 5, 
+			'step' => 0.05, 
+		],
+		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h1_letter_spacing']
 	]
 );
@@ -535,9 +545,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' => true
+		        'step'  => 1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -583,9 +593,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 10,
-		        'step'  => 0.1,
-		        'responsive' => true
+		        'step'  => 0.1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -596,7 +606,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'input_attrs' => [
+			'min' => 0, 
+			'max' => 5, 
+			'step' => 0.05, 
+		],
+		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h2_letter_spacing']
 	]
 );
@@ -666,9 +681,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' => true
+		        'step'  => 1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -714,9 +729,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 10,
-		        'step'  => 0.1,
-		        'responsive' => true
+		        'step'  => 0.1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -727,7 +742,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'input_attrs' => [
+			'min' => 0, 
+			'max' => 5, 
+			'step' => 0.05, 
+		],
+		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h3_letter_spacing']
 	]
 );
@@ -797,9 +817,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' => true
+		        'step'  => 1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -845,9 +865,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 10,
-		        'step'  => 0.1,
-		        'responsive' => true
+		        'step'  => 0.1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -859,7 +879,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'input_attrs' => [
+			'min' => 0, 
+			'max' => 5, 
+			'step' => 0.05, 
+		],
+		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h4_letter_spacing']
 	]
 );
@@ -929,9 +954,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' => true
+		        'step'  => 1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -977,9 +1002,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 10,
-		        'step'  => 0.1,
-		        'responsive' => true
+		        'step'  => 0.1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -991,7 +1016,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.05, 'responsive' => true],
+		'input_attrs' => [
+			'min' => 0, 
+			'max' => 5, 
+			'step' => 0.05, 
+		],
+		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h5_letter_spacing']
 	]
 );
@@ -1060,9 +1090,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 100,
-		        'step'  => 1,
-		        'responsive' => true
+		        'step'  => 1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -1108,9 +1138,9 @@ $wp_customize->add_control(
 		    'input_attrs' 			=> array(
 		        'min'   => 0,
 		        'max'   => 10,
-		        'step'  => 0.1,
-		        'responsive' => true
+		        'step'  => 0.1
 		    ),
+		    'responsive' => true,
 		) 
 	) 
 );
@@ -1121,7 +1151,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => ['min' => 0, 'max' => 5, 'step' => 0.5, 'responsive' => true],
+		'input_attrs' => [
+			'min' => 0, 
+			'max' => 5, 
+			'step' => 0.5,
+		],
+		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h6_letter_spacing']
 	]
 );

@@ -1,46 +1,41 @@
 <?php 
 
-$xenial_customizer_defaults = xenial_get_customizer_defaults();
-
 xenial_section_field( 
 	'xenial_page_single',
-	[
+	array(
 		'priority' => 10,
 		'panel' => 'xenial_site_pages',
 		'title' => esc_html__( 'Page Single', 'xenial' )
-	]
+	)
 );
-
-
 
 xenial_tab_field(
 	'xenial_page_single_tab',
-	[
+	array(
 		'priority' => 10,
 		'section' => 'xenial_page_single',
 		'tabs' => xenial_get_tab_control_2_labels(),
-		'controls' => [
+		'controls' => array(
 			'tab_1' => apply_filters( 
 	        	'xenial_page_single_tab_1_controls', 
-	        	[
+	        	array(
 	        		'page_single_header' => '',
 	        		'page_single_header_width' => '',
 	        		'page_single_header_general_divider_1' => '',
 	        		'page_single_title_tag' => '',
 	        		'page_single_header_general_divider_2' => '',
 	        		'page_single_display_breadcrumbs' => '',
-	        		'page_single_header_general_divider_3' => '',
 
 	        		'page_single_content_general' => '',
             		'page_single_content_width' => '',
             		'page_single_content_divider_1' => '',
 		            'page_single_content_elements' => '',
 		            'page_single_content_divider_2' => '',
-	        	] 
+	        	) 
 	        ),
 	        'tab_2' => apply_filters( 
 	        	'xenial_page_single_tab_2_controls', 
-	        	[
+	        	array(
 	        		'page_single_header_styles' => '',
 	        		'page_single_header_background_color' => '',
 	        		'page_single_header_styles_divider_1' => '',
@@ -59,8 +54,8 @@ xenial_tab_field(
 	        		'page_single_header_breadcrumb_styles' => '',
 	        		'page_single_header_breadcrumb_text_color' => '',
 	        		'page_single_header_breadcrumb_link_hover_color' => '',
-	        	] 
+	        	) 
 	        )
-		]
-	]
+		)
+	)
 );

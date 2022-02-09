@@ -101,8 +101,7 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 0, 
 			'max' => 100, 
-			'step' => 1, 
-			'responsive' => false
+			'step' => 1,
 		),
 		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_font_size')
 	)
@@ -126,8 +125,7 @@ xenial_box_dimension_field(
 		'input_attrs' => array(
 			'min' => 0, 
 			'max' => 100, 
-			'step' => 1, 
-			'responsive' => false
+			'step' => 1,
 		),
 		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_padding')
 	),

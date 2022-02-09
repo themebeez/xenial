@@ -12,7 +12,7 @@ if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
 			'before_title' => '',
 			'after_title' => '',
 			'display_breadcrumbs' => false,
-			'classes' => ''
+			'classes' => array(),
 		);
 
 		if ( xenial_page_has_header_enabled() == false ) {
@@ -32,13 +32,13 @@ if ( ! function_exists( 'xenial_single_page_header_template' ) ) {
 		if ( $page_header_width ) {
 			switch ( $page_header_width ) {
 				case 'wide' :
-					$template_args['classes'] = 'xe-container-wide';
+					$template_args['classes'][] = 'xe-container-wide';
 					break;
 				case 'narrow' :
-					$template_args['classes'] = 'xe-container-narrow';
+					$template_args['classes'][] = 'xe-container-narrow';
 					break;
 				default :
-					$template_args['classes'] = 'xe-container';
+					$template_args['classes'][] = 'xe-container';
 			}
 		}
 

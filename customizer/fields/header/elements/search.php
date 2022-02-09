@@ -224,9 +224,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 100, 
 			'max' => 1920, 
-			'step' => 1, 
-			'responsive' => true
+			'step' => 1,
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_bar_width' )
 	)
 );
@@ -250,9 +250,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 35, 
 			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
+			'step' => 1,
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_bar_height' )
 	)
 );
@@ -332,9 +332,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 0, 
 			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
+			'step' => 1,
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_bar_font_size' )
 	)
 );
@@ -380,8 +380,8 @@ xenial_box_dimension_field(
 			'min' => 0, 
 			'max' => 1000, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_padding' )
 	),
 	true
@@ -443,8 +443,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_font_size' )
 	)
 );
@@ -511,9 +511,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 0, 
 			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
+			'step' => 1,
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_bar_submit_button_font_size' )
 	)
 );
@@ -566,8 +566,8 @@ xenial_box_dimension_field(
 			'min' => 0, 
 			'max' => 1000, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_padding' )
 	),
 	true
@@ -628,8 +628,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_font_size' )
 	)
 );

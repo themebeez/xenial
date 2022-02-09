@@ -90,7 +90,6 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 400, 
 			'step' => 1, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'primary_menu_dropdown_width' )
 	)
@@ -115,7 +114,6 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'primary_menu_dropdown_top_offset' )
 	)
@@ -193,7 +191,6 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 5, 
 			'step' => 1, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'primary_menu_dropdown_items_divider_width' )
 	)
@@ -296,7 +293,6 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'primary_menu_dropdown_items_font_size' )
 	)
@@ -312,7 +308,6 @@ xenial_range_control_field(
 			'min' => 1, 
 			'max' => 10, 
 			'step' => 0.01, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'primary_menu_dropdown_items_line_height' )
 	)
