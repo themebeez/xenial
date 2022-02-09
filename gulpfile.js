@@ -107,7 +107,7 @@ var php__file__path = [
 
 // #4 zip files & folders for production 
 
-var output__compressed__file = 'xenial-production.zip';
+var output__compressed__file = 'xenial.zip';
 
 const source__files__folders__to__compress = {
 
