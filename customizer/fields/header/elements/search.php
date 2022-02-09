@@ -380,8 +380,8 @@ xenial_box_dimension_field(
 			'min' => 0, 
 			'max' => 1000, 
 			'step' => 1, 
+			'responsive' => true,
 		),
-		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_padding' )
 	),
 	true
@@ -566,8 +566,8 @@ xenial_box_dimension_field(
 			'min' => 0, 
 			'max' => 1000, 
 			'step' => 1, 
-		),
-		'responsive' => true,
+			'responsive' => true,
+		),		
 		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_padding' )
 	),
 	true

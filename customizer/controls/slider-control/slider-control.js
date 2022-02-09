@@ -11,7 +11,7 @@ wp.customize.controlConstructor['xenial-slider'] = wp.customize.Control.extend({
 
 		var responsiveEle = control.container.find( '#xenial-slider-responsive-value' );
 
-		if ( responsiveEle.val() ) {
+		if ( responsiveEle.val() === 'true' ) {
 
 			var desktop_slider 		= control.container.find( '.xenial-slider.desktop-slider' ),
 			desktop_slider_input 	= desktop_slider.next( '.xenial-slider-input' ).find( 'input.desktop-input' ),
