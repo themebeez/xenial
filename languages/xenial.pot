@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-02-09T07:27:46+00:00\n"
+"POT-Creation-Date: 2022-02-09T08:02:10+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: xenial\n"
@@ -401,7 +401,7 @@ msgstr ""
 #: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:153
 #: customizer/fields/header/elements/logo.php:362
 #: customizer/fields/typography.php:70
-#: customizer/fields/typography.php:293
+#: customizer/fields/typography.php:232
 msgid "Font Family"
 msgstr ""
 
@@ -422,7 +422,7 @@ msgstr ""
 #: customizer/fields/pages/archive/header.php:178
 #: customizer/fields/pages/page-single/header.php:168
 #: customizer/fields/typography.php:91
-#: customizer/fields/typography.php:314
+#: customizer/fields/typography.php:253
 msgid "Font Weight"
 msgstr ""
 
@@ -485,13 +485,13 @@ msgstr ""
 #: customizer/fields/header/elements/social-links.php:369
 #: customizer/fields/pages/archive/header.php:128
 #: customizer/fields/pages/page-single/header.php:118
-#: customizer/fields/typography.php:153
-#: customizer/fields/typography.php:400
-#: customizer/fields/typography.php:537
-#: customizer/fields/typography.php:673
-#: customizer/fields/typography.php:809
-#: customizer/fields/typography.php:946
-#: customizer/fields/typography.php:1082
+#: customizer/fields/typography.php:131
+#: customizer/fields/typography.php:316
+#: customizer/fields/typography.php:390
+#: customizer/fields/typography.php:464
+#: customizer/fields/typography.php:538
+#: customizer/fields/typography.php:613
+#: customizer/fields/typography.php:687
 msgid "Font Size (px)"
 msgstr ""
 
@@ -1167,13 +1167,13 @@ msgstr ""
 #: customizer/fields/header/elements/secondary-menu.php:184
 #: customizer/fields/pages/archive/header.php:144
 #: customizer/fields/pages/page-single/header.php:134
-#: customizer/fields/typography.php:201
-#: customizer/fields/typography.php:448
-#: customizer/fields/typography.php:585
-#: customizer/fields/typography.php:721
-#: customizer/fields/typography.php:857
-#: customizer/fields/typography.php:994
-#: customizer/fields/typography.php:1130
+#: customizer/fields/typography.php:147
+#: customizer/fields/typography.php:332
+#: customizer/fields/typography.php:406
+#: customizer/fields/typography.php:480
+#: customizer/fields/typography.php:554
+#: customizer/fields/typography.php:629
+#: customizer/fields/typography.php:703
 msgid "Line Height"
 msgstr ""
 
@@ -1508,7 +1508,7 @@ msgstr ""
 
 #: customizer/fields/header/elements/logo.php:350
 #: customizer/fields/typography.php:49
-#: customizer/fields/typography.php:272
+#: customizer/fields/typography.php:211
 msgid "Font Type"
 msgstr ""
 
@@ -2233,41 +2233,41 @@ msgstr ""
 msgid "Body Typograhy"
 msgstr ""
 
-#: customizer/fields/typography.php:225
-#: customizer/fields/typography.php:471
-#: customizer/fields/typography.php:608
-#: customizer/fields/typography.php:744
-#: customizer/fields/typography.php:881
-#: customizer/fields/typography.php:1018
-#: customizer/fields/typography.php:1153
+#: customizer/fields/typography.php:164
+#: customizer/fields/typography.php:348
+#: customizer/fields/typography.php:422
+#: customizer/fields/typography.php:496
+#: customizer/fields/typography.php:571
+#: customizer/fields/typography.php:646
+#: customizer/fields/typography.php:719
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: customizer/fields/typography.php:249
+#: customizer/fields/typography.php:188
 msgid "Headings (H1-H6)"
 msgstr ""
 
-#: customizer/fields/typography.php:359
+#: customizer/fields/typography.php:298
 msgid "Heading - H1"
 msgstr ""
 
-#: customizer/fields/typography.php:496
+#: customizer/fields/typography.php:373
 msgid "Heading - H2"
 msgstr ""
 
-#: customizer/fields/typography.php:632
+#: customizer/fields/typography.php:446
 msgid "Heading - H3"
 msgstr ""
 
-#: customizer/fields/typography.php:768
+#: customizer/fields/typography.php:520
 msgid "Heading - H4"
 msgstr ""
 
-#: customizer/fields/typography.php:905
+#: customizer/fields/typography.php:595
 msgid "Heading - H5"
 msgstr ""
 
-#: customizer/fields/typography.php:1041
+#: customizer/fields/typography.php:669
 msgid "Heading - H6"
 msgstr ""
 
