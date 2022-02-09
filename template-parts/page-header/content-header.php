@@ -11,7 +11,7 @@ if ( $args['display_title'] == false && $args['display_breadcrumbs'] == false ) 
 }
 ?>
 <header class="xe-pageheader">
-    <div class="<?php echo esc_attr( $args['classes'] ); ?>">
+    <div class="<?php echo esc_attr( implode( ' ', $args['classes'] ) ); ?>">
         <?php if ( $args['display_title'] == true ) { ?>
             <aside class="xe-pagetitle-holder">
                 <?php

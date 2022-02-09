@@ -74,7 +74,6 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 10, 
 			'step' => 1, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'pagination_mid_size' )
 	)
@@ -97,193 +96,193 @@ xenial_controls_wrapper_field(
 
 
 
-xenial_range_control_field(
-	'archive_pagination_top_spacing',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Top Spacing (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'archive_pagination_top_spacing' )
-	)
-);
+// xenial_range_control_field(
+// 	'archive_pagination_top_spacing',
+// 	array(
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Top Spacing (px)', 'xenial' ),
+// 		'input_attrs' => array(
+// 			'min' => 0, 
+// 			'max' => 100, 
+// 			'step' => 1, 
+// 			'responsive' => true
+// 		),
+// 		'defaults' => xenial_get_customize_default( 'archive_pagination_top_spacing' )
+// 	)
+// );
 
 
-xenial_divider_field( 
-	'archive_pagination_general_divider_3', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	) 
-);
+// xenial_divider_field( 
+// 	'archive_pagination_general_divider_3', 
+// 	array( 
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages', 
+// 	) 
+// );
 
 
-xenial_range_control_field(
-	'archive_pagination_items_spacing',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Items Spacing (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'archive_pagination_items_spacing' )
-	)
-);
+// xenial_range_control_field(
+// 	'archive_pagination_items_spacing',
+// 	array(
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Items Spacing (px)', 'xenial' ),
+// 		'input_attrs' => array(
+// 			'min' => 0, 
+// 			'max' => 100, 
+// 			'step' => 1, 
+// 			'responsive' => true
+// 		),
+// 		'defaults' => xenial_get_customize_default( 'archive_pagination_items_spacing' )
+// 	)
+// );
 
 
-xenial_divider_field( 
-	'archive_pagination_general_divider_4', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	) 
-);
+// xenial_divider_field( 
+// 	'archive_pagination_general_divider_4', 
+// 	array( 
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages', 
+// 	) 
+// );
 
 
-xenial_box_dimension_field(
-	'archive_pagination_items_padding',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Items Padding (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default( 'archive_pagination_items_padding' )
-	),
-	true
-);
+// xenial_box_dimension_field(
+// 	'archive_pagination_items_padding',
+// 	array(
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Items Padding (px)', 'xenial' ),
+// 		'input_attrs' => array(
+// 			'min' => 0, 
+// 			'max' => 100, 
+// 			'step' => 1, 
+// 			'responsive' => true
+// 		),
+// 		'defaults' => xenial_get_customize_default( 'archive_pagination_items_padding' )
+// 	),
+// 	true
+// );
 
 
-xenial_divider_field( 
-	'archive_pagination_general_divider_5', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	) 
-);
+// xenial_divider_field( 
+// 	'archive_pagination_general_divider_5', 
+// 	array( 
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages', 
+// 	) 
+// );
 
 
-xenial_range_control_field(
-	'archive_pagination_font_size',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
-		),
-		'defaults' => xenial_get_customize_default('archive_pagination_font_size' )
-	)
-);
+// xenial_range_control_field(
+// 	'archive_pagination_font_size',
+// 	array(
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
+// 		'input_attrs' => array(
+// 			'min' => 0, 
+// 			'max' => 100, 
+// 			'step' => 1, 
+// 			'responsive' => true
+// 		),
+// 		'defaults' => xenial_get_customize_default('archive_pagination_font_size' )
+// 	)
+// );
 
 
-xenial_divider_field( 
-	'archive_pagination_general_divider_6', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	) 
-);
+// xenial_divider_field( 
+// 	'archive_pagination_general_divider_6', 
+// 	array( 
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages', 
+// 	) 
+// );
 
 
-xenial_info_field(
-	'archive_pagination_border_heading',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Border', 'xenial' )
-	)
-);
+// xenial_info_field(
+// 	'archive_pagination_border_heading',
+// 	array(
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Border', 'xenial' )
+// 	)
+// );
 
-xenial_box_border_field(
-	'archive_pagination_item_border',
-	array(
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Item Border', 'xenial' ),
-		'is_responsive' => true,
-		'allowed_fields' => array(
-			'desktop' => array(
-				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
-				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
-				'border_colors' => array( 'initial', 'hover', 'active' )
-			),
-			'tablet' => array(
-				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
-				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
-				'border_colors' => array( 'initial', 'hover', 'active' )
-			),
-			'mobile' => array( 
-				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
-				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
-				'border_colors' => array( 'initial', 'hover', 'active' )
-			)
-		),
-		'default' => xenial_get_customize_default( 'archive_pagination_item_border' )
-	)
-);
-
-
-xenial_divider_field( 
-	'archive_pagination_general_divider_7', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	) 
-);
+// xenial_box_border_field(
+// 	'archive_pagination_item_border',
+// 	array(
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Item Border', 'xenial' ),
+// 		'is_responsive' => true,
+// 		'allowed_fields' => array(
+// 			'desktop' => array(
+// 				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
+// 				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
+// 				'border_colors' => array( 'initial', 'hover', 'active' )
+// 			),
+// 			'tablet' => array(
+// 				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
+// 				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
+// 				'border_colors' => array( 'initial', 'hover', 'active' )
+// 			),
+// 			'mobile' => array( 
+// 				'border_widths' => array( 'top', 'right', 'bottom', 'left' ),
+// 				'border_radius' => array( 'top_left', 'top_right', 'bottom_left', 'bottom_right' ),
+// 				'border_colors' => array( 'initial', 'hover', 'active' )
+// 			)
+// 		),
+// 		'default' => xenial_get_customize_default( 'archive_pagination_item_border' )
+// 	)
+// );
 
 
-xenial_color_picker_field(
-	'archive_pagination_item_font_color',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Item Font Color', 'xenial' ),
-		'is_responsive' => true,
-		'default' => xenial_get_customize_default( 'archive_pagination_item_font_color' )
-	)
-);
-
-xenial_divider_field( 
-	'archive_pagination_general_divider_8', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	) 
-);
+// xenial_divider_field( 
+// 	'archive_pagination_general_divider_7', 
+// 	array( 
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages', 
+// 	) 
+// );
 
 
-xenial_color_picker_field(
-	'archive_pagination_item_background_color',
-	array(
-		'priority' => 10,
-		'section' => 'xenial_archive_pages',
-		'label' => esc_html__( 'Item Background Color', 'xenial' ),
-		'is_responsive' => true,
-		'default' => xenial_get_customize_default( 'archive_pagination_item_background_color' )
-	)
-);
+// xenial_color_picker_field(
+// 	'archive_pagination_item_font_color',
+// 	array(
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Item Font Color', 'xenial' ),
+// 		'is_responsive' => true,
+// 		'default' => xenial_get_customize_default( 'archive_pagination_item_font_color' )
+// 	)
+// );
+
+// xenial_divider_field( 
+// 	'archive_pagination_general_divider_8', 
+// 	array( 
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages', 
+// 	) 
+// );
 
 
-xenial_divider_field( 
-	'archive_pagination_general_divider_9', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_archive_pages', 
-	) 
-);
+// xenial_color_picker_field(
+// 	'archive_pagination_item_background_color',
+// 	array(
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages',
+// 		'label' => esc_html__( 'Item Background Color', 'xenial' ),
+// 		'is_responsive' => true,
+// 		'default' => xenial_get_customize_default( 'archive_pagination_item_background_color' )
+// 	)
+// );
+
+
+// xenial_divider_field( 
+// 	'archive_pagination_general_divider_9', 
+// 	array( 
+// 		'priority' => 10,
+// 		'section' => 'xenial_archive_pages', 
+// 	) 
+// );

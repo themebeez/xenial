@@ -113,8 +113,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'breadcrumbs_font_size' )
 	)
 );

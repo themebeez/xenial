@@ -130,8 +130,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'archive_page_title_font_size' )
 	)
 );
@@ -146,8 +146,8 @@ xenial_range_control_field(
 			'min' => 1, 
 			'max' => 10, 
 			'step' => 0.01, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'archive_page_title_line_height' )
 	)
 );
@@ -163,8 +163,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 10, 
 			'step' => 0.01, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'archive_page_title_letter_spacing' )
 	)
 );

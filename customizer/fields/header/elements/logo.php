@@ -168,9 +168,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 0, 
 			'max' => 500, 
-			'step' => 1, 
-			'responsive' => true
+			'step' => 1
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'site_identity_logo_width' )
 	)
 );
@@ -404,9 +404,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 0, 
 			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
+			'step' => 1
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'site_identity_font_size' )
 	)
 );
@@ -421,9 +421,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 1, 
 			'max' => 10, 
-			'step' => 0.01, 
-			'responsive' => true
+			'step' => 0.01
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'site_identity_line_height' )
 	)
 );
@@ -438,9 +438,9 @@ xenial_range_control_field(
 		'input_attrs' => array(
 			'min' => 1, 
 			'max' => 10, 
-			'step' => 1, 
-			'responsive' => true
+			'step' => 1,
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'site_identity_letter_spacing' )
 	)
 );
@@ -536,8 +536,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'site_description_font_size' )
 	)
 );
@@ -553,8 +553,8 @@ xenial_range_control_field(
 			'min' => 1, 
 			'max' => 10, 
 			'step' => 0.01, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'site_description_line_height' )
 	)
 );
@@ -570,8 +570,8 @@ xenial_range_control_field(
 			'min' => 1, 
 			'max' => 10, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'site_description_letter_spacing' )
 	)
 );

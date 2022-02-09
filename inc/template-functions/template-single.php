@@ -11,7 +11,7 @@ if ( ! function_exists( 'xenial_single_header_template' ) ) {
 			'before_title' => '',
 			'after_title' => '',
 			'display_breadcrumbs' => false,
-			'classes' => 'xe-container',
+			'classes' => array(),
 			'display_title' => false
 		);
 
@@ -38,13 +38,13 @@ if ( ! function_exists( 'xenial_single_header_template' ) ) {
 		if ( $page_header_width ) {
 			switch ( $page_header_width ) {
 				case 'wide' :
-					$template_args['classes'] = 'xe-container-wide';
+					$template_args['classes'][] = 'xe-container-wide';
 					break;
 				case 'narrow' :
-					$template_args['classes'] = 'xe-container-narrow';
+					$template_args['classes'][] = 'xe-container-narrow';
 					break;
 				default :
-					$template_args['classes'] = 'xe-container';
+					$template_args['classes'][] = 'xe-container';
 			}
 		}
 

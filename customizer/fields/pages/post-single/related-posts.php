@@ -204,7 +204,6 @@ xenial_range_control_field(
 			'min' => 1, 
 			'max' => 12, 
 			'step' => 1, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'post_single_related_posts_number' )
 	)

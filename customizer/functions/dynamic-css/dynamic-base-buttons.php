@@ -62,7 +62,7 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 
 			if ( $global_button_border['border_colors']['hover'] ) {
 				$css .= '
-					background-color: ' . esc_attr( $global_button_border['border_colors']['hover'] ) . ';
+					border-color: ' . esc_attr( $global_button_border['border_colors']['hover'] ) . ';
 				';
 			}
 		$css .= '}';

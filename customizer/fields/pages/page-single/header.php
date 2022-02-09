@@ -66,15 +66,6 @@ xenial_switch_field(
 );
 
 
-xenial_divider_field( 
-	'page_single_header_general_divider_3', 
-	array( 
-		'priority' => 10,
-		'section' => 'xenial_page_single', 
-	) 
-);
-
-
 
 xenial_controls_wrapper_field(
 	'page_single_header_styles',
@@ -125,7 +116,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_page_single',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 100, 'step' => 1, 'responsive' => true),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 100, 
+			'step' => 1, 
+		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'page_single_title_font_size' )
 	)
 );
@@ -136,7 +132,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_page_single',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' => array('min' => 1, 'max' => 10, 'step' => 0.01, 'responsive' => true),
+		'input_attrs' => array(
+			'min' => 1, 
+			'max' => 10, 
+			'step' => 0.01,
+		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'page_single_title_line_height' )
 	)
 );
@@ -148,7 +149,12 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_page_single',
 		'label' => esc_html__( 'Letter Spacing', 'xenial' ),
-		'input_attrs' => array('min' => 0, 'max' => 10, 'step' => 0.01, 'responsive' => true),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 10, 
+			'step' => 0.01, 
+		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'page_single_title_letter_spacing' )
 	)
 );

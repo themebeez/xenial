@@ -38,41 +38,7 @@ class Xenial_Customize_Toggle_Switch_Control extends WP_Customize_Control {
 			$asset_uri . 'toggle-switch.css', 
 			null, 
 			XENIAL_THEME_VERSION 
-		);
-
-		$css = '
-			input[type=checkbox].tgl-light:checked + .tgl-btn {
-				background: #0085ba;
-			}
-
-			input[type=checkbox].tgl-light + .tgl-btn {
-			  background: #a0a5aa;
-			}
-
-			input[type=checkbox].tgl-light + .tgl-btn:after {
-			  background: #f7f7f7;
-			}
-
-			input[type=checkbox].tgl-ios:checked + .tgl-btn {
-			  background: #0085ba;
-			}
-
-			input[type=checkbox].tgl-flat:checked + .tgl-btn {
-			  border: 4px solid #0085ba;
-			}
-			
-			input[type=checkbox].tgl-flat:checked + .tgl-btn:after {
-			  background: #0085ba;
-			}
-
-		';
-
-		wp_add_inline_style( 
-			XENIAL_THEME_SLUG . '-toggle-switch', 
-			$css 
-		);
-
-		
+		);		
 	}
 	
 

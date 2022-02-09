@@ -165,7 +165,6 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'primary_menu_top_level_items_font_size' )
 	)
@@ -181,7 +180,6 @@ xenial_range_control_field(
 			'min' => 1, 
 			'max' => 10, 
 			'step' => 0.01, 
-			'responsive' => false
 		),
 		'default' => xenial_get_customize_default( 'primary_menu_top_level_items_line_height' )
 	)

@@ -38,7 +38,7 @@ if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
 			}
 
 			if ( $text_color['initial'] ) {
-				$css .= '--xe_base_text_color: ' . esc_attr( $body_text_color['initial'] ) . ';';
+				$css .= '--xe_base_text_color: ' . esc_attr( $text_color['initial'] ) . ';';
 			}
 
 			if ( $headings_color['initial'] ) {

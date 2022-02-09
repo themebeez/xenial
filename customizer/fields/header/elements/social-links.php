@@ -189,8 +189,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_social_link_item_spacing' )
 	)
 );
@@ -213,8 +213,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_social_link_icon_background_spacing' )
 	)
 );
@@ -296,8 +296,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_social_link_icon_size' )
 	)
 );
@@ -371,8 +371,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_social_link_title_font_size' )
 	)
 );
@@ -388,8 +388,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_social_link_title_line_height' )
 	)
 );

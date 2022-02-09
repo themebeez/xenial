@@ -150,8 +150,8 @@ xenial_range_control_field(
 			'min' => 0, 
 			'max' => 100, 
 			'step' => 1, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_html_text_font_size' )
 	)
 );
@@ -167,8 +167,8 @@ xenial_range_control_field(
 			'min' => 1, 
 			'max' => 5, 
 			'step' => 0.5, 
-			'responsive' => true
 		),
+		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_html_text_font_size' )
 	)
 );
