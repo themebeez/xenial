@@ -179,7 +179,7 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 			    }
 			} else {
 				$this->json['value'] = $this->value();
-				// $this->json['defaultValue'] = $this->setting->default;
+				$this->json['defaultValue'] = $this->setting->default;
 			}
 		}
 
@@ -248,6 +248,7 @@ if( ! class_exists( 'Xenial_Customize_Slider_Control' ) ) {
 					</div>
 		    	</div>
 			<# } #>
+			<input type="hidden" id="xenial-slider-responsive-value" name="xenial-slider-responsive-value" value="{{ data.isResponsive }}">
 			<?php
 		}
 	}
