@@ -213,6 +213,8 @@ function xenial_edd_dynamic_customize_css() {
 
 	$edd_mini_cart_font_color = xenial_json_decode( xenial_get_option( 'edd_mini_cart_font_color' ) );
 
+	$transparent_header_edd_mini_cart_font_color = xenial_json_decode( xenial_get_option( 'transparent_header_edd_mini_cart_font_color' ) );
+
 	if ( $edd_mini_cart_font_color['desktop']['initial'] || $edd_mini_cart_font_color['desktop']['hover'] ) {
 		if ( $edd_mini_cart_font_color['desktop']['initial'] ) {
 			$css .= '.xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button {';
@@ -233,6 +235,31 @@ function xenial_edd_dynamic_customize_css() {
 
 			$css .= '.xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover::before {';
 				$css .= 'border-color: ' . esc_attr( $edd_mini_cart_font_color['desktop']['hover'] ) . ';';
+			$css .= '}';
+		}
+	}
+
+	if ( xenial_is_transparent_header_active() ) {
+	
+		if ( $transparent_header_edd_mini_cart_font_color['desktop']['initial'] ) {
+			$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button {';
+				$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['desktop']['initial'] ) . ';';
+				$css .= 'color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['desktop']['initial'] ) . ';';
+			$css .= '}';
+
+			$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button::before {';
+				$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['desktop']['initial'] ) . ';';
+			$css .= '}';
+		}
+
+		if ( $transparent_header_edd_mini_cart_font_color['desktop']['hover'] ) {
+			$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover {';
+				$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['desktop']['hover'] ) . ';';
+				$css .= 'color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['desktop']['hover'] ) . ';';
+			$css .= '}';
+
+			$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover::before {';
+				$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['desktop']['hover'] ) . ';';
 			$css .= '}';
 		}
 	}
@@ -260,6 +287,31 @@ function xenial_edd_dynamic_customize_css() {
 					$css .= 'border-color: ' . esc_attr( $edd_mini_cart_font_color['tablet']['hover'] ) . ';';
 				$css .= '}';
 			}
+
+			if ( xenial_is_transparent_header_active() ) {
+	
+				if ( $transparent_header_edd_mini_cart_font_color['tablet']['initial'] ) {
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['tablet']['initial'] ) . ';';
+						$css .= 'color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['tablet']['initial'] ) . ';';
+					$css .= '}';
+
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button::before {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['tablet']['initial'] ) . ';';
+					$css .= '}';
+				}
+
+				if ( $transparent_header_edd_mini_cart_font_color['tablet']['hover'] ) {
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['tablet']['hover'] ) . ';';
+						$css .= 'color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['tablet']['hover'] ) . ';';
+					$css .= '}';
+
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover::before {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['tablet']['hover'] ) . ';';
+					$css .= '}';
+				}
+			}
 		$css .= '}';
 	}
 
@@ -285,6 +337,31 @@ function xenial_edd_dynamic_customize_css() {
 				$css .= '.xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover::before {';
 					$css .= 'border-color: ' . esc_attr( $edd_mini_cart_font_color['mobile']['hover'] ) . ';';
 				$css .= '}';
+			}
+
+			if ( xenial_is_transparent_header_active() ) {
+	
+				if ( $transparent_header_edd_mini_cart_font_color['mobile']['initial'] ) {
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['mobile']['initial'] ) . ';';
+						$css .= 'color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['mobile']['initial'] ) . ';';
+					$css .= '}';
+
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button::before {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['mobile']['initial'] ) . ';';
+					$css .= '}';
+				}
+
+				if ( $transparent_header_edd_mini_cart_font_color['mobile']['hover'] ) {
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['mobile']['hover'] ) . ';';
+						$css .= 'color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['mobile']['hover'] ) . ';';
+					$css .= '}';
+
+					$css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element.is-edd-minicart .xe-edd-minicart-outer #xe-edd-minicart-button:hover::before {';
+						$css .= 'border-color: ' . esc_attr( $transparent_header_edd_mini_cart_font_color['mobile']['hover'] ) . ';';
+					$css .= '}';
+				}
 			}
 		$css .= '}';
 	}
