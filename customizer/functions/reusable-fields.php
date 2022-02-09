@@ -461,6 +461,17 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 					);
 				}
 
+
+				$input_attrs = array();
+
+				if ( isset( $args['responsive_input_attrs'] ) ) {
+					$input_attrs = $args['responsive_input_attrs'];
+				}
+
+				if ( ! $input_attrs ) {
+					$input_attrs = isset( $args['input_attrs'] ) ? $args['input_attrs'] : $default_input_attrs;
+				}
+
 				$wp_customize->add_control( 
 					new Xenial_Customize_Slider_Control( 
 						$wp_customize, 
@@ -473,7 +484,7 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 							'description' => isset( $args['description'] ) ? $args['description'] : '',
 							'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
 							'responsive' => isset( $args['responsive'] ) ? $args['responsive'] : false,
-							'responsive_input_attrs' => isset( $args['responsive_input_attrs'] ) ? $args['responsive_input_attrs'] : $default_input_attrs
+							'responsive_input_attrs' => $input_attrs
 						)
 					) 
 				);
