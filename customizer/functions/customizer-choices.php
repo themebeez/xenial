@@ -1301,7 +1301,12 @@ if ( ! function_exists( 'xenial_get_mobile_header_elements' ) ) {
 				'section' => 'xenial_offcanvas_toggle_button',
 				'label' => esc_html__( 'Off-Canvas Toggle', 'xenial' ),
 				'icon' => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 18v2H6v-2h12zm3-7v2H3v-2h18zm-3-7v2H6V4h12z"/></svg>'
-			)
+			),
+			'menu_2' => array(
+				'section' => 'xenial_header_secondary_menu',
+				'label' => esc_html__( 'Menu 2', 'xenial' ),
+				'icon' 	=> '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 15l-.001 3H21v2h-3.001L18 23h-2l-.001-3H13v-2h2.999L16 15h2zm-7 3v2H3v-2h8zm10-7v2H3v-2h18zm0-7v2H3V4h18z"/></svg>'
+			),
 		);
 
 		return apply_filters( 'xenial_mobile_header_elements_filter', $mobile_header_elements );

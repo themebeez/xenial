@@ -142,7 +142,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 					$css .= 'color: ' . esc_attr( $header_button_label_colors['desktop']['hover'] ) . ';';
 				}
 				if ( $header_button_background_colors['desktop']['hover'] ) {
-					$css .= 'background-color: ' . esc_attr( $header_button_background_colors['desktop']['initial'] ) . ';';
+					$css .= 'background-color: ' . esc_attr( $header_button_background_colors['desktop']['hover'] ) . ';';
 				}
 				if ( $header_button_border_colors['desktop']['hover'] ) {
 					$css .= 'border-color: ' . esc_attr( $header_button_border_colors['desktop']['hover'] ) . ';';
@@ -421,7 +421,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 						$css .= 'color: ' . esc_attr( $header_button_label_colors['tablet']['hover'] ) . ';';
 					}
 					if ( $header_button_background_colors['tablet']['hover'] ) {
-						$css .= 'background-color: ' . esc_attr( $header_button_background_colors['tablet']['initial'] ) . ';';
+						$css .= 'background-color: ' . esc_attr( $header_button_background_colors['tablet']['hover'] ) . ';';
 					}
 					if ( $header_button_border_colors['tablet']['hover'] ) {
 						$css .= 'border-color: ' . esc_attr( $header_button_border_colors['tablet']['hover'] ) . ';';
@@ -609,7 +609,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 						$css .= 'color: ' . esc_attr( $header_button_label_colors['mobile']['hover'] ) . ';';
 					}
 					if ( $header_button_background_colors['mobile']['hover'] ) {
-						$css .= 'background-color: ' . esc_attr( $header_button_background_colors['mobile']['initial'] ) . ';';
+						$css .= 'background-color: ' . esc_attr( $header_button_background_colors['mobile']['hover'] ) . ';';
 					}
 					if ( $header_button_border_colors['mobile']['hover'] ) {
 						$css .= 'border-color: ' . esc_attr( $header_button_border_colors['mobile']['hover'] ) . ';';
