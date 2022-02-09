@@ -439,11 +439,12 @@
 /* -------------------------------------------------------------------------- 
 	Case: content layouts narrow container width
    -------------------------------------------------------------------------- */
-
+   
    .single .hentry.has-post-thumbnail .xe-entry-title,
    .single .hentry.has-post-thumbnail .xe-entry-metas,
    .single .hentry.has-post-thumbnail .xe-entry-excerpt,
-   .single .hentry.has-post-thumbnail .xe-entry-categories {
+   .single .hentry.has-post-thumbnail .xe-entry-categories,
+   .single .xe-pageheader .xe-container-narrow .xe-breadcrumb {
 
        margin-left: 5%;
        margin-right: 5%;
@@ -470,6 +471,16 @@
    -------------------------------------------------------------------------- */
 
 @media ( max-width: 575px ) {
+
+    .single .hentry.has-post-thumbnail .xe-entry-metas, 
+    .single .hentry.has-post-thumbnail .xe-entry-title,
+    .single .hentry.has-post-thumbnail .xe-entry-excerpt,
+    .single .hentry.has-post-thumbnail .xe-entry-categories, 
+    .single .xe-pageheader .xe-container-narrow .xe-breadcrumb {
+
+        margin-left: 0; // remove margin on mobile devices
+        margin-right: 0;
+    }
 
     .single .hentry .xe-entry-title .xe-title {
 
