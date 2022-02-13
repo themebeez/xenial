@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-02-09T11:48:11+00:00\n"
+"POT-Creation-Date: 2022-02-13T11:20:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: xenial\n"
@@ -68,165 +68,6 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:239
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:244
-msgid "Select Image"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:240
-msgid "Change Image"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:241
-msgid "Remove"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:242
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:286
-#: customizer/fields/layout.php:23
-#: customizer/functions/customizer-choices.php:23
-#: customizer/functions/customizer-choices.php:319
-#: customizer/functions/customizer-choices.php:418
-#: customizer/functions/customizer-choices.php:433
-#: customizer/functions/customizer-choices.php:583
-#: customizer/functions/customizer-choices.php:713
-#: customizer/functions/customizer-choices.php:822
-#: customizer/functions/customizer-choices.php:840
-#: customizer/functions/customizer-choices.php:1110
-#: customizer/functions/customizer-choices.php:1126
-#: inc/custom-fields.php:428
-#: inc/custom-fields.php:438
-#: inc/custom-fields.php:448
-msgid "Default"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:243
-msgid "No image selected"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:245
-msgid "Choose Image"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:260
-#: customizer/fields/fields-banner.php:552
-#: customizer/fields/fields-banner.php:604
-#: customizer/fields/footer/base.php:244
-#: customizer/fields/header/base.php:286
-#: customizer/fields/header/offcanvas.php:440
-#: customizer/fields/pages/inner-header.php:587
-#: customizer/fields/pages/inner-header.php:635
-msgid "Background Repeat"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:261
-#: customizer/fields/fields-banner.php:578
-#: customizer/fields/footer/base.php:256
-#: customizer/fields/header/base.php:298
-#: customizer/fields/header/offcanvas.php:452
-#: customizer/fields/pages/inner-header.php:612
-msgid "Background Size"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:262
-#: customizer/fields/footer/base.php:268
-#: customizer/fields/header/base.php:310
-#: customizer/fields/header/offcanvas.php:464
-msgid "Background Position"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:263
-#: customizer/fields/footer/base.php:280
-#: customizer/fields/header/base.php:322
-#: customizer/fields/header/offcanvas.php:476
-#: customizer/fields/pages/inner-header.php:658
-msgid "Background Attachment"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:280
-#: customizer/functions/customizer-choices.php:302
-msgid "No Repeat"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:281
-msgid "Tile"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:282
-#: customizer/functions/customizer-choices.php:304
-msgid "Tile Horizontally"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:283
-#: customizer/functions/customizer-choices.php:305
-msgid "Tile Vertically"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:287
-#: customizer/functions/customizer-choices.php:320
-msgid "Cover"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:288
-#: customizer/functions/customizer-choices.php:321
-msgid "Contain"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:291
-#: customizer/functions/customizer-choices.php:349
-msgid "Left Top"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:292
-#: customizer/functions/customizer-choices.php:350
-msgid "Left Center"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:293
-msgid "Left Bottom"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:294
-#: customizer/functions/customizer-choices.php:352
-msgid "Right Top"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:295
-#: customizer/functions/customizer-choices.php:353
-msgid "Right Center"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:296
-#: customizer/functions/customizer-choices.php:354
-msgid "Right Bottom"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:297
-#: customizer/functions/customizer-choices.php:355
-msgid "Center Top"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:298
-#: customizer/functions/customizer-choices.php:356
-#: customizer/functions/customizer-choices.php:784
-msgid "Center Center"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:299
-#: customizer/functions/customizer-choices.php:357
-msgid "Center Bottom"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:302
-#: customizer/functions/customizer-choices.php:336
-msgid "Fixed"
-msgstr ""
-
-#: customizer/controls/background-image/class-xenial-customize-background-image-control.php:303
-#: customizer/functions/customizer-choices.php:335
-msgid "Scroll"
-msgstr ""
-
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:149
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:281
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:413
@@ -240,7 +81,6 @@ msgstr ""
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:301
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:433
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:568
-#: customizer/fields/fields-banner.php:101
 #: customizer/fields/footer/bottom-footer.php:18
 #: customizer/fields/footer/copyright-bar.php:50
 #: customizer/fields/footer/footer-widgets.php:75
@@ -267,7 +107,7 @@ msgstr ""
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:388
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:520
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:655
-#: customizer/fields/buttons.php:167
+#: customizer/fields/buttons.php:149
 #: customizer/fields/footer/bottom-footer.php:290
 #: customizer/fields/footer/bottom-footer.php:348
 #: customizer/fields/footer/elements/social-links.php:465
@@ -401,7 +241,7 @@ msgstr ""
 #: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:153
 #: customizer/fields/header/elements/logo.php:362
 #: customizer/fields/typography.php:70
-#: customizer/fields/typography.php:232
+#: customizer/fields/typography.php:220
 msgid "Font Family"
 msgstr ""
 
@@ -411,18 +251,18 @@ msgstr ""
 
 #: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:207
 #: customizer/fields/footer/elements/footer-menu.php:144
-#: customizer/fields/header/elements/button.php:240
-#: customizer/fields/header/elements/html.php:182
+#: customizer/fields/header/elements/button.php:232
+#: customizer/fields/header/elements/html.php:174
 #: customizer/fields/header/elements/logo.php:375
-#: customizer/fields/header/elements/logo.php:585
-#: customizer/fields/header/elements/offcanvas-menu.php:229
-#: customizer/fields/header/elements/primary-menu-dropdown.php:322
-#: customizer/fields/header/elements/primary-menu.php:194
-#: customizer/fields/header/elements/secondary-menu.php:201
-#: customizer/fields/pages/archive/header.php:178
-#: customizer/fields/pages/page-single/header.php:168
+#: customizer/fields/header/elements/logo.php:561
+#: customizer/fields/header/elements/offcanvas-menu.php:221
+#: customizer/fields/header/elements/primary-menu-dropdown.php:314
+#: customizer/fields/header/elements/primary-menu.php:186
+#: customizer/fields/header/elements/secondary-menu.php:193
+#: customizer/fields/pages/archive/header.php:166
+#: customizer/fields/pages/page-single/header.php:156
 #: customizer/fields/typography.php:91
-#: customizer/fields/typography.php:253
+#: customizer/fields/typography.php:241
 msgid "Font Weight"
 msgstr ""
 
@@ -431,8 +271,8 @@ msgid "Not Available for this font"
 msgstr ""
 
 #: customizer/fields/breadcrumbs.php:7
-#: customizer/fields/pages/archive/header.php:259
-#: customizer/fields/pages/page-single/header.php:249
+#: customizer/fields/pages/archive/header.php:247
+#: customizer/fields/pages/page-single/header.php:237
 #: customizer/fields/pages/post-single/header.php:7
 #: customizer/fields/pages/post-single/header.php:63
 msgid "Breadcrumbs"
@@ -474,29 +314,29 @@ msgstr ""
 #: customizer/fields/header/elements/button.php:207
 #: customizer/fields/header/elements/html.php:148
 #: customizer/fields/header/elements/logo.php:403
-#: customizer/fields/header/elements/logo.php:534
+#: customizer/fields/header/elements/logo.php:522
 #: customizer/fields/header/elements/primary-menu-dropdown.php:291
 #: customizer/fields/header/elements/primary-menu.php:163
 #: customizer/fields/header/elements/search.php:331
-#: customizer/fields/header/elements/search.php:441
-#: customizer/fields/header/elements/search.php:510
-#: customizer/fields/header/elements/search.php:626
+#: customizer/fields/header/elements/search.php:437
+#: customizer/fields/header/elements/search.php:502
+#: customizer/fields/header/elements/search.php:614
 #: customizer/fields/header/elements/secondary-menu.php:168
-#: customizer/fields/header/elements/social-links.php:369
+#: customizer/fields/header/elements/social-links.php:365
 #: customizer/fields/pages/archive/header.php:128
 #: customizer/fields/pages/page-single/header.php:118
 #: customizer/fields/typography.php:131
-#: customizer/fields/typography.php:316
-#: customizer/fields/typography.php:390
-#: customizer/fields/typography.php:464
-#: customizer/fields/typography.php:538
-#: customizer/fields/typography.php:613
-#: customizer/fields/typography.php:687
+#: customizer/fields/typography.php:304
+#: customizer/fields/typography.php:366
+#: customizer/fields/typography.php:428
+#: customizer/fields/typography.php:490
+#: customizer/fields/typography.php:553
+#: customizer/fields/typography.php:615
 msgid "Font Size (px)"
 msgstr ""
 
-#: customizer/fields/breadcrumbs.php:136
-#: customizer/fields/header/elements/offcanvas-menu.php:312
+#: customizer/fields/breadcrumbs.php:132
+#: customizer/fields/header/elements/offcanvas-menu.php:304
 #: customizer/fields/header/transparent-header.php:334
 #: customizer/fields/header/transparent-header.php:469
 #: inc/third-party/edd/edd-functions.php:155
@@ -508,25 +348,25 @@ msgstr ""
 msgid "Buttons"
 msgstr ""
 
-#: customizer/fields/buttons.php:17
+#: customizer/fields/buttons.php:16
 msgid "General Button"
 msgstr ""
 
-#: customizer/fields/buttons.php:28
+#: customizer/fields/buttons.php:26
 #: customizer/fields/footer/base.php:66
-#: customizer/fields/header/base.php:111
+#: customizer/fields/header/base.php:109
 #: customizer/fields/header/elements/button.php:169
-#: customizer/fields/header/elements/offcanvas-toggle-button.php:124
+#: customizer/fields/header/elements/offcanvas-toggle-button.php:120
 #: customizer/fields/header/elements/primary-menu-dropdown.php:225
-#: customizer/fields/header/elements/search.php:378
-#: customizer/fields/header/elements/search.php:564
+#: customizer/fields/header/elements/search.php:374
+#: customizer/fields/header/elements/search.php:552
 #: customizer/fields/header/offcanvas.php:223
 #: customizer/fields/header/offcanvas.php:523
 msgid "Padding (px)"
 msgstr ""
 
-#: customizer/fields/buttons.php:49
-#: customizer/fields/buttons.php:125
+#: customizer/fields/buttons.php:46
+#: customizer/fields/buttons.php:111
 #: customizer/fields/colors.php:68
 #: customizer/fields/footer/elements/copyright.php:68
 #: customizer/fields/footer/elements/widget-1.php:123
@@ -536,29 +376,29 @@ msgstr ""
 #: customizer/fields/footer/elements/widget-5.php:123
 #: customizer/fields/footer/elements/widget-6.php:123
 #: customizer/fields/header/elements/primary-menu-dropdown.php:252
-#: customizer/fields/header/elements/search.php:356
-#: customizer/fields/header/elements/search.php:466
-#: customizer/fields/header/elements/search.php:534
-#: customizer/fields/header/elements/search.php:650
+#: customizer/fields/header/elements/search.php:352
+#: customizer/fields/header/elements/search.php:458
+#: customizer/fields/header/elements/search.php:522
+#: customizer/fields/header/elements/search.php:634
 msgid "Text Color"
 msgstr ""
 
-#: customizer/fields/buttons.php:68
+#: customizer/fields/buttons.php:65
 #: customizer/fields/footer/base.php:116
 #: customizer/fields/footer/bottom-footer.php:230
 #: customizer/fields/footer/elements/social-links.php:453
 #: customizer/fields/footer/elements/social-links.php:521
 #: customizer/fields/footer/middle-footer.php:230
 #: customizer/fields/footer/top-footer.php:230
-#: customizer/fields/header/base.php:160
+#: customizer/fields/header/base.php:158
 #: customizer/fields/header/bottom-header.php:93
-#: customizer/fields/header/elements/button.php:353
-#: customizer/fields/header/elements/offcanvas-menu.php:300
-#: customizer/fields/header/elements/offcanvas-toggle-button.php:167
+#: customizer/fields/header/elements/button.php:345
+#: customizer/fields/header/elements/offcanvas-menu.php:292
+#: customizer/fields/header/elements/offcanvas-toggle-button.php:163
 #: customizer/fields/header/elements/primary-menu-dropdown.php:272
 #: customizer/fields/header/elements/search.php:274
-#: customizer/fields/header/elements/search.php:485
-#: customizer/fields/header/elements/search.php:669
+#: customizer/fields/header/elements/search.php:477
+#: customizer/fields/header/elements/search.php:653
 #: customizer/fields/header/elements/social-links.php:227
 #: customizer/fields/header/middle-header.php:93
 #: customizer/fields/header/offcanvas.php:331
@@ -579,16 +419,16 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: customizer/fields/buttons.php:86
-#: customizer/fields/header/elements/offcanvas-menu.php:339
+#: customizer/fields/buttons.php:83
+#: customizer/fields/header/elements/offcanvas-menu.php:331
 msgid "Border"
 msgstr ""
 
-#: customizer/fields/buttons.php:112
+#: customizer/fields/buttons.php:101
 msgid "Text Button"
 msgstr ""
 
-#: customizer/fields/buttons.php:147
+#: customizer/fields/buttons.php:130
 msgid "Border Width (px)"
 msgstr ""
 
@@ -632,157 +472,6 @@ msgstr ""
 
 #: customizer/fields/colors.php:134
 msgid "Form Input Fields Border Color"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:9
-#: customizer/functions/customizer-choices.php:553
-msgid "Banner"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:26
-msgid "Enable Banner"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:49
-#: customizer/fields/header/transparent-header.php:126
-#: customizer/fields/pages/breadcrumbs.php:76
-#: customizer/fields/pages/inner-header.php:131
-msgid "Enable On"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:75
-#: customizer/fields/footer/bottom-footer.php:42
-#: customizer/fields/footer/copyright-bar.php:154
-#: customizer/fields/footer/elements/copyright.php:52
-#: customizer/fields/footer/elements/footer-menu.php:52
-#: customizer/fields/footer/elements/widget-1.php:98
-#: customizer/fields/footer/elements/widget-2.php:98
-#: customizer/fields/footer/elements/widget-3.php:98
-#: customizer/fields/footer/elements/widget-4.php:98
-#: customizer/fields/footer/elements/widget-5.php:98
-#: customizer/fields/footer/elements/widget-6.php:98
-#: customizer/fields/footer/footer-widgets.php:49
-#: customizer/fields/footer/middle-footer.php:42
-#: customizer/fields/footer/top-footer.php:42
-#: customizer/fields/header/bottom-header.php:42
-#: customizer/fields/header/middle-header.php:42
-#: customizer/fields/header/top-header.php:42
-#: customizer/fields/pages/breadcrumbs.php:206
-msgid "Device Visibility"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:124
-msgid "Banner Content"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:146
-#: customizer/functions/customizer-choices.php:55
-#: customizer/functions/customizer-choices.php:466
-#: customizer/functions/customizer-choices.php:481
-#: customizer/functions/customizer-choices.php:647
-#: inc/custom-fields.php:150
-#: inc/custom-fields.php:250
-msgid "Content Width"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:188
-msgid "Width (%)"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:223
-#: customizer/fields/pages/inner-header.php:207
-msgid "Content Position"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:247
-#: customizer/fields/pages/inner-header.php:230
-#: customizer/fields/pages/post-single/related-posts.php:227
-msgid "Content Alignment"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:274
-msgid "Post Number"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:304
-msgid "Category"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:333
-msgid "Display Categories"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:357
-#: customizer/fields/pages/archive/post-card.php:69
-msgid "Post Meta"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:385
-msgid "Display Icons In Post Meta"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:409
-msgid "Display Post Excerpt"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:434
-msgid "Enable Button"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:456
-msgid "Button Title"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:480
-msgid "Open Link In A New Tab"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:504
-msgid "Banner Image"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:526
-msgid "Image Size"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:646
-#: customizer/fields/pages/inner-header.php:718
-msgid "Height (vh)"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:682
-msgid "Enable Overlay"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:706
-#: customizer/fields/header/offcanvas.php:290
-#: customizer/fields/pages/inner-header.php:681
-msgid "Overlay Color"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:730
-msgid "Content Text Color"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:751
-#: customizer/fields/pages/inner-header.php:751
-msgid "Margin &amp; Padding"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:861
-#: customizer/fields/footer/base.php:40
-#: customizer/fields/header/base.php:85
-msgid "Margin (px)"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:992
-#: customizer/fields/pages/inner-header.php:861
-msgid "Content Margin (px)"
-msgstr ""
-
-#: customizer/fields/fields-banner.php:1124
-#: customizer/fields/pages/inner-header.php:992
-msgid "Content Padding (px)"
 msgstr ""
 
 #: customizer/fields/fields-sidebar.php:9
@@ -887,17 +576,22 @@ msgid "Footer Elements"
 msgstr ""
 
 #: customizer/fields/footer/base.php:29
-#: customizer/fields/header/base.php:74
+#: customizer/fields/header/base.php:72
 msgid "Spacing"
 msgstr ""
 
+#: customizer/fields/footer/base.php:40
+#: customizer/fields/header/base.php:83
+msgid "Margin (px)"
+msgstr ""
+
 #: customizer/fields/footer/base.php:84
-#: customizer/fields/header/base.php:129
+#: customizer/fields/header/base.php:127
 msgid "Background"
 msgstr ""
 
 #: customizer/fields/footer/base.php:95
-#: customizer/fields/header/base.php:140
+#: customizer/fields/header/base.php:138
 #: customizer/fields/header/offcanvas.php:319
 #: customizer/fields/pages/inner-header.php:367
 #: customizer/fields/pages/inner-header.php:508
@@ -905,50 +599,98 @@ msgid "Background Type"
 msgstr ""
 
 #: customizer/fields/footer/base.php:137
-#: customizer/fields/header/base.php:180
+#: customizer/fields/header/base.php:170
 #: customizer/fields/header/offcanvas.php:343
 msgid "Gradient Color One"
 msgstr ""
 
 #: customizer/fields/footer/base.php:149
-#: customizer/fields/header/base.php:192
+#: customizer/fields/header/base.php:183
 #: customizer/fields/header/offcanvas.php:355
 msgid "Color One Location"
 msgstr ""
 
 #: customizer/fields/footer/base.php:166
-#: customizer/fields/header/base.php:208
+#: customizer/fields/header/base.php:200
 #: customizer/fields/header/offcanvas.php:371
 msgid "Gradient Color Two"
 msgstr ""
 
 #: customizer/fields/footer/base.php:178
-#: customizer/fields/header/base.php:220
+#: customizer/fields/header/base.php:213
 #: customizer/fields/header/offcanvas.php:383
 msgid "Color Two Location"
 msgstr ""
 
 #: customizer/fields/footer/base.php:195
-#: customizer/fields/header/base.php:237
+#: customizer/fields/header/base.php:231
 #: customizer/fields/header/offcanvas.php:400
 msgid "Gradient Type"
 msgstr ""
 
 #: customizer/fields/footer/base.php:207
-#: customizer/fields/header/base.php:249
+#: customizer/fields/header/base.php:244
 #: customizer/fields/header/offcanvas.php:412
 #: customizer/fields/pages/inner-header.php:531
 msgid "Angle"
 msgstr ""
 
 #: customizer/fields/footer/base.php:233
-#: customizer/fields/header/base.php:275
+#: customizer/fields/header/base.php:263
 #: customizer/fields/header/offcanvas.php:429
 msgid "Background Image"
 msgstr ""
 
+#: customizer/fields/footer/base.php:244
+#: customizer/fields/header/base.php:275
+#: customizer/fields/header/offcanvas.php:440
+#: customizer/fields/pages/inner-header.php:587
+#: customizer/fields/pages/inner-header.php:635
+msgid "Background Repeat"
+msgstr ""
+
+#: customizer/fields/footer/base.php:256
+#: customizer/fields/header/base.php:288
+#: customizer/fields/header/offcanvas.php:452
+#: customizer/fields/pages/inner-header.php:612
+msgid "Background Size"
+msgstr ""
+
+#: customizer/fields/footer/base.php:268
+#: customizer/fields/header/base.php:301
+#: customizer/fields/header/offcanvas.php:464
+msgid "Background Position"
+msgstr ""
+
+#: customizer/fields/footer/base.php:280
+#: customizer/fields/header/base.php:314
+#: customizer/fields/header/offcanvas.php:476
+#: customizer/fields/pages/inner-header.php:658
+msgid "Background Attachment"
+msgstr ""
+
 #: customizer/fields/footer/bottom-footer.php:8
 msgid "Footer Bottom"
+msgstr ""
+
+#: customizer/fields/footer/bottom-footer.php:42
+#: customizer/fields/footer/copyright-bar.php:154
+#: customizer/fields/footer/elements/copyright.php:52
+#: customizer/fields/footer/elements/footer-menu.php:52
+#: customizer/fields/footer/elements/widget-1.php:98
+#: customizer/fields/footer/elements/widget-2.php:98
+#: customizer/fields/footer/elements/widget-3.php:98
+#: customizer/fields/footer/elements/widget-4.php:98
+#: customizer/fields/footer/elements/widget-5.php:98
+#: customizer/fields/footer/elements/widget-6.php:98
+#: customizer/fields/footer/footer-widgets.php:49
+#: customizer/fields/footer/middle-footer.php:42
+#: customizer/fields/footer/top-footer.php:42
+#: customizer/fields/header/bottom-header.php:42
+#: customizer/fields/header/middle-header.php:42
+#: customizer/fields/header/top-header.php:42
+#: customizer/fields/pages/breadcrumbs.php:206
+msgid "Device Visibility"
 msgstr ""
 
 #: customizer/fields/footer/bottom-footer.php:68
@@ -1099,7 +841,7 @@ msgstr ""
 #: customizer/fields/footer/elements/widget-4.php:143
 #: customizer/fields/footer/elements/widget-5.php:143
 #: customizer/fields/footer/elements/widget-6.php:143
-#: customizer/fields/header/elements/secondary-menu.php:260
+#: customizer/fields/header/elements/secondary-menu.php:252
 #: customizer/fields/header/transparent-header.php:575
 #: customizer/fields/header/transparent-header.php:596
 msgid "Link Color"
@@ -1150,58 +892,58 @@ msgstr ""
 #: customizer/fields/header/elements/button.php:196
 #: customizer/fields/header/elements/html.php:138
 #: customizer/fields/header/elements/logo.php:340
-#: customizer/fields/header/elements/logo.php:524
+#: customizer/fields/header/elements/logo.php:512
 #: customizer/fields/header/elements/secondary-menu.php:158
 #: customizer/fields/typography.php:8
 msgid "Typography"
 msgstr ""
 
 #: customizer/fields/footer/elements/footer-menu.php:127
-#: customizer/fields/header/elements/button.php:223
-#: customizer/fields/header/elements/html.php:165
-#: customizer/fields/header/elements/logo.php:420
-#: customizer/fields/header/elements/logo.php:551
-#: customizer/fields/header/elements/offcanvas-menu.php:213
-#: customizer/fields/header/elements/primary-menu-dropdown.php:306
-#: customizer/fields/header/elements/primary-menu.php:178
-#: customizer/fields/header/elements/secondary-menu.php:184
-#: customizer/fields/pages/archive/header.php:144
-#: customizer/fields/pages/page-single/header.php:134
-#: customizer/fields/typography.php:147
-#: customizer/fields/typography.php:332
-#: customizer/fields/typography.php:406
-#: customizer/fields/typography.php:480
-#: customizer/fields/typography.php:554
-#: customizer/fields/typography.php:629
-#: customizer/fields/typography.php:703
+#: customizer/fields/header/elements/button.php:219
+#: customizer/fields/header/elements/html.php:161
+#: customizer/fields/header/elements/logo.php:416
+#: customizer/fields/header/elements/logo.php:535
+#: customizer/fields/header/elements/offcanvas-menu.php:209
+#: customizer/fields/header/elements/primary-menu-dropdown.php:302
+#: customizer/fields/header/elements/primary-menu.php:174
+#: customizer/fields/header/elements/secondary-menu.php:180
+#: customizer/fields/pages/archive/header.php:140
+#: customizer/fields/pages/page-single/header.php:130
+#: customizer/fields/typography.php:143
+#: customizer/fields/typography.php:316
+#: customizer/fields/typography.php:378
+#: customizer/fields/typography.php:440
+#: customizer/fields/typography.php:502
+#: customizer/fields/typography.php:565
+#: customizer/fields/typography.php:627
 msgid "Line Height"
 msgstr ""
 
 #: customizer/fields/footer/elements/footer-menu.php:156
-#: customizer/fields/header/elements/button.php:252
-#: customizer/fields/header/elements/html.php:194
-#: customizer/fields/header/elements/logo.php:454
-#: customizer/fields/header/elements/logo.php:597
-#: customizer/fields/header/elements/offcanvas-menu.php:241
-#: customizer/fields/header/elements/primary-menu-dropdown.php:334
-#: customizer/fields/header/elements/primary-menu.php:206
-#: customizer/fields/header/elements/secondary-menu.php:213
-#: customizer/fields/pages/archive/header.php:190
-#: customizer/fields/pages/page-single/header.php:180
+#: customizer/fields/header/elements/button.php:244
+#: customizer/fields/header/elements/html.php:186
+#: customizer/fields/header/elements/logo.php:442
+#: customizer/fields/header/elements/logo.php:573
+#: customizer/fields/header/elements/offcanvas-menu.php:233
+#: customizer/fields/header/elements/primary-menu-dropdown.php:326
+#: customizer/fields/header/elements/primary-menu.php:198
+#: customizer/fields/header/elements/secondary-menu.php:205
+#: customizer/fields/pages/archive/header.php:178
+#: customizer/fields/pages/page-single/header.php:168
 msgid "Font Style"
 msgstr ""
 
 #: customizer/fields/footer/elements/footer-menu.php:174
-#: customizer/fields/header/elements/button.php:270
-#: customizer/fields/header/elements/html.php:212
-#: customizer/fields/header/elements/logo.php:472
-#: customizer/fields/header/elements/logo.php:615
-#: customizer/fields/header/elements/offcanvas-menu.php:259
-#: customizer/fields/header/elements/primary-menu-dropdown.php:352
-#: customizer/fields/header/elements/primary-menu.php:221
-#: customizer/fields/header/elements/secondary-menu.php:231
-#: customizer/fields/pages/archive/header.php:208
-#: customizer/fields/pages/page-single/header.php:198
+#: customizer/fields/header/elements/button.php:262
+#: customizer/fields/header/elements/html.php:204
+#: customizer/fields/header/elements/logo.php:460
+#: customizer/fields/header/elements/logo.php:591
+#: customizer/fields/header/elements/offcanvas-menu.php:251
+#: customizer/fields/header/elements/primary-menu-dropdown.php:344
+#: customizer/fields/header/elements/primary-menu.php:213
+#: customizer/fields/header/elements/secondary-menu.php:223
+#: customizer/fields/pages/archive/header.php:196
+#: customizer/fields/pages/page-single/header.php:186
 msgid "Text Transform"
 msgstr ""
 
@@ -1256,27 +998,27 @@ msgid "Border Radius (px)"
 msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:330
-#: customizer/fields/header/elements/social-links.php:359
+#: customizer/fields/header/elements/social-links.php:355
 msgid "Social Title"
 msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:357
-#: customizer/fields/header/elements/social-links.php:386
+#: customizer/fields/header/elements/social-links.php:378
 msgid "Line Height (px)"
 msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:393
-#: customizer/fields/header/elements/social-links.php:311
+#: customizer/fields/header/elements/social-links.php:307
 msgid "Icon Color Type"
 msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:397
-#: customizer/fields/header/elements/social-links.php:315
+#: customizer/fields/header/elements/social-links.php:311
 msgid "Custom"
 msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:398
-#: customizer/fields/header/elements/social-links.php:316
+#: customizer/fields/header/elements/social-links.php:312
 msgid "Official"
 msgstr ""
 
@@ -1286,7 +1028,7 @@ msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:429
 #: customizer/fields/footer/elements/social-links.php:497
-#: customizer/fields/header/elements/social-links.php:329
+#: customizer/fields/header/elements/social-links.php:325
 #: customizer/fields/header/transparent-header.php:415
 #: customizer/fields/header/transparent-header.php:516
 msgid "Icon Color"
@@ -1294,10 +1036,10 @@ msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:441
 #: customizer/fields/footer/elements/social-links.php:509
-#: customizer/fields/header/elements/social-links.php:402
+#: customizer/fields/header/elements/social-links.php:390
 #: customizer/fields/header/transparent-header.php:528
-#: customizer/fields/pages/archive/header.php:229
-#: customizer/fields/pages/page-single/header.php:219
+#: customizer/fields/pages/archive/header.php:217
+#: customizer/fields/pages/page-single/header.php:207
 msgid "Title Color"
 msgstr ""
 
@@ -1390,7 +1132,7 @@ msgstr ""
 msgid "Footer Top"
 msgstr ""
 
-#: customizer/fields/header/base.php:63
+#: customizer/fields/header/base.php:61
 msgid "Header Elements"
 msgstr ""
 
@@ -1406,14 +1148,6 @@ msgstr ""
 
 #: customizer/fields/header/bottom-header.php:112
 msgid "Bottom Header Border"
-msgstr ""
-
-#: customizer/fields/header/elements/ad.php:10
-msgid "Ad Banner"
-msgstr ""
-
-#: customizer/fields/header/elements/ad.php:45
-msgid "Radio Settings"
 msgstr ""
 
 #: customizer/fields/header/elements/button.php:8
@@ -1438,15 +1172,15 @@ msgstr ""
 msgid "Hide On Devices"
 msgstr ""
 
-#: customizer/fields/header/elements/button.php:296
-#: customizer/fields/header/elements/offcanvas-toggle-button.php:185
-#: customizer/fields/header/elements/search.php:403
-#: customizer/fields/header/elements/search.php:588
+#: customizer/fields/header/elements/button.php:288
+#: customizer/fields/header/elements/offcanvas-toggle-button.php:181
+#: customizer/fields/header/elements/search.php:399
+#: customizer/fields/header/elements/search.php:576
 #: customizer/fields/header/offcanvas.php:539
 msgid "Button Border"
 msgstr ""
 
-#: customizer/fields/header/elements/button.php:333
+#: customizer/fields/header/elements/button.php:325
 #: customizer/fields/header/transparent-header.php:288
 msgid "Label Color"
 msgstr ""
@@ -1462,7 +1196,7 @@ msgstr ""
 msgid "Hide on Devices"
 msgstr ""
 
-#: customizer/fields/header/elements/html.php:235
+#: customizer/fields/header/elements/html.php:227
 msgid "Text / Link Color"
 msgstr ""
 
@@ -1494,7 +1228,7 @@ msgid "Display Site Title"
 msgstr ""
 
 #: customizer/fields/header/elements/logo.php:226
-#: customizer/fields/header/elements/logo.php:513
+#: customizer/fields/header/elements/logo.php:501
 msgid "Site Tagline"
 msgstr ""
 
@@ -1508,23 +1242,23 @@ msgstr ""
 
 #: customizer/fields/header/elements/logo.php:350
 #: customizer/fields/typography.php:49
-#: customizer/fields/typography.php:211
+#: customizer/fields/typography.php:199
 msgid "Font Type"
 msgstr ""
 
-#: customizer/fields/header/elements/logo.php:437
-#: customizer/fields/header/elements/logo.php:568
-#: customizer/fields/pages/archive/header.php:161
-#: customizer/fields/pages/page-single/header.php:151
+#: customizer/fields/header/elements/logo.php:429
+#: customizer/fields/header/elements/logo.php:548
+#: customizer/fields/pages/archive/header.php:153
+#: customizer/fields/pages/page-single/header.php:143
 msgid "Letter Spacing"
 msgstr ""
 
-#: customizer/fields/header/elements/logo.php:499
+#: customizer/fields/header/elements/logo.php:487
 #: customizer/fields/header/transparent-header.php:255
 msgid "Site Title Color"
 msgstr ""
 
-#: customizer/fields/header/elements/logo.php:643
+#: customizer/fields/header/elements/logo.php:619
 msgid "Site Tagline Color"
 msgstr ""
 
@@ -1567,11 +1301,11 @@ msgstr ""
 msgid "Menu Item Font Size (px)"
 msgstr ""
 
-#: customizer/fields/header/elements/offcanvas-menu.php:290
+#: customizer/fields/header/elements/offcanvas-menu.php:282
 msgid "Submenu Toggle Button"
 msgstr ""
 
-#: customizer/fields/header/elements/offcanvas-menu.php:324
+#: customizer/fields/header/elements/offcanvas-menu.php:316
 msgid "Top Offset (px)"
 msgstr ""
 
@@ -1592,7 +1326,7 @@ msgstr ""
 msgid "Icon / Label Size (px)"
 msgstr ""
 
-#: customizer/fields/header/elements/offcanvas-toggle-button.php:148
+#: customizer/fields/header/elements/offcanvas-toggle-button.php:144
 #: customizer/fields/header/offcanvas.php:555
 msgid "Icon / Label Color Color"
 msgstr ""
@@ -1637,8 +1371,8 @@ msgstr ""
 
 #: customizer/fields/header/elements/primary-menu.php:113
 #: customizer/fields/header/elements/primary-menu.php:123
-#: customizer/fields/header/elements/primary-menu.php:300
-#: customizer/fields/header/elements/primary-menu.php:310
+#: customizer/fields/header/elements/primary-menu.php:292
+#: customizer/fields/header/elements/primary-menu.php:302
 msgid "Dropdown Options"
 msgstr ""
 
@@ -1646,15 +1380,15 @@ msgstr ""
 msgid "Items Padding (px)"
 msgstr ""
 
-#: customizer/fields/header/elements/primary-menu.php:243
+#: customizer/fields/header/elements/primary-menu.php:235
 msgid "Menu Item Border"
 msgstr ""
 
-#: customizer/fields/header/elements/primary-menu.php:268
+#: customizer/fields/header/elements/primary-menu.php:260
 msgid "Menu Item Font Color"
 msgstr ""
 
-#: customizer/fields/header/elements/primary-menu.php:287
+#: customizer/fields/header/elements/primary-menu.php:279
 msgid "Menu Item Background Color"
 msgstr ""
 
@@ -1731,16 +1465,16 @@ msgstr ""
 msgid "Search Bar Border"
 msgstr ""
 
-#: customizer/fields/header/elements/search.php:368
+#: customizer/fields/header/elements/search.php:364
 #: customizer/fields/header/transparent-header.php:405
 msgid "Search Modal Toggle Button"
 msgstr ""
 
-#: customizer/fields/header/elements/search.php:499
+#: customizer/fields/header/elements/search.php:491
 msgid "Submit Button"
 msgstr ""
 
-#: customizer/fields/header/elements/search.php:553
+#: customizer/fields/header/elements/search.php:541
 msgid "Search Modal Close Button"
 msgstr ""
 
@@ -1775,7 +1509,7 @@ msgid "Off-Canvas"
 msgstr ""
 
 #: customizer/fields/header/offcanvas.php:84
-#: customizer/fields/layout.php:10
+#: customizer/fields/layout.php:8
 msgid "Layout"
 msgstr ""
 
@@ -1821,6 +1555,11 @@ msgstr ""
 msgid "Enable Background Overlay"
 msgstr ""
 
+#: customizer/fields/header/offcanvas.php:290
+#: customizer/fields/pages/inner-header.php:681
+msgid "Overlay Color"
+msgstr ""
+
 #: customizer/fields/header/offcanvas.php:496
 msgid "Off-Canvas Close Button"
 msgstr ""
@@ -1844,6 +1583,12 @@ msgstr ""
 
 #: customizer/fields/header/transparent-header.php:106
 msgid "Go back to Header > General"
+msgstr ""
+
+#: customizer/fields/header/transparent-header.php:126
+#: customizer/fields/pages/breadcrumbs.php:76
+#: customizer/fields/pages/inner-header.php:131
+msgid "Enable On"
 msgstr ""
 
 #: customizer/fields/header/transparent-header.php:152
@@ -1870,24 +1615,41 @@ msgstr ""
 msgid "Icon / Label Color"
 msgstr ""
 
-#: customizer/fields/layout.php:19
+#: customizer/fields/layout.php:17
 msgid "Site Layout"
 msgstr ""
 
-#: customizer/fields/layout.php:24
+#: customizer/fields/layout.php:21
+#: customizer/functions/customizer-choices.php:23
+#: customizer/functions/customizer-choices.php:319
+#: customizer/functions/customizer-choices.php:418
+#: customizer/functions/customizer-choices.php:433
+#: customizer/functions/customizer-choices.php:583
+#: customizer/functions/customizer-choices.php:713
+#: customizer/functions/customizer-choices.php:822
+#: customizer/functions/customizer-choices.php:840
+#: customizer/functions/customizer-choices.php:1110
+#: customizer/functions/customizer-choices.php:1126
+#: inc/custom-fields.php:428
+#: inc/custom-fields.php:438
+#: inc/custom-fields.php:448
+msgid "Default"
+msgstr ""
+
+#: customizer/fields/layout.php:22
 #: customizer/functions/customizer-choices.php:209
 msgid "Boxed"
 msgstr ""
 
-#: customizer/fields/layout.php:46
+#: customizer/fields/layout.php:44
 msgid "Site Container Width (px)"
 msgstr ""
 
-#: customizer/fields/layout.php:67
+#: customizer/fields/layout.php:69
 msgid "Container Width (px)"
 msgstr ""
 
-#: customizer/fields/layout.php:87
+#: customizer/fields/layout.php:93
 msgid "Narrow Container Width (px)"
 msgstr ""
 
@@ -1941,12 +1703,12 @@ msgstr ""
 msgid "Title Typography"
 msgstr ""
 
-#: customizer/fields/pages/archive/header.php:239
+#: customizer/fields/pages/archive/header.php:227
 msgid "Page Title Color"
 msgstr ""
 
-#: customizer/fields/pages/archive/header.php:269
-#: customizer/fields/pages/page-single/header.php:259
+#: customizer/fields/pages/archive/header.php:257
+#: customizer/fields/pages/page-single/header.php:247
 #: customizer/fields/pages/post-single/header.php:87
 msgid "Breadcrumbs Font Color"
 msgstr ""
@@ -2021,8 +1783,12 @@ msgstr ""
 
 #: customizer/fields/pages/archive/post-card.php:43
 #: customizer/fields/pages/post-single/related-posts.php:122
-#: customizer/functions/defaults/theme-pages/defaults-archive.php:60
+#: customizer/functions/defaults/theme-pages/defaults-archive.php:64
 msgid "Read More"
+msgstr ""
+
+#: customizer/fields/pages/archive/post-card.php:69
+msgid "Post Meta"
 msgstr ""
 
 #: customizer/fields/pages/archive/post-card.php:79
@@ -2069,6 +1835,15 @@ msgstr ""
 msgid "Container Width"
 msgstr ""
 
+#: customizer/fields/pages/inner-header.php:207
+msgid "Content Position"
+msgstr ""
+
+#: customizer/fields/pages/inner-header.php:230
+#: customizer/fields/pages/post-single/related-posts.php:227
+msgid "Content Alignment"
+msgstr ""
+
 #: customizer/fields/pages/inner-header.php:253
 msgid "Design Settings"
 msgstr ""
@@ -2101,12 +1876,28 @@ msgstr ""
 msgid "Normal Image"
 msgstr ""
 
+#: customizer/fields/pages/inner-header.php:718
+msgid "Height (vh)"
+msgstr ""
+
+#: customizer/fields/pages/inner-header.php:751
+msgid "Margin &amp; Padding"
+msgstr ""
+
+#: customizer/fields/pages/inner-header.php:861
+msgid "Content Margin (px)"
+msgstr ""
+
+#: customizer/fields/pages/inner-header.php:992
+msgid "Content Padding (px)"
+msgstr ""
+
 #: customizer/fields/pages/page-single/content.php:7
 #: customizer/fields/pages/post-single/post-content.php:8
 msgid "Post Content"
 msgstr ""
 
-#: customizer/fields/pages/page-single/header.php:229
+#: customizer/fields/pages/page-single/header.php:217
 msgid "Header Page Title Color"
 msgstr ""
 
@@ -2177,7 +1968,7 @@ msgstr ""
 
 #: customizer/fields/pages/post-single/related-posts.php:9
 #: customizer/fields/pages/post-single/related-posts.php:20
-#: customizer/functions/defaults/theme-pages/defaults-post.php:30
+#: customizer/functions/defaults/theme-pages/defaults-post.php:34
 msgid "Related Posts"
 msgstr ""
 
@@ -2205,11 +1996,11 @@ msgstr ""
 msgid "Header"
 msgstr ""
 
-#: customizer/fields/panels.php:22
+#: customizer/fields/panels.php:23
 msgid "Footer"
 msgstr ""
 
-#: customizer/fields/panels.php:31
+#: customizer/fields/panels.php:33
 msgid "Pages"
 msgstr ""
 
@@ -2233,51 +2024,42 @@ msgstr ""
 msgid "Body Typograhy"
 msgstr ""
 
-#: customizer/fields/typography.php:164
-#: customizer/fields/typography.php:348
-#: customizer/fields/typography.php:422
-#: customizer/fields/typography.php:496
-#: customizer/fields/typography.php:571
-#: customizer/fields/typography.php:646
-#: customizer/fields/typography.php:719
+#: customizer/fields/typography.php:156
+#: customizer/fields/typography.php:328
+#: customizer/fields/typography.php:390
+#: customizer/fields/typography.php:452
+#: customizer/fields/typography.php:515
+#: customizer/fields/typography.php:578
+#: customizer/fields/typography.php:639
 msgid "Letter Spacing (px)"
 msgstr ""
 
-#: customizer/fields/typography.php:188
+#: customizer/fields/typography.php:176
 msgid "Headings (H1-H6)"
 msgstr ""
 
-#: customizer/fields/typography.php:298
+#: customizer/fields/typography.php:286
 msgid "Heading - H1"
 msgstr ""
 
-#: customizer/fields/typography.php:373
+#: customizer/fields/typography.php:349
 msgid "Heading - H2"
 msgstr ""
 
-#: customizer/fields/typography.php:446
+#: customizer/fields/typography.php:410
 msgid "Heading - H3"
 msgstr ""
 
-#: customizer/fields/typography.php:520
+#: customizer/fields/typography.php:472
 msgid "Heading - H4"
 msgstr ""
 
-#: customizer/fields/typography.php:595
+#: customizer/fields/typography.php:535
 msgid "Heading - H5"
 msgstr ""
 
-#: customizer/fields/typography.php:669
+#: customizer/fields/typography.php:597
 msgid "Heading - H6"
-msgstr ""
-
-#: customizer/functions/customizer-callbacks.php:147
-msgid "Button Text"
-msgstr ""
-
-#: customizer/functions/customizer-callbacks.php:175
-#: customizer/functions/defaults/theme-footer/elements/copyright.php:11
-msgid "Copyright &copy; {current_year} {site_title}"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:9
@@ -2303,6 +2085,15 @@ msgstr ""
 
 #: customizer/functions/customizer-choices.php:44
 msgid "Blog Page &amp; Static Front Page"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:55
+#: customizer/functions/customizer-choices.php:466
+#: customizer/functions/customizer-choices.php:481
+#: customizer/functions/customizer-choices.php:647
+#: inc/custom-fields.php:150
+#: inc/custom-fields.php:250
+msgid "Content Width"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:56
@@ -2426,12 +2217,73 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
+#: customizer/functions/customizer-choices.php:302
+msgid "No Repeat"
+msgstr ""
+
 #: customizer/functions/customizer-choices.php:303
 msgid "Repeat"
 msgstr ""
 
+#: customizer/functions/customizer-choices.php:304
+msgid "Tile Horizontally"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:305
+msgid "Tile Vertically"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:320
+msgid "Cover"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:321
+msgid "Contain"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:335
+msgid "Scroll"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:336
+msgid "Fixed"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:349
+msgid "Left Top"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:350
+msgid "Left Center"
+msgstr ""
+
 #: customizer/functions/customizer-choices.php:351
-msgid "Left Right"
+msgid "Left Bottom"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:352
+msgid "Right Top"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:353
+msgid "Right Center"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:354
+msgid "Right Bottom"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:355
+msgid "Center Top"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:356
+#: customizer/functions/customizer-choices.php:784
+msgid "Center Center"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:357
+msgid "Center Bottom"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:372
@@ -2491,6 +2343,10 @@ msgstr ""
 
 #: customizer/functions/customizer-choices.php:540
 msgid "Slanted Bar"
+msgstr ""
+
+#: customizer/functions/customizer-choices.php:553
+msgid "Banner"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:554
@@ -2717,7 +2573,11 @@ msgstr ""
 msgid "Fade In Down"
 msgstr ""
 
-#: customizer/functions/defaults/theme-general/breadcrumbs.php:9
+#: customizer/functions/defaults/theme-footer/elements/copyright.php:11
+msgid "Copyright &copy; {current_year} {site_title}"
+msgstr ""
+
+#: customizer/functions/defaults/theme-general/breadcrumbs.php:13
 #: inc/third-party/breadcrumbs.php:268
 #: template-parts/page-header/content-header.php:23
 msgid "Home"
@@ -2727,27 +2587,27 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-#: customizer/functions/defaults/theme-pages/defaults-archive.php:62
+#: customizer/functions/defaults/theme-pages/defaults-archive.php:66
 msgid "Newer Posts"
 msgstr ""
 
-#: customizer/functions/defaults/theme-pages/defaults-archive.php:63
+#: customizer/functions/defaults/theme-pages/defaults-archive.php:67
 msgid "Older Posts"
 msgstr ""
 
-#: customizer/functions/defaults/theme-pages/defaults-post.php:19
+#: customizer/functions/defaults/theme-pages/defaults-post.php:23
 msgid "Leave a Comment"
 msgstr ""
 
-#: customizer/functions/defaults/theme-pages/defaults-post.php:20
+#: customizer/functions/defaults/theme-pages/defaults-post.php:24
 msgid "Hide Comments"
 msgstr ""
 
-#: customizer/functions/defaults/theme-pages/defaults-post.php:25
+#: customizer/functions/defaults/theme-pages/defaults-post.php:29
 msgid "Previous Post"
 msgstr ""
 
-#: customizer/functions/defaults/theme-pages/defaults-post.php:26
+#: customizer/functions/defaults/theme-pages/defaults-post.php:30
 msgid "Next Post"
 msgstr ""
 
