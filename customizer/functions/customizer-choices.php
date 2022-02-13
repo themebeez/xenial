@@ -348,7 +348,7 @@ if ( ! function_exists( 'xenial_get_background_position_choices' ) ) {
 			array(
 				'left-top' => esc_html__( 'Left Top', 'xenial' ),
 				'left-center' => esc_html__( 'Left Center', 'xenial' ),
-				'left-right' => esc_html__( 'Left Right', 'xenial' ),
+				'left-bottom' => esc_html__( 'Left Bottom', 'xenial' ),
 				'right-top' => esc_html__( 'Right Top', 'xenial' ),
 				'right-center' => esc_html__( 'Right Center', 'xenial' ),
 				'right-bottom' => esc_html__( 'Right Bottom', 'xenial' ),
@@ -1563,6 +1563,56 @@ if ( ! function_exists( 'xenial_get_dropdown_reveal_effects' ) ) {
 				'FadeIn' => esc_html__( 'Fade In', 'xenial' ),
 				'FadeInUp' => esc_html__( 'Fade In Up', 'xenial' ),
 				'FadeInDown' => esc_html__( 'Fade In Down', 'xenial' )
+			)
+		);
+	}
+}
+
+
+
+
+if ( ! function_exists( 'xenial_get_letter_spacing_input_attrs' ) ) {
+
+	function xenial_get_letter_spacing_input_attrs() {
+
+		return apply_filters(
+			'xenial_letter_spacing_input_attrs',
+			array(
+				'min' 	=> 0,
+				'max' 	=> 15,
+				'step' 	=> 0.01
+			)
+		);
+	}
+}
+
+
+if ( ! function_exists( 'xenial_get_line_height_input_attrs' ) ) {
+
+	function xenial_get_line_height_input_attrs() {
+
+		return apply_filters(
+			'xenial_line_height_input_attrs',
+			array(
+				'min' 	=> 0,
+				'max' 	=> 5,
+				'step' 	=> 0.01
+			)
+		);
+	}
+}
+
+
+if ( ! function_exists( 'xenial_get_font_size_input_attrs' ) ) {
+
+	function xenial_get_font_size_input_attrs() {
+
+		return apply_filters(
+			'xenial_font_size_input_attrs',
+			array(
+				'min' 	=> 0,
+				'max' 	=> 150,
+				'step' 	=> 1
 			)
 		);
 	}

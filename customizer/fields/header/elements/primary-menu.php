@@ -161,11 +161,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_primary_menu',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-		),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 		'default' => xenial_get_customize_default( 'primary_menu_top_level_items_font_size' )
 	)
 );
@@ -176,11 +172,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_primary_menu',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 10, 
-			'step' => 0.01, 
-		),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 		'default' => xenial_get_customize_default( 'primary_menu_top_level_items_line_height' )
 	)
 );

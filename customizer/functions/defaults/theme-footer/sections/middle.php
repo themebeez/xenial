@@ -2,9 +2,9 @@
 
 if ( ! function_exists( 'xenial_theme_footer_middle_section_defaults' ) ) {
 
-	function xenial_theme_footer_middle_section_defaults() {
+	function xenial_theme_footer_middle_section_defaults( $customize_defaults ) {
 
-		return apply_filters(
+		$footer_middle_section_customize_defaults = apply_filters(
 			'xenial_theme_footer_middle_section_defaults_filter',
 			array(
 				'footer_middle_section_width' => 'container',
@@ -59,5 +59,11 @@ if ( ! function_exists( 'xenial_theme_footer_middle_section_defaults' ) ) {
 				'footer_middle_section_border_bottom_color' => '' 
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $footer_middle_section_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_theme_footer_middle_section_defaults' );
 }

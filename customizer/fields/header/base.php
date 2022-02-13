@@ -35,19 +35,17 @@ xenial_tab_field(
 	        		'header_background_type' => '',
 	        		'header_field_divider_2' => '',
 	        		'header_background_color' => '',
-	        		'header_field_divider_3' => '',
 	        		'header_gradient_background_color_1' => '',
 	        		'header_gradient_location_1' => '',
 	        		'header_gradient_background_color_2' => '',
 	        		'header_gradient_location_2' => '',
 	        		'header_gradient_type' => '',
 	        		'header_gradient_linear_angle' => '',
-	        		'header_field_divider_4' => '',
 	        		'header_background_image' => '',
 	        		'header_image_background_repeat' => '',
 	        		'header_image_background_size' => '',
 	        		'header_image_background_position' => '',
-	        		'header_image_background_attachment' => ''
+	        		'header_image_background_attachment' => '',
 	        	) 
 	        )
 		)
@@ -159,16 +157,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Background Color', 'xenial' ),
 		'is_responsive' => false,
-		'default' => xenial_get_customize_default( 'header_background_color' )
-	)
-);
-
-
-xenial_divider_field( 
-	'header_field_divider_3', 
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_general', 
+		'default' => xenial_get_customize_default( 'header_background_color' ),
+		'active_callback' => 'xenial_is_theme_header_background_color'
 	)
 );
 
@@ -179,7 +169,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Gradient Color One', 'xenial' ),
 		'is_responsive' => false,
-		'default' => xenial_get_customize_default( 'header_gradient_background_color_1' )
+		'default' => xenial_get_customize_default( 'header_gradient_background_color_1' ),
+		'active_callback' => 'xenial_is_theme_header_background_gradient'
 	)
 );
 
@@ -196,7 +187,8 @@ xenial_range_control_field(
 			'step' => 1, 
 			'responsive' => false
 		),
-		'default' => xenial_get_customize_default( 'header_gradient_location_1' )
+		'default' => xenial_get_customize_default( 'header_gradient_location_1' ),
+		'active_callback' => 'xenial_is_theme_header_background_gradient'
 	)
 );
 
@@ -207,7 +199,8 @@ xenial_color_picker_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Gradient Color Two', 'xenial' ),
 		'is_responsive' => false,
-		'default' => xenial_get_customize_default( 'header_gradient_background_color_2' )
+		'default' => xenial_get_customize_default( 'header_gradient_background_color_2' ),
+		'active_callback' => 'xenial_is_theme_header_background_gradient'
 	)
 );
 
@@ -224,7 +217,8 @@ xenial_range_control_field(
 			'step' => 1, 
 			'responsive' => false
 		),
-		'default' => xenial_get_customize_default( 'header_gradient_location_2' )
+		'default' => xenial_get_customize_default( 'header_gradient_location_2' ),
+		'active_callback' => 'xenial_is_theme_header_background_gradient'
 	)
 );
 
@@ -236,7 +230,8 @@ xenial_select_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Gradient Type', 'xenial' ),
 		'choices' => xenial_get_gradient_choices(),
-		'default' => xenial_get_customize_default( 'header_gradient_type' )
+		'default' => xenial_get_customize_default( 'header_gradient_type' ),
+		'active_callback' => 'xenial_is_theme_header_background_gradient'
 	)
 );
 
@@ -253,18 +248,11 @@ xenial_range_control_field(
 			'step' => 1, 
 			'responsive' => false
 		),
-		'default' => xenial_get_customize_default( 'header_gradient_linear_angle' )
+		'default' => xenial_get_customize_default( 'header_gradient_linear_angle' ),
+		'active_callback' => 'xenial_is_theme_header_background_gradient'
 	)
 );
 
-
-xenial_divider_field( 
-	'header_field_divider_4', 
-	array(
-		'priority' => 10,
-		'section' => 'xenial_header_general', 
-	)
-);
 
 
 xenial_image_upload_field(
@@ -273,7 +261,8 @@ xenial_image_upload_field(
 		'priority' => 10,
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Background Image', 'xenial' ),
-		'default' => xenial_get_customize_default( 'header_background_image' )
+		'default' => xenial_get_customize_default( 'header_background_image' ),
+		'active_callback' => 'xenial_is_theme_header_background_image'
 	)
 );
 
@@ -285,7 +274,8 @@ xenial_select_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Background Repeat', 'xenial' ),
 		'choices' => xenial_get_background_repeat_choices(),
-		'default' => xenial_get_customize_default( 'header_image_background_repeat' )
+		'default' => xenial_get_customize_default( 'header_image_background_repeat' ),
+		'active_callback' => 'xenial_is_theme_header_background_image'
 	)
 );
 
@@ -297,7 +287,8 @@ xenial_select_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Background Size', 'xenial' ),
 		'choices' => xenial_get_background_size_choices(),
-		'default' => xenial_get_customize_default( 'header_image_background_size' )
+		'default' => xenial_get_customize_default( 'header_image_background_size' ),
+		'active_callback' => 'xenial_is_theme_header_background_image'
 	)
 );
 
@@ -309,7 +300,8 @@ xenial_select_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Background Position', 'xenial' ),
 		'choices' => xenial_get_background_position_choices(),
-		'default' => xenial_get_customize_default( 'header_image_background_position' )
+		'default' => xenial_get_customize_default( 'header_image_background_position' ),
+		'active_callback' => 'xenial_is_theme_header_background_image'
 	)
 );
 
@@ -321,6 +313,7 @@ xenial_select_field(
 		'section' => 'xenial_header_general',
 		'label' => esc_html__( 'Background Attachment', 'xenial' ),
 		'choices' => xenial_get_background_attachment_choices(),
-		'default' => xenial_get_customize_default( 'header_image_background_attachment' )
+		'default' => xenial_get_customize_default( 'header_image_background_attachment' ),
+		'active_callback' => 'xenial_is_theme_header_background_image'
 	)
 );

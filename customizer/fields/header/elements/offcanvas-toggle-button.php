@@ -98,11 +98,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_offcanvas_toggle_button',
 		'label' => esc_html__( 'Icon / Label Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1,
-		),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 		'default' => xenial_get_customize_default( 'offcanvas_toggle_button_font_size')
 	)
 );

@@ -109,7 +109,7 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         	}
         	
         	if ( $site_description_font_desktop['font-size'] ) {
-        		$css .= '--xe_site_description_font_size: ' . esc_attr( $site_description_font_desktop['font-size'] ) . ';';
+        		$css .= '--xe_site_description_font_size: ' . esc_attr( $site_description_font_desktop['font-size'] ) . 'px;';
         	}
         	
         	if ( $site_description_font_desktop['font-weight'] ) {	

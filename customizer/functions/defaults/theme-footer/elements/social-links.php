@@ -2,9 +2,9 @@
 
 if ( ! function_exists( 'xenial_get_footer_social_links_customize_defaults' ) ) {
 
-	function xenial_get_footer_social_links_customize_defaults() {
+	function xenial_get_footer_social_links_customize_defaults( $customize_defaults ) {
 
-		return apply_filters(
+		$footer_social_links_customize_defaults = apply_filters(
 			'xenial_footer_social_links_customize_defaults_filter',
 			array(
 				'footer_social_links' => '',
@@ -60,5 +60,11 @@ if ( ! function_exists( 'xenial_get_footer_social_links_customize_defaults' ) ) 
 	            'footer_social_link_hover_border_color' => '',
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $footer_social_links_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_get_footer_social_links_customize_defaults' );
 }

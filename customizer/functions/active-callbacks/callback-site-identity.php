@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Checks if site title font is a system font.
  *

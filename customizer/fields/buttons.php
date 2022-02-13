@@ -8,7 +8,6 @@ xenial_section_field(
 	)
 );
 
-
 xenial_controls_wrapper_field(
 	'general_button',
 	array(
@@ -18,7 +17,6 @@ xenial_controls_wrapper_field(
 	),
 	false
 );
-
 
 xenial_box_dimension_field(
 	'btn_padding',
@@ -31,7 +29,6 @@ xenial_box_dimension_field(
 	),
 	false
 );
-
 
 xenial_divider_field( 
 	'general_button_divider_1', 
@@ -96,14 +93,6 @@ xenial_box_border_field(
 
 
 
-
-
-
-
-
-
-
-
 xenial_controls_wrapper_field(
 	'text_button',
 	array(
@@ -113,9 +102,6 @@ xenial_controls_wrapper_field(
 	),
 	false
 );
-
-
-
 
 xenial_color_picker_field(
 	'txt_btn_txt_color',
@@ -128,7 +114,6 @@ xenial_color_picker_field(
 	)
 );
 
-
 xenial_divider_field( 
 	'text_button_divider_1', 
 	array( 
@@ -136,8 +121,6 @@ xenial_divider_field(
 		'section' => 'xenial_buttons', 
 	) 
 );
-
-
 
 xenial_range_control_field(
 	'txt_btn_border_width',
@@ -157,7 +140,6 @@ xenial_divider_field(
 		'section' => 'xenial_buttons', 
 	) 
 );
-
 
 xenial_color_picker_field(
 	'txt_btn_border_color',

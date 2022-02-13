@@ -3,9 +3,9 @@
 
 if ( ! function_exists( 'xenial_get_footer_menu_customize_defaults' ) ) {
 
-	function xenial_get_footer_menu_customize_defaults() {
+	function xenial_get_footer_menu_customize_defaults( $customize_defaults ) {
 
-		return apply_filters(
+		$footer_menu_customize_defaults = apply_filters(
 			'xenial_footer_menu_customize_defaults_filter',
 			array(
 				'footer_menu' => '',
@@ -38,5 +38,11 @@ if ( ! function_exists( 'xenial_get_footer_menu_customize_defaults' ) ) {
 	            'footer_menu_link_hover_color' => '',
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $footer_menu_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_get_footer_menu_customize_defaults' );
 }

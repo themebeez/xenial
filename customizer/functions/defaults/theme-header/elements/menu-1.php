@@ -3,9 +3,9 @@
 
 if ( ! function_exists( 'xenial_get_header_primary_menu_customize_defaults' ) ) {
 
-	function xenial_get_header_primary_menu_customize_defaults() {
+	function xenial_get_header_primary_menu_customize_defaults( $customize_defaults ) {
 
-		return apply_filters(
+		$header_primary_menu_customize_defaults = apply_filters(
 			'xenial_header_primary_menu_customize_defaults_filter',
 			array(
 				'primary_menu' => '',
@@ -31,16 +31,22 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_customize_defaults' ) ) 
 	            'primary_menu_alignment' => 'left'	            
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $header_primary_menu_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_get_header_primary_menu_customize_defaults' );
 }
 
 
 
 if ( ! function_exists( 'xenial_get_header_primary_menu_dropdown_customize_defaults' ) ) {
 
-	function xenial_get_header_primary_menu_dropdown_customize_defaults() {
+	function xenial_get_header_primary_menu_dropdown_customize_defaults( $customize_defaults ) {
 
-		return apply_filters(
+		$header_primary_menu_dropdown_customize_defaults = apply_filters(
 			'xenial_header_primary_menu_dropdown_customize_defaults_filter',
 			array(
 				'primary_menu_dropdown_reveal_effect' => 'none',
@@ -70,5 +76,11 @@ if ( ! function_exists( 'xenial_get_header_primary_menu_dropdown_customize_defau
 	            'primary_menu_dropdown_items_text_transform' => 'inherit',
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $header_primary_menu_dropdown_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_get_header_primary_menu_dropdown_customize_defaults' );
 }

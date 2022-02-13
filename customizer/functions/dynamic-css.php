@@ -283,7 +283,10 @@ if ( ! function_exists( 'xenial_dynamic_background_image_css' ) ) {
 			if ( $background_property == 'background-image' ) {
 
 				$css .= $background_property . ': url(' . esc_attr( $value ) . ');';
-			} else {
+			} elseif ( $background_property == 'background-position' ) {
+
+				$css .= $background_property . ': ' . str_replace( '-', ' ', $value ) . ';';
+			}else {
 
 				$css .= $background_property . ': ' . esc_attr( $value ) . ';';
 			}

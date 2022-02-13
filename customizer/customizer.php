@@ -54,9 +54,7 @@ add_action( 'customize_controls_enqueue_scripts', 'xenial_enqueues', 15 );
  */
 function xenial_customize_register( $wp_customize ) {
 	
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	
 
 	$controls_path = XENIAL_THEME_DIR . '/customizer/controls/';
 
@@ -103,7 +101,7 @@ function xenial_customize_register( $wp_customize ) {
 	/**
 	 * Load alpha color picker custom customize control.
 	 */
-	require $controls_path . 'alpha-color-picker/class-xenial-customize-alpha-color-picker-control.php';
+	// require $controls_path . 'alpha-color-picker/class-xenial-customize-alpha-color-picker-control.php';
 
 	/**
 	 * Load sortable checkbox custom customize control.
@@ -154,14 +152,6 @@ function xenial_customize_register( $wp_customize ) {
 
 
 	/**
-	 * Custom Customizer Background Image Control.
-	 */
-	require $controls_path . 'background-image/class-xenial-customize-background-image-control.php';
-
-	$wp_customize->register_control_type( 'Xenial_Customize_Background_Image_Control' );
-
-
-	/**
 	 * Tab custom customize control.
 	 */
 	require $controls_path . 'tinymce-editor/class-xenial-customize-tinymce-editor-control.php';
@@ -191,9 +181,9 @@ function xenial_customize_register( $wp_customize ) {
 	/**
 	 * Load custom customizer control for upsell
 	 */
-	require $controls_path . 'upsell/class-xenial-customize-upsell-control.php';
+	// require $controls_path . 'upsell/class-xenial-customize-upsell-control.php';
 
-	$wp_customize->register_section_type( 'Xenial_Customize_Upsell_Control' );
+	// $wp_customize->register_section_type( 'Xenial_Customize_Upsell_Control' );
 
 
 	/**
@@ -247,11 +237,9 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/middle-header.php';
 	require $customizer_fields_path . 'header/bottom-header.php';
 	require $customizer_fields_path . 'header/offcanvas.php';
-	require $customizer_fields_path . 'header/site-identity.php';
 	require $customizer_fields_path . 'header/transparent-header.php';
 
 	require $customizer_fields_path . 'header/elements/logo.php';
-	// // require $customizer_fields_path . 'header/elements/ad.php';
 	require $customizer_fields_path . 'header/elements/button.php';
 	require $customizer_fields_path . 'header/elements/html.php';
 	require $customizer_fields_path . 'header/elements/primary-menu.php';
@@ -261,10 +249,7 @@ function xenial_customize_register( $wp_customize ) {
 	require $customizer_fields_path . 'header/elements/social-links.php';
 	require $customizer_fields_path . 'header/elements/offcanvas-toggle-button.php';
 	require $customizer_fields_path . 'header/elements/offcanvas-menu.php';
-	// require $customizer_fields_path . 'header/elements/text.php';
 
-	// require $customizer_fields_path . 'pages/inner-header.php';
-	// // require $customizer_fields_path . 'pages/breadcrumbs.php';
 	require $customizer_fields_path . 'pages/archive-settings.php';
 	require $customizer_fields_path . 'pages/archive/header.php';
 	require $customizer_fields_path . 'pages/archive/post-card.php';
@@ -284,20 +269,20 @@ function xenial_customize_register( $wp_customize ) {
 
 	require $customizer_fields_path . 'fields-sidebar.php';
 
-	require $customizer_fields_path . 'footer/base.php';
-	require $customizer_fields_path . 'footer/top-footer.php';
-	require $customizer_fields_path . 'footer/middle-footer.php';
-	require $customizer_fields_path . 'footer/bottom-footer.php';
+	// require $customizer_fields_path . 'footer/base.php';
+	// require $customizer_fields_path . 'footer/top-footer.php';
+	// require $customizer_fields_path . 'footer/middle-footer.php';
+	// require $customizer_fields_path . 'footer/bottom-footer.php';
 
-	require $customizer_fields_path . 'footer/elements/copyright.php';
-	require $customizer_fields_path . 'footer/elements/footer-menu.php';
-	require $customizer_fields_path . 'footer/elements/social-links.php';
-	require $customizer_fields_path . 'footer/elements/widget-1.php';
-	require $customizer_fields_path . 'footer/elements/widget-2.php';
-	require $customizer_fields_path . 'footer/elements/widget-3.php';
-	require $customizer_fields_path . 'footer/elements/widget-4.php';
-	require $customizer_fields_path . 'footer/elements/widget-5.php';
-	require $customizer_fields_path . 'footer/elements/widget-6.php';
+	// require $customizer_fields_path . 'footer/elements/copyright.php';
+	// require $customizer_fields_path . 'footer/elements/footer-menu.php';
+	// require $customizer_fields_path . 'footer/elements/social-links.php';
+	// require $customizer_fields_path . 'footer/elements/widget-1.php';
+	// require $customizer_fields_path . 'footer/elements/widget-2.php';
+	// require $customizer_fields_path . 'footer/elements/widget-3.php';
+	// require $customizer_fields_path . 'footer/elements/widget-4.php';
+	// require $customizer_fields_path . 'footer/elements/widget-5.php';
+	// require $customizer_fields_path . 'footer/elements/widget-6.php';
 
 	if ( class_exists( 'WooCommerce' ) ) {
 
@@ -336,7 +321,7 @@ require XENIAL_THEME_DIR . '/customizer/functions/customizer-callbacks.php';
 
 
 require XENIAL_THEME_DIR . '/customizer/controls/header-builder/class-xenial-header-builder.php';
-require XENIAL_THEME_DIR . '/customizer/controls/footer-builder/class-xenial-footer-builder.php';
+// require XENIAL_THEME_DIR . '/customizer/controls/footer-builder/class-xenial-footer-builder.php';
 
 /**
  * Load function to load customizer field's options.
@@ -347,28 +332,15 @@ require XENIAL_THEME_DIR . '/customizer/functions/customizer-choices.php';
 
 
 
+require XENIAL_THEME_DIR . '/customizer/functions/selective-refresh/site-identity.php';
+require XENIAL_THEME_DIR . '/customizer/functions/selective-refresh/buttons.php';
+
 require XENIAL_THEME_DIR . '/customizer/functions/dynamic-css.php';
 
 
 
 
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
-function xenial_customize_partial_blogname() {
-	bloginfo( 'name' );
-}
 
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
-function xenial_customize_partial_blogdescription() {
-	bloginfo( 'description' );
-}
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
