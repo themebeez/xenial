@@ -9,12 +9,12 @@ if ( ! function_exists( 'xenial_panel_field' ) ) {
 
 		$wp_customize->add_panel(
 			$id,
-			[
+			array(
 				'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 				'title' => $args['title'],
 				'description' => isset( $args['description'] ) ? $args['description'] : '',
 				'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-			]
+			)
 		);
 	}
 }
@@ -28,64 +28,64 @@ if ( ! function_exists( 'xenial_section_field' ) ) {
 
 		$wp_customize->add_section(
 			$id,
-			[
+			array(
 				'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 				'panel' => isset( $args['panel'] ) ? $args['panel'] : '',
 				'title' => isset( $args['title'] ) ? $args['title'] : '',
 				'description' => isset( $args['description'] ) ? $args['description'] : '',
 				'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-			]
+			)
 		);
 	}
 }
 
 
 
-if ( ! function_exists( 'xenial_color_field' ) ) {
+// if ( ! function_exists( 'xenial_color_field' ) ) {
 
-	function xenial_color_field( $id, $args, $alpha = false ) {
+// 	function xenial_color_field( $id, $args, $alpha = false ) {
 
-		global $wp_customize;
+// 		global $wp_customize;
 
-		$wp_customize->add_setting(
-			$id,
-			[
-				'default' => isset( $args['default'] ) ? $args['default'] : '',
-				'sanitize_callback' => ( $alpha == false ) ? 'sanitize_hex_color' : ''
-			]
-		);
+// 		$wp_customize->add_setting(
+// 			$id,
+// 			array(
+// 				'default' => isset( $args['default'] ) ? $args['default'] : '',
+// 				'sanitize_callback' => ( $alpha == false ) ? 'sanitize_hex_color' : ''
+// 			)
+// 		);
 
-		if ( $alpha == false ) {
-			$wp_customize->add_control( 
-				new WP_Customize_Color_Control( 
-					$wp_customize, 
-					$id, 
-					[
-						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
-						'section' => isset( $args['section'] ) ? $args['section'] : '',
-						'label' => isset( $args['label'] ) ? $args['label'] : '',
-						'description' => isset( $args['description'] ) ? $args['description'] : '',
-						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-					]
-				) 
-			);
-		} else {
-			$wp_customize->add_control( 
-				new Xenial_Customize_Alpha_Color_Picker_Control( 
-					$wp_customize, 
-					$id, 
-					[
-						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
-						'section' => isset( $args['section'] ) ? $args['section'] : '',
-						'label' => isset( $args['label'] ) ? $args['label'] : '',
-						'description' => isset( $args['description'] ) ? $args['description'] : '',
-						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-					] 
-				) 
-			);
-		}
-	}
-}
+// 		if ( $alpha == false ) {
+// 			$wp_customize->add_control( 
+// 				new WP_Customize_Color_Control( 
+// 					$wp_customize, 
+// 					$id, 
+// 					array(
+// 						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
+// 						'section' => isset( $args['section'] ) ? $args['section'] : '',
+// 						'label' => isset( $args['label'] ) ? $args['label'] : '',
+// 						'description' => isset( $args['description'] ) ? $args['description'] : '',
+// 						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
+// 					)
+// 				) 
+// 			);
+// 		} else {
+// 			$wp_customize->add_control( 
+// 				new Xenial_Customize_Alpha_Color_Picker_Control( 
+// 					$wp_customize, 
+// 					$id, 
+// 					array(
+// 						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
+// 						'section' => isset( $args['section'] ) ? $args['section'] : '',
+// 						'label' => isset( $args['label'] ) ? $args['label'] : '',
+// 						'description' => isset( $args['description'] ) ? $args['description'] : '',
+// 						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
+// 					) 
+// 				) 
+// 			);
+// 		}
+// 	}
+// }
 
 
 if ( ! function_exists( 'xenial_text_field' ) ) {
@@ -96,22 +96,22 @@ if ( ! function_exists( 'xenial_text_field' ) ) {
 
 		$wp_customize->add_setting(
 			$id,
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => 'sanitize_text_field'
-			]
+			)
 		);
 
 		$wp_customize->add_control(
 			$id,
-			[
+			array(
 				'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 				'section' => isset( $args['section'] ) ? $args['section'] : '',
 				'label' => isset( $args['label'] ) ? $args['label'] : '',
 				'description' => isset( $args['description'] ) ? $args['description'] : '',
 				'type' => 'text',
 				'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-			]
+			)
 		);
 	}
 }
@@ -126,22 +126,22 @@ if ( ! function_exists( 'xenial_url_field' ) ) {
 
 		$wp_customize->add_setting(
 			$id,
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => 'esc_url_raw'
-			]
+			)
 		);
 
 		$wp_customize->add_control(
 			$id,
-			[
+			array(
 				'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 				'section' => isset( $args['section'] ) ? $args['section'] : '',
 				'label' => isset( $args['label'] ) ? $args['label'] : '',
 				'description' => isset( $args['description'] ) ? $args['description'] : '',
 				'type' => 'url',
 				'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-			]
+			)
 		);
 	}
 }
@@ -156,24 +156,24 @@ if ( ! function_exists( 'xenial_switch_field' ) ) {
 
 		$wp_customize->add_setting(
 			$id,
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => 'wp_validate_boolean'
-			]
+			)
 		);
 
 		$wp_customize->add_control( 
 			new Xenial_Customize_Toggle_Switch_Control( 
 				$wp_customize,
 				$id, 
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
 					'type' => 'ios',
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				] 
+				)
 			) 
 		);
 	}
@@ -188,24 +188,24 @@ if ( ! function_exists( 'xenial_select_field' ) ) {
 
 		$wp_customize->add_setting(
 			$id,
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => 'xenial_sanitize_select'
-			]
+			)
 		);
 
 		$wp_customize->add_control( 
 			new Xenial_Customize_SlimSelect_Control(
 				$wp_customize, 
 				$id,
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
-					'choices' => isset( $args['choices'] ) ? $args['choices'] : [],
+					'choices' => isset( $args['choices'] ) ? $args['choices'] : array(),
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			)
 		);
 
@@ -219,11 +219,11 @@ if ( ! function_exists( 'xenial_box_dimension_field' ) ) {
 
 		global $wp_customize;
 
-		$settings = [];
+		$settings = array();
 
 		if ( $responsive == false ) {
 
-			$dimensions = [ 'top', 'right', 'bottom', 'left' ];
+			$dimensions = array( 'top', 'right', 'bottom', 'left' );
 
 			foreach( $dimensions as $dimension  ) {	
 
@@ -231,7 +231,7 @@ if ( ! function_exists( 'xenial_box_dimension_field' ) ) {
 			}
 			
 		} else {
-			$dimensions = [ 'desktop_top', 'desktop_right', 'desktop_bottom', 'desktop_left', 'tablet_top', 'tablet_right', 'tablet_bottom', 'tablet_left', 'mobile_top', 'mobile_right', 'mobile_bottom', 'mobile_left' ];
+			$dimensions = array( 'desktop_top', 'desktop_right', 'desktop_bottom', 'desktop_left', 'tablet_top', 'tablet_right', 'tablet_bottom', 'tablet_left', 'mobile_top', 'mobile_right', 'mobile_bottom', 'mobile_left' );
 
 			foreach( $dimensions as $dimension  ) {	
 
@@ -244,10 +244,10 @@ if ( ! function_exists( 'xenial_box_dimension_field' ) ) {
 			foreach ( $settings as $index => $setting ) {
 				$wp_customize->add_setting(
 					$setting,
-					[
+					array(
 						'default' => isset( $args['defaults'][$index] ) ? $args['defaults'][$index] : '',
 						'sanitize_callback' => isset( $args['sanitize_callback'] ) ? $args['sanitize_callback'] : ''
-					]
+					)
 				);
 			}
 
@@ -255,15 +255,15 @@ if ( ! function_exists( 'xenial_box_dimension_field' ) ) {
 				new Xenial_Customize_Dimensions_Control( 
 					$wp_customize, 
 					$id, 
-					[
+					array(
 						'settings' => $settings,
 						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 						'section' => isset( $args['section'] ) ? $args['section'] : '',
 						'label' => isset( $args['label'] ) ? $args['label'] : '',
 						'description' => isset( $args['description'] ) ? $args['description'] : '',
-						'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : ['min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false],
+						'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : array( 'min' => 0, 'max' => 1000, 'step' => 1, 'responsive' => false),
 						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-					] 
+					) 
 				) 
 			);
 		}
@@ -280,21 +280,21 @@ if ( ! function_exists( 'xenial_tab_field' ) ) {
 
 		$wp_customize->add_setting( 
 			$id, 
-			[
+			array(
 		    	'sanitize_callback' => null,
-			] 
+			) 
 		);
 
 		$wp_customize->add_control( 
 			new Xenial_Customize_Tab_Control( 
 				$wp_customize, 
 				$id, 
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
-				    'tabs'=> isset( $args['tabs'] ) ? $args['tabs'] : [],
-				    'controls' => isset( $args['controls'] ) ? $args['controls'] : []
-				]
+				    'tabs'=> isset( $args['tabs'] ) ? $args['tabs'] : array(),
+				    'controls' => isset( $args['controls'] ) ? $args['controls'] : array()
+				)
 			) 
 		);
 	}
@@ -309,10 +309,10 @@ if ( ! function_exists( 'xenial_controls_wrapper_field' ) ) {
 
 		$wp_customize->add_setting(
 			$id,
-			[
+			array(
 				'default' => false,
 				'sanitize_callback' => 'wp_validate_boolean'
-			]
+			)
 		);
 
 		if ( $expandable == false ) {
@@ -320,7 +320,7 @@ if ( ! function_exists( 'xenial_controls_wrapper_field' ) ) {
 				new Xenial_Customize_Wrapper_Control( 
 					$wp_customize, 
 					$id, 
-					[
+					array(
 						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 						'section' => isset( $args['section'] ) ? $args['section'] : '',
 						'label' => isset( $args['label'] ) ? $args['label'] : '',
@@ -329,7 +329,7 @@ if ( ! function_exists( 'xenial_controls_wrapper_field' ) ) {
 						'class' => isset( $args['class'] ) ? $args['class'] : '',
 						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : '',
 					    'accordion' => false
-					] 
+					) 
 				) 
 			);
 		} else {
@@ -337,7 +337,7 @@ if ( ! function_exists( 'xenial_controls_wrapper_field' ) ) {
 				new Xenial_Customize_Wrapper_Control( 
 					$wp_customize, 
 					$id, 
-					[
+					array(
 						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 						'section' => isset( $args['section'] ) ? $args['section'] : '',
 						'label' => isset( $args['label'] ) ? $args['label'] : '',
@@ -348,7 +348,7 @@ if ( ! function_exists( 'xenial_controls_wrapper_field' ) ) {
 					    'class' => isset( $args['class'] ) ? $args['class'] : '',
 					    'controls_to_wrap' => isset( $args['controls_to_wrap'] ) ? $args['controls_to_wrap'] : 0,
 					    'expanded' => ( isset( $args['expanded'] ) && $args['expanded'] == true ) ? true : false
-					] 
+					) 
 				) 
 			);
 		}
@@ -364,17 +364,17 @@ if ( ! function_exists( 'xenial_sortable_checkbox_field' ) ) {
 
 		$wp_customize->add_setting(
 			$id,
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => 'xenial_sanitize_multi_checkboxes_value'
-			]
+			)
 		);
 
 		$wp_customize->add_control(
 			new Xenial_Customize_Sortable_Checkbox_Control(
 				$wp_customize,
 				$id,
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
@@ -382,7 +382,7 @@ if ( ! function_exists( 'xenial_sortable_checkbox_field' ) ) {
 					'choices' => isset( $args['choices'] ) ? $args['choices'] : [],
 					'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : ['sortable' => true, 'fullwidth' => true],
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			)
 		);
 
@@ -398,24 +398,24 @@ if ( ! function_exists( 'xenial_google_font_field' ) ) {
 
 		$wp_customize->add_setting( 
 			$id,
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => ''
-			]
+			)
 		);
 
 		$wp_customize->add_control( 
 			new Xenial_Customize_Google_Font_Selector_Control( 
 				$wp_customize, 
 				$id,
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
-					'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : ['font_count' => 'all', 'orderby' => 'alpha'],
+					'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : array('font_count' => 'all', 'orderby' => 'alpha'),
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			) 
 		);
 
@@ -429,12 +429,12 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 
 		global $wp_customize;
 
-		$default_input_attrs = [
+		$default_input_attrs = array(
 			'min' => 0,
 			'max' => 1000,
 			'step' => 1,
 			'responsive' => false
-		];
+		);
 
 		if ( 
 			isset( $args['responsive'] ) && 
@@ -443,7 +443,7 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 			
 			$settings = [];
 
-			$devices = [ 'desktop', 'tablet', 'mobile' ];
+			$devices = array( 'desktop', 'tablet', 'mobile' );
 
 			foreach ( $devices as $device ) {
 				$settings[$device] = $id . '_' . $device;
@@ -493,24 +493,24 @@ if ( ! function_exists( 'xenial_range_control_field' ) ) {
 
 			$wp_customize->add_setting( 
 				$id, 
-				[
+				array(
 					'default' => isset( $args['default'] ) ? $args['default'] : '',
 					'sanitize_callback' => isset( $args['sanitize_callback'] ) ? $args['sanitize_callback'] : ''
-				] 
+				) 
 			);
 
 			$wp_customize->add_control( 
 				new Xenial_Customize_Slider_Control( 
 					$wp_customize, 
 					$id, 
-					[
+					array(
 						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 						'section' => isset( $args['section'] ) ? $args['section'] : '',
 						'label' => isset( $args['label'] ) ? $args['label'] : '',
 						'description' => isset( $args['description'] ) ? $args['description'] : '',
 						'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : $default_input_attrs,
 						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-					]
+					)
 				) 
 			);
 		}
@@ -538,12 +538,12 @@ if ( ! function_exists( 'xenial_image_upload_field' ) ) {
 			new WP_Customize_Image_Control( 
 				$wp_customize, 
 				$id, 
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			) 
 		);
 	}
@@ -557,18 +557,18 @@ if ( ! function_exists( 'xenial_tinymce_editor_field' ) ) {
 
 		global $wp_customize;
 
-		$input_attrs = [
+		$input_attrs = array(
 			'toolbar1' => 'bold italic bullist numlist alignleft aligncenter alignright link',
 			'toolbar2' => 'formatselect outdent indent | blockquote charmap',
 			'mediaButtons' => true
-		];
+		);
 
 		$wp_customize->add_setting( 
 			$id, 
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => 'wp_kses_post'				
-			]
+			)
 		);
 
 
@@ -576,14 +576,14 @@ if ( ! function_exists( 'xenial_tinymce_editor_field' ) ) {
 			new Xenial_Customize_TinyMCE_Editor_Control( 
 				$wp_customize, 
 				$id, 
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
 					'input_attrs' => isset( $args['input_attrs'] ) ? $args['input_attrs'] : $input_attrs,
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			) 
 		);
 	}
@@ -599,9 +599,9 @@ if ( ! function_exists( 'xenial_radio_button_group_field' ) ) {
 
 		if ( $responsive ) {
 
-			$settings = [];
+			$settings = array();
 
-			$devices = [ 'desktop', 'tablet', 'mobile' ];
+			$devices = array( 'desktop', 'tablet', 'mobile' );
 
 			foreach ( $devices as $device ) {
 				$settings[$device] = $id . '_' . $device;
@@ -612,10 +612,10 @@ if ( ! function_exists( 'xenial_radio_button_group_field' ) ) {
 				foreach ( $settings as $device => $setting ) {
 					$wp_customize->add_setting(
 						$setting,
-						[
+						array(
 							'default' => isset( $args['defaults'][$device] ) ? $args['defaults'][$device] : '',
 							'sanitize_callback' => ''
-						]
+						)
 					);
 				}
 
@@ -623,20 +623,20 @@ if ( ! function_exists( 'xenial_radio_button_group_field' ) ) {
 					new Xenial_Customize_Radio_Button_Group_Control( 
 						$wp_customize, 
 						$id, 
-						[
+						array(
 							'settings' => $settings,
 							'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 							'section' => isset( $args['section'] ) ? $args['section'] : '',
 							'label' => isset( $args['label'] ) ? $args['label'] : '',
 							'description' => isset( $args['description'] ) ? $args['description'] : '',
-							'input_attrs' => [
+							'input_attrs' => array(
 								'responsive' => true,
 								'item' => isset( $args['item'] ) ? $args['item']: 'text',
 								'columns' => isset( $args['columns'] ) ? $args['columns'] : 3
-							],
-							'choices' => ( isset( $args['choices'] ) ) ? $args['choices'] : [],
+							),
+							'choices' => ( isset( $args['choices'] ) ) ? $args['choices'] : array(),
 							'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-						]
+						)
 					) 
 				);
 			}
@@ -645,29 +645,29 @@ if ( ! function_exists( 'xenial_radio_button_group_field' ) ) {
 
 			$wp_customize->add_setting( 
 				$id, 
-				[
+				array(
 					'default' => isset( $args['default'] ) ? $args['default'] : '',
 					'sanitize_callback' => ''				
-				]
+				)
 			);
 
 			$wp_customize->add_control( 
 				new Xenial_Customize_Radio_Button_Group_Control( 
 					$wp_customize, 
 					$id, 
-					[
+					array(
 						'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 						'section' => isset( $args['section'] ) ? $args['section'] : '',
 						'label' => isset( $args['label'] ) ? $args['label'] : '',
 						'description' => isset( $args['description'] ) ? $args['description'] : '',
-						'input_attrs' => [
+						'input_attrs' => array(
 							'resposive' => false,
 							'item' => isset( $args['item'] ) ? $args['item']: 'text',
 							'columns' => isset( $args['columns'] ) ? $args['columns'] : 3
-						],					
-						'choices' => isset( $args['choices'] ) ? $args['choices'] : [],
+						),					
+						'choices' => isset( $args['choices'] ) ? $args['choices'] : array(),
 						'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-					] 
+					)
 				) 
 			);
 		}
@@ -684,28 +684,28 @@ if ( ! function_exists( 'xenial_button_checkbox_field' ) ) {
 
 		$wp_customize->add_setting( 
 			$id, 
-			[
+			array(
 				'default' => isset( $args['default'] ) ? $args['default'] : '',
 				'sanitize_callback' => ''				
-			]
+			)
 		);
 
 		$wp_customize->add_control( 
 			new Xenial_Customize_Button_Checkbox_Control( 
 				$wp_customize, 
 				$id, 
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
-					'input_attrs' => [
+					'input_attrs' => array(
 						'item' => isset( $args['item'] ) ? $args['item']: 'text',
 						'columns' => isset( $args['columns'] ) ? $args['columns'] : 3
-					],					
-					'choices' => isset( $args['choices'] ) ? $args['choices'] : [],
+					),					
+					'choices' => isset( $args['choices'] ) ? $args['choices'] : array(),
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			) 
 		);
 	}
@@ -721,24 +721,24 @@ if ( ! function_exists( 'xenial_divider_field' ) ) {
 
 		$wp_customize->add_setting( 
 			$id, 
-			[
+			array(
 				'default' => '',
 				'sanitize_callback' => ''
-			]
+			)
 		);
 
 		$wp_customize->add_control(
 			new Xenial_Customize_Divider_Control (
 				$wp_customize,
 				$id,
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
 					'type' => 'xenial-divider',
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			)			
 		);
 	}
@@ -754,24 +754,24 @@ if ( ! function_exists( 'xenial_info_field' ) ) {
 
 		$wp_customize->add_setting( 
 			$id, 
-			[
+			array(
 				'default' => '',
 				'sanitize_callback' => ''
-			]
+			)
 		);
 
 		$wp_customize->add_control(
 			new Xenial_Customize_Info_Control (
 				$wp_customize,
 				$id,
-				[
+				array(
 					'priority' => isset( $args['priority'] ) ? $args['priority'] : 10,
 					'section' => isset( $args['section'] ) ? $args['section'] : '',
 					'label' => isset( $args['label'] ) ? $args['label'] : '',
 					'description' => isset( $args['description'] ) ? $args['description'] : '',
 					'type' => 'xenial-info',
 					'active_callback' => isset( $args['active_callback'] ) ? $args['active_callback'] : ''
-				]
+				)
 			)			
 		);
 	}

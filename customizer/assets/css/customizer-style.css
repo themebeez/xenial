@@ -344,9 +344,12 @@
     margin-top: 0px;
 }
 
+#accordion-panel-xenial_general_panel {
+    margin-bottom: 15px;
+}
+
 #accordion-section-xenial_colors,
 #accordion-section-xenial_buttons,
-#accordion-panel-xenial_site_header_panel,
 #accordion-panel-woocommerce,
 #accordion-section-title_tagline,
 #accordion-section-xenial_transparent_header,

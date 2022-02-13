@@ -3,8 +3,9 @@
 
 if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 
-	function xenial_theme_header_site_identity_logo_defaults() {
-		return apply_filters(
+	function xenial_theme_header_site_identity_logo_defaults( $customize_defaults ) {
+
+		$site_identity_customize_defaults = apply_filters(
 			'xenial_theme_header_site_identity_logo_defaults_filter',
 			array(
 				'mobile_logo' => '',
@@ -73,5 +74,11 @@ if ( ! function_exists( 'xenial_theme_header_site_identity_logo_defaults' ) ) {
 	            'site_description_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $site_identity_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_theme_header_site_identity_logo_defaults' );
 }

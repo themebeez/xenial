@@ -129,11 +129,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 100,
-	        'step'  => 1 
-	    ),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['body_font_size']
 	]
@@ -145,11 +141,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 10,
-	        'step'  => 0.1
-	    ),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['body_line_height']
 	]
@@ -162,11 +154,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => [
-			'min' => 0, 
-			'max' => 5, 
-			'step' => 0.05, 
-		],
+		'input_attrs' => xenial_get_letter_spacing_input_attrs(),
 		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['body_letter_spacing']
 	]
@@ -314,11 +302,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 100,
-	        'step'  => 1 
-	    ),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h1_font_size']
 	]
@@ -330,11 +314,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 10,
-	        'step'  => 0.1
-	    ),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h1_line_height']
 	]
@@ -346,11 +326,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => [
-			'min' => 0, 
-			'max' => 5, 
-			'step' => 0.05, 
-		],
+		'input_attrs' => xenial_get_letter_spacing_input_attrs(),
 		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h1_letter_spacing']
 	]
@@ -388,11 +364,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 100,
-	        'step'  => 1 
-	    ),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h2_font_size']
 	]
@@ -404,11 +376,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 10,
-	        'step'  => 0.1
-	    ),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h2_line_height']
 	]
@@ -420,11 +388,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => [
-			'min' => 0, 
-			'max' => 5, 
-			'step' => 0.05, 
-		],
+		'input_attrs' => xenial_get_letter_spacing_input_attrs(),
 		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h2_letter_spacing']
 	]
@@ -462,11 +426,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 100,
-	        'step'  => 1 
-	    ),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h3_font_size']
 	]
@@ -478,11 +438,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 10,
-	        'step'  => 0.1
-	    ),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h3_line_height']
 	]
@@ -494,11 +450,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => [
-			'min' => 0, 
-			'max' => 5, 
-			'step' => 0.05, 
-		],
+		'input_attrs' => xenial_get_letter_spacing_input_attrs(),
 		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h3_letter_spacing']
 	]
@@ -536,11 +488,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 100,
-	        'step'  => 1 
-	    ),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h4_font_size']
 	]
@@ -552,11 +500,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 10,
-	        'step'  => 0.1
-	    ),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h4_line_height']
 	]
@@ -569,11 +513,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => [
-			'min' => 0, 
-			'max' => 5, 
-			'step' => 0.05, 
-		],
+		'input_attrs' => xenial_get_letter_spacing_input_attrs(),
 		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h4_letter_spacing']
 	]
@@ -611,11 +551,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 100,
-	        'step'  => 1 
-	    ),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h5_font_size']
 	]
@@ -627,11 +563,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 10,
-	        'step'  => 0.1
-	    ),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h5_line_height']
 	]
@@ -644,11 +576,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => [
-			'min' => 0, 
-			'max' => 5, 
-			'step' => 0.05, 
-		],
+		'input_attrs' => xenial_get_letter_spacing_input_attrs(),
 		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h5_letter_spacing']
 	]
@@ -685,11 +613,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 100,
-	        'step'  => 1 
-	    ),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h6_font_size']
 	]
@@ -701,11 +625,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' 			=> array(
-	        'min'   => 0,
-	        'max'   => 10,
-	        'step'  => 0.1
-	    ),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 	    'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h6_line_height']
 	]
@@ -717,11 +637,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_typography',
 		'label' => esc_html__( 'Letter Spacing (px)', 'xenial' ),
-		'input_attrs' => [
-			'min' => 0, 
-			'max' => 5, 
-			'step' => 0.5,
-		],
+		'input_attrs' => xenial_get_letter_spacing_input_attrs(),
 		'responsive' => true,
 		'defaults' => $xenial_customizer_defaults['h6_letter_spacing']
 	]

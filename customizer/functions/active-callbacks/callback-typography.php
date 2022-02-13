@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Checks if body font is a system font.
  *

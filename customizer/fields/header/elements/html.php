@@ -146,11 +146,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-		),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_html_text_font_size' )
 	)
@@ -163,11 +159,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_html',
 		'label' => esc_html__( 'Line Height', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 1, 
-			'max' => 5, 
-			'step' => 0.5, 
-		),
+		'input_attrs' => xenial_get_line_height_input_attrs(),
 		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_html_text_font_size' )
 	)

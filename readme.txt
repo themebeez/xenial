@@ -3,8 +3,8 @@
 Contributors: themebeez
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, portfolio, grid-layout, two-columns, three-columns, left-sidebar, right-sidebar, theme-options, block-styles
 Requires PHP: 7.0.0
-Requires at least: 5.0
-Tested up to: 5.8
+Requires at least: 5.6
+Tested up to: 5.9
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html

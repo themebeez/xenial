@@ -2,9 +2,9 @@
 
 if ( ! function_exists( 'xenial_get_woocommerce_customize_defaults' ) ) {
 
-	function xenial_get_woocommerce_customize_defaults() {
+	function xenial_get_woocommerce_customize_defaults( $customize_defaults ) {
 		
-		return apply_filters(
+		$woocommerce_customize_defaults = apply_filters(
 			'xenial_woocommerce_customize_defaults_filter',
 			array(
 				'main_header_display_cart_items_no' => false,
@@ -22,5 +22,11 @@ if ( ! function_exists( 'xenial_get_woocommerce_customize_defaults' ) ) {
                 'cross_sell_products_per_page' => 3
 			)
 		);
+
+        $customize_defaults = array_merge( $customize_defaults, $woocommerce_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+    add_filter( 'xenial_customize_defaults', 'xenial_get_woocommerce_customize_defaults' );
 }

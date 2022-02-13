@@ -3,9 +3,9 @@
 
 if ( ! function_exists( 'xenial_get_footer_copyright_customize_defaults' ) ) {
 
-	function xenial_get_footer_copyright_customize_defaults() {
+	function xenial_get_footer_copyright_customize_defaults( $customize_defaults ) {
 
-		return apply_filters(
+		$footer_copyright_customize_defaults = apply_filters(
 			'xenial_footer_copyright_customize_defaults_filter',
 			array(
 				'copyright_text' => esc_html__( 'Copyright &copy; {current_year} {site_title}', 'xenial' ),
@@ -25,5 +25,11 @@ if ( ! function_exists( 'xenial_get_footer_copyright_customize_defaults' ) ) {
 				)
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $footer_copyright_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_get_footer_copyright_customize_defaults' );
 }

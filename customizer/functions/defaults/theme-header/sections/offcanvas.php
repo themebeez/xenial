@@ -2,9 +2,9 @@
 
 if ( ! function_exists( 'xenial_theme_header_offcanvas_defaults' ) ) {
 
-	function xenial_theme_header_offcanvas_defaults() {
+	function xenial_theme_header_offcanvas_defaults( $customize_defaults ) {
 
-		return apply_filters(
+		$header_offcanvas_customize_defaults = apply_filters(
 			'xenial_theme_header_offcanvas_defaults_filter',
 			array(
 				'offcanvas_layout' => 'side_panel',
@@ -61,5 +61,11 @@ if ( ! function_exists( 'xenial_theme_header_offcanvas_defaults' ) ) {
 	            'offcanvas_close_button_border' => '{"expanded":false,"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}'
 			)
 		);
+
+		$customize_defaults = array_merge( $customize_defaults, $header_offcanvas_customize_defaults );
+
+        return $customize_defaults;
 	}
+
+	add_filter( 'xenial_customize_defaults', 'xenial_theme_header_offcanvas_defaults' );
 }

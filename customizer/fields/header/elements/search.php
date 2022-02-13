@@ -329,11 +329,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1,
-		),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_bar_font_size' )
 	)
@@ -439,11 +435,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-		),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_modal_toggle_button_font_size' )
 	)
@@ -508,11 +500,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1,
-		),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_bar_submit_button_font_size' )
 	)
@@ -624,11 +612,7 @@ xenial_range_control_field(
 		'priority' => 10,
 		'section' => 'xenial_header_search',
 		'label' => esc_html__( 'Font Size (px)', 'xenial' ),
-		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-		),
+		'input_attrs' => xenial_get_font_size_input_attrs(),
 		'responsive' => true,
 		'defaults' => xenial_get_customize_default( 'header_search_modal_close_button_font_size' )
 	)

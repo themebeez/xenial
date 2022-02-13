@@ -39,4 +39,11 @@
 			}
 		} );
 	} );
+
+
+	wp.customize( 'offcanvas_toggle_button_label', function( value ) ) {
+		value.bind( function( to ) {
+			$( '.xe-mobile-canvas-trigger-button-label' ).text( to );
+		} );
+	}
 } )( jQuery );
