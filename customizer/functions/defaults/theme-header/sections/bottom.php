@@ -9,7 +9,7 @@ if ( ! function_exists( 'xenial_theme_header_bottom_section_defaults' ) ) {
 			array(
 				'header_bottom_section_width' => 'container',
 				'header_bottom_section_device_visibility' => '',
-				'header_bottom_section_min_width' => array(
+				'header_bottom_section_padding' => array(
 					'desktop' => 50,
 					'tablet' => '',
 					'mobile' => ''

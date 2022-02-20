@@ -284,10 +284,10 @@ function xenial_customize_register( $wp_customize ) {
 	// require $customizer_fields_path . 'footer/elements/widget-5.php';
 	// require $customizer_fields_path . 'footer/elements/widget-6.php';
 
-	if ( class_exists( 'WooCommerce' ) ) {
+	// if ( class_exists( 'WooCommerce' ) ) {
 
-		require $customizer_fields_path . 'fields-woocommerce.php';
-	}
+	// 	require $customizer_fields_path . 'fields-woocommerce.php';
+	// }
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 

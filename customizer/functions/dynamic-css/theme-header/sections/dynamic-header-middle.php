@@ -9,9 +9,9 @@ if ( ! function_exists( 'xenial_dynamic_header_middle_css' ) ) {
 
 	function xenial_dynamic_header_middle_css( $css ) {
 
-		$middle_header_height_desktop = xenial_get_option( 'header_middle_section_min_width_desktop' );
-		$middle_header_height_tablet = xenial_get_option( 'header_middle_section_min_width_tablet' );
-		$middle_header_height_mobile = xenial_get_option( 'header_middle_section_min_width_mobile' );
+		$middle_header_top_bottom_padding_desktop = xenial_get_option( 'header_middle_section_padding_desktop' );
+		$middle_header_top_bottom_padding_tablet = xenial_get_option( 'header_middle_section_padding_tablet' );
+		$middle_header_top_bottom_padding_mobile = xenial_get_option( 'header_middle_section_padding_mobile' );
 
 		$middle_header_background_color = xenial_json_decode( xenial_get_option( 'header_middle_section_background_color' ) );
 
@@ -19,9 +19,10 @@ if ( ! function_exists( 'xenial_dynamic_header_middle_css' ) ) {
 
 		$css .= '.xe-middle-header {';
 
-			if ( $middle_header_height_desktop ) {
+			if ( $middle_header_top_bottom_padding_desktop ) {
 				$css .= '
-					min-height: ' . esc_attr( $middle_header_height_desktop ) . 'px;
+					padding-top: ' . esc_attr( $middle_header_top_bottom_padding_desktop ) . 'px;
+					padding-bottom: ' . esc_attr( $middle_header_top_bottom_padding_desktop ) . 'px;
 				';
 			}
 
@@ -43,9 +44,10 @@ if ( ! function_exists( 'xenial_dynamic_header_middle_css' ) ) {
 
 			$css .= '.xe-middle-header {';
 
-				if ( $middle_header_height_tablet ) {
+				if ( $middle_header_top_bottom_padding_tablet ) {
 					$css .= '
-						min-height: ' . esc_attr( $middle_header_height_tablet ) . 'px;
+						padding-top: ' . esc_attr( $middle_header_top_bottom_padding_tablet ) . 'px;
+						padding-bottom: ' . esc_attr( $middle_header_top_bottom_padding_tablet ) . 'px;
 					';
 				}
 
@@ -72,9 +74,10 @@ if ( ! function_exists( 'xenial_dynamic_header_middle_css' ) ) {
 
 			$css .= '.xe-middle-header {';
 
-				if ( $middle_header_height_mobile ) {
+				if ( $middle_header_top_bottom_padding_mobile ) {
 					$css .= '
-						min-height: ' . esc_attr( $middle_header_height_mobile ) . 'px;
+						padding-top: ' . esc_attr( $middle_header_top_bottom_padding_mobile ) . 'px;
+						padding-bottom: ' . esc_attr( $middle_header_top_bottom_padding_mobile ) . 'px;
 					';
 				}
 

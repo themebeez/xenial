@@ -57,8 +57,7 @@ $link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $pr
             	<?php woocommerce_template_loop_add_to_cart(); ?>
             </div>
             <!-- // xe-add-to-cart -->
-            <div class="xe-woo-sale"> <span class="onsale">-14%</span> </div>
-            <!-- // xe-woo-sale -->
+            <?php do_action( 'woocommerce_product_sale_flash' ); ?>
             <div class="xe-stock-info"> </div>
             <!-- // xe-stock-info -->
             <div class="xe-loading"> <span class="animation"></span> </div>

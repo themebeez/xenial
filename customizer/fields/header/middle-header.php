@@ -59,6 +59,21 @@ xenial_divider_field(
 	)
 );
 
+xenial_range_control_field(
+	'header_middle_section_padding',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_middle_header',
+		'label' => esc_html__( 'Padding Top & Bottom (px)', 'xenial' ),
+		'input_attrs' => array(
+			'min' => 0,
+			'max' => 200,
+			'step' => 1
+		),
+		'responsive' => true,
+		'defaults' => xenial_get_customize_default( 'header_middle_section_padding' )
+	)
+);
 
 xenial_range_control_field(
 	'header_middle_section_min_height',
