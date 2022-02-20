@@ -613,7 +613,7 @@ if ( ! function_exists( 'xenial_radio_button_group_field' ) ) {
 					$wp_customize->add_setting(
 						$setting,
 						array(
-							'default' => isset( $args['defaults'][$device] ) ? $args['defaults'][$device] : '',
+							'default' => isset( $args['default'][$device] ) ? $args['default'][$device] : '',
 							'sanitize_callback' => ''
 						)
 					);

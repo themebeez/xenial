@@ -9,8 +9,8 @@ if ( ! function_exists( 'xenial_theme_header_top_section_defaults' ) ) {
 			array(
 				'header_top_section_width' => 'container',
 				'header_top_section_device_visibility' => '',
-				'header_top_section_min_width' => array(
-					'desktop' => 50,
+				'header_top_section_padding' => array(
+					'desktop' => '',
 					'tablet' => '',
 					'mobile' => ''
 				),

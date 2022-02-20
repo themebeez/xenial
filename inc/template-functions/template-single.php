@@ -325,7 +325,7 @@ if ( ! function_exists( 'xenial_post_single_content_container_classes' ) ) {
 			$post_container_width_meta = get_post_meta( get_the_ID(), 'xenial_post_content_layout', true );
 
 			if ( $post_container_width_meta == 'default' || empty( $post_container_width_meta ) ) {
-				$post_container_width = xenial_get_option( 'post_single_header_width' );
+				$post_container_width = xenial_get_option( 'post_single_content_width' );
 			} else {
 				$post_container_width = $post_container_width_meta;
 			}

@@ -428,7 +428,6 @@ if ( ! function_exists( 'xenial_header_element_site_identity_template' ) ) {
 			}
 		}
 
-
 		$template_args = apply_filters( 'xenial_header_element_site_identity_template_args', $template_args );
 
 		get_template_part( 'template-parts/theme-header/elements/element', 'site-identity-logo', $template_args );	

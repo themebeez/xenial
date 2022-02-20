@@ -52,7 +52,7 @@ if ( ! function_exists( 'xenial_get_attachment_src' ) ) {
 
 if ( ! function_exists( 'xenial_get_content_alignment_class' ) ) {
 
-	function xenial_get_content_alignment_class( $position = 'left', $device = '' ) {
+	function xenial_get_content_alignment_class( $device = '', $position = 'left' ) {
 		$class = '';
 
 		if ( $device ) {

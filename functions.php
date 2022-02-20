@@ -259,8 +259,7 @@ require get_template_directory() . '/inc/third-party/breadcrumbs.php';
 
 
 if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/third-party/woocommerce.php';
-	require get_template_directory() . '/inc/third-party/woocommerce/woocommerce-hooks.php';
+	require get_template_directory() . '/inc/third-party/woocommerce/woo-init.php';
 }
 
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {

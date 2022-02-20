@@ -60,19 +60,20 @@ xenial_divider_field(
 );
 
 
+
 xenial_range_control_field(
-	'header_bottom_section_min_width',
+	'header_bottom_section_padding',
 	array(
 		'priority' => 10,
 		'section' => 'xenial_bottom_header',
-		'label' => esc_html__( 'Height', 'xenial' ),
+		'label' => esc_html__( 'Padding Top & Bottom (px)', 'xenial' ),
 		'input_attrs' => array(
-			'min' => 0, 
-			'max' => 100, 
-			'step' => 1, 
-			'responsive' => true
+			'min' => 0,
+			'max' => 200,
+			'step' => 1
 		),
-		'defaults' => xenial_get_customize_default( 'header_bottom_section_min_width' )
+		'responsive' => true,
+		'defaults' => xenial_get_customize_default( 'header_bottom_section_padding' )
 	)
 );
 
