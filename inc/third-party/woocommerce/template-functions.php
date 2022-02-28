@@ -186,3 +186,194 @@ if ( ! function_exists( 'xenial_woocommerce_product_loop_thumbnail' ) ) {
 		echo woocommerce_get_product_thumbnail();
 	}
 }
+
+
+
+if ( ! function_exists( 'xenial_woocommerce_product_loop_title_classes' ) ) {
+
+	function xenial_woocommerce_product_loop_title_classes( $classes ) {
+
+		$classes .= ' xe-title';
+
+		return $classes;
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_woocommerce_product_action_buttons_template' ) ) {
+
+	function xenial_woocommerce_product_action_buttons_template() {
+
+		$display_quick_view_action_button = get_theme_mod( 'display_quick_view_action_button', xenial_get_customize_default( 'display_quick_view_action_button' ) );
+
+		$display_compare_action_button = get_theme_mod( 'display_compare_action_button', xenial_get_customize_default( 'display_compare_action_button' ) );
+
+		$display_add_to_wishlist_action_button = get_theme_mod( 'display_add_to_wishlist_action_button', xenial_get_customize_default( 'display_add_to_wishlist_action_button' ) );
+
+		$display_add_to_cart_action_button = get_theme_mod( 'display_add_to_cart_action_button', xenial_get_customize_default( 'display_add_to_cart_action_button' ) );
+
+		if (
+			$display_quick_view_action_button ||
+			$display_compare_action_button ||
+			$display_add_to_wishlist_action_button ||
+			$display_add_to_cart_action_button 
+		) {
+			?>
+			<div class="xe-woo-buttons-group visible-on-hover">
+				<?php
+				if ( $display_quick_view_action_button ) {
+					do_action( 'xenial_woocommerce_product_quick_view_action_button' );
+				}
+
+				if ( $display_compare_action_button ) {
+					do_action( 'xenial_woocommerce_product_compare_action_button' );
+				}
+
+				if ( $display_add_to_wishlist_action_button ) {
+					do_action( 'xenial_woocommerce_product_add_to_wishlist_action_button' );
+				}
+
+				if ( $display_add_to_cart_action_button ) {
+					do_action( 'xenial_woocommerce_product_add_to_cart_action_button' );
+				}
+				?>
+			</div><!-- .xe-woo-buttons-group -->
+			<?php
+		}
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_woocommerce_product_quick_view_action_button_template' ) ) {
+
+	function xenial_woocommerce_product_quick_view_action_button_template() {
+
+		if ( 
+			! class_exists( 'Addonify_Quick_View' ) &&
+			! class_exists( 'YITH_WCQV' ) 
+		) {
+			return;
+		}
+
+		global $product;
+
+		$tooltip_text = get_theme_mod( 'quick_view_action_button_tooltip_text', xenial_get_customize_default( 'quick_view_action_button_tooltip_text' ) );
+
+		$button_classes = array( 'xe-button', 'xe-false-button', 'xe-quickview-button', 'xe-tippy' );
+
+		if ( class_exists( 'Addonify_Quick_View' ) ) {
+			$button_classes[] = 'addonify-qvm-button';
+		} elseif ( class_exists( 'YITH_WCQV' ) ) {
+			$button_classes[] = 'yith-wcqv-button';
+		}
+		?>
+		<div class="xe-quickview xe-button-item">
+            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>">
+                <i class="ti-eye"></i>
+            </button>
+        </div><!-- .xe-qickview.xe-button-item -->
+		<?php
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_woocommerce_product_compare_action_button_template' ) ) {
+
+	function xenial_woocommerce_product_compare_action_button_template() {
+
+		if (  
+			! class_exists( 'Addonify_Compare_Products' ) &&
+			! class_exists( 'YITH_Woocompare' )
+		) {
+			return;
+		}
+
+		global $product;
+
+		$tooltip_text = get_theme_mod( 'compare_action_button_tooltip_text', xenial_get_customize_default( 'compare_action_button_tooltip_text' ) );
+
+		$button_classes = array( 'xe-button', 'xe-false-button', 'xe-compare-button', 'xe-tippy' );
+
+		if ( class_exists( 'Addonify_Compare_Products' ) ) {
+			$button_classes[] = 'addonify-cp-button';
+		} elseif ( class_exists( 'YITH_Woocompare' ) ) {
+			$button_classes[] = 'compare';
+		}
+		?>
+		<div class="xe-compare xe-button-item">
+            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>"><i class="ti-control-shuffle"></i></button>
+        </div><!-- .xe-compare.xe-button-item -->
+		<?php
+	}
+}
+
+
+if ( ! function_exists( 'xenial_woocommerce_product_add_to_wishlist_action_button_template' ) ) {
+
+	function xenial_woocommerce_product_add_to_wishlist_action_button_template() {
+
+		if (  
+			! class_exists( 'Addonify_Wishlist' ) &&
+			! class_exists( 'YITH_WCWL' )
+		) {
+			return;
+		}
+
+		global $product;
+
+		$tooltip_text = get_theme_mod( 'add_to_wishlist_action_button_tooltip_text', xenial_get_customize_default( 'add_to_wishlist_action_button_tooltip_text' ) );
+
+		$button_classes = array( 'xe-button', 'xe-false-button', 'xe-wishlist-button', 'xe-tippy' );
+
+		if ( class_exists( 'Addonify_Wishlist' ) ) {
+			$button_classes[] = 'adfy-wishlist-btn';
+			?>
+			<div class="xe-wishlist xe-button-item">
+	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"><i class="ti-star"></i></button>
+	        </div><!-- .xe-wishlist.xe-button-item -->
+			<?php
+		} elseif ( class_exists( 'YITH_WCWL' ) ) {
+			$button_classes[] = 'add_to_wishlist';
+			?>
+			<div class="xe-wishlist xe-button-item">
+	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-product-id="<?php echo esc_attr( $product->get_id() ); ?>" data-product-type="<?php echo esc_attr( $product->get_type() ); ?>" data-original-product-id="<?php echo esc_attr( $product->get_parent_id() ); ?>"><i class="ti-star"></i></button>
+	        </div><!-- .xe-wishlist.xe-button-item -->
+			<?php
+		}
+	}
+}
+
+
+
+if ( ! function_exists( 'xenial_woocommerce_product_add_to_cart_action_button_template' ) ) {
+
+	function xenial_woocommerce_product_add_to_cart_action_button_template() {
+
+		global $product;
+
+		$add_to_cart_behaviour = get_option( 'woocommerce_cart_redirect_after_add', 'no' );
+
+		$tooltip_text = get_theme_mod( 'add_to_cart_action_button_tooltip_text', xenial_get_customize_default( 'add_to_cart_action_button_tooltip_text' ) );
+		?>
+		<div class="xe-cart xe-button-item">
+			<?php 
+			if ( $product->supports( 'ajax_add_to_cart' ) ) {
+				$button_classes = array( 'xe-button', 'xe-false-button', 'xe-cart-button', 'xe-tippy' );
+
+				$button_classes[] = ( $product->is_purchasable() && $product->is_in_stock() ) ? 'add_to_cart_button ajax_add_to_cart' : '';
+				?>
+	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="$product->get_sku()"><i class="ti-shopping-cart-full"></i></button>
+		        <?php 
+			} else {
+				?>
+	            <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="xe-button xe-false-button xe-cart-button xe-tippy" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"><i class="ti-shopping-cart-full"></i></a>
+		        <?php 
+		    } 
+		    ?>
+        </div><!-- .xe-cart.xe-button-item -->
+		<?php
+	}
+}

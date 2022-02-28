@@ -87,3 +87,21 @@ add_filter( 'woocommerce_product_cross_sells_products_heading', 'xenial_woocomme
 
 // add_filter( 'woocommerce_sale_flash', 'xenial_woocommerce_onsale_flash', $html, $post, $product );
 add_action( 'woocommerce_product_sale_flash', 'woocommerce_show_product_loop_sale_flash' );
+
+
+
+add_filter( 'woocommerce_product_loop_title_classes', 'xenial_woocommerce_product_loop_title_classes' );
+
+
+
+
+
+add_action( 'xenial_woocommerce_product_action_buttons', 'xenial_woocommerce_product_action_buttons_template' );
+
+add_action( 'xenial_woocommerce_product_quick_view_action_button', 'xenial_woocommerce_product_quick_view_action_button_template' );
+
+add_action( 'xenial_woocommerce_product_compare_action_button', 'xenial_woocommerce_product_compare_action_button_template' );
+
+add_action( 'xenial_woocommerce_product_add_to_wishlist_action_button', 'xenial_woocommerce_product_add_to_wishlist_action_button_template' );
+
+add_action( 'xenial_woocommerce_product_add_to_cart_action_button', 'xenial_woocommerce_product_add_to_cart_action_button_template' );
