@@ -25,6 +25,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 
 $link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $product );
+
+$add_to_cart_position = get_theme_mod( 'add_to_cart_button_position', xenial_get_customize_default( 'add_to_cart_button_position' ) );
 ?>
 <li <?php wc_product_class( '', $product ); ?>>
     <div class="xe-woo-product">
@@ -32,31 +34,15 @@ $link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $pr
             <a class="xe-link xe-thumb-link woocommerce-LoopProduct-link woocommerce-loop-product__link" href="<?php echo esc_url( $link ); ?>">
                 <?php echo woocommerce_get_product_thumbnail(); ?>
             </a>
-            <div class="xe-woo-buttons-group visible-on-hover">
-                <div class="xe-quickview xe-button-item">
-                    <button class="xe-button xe-false-button xe-quickview-button xe-tippy" data-tippy-placement="left" data-tippy-content="Quickview">
-                        <i class="ti-eye"></i>
-                    </button>
-                </div>
-                <!-- // xe-qickview -->
-                <div class="xe-compare xe-button-item">
-                    <button class="xe-button xe-false-button xe-compare-button xe-tippy" data-tippy-placement="left" data-tippy-content="Add to compare"><i class="ti-control-shuffle"></i></button>
-                </div>
-                <!-- // xe-compare -->
-                <div class="xe-wishlist xe-button-item">
-                    <button class="xe-button xe-false-button xe-wishlist-button xe-tippy" data-tippy-placement="left" data-tippy-content="Add to wishlist"><i class="ti-star"></i></button>
-                </div>
-                <!-- // xe-wishlist -->
-                <div class="xe-cart xe-button-item">
-                    <a href="#" class="xe-button xe-false-button xe-add-to-cart-button xe-tippy" data-tippy-placement="left" data-tippy-content="Add to cart"> <i class="ti-shopping-cart-full"></i> </a>
-                </div>
-                <!-- // xe-wishlist -->
-            </div>
-            <!-- // xe-woo-buttons-group -->
-            <div class="xe-add-to-cart">
-            	<?php woocommerce_template_loop_add_to_cart(); ?>
-            </div>
-            <!-- // xe-add-to-cart -->
+            
+            <?php do_action( 'xenial_woocommerce_product_action_buttons' ); ?>
+
+            <?php if ( $add_to_cart_position === 'over_image' ) { ?>
+                <div class="xe-add-to-cart">
+                	<?php woocommerce_template_loop_add_to_cart(); ?>
+                </div><!-- .xe-add-to-cart -->
+            <?php } ?>
+
             <?php do_action( 'woocommerce_product_sale_flash' ); ?>
             <div class="xe-stock-info"> </div>
             <!-- // xe-stock-info -->
@@ -64,24 +50,33 @@ $link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $pr
             <!-- // xe-loading -->
         </figure>
         <div class="xe-product-title">
-            <h3 class="xe-title">
-                <a class="xe-link" href="<?php echo esc_url( $link ); ?>"><?php the_title(); ?></a>
-            </h3>
-        </div>
-        <!-- // xe-product-title -->
+            <a class="xe-link" href="<?php echo esc_url( $link ); ?>">
+                <?php 
+                /**
+                 * Hook: woocommerce_shop_loop_item_title.
+                 *
+                 * @hooked woocommerce_template_loop_product_title - 10
+                 */
+                do_action( 'woocommerce_shop_loop_item_title' ); ?>
+            </a>            
+        </div><!-- .xe-product-title -->
         <?php woocommerce_template_loop_rating(); ?>
-        <!-- // xe-product-rating -->
+
         <div class="xe-product-price"> 
         	<?php woocommerce_template_loop_price(); ?>
-        </div>
-        <!-- // xe-product-price -->
+        </div><!-- .xe-product-price -->
+
+        <?php if ( $add_to_cart_position === 'default' ) { ?>
+            <div class="xe-add-to-cart">
+                <?php woocommerce_template_loop_add_to_cart(); ?>
+            </div><!-- .xe-add-to-cart -->
+        <?php } ?>
+
         <div class="xe-product-swatch visible-on-hover">
             <a href="#" class="swatch red"></a>
             <a href="#" class="swatch blue"></a>
             <a href="#" class="swatch purple"></a>
             <a href="#" class="swatch green"></a>
-        </div>
-        <!-- // xe-product-swatch -->
-    </div>
-    <!-- // xe-woo-product -->
+        </div><!-- .xe-product-swatch -->
+    </div><!-- .xe-woo-product -->
 </li>
