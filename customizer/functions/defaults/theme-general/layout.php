@@ -11,7 +11,12 @@ if ( ! function_exists( 'xenial_get_customizer_default_layout_values' ) ) {
                 'site_layout' => 'default',
                 'site_container_width' => 1200,
                 'container_width' => 1200,
-                'narrow_container_width' => 750
+                'narrow_container_width' => 750,
+                'wide_container_side_spacings' => array(
+                    'desktop' => '',
+                    'tablet' => '',
+                    'mobile' => ''
+                )
             )
         );
 

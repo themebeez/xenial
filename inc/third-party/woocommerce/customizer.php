@@ -35,7 +35,6 @@ if ( ! function_exists( 'xenial_get_woocommerce_customize_defaults' ) ) {
                 'display_compare_action_button' => false,
                 'compare_action_button_tooltip_text' => esc_html__( 'Compare', 'xenial' ),
                 'display_add_to_cart_action_button' => false,
-                'add_to_cart_action_button_tooltip_text' => esc_html__( 'Add to Cart', 'xenial' ),
                 'add_to_cart_button_position' => 'default'
             )
         );
@@ -382,18 +381,6 @@ if ( ! function_exists( 'xenial_woocommerce_customize_register' ) ) {
                 'default' => xenial_get_customize_default( 'display_add_to_cart_action_button' )
             )
         );
-
-        xenial_text_field(
-            'add_to_cart_action_button_tooltip_text',
-            array(
-                'priority' => 10,
-                'section' => 'woocommerce_product_catalog',
-                'label' => esc_html__( 'Add to Cart Button Tooltip Text', 'xenial' ),
-                'default' => xenial_get_customize_default( 'add_to_cart_action_button_tooltip_text' )
-            )
-        );
-
-
 
         xenial_divider_field( 
             'woo_add_to_cart_button_divider', 

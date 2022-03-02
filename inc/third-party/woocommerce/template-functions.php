@@ -353,10 +353,6 @@ if ( ! function_exists( 'xenial_woocommerce_product_add_to_cart_action_button_te
 	function xenial_woocommerce_product_add_to_cart_action_button_template() {
 
 		global $product;
-
-		$add_to_cart_behaviour = get_option( 'woocommerce_cart_redirect_after_add', 'no' );
-
-		$tooltip_text = get_theme_mod( 'add_to_cart_action_button_tooltip_text', xenial_get_customize_default( 'add_to_cart_action_button_tooltip_text' ) );
 		?>
 		<div class="xe-cart xe-button-item">
 			<?php 
@@ -365,11 +361,11 @@ if ( ! function_exists( 'xenial_woocommerce_product_add_to_cart_action_button_te
 
 				$button_classes[] = ( $product->is_purchasable() && $product->is_in_stock() ) ? 'add_to_cart_button ajax_add_to_cart' : '';
 				?>
-	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="$product->get_sku()"><i class="ti-shopping-cart-full"></i></button>
+	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $product->add_to_cart_text() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="$product->get_sku()"><i class="ti-shopping-cart-full"></i></button>
 		        <?php 
 			} else {
 				?>
-	            <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="xe-button xe-false-button xe-cart-button xe-tippy" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>"><i class="ti-shopping-cart-full"></i></a>
+	            <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="xe-button xe-false-button xe-cart-button xe-tippy" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $product->add_to_cart_text() ); ?>"><i class="ti-shopping-cart-full"></i></a>
 		        <?php 
 		    } 
 		    ?>
