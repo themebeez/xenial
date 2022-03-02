@@ -26,9 +26,10 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 
 
 if ( ! function_exists( 'xenial_enqueue_styles' ) ) {
+	
 	function xenial_enqueue_styles() {
 
-		wp_enqueue_style( 'xenial-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'xenial-style', get_template_directory_uri() . '/style.css' );
 
 		$assets_url = get_template_directory_uri() . '/assets/build/';
 
