@@ -108,3 +108,21 @@ xenial_divider_field(
 		'section' => 'xenial_layout', 
 	) 
 );
+
+
+
+xenial_range_control_field(
+	'wide_container_side_spacings',
+	array(
+		'priority' => 10,
+		'section' => 'xenial_layout',
+		'label' => esc_html__( 'Wide Container Side Spacings (px)', 'xenial' ),
+		'input_attrs' => array(
+			'min' => 0, 
+			'max' => 200, 
+			'step' => 1
+		),
+		'responsive' => true,
+		'default' => xenial_get_customize_default( 'wide_container_side_spacings' )
+	)
+);
