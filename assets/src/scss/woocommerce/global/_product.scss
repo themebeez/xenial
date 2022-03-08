@@ -14,7 +14,8 @@
 .xe-woo-products-entry::before,
 .xe-woo-products-entry::after {
 
-	content: " ";
+	content: "";
+	display: table;
 	clear: none;
 }
 
@@ -312,6 +313,8 @@
 
 // product: price
 
+.woocommerce div.product p.price, 
+.woocommerce div.product span.price,
 .wc-block-grid__product .wc-block-grid__product-price,
 .woocommerce ul.products li.product .xe-product-price .price {
 
@@ -368,12 +371,12 @@
 	top: 20px;
     font-family: var(--xe_system_font_family);
     margin: 0;
-	padding: 6px 9px;
+	padding: 6px 8px 4px 8px;
 	font-size: 11px;
 	line-height: 1;
     min-height: 1px;
     min-width: 20px;
-	font-weight: normal;
+	font-weight: bold;
 	letter-spacing: 0;
 	text-transform: uppercase;
 	color: var(--xe_woocommerce_onsale_color);;
