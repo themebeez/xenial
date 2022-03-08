@@ -7,7 +7,9 @@
 
     margin-bottom: 30px;
     border-top: 1px solid var(--xe_border_color);
+    border-collapse: separate;
     border-bottom: none;
+    background-color: transparent;
 }
 
 .woocommerce table.shop_table th,
