@@ -305,10 +305,13 @@
 .woocommerce div.product form.grouped_form .woocommerce-grouped-product-list {
 
     width: 100%;
+    border-collapse: separate;
     padding: 10px 20px;
     margin-bottom: 20px;
     border-radius: 5px;
     border: 2px dashed var(--xe_border_color);
+    background: transparent;
+    background-color: transparent;
 }
 
 .woocommerce div.product form.cart .variations td, 
@@ -532,6 +535,11 @@
 
     @include flex();
     align-items: center;
+    font-family: var(--xe_base_font_family);
+    font-size: var(--xe_base_font_size);
+    font-weight: var(--xe_base_font_weight);
+    line-height: var(--xe_base_font_line_height);
+    letter-spacing: var(--xe_base_letter_spacing);
     padding: 15px;
     margin-bottom: 30px;
     border-radius: 4px;
@@ -578,9 +586,6 @@
 
 .woocommerce #reviews #comments h2 {
 
-    font-size: var(--xe_base_font_size);
-    font-weight: var(--xe_base_font_weight);
-    line-height: var(--xe_base_font_line_height);
     color: var(--xe_base_text_color);
     margin-bottom: 30px;
 }

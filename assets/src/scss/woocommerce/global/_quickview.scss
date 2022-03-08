@@ -1,0 +1,56 @@
+/* -------------------------------------------------------------------------- 
+	#. Addonify Quickview
+   -------------------------------------------------------------------------- */
+
+#addonify-quick-view-modal {
+
+    height: 60vh;
+    max-height: 90vh;
+    min-height: 500px;
+    border-radius: 5px;
+
+    #addonify-qvm-close-button {
+
+        fill: var(--xe_base_text_color);
+        color: var(--xe_base_text_color);
+        border: 1px solid var(--xe_border_color);
+        border-radius: 100%;
+
+        svg {
+
+            height: 18px;
+            width: 18px;
+            line-height: 18px;
+        }
+
+        &:hover {
+
+            fill: var(--xe_base_link_hover_color);
+            color: var(--xe_base_link_hover_color);
+            border-color: var(--xe_base_link_hover_color);
+        }
+    }
+}
+
+
+@media ( max-width: 768px ) {
+
+    #addonify-quick-view-modal {
+
+        height: 80vh;
+        max-height: 80vh;
+        min-height: 400px;
+
+        .adfy-qvm-head {
+
+            top: 5px;
+            right: 5px;
+            z-index: 10000;
+        }
+
+        .adfy-quick-view-modal-content {
+
+            padding: 30px;
+        }
+    }
+}
