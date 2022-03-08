@@ -11,7 +11,7 @@ table {
     margin: 0 0 30px 0;
     width: 100%;
     background: transparent;
-    background-color: #FAFAFA;
+    background-color: transparent;
 }
 
 table.fixed {
@@ -31,11 +31,6 @@ td {
     font-weight: var(--xe_base_font_weight);
     line-height: var(--xe_base_font_line_height);
     vertical-align: middle;
-}
-
-tbody {
-
-    background-color: white;
 }
 
 table caption {

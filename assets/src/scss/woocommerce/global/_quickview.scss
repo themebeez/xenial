@@ -8,19 +8,29 @@
     max-height: 90vh;
     min-height: 500px;
     border-radius: 5px;
+    box-shadow: 0 0 65px rgba(0, 0, 0, 0.10);
+
+    .adfy-qvm-head {
+
+        right: 20px;
+        z-index: 10000;
+    }
 
     #addonify-qvm-close-button {
 
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         fill: var(--xe_base_text_color);
         color: var(--xe_base_text_color);
-        border: 1px solid var(--xe_border_color);
+        border: 2px solid var(--xe_base_text_color);
         border-radius: 100%;
 
         svg {
 
-            height: 18px;
-            width: 18px;
-            line-height: 18px;
+            height: 14px;
+            width: 14px;
+            line-height: auto;
         }
 
         &:hover {
@@ -30,6 +40,11 @@
             border-color: var(--xe_base_link_hover_color);
         }
     }
+}
+
+.adfy-quick-view-overlay {
+
+    background: rgba(238, 238, 238, 0.98);
 }
 
 
@@ -45,7 +60,6 @@
 
             top: 5px;
             right: 5px;
-            z-index: 10000;
         }
 
         .adfy-quick-view-modal-content {
