@@ -373,3 +373,29 @@ if ( ! function_exists( 'xenial_woocommerce_product_add_to_cart_action_button_te
 		<?php
 	}
 }
+
+
+if ( ! function_exists( 'xenial_header_element_woocommerce_minicart_template' ) ) {
+
+	function xenial_header_element_woocommerce_minicart_template() {
+
+		$template_args = array();
+
+		get_template_part( 'template-parts/theme-header/elements/element', 'woocommerce-minicart', $template_args );
+	}
+
+	add_action( 'xenial_header_element_woocommerce_minicart', 'xenial_header_element_woocommerce_minicart_template' );
+}
+
+
+if ( ! function_exists( 'xenial_header_element_woocommerce_dropdown_template' ) ) {
+
+	function xenial_header_element_woocommerce_dropdown_template() {
+
+		$template_args = array();
+
+		get_template_part( 'template-parts/theme-header/elements/element', 'woocommerce-dropdown', $template_args );
+	}
+
+	add_action( 'xenial_header_element_woocommerce_dropdown', 'xenial_header_element_woocommerce_dropdown_template' );
+}

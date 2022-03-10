@@ -18,6 +18,20 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$column_classes = array();
+
+$table_col = get_theme_mod( 'products_columns_per_row_tablet', xenial_get_customize_default( 'products_columns_per_row_tablet' ) );
+
+if ( $table_col ) {
+    $column_classes[] = "tablet-columns-$table_col";
+}
+
+$mobile_col = get_theme_mod( 'products_columns_per_row_mobile', xenial_get_customize_default( 'products_columns_per_row_mobile' ) );
+
+if ( $mobile_col ) {
+    $column_classes[] = "mobile-columns-$mobile_col";
+}
 ?>
 <div class="xe-woo-products-entry">
-<ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?>">
+<ul class="products columns-<?php echo esc_attr( wc_get_loop_prop( 'columns' ) ); ?> <?php echo esc_attr( implode( ' ', $column_classes ) ); ?>">
