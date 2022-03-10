@@ -12,6 +12,7 @@ if ( ! function_exists( 'xenial_get_woocommerce_customize_defaults' ) ) {
         $woocommerce_customize_defaults = apply_filters(
             'xenial_woocommerce_customize_defaults_filter',
             array(
+                'products_columns_per_row_tablet' => 3,
                 'products_columns_per_row_mobile' => 2,
                 'main_header_display_cart_items_no' => false,
                 'main_header_cart_visibility' => 'default',
@@ -62,6 +63,22 @@ if ( ! function_exists( 'xenial_woocommerce_customize_register' ) ) {
     function xenial_woocommerce_customize_register( $wp_customize ) {
 
         $wp_customize->get_panel( 'woocommerce' )->priority = 13;
+
+        xenial_range_control_field(
+            'products_columns_per_row_tablet',
+            array(
+                'priority' => 10,
+                'section' => 'woocommerce_product_catalog',
+                'label' => esc_html__( 'Products per row - Tablet', 'xenial' ),
+                'input_attrs' => array(
+                    'min'       => 1,
+                    'max'       => 4,
+                    'step'      => 1,
+                ),
+                'responsive' => false,
+                'default' => xenial_get_customize_default( 'products_columns_per_row_tablet' )
+            )
+        );
 
         xenial_range_control_field(
             'products_columns_per_row_mobile',
@@ -412,4 +429,34 @@ if ( ! function_exists( 'xenial_woocommerce_customize_register' ) ) {
      * Hooked - xenial_woocommerce_customize_register
      */ 
     add_action( 'customize_register', 'xenial_woocommerce_customize_register' );
+}
+
+
+
+
+
+if ( ! function_exists( 'xenial_add_woocommerce_header_elements' ) ) {
+
+    function xenial_add_woocommerce_header_elements( $header_elements ) {
+
+        $woocommerce_header_elements = array(
+            'woocommerce_minicart' => array(
+                'section' => 'xenial_header_woo_minicart',
+                'label' => esc_html__( 'Woo Minicart', 'xenial' ),
+                'icon'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
+            ),
+            'woocommerce_dropdown' => array(
+                'section' => 'xenial_header_woocommerce_dropdown',
+                'label' => esc_html__( 'Woo Dropdown', 'xenial' ),
+                'icon'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path fill="none" d="M0 0h24v24H0z"/><path d="M13.12 17.023l-4.199-2.29a4 4 0 1 1 0-5.465l4.2-2.29a4 4 0 1 1 .959 1.755l-4.2 2.29a4.008 4.008 0 0 1 0 1.954l4.199 2.29a4 4 0 1 1-.959 1.755zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm11-6a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>'
+            ),
+        );
+
+        $header_elements = array_merge( $header_elements, $woocommerce_header_elements );
+
+        return $header_elements;
+    }
+
+    add_filter( 'xenial_desktop_header_elements_filter', 'xenial_add_woocommerce_header_elements' );
+    add_filter( 'xenial_mobile_header_elements_filter', 'xenial_add_woocommerce_header_elements' );
 }

@@ -260,6 +260,7 @@ require get_template_directory() . '/inc/third-party/breadcrumbs.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/third-party/woocommerce/woo-init.php';
+	require get_template_directory() . '/inc/third-party/addonify.php';
 }
 
 if ( class_exists( 'Easy_Digital_Downloads' ) ) {
