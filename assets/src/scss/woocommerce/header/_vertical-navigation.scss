@@ -1,0 +1,299 @@
+
+/* -------------------------------------------------------------------------- 
+	WooCommerce vertical navigation
+  -------------------------------------------------------------------------- */
+
+#xe-woo-vertical-navigation {
+
+    position: relative;
+
+    #xe-woo-vertical-menu-toggle {
+
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        fill: white;
+
+        .label {
+
+
+        }
+
+        .icon {
+
+            svg {
+
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        .menu-bar {
+
+            display: none;
+            position: relative;
+            background-color: white;
+
+            &::before,
+            &::after {
+
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                display: block;
+                width: 100%;
+                height: 2px;
+                background-color: white;
+            }
+
+            &::before {
+
+                content: "";
+                top: -10px;
+            }
+
+            &::after {
+
+                content: "";
+                bottom: 10px;
+            }
+        }
+    }
+
+    ul {
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: auto;
+        width: 230px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        z-index: 99999;
+        background-color: #FFFFFF;
+        box-shadow: 0 10px 36px -3px rgba(0, 0, 0, 0.12);
+
+        li {
+
+            position: relative;
+            @include flex();
+            align-items: center;
+            justify-content: flex-start;
+
+            a {
+
+                position: relative;
+                @include flex();
+                width: 100%;
+                align-items: center;
+                justify-content: flex-start;
+                padding: 15px 20px;
+                fill: var(--xe_navigation_item_color);
+                color: var(--xe_navigation_item_color);
+                font-size: 14px;
+                font-weight: var(--xe_navigation_item_font_weight);
+                text-decoration: none;
+                letter-spacing: var(--xe_navigation_item_letter_spacing);
+                line-height: var(--xe_navigation_item_line_height);
+                border-bottom: 1px solid #EEEEEE;
+                word-wrap: break-word;
+                @include transation_delay_dymanic(0.3s);
+
+                svg {
+
+                    display: inline-flex;
+                    width: 14px;
+                    height: 14px;
+                    margin-right: 5px;
+                }
+
+                &:hover {
+
+                    fill: var(--xe_navigation_item_hover_color);
+                    color: var(--xe_navigation_item_hover_color);
+                    text-decoration: none;
+                }
+            }
+
+            &:last-child {
+
+                a {
+
+                    border-bottom: none;
+                }
+            }
+        }
+
+        li.menu-item-has-children {
+
+            >a {
+
+                &::after {
+
+                    content: "\e649";
+                    position: absolute;
+                    left: auto;
+                    right: 10px;
+                    display: inline-flex;
+                    font-family: var(--xe_iconfont);
+                    font-size: 10px;
+                    font-weight: normal;
+                    line-height: 1;
+                }
+            }
+
+            &:hover {
+
+                >.children,
+                >.sub-menu {
+
+                    left: 100%;
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .children,
+    .sub-menu {
+
+        position: absolute;
+        left: -100vw;
+        right: auto;
+        top: 0;
+        margin: 0;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 100000;
+        border-radius: 0;
+        background-color: var(--xe_navigation_dropdown_background_color);
+    }
+
+    >ul {
+
+       right: auto; 
+       left: -100vw; 
+       border-radius: 0;
+       margin-top: var(--xe_navigation_dropdown_top_spacing);
+       box-shadow: 0 0 65px rgba(0, 0, 0, 0.20);
+
+        &::before {
+
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: calc( var(--xe_navigation_dropdown_top_spacing) + 5px );
+            width: 100%;
+            transform: translateY(-100%);
+        }
+
+        &::after {  
+
+            content: "";
+            height: 16px;
+            left: 20px;
+            position: absolute;
+            top: -8px;
+            transform: rotate(45deg);
+            width: 16px;
+            background-color: #FFFFFF;
+        } 
+    }
+}
+
+/* -------------------------------------------------------------------------- 
+	Menu open behaviour
+  -------------------------------------------------------------------------- */
+
+#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="hover"] {
+
+    &:hover {
+
+        >ul,
+        .xe-woo-vertical-menu {
+
+            left: 0;
+            top: 100%;
+            animation: xeButtonFadeInUp 0.3s ease-in-out 0s;
+        }
+    }
+}
+
+#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="click"].visible {
+
+    >ul,
+    .xe-woo-vertical-menu {
+
+        left: 0;
+        top: 100%;
+    }   
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Animation
+  -------------------------------------------------------------------------- */
+
+#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="hover"]:hover,
+#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="click"].visible {
+
+    [xe-woo-navigation-dropdown-animation="FadeInUp"] {
+
+        animation: xeButtonFadeInUp 0.3s ease-in-out 0s;
+    }
+
+    [xe-woo-navigation-dropdown-animation="FadeIn"] {
+
+        animation: xeFadeIn 0.3s 0s ease-in;
+    }
+
+    [xe-woo-navigation-dropdown-animation="FadeInDown"] {
+
+        animation: xeButtonFadeDown 0.3s 0s ease-in-out;
+    }
+}
+
+
+/* -------------------------------------------------------------------------- 
+	Submenu dropdown direction
+  -------------------------------------------------------------------------- */
+
+#xe-woo-vertical-navigation {
+
+    [xe-woo-navigation-dropdown-direction="left"] {
+
+        li.menu-item-has-children {
+
+            >a {
+
+                padding-left: 25px;
+
+                &::after {
+
+                    content: "\e64a";
+                    right: auto;
+                    left: 10px;
+                }
+            }
+
+            &:hover {
+
+                >.children,
+                >.sub-menu {
+
+                    left: -100%;
+                }
+            }
+        }
+    }
+}
+
+
+
