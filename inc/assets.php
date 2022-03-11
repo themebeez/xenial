@@ -17,6 +17,11 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 			) );
 		}
 
+		if ( class_exists( 'WooCommerce' ) ) {
+
+			wp_enqueue_script( 'xenial-woocommerce-script', $assets_url . 'js/compatibility/woocommerce.min.js', NULL, XENIAL_THEME_VERSION, true );
+		}
+
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 
 			wp_enqueue_script( 'comment-reply' );
@@ -59,6 +64,10 @@ if ( ! function_exists( 'xenial_enqueue_styles' ) ) {
 
 		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 			wp_enqueue_style( 'xenial-edd', $assets_url . 'css/compatibility/edd/edd.css', NULL, XENIAL_THEME_VERSION, 'all' );
+		}
+
+		if ( class_exists( 'Yatra' ) ) {
+			wp_enqueue_style( 'xenial-yatra', $assets_url . 'css/compatibility/yatra/yatra.css', NULL, XENIAL_THEME_VERSION, 'all' );
 		}
 
 		$dynamic_css = xenial_dynamic_css();
