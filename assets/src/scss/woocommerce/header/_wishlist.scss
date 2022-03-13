@@ -1,0 +1,52 @@
+
+/* -------------------------------------------------------------------------- 
+	Wishlist
+  -------------------------------------------------------------------------- */
+
+#xe-woo-wishlist-icon {
+
+    #xe-wishlist-link {
+
+        position: relative;
+        display: inline-flex;
+        fill: var(--xe_base_text_color);
+        color: var(--xe_base_text_color);
+
+        svg {
+
+            height: 36px;
+            width: 36px;
+        }
+
+        .count {
+
+            position: absolute;
+            bottom: 0;
+            left: auto;
+            right: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--xe_system_font_family);
+            font-size: 11px;
+            line-height: 1;
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            color: #111111;
+            background-color: #FFC800;
+        }
+
+         &:hover {
+
+            text-decoration: none;
+            fill: var(--xe_base_link_hover_color);
+            color: var(--xe_base_link_hover_color);
+        }   
+
+        &:focus {
+
+            text-decoration: none;
+        }
+    }
+}
