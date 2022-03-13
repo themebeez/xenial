@@ -14,16 +14,16 @@
 
         svg {
 
-            height: 36px;
-            width: 36px;
+            height: 32px;
+            width: 32px;
         }
 
         .count {
 
             position: absolute;
-            bottom: 0;
+            bottom: 5px;
             left: auto;
-            right: 0;
+            right: -5px;
             display: inline-flex;
             align-items: center;
             justify-content: center;

@@ -64,8 +64,24 @@ function xeWooCommerceMiniCart() {
     }
 }
 
+function xeMiniCartScrollBar() {
+
+    var xeMiniCartScrollBarContainer = document.getElementById('xe-woo-minicart-scroll');
+
+    if ((xeMiniCartScrollBarContainer !== null) || (xeMiniCartScrollBarContainer !== undefined)) {
+
+        new PerfectScrollbar(xeMiniCartScrollBarContainer, {
+
+            wheelSpeed: 10,
+            wheelPropagation: true,
+            minScrollbarLength: 20
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     xeWooCommerceVerticalNavigation();
     xeWooCommerceMiniCart();
+    xeMiniCartScrollBar();
 });
