@@ -21,7 +21,7 @@ if ( ! function_exists( 'xenial_woocommerce_setup' ) ) {
 	function xenial_woocommerce_setup() {
 
 		add_theme_support( 'woocommerce' );
-		add_theme_support( 'wc-product-gallery-zoom' );
+		remove_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
 		add_theme_support( 'wc-product-gallery-slider' );
 	}
@@ -29,6 +29,31 @@ if ( ! function_exists( 'xenial_woocommerce_setup' ) ) {
 	add_action( 'after_setup_theme', 'xenial_woocommerce_setup' );
 }
 
+
+/**
+ * WooCommerce product single flex slider gallery.
+ *
+ * @return options
+ */
+
+if ( ! function_exists( 'xenial_update_woo_flexslider_options' ) ) {
+
+	function xenial_update_woo_flexslider_options( $options ) {
+
+		$options['slideshow'] 			= true; // "false" in default.
+		$options['directionNav'] 		= true; // "false" in default.
+		$options['smoothHeight'] 		= true; // Already "true" in default.
+		$options['animationLoop'] 		= true; // "false" in default.
+		$options['allowOneSlide'] 		= true; // "false" in default.
+		$options['animationSpeed'] 		= 800; // 500 in default.
+		$options['animation'] 			= "slide"; // Already "slide" in default.
+		$options['controlNav'] 			= "thumbnails"; // Option 'thumbnails' in default.
+
+		return $options;
+	}
+
+	add_filter( 'woocommerce_single_product_carousel_options', 'xenial_update_woo_flexslider_options' );
+}
 
 /**
  * WooCommerce specific scripts & stylesheets.

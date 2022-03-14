@@ -14,10 +14,16 @@
 		c-0.1,0.4-0.4,0.8-0.9,0.8h-29L8.1,20.6h37.9L43.7,37.4z" />
                 </g>
             </svg>
-            <span class="count">0</span>
+            <span class="count">
+                <?php
+                    global $woocommerce;
+                    echo $woocommerce->cart->cart_contents_count;
+                ?>
+            </span>
         </button>
     </div><!-- // xe-woo-minicart-icon -->
 </div><!-- // xe-header-element -->
+
 <aside id="xe-woo-minicart-canvas" class="close">
     <div class="xe-woo-minicart-inner">
         <header class="xe-woo-minicart-header">

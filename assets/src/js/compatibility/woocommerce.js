@@ -12,7 +12,8 @@ function xeWooCommerceVerticalNavigation() {
 
         plus: "ti-plus",
         minus: "ti-minus",
-        submenutoggle: "<button class='xe-button xe-false-button xe-toggle-woovertical-submenu'><i class='ti - plus'></button>"
+        revealing: true,
+        submenutoggle: "<button class='xe-button xe-false-button xe-toggle-woovertical-submenu'><i class='ti - plus'></button>",
     };
 
 
