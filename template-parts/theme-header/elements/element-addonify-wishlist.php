@@ -15,7 +15,14 @@
 		C24.9,9.1,22.2,8.1,19.2,8.1z" />
                 </g>
             </svg>
-            <span class="count">0</span>
+            <span class="count">
+                <?php
+                    if ( function_exists( 'addonify_wishlist_get_total_items' ) ) {
+
+                        echo addonify_wishlist_get_total_items();
+                    }
+                ?>
+            </span>
         </a>
     </div><!-- // xe-woo-wishlist-icon -->
 </div><!-- // xe-header-element -->
