@@ -96,6 +96,10 @@ if ( ! function_exists( 'xenial_author_box_template' ) ) {
 
 	function xenial_author_box_template() {
 
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
+
 		$display_author_box = xenial_get_option( 'post_single_display_author_box' );
 
 		if ( ! $display_author_box ) {
@@ -166,6 +170,10 @@ if ( ! function_exists( 'xenial_post_navigation_template' ) ) {
 if ( ! function_exists( 'xenial_related_posts_template' ) ) {
 
 	function xenial_related_posts_template() {
+
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
 
 		$display_related_posts = xenial_get_option( 'post_single_display_related_posts' );
 
@@ -252,7 +260,12 @@ if ( ! function_exists( 'xenial_single_grouped_post_meta_template' ) ) {
 
 	function xenial_single_grouped_post_meta_template() {
 
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
+
 		$post_metas = xenial_get_option( 'post_single_meta_elements' );
+
 		if ( ! $post_metas ) {
 			return;
 		}

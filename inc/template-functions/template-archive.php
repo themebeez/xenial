@@ -56,7 +56,12 @@ if ( ! function_exists( 'xenial_archive_page_header_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_archive_grouped_post_meta_template' ) ) {
+	
 	function xenial_archive_grouped_post_meta_template() {
+
+		if ( get_post_type() != 'post' ) {
+			return;
+		}
 		$postMetas = xenial_get_option( 'archive_post_meta' );
 		if ( ! $postMetas ) {
 			return;
