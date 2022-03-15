@@ -10,8 +10,6 @@ $xenialSingleContents = xenial_get_option( 'post_single_content_elements' );
 if ( ! $xenialSingleContents ) {
     return;
 }
-
-var_dump( get_post_type( get_the_ID() ) );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php 

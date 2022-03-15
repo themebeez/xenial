@@ -31,3 +31,31 @@ if ( ! function_exists( 'xenial_category_count_span' ) ) {
 	
 	add_filter( 'wp_list_categories', 'xenial_category_count_span' );
 }
+
+/** 
+ * Remove classifier form the archive title.
+ * 
+ * @param string $title The archive title.
+ * @return string The archive title.
+ */
+if ( ! function_exists( 'xenial_the_archive_title' ) ) {
+
+	function xenial_the_archive_title( $title ) {
+
+		if ( is_category() ) {    
+			$title = single_cat_title( '', false );    
+		} elseif ( is_tag() ) {    
+			$title = single_tag_title( '', false );    
+		} elseif ( is_author() ) {    
+			$title = get_the_author();    
+		} elseif ( is_tax() ) { //for custom post types
+			$title = single_term_title( '', false );
+		} elseif (is_post_type_archive()) {
+			$title = post_type_archive_title( '', false );
+		}
+
+		return $title;    
+	}
+
+	add_filter( 'get_the_archive_title', 'xenial_the_archive_title' );
+}
