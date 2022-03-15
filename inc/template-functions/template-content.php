@@ -190,7 +190,12 @@ if ( ! function_exists( 'xenial_edit_post_link_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_post_categories_meta_template' ) ) {
+
 	function xenial_post_categories_meta_template() {
+
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
 		?>
 		<div class="xe-categories xe-entry-categories">
             <?php xenial_get_post_categories(); ?>
@@ -202,7 +207,12 @@ if ( ! function_exists( 'xenial_post_categories_meta_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_grouped_post_metas_template' ) ) {
+
 	function xenial_grouped_post_metas_template() {
+
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
 		?>
 		<div class="xe-post-metas xe-entry-metas slanted-seperator">
             <ul class="list-unstyled">
@@ -232,29 +242,36 @@ if ( ! function_exists( 'xenial_grouped_post_metas_template' ) ) {
 
 
 if ( ! function_exists( 'xenial_post_comments_template' ) ) {
+
 	function xenial_post_comments_template() {
-		$enableComments = xenial_get_option( 'post_single_display_comments' );
-		if ( ! $enableComments ) {
+
+		// If comments are open or we have at least one comment, load up the comment template.
+		if ( 
+			! comments_open() || 
+			! get_comments_number()
+		) {
 			return;
 		}
 
-		// If comments are open or we have at least one comment, load up the comment template.
-		if ( comments_open() || get_comments_number() ) {
+		$enable_comments = xenial_get_option( 'post_single_display_comments' );
 
-			// Get customizer options values for comments toggle button.
-			$enableCommentsToggleButton = xenial_get_option( 'post_single_show_toggle_comments_btn' );
-			$initalButtonLabel = xenial_get_option( 'post_single_comment_toggle_btn_title' );
-			$toggledStateButtonLabel = xenial_get_option( 'post_single_comment_toggled_state_toggle_btn_title' );
-
-			// Assign customizer options values for template arguments array elements.
-			$templateArgs = array(
-				'enableCommentsToggleButton' => ( $enableCommentsToggleButton == true ) ? true : false,
-				'initialButtonLabel' => $initalButtonLabel,
-				'toggledStateButtonLabel' => $toggledStateButtonLabel,
-			);
-
-			get_template_part( 'template-parts/content/content', 'comments', $templateArgs );
+		if ( ! $enable_comments ) {
+			return;
 		}
+
+		// Get customizer options values for comments toggle button.
+		$enable_comments_toggle_button = xenial_get_option( 'post_single_show_toggle_comments_btn' );
+		$inital_button_label = xenial_get_option( 'post_single_comment_toggle_btn_title' );
+		$toggled_state_button_label = xenial_get_option( 'post_single_comment_toggled_state_toggle_btn_title' );
+
+		// Assign customizer options values for template arguments array elements.
+		$template_args = array(
+			'enableCommentsToggleButton' => ( $enable_comments_toggle_button == true ) ? true : false,
+			'initialButtonLabel' => $inital_button_label,
+			'toggledStateButtonLabel' => $toggled_state_button_label,
+		);
+
+		get_template_part( 'template-parts/content/content', 'comments', $template_args );
 	}
 }
 

@@ -7,6 +7,10 @@ if ( ! function_exists( 'xenial_get_post_author' ) ) {
 
 	function xenial_get_post_author() {
 
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
+
 		$avatar = get_avatar( 
 			get_the_author_meta( 'ID' ), 
 			30, 
@@ -34,6 +38,10 @@ if ( ! function_exists( 'xenial_get_post_author' ) ) {
 if ( ! function_exists( 'xenial_get_posted_date' ) ) {
 
 	function xenial_get_posted_date() {
+
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
 		?>
 		<span><?php echo esc_html( get_the_date() ); ?></span>
 		<?php
@@ -48,6 +56,10 @@ if ( ! function_exists( 'xenial_get_post_updated_date' ) ) {
 
 	function xenial_get_post_updated_date() {
 
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
+
 		return get_the_modified_date(); 
 	}
 }
@@ -59,6 +71,10 @@ if ( ! function_exists( 'xenial_get_post_updated_date' ) ) {
 if ( ! function_exists( 'xenial_get_post_comments' ) ) {
 
 	function xenial_get_post_comments() {
+
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
 
 		if ( post_password_required() && ! ( comments_open() || get_comments_number() ) ) {
 			return;
@@ -91,6 +107,10 @@ if ( ! function_exists( 'xenial_get_post_categories' ) ) {
 
 	function xenial_get_post_categories() {
 
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
+
 		$categories_list = get_the_category_list(); 
 
 		if ( $categories_list ) {
@@ -107,6 +127,10 @@ if ( ! function_exists( 'xenial_get_post_tags' ) ) {
 
 	function xenial_get_post_tags() {
 
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
+
 		$tags_list = get_the_tag_list();
 
 		if ( $tags_list ) {
@@ -122,6 +146,10 @@ if ( ! function_exists( 'xenial_get_post_tags' ) ) {
 if ( ! function_exists( 'xenial_get_post_read_time' ) ) {
 
 	function xenial_get_post_read_time() {
+
+		if ( get_post_type( get_the_ID() ) != 'post' ) {
+			return;
+		}
 
 		$content = get_the_content();
 
