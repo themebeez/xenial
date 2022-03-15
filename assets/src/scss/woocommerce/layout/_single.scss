@@ -226,6 +226,11 @@
     margin: 3px 0 0 0;
 }
 
+.woocommerce.single div.product .woocommerce-product-rating {
+
+    margin-top: 10px;
+}
+
 .woocommerce .woocommerce-product-rating .star-rating {
 
     display: inline-flex;
@@ -256,7 +261,7 @@
     gap: 5px;
     font-weight: bold;
     font-size: 22px;
-    margin: 20px 0;
+    margin: 10px 0;
     color: var(--xe_woocommerce_price);
 }
 
