@@ -36,6 +36,7 @@ add_action( 'xenial_header_element_search', 'xenial_header_element_search_templa
 add_action( 'xenial_header_element_search_modal', 'xenial_header_element_search_modal_template' );
 add_action( 'xenial_header_element_menu_1', 'xenial_header_element_menu_1_template' );
 add_action( 'xenial_header_element_menu_2', 'xenial_header_element_menu_2_template' );
+add_action( 'xenial_header_element_user_account_link', 'xenial_header_element_user_account_link_template' );
 
 
 add_action( 'xenial_post_title', 'xenial_post_title_template' );

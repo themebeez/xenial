@@ -164,6 +164,24 @@ if ( ! function_exists( 'xenial_header_element_offcanvas_menu_template' ) ) {
 }
 
 
+
+
+/**
+ * Prints user account link icon.
+ * 
+ * @param void
+ * @return void
+ */
+if ( ! function_exists( 'xenial_header_element_user_account_link_template' ) ) {
+
+	function xenial_header_element_user_account_link_template() {
+
+		get_template_part( 'template-parts/theme-header/elements/element', 'user-account-link' );	
+	}
+}
+
+
+
 /**
  * Prints HTML template for header primary navigation.
  * 

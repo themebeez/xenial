@@ -1,0 +1,28 @@
+/* -------------------------------------------------------------------------- 
+	Account Link.
+  -------------------------------------------------------------------------- */
+
+.is-user-account-link {
+
+    .xe-user-account-icon {
+
+        a {
+
+            fill: var(--xe_base_text_color);
+            color: var(--xe_base_text_color);
+
+             svg {
+
+                height: 32px;
+                width: 32px;
+            }
+
+            &:hover {
+
+                fill: var(--xe_base_link_hover_color);
+                color: var(--xe_base_link_hover_color);
+                text-decoration: none;
+            }
+        }
+    }
+}

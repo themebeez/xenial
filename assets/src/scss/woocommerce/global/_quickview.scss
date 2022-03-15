@@ -40,6 +40,37 @@
             border-color: var(--xe_base_link_hover_color);
         }
     }
+
+    .adfy-quick-view-modal-content {
+
+        .woocommerce {
+
+            .product {
+
+                .summary {
+
+                    .summary-content {
+
+                        .product_title {
+
+                            font-size: 18px;
+                            font-weight: var(--xe_heading_font_weight);
+                        }
+
+                        .woocommerce-product-rating {
+
+                            margin-top: 10px;
+                        }
+
+                        .price {
+
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .adfy-quick-view-overlay {

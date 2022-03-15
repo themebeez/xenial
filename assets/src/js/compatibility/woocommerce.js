@@ -17,7 +17,7 @@ function xeWooCommerceVerticalNavigation() {
     };
 
 
-    if (xeWooNavContainerEleAttribute == "click") {
+    if ((xeWooNavContainerEleAttribute == "click")) {
 
         xeWooDesktopToggleEle.addEventListener("click", function () {
 
@@ -33,7 +33,7 @@ function xeWooCommerceMiniCart() {
     var xeWooCommerceMiniCartCloseEle = document.getElementById("xe-woo-minicart-close");
     var xeWooCommerceMiniCartOverlay = document.getElementById("xe-woo-minicart-overlay");
 
-    if ((xeWooMiniCartTriggerEle !== null) || (xeWooMiniCartTriggerEle !== undefined)) {
+    if ((xeWooMiniCartTriggerEle !== null) && (xeWooMiniCartTriggerEle !== undefined)) {
 
         xeWooMiniCartTriggerEle.addEventListener("click", function () {
 
@@ -61,7 +61,6 @@ function xeWooCommerceMiniCart() {
             xeWooCommerceMiniCartOverlay.classList.remove("visible");
             xeWooCommerceMiniCartOverlay.classList.add("hidden");
         });
-
     }
 }
 
@@ -69,7 +68,7 @@ function xeMiniCartScrollBar() {
 
     var xeMiniCartScrollBarContainer = document.getElementById('xe-woo-minicart-scroll');
 
-    if ((xeMiniCartScrollBarContainer !== null) || (xeMiniCartScrollBarContainer !== undefined)) {
+    if ((xeMiniCartScrollBarContainer !== null) && (xeMiniCartScrollBarContainer !== undefined)) {
 
         new PerfectScrollbar(xeMiniCartScrollBarContainer, {
 
