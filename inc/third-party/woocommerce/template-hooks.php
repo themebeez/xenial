@@ -7,6 +7,14 @@
 add_filter( 'woocommerce_add_to_cart_fragments', 'xenial_refresh_cart_count' );
 
 /**
+ * Adds xenial cart popup modal box markup when product is added to cart.
+ * 
+ * Hooked - wp_body_open
+ */
+
+add_action( 'wp_body_open', 'xenial_woocommerce_product_added_to_cart');
+
+/**
  * Removes default WooCommerce breadcrumb from WooCommerce template.
  * 
  * Hooked - woocommerce_breadcrumb

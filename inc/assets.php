@@ -20,6 +20,13 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 		if ( class_exists( 'WooCommerce' ) ) {
 
 			wp_enqueue_script( 'xenial-woocommerce-script', $assets_url . 'js/compatibility/woocommerce.min.js', NULL, XENIAL_THEME_VERSION, true );
+
+			wp_enqueue_script( 'xenial-woocommerce-ajax-script', $assets_url . 'js/compatibility/woocommerce-jquery.min.js', array('jquery'), XENIAL_THEME_VERSION, true );
+
+			wp_localize_script( 'xenial-woocommerce-ajax-script', 'xenial_woocommerce_ajax_script', array(
+				'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
+				//'nonce' => wp_create_nonce( 'something' )
+			) );
 		}
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

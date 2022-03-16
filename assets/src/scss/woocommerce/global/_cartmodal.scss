@@ -1,0 +1,170 @@
+
+/* -------------------------------------------------------------------------- 
+	#. Cart Modal
+   -------------------------------------------------------------------------- */
+
+   #xe-woo-added-to-cart-modal {
+
+      display: block;
+      position: fixed;
+      z-index: -1;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      padding: 30px;
+      overflow: hidden;
+      background-color: white;
+      border-radius: 5px;
+      transform: translateX(-50%) translateY(-50%);
+      transition: all 0.5s ease;
+      box-shadow: 0 0 65px rgba(0, 0, 0, 0.10);
+
+      .xe-modal-header {
+
+         @include flex();
+         align-items: center;
+         margin-bottom: 20px;
+         padding-bottom: 10px;
+         border-bottom: 1px solid var(--xe_border_color);
+
+         .xe-title {
+
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 16px;
+            margin: 0;
+
+            svg {
+
+               width: 18px;
+               height: 18px;
+            }
+         }
+      }
+
+      .xe-modal-body {
+
+         margin: 30px 0;
+
+         .xe-product-info {
+
+            @include flex();
+            gap: 20px;
+            align-items: center;
+
+            .xe-product-thumb {
+
+               width: 100%;
+               max-width: 82px;
+               overflow: hidden;
+            }
+
+            .xe-product-title {
+
+               .xe-title {
+
+                  @include flex();
+                  margin: 0;
+               }
+
+               .xe-price {
+
+                  @include flex();
+                  font-size: 18px;
+                  font-weight: bold;
+                  margin-top: 2px;
+               }
+            }
+         }
+      }
+
+      .xe-modal-footer {
+
+         @include flex();
+         align-items: center;
+         justify-content: space-between;
+         margin-top: 20px;
+         padding-top: 20px;
+         border-top: 1px solid var(--xe_border_color);
+
+         #xe-close-cart-modal-button {
+
+            color: var(--xe_base_text_color);
+            background-color: #EEEEEE;
+            border: 1px solid #e5e5e5;
+
+            &:hover {
+
+               color: var(--xe_base_text_color);
+               background-color: #DDDDDD;
+               border-color: #CFCFCF;
+            }
+         }
+
+         #xe-cart-link {
+
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            fill: var(--xe_button_text_color);
+
+            svg {
+
+               width: 16px;
+               height: 16px;
+            }
+
+            &:hover {
+
+               fill: var(--xe_button_hover_text_color);
+            }
+         }
+      }
+   }
+
+   #xe-added-to-cart-modal-overlay {
+
+      @include flex();
+      position: fixed;
+      z-index: -1;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+   }
+
+/* -------------------------------------------------------------------------- 
+	#. Cart Modal visiblity
+   -------------------------------------------------------------------------- */
+
+#xe-woo-added-to-cart-modal.hidden,
+#xe-added-to-cart-modal-overlay.hidden {
+
+   opacity: 0;
+   visibility: hidden;
+   animation: xeFadeOut 0.5s 0s ease-out;
+}
+
+#xe-woo-added-to-cart-modal.visible,
+#xe-added-to-cart-modal-overlay.visible {
+
+   opacity: 1;
+   z-index: 100000000;
+   visibility: visible;
+   animation: xeFadeIn 0.5s 0s ease-in;
+}
+
+#xe-added-to-cart-modal-overlay.visible {
+
+   z-index: 10000000;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. Cart Modal animation
+   -------------------------------------------------------------------------- */
