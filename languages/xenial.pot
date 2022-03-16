@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-03-15T08:19:13+00:00\n"
+"POT-Creation-Date: 2022-03-16T11:25:04+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: xenial\n"
@@ -3369,6 +3369,18 @@ msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
+
+#: inc/third-party/woocommerce/template-functions.php:143
+msgid "Product added to Cart:"
+msgstr ""
+
+#: inc/third-party/woocommerce/template-functions.php:159
+msgid "Continue shopping"
+msgstr ""
+
+#: inc/third-party/woocommerce/template-functions.php:162
+msgid "Go to Cart"
+msgstr ""
 
 #: template-parts/content/content-author-box.php:29
 msgid "Edit your Profile now."
