@@ -124,20 +124,53 @@ if ( ! function_exists( 'xenial_woocommerce_cart_link' ) ) {
 
 
 /**
- * Change number of upsells output
+ * Added to cart modal popup.
+ *
+ * Displayed when product is added to the cart.
+ *
+ * @return void
  */
-if ( ! function_exists( 'xenial_upsell_products_args' ) ) {
+
+if ( ! function_exists( 'xenial_woocommerce_product_added_to_cart' ) ) {
 	
-	function xenial_upsell_products_args( $args ) {
+	function xenial_woocommerce_product_added_to_cart() {
 
-		$defaults = array();
-			
-		$defaults['columns'] = intval( get_theme_mod( 'upsell_products_columns_per_row', 3 ) );
-		$defaults['posts_per_page'] = intval( get_theme_mod( 'upsell_products_per_page', 3 ) );
-
-		$args = wp_parse_args( $defaults, $args );
-
-	 	return $args;
+		?>
+		<aside id="xe-woo-added-to-cart-modal" class="hidden">
+			<header class="xe-modal-header">
+				<h3 class="xe-title">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+					<?php esc_html_e( 'Product added to Cart:', 'xenial' ); ?>
+				</h3>
+			</header>
+			<main class="xe-modal-body">
+				<div class="xe-product-info">
+					<div class="xe-product-thumb">
+						<img src="http://xenial.local/wp-content/uploads/2021/11/6-1-800x800.jpg" alt="..">
+					</div>
+					<div class="xe-product-title">
+						<span class="xe-title">Nike Air Max Destro Lolypop Xolpy Shoe</span>
+						<span class="xe-price">£550.00</span>
+					</div><!-- // xe-product-title -->
+				</div><!-- // xe-product-info -->
+			</main>
+			<footer class="xe-modal-footer">
+				<button class="xe-button" id="xe-close-cart-modal-button">
+					<?php esc_html_e( 'Continue shopping', 'xenial' ); ?>
+				</button>
+				<a href="#" class="xe-button xe-link" id="xe-cart-link">
+					<?php esc_html_e( 'Go to Cart', 'xenial' ); ?>
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+						x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+					<path d="M61.5,28.5l-6.9-8.2c-0.6-0.7-1.7-0.8-2.5-0.2c-0.7,0.6-0.8,1.7-0.2,2.5l6.5,7.7H3c-1,0-1.8,0.8-1.8,1.8
+						c0,1,0.8,1.8,1.8,1.8h55.4l-6.5,7.7c-0.6,0.7-0.5,1.8,0.2,2.5c0.3,0.3,0.7,0.4,1.1,0.4c0.5,0,1-0.2,1.3-0.6l6.9-8.2
+						C63.2,33.5,63.2,30.5,61.5,28.5z"/>
+					</svg>
+				</a>
+			</footer>
+		</aside>
+		<aside id="xe-added-to-cart-modal-overlay" class="hidden"></aside>
+		<?php 
 	}
 }
 
