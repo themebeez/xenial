@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-03-16T11:25:04+00:00\n"
+"POT-Creation-Date: 2022-03-18T05:30:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: xenial\n"
@@ -3359,26 +3359,26 @@ msgstr ""
 msgid "Woo Dropdown"
 msgstr ""
 
-#: inc/third-party/woocommerce/template-functions.php:111
+#: inc/third-party/woocommerce/template-functions.php:132
 msgid "View your shopping cart"
 msgstr ""
 
 #. translators: number of items in the mini cart.
-#: inc/third-party/woocommerce/template-functions.php:115
+#: inc/third-party/woocommerce/template-functions.php:136
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/third-party/woocommerce/template-functions.php:143
+#: inc/third-party/woocommerce/template-functions.php:164
 msgid "Product added to Cart:"
 msgstr ""
 
-#: inc/third-party/woocommerce/template-functions.php:159
+#: inc/third-party/woocommerce/template-functions.php:180
 msgid "Continue shopping"
 msgstr ""
 
-#: inc/third-party/woocommerce/template-functions.php:162
+#: inc/third-party/woocommerce/template-functions.php:183
 msgid "Go to Cart"
 msgstr ""
 
