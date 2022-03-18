@@ -24,12 +24,13 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 
 		// Dynamic CSS for global button initial state.
 
-		$css .= 'button, input[type="button"], input[type="reset"], input[type="submit"], .xe-button {';
+		$css .= 'button, .button, input[type="button"], input[type="reset"], input[type="submit"], .xe-button {';
 
 			$css .= xenial_dynamic_spacing_css( $global_button_padding );
 
 			if ( $global_button_label_colors['initial'] ) {
 				$css .= '
+					fill: ' . esc_attr( $global_button_label_colors['initial'] ) . ';
 					color: ' . esc_attr( $global_button_label_colors['initial'] ) . ';
 				';
 			}
@@ -46,10 +47,11 @@ if ( ! function_exists( 'xenial_dynamic_general_button_css' ) ) {
 
 		// Dynamic CSS for global button hover state.
 
-		$css .= 'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .xe-button:hover {';
+		$css .= 'button:hover, .button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover, .xe-button:hover {';
 
 			if ( $global_button_label_colors['hover'] ) {
 				$css .= '
+					fill: ' . esc_attr( $global_button_label_colors['hover'] ) . ';
 					color: ' . esc_attr( $global_button_label_colors['hover'] ) . ';
 				';
 			}

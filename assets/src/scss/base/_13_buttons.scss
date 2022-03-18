@@ -10,6 +10,7 @@
     font-size: var(--xe_button_font_size);
     font-weight: normal;
     color: var(--xe_button_text_color);
+    fill: var(--xe_button_text_color);
     line-height: var(--xe_button_line_height);
     height: 48px;
     padding: 0 20px;
@@ -23,6 +24,7 @@
 
     &:hover {
 
+        fill: var(--xe_button_hover_text_color);
         color: var(--xe_button_hover_text_color);
         background-color: var(--xe_button_hover_background_color);
     }
@@ -33,11 +35,13 @@
     height: auto;
     padding: 0;
     border-radius: 0;
+    fill: var(--xe_base_text_color);
     color: var(--xe_base_text_color);
     background-color: transparent;
 
     &:hover {
 
+        fill: var(--xe_secondary_color);
         color: var(--xe_secondary_color);
         text-decoration: none;
         background-color: transparent;
