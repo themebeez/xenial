@@ -40,6 +40,27 @@ if ( ! function_exists( 'xenial_woocommerce_related_products_args' ) ) {
 
 
 /**
+ * Upsell Products Args.
+ *
+ * @param array $args upsell products args.
+ * @return array $args upsell products args.
+ */
+if ( ! function_exists( 'xenial_upsell_products_args' ) ) {
+
+	function xenial_upsell_products_args( $args ) {
+
+		$defaults = array();
+			
+		$defaults['columns'] = intval( get_theme_mod( 'upsell_products_columns_per_row', 3 ) );
+		$defaults['posts_per_page'] = intval( get_theme_mod( 'upsell_products_per_page', 3 ) );
+
+		$args = wp_parse_args( $defaults, $args );
+
+		return $args;
+	}
+}
+
+/**
  * Related Products Section Heading.
  *
  * @param string $heading related products section heading.
@@ -362,7 +383,7 @@ if ( ! function_exists( 'xenial_woocommerce_product_add_to_wishlist_action_butto
 		$button_classes = array( 'xe-button', 'xe-false-button', 'xe-wishlist-button', 'xe-tippy' );
 
 		if ( class_exists( 'Addonify_Wishlist' ) ) {
-			$button_classes[] = 'adfy-wishlist-btn';
+			$button_classes[] = 'addonify-add-to-wishlist-btn addonify-custom-wishlist-btn';
 			?>
 			<div class="xe-wishlist xe-button-item">
 	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"><i class="ti-star"></i></button>
