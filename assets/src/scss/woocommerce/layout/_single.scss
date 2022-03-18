@@ -493,6 +493,36 @@
     margin: 0;
 }
 
+// Wishlist
+
+.woocommerce div.product .summary .addonify-add-to-wishlist-btn-wrapper {
+
+    @include flex();
+    flex: 0 0 100%;
+    margin-top: 30px;
+}
+
+.woocommerce div.product .summary .addonify-add-to-wishlist-btn-wrapper .adfy-wishlist-btn {
+
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    font-size: calc( var(--xe_base_font_size) - 10% );
+    color: var(--xe_base_text_color);
+    fill: var(--xe_base_text_color);
+    padding: 0;
+    height: auto;
+    background-color: transparent;
+}
+
+.woocommerce div.product .summary .addonify-add-to-wishlist-btn-wrapper .adfy-wishlist-btn.added-to-wishlist {
+
+    .icon {
+
+        color: var(--xe_primary_color);
+    }
+}
+
 /* -------------------------------------------------------------------------- 
 	#. TAB (Description, Reviews, Additional Information)
    -------------------------------------------------------------------------- */

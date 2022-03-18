@@ -162,12 +162,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-family: var(--xe_base_font_family);
     font-size: var(--xe_button_font_size);
     line-height: var(--xe_button_line_height);
     font-weight: normal;
-    padding: 0 30px;
+    padding: 0 20px;
     height: 48px;
     text-align: center;
     border: none;
