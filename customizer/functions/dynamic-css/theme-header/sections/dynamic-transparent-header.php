@@ -184,6 +184,12 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 					$css .= 'border-color: ' . esc_attr( $header_off_canvas_toggle_button_border_colors['initial'] ) . ';';				
 				}
 			$css .= '}';
+
+			$css .= '.xe-transparent-header-enabled #xe-mobile-canvas-trigger-button .menu-bar {';
+				if ( $header_off_canvas_toggle_button_label_colors['initial'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['initial'] ) . ';';
+				}
+			$css .= '}';
 		}
 
 		if ( 
@@ -200,6 +206,12 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 				}
 				if ( $header_off_canvas_toggle_button_border_colors['hover'] ) {
 					$css .= 'border-color: ' . esc_attr( $header_off_canvas_toggle_button_border_colors['hover'] ) . ';';				
+				}
+			$css .= '}';
+
+			$css .= '.xe-transparent-header-enabled #xe-mobile-canvas-trigger-button:hover .menu-bar {';
+				if ( $header_off_canvas_toggle_button_label_colors['hover'] ) {
+					$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['hover'] ) . ';';
 				}
 			$css .= '}';
 		}
