@@ -384,9 +384,20 @@ if ( ! function_exists( 'xenial_woocommerce_product_add_to_wishlist_action_butto
 
 		if ( class_exists( 'Addonify_Wishlist' ) ) {
 			$button_classes[] = 'addonify-add-to-wishlist-btn addonify-custom-wishlist-btn';
+			$product_in_wishlist = addonify_wishlist_is_product_in_wishlist( $product->get_id() );
+			if ( $product_in_wishlist ) {
+				$tooltip_text = addonify_wishlist_get_button_label( true );
+				$button_classes[] = 'added-to-wishlist';
+			}
 			?>
 			<div class="xe-wishlist xe-button-item">
-	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_name="<?php echo esc_attr( $product->get_name() ); ?>"><i class="ti-star"></i></button>
+	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $tooltip_text ); ?>" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_name="<?php echo esc_attr( $product->get_name() ); ?>">
+					<?php if ( $product_in_wishlist ) { ?>
+						<i class="ti-star"></i>
+					<?php } else { ?>
+						<i class="ti-star"></i>
+					<?php } ?>
+			</button>
 	        </div><!-- .xe-wishlist.xe-button-item -->
 			<?php
 		} elseif ( class_exists( 'YITH_WCWL' ) ) {
