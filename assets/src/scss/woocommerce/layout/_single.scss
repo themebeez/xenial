@@ -505,6 +505,7 @@
 .woocommerce div.product .summary .addonify-add-to-wishlist-btn-wrapper .adfy-wishlist-btn {
 
     display: inline-flex;
+    gap: 5px;
     align-items: center;
     flex: 0 0 auto;
     font-size: calc( var(--xe_base_font_size) - 10% );
