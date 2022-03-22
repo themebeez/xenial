@@ -23,10 +23,17 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 
 			wp_enqueue_script( 'xenial-woocommerce-ajax-script', $assets_url . 'js/compatibility/woocommerce-jquery.min.js', array('jquery'), XENIAL_THEME_VERSION, true );
 
-			wp_localize_script( 'xenial-woocommerce-ajax-script', 'xenial_woocommerce_ajax_script', array(
+			$woocommerce_localize_data = array(
 				'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
-				//'nonce' => wp_create_nonce( 'something' )
-			) );
+				'nonce' => wp_create_nonce( 'xenial_woocommerce_action_nonce' )
+			);
+
+			if ( class_exists( 'Addonify_Wishlist' ) ) {
+				$woocommerce_localize_data['addonify_active_wishlist_btn_label'] = addonify_wishlist_get_button_label( false );
+				$woocommerce_localize_data['addonify_inactive_wishlist_btn_label'] = addonify_wishlist_get_button_label( true );
+			}
+
+			wp_localize_script( 'xenial-woocommerce-ajax-script', 'xenialWooScriptData', $woocommerce_localize_data );
 		}
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

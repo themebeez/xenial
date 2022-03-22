@@ -71,12 +71,5 @@ $add_to_cart_position = get_theme_mod( 'add_to_cart_button_position', xenial_get
                 <?php woocommerce_template_loop_add_to_cart(); ?>
             </div><!-- .xe-add-to-cart -->
         <?php } ?>
-
-        <div class="xe-product-swatch visible-on-hover">
-            <a href="#" class="swatch red"></a>
-            <a href="#" class="swatch blue"></a>
-            <a href="#" class="swatch purple"></a>
-            <a href="#" class="swatch green"></a>
-        </div><!-- .xe-product-swatch -->
     </div><!-- .xe-woo-product -->
 </li>
