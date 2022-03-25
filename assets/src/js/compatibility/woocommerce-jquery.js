@@ -31,20 +31,25 @@
 
         xeWoocommerceAddedtoCart();
 
-        // console.log(document.getElementById('addonify-wishlist-show-sidebar-btn'));
-
-        // console.log($("#addonify-wishlist-show-sidebar-btn"));
-
-        $(".addonify-custom-wishlist-btn").on('addonify_added_to_wishlist', function(event) {
-            // console.log(event);
-            // console.log(event.currentTarget);
-            // console.log(typeof(event.target));
-            event.target.setAttribute("data-tippy-content", xenialWooScriptData.addonify_inactive_wishlist_btn_label);
-            // tippy(['data-tippy-content']);
+        $(document).on('addonify_added_to_wishlist', function(event, data) {
+            var getRelatedProducts = $("button.addonify-custom-wishlist-btn[data-product_id='" + data.productID + "']");
+            if (getRelatedProducts.length > 0) {
+                getRelatedProducts.each(function(key, product) {
+                    product.setAttribute("data-tippy-content", xenialWooScriptData.addonify_inactive_wishlist_btn_label);
+                });
+            }
         });
 
-        $(".addonify-custom-wishlist-btn").on('addonify_removed_from_wishlist', function(event) {
-            console.log(event);
+        $(document).on('addonify_removed_from_wishlist', function(event, data) {
+            var getRelatedProducts = $("button.addonify-custom-wishlist-btn[data-product_id='" + data.productID + "']");
+            if (getRelatedProducts.length > 0) {
+                getRelatedProducts.each(function(key, product) {
+                    if (product.classList.contains('added-to-wishlist')) {
+                        product.classList.remove('added-to-wishlist');
+                        product.setAttribute("data-tippy-content", xenialWooScriptData.addonify_active_wishlist_btn_label);
+                    }
+                });
+            }
         });
     });
 
