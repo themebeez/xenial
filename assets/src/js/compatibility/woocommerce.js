@@ -2,6 +2,13 @@
 
 const xebody = document.querySelector('body');
 
+
+/**
+ * 
+ * WooCommerce vertical navigation.
+ * 
+*/
+
 function xeWooCommerceVerticalNavigation() {
 
     var xeWooNavContainerEle = document.getElementById("xe-woo-vertical-navigation");
@@ -25,6 +32,14 @@ function xeWooCommerceVerticalNavigation() {
         });
     }
 }
+
+
+/**
+ * 
+ * WooCommerce Mini Cart.
+ * 
+*/
+
 
 function xeWooCommerceMiniCart() {
 
@@ -64,6 +79,13 @@ function xeWooCommerceMiniCart() {
     }
 }
 
+
+/**
+ * 
+ * WooCommmerce mini cart scroll bar.
+ * 
+*/
+
 function xeMiniCartScrollBar() {
 
     var xeMiniCartScrollBarContainer = document.getElementById('xe-woo-minicart-scroll');
@@ -78,6 +100,7 @@ function xeMiniCartScrollBar() {
         });
     }
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
 

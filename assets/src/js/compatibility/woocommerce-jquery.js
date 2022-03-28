@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
 
     'use strict';
 
@@ -9,7 +9,7 @@
     function xeWoocommerceAddedtoCart() {
 
         // Listen to event.
-        $(document).on('added_to_cart', function(event, fragments, cart_hash, $button) {
+        $(document).on('added_to_cart', function (event, fragments, cart_hash, $button) {
 
             xeWooCartModal.addClass('visible');
             xeCartModalOverlay.addClass('visible');
@@ -18,7 +18,7 @@
         });
 
         // Close modal.
-        xeCloseCartModal.on('click', function(e) {
+        xeCloseCartModal.on('click', function (e) {
 
             xeWooCartModal.removeClass('visible');
             xeCartModalOverlay.removeClass('visible');
@@ -27,23 +27,24 @@
         });
     }
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
         xeWoocommerceAddedtoCart();
+        //xeAlreadyInWishlistToolTip();
 
-        $(document).on('addonify_added_to_wishlist', function(event, data) {
+        $(document).on('addonify_added_to_wishlist', function (event, data) {
             var getRelatedProducts = $("button.addonify-custom-wishlist-btn[data-product_id='" + data.productID + "']");
             if (getRelatedProducts.length > 0) {
-                getRelatedProducts.each(function(key, product) {
+                getRelatedProducts.each(function (key, product) {
                     product.setAttribute("data-tippy-content", xenialWooScriptData.addonify_inactive_wishlist_btn_label);
                 });
             }
         });
 
-        $(document).on('addonify_removed_from_wishlist', function(event, data) {
+        $(document).on('addonify_removed_from_wishlist', function (event, data) {
             var getRelatedProducts = $("button.addonify-custom-wishlist-btn[data-product_id='" + data.productID + "']");
             if (getRelatedProducts.length > 0) {
-                getRelatedProducts.each(function(key, product) {
+                getRelatedProducts.each(function (key, product) {
                     if (product.classList.contains('added-to-wishlist')) {
                         product.classList.remove('added-to-wishlist');
                         product.setAttribute("data-tippy-content", xenialWooScriptData.addonify_active_wishlist_btn_label);
