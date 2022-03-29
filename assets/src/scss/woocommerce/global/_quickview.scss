@@ -47,6 +47,41 @@
 
             .product {
 
+                .woocommerce-product-gallery {
+
+                    .flex-viewport {
+
+                        margin-left: 0;
+                    }
+
+                    .flex-control-thumbs {
+
+                        @include flex();
+                        flex-direction: row;
+                        gap: 15px;
+                        position: relative;
+                        left: auto;
+                        right: auto;
+                        top: auto;
+                        bottom: auto;
+                        height: auto;
+                        margin-top: 15px;
+
+                        li {
+
+                            margin: 0;
+                            width: 72px;
+                            height: 72px;
+                        }
+                    }
+
+                    .flex-direction-nav {
+
+                        left: 10px;
+                        top: calc(50% - 50px);
+                    }
+                }
+
                 .summary {
 
                     .summary-content {
