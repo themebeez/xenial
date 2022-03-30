@@ -300,6 +300,7 @@
     bottom: 30px;
     left: 0;
     right: 0;
+	z-index: 5;
     @include visibility_hidden();
 }
 
@@ -355,6 +356,7 @@
 
 	display: inline-block;
 	flex-direction: row;
+	z-index: 10;
 }
 
 // product: on sale

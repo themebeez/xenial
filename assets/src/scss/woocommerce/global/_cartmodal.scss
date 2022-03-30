@@ -57,12 +57,14 @@
 
             .xe-product-thumb {
 
-               width: 100%;
+               width: 82px;
                max-width: 82px;
                overflow: hidden;
             }
 
             .xe-product-title {
+
+               flex: 1;
 
                .xe-title {
 
@@ -73,9 +75,22 @@
                .xe-price {
 
                   @include flex();
+                  align-items: center;
+                  gap: 3px;
                   font-size: 18px;
                   font-weight: bold;
                   margin-top: 2px;
+
+                  del {
+
+                     font-size: 80%;
+                     opacity: 0.8;
+                  }
+
+                  ins {
+
+                     background-color: transparent;
+                  }
                }
             }
          }
