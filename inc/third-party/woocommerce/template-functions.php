@@ -156,8 +156,25 @@ if ( ! function_exists( 'xenial_woocommerce_product_added_to_cart' ) ) {
 	
 	function xenial_woocommerce_product_added_to_cart() {
 
+		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
+
+		if ( ! wp_verify_nonce( $nonce, 'xenial_woo_ajax_nonce' ) ) {
+			wp_die();
+		}
+
+		$product_id = isset( $_POST['product_id'] ) ? $_POST['product_id'] : '';
+
+		if ( ! $product_id ) {
+			wp_die();
+		}
+
+		$product = wc_get_product( absint( $product_id ) );
+
+
+
+		// ob_start();
 		?>
-		<aside id="xe-woo-added-to-cart-modal" class="hidden">
+		<aside id="xe-woo-added-to-cart-modal" class="visible">
 			<header class="xe-modal-header">
 				<h3 class="xe-title">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
@@ -167,11 +184,11 @@ if ( ! function_exists( 'xenial_woocommerce_product_added_to_cart' ) ) {
 			<main class="xe-modal-body">
 				<div class="xe-product-info">
 					<div class="xe-product-thumb">
-						<img src="http://xenial.local/wp-content/uploads/2021/11/6-1-800x800.jpg" alt="..">
+						<?php echo wp_kses_post( $product->get_image() ); ?>
 					</div>
 					<div class="xe-product-title">
-						<span class="xe-title">Nike Air Max Destro Lolypop Xolpy Shoe</span>
-						<span class="xe-price">£550.00</span>
+						<span class="xe-title"><?php echo wp_kses_post( $product->get_name() ); ?></span>
+						<span class="xe-price"><?php echo wp_kses_post( $product->get_price_html() ); ?></span>
 					</div><!-- // xe-product-title -->
 				</div><!-- // xe-product-info -->
 			</main>
@@ -179,7 +196,7 @@ if ( ! function_exists( 'xenial_woocommerce_product_added_to_cart' ) ) {
 				<button class="xe-button" id="xe-close-cart-modal-button">
 					<?php esc_html_e( 'Continue shopping', 'xenial' ); ?>
 				</button>
-				<a href="#" class="xe-button xe-link" id="xe-cart-link">
+				<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="xe-button xe-link" id="xe-cart-link">
 					<?php esc_html_e( 'Go to Cart', 'xenial' ); ?>
 					<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 						x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
@@ -190,11 +207,15 @@ if ( ! function_exists( 'xenial_woocommerce_product_added_to_cart' ) ) {
 				</a>
 			</footer>
 		</aside>
-		<aside id="xe-added-to-cart-modal-overlay" class="hidden"></aside>
+		<aside id="xe-added-to-cart-modal-overlay" class="visible"></aside>
 		<?php 
+		// ob_end_clean();
+		wp_die();
 	}
-}
 
+	add_action( 'wp_ajax_xenial_woo_added_to_cart', 'xenial_woocommerce_product_added_to_cart' );
+	add_action( 'wp_ajax_nopriv_xenial_woo_added_to_cart', 'xenial_woocommerce_product_added_to_cart' );
+}
 
 /**
  * Change cross sell columns per row.
@@ -418,15 +439,20 @@ if ( ! function_exists( 'xenial_woocommerce_product_add_to_cart_action_button_te
 	function xenial_woocommerce_product_add_to_cart_action_button_template() {
 
 		global $product;
+
+		$woo_ajax_add_to_cart_enabled = get_option( 'woocommerce_enable_ajax_add_to_cart' );
 		?>
 		<div class="xe-cart xe-button-item">
 			<?php 
-			if ( $product->supports( 'ajax_add_to_cart' ) ) {
+			if ( 
+				$product->supports( 'ajax_add_to_cart' ) &&
+				$woo_ajax_add_to_cart_enabled == 'yes'
+			) {
 				$button_classes = array( 'xe-button', 'xe-false-button', 'xe-cart-button', 'xe-tippy' );
 
 				$button_classes[] = ( $product->is_purchasable() && $product->is_in_stock() ) ? 'add_to_cart_button ajax_add_to_cart' : '';
 				?>
-	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $product->add_to_cart_text() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="$product->get_sku()"><i class="ti-shopping-cart-full"></i></button>
+	            <button class="<?php echo esc_attr( implode( ' ', $button_classes ) ); ?>" data-tippy-placement="left" data-tippy-content="<?php echo esc_attr( $product->add_to_cart_text() ); ?>" data-quantity="1" data-product_id="<?php echo esc_attr( $product->get_id() ); ?>" data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>"><i class="ti-shopping-cart-full"></i></button>
 		        <?php 
 			} else {
 				?>
