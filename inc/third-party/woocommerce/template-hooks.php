@@ -12,7 +12,7 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'xenial_refresh_cart_count' );
  * Hooked - wp_body_open
  */
 
-add_action( 'wp_body_open', 'xenial_woocommerce_product_added_to_cart');
+// add_action( 'wp_body_open', 'xenial_woocommerce_product_added_to_cart');
 
 /**
  * Removes default WooCommerce breadcrumb from WooCommerce template.

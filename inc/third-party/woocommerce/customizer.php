@@ -1,4 +1,7 @@
 <?php 
+
+require_once get_template_directory() . '/inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php';
+
 /**
  * Define default values for WooCommerce customizer settings.
  * 

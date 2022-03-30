@@ -25,7 +25,8 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 
 			$woocommerce_localize_data = array(
 				'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
-				'nonce' => wp_create_nonce( 'xenial_woocommerce_action_nonce' )
+				'nonce' => wp_create_nonce( 'xenial_woo_ajax_nonce' ),
+				'added_to_cart' => 'xenial_woo_added_to_cart',
 			);
 
 			if ( class_exists( 'Addonify_Wishlist' ) ) {
