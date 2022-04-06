@@ -10,6 +10,9 @@ if ( ! function_exists( 'xenial_get_woo_dropdown_header_element_customize_defaul
             array(
                 'header_ele_woo_dropdown_menu' => '',
                 'header_ele_woo_dropdown_visibility' => 'desktop,tablet,mobile',
+                'header_ele_woo_dropdown_toggle_on' => 'click',
+                'header_ele_woo_dropdown_toggle_direction' => 'default',
+                'header_ele_woo_dropdown_toggle_animation' => 'FadeInDown',
                 'header_ele_woo_dropdown_btn_label' => esc_html__( 'All Products', 'xenial' ),
                 'header_ele_woo_dropdown_btn_bg_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
                 'header_ele_woo_dropdown_btn_text_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
@@ -97,7 +100,12 @@ if ( ! function_exists( 'xenial_header_ele_woo_dropdown_customize_controls_init'
                             'header_ele_woo_dropdown_visibility' => '',
                             'header_ele_woo_dropdown_general_divider_2' => '',
                             'header_ele_woo_dropdown_btn_label' => '',
-                            'header_ele_woo_dropdown_general_divider_3' => ''
+                            'header_ele_woo_dropdown_general_divider_3' => '',
+                            'header_ele_woo_dropdown_toggle_on' => '',
+                            'header_ele_woo_dropdown_general_divider_4' => '',
+                            'header_ele_woo_dropdown_toggle_direction' => '',
+                            'header_ele_woo_dropdown_general_divider_5' => '',
+                            'header_ele_woo_dropdown_toggle_animation' => '',
                         ) 
                     ),
                     'tab_2' => apply_filters( 
@@ -191,6 +199,61 @@ if ( ! function_exists( 'xenial_header_ele_woo_dropdown_customize_controls_init'
                 'priority' => 10,
                 'section' => 'xenial_header_woocommerce_dropdown', 
             ) 
+        );
+
+        xenial_select_field(
+            'header_ele_woo_dropdown_toggle_on',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_header_woocommerce_dropdown',
+                'label' => esc_html__( 'Dropdown Toggle On', 'xenial' ),
+                'choices' => array(
+                    'hover' => esc_html__( 'Hover', 'xenial' ),
+                    'click' => esc_html__( 'Click', 'xenial' )
+                ),
+                'default' => xenial_get_customize_default( 'header_ele_woo_dropdown_toggle_on' )
+            )
+        );
+
+        xenial_divider_field( 
+            'header_ele_woo_dropdown_general_divider_4', 
+            array( 
+                'priority' => 10,
+                'section' => 'xenial_header_woocommerce_dropdown', 
+            ) 
+        );
+
+        xenial_select_field(
+            'header_ele_woo_dropdown_toggle_direction',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_header_woocommerce_dropdown',
+                'label' => esc_html__( 'Dropdown Toggle Direction', 'xenial' ),
+                'choices' => array(
+                    'default' => esc_html__( 'Right', 'xenial' ),
+                    'left'  => esc_html__( 'Left', 'xenial' )
+                ),
+                'default' => xenial_get_customize_default( 'header_ele_woo_dropdown_toggle_direction' )
+            )
+        );
+
+        xenial_divider_field( 
+            'header_ele_woo_dropdown_general_divider_5', 
+            array( 
+                'priority' => 10,
+                'section' => 'xenial_header_woocommerce_dropdown', 
+            ) 
+        );
+
+        xenial_select_field(
+            'header_ele_woo_dropdown_toggle_animation',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_header_woocommerce_dropdown',
+                'label' => esc_html__( 'Dropdown Reveal Effect', 'xenial' ),
+                'choices' => xenial_get_dropdown_reveal_effects(),
+                'default' => xenial_get_customize_default( 'header_ele_woo_dropdown_toggle_animation' )
+            )
         );
 
         xenial_controls_wrapper_field(

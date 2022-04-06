@@ -14,6 +14,17 @@
 		<div class="xe-search-box-text-outer">
 			<p class="xe-search-box-text"><?php echo __('Please enter search keyword & hit enter.', 'xenial'); ?></p>
 		</div><!-- // search-box-text-outer -->
-		<?php get_search_form(); ?>
+		<?php  
+		$enable_woocommerce_search = false;
+		if ( class_exists( 'WooCommerce' ) ) {
+			$enable_woocommerce_search = xenial_get_option( 'header_search_replace_with_woocommerce_search' );
+		}
+
+		if ( $enable_woocommerce_search ) {
+			get_product_search_form();
+		} else {
+			get_search_form();
+		}
+		?>
 	</div>
 </aside>

@@ -23,10 +23,12 @@ xenial_tab_field(
 					'header_search_visibility' => '',
 					'header_search_alignment' => '',
 					'header_search_placeholder_text' => '',
+					'header_search_replace_with_woocommerce_search' => '',
 					'xenial_header_search_general_divider_1' => '',
 					'xenial_header_search_general_divider_2' => '',
 					'xenial_header_search_general_divider_3' => '',
-					'xenial_header_search_general_divider_4' => ''
+					'xenial_header_search_general_divider_4' => '',
+					'xenial_header_search_general_divider_5' => ''
 				)
 			),
 			'tab_2' => apply_filters(
@@ -191,6 +193,27 @@ xenial_divider_field(
 		'section' => 'xenial_header_search', 
 	) 
 );
+
+if ( class_exists( 'WooCommerce' ) ) {
+
+	xenial_switch_field(
+		'header_search_replace_with_woocommerce_search',
+		array(
+			'priority' => 10,
+			'section' => 'xenial_header_search',
+			'label' => esc_html__( 'Enable WooCommerce Search', 'xenial' ),
+			'default' => xenial_get_customize_default( 'header_search_replace_with_woocommerce_search' )
+		)
+	);
+
+	xenial_divider_field( 
+		'xenial_header_search_general_divider_5', 
+		array( 
+			'priority' => 10,
+			'section' => 'xenial_header_search', 
+		) 
+	);
+}
 
 xenial_color_picker_field(
 	'header_search_modal_background_color',

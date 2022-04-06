@@ -140,3 +140,15 @@ if ( ! function_exists( 'xenial_primary_menu_items_wrap' ) ) {
 		return '<nav class="xe-site-navigation" xe-dropdown-animation="' . esc_attr( $dropdown_animation ) . '"><ul id="%1$s" class="%2$s">%3$s</ul></nav>';
 	}
 }
+
+
+if ( ! function_exists( 'xenial_woo_dropdown_menu_items_wrap' ) ) {
+
+	function xenial_woo_dropdown_menu_items_wrap() {
+
+		$dropdown_toggle_animation = ( xenial_get_option( 'header_ele_woo_dropdown_toggle_animation' ) != 'none' ) ? xenial_get_option( 'header_ele_woo_dropdown_toggle_animation' ) : 'FadeInDown'; // Available options: None, FadeIn, FadeInUp & FadeInDown
+		$dropdown_toggle_direction = xenial_get_option( 'header_ele_woo_dropdown_toggle_direction' );
+
+		return '<ul id="%1$s" class="xe-woo-vertical-menu %2$s" xe-woo-navigation-dropdown-direction="' . esc_attr( $dropdown_toggle_direction ) .'" xe-woo-navigation-dropdown-animation="' . esc_attr( $dropdown_toggle_animation ) . '">%3$s</ul>';
+	}
+}

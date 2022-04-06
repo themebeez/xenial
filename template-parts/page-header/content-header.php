@@ -17,7 +17,13 @@ if ( $args['display_title'] == false && $args['display_breadcrumbs'] == false ) 
                 <?php
                 switch ( $args['current_page'] ) {
                     case 'archive' :
-                        the_archive_title( $args['before_title'], $args['after_title'] );
+                        if ( class_exists( 'WooCommerce' ) && is_woocommerce() ) {
+                            echo $args['before_title'];
+                            woocommerce_page_title();
+                            echo $args['after_title'];
+                        } else {
+                            the_archive_title( $args['before_title'], $args['after_title'] );
+                        }                        
                         break;
                     case 'home' :
                         echo $args['before_title'] . esc_html__( 'Home', 'xenial' ) . $args['after_title'];

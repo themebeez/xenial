@@ -479,6 +479,7 @@ if ( ! function_exists( 'xenial_header_element_woocommerce_minicart_template' ) 
 }
 
 
+
 if ( ! function_exists( 'xenial_header_element_woocommerce_dropdown_template' ) ) {
 
 	function xenial_header_element_woocommerce_dropdown_template() {
@@ -489,4 +490,13 @@ if ( ! function_exists( 'xenial_header_element_woocommerce_dropdown_template' ) 
 	}
 
 	add_action( 'xenial_header_element_woocommerce_dropdown', 'xenial_header_element_woocommerce_dropdown_template' );
+}
+
+
+
+if ( ! function_exists( 'xenial_do_not_display_woo_page_title' ) ) {
+
+	function xenial_do_not_display_woo_page_title() {
+		return false;
+	}
 }
