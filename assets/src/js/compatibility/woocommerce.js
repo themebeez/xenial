@@ -12,9 +12,7 @@ const xebody = document.querySelector('body');
 function xeWooCommerceVerticalNavigation() {
 
     var xeWooNavContainerEle = document.getElementById("xe-woo-vertical-navigation");
-    var xeWooNavContainerEleAttribute = xeWooNavContainerEle.getAttribute("xe-woo-navigation-open-behaviour");
     var xeWooDesktopToggleEle = document.getElementById("xe-woo-vertical-menu-toggle");
-    var xeWooNavMenuEle = xeWooNavContainerEle.getElementsByTagName("ul")[0];
     var xeWooNavMobileOptions = {
 
         plus: "ti-plus",
@@ -23,13 +21,18 @@ function xeWooCommerceVerticalNavigation() {
         submenutoggle: "<button class='xe-button xe-false-button xe-toggle-woovertical-submenu'><i class='ti - plus'></button>",
     };
 
+    if ((xeWooNavContainerEle !== null) && (xeWooNavContainerEle !== undefined)) {
 
-    if ((xeWooNavContainerEleAttribute == "click")) {
+        var xeWooNavContainerEleAttribute = xeWooNavContainerEle.getAttribute("xe-woo-navigation-open-behaviour");
+        var xeWooNavMenuEle = xeWooNavContainerEle.getElementsByTagName("ul")[0];
 
-        xeWooDesktopToggleEle.addEventListener("click", function () {
+        if ((xeWooNavContainerEleAttribute == "click")) {
 
-            xeWooNavContainerEle.classList.toggle("visible");
-        });
+            xeWooDesktopToggleEle.addEventListener("click", function () {
+
+                xeWooNavContainerEle.classList.toggle("visible");
+            });
+        }
     }
 }
 
@@ -39,7 +42,6 @@ function xeWooCommerceVerticalNavigation() {
  * WooCommerce Mini Cart.
  * 
 */
-
 
 function xeWooCommerceMiniCart() {
 
