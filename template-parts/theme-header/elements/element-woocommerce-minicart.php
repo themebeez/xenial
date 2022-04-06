@@ -1,6 +1,17 @@
 <?php 
+$woo_minicart_icon_classes = array( 'xe-header-element', 'is-woo-minicart-icon' );
+$woo_minicart_content_classes = array( 'xe-header-element', 'is-woo-minicart-content', 'close' );
+$woo_minicart_device_visibilities = xenial_get_option( 'header_ele_woo_minicart_visibility' );
+
+if ( $woo_minicart_device_visibilities ) {
+    $woo_minicart_device_visibilities = explode( ',', $woo_minicart_device_visibilities );
+    foreach ( $woo_minicart_device_visibilities as $woo_minicart_device_visibility ) {
+        $woo_minicart_icon_classes[] = xenial_get_device_visibility_class( $woo_minicart_device_visibility );
+        $woo_minicart_content_classes[] = xenial_get_device_visibility_class( $woo_minicart_device_visibility );
+    }
+} 
 ?>
-<div class="xe-header-element is-woo-minicart-icon">
+<div class="<?php echo esc_attr( implode( ' ', $woo_minicart_icon_classes ) ); ?>">
     <div id="xe-woo-minicart-icon">
         <button class="xe-button xe-false-button" id="xe-woo-minicart-button">
                 
@@ -18,10 +29,17 @@
 <?php 
 if( ! is_cart() && ! is_checkout() ) { 
     ?>
-    <aside id="xe-woo-minicart-canvas" class="close">
+    <aside id="xe-woo-minicart-canvas" class="<?php echo esc_attr( implode( ' ', $woo_minicart_content_classes ) ); ?>">
         <div class="xe-woo-minicart-inner">
             <header class="xe-woo-minicart-header">
-                <h3 class="xe-woo-minicart-title">Shopping Cart</h3>
+                <?php
+                $woo_mini_cart_title = xenial_get_option( 'header_ele_woo_minicart_title' );
+                if ( $woo_mini_cart_title ) {
+                    ?>
+                    <h3 class="xe-woo-minicart-title"><?php echo esc_html( $woo_mini_cart_title ); ?></h3>
+                    <?php 
+                }
+                ?>
                 <button class="xe-button xe-false-button" id="xe-woo-minicart-close">
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                         y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">

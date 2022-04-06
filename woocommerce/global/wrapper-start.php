@@ -19,7 +19,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
-<?php do_action( 'xenial_single_header' ); ?>
+<?php 
+if ( is_archive() ) {
+    do_action( 'xenial_archive_page_header' );
+} else {
+    do_action( 'xenial_single_header' );
+}
+ ?>
 <div class="xe-container xe-flex-alt">
     <div id="primary" class="content-area">
         <main id="site-main" class="site-main">

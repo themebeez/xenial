@@ -16,6 +16,7 @@ if ( ! function_exists( 'xenial_get_header_search_customize_defaults' ) ) {
 	                'tablet' => 'left',
 	                'mobile' => 'left'
 	            ),
+				'header_search_replace_with_woocommerce_search' => false,
 
 	            'header_search_bar_width' => array(
 	                'desktop' => '',
