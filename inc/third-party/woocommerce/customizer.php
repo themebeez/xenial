@@ -2,6 +2,8 @@
 
 require_once get_template_directory() . '/inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php';
 
+require_once get_template_directory() . '/inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php';
+
 /**
  * Define default values for WooCommerce customizer settings.
  * 
@@ -462,4 +464,24 @@ if ( ! function_exists( 'xenial_add_woocommerce_header_elements' ) ) {
 
     add_filter( 'xenial_desktop_header_elements_filter', 'xenial_add_woocommerce_header_elements' );
     add_filter( 'xenial_mobile_header_elements_filter', 'xenial_add_woocommerce_header_elements' );
+}
+
+
+
+if ( ! function_exists( 'xenial_dynamic_woo_css' ) ) {
+
+    function xenial_dynamic_woo_css() {
+
+        $customizer_defaults = xenial_get_customizer_defaults();
+
+		$css = '';
+
+		// Allow CSS to be filtered.
+		$css .= apply_filters( 'xenial_dynamic_woo_css', $css ); 
+
+		// Minify the CSS code.
+		$css = xenial_minify_css( $css );
+
+		return $css;
+    }
 }

@@ -1,4 +1,4 @@
 <?php 
 add_action( 'wp_body_open', function() {
-    // var_dump( wc_get_product( 247 ) );
+    // var_dump( xenial_get_sidebar_position() );
 } );
