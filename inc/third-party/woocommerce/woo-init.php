@@ -89,3 +89,5 @@ require $xenial_woocommerce_path . 'customizer.php';
 require $xenial_woocommerce_path . 'template-functions.php';
 
 require $xenial_woocommerce_path . 'template-hooks.php';
+
+require $xenial_woocommerce_path . 'helper-functions.php';

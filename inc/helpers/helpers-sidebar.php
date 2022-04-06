@@ -6,20 +6,27 @@ if ( ! function_exists( 'xenial_get_sidebar_position' ) ) {
 
 		$global_sidebar_position = xenial_get_option( 'sidebar_default_position' );
 
-		if ( is_page() ) {
-			return xenial_get_page_sidebar_position();
-		}
+		if ( xenial_is_woocommerce_page() ) {
 
-		if ( is_single() ) {
-			return xenial_get_post_sidebar_position();
-		}
+			return xenial_get_woocommerce_sidebar_position();
 
-		if ( is_home() || is_archive() || is_search() ) {
-			return xenial_get_archive_sidebar_position();
-		}
+		} else {
 
-		if ( is_404() ) {
-			return 'no-sidebar';
+			if ( is_page() ) {
+				return xenial_get_page_sidebar_position();
+			}
+
+			if ( is_single() ) {
+				return xenial_get_post_sidebar_position();
+			}
+
+			if ( is_home() || is_archive() || is_search() ) {
+				return xenial_get_archive_sidebar_position();
+			}
+
+			if ( is_404() ) {
+				return 'no-sidebar';
+			}
 		}
 
 		return $global_sidebar_position;

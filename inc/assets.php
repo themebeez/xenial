@@ -27,6 +27,7 @@ if ( ! function_exists( 'xenial_enqueue_scripts' ) ) {
 				'ajax_url' => esc_url( admin_url( 'admin-ajax.php' ) ),
 				'nonce' => wp_create_nonce( 'xenial_woo_ajax_nonce' ),
 				'added_to_cart' => 'xenial_woo_added_to_cart',
+				'get_wishlist_count' => 'xenial_get_wishlist_count',
 			);
 
 			if ( class_exists( 'Addonify_Wishlist' ) ) {
@@ -61,8 +62,16 @@ if ( ! function_exists( 'xenial_enqueue_styles' ) ) {
 
 		wp_enqueue_style( 'xenial-base', $assets_url . 'css/xenial-style.css', NULL, XENIAL_THEME_VERSION, 'all' );
 
+		$dynamic_css = xenial_dynamic_css();
+
+		wp_add_inline_style( 'xenial-base', $dynamic_css );
+
 		if ( class_exists( 'WooCommerce' ) ) { 
 			wp_enqueue_style( 'xenial-woocommerce', $assets_url . 'css/woocommerce/woocommerce.css', NULL, XENIAL_THEME_VERSION, 'all' );
+
+			$dynamic_woo_css = xenial_dynamic_woo_css();
+
+			wp_add_inline_style( 'xenial-woocommerce', $dynamic_woo_css );
 		}
 
 		if ( defined( 'PMPRO_VERSION' ) ) {
@@ -84,10 +93,6 @@ if ( ! function_exists( 'xenial_enqueue_styles' ) ) {
 		if ( class_exists( 'Yatra' ) ) {
 			wp_enqueue_style( 'xenial-yatra', $assets_url . 'css/compatibility/yatra/yatra.css', NULL, XENIAL_THEME_VERSION, 'all' );
 		}
-
-		$dynamic_css = xenial_dynamic_css();
-
-		wp_add_inline_style( 'xenial-base', $dynamic_css );
 	}
 }
 

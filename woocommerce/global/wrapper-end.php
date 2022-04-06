@@ -22,3 +22,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 	</main>
 </div>
+<?php
+if ( ! xenial_has_sidebar() ) {
+    return;
+}
+?>
+<aside id="secondary">
+	<?php dynamic_sidebar( 'xenial-woocommerce-sidebar' ); ?>
+</aside><!-- #secondary -->
