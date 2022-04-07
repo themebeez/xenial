@@ -34,7 +34,7 @@ if ( ! function_exists( 'xenial_dynamic_color_css' ) ) {
 			}
 
 			if ( $secondary_color['initial'] ) {
-				$css .= '--xe_seconary_color: ' . esc_attr( $secondary_color['initial'] ) . ';';
+				$css .= '--xe_secondary_color: ' . esc_attr( $secondary_color['initial'] ) . ';';
 			}
 
 			if ( $text_color['initial'] ) {

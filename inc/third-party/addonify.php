@@ -343,7 +343,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 
 		if ( $header_addonify_wishlist_icon_color['desktop']['hover'] ) {
 
-			$css .= '#xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
+			$css .= '#xe-woo-wishlist-icon #xe-wishlist-link:hover {';
 				$css .= 'fill: ' . esc_attr( $header_addonify_wishlist_icon_color['desktop']['hover'] ) . ';'; 
 				$css .= 'color: ' . esc_attr( $header_addonify_wishlist_icon_color['desktop']['hover'] ) . ';';
 			$css .= '}';
@@ -371,11 +371,10 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 
         if ( xenial_is_transparent_header_active() ) {
 
-            $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link svg {';
+            $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link {';
     
                 if ( $transparent_header_addonify_wishlist_icon_color['desktop']['initial'] ) {
-    
-                    $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['initial'] ) . ';'; 
+                    $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['initial'] ) . ';';
                     $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['initial'] ) . ';';	
                 }
                  
@@ -383,8 +382,8 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
     
             if ( $transparent_header_addonify_wishlist_icon_color['desktop']['hover'] ) {
     
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
-                    $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['hover'] ) . ';'; 
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover {';
+
                     $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['hover'] ) . ';';
                 $css .= '}';
             }
@@ -420,7 +419,6 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 	
 				if ( $header_addonify_wishlist_icon_color['tablet']['initial'] ) {
 	
-					$css .= 'fill: ' . esc_attr( $header_addonify_wishlist_icon_color['tablet']['initial'] ) . ';'; 
 					$css .= 'color: ' . esc_attr( $header_addonify_wishlist_icon_color['tablet']['initial'] ) . ';';	
 				}
 				 
@@ -428,8 +426,8 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 	
 			if ( $header_addonify_wishlist_icon_color['tablet']['hover'] ) {
 	
-				$css .= '#xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
-					$css .= 'fill: ' . esc_attr( $header_addonify_wishlist_icon_color['tablet']['hover'] ) . ';'; 
+				$css .= '#xe-woo-wishlist-icon #xe-wishlist-link:hover {';
+			
 					$css .= 'color: ' . esc_attr( $header_addonify_wishlist_icon_color['tablet']['hover'] ) . ';';
 				$css .= '}';
 			}
@@ -456,11 +454,10 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 
             if ( xenial_is_transparent_header_active() ) {
 
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link svg {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link {';
         
                     if ( $transparent_header_addonify_wishlist_icon_color['tablet']['initial'] ) {
         
-                        $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['initial'] ) . ';'; 
                         $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['initial'] ) . ';';	
                     }
                      
@@ -468,7 +465,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
         
                 if ( $transparent_header_addonify_wishlist_icon_color['tablet']['hover'] ) {
         
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover {';
                         $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['hover'] ) . ';'; 
                         $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['hover'] ) . ';';
                     $css .= '}';
@@ -495,7 +492,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
             }
 		$css .= '}';
 		
-		$css .= '@media screen and (max-width: 567px) {';
+		$css .= '@media screen and (max-width: 575px) {';
 
 			$css .= '#xe-woo-wishlist-icon #xe-wishlist-link svg {';
 			
@@ -515,7 +512,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 	
 			if ( $header_addonify_wishlist_icon_color['mobile']['hover'] ) {
 	
-				$css .= '#xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
+				$css .= '#xe-woo-wishlist-icon #xe-wishlist-link:hover {';
 					$css .= 'fill: ' . esc_attr( $header_addonify_wishlist_icon_color['mobile']['hover'] ) . ';'; 
 					$css .= 'color: ' . esc_attr( $header_addonify_wishlist_icon_color['mobile']['hover'] ) . ';';
 				$css .= '}';
@@ -542,11 +539,10 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 
             if ( xenial_is_transparent_header_active() ) {
 
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link svg {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link {';
         
                     if ( $transparent_header_addonify_wishlist_icon_color['mobile']['initial'] ) {
         
-                        $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['initial'] ) . ';'; 
                         $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['initial'] ) . ';';	
                     }
                      
@@ -555,7 +551,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
                 if ( $transparent_header_addonify_wishlist_icon_color['mobile']['hover'] ) {
         
                     $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
-                        $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['hover'] ) . ';'; 
+                        
                         $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['hover'] ) . ';';
                     $css .= '}';
                 }

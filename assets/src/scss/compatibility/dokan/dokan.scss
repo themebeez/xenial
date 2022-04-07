@@ -101,7 +101,7 @@
 
 .product-listing-table [data-title=Name] strong > a:hover {
 
-   color: var(--xe_seconary_color);
+   color: var(--xe_secondary_color);
 }
 
 .theme-xenial .dokan-product-listing .dokan-product-listing-area table.product-listing-table mark.instock {
@@ -183,7 +183,7 @@
 .theme-xenial .pagination-wrap ul.pagination > li > .page-numbers:hover,
 .theme-xenial .dokan-pagination-container .dokan-pagination li a:hover {
 
-   color: var(--xe_seconary_color);
+   color: var(--xe_secondary_color);
    text-decoration: none;
    background-color: transparent;
 }

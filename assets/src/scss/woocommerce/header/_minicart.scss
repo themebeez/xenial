@@ -13,7 +13,6 @@
 
         position: relative;
         display: inline-flex;
-        fill: var(--xe_base_text_color);
         color: var(--xe_base_text_color);
 
         svg {
@@ -44,7 +43,6 @@
         &:hover {
 
             text-decoration: none;
-            fill: var(--xe_base_link_hover_color);
             color: var(--xe_base_link_hover_color);
         }
 
@@ -304,7 +302,7 @@ body.xe-woo-minicart-is-open {
     right: 0;
     opacity: 1;
     visibility: visible;
-    animation: slideInLeft 0.8s ease;
+    animation: miniCartCanvasSlideInLeft 0.8s ease;
 }
 
 #xe-woo-minicart-canvas.close {

@@ -7,16 +7,8 @@
 #xe-search-form #xe-close-search-box svg  {
 
     display: inline-flex;
-    fill: var(--xe_base_text_color);
     width: 22px;
     height: 22px;
-}
-
-.xe-header-element-search:hover svg,
-#xe-search-form form .xe-button:hover svg,
-#xe-search-form #xe-close-search-box:hover svg  {
-
-    fill: var(--xe_seconary_color);
 }
 
 /* -------------------------------------------------------------------------- 
@@ -92,7 +84,7 @@
 
 #xe-search-form #xe-close-search-box:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
 }
 
 #xe-search-form #xe-close-search-box svg {

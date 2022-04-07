@@ -14,19 +14,21 @@
  * @package 	WooCommerce/Templates
  * @version     3.3.0
  */
-
+ 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-?>			
+?>
 		</div>
 	</main>
 </div>
 <?php
-if ( ! xenial_has_sidebar() ) {
-    return;
+if ( xenial_has_sidebar() ) {
+?>
+	<aside id="secondary">
+		<?php dynamic_sidebar( 'xenial-woocommerce-sidebar' ); ?>
+	</aside><!-- #secondary -->
+<?php
 }
 ?>
-<aside id="secondary">
-	<?php dynamic_sidebar( 'xenial-woocommerce-sidebar' ); ?>
-</aside><!-- #secondary -->
+</div>
