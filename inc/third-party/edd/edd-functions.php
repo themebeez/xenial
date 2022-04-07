@@ -201,6 +201,9 @@ function xenial_transparent_header_style_tab_edd_fields( $style_tab_fields ) {
 }
 add_filter( 'xenial_transparent_header_tab_2_controls', 'xenial_transparent_header_style_tab_edd_fields' );
 
+
+
+
 /**
  * Print customize dynamic CSS of EDD elements.
  * 
