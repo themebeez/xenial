@@ -43,6 +43,10 @@ if ( ! function_exists( 'xenial_get_addonify_wishlist_header_element_customize_d
                 'header_ele_addonify_wishlist_icon_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
                 'header_ele_addonify_wishlist_icon_count_bg_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
                 'header_ele_addonify_wishlist_icon_count_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
+
+                'transparent_header_ele_addonify_wishlist_icon_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
+                'transparent_header_ele_addonify_wishlist_icon_count_bg_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
+                'transparent_header_ele_addonify_wishlist_icon_count_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
             ) 
         );
 
@@ -190,6 +194,53 @@ if ( ! function_exists( 'xenial_header_ele_addonify_wishlist_customize_controls_
                 'default' => xenial_get_customize_default( 'header_ele_addonify_wishlist_icon_count_color' )
             )
         );
+
+
+
+
+        xenial_controls_wrapper_field(
+            'transparent_header_ele_addonify_wishlist_wrapper',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Wishlist Icon', 'xenial' )
+            ),
+            false
+        );
+
+
+        xenial_color_picker_field(
+            'transparent_header_ele_addonify_wishlist_icon_color',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Icon Color', 'xenial' ),
+                'is_responsive' => true,
+                'default' => xenial_get_customize_default( 'transparent_header_ele_addonify_wishlist_icon_color' )
+            )
+        );
+
+        xenial_color_picker_field(
+            'transparent_header_ele_addonify_wishlist_icon_count_bg_color',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Count Background Color', 'xenial' ),
+                'is_responsive' => true,
+                'default' => xenial_get_customize_default( 'transparent_header_ele_addonify_wishlist_icon_count_bg_color' )
+            )
+        );
+
+        xenial_color_picker_field(
+            'transparent_header_ele_addonify_wishlist_icon_count_color',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Count Text Color', 'xenial' ),
+                'is_responsive' => true,
+                'default' => xenial_get_customize_default( 'transparent_header_ele_addonify_wishlist_icon_count_color' )
+            )
+        );
     }
     
     /**
@@ -199,6 +250,32 @@ if ( ! function_exists( 'xenial_header_ele_addonify_wishlist_customize_controls_
      */ 
     add_action( 'customize_register', 'xenial_header_ele_addonify_wishlist_customize_controls_init' );
 }
+
+
+/**
+ * Add fields in the transparent header section style tab.
+ * 
+ * @since 1.0.0
+ * @return array 
+ */
+// if ( ! function_exists( 'xenial_transparent_header_style_tab_wishlist_fields' ) ) {
+
+    function xenial_transparent_header_style_tab_wishlist_fields( $style_tab_fields ) {
+
+        $wishlist_style_fields = array(
+            'transparent_header_ele_addonify_wishlist_wrapper' => '',
+            'transparent_header_ele_addonify_wishlist_icon_color' => '',
+            'transparent_header_ele_addonify_wishlist_icon_count_bg_color' => '',
+            'transparent_header_ele_addonify_wishlist_icon_count_color' => '',
+        );
+
+        $style_tab_fields = array_merge( $style_tab_fields, $wishlist_style_fields );
+
+        return $style_tab_fields;
+    }
+
+    add_filter( 'xenial_transparent_header_tab_2_controls', 'xenial_transparent_header_style_tab_wishlist_fields' );
+// }
 
 
 if ( ! function_exists( 'xenial_header_element_addonify_wishlist_template' ) ) {
@@ -239,7 +316,14 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 
 		$header_addonify_wishlist_count_bg_color = xenial_json_decode( xenial_get_option( 'header_ele_addonify_wishlist_icon_count_bg_color' ) );
 
-		$haeder_addonify_wishlist_count_text_color = xenial_json_decode( xenial_get_option( 'header_ele_addonify_wishlist_icon_count_color' ) );
+		$header_addonify_wishlist_count_text_color = xenial_json_decode( xenial_get_option( 'header_ele_addonify_wishlist_icon_count_color' ) );
+
+
+        $transparent_header_addonify_wishlist_icon_color = xenial_json_decode( xenial_get_option( 'transparent_header_ele_addonify_wishlist_icon_color' ) );
+
+		$transparent_header_addonify_wishlist_count_bg_color = xenial_json_decode( xenial_get_option( 'transparent_header_ele_addonify_wishlist_icon_count_bg_color' ) );
+
+		$transparent_header_addonify_wishlist_count_text_color = xenial_json_decode( xenial_get_option( 'transparent_header_ele_addonify_wishlist_icon_count_color' ) );
 
 		$css .= '#xe-woo-wishlist-icon #xe-wishlist-link svg {';
 			
@@ -267,7 +351,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 
 		if ( 
 			$header_addonify_wishlist_count_bg_color['desktop']['initial'] ||
-			$haeder_addonify_wishlist_count_text_color['desktop']['initial']
+			$header_addonify_wishlist_count_text_color['desktop']['initial']
 		) {
 
 			$css .= '#xe-woo-wishlist-icon #xe-wishlist-link .count {';
@@ -277,12 +361,53 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 					$css .= 'background-color: ' . esc_attr( $header_addonify_wishlist_count_bg_color['desktop']['initial'] ) . ';'; 
 				}
 
-				if ( $haeder_addonify_wishlist_count_text_color['desktop']['initial'] ) {
+				if ( $header_addonify_wishlist_count_text_color['desktop']['initial'] ) {
 
-					$css .= 'color: ' . esc_attr( $haeder_addonify_wishlist_count_text_color['desktop']['initial'] ) . ';'; 
+					$css .= 'color: ' . esc_attr( $header_addonify_wishlist_count_text_color['desktop']['initial'] ) . ';'; 
 				}
 			$css .= '}';
 		}
+
+
+        if ( xenial_is_transparent_header_active() ) {
+
+            $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link svg {';
+    
+                if ( $transparent_header_addonify_wishlist_icon_color['desktop']['initial'] ) {
+    
+                    $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['initial'] ) . ';'; 
+                    $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['initial'] ) . ';';	
+                }
+                 
+            $css .= '}';
+    
+            if ( $transparent_header_addonify_wishlist_icon_color['desktop']['hover'] ) {
+    
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
+                    $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['hover'] ) . ';'; 
+                    $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['desktop']['hover'] ) . ';';
+                $css .= '}';
+            }
+    
+            if ( 
+                $transparent_header_addonify_wishlist_count_bg_color['desktop']['initial'] ||
+                $transparent_header_addonify_wishlist_count_text_color['desktop']['initial']
+            ) {
+    
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link .count {';
+                    
+                    if ( $transparent_header_addonify_wishlist_count_bg_color['desktop']['initial'] ) {
+    
+                        $css .= 'background-color: ' . esc_attr( $transparent_header_addonify_wishlist_count_bg_color['desktop']['initial'] ) . ';'; 
+                    }
+    
+                    if ( $transparent_header_addonify_wishlist_count_text_color['desktop']['initial'] ) {
+    
+                        $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_count_text_color['desktop']['initial'] ) . ';'; 
+                    }
+                $css .= '}';
+            }
+        }
 
 		$css .= '@media screen and (max-width: 768px) {';
 			$css .= '#xe-woo-wishlist-icon #xe-wishlist-link svg {';
@@ -311,7 +436,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 	
 			if ( 
 				$header_addonify_wishlist_count_bg_color['tablet']['initial'] ||
-				$haeder_addonify_wishlist_count_text_color['tablet']['initial']
+				$header_addonify_wishlist_count_text_color['tablet']['initial']
 			) {
 	
 				$css .= '#xe-woo-wishlist-icon #xe-wishlist-link .count {';
@@ -321,12 +446,53 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 						$css .= 'background-color: ' . esc_attr( $header_addonify_wishlist_count_bg_color['tablet']['initial'] ) . ';'; 
 					}
 	
-					if ( $haeder_addonify_wishlist_count_text_color['tablet']['initial'] ) {
+					if ( $header_addonify_wishlist_count_text_color['tablet']['initial'] ) {
 	
-						$css .= 'color: ' . esc_attr( $haeder_addonify_wishlist_count_text_color['tablet']['initial'] ) . ';'; 
+						$css .= 'color: ' . esc_attr( $header_addonify_wishlist_count_text_color['tablet']['initial'] ) . ';'; 
 					}
 				$css .= '}';
 			}
+
+
+            if ( xenial_is_transparent_header_active() ) {
+
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link svg {';
+        
+                    if ( $transparent_header_addonify_wishlist_icon_color['tablet']['initial'] ) {
+        
+                        $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['initial'] ) . ';'; 
+                        $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['initial'] ) . ';';	
+                    }
+                     
+                $css .= '}';
+        
+                if ( $transparent_header_addonify_wishlist_icon_color['tablet']['hover'] ) {
+        
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
+                        $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['hover'] ) . ';'; 
+                        $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['tablet']['hover'] ) . ';';
+                    $css .= '}';
+                }
+        
+                if ( 
+                    $transparent_header_addonify_wishlist_count_bg_color['tablet']['initial'] ||
+                    $transparent_header_addonify_wishlist_count_text_color['tablet']['initial']
+                ) {
+        
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link .count {';
+                        
+                        if ( $transparent_header_addonify_wishlist_count_bg_color['tablet']['initial'] ) {
+        
+                            $css .= 'background-color: ' . esc_attr( $transparent_header_addonify_wishlist_count_bg_color['tablet']['initial'] ) . ';'; 
+                        }
+        
+                        if ( $transparent_header_addonify_wishlist_count_text_color['tablet']['initial'] ) {
+        
+                            $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_count_text_color['tablet']['initial'] ) . ';'; 
+                        }
+                    $css .= '}';
+                }
+            }
 		$css .= '}';
 		
 		$css .= '@media screen and (max-width: 567px) {';
@@ -357,7 +523,7 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 	
 			if ( 
 				$header_addonify_wishlist_count_bg_color['mobile']['initial'] ||
-				$haeder_addonify_wishlist_count_text_color['mobile']['initial']
+				$header_addonify_wishlist_count_text_color['mobile']['initial']
 			) {
 	
 				$css .= '#xe-woo-wishlist-icon #xe-wishlist-link .count {';
@@ -367,12 +533,52 @@ if ( ! function_exists( 'xenial_dynamic_header_addonify_wishlist_css' ) ) {
 						$css .= 'background-color: ' . esc_attr( $header_addonify_wishlist_count_bg_color['mobile']['initial'] ) . ';'; 
 					}
 	
-					if ( $haeder_addonify_wishlist_count_text_color['mobile']['initial'] ) {
+					if ( $header_addonify_wishlist_count_text_color['mobile']['initial'] ) {
 	
-						$css .= 'color: ' . esc_attr( $haeder_addonify_wishlist_count_text_color['mobile']['initial'] ) . ';'; 
+						$css .= 'color: ' . esc_attr( $header_addonify_wishlist_count_text_color['mobile']['initial'] ) . ';'; 
 					}
 				$css .= '}';
 			}
+
+            if ( xenial_is_transparent_header_active() ) {
+
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link svg {';
+        
+                    if ( $transparent_header_addonify_wishlist_icon_color['mobile']['initial'] ) {
+        
+                        $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['initial'] ) . ';'; 
+                        $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['initial'] ) . ';';	
+                    }
+                     
+                $css .= '}';
+        
+                if ( $transparent_header_addonify_wishlist_icon_color['mobile']['hover'] ) {
+        
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link:hover svg {';
+                        $css .= 'fill: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['hover'] ) . ';'; 
+                        $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_icon_color['mobile']['hover'] ) . ';';
+                    $css .= '}';
+                }
+        
+                if ( 
+                    $transparent_header_addonify_wishlist_count_bg_color['mobile']['initial'] ||
+                    $transparent_header_addonify_wishlist_count_text_color['mobile']['initial']
+                ) {
+        
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-wishlist-icon #xe-wishlist-link .count {';
+                        
+                        if ( $transparent_header_addonify_wishlist_count_bg_color['mobile']['initial'] ) {
+        
+                            $css .= 'background-color: ' . esc_attr( $transparent_header_addonify_wishlist_count_bg_color['mobile']['initial'] ) . ';'; 
+                        }
+        
+                        if ( $transparent_header_addonify_wishlist_count_text_color['mobile']['initial'] ) {
+        
+                            $css .= 'color: ' . esc_attr( $transparent_header_addonify_wishlist_count_text_color['mobile']['initial'] ) . ';'; 
+                        }
+                    $css .= '}';
+                }
+            }
 		$css .= '}';
 
 		return $css;

@@ -57,6 +57,10 @@ if ( ! function_exists( 'xenial_get_woo_minicart_header_element_customize_defaul
                 'header_ele_woo_minicart_checkout_btn_border' => '{"expanded":false,"desktop":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"tablet":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}},"mobile":{"border_style":"none","border_widths":{"unit":"px","top":"","right":"","bottom":"","left":"","locked":true},"border_radius":{"unit":"px","top_left":"","top_right":"","bottom_left":"","bottom_right":"","locked":true},"border_colors":{"top":"","right":"","bottom":"","left":"","initial":"","hover":"","active":""}}}',
                 'header_ele_woo_minicart_checkout_btn_bg_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
                 'header_ele_woo_minicart_checkout_btn_label_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
+
+                'transparent_header_ele_woo_minicart_icon_color' => '{"desktop":{"initial":"","hover":""},"tablet":{"initial":"","hover":""},"mobile":{"initial":"","hover":""}}',
+                'transparent_header_ele_woo_minicart_icon_count_bg_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
+                'transparent_header_ele_woo_minicart_icon_count_color' => '{"desktop":{"initial":""},"tablet":{"initial":""},"mobile":{"initial":""}}',
             ) 
         );
 
@@ -525,6 +529,53 @@ if ( ! function_exists( 'xenial_header_ele_woo_minicart_customize_controls_init'
                 'default' => xenial_get_customize_default( 'header_ele_woo_minicart_checkout_btn_label_color' )
             )
         );
+
+
+
+
+        xenial_controls_wrapper_field(
+            'transparent_header_woo_minicart_wrapper',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Woo Minicart', 'xenial' )
+            ),
+            false
+        );
+
+
+        xenial_color_picker_field(
+            'transparent_header_ele_woo_minicart_icon_color',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Icon Color', 'xenial' ),
+                'is_responsive' => true,
+                'default' => xenial_get_customize_default( 'transparent_header_ele_woo_minicart_icon_color' )
+            )
+        );
+
+        xenial_color_picker_field(
+            'transparent_header_ele_woo_minicart_icon_count_bg_color',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Count Background Color', 'xenial' ),
+                'is_responsive' => true,
+                'default' => xenial_get_customize_default( 'transparent_header_ele_woo_minicart_icon_count_bg_color' )
+            )
+        );
+
+        xenial_color_picker_field(
+            'transparent_header_ele_woo_minicart_icon_count_color',
+            array(
+                'priority' => 10,
+                'section' => 'xenial_transparent_header',
+                'label' => esc_html__( 'Count Text Color', 'xenial' ),
+                'is_responsive' => true,
+                'default' => xenial_get_customize_default( 'transparent_header_ele_woo_minicart_icon_count_color' )
+            )
+        );
     }
     
     /**
@@ -535,6 +586,32 @@ if ( ! function_exists( 'xenial_header_ele_woo_minicart_customize_controls_init'
     add_action( 'customize_register', 'xenial_header_ele_woo_minicart_customize_controls_init' );
 }
 
+
+
+/**
+ * Add fields in the transparent header section style tab.
+ * 
+ * @since 1.0.0
+ * @return array 
+ */
+// if ( ! function_exists( 'xenial_transparent_header_style_tab_woo_minicart_fields' ) ) {
+
+    function xenial_transparent_header_style_tab_woo_minicart_fields( $style_tab_fields ) {
+
+        $woo_minicart_style_fields = array(
+            'transparent_header_woo_minicart_wrapper' => '',
+            'transparent_header_ele_woo_minicart_icon_color' => '',
+            'transparent_header_ele_woo_minicart_icon_count_bg_color' => '',
+            'transparent_header_ele_woo_minicart_icon_count_color' => '',
+        );
+
+        $style_tab_fields = array_merge( $style_tab_fields, $woo_minicart_style_fields );
+
+        return $style_tab_fields;
+    }
+    
+    add_filter( 'xenial_transparent_header_tab_2_controls', 'xenial_transparent_header_style_tab_woo_minicart_fields' );
+// }
 
 
 if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
@@ -623,6 +700,14 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
         $checkout_button_bg_colors = xenial_json_decode( xenial_get_option( 'header_ele_woo_minicart_checkout_btn_bg_color' ) );
 
         $checkout_button_label_colors = xenial_json_decode( xenial_get_option( 'header_ele_woo_minicart_checkout_btn_label_color' ) );
+
+
+
+        $transparent_cart_icon_color = xenial_json_decode( xenial_get_option( 'transparent_header_ele_woo_minicart_icon_color' ) );
+
+        $transparent_cart_count_bg_color = xenial_json_decode( xenial_get_option( 'transparent_header_ele_woo_minicart_icon_count_bg_color' ) );
+
+        $transparent_cart_count_text_color = xenial_json_decode( xenial_get_option( 'transparent_header_ele_woo_minicart_icon_count_color' ) );
 
         $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button svg {';
             if ( $cart_icon_size['desktop'] ) {
@@ -785,7 +870,37 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
             }
         $css .= '}';
 
+        if ( xenial_is_transparent_header_active() ) {
 
+            $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button svg {';
+    
+                if ( $transparent_cart_icon_color['desktop']['initial'] ) {
+                    $css .= 'fill: ' . $transparent_cart_icon_color['desktop']['initial'] . ';';
+                    $css .= 'color: ' . $transparent_cart_icon_color['desktop']['initial'] . ';';
+                }
+            $css .= '}';
+    
+            if ( $transparent_cart_icon_color['desktop']['hover'] ) {
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button:hover svg {';
+                    $css .= 'fill: ' . $transparent_cart_icon_color['desktop']['hover'] . ';';
+                    $css .= 'color: ' . $transparent_cart_icon_color['desktop']['hover'] . ';';
+                $css .= '}';
+            }
+    
+            if ( 
+                $transparent_cart_count_bg_color['desktop']['initial'] ||
+                $transparent_cart_count_text_color['desktop']['initial']
+            ) {
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                    if ( $transparent_cart_count_bg_color['desktop']['initial'] ) {
+                        $css .= 'background-color: ' . $transparent_cart_count_bg_color['desktop']['initial'] . ';';
+                    }
+                    if ( $transparent_cart_count_text_color['desktop']['initial'] ) {
+                        $css .= 'color: ' . $transparent_cart_count_text_color['desktop']['initial'] . ';';
+                    }
+                $css .= '}';
+            }
+        }
 
         $css .= '@media screen and (max-width: 768px) {';
             $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button svg {';
@@ -946,6 +1061,39 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                     $css .= 'border-color: ' . $checkout_button_borders['tablet']['border_colors']['hover'] . ';';
                 }
             $css .= '}';
+
+
+            if ( xenial_is_transparent_header_active() ) {
+
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button svg {';
+        
+                    if ( $transparent_cart_icon_color['tablet']['initial'] ) {
+                        $css .= 'fill: ' . $transparent_cart_icon_color['tablet']['initial'] . ';';
+                        $css .= 'color: ' . $transparent_cart_icon_color['tablet']['initial'] . ';';
+                    }
+                $css .= '}';
+        
+                if ( $transparent_cart_icon_color['tablet']['hover'] ) {
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button:hover svg {';
+                        $css .= 'fill: ' . $transparent_cart_icon_color['tablet']['hover'] . ';';
+                        $css .= 'color: ' . $transparent_cart_icon_color['tablet']['hover'] . ';';
+                    $css .= '}';
+                }
+        
+                if ( 
+                    $transparent_cart_count_bg_color['tablet']['initial'] ||
+                    $transparent_cart_count_text_color['tablet']['initial']
+                ) {
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                        if ( $transparent_cart_count_bg_color['tablet']['initial'] ) {
+                            $css .= 'background-color: ' . $transparent_cart_count_bg_color['tablet']['initial'] . ';';
+                        }
+                        if ( $transparent_cart_count_text_color['tablet']['initial'] ) {
+                            $css .= 'color: ' . $transparent_cart_count_text_color['tablet']['initial'] . ';';
+                        }
+                    $css .= '}';
+                }
+            }
         $css .= '}';
 
 
@@ -1107,6 +1255,39 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                     $css .= 'border-color: ' . $checkout_button_borders['mobile']['border_colors']['hover'] . ';';
                 }
             $css .= '}';
+
+
+            if ( xenial_is_transparent_header_active() ) {
+
+                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button svg {';
+        
+                    if ( $transparent_cart_icon_color['mobile']['initial'] ) {
+                        $css .= 'fill: ' . $transparent_cart_icon_color['mobile']['initial'] . ';';
+                        $css .= 'color: ' . $transparent_cart_icon_color['mobile']['initial'] . ';';
+                    }
+                $css .= '}';
+        
+                if ( $transparent_cart_icon_color['mobile']['hover'] ) {
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button:hover svg {';
+                        $css .= 'fill: ' . $transparent_cart_icon_color['mobile']['hover'] . ';';
+                        $css .= 'color: ' . $transparent_cart_icon_color['mobile']['hover'] . ';';
+                    $css .= '}';
+                }
+        
+                if ( 
+                    $transparent_cart_count_bg_color['mobile']['initial'] ||
+                    $transparent_cart_count_text_color['mobile']['initial']
+                ) {
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                        if ( $transparent_cart_count_bg_color['mobile']['initial'] ) {
+                            $css .= 'background-color: ' . $transparent_cart_count_bg_color['mobile']['initial'] . ';';
+                        }
+                        if ( $transparent_cart_count_text_color['mobile']['initial'] ) {
+                            $css .= 'color: ' . $transparent_cart_count_text_color['mobile']['initial'] . ';';
+                        }
+                    $css .= '}';
+                }
+            }
         $css .= '}';
 
         return $css;
