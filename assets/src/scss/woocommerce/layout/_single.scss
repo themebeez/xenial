@@ -182,7 +182,7 @@
     height: 100%;
     border: none;
     box-sizing: border-box;
-    transform: translateX(-50%)translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger::after {
@@ -193,7 +193,7 @@
 
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover {
 
-    background-color: var(--xe_seconary_color);
+    background-color: var(--xe_secondary_color);
 }
 
 .woocommerce div.product div.images .woocommerce-product-gallery__trigger > img {
@@ -249,7 +249,7 @@
 
 .woocommerce .woocommerce-product-rating > a:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
 }
 
 .woocommerce.single div.product .summary p.price, 
@@ -419,7 +419,7 @@
 
 .woocommerce div.product form.cart .reset_variations:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
     text-decoration: none;
 }
 

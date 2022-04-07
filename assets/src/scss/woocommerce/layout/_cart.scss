@@ -34,7 +34,7 @@
 
 .woocommerce-page .woocommerce-cart-form .product-name a:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
 }
 
 .woocommerce table.cart td.actions .input-text,
@@ -154,7 +154,7 @@
 
 .woocommerce-cart .cart-collaterals a.shipping-calculator-button:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
     background-color: transparent;
     text-decoration: none;
 }
@@ -205,5 +205,5 @@
 
     transform: scale(1);
     transform-origin: left center;
-    background-color: var(--xe_seconary_color);
+    background-color: var(--xe_secondary_color);
 }

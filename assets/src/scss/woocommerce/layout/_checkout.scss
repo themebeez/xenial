@@ -69,7 +69,7 @@
 .woocommerce-checkout .woocommerce-form-login-toggle .woocommerce-info > a.showlogin:hover,
 .woocommerce-checkout .woocommerce-form-coupon-toggle .woocommerce-info > a.showcoupon:hover {
 
-   color: var(--xe_seconary_color);
+   color: var(--xe_secondary_color);
    background-color: transparent;
    text-decoration: none;
 }
@@ -125,7 +125,7 @@
 
     transform: scale(1);
     transform-origin: left center;
-    background-color: var(--xe_seconary_color);
+    background-color: var(--xe_secondary_color);
 }
 
 .woocommerce form.login, 

@@ -69,8 +69,8 @@
 .single .hentry .xe-entry-categories ul li a:hover {
 
     text-decoration: none;
-    color: var(--xe_seconary_color);
-    border-color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
+    border-color: var(--xe_secondary_color);
 }
 
 .single .xe-post-tags .post-tags a:focus,
@@ -274,7 +274,7 @@
 .xe-post-navigation .nav-next > a:hover,
 .xe-post-navigation .nav-previous > a:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
 }
 
 .xe-post-navigation .nav-next h6,

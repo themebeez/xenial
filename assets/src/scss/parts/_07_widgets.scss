@@ -33,7 +33,7 @@
 
     color: var(--xe_button_hover_text_color);
     border-color: var(--xe_button_hover_border_color);
-    background-color: var(--xe_seconary_color);
+    background-color: var(--xe_secondary_color);
 }
 
 .wp-block-search .wp-block-search__button.has-icon {
@@ -134,8 +134,8 @@
 
 .widget_block .wp-block-tag-cloud a:hover {
 
-    color: var(--xe_seconary_color);
-    border-color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
+    border-color: var(--xe_secondary_color);
     text-decoration: none;
 }
 

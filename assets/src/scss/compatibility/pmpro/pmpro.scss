@@ -140,7 +140,7 @@ form.pmpro_form select,
 .pmpro_btn.pmpro_btn-cancel:hover, 
 .entry-content a.pmpro_btn.pmpro_btn-cancel:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
     text-decoration: none;
 }
 
@@ -163,7 +163,7 @@ form.pmpro_form select,
 
 [class*="pmpro_"] .pmpro_message a:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
     background-color: transparent;
     text-decoration: none;
 }
@@ -214,7 +214,7 @@ form.pmpro_form select,
 
     transform: scale(1);
     transform-origin: left center;
-    background-color: var(--xe_seconary_color);
+    background-color: var(--xe_secondary_color);
 }
 
 /* -------------------------------------------------------------------------- 
@@ -503,7 +503,7 @@ form.pmpro_form #pmpro_payment_information_fields .pmpro_checkout-fields .pmpro_
 
 .pmpro_invoice_wrap .pmpro_a-print:hover {
 
-    color: var(--xe_seconary_color);
+    color: var(--xe_secondary_color);
     text-decoration: none;
 }
 
