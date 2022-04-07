@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-04-06T12:13:17+00:00\n"
+"POT-Creation-Date: 2022-04-07T03:21:27+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: xenial\n"
@@ -172,7 +172,7 @@ msgstr ""
 #: customizer/functions/customizer-choices.php:633
 #: customizer/functions/customizer-choices.php:1015
 #: customizer/functions/customizer-choices.php:1143
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:233
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:237
 msgid "Right"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 #: customizer/functions/customizer-choices.php:387
 #: customizer/functions/customizer-choices.php:632
 #: customizer/functions/customizer-choices.php:1014
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:234
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:238
 msgid "Left"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 
 #: customizer/controls/box-border/class-xenial-customize-box-border-control.php:731
 #: customizer/controls/color-picker/class-xenial-customize-color-picker-control.php:228
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:211
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:215
 msgid "Hover"
 msgstr ""
 
@@ -266,8 +266,8 @@ msgstr ""
 #: customizer/fields/pages/page-single/header.php:156
 #: customizer/fields/typography.php:91
 #: customizer/fields/typography.php:241
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:389
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:509
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:393
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:513
 msgid "Font Weight"
 msgstr ""
 
@@ -338,8 +338,8 @@ msgstr ""
 #: customizer/fields/typography.php:490
 #: customizer/fields/typography.php:553
 #: customizer/fields/typography.php:615
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:364
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:484
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:368
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:488
 msgid "Font Size (px)"
 msgstr ""
 
@@ -349,8 +349,8 @@ msgstr ""
 #: customizer/fields/header/transparent-header.php:469
 #: inc/third-party/edd/edd-functions.php:155
 #: inc/third-party/edd/edd-functions.php:176
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:310
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:453
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:314
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:457
 msgid "Font Color"
 msgstr ""
 
@@ -372,7 +372,7 @@ msgstr ""
 #: customizer/fields/header/elements/search.php:575
 #: customizer/fields/header/offcanvas.php:223
 #: customizer/fields/header/offcanvas.php:523
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:274
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:278
 msgid "Padding (px)"
 msgstr ""
 
@@ -427,8 +427,8 @@ msgstr ""
 #: customizer/fields/pages/post-single/header.php:75
 #: customizer/functions/customizer-choices.php:1112
 #: customizer/functions/customizer-choices.php:1127
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:299
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:442
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:303
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:446
 msgid "Background Color"
 msgstr ""
 
@@ -941,8 +941,8 @@ msgstr ""
 #: customizer/fields/typography.php:502
 #: customizer/fields/typography.php:565
 #: customizer/fields/typography.php:627
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:376
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:496
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:380
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:500
 msgid "Line Height"
 msgstr ""
 
@@ -957,8 +957,8 @@ msgstr ""
 #: customizer/fields/header/elements/secondary-menu.php:205
 #: customizer/fields/pages/archive/header.php:178
 #: customizer/fields/pages/page-single/header.php:168
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:401
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:521
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:405
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:525
 msgid "Font Style"
 msgstr ""
 
@@ -973,8 +973,8 @@ msgstr ""
 #: customizer/fields/header/elements/secondary-menu.php:223
 #: customizer/fields/pages/archive/header.php:196
 #: customizer/fields/pages/page-single/header.php:186
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:418
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:538
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:422
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:542
 msgid "Text Transform"
 msgstr ""
 
@@ -991,9 +991,9 @@ msgstr ""
 #: customizer/fields/header/elements/logo.php:209
 #: customizer/fields/header/elements/logo.php:251
 #: customizer/fields/header/elements/secondary-menu.php:78
-#: inc/third-party/addonify.php:106
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:167
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:146
+#: inc/third-party/addonify.php:110
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:171
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:150
 msgid "Visibility"
 msgstr ""
 
@@ -1065,8 +1065,10 @@ msgstr ""
 #: customizer/fields/header/elements/social-links.php:325
 #: customizer/fields/header/transparent-header.php:415
 #: customizer/fields/header/transparent-header.php:516
-#: inc/third-party/addonify.php:150
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:219
+#: inc/third-party/addonify.php:154
+#: inc/third-party/addonify.php:217
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:223
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:552
 msgid "Icon Color"
 msgstr ""
 
@@ -1213,9 +1215,9 @@ msgstr ""
 #: customizer/fields/header/elements/search.php:422
 #: customizer/fields/header/elements/search.php:599
 #: customizer/fields/header/offcanvas.php:539
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:328
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:401
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:484
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:332
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:405
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:488
 msgid "Button Border"
 msgstr ""
 
@@ -1375,7 +1377,7 @@ msgid "Primary Menu Dropdown"
 msgstr ""
 
 #: customizer/fields/header/elements/primary-menu-dropdown.php:68
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:253
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:257
 msgid "Dropdown Reveal Effect"
 msgstr ""
 
@@ -3186,23 +3188,31 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/third-party/addonify.php:67
+#: inc/third-party/addonify.php:71
 msgid "Addonify Wishlist"
 msgstr ""
 
-#: inc/third-party/addonify.php:130
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:199
+#: inc/third-party/addonify.php:134
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:203
 msgid "Icon Size (px)"
 msgstr ""
 
-#: inc/third-party/addonify.php:169
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:238
+#: inc/third-party/addonify.php:173
+#: inc/third-party/addonify.php:228
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:242
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:563
 msgid "Count Background Color"
 msgstr ""
 
-#: inc/third-party/addonify.php:188
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:257
+#: inc/third-party/addonify.php:192
+#: inc/third-party/addonify.php:239
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:261
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:574
 msgid "Count Text Color"
+msgstr ""
+
+#: inc/third-party/addonify.php:206
+msgid "Wishlist Icon"
 msgstr ""
 
 #: inc/third-party/breadcrumbs.php:266
@@ -3317,108 +3327,116 @@ msgstr ""
 msgid "All Products"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:84
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:88
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:558
 #: inc/third-party/woocommerce/customizer.php:455
 msgid "Woo Dropdown"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:148
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:152
 msgid "Woo Dropdown Menu"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:191
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:195
 msgid "Dropdown Toggle Button Label"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:209
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:213
 msgid "Dropdown Toggle On"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:212
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:216
 msgid "Click"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:231
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:235
 msgid "Dropdown Toggle Direction"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:264
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:268
 msgid "Dropdown Toggle Button"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:432
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:436
 msgid "Dropdown"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:464
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:468
 msgid "Dropdown Items Divider Color"
+msgstr ""
+
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:568
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:433
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:516
+msgid "Button Background Color"
+msgstr ""
+
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:579
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:444
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:527
+msgid "Button Label Color"
+msgstr ""
+
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:590
+msgid "Button Border Color"
 msgstr ""
 
 #: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:11
 msgid "Shopping Cart"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:81
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:85
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:541
 #: inc/third-party/woocommerce/customizer.php:450
 msgid "Woo Minicart"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:170
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:174
 msgid "Minicart Title"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:189
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:193
 msgid "Minicart Icon"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:268
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:272
 msgid "Minicart Content"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:278
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:282
 msgid "Container Background Color"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:289
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:293
 msgid "Minicart Content Color"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:308
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:312
 msgid "Minicart Products Divider Color"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:327
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:331
 msgid "Minicart Title Color"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:346
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:350
 msgid "Subtotal Text Color"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:357
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:361
 msgid "Subtotal Amount Color"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:376
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:380
 msgid "View Cart Button"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:385
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:468
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:389
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:472
 msgid "Button Padding (px)"
 msgstr ""
 
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:429
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:512
-msgid "Button Background Color"
-msgstr ""
-
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:440
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:523
-msgid "Button Label Color"
-msgstr ""
-
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:459
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-minicart.php:463
 msgid "Checkout Button"
 msgstr ""
 
