@@ -45,20 +45,22 @@ function xeWooCommerceVerticalNavigation() {
 
 function xeWooCommerceMiniCart() {
 
-    var xeWooMiniCartTriggerEle = document.getElementById("xe-woo-minicart-button");
+    var xeWooMiniCartTriggerEle = document.querySelectorAll(".xe-woo-minicart-button");
     var xeWooMiniCartCanvasEle = document.getElementById("xe-woo-minicart-canvas");
     var xeWooCommerceMiniCartCloseEle = document.getElementById("xe-woo-minicart-close");
     var xeWooCommerceMiniCartOverlay = document.getElementById("xe-woo-minicart-overlay");
 
-    if ((xeWooMiniCartTriggerEle !== null) && (xeWooMiniCartTriggerEle !== undefined)) {
+    if (xeWooMiniCartTriggerEle.length > 0) {
 
-        xeWooMiniCartTriggerEle.addEventListener("click", function () {
+        xeWooMiniCartTriggerEle.forEach(function (element) {
+            element.addEventListener("click", function () {
 
-            body.classList.add("xe-woo-minicart-is-open");
-            xeWooMiniCartCanvasEle.classList.add("open");
-            xeWooMiniCartCanvasEle.classList.remove("close");
-            xeWooCommerceMiniCartOverlay.classList.add("visible");
-            xeWooCommerceMiniCartOverlay.classList.remove("hidden");
+                body.classList.add("xe-woo-minicart-is-open");
+                xeWooMiniCartCanvasEle.classList.add("open");
+                xeWooMiniCartCanvasEle.classList.remove("close");
+                xeWooCommerceMiniCartOverlay.classList.add("visible");
+                xeWooCommerceMiniCartOverlay.classList.remove("hidden");
+            });
         });
 
         xeWooCommerceMiniCartCloseEle.addEventListener("click", function () {
