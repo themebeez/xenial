@@ -245,9 +245,9 @@ if ( ! function_exists( 'xenial_refresh_cart_count' ) ) {
 	function xenial_refresh_cart_count( $fragments ) {
 		ob_start();
 		?>
-		<span id="xenial-cart-items-count" class="count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+		<span class="xenial-cart-items-count count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
 		<?php
-		$fragments['#xenial-cart-items-count'] = ob_get_clean();
+		$fragments['.xenial-cart-items-count'] = ob_get_clean();
 		return $fragments;
 	}
 }

@@ -709,7 +709,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
 
         $transparent_cart_count_text_color = xenial_json_decode( xenial_get_option( 'transparent_header_ele_woo_minicart_icon_count_color' ) );
 
-        $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button svg {';
+        $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button svg {';
             if ( $cart_icon_size['desktop'] ) {
                 $css .= 'width: ' . $cart_icon_size['desktop'] . 'px;';
                 $css .= 'height: ' . $cart_icon_size['desktop'] . 'px;';
@@ -722,7 +722,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
         $css .= '}';
 
         if ( $cart_icon_color['desktop']['hover'] ) {
-            $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button:hover svg {';
+            $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button:hover svg {';
                 $css .= 'fill: ' . $cart_icon_color['desktop']['hover'] . ';';
                 $css .= 'color: ' . $cart_icon_color['desktop']['hover'] . ';';
             $css .= '}';
@@ -732,7 +732,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
             $cart_count_bg_color['desktop']['initial'] ||
             $cart_count_text_color['desktop']['initial']
         ) {
-            $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+            $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button .count {';
                 if ( $cart_count_bg_color['desktop']['initial'] ) {
                     $css .= 'background-color: ' . $cart_count_bg_color['desktop']['initial'] . ';';
                 }
@@ -872,7 +872,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
 
         if ( xenial_is_transparent_header_active() ) {
 
-            $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button {';
+            $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button {';
     
                 if ( $transparent_cart_icon_color['desktop']['initial'] ) {
                     $css .= 'fill: ' . $transparent_cart_icon_color['desktop']['initial'] . ';';
@@ -881,7 +881,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
             $css .= '}';
     
             if ( $transparent_cart_icon_color['desktop']['hover'] ) {
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button:hover {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button:hover {';
                     $css .= 'fill: ' . $transparent_cart_icon_color['desktop']['hover'] . ';';
                     $css .= 'color: ' . $transparent_cart_icon_color['desktop']['hover'] . ';';
                 $css .= '}';
@@ -891,7 +891,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                 $transparent_cart_count_bg_color['desktop']['initial'] ||
                 $transparent_cart_count_text_color['desktop']['initial']
             ) {
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button .count {';
                     if ( $transparent_cart_count_bg_color['desktop']['initial'] ) {
                         $css .= 'background-color: ' . $transparent_cart_count_bg_color['desktop']['initial'] . ';';
                     }
@@ -903,7 +903,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
         }
 
         $css .= '@media screen and (max-width: 768px) {';
-            $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button svg {';
+            $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button svg {';
                 if ( $cart_icon_size['tablet'] ) {
                     $css .= 'width: ' . $cart_icon_size['tablet'] . 'px;';
                     $css .= 'height: ' . $cart_icon_size['tablet'] . 'px;';
@@ -916,7 +916,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
             $css .= '}';
     
             if ( $cart_icon_color['tablet']['hover'] ) {
-                $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button:hover svg {';
+                $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button:hover svg {';
                     $css .= 'fill: ' . $cart_icon_color['tablet']['hover'] . ';';
                     $css .= 'color: ' . $cart_icon_color['tablet']['hover'] . ';';
                 $css .= '}';
@@ -926,7 +926,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                 $cart_count_bg_color['tablet']['initial'] ||
                 $cart_count_text_color['tablet']['initial']
             ) {
-                $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button .count {';
                     if ( $cart_count_bg_color['tablet']['initial'] ) {
                         $css .= 'background-color: ' . $cart_count_bg_color['tablet']['initial'] . ';';
                     }
@@ -1065,7 +1065,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
 
             if ( xenial_is_transparent_header_active() ) {
 
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button {';
         
                     if ( $transparent_cart_icon_color['tablet']['initial'] ) {
                         $css .= 'fill: ' . $transparent_cart_icon_color['tablet']['initial'] . ';';
@@ -1074,7 +1074,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                 $css .= '}';
         
                 if ( $transparent_cart_icon_color['tablet']['hover'] ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button:hover {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button:hover {';
                         $css .= 'fill: ' . $transparent_cart_icon_color['tablet']['hover'] . ';';
                         $css .= 'color: ' . $transparent_cart_icon_color['tablet']['hover'] . ';';
                     $css .= '}';
@@ -1084,7 +1084,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                     $transparent_cart_count_bg_color['tablet']['initial'] ||
                     $transparent_cart_count_text_color['tablet']['initial']
                 ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button .count {';
                         if ( $transparent_cart_count_bg_color['tablet']['initial'] ) {
                             $css .= 'background-color: ' . $transparent_cart_count_bg_color['tablet']['initial'] . ';';
                         }
@@ -1098,7 +1098,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
 
 
         $css .= '@media screen and (max-width: 576px) {';
-            $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button svg {';
+            $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button svg {';
                 if ( $cart_icon_size['mobile'] ) {
                     $css .= 'width: ' . $cart_icon_size['mobile'] . 'px;';
                     $css .= 'height: ' . $cart_icon_size['mobile'] . 'px;';
@@ -1111,7 +1111,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
             $css .= '}';
     
             if ( $cart_icon_color['mobile']['hover'] ) {
-                $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button:hover svg {';
+                $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button:hover svg {';
                     $css .= 'fill: ' . $cart_icon_color['mobile']['hover'] . ';';
                     $css .= 'color: ' . $cart_icon_color['mobile']['hover'] . ';';
                 $css .= '}';
@@ -1121,7 +1121,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                 $cart_count_bg_color['mobile']['initial'] ||
                 $cart_count_text_color['mobile']['initial']
             ) {
-                $css .= '#xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                $css .= '.xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button .count {';
                     if ( $cart_count_bg_color['mobile']['initial'] ) {
                         $css .= 'background-color: ' . $cart_count_bg_color['mobile']['initial'] . ';';
                     }
@@ -1259,7 +1259,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
 
             if ( xenial_is_transparent_header_active() ) {
 
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button {';
         
                     if ( $transparent_cart_icon_color['mobile']['initial'] ) {
                         $css .= 'fill: ' . $transparent_cart_icon_color['mobile']['initial'] . ';';
@@ -1268,7 +1268,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                 $css .= '}';
         
                 if ( $transparent_cart_icon_color['mobile']['hover'] ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button:hover {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button:hover {';
                         $css .= 'fill: ' . $transparent_cart_icon_color['mobile']['hover'] . ';';
                         $css .= 'color: ' . $transparent_cart_icon_color['mobile']['hover'] . ';';
                     $css .= '}';
@@ -1278,7 +1278,7 @@ if ( ! function_exists( 'xenial_header_woo_minicart_dynamic_css' ) ) {
                     $transparent_cart_count_bg_color['mobile']['initial'] ||
                     $transparent_cart_count_text_color['mobile']['initial']
                 ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-minicart-icon #xe-woo-minicart-button .count {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-header-element .xe-woo-minicart-icon .xe-woo-minicart-button .count {';
                         if ( $transparent_cart_count_bg_color['mobile']['initial'] ) {
                             $css .= 'background-color: ' . $transparent_cart_count_bg_color['mobile']['initial'] . ';';
                         }

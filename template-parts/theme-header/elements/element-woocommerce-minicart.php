@@ -12,12 +12,12 @@ if ( $woo_minicart_device_visibilities ) {
 } 
 ?>
 <div class="<?php echo esc_attr( implode( ' ', $woo_minicart_icon_classes ) ); ?>">
-    <div id="xe-woo-minicart-icon">
-        <button class="xe-button xe-false-button" id="xe-woo-minicart-button">
+    <div class="xe-woo-minicart-icon">
+        <button class="xe-button xe-false-button xe-woo-minicart-button">
                 
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
 
-            <span id="xenial-cart-items-count" class="count">
+            <span class="count xenial-cart-items-count">
                 <?php
                     global $woocommerce;
                     echo $woocommerce->cart->cart_contents_count;
@@ -54,13 +54,15 @@ if( ! is_cart() && ! is_checkout() ) {
                     </svg>
                 </button>
             </header>
-            <div id="xe-woo-minicart-entry">
-                <?php 
-                $instance = array( 'title' => '' );
+            
+            <?php 
+            $instance = array( 
+                'title' => '',
+            );
 
-                the_widget( 'WC_Widget_Cart', $instance ); 
-                ?>
-            </div>
+            the_widget( 'WC_Widget_Cart', $instance ); 
+            ?>
+            
         </div><!-- // xe-woo-minicart-inner -->
     </aside>
     <div id="xe-woo-minicart-overlay" class="hidden"></div>
