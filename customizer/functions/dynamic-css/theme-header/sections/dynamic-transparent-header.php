@@ -173,7 +173,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			$header_off_canvas_toggle_button_background_colors['initial'] ||
 			$header_off_canvas_toggle_button_border_colors['initial']
 		) {
-			$css .= '.xe-transparent-header-enabled #xe-mobile-canvas-trigger-button {';
+			$css .= '.xe-transparent-header-enabled .xe-mobile-canvas-trigger-button {';
 				if ( $header_off_canvas_toggle_button_label_colors['initial'] ) {
 					$css .= 'color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['initial'] ) . ';';
 				}
@@ -185,7 +185,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 				}
 			$css .= '}';
 
-			$css .= '.xe-transparent-header-enabled #xe-mobile-canvas-trigger-button .menu-bar {';
+			$css .= '.xe-transparent-header-enabled .xe-mobile-canvas-trigger-button .menu-bar {';
 				if ( $header_off_canvas_toggle_button_label_colors['initial'] ) {
 					$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['initial'] ) . ';';
 				}
@@ -197,7 +197,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			$header_off_canvas_toggle_button_background_colors['hover'] ||
 			$header_off_canvas_toggle_button_border_colors['hover']
 		) {
-			$css .= '.xe-transparent-header-enabled #xe-mobile-canvas-trigger-button:hover {';
+			$css .= '.xe-transparent-header-enabled .xe-mobile-canvas-trigger-button:hover {';
 				if ( $header_off_canvas_toggle_button_label_colors['hover'] ) {
 					$css .= 'color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['hover'] ) . ';';
 				}
@@ -209,7 +209,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 				}
 			$css .= '}';
 
-			$css .= '.xe-transparent-header-enabled #xe-mobile-canvas-trigger-button:hover .menu-bar {';
+			$css .= '.xe-transparent-header-enabled .xe-mobile-canvas-trigger-button:hover .menu-bar {';
 				if ( $header_off_canvas_toggle_button_label_colors['hover'] ) {
 					$css .= 'background-color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['hover'] ) . ';';
 				}
@@ -222,7 +222,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			$header_search_modal_toggle_button_background_colors['desktop']['initial'] ||
 			$header_search_modal_toggle_button_border_colors['desktop']['initial']
 		) {
-			$css .= '.xe-transparent-header-enabled #xe-header-element-search-button {';
+			$css .= '.xe-transparent-header-enabled .xe-header-element-search-button {';
 				if ( $header_search_modal_toggle_button_label_colors['desktop']['initial'] ) {
 					$css .= 'color: ' . esc_attr( $header_search_modal_toggle_button_label_colors['desktop']['initial'] ) . ';';
 				}
@@ -236,7 +236,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 		}
 
 		if ( $header_search_modal_toggle_button_label_colors['desktop']['initial'] ) {
-			$css .= '.xe-transparent-header-enabled #xe-header-element-search-button svg {';
+			$css .= '.xe-transparent-header-enabled .xe-header-element-search-button svg {';
 				$css .= 'fill: ' . esc_attr( $header_search_modal_toggle_button_label_colors['desktop']['initial'] ) . ';';
 			$css .= '}';
 		}
@@ -246,7 +246,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			$header_search_modal_toggle_button_background_colors['desktop']['hover'] ||
 			$header_search_modal_toggle_button_border_colors['desktop']['hover']
 		) {
-			$css .= '.xe-transparent-header-enabled #xe-header-element-search-button:hover {';
+			$css .= '.xe-transparent-header-enabled .xe-header-element-search-button:hover {';
 				if ( $header_search_modal_toggle_button_label_colors['desktop']['hover'] ) {
 					$css .= 'color: ' . esc_attr( $header_search_modal_toggle_button_label_colors['desktop']['hover'] ) . ';';
 				}
@@ -260,7 +260,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 		}
 
 		if ( $header_search_modal_toggle_button_label_colors['desktop']['hover'] ) {
-			$css .= '.xe-transparent-header-enabled #xe-header-element-search-button:hover svg {';
+			$css .= '.xe-transparent-header-enabled .xe-header-element-search-button:hover svg {';
 				$css .= 'fill: ' . esc_attr( $header_search_modal_toggle_button_label_colors['desktop']['hover'] ) . ';';
 			$css .= '}';
 		}
@@ -464,7 +464,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 				$header_search_modal_toggle_button_background_colors['tablet']['initial'] ||
 				$header_search_modal_toggle_button_border_colors['tablet']['initial']
 			) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button {';
 					if ( $header_search_modal_toggle_button_label_colors['tablet']['initial'] ) {
 						$css .= 'color: ' . esc_attr( $header_search_modal_toggle_button_label_colors['tablet']['initial'] ) . ';';
 					}
@@ -478,7 +478,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			}
 
 			if ( $header_search_modal_toggle_button_label_colors['tablet']['initial'] ) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button svg {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button svg {';
 					$css .= 'fill: ' . esc_attr( $header_search_modal_toggle_button_label_colors['tablet']['initial'] ) . ';';
 				$css .= '}';
 			}
@@ -488,7 +488,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 				$header_search_modal_toggle_button_background_colors['tablet']['hover'] ||
 				$header_search_modal_toggle_button_border_colors['tablet']['hover']
 			) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button:hover {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button:hover {';
 					if ( $header_search_modal_toggle_button_label_colors['tablet']['hover'] ) {
 						$css .= 'color: ' . esc_attr( $header_search_modal_toggle_button_label_colors['tablet']['hover'] ) . ';';
 					}
@@ -502,7 +502,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			}
 
 			if ( $header_search_modal_toggle_button_label_colors['tablet']['hover'] ) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button:hover svg {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button:hover svg {';
 					$css .= 'fill: ' . esc_attr( $header_search_modal_toggle_button_label_colors['tablet']['hover'] ) . ';';
 				$css .= '}';
 			}
@@ -653,7 +653,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 				$header_search_modal_toggle_button_background_colors['mobile']['initial'] ||
 				$header_search_modal_toggle_button_border_colors['mobile']['initial']
 			) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button {';
 					if ( $header_search_modal_toggle_button_label_colors['mobile']['initial'] ) {
 						$css .= 'color: ' . esc_attr( $header_search_modal_toggle_button_label_colors['mobile']['initial'] ) . ';';
 					}
@@ -667,7 +667,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			}
 
 			if ( $header_search_modal_toggle_button_label_colors['mobile']['initial'] ) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button svg {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button svg {';
 					$css .= 'fill: ' . esc_attr( $header_search_modal_toggle_button_label_colors['mobile']['initial'] ) . ';';
 				$css .= '}';
 			}
@@ -677,7 +677,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 				$header_search_modal_toggle_button_background_colors['mobile']['hover'] ||
 				$header_search_modal_toggle_button_border_colors['mobile']['hover']
 			) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button:hover {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button:hover {';
 					if ( $header_search_modal_toggle_button_label_colors['mobile']['hover'] ) {
 						$css .= 'color: ' . esc_attr( $header_search_modal_toggle_button_label_colors['mobile']['hover'] ) . ';';
 					}
@@ -691,7 +691,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 			}
 
 			if ( $header_search_modal_toggle_button_label_colors['mobile']['hover'] ) {
-				$css .= '.xe-transparent-header-enabled #xe-header-element-search-button:hover svg {';
+				$css .= '.xe-transparent-header-enabled .xe-header-element-search-button:hover svg {';
 					$css .= 'fill: ' . esc_attr( $header_search_modal_toggle_button_label_colors['mobile']['hover'] ) . ';';
 				$css .= '}';
 			}

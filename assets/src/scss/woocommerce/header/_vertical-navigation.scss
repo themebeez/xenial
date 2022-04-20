@@ -3,11 +3,11 @@
 	WooCommerce vertical navigation
   -------------------------------------------------------------------------- */
 
-#xe-woo-vertical-navigation {
+.xe-woo-vertical-navigation {
 
     position: relative;
 
-    #xe-woo-vertical-menu-toggle {
+    .xe-woo-vertical-menu-toggle {
 
         position: relative;
         display: inline-flex;
@@ -209,7 +209,7 @@
 	Menu open behaviour
   -------------------------------------------------------------------------- */
 
-#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="hover"] {
+.xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="hover"] {
 
     &:hover {
 
@@ -223,7 +223,7 @@
     }
 }
 
-#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="click"].visible {
+.xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="click"].visible {
 
     >ul,
     .xe-woo-vertical-menu {
@@ -238,8 +238,8 @@
 	Animation
   -------------------------------------------------------------------------- */
 
-#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="hover"]:hover,
-#xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="click"].visible {
+.xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="hover"]:hover,
+.xe-woo-vertical-navigation[xe-woo-navigation-open-behaviour="click"].visible {
 
     [xe-woo-navigation-dropdown-animation="FadeInUp"] {
 
@@ -262,7 +262,7 @@
 	Submenu dropdown direction
   -------------------------------------------------------------------------- */
 
-#xe-woo-vertical-navigation {
+.xe-woo-vertical-navigation {
 
     [xe-woo-navigation-dropdown-direction="left"] {
 
@@ -291,6 +291,3 @@
         }
     }
 }
-
-
-

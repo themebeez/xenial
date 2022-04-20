@@ -12,7 +12,7 @@
     Canavas Trigger Button
   -------------------------------------------------------------------------- */
 
-#xe-mobile-canvas-trigger-button {
+.xe-mobile-canvas-trigger-button {
 
     @include flex();
     flex-direction: column;
@@ -29,7 +29,7 @@
     border-radius: 0;
 }
 
-#xe-mobile-canvas-trigger-button .menu-bar {
+.xe-mobile-canvas-trigger-button .menu-bar {
 
     width: 20px;
     height: 2px;

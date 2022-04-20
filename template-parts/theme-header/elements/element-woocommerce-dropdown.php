@@ -13,12 +13,12 @@ if ( $woo_dropdown_device_visibilities ) {
 $woo_dropdown_toggle_on = xenial_get_option( 'header_ele_woo_dropdown_toggle_on' );
 ?>
 <div class="<?php echo esc_attr( implode( ' ', $woo_dropdown_element_classes ) ); ?>">
-    <nav id="xe-woo-vertical-navigation" xe-woo-navigation-open-behaviour="<?php echo esc_attr( $woo_dropdown_toggle_on ); ?>">
+    <nav class="xe-woo-vertical-navigation" xe-woo-navigation-open-behaviour="<?php echo esc_attr( $woo_dropdown_toggle_on ); ?>">
         <?php 
         $woo_dropdown_toggle_btn_label = xenial_get_option( 'header_ele_woo_dropdown_btn_label' );
         if ( $woo_dropdown_toggle_btn_label ) {
             ?>
-            <button id="xe-woo-vertical-menu-toggle">
+            <button class="xe-woo-vertical-menu-toggle">
                 <span class="label"><?php echo esc_html( $woo_dropdown_toggle_btn_label ); ?></span>
                 <span class="icon">
                     <svg x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">

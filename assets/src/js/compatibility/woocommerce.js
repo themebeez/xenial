@@ -1,8 +1,5 @@
 'use strict';
 
-const xebody = document.querySelector('body');
-
-
 /**
  * 
  * WooCommerce vertical navigation.
@@ -11,8 +8,9 @@ const xebody = document.querySelector('body');
 
 function xeWooCommerceVerticalNavigation() {
 
-    var xeWooNavContainerEle = document.getElementById("xe-woo-vertical-navigation");
-    var xeWooDesktopToggleEle = document.getElementById("xe-woo-vertical-menu-toggle");
+    var xeWooNavContainerEle = document.querySelectorAll(".xe-woo-vertical-navigation");
+    var xeWooDesktopToggleEle = document.querySelectorAll(".xe-woo-vertical-menu-toggle");
+
     var xeWooNavMobileOptions = {
 
         plus: "ti-plus",
@@ -21,18 +19,27 @@ function xeWooCommerceVerticalNavigation() {
         submenutoggle: "<button class='xe-button xe-false-button xe-toggle-woovertical-submenu'><i class='ti - plus'></button>",
     };
 
-    if ((xeWooNavContainerEle !== null) && (xeWooNavContainerEle !== undefined)) {
+    if (xeWooNavContainerEle) {
 
-        var xeWooNavContainerEleAttribute = xeWooNavContainerEle.getAttribute("xe-woo-navigation-open-behaviour");
-        var xeWooNavMenuEle = xeWooNavContainerEle.getElementsByTagName("ul")[0];
+        xeWooNavContainerEle.forEach(function (containerEle) {
 
-        if ((xeWooNavContainerEleAttribute == "click")) {
+            var xeWooNavContainerEleAttribute = containerEle.getAttribute("xe-woo-navigation-open-behaviour");
+            var xeWooNavMenuEle = containerEle.getElementsByTagName("ul")[0];
 
-            xeWooDesktopToggleEle.addEventListener("click", function () {
+            if ((xeWooNavContainerEleAttribute == "click")) {
 
-                xeWooNavContainerEle.classList.toggle("visible");
-            });
-        }
+                if (xeWooDesktopToggleEle) {
+
+                    xeWooDesktopToggleEle.forEach(function (toggleEle) {
+
+                        toggleEle.addEventListener("click", function () {
+
+                            containerEle.classList.toggle("visible");
+                        });
+                    });
+                }
+            }
+        });
     }
 }
 
@@ -101,7 +108,7 @@ function xeMiniCartScrollBar() {
 
     var xeMiniCartScrollBarContainer = document.getElementById('xe-woo-minicart-scroll');
 
-    if ((xeMiniCartScrollBarContainer !== null) && (xeMiniCartScrollBarContainer !== undefined)) {
+    if (xeMiniCartScrollBarContainer) {
 
         new PerfectScrollbar(xeMiniCartScrollBarContainer, {
 

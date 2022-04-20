@@ -716,7 +716,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
         $transparent_dropdown_toggle_btn_border_colors = xenial_json_decode( xenial_get_option( 'transparent_header_ele_woo_dropdown_btn_border_color' ) );
 
         
-        $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle {';
+        $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle {';
             if ( $dropdown_toggle_btn_bg_colors['desktop']['initial'] ) {
                 $css .= 'background-color: ' . esc_attr( $dropdown_toggle_btn_bg_colors['desktop']['initial'] ) . ';';
             }
@@ -728,7 +728,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
             $css .= xenial_dynamic_border_css( $dropdown_toggle_btn_borders['desktop'] );
         $css .= '}';
 
-        $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover {';
+        $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover {';
             if ( $dropdown_toggle_btn_bg_colors['desktop']['hover'] ) {
                 $css .= 'background-color: ' . esc_attr( $dropdown_toggle_btn_bg_colors['desktop']['hover'] ) . ';';
             }
@@ -739,32 +739,32 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
         $css .= '}';
         
         if ( $dropdown_toggle_btn_label_colors['desktop']['initial'] ) {
-            $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle .icon svg {';
+            $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle .icon svg {';
                 $css .= 'fill: ' . esc_attr( $dropdown_toggle_btn_label_colors['desktop']['initial'] ) . ';';
                 $css .= 'color: ' . esc_attr( $dropdown_toggle_btn_label_colors['desktop']['initial'] ) . ';';
             $css .= '}';
         }
 
         if ( $dropdown_toggle_btn_label_colors['desktop']['hover'] ) {
-            $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover .icon svg {';
+            $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover .icon svg {';
                 $css .= 'fill: ' . esc_attr( $dropdown_toggle_btn_label_colors['desktop']['hover'] ) . ';';
                 $css .= 'color: ' . esc_attr( $dropdown_toggle_btn_label_colors['desktop']['hover'] ) . ';';
             $css .= '}';
         }
 
         if ( $dropdown_bg_colors['desktop']['initial'] ) {
-            $css .= '#xe-woo-vertical-navigation ul {';
+            $css .= '.xe-woo-vertical-navigation ul {';
                 $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['desktop']['initial'] ) . ';';
             $css .= '}';
-            $css .= '#xe-woo-vertical-navigation>ul:after {';
+            $css .= '.xe-woo-vertical-navigation>ul:after {';
                 $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['desktop']['initial'] ) . ';';
             $css .= '}';
-            $css .= '#xe-woo-vertical-navigation .children, #xe-woo-vertical-navigation .sub-menu {';
+            $css .= '.xe-woo-vertical-navigation .children, .xe-woo-vertical-navigation .sub-menu {';
                 $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['desktop']['initial'] ) . ';';
             $css .= '}';
         }
 
-        $css .= '#xe-woo-vertical-navigation ul li a {';
+        $css .= '.xe-woo-vertical-navigation ul li a {';
             if ( $dropdown_items_font_colors['desktop']['initial'] ) {
                 $css .= 'color: ' . esc_attr( $dropdown_items_font_colors['desktop']['initial'] ) . ';';
                 $css .= 'fill: ' . esc_attr( $dropdown_items_font_colors['desktop']['initial'] ) . ';';
@@ -776,14 +776,14 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
         $css .= '}';
 
         if ( $dropdown_items_font_colors['desktop']['hover'] ) {
-            $css .= '#xe-woo-vertical-navigation ul li a:hover {';
+            $css .= '.xe-woo-vertical-navigation ul li a:hover {';
                 $css .= 'color: ' . esc_attr( $dropdown_items_font_colors['desktop']['hover'] ) . ';';
                 $css .= 'fill: ' . esc_attr( $dropdown_items_font_colors['desktop']['hover'] ) . ';';
             $css .= '}';
         }
 
         if ( xenial_is_transparent_header_active() ) {
-            $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle {';
+            $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle {';
                 if ( $transparent_dropdown_toggle_btn_bg_colors['desktop']['initial'] ) {
                     $css .= 'background-color: ' . esc_attr( $transparent_dropdown_toggle_btn_bg_colors['desktop']['initial'] ) . ';';
                 }
@@ -796,20 +796,20 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
             $css .= '}';
             
             if ( $transparent_dropdown_toggle_btn_label_colors['desktop']['initial'] ) {
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle .icon svg {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle .icon svg {';
                     $css .= 'fill: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['desktop']['initial'] ) . ';';
                     $css .= 'color: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['desktop']['initial'] ) . ';';
                 $css .= '}';
             }
 
             if ( $transparent_dropdown_toggle_btn_label_colors['desktop']['hover'] ) {
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover .icon svg {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover .icon svg {';
                     $css .= 'fill: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['desktop']['hover'] ) . ';';
                     $css .= 'color: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['desktop']['hover'] ) . ';';
                 $css .= '}';
             }
 
-            $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover {';
+            $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover {';
                 if ( $transparent_dropdown_toggle_btn_bg_colors['desktop']['hover'] ) {
                     $css .= 'background-color: ' . esc_attr( $transparent_dropdown_toggle_btn_bg_colors['desktop']['hover'] ) . ';';
                 }
@@ -824,7 +824,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
 
 
         $css .= '@media screen and (max-width: 768px) {';
-            $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle {';
+            $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle {';
                 if ( $dropdown_toggle_btn_bg_colors['tablet']['initial'] ) {
                     $css .= 'background-color: ' . esc_attr( $dropdown_toggle_btn_bg_colors['tablet']['initial'] ) . ';';
                 }
@@ -836,7 +836,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
                 $css .= xenial_dynamic_border_css( $dropdown_toggle_btn_borders['tablet'] );
             $css .= '}';
     
-            $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover {';
+            $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover {';
                 if ( $dropdown_toggle_btn_bg_colors['tablet']['hover'] ) {
                     $css .= 'background-color: ' . esc_attr( $dropdown_toggle_btn_bg_colors['tablet']['hover'] ) . ';';
                 }
@@ -847,32 +847,32 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
             $css .= '}';
             
             if ( $dropdown_toggle_btn_label_colors['tablet']['initial'] ) {
-                $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle .icon svg {';
+                $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle .icon svg {';
                     $css .= 'fill: ' . esc_attr( $dropdown_toggle_btn_label_colors['tablet']['initial'] ) . ';';
                     $css .= 'color: ' . esc_attr( $dropdown_toggle_btn_label_colors['tablet']['initial'] ) . ';';
                 $css .= '}';
             }
     
             if ( $dropdown_toggle_btn_label_colors['tablet']['hover'] ) {
-                $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover .icon svg {';
+                $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover .icon svg {';
                     $css .= 'fill: ' . esc_attr( $dropdown_toggle_btn_label_colors['tablet']['hover'] ) . ';';
                     $css .= 'color: ' . esc_attr( $dropdown_toggle_btn_label_colors['tablet']['hover'] ) . ';';
                 $css .= '}';
             }
     
             if ( $dropdown_bg_colors['tablet']['initial'] ) {
-                $css .= '#xe-woo-vertical-navigation ul {';
+                $css .= '.xe-woo-vertical-navigation ul {';
                     $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['tablet']['initial'] ) . ';';
                 $css .= '}';
-                $css .= '#xe-woo-vertical-navigation>ul:after {';
+                $css .= '.xe-woo-vertical-navigation>ul:after {';
                     $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['tablet']['initial'] ) . ';';
                 $css .= '}';
-                $css .= '#xe-woo-vertical-navigation .children, #xe-woo-vertical-navigation .sub-menu {';
+                $css .= '.xe-woo-vertical-navigation .children, .xe-woo-vertical-navigation .sub-menu {';
                     $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['tablet']['initial'] ) . ';';
                 $css .= '}';
             }
     
-            $css .= '#xe-woo-vertical-navigation ul li a {';
+            $css .= '.xe-woo-vertical-navigation ul li a {';
                 if ( $dropdown_items_font_colors['tablet']['initial'] ) {
                     $css .= 'color: ' . esc_attr( $dropdown_items_font_colors['tablet']['initial'] ) . ';';
                     $css .= 'fill: ' . esc_attr( $dropdown_items_font_colors['tablet']['initial'] ) . ';';
@@ -884,14 +884,14 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
             $css .= '}';
     
             if ( $dropdown_items_font_colors['tablet']['hover'] ) {
-                $css .= '#xe-woo-vertical-navigation ul li a:hover {';
+                $css .= '.xe-woo-vertical-navigation ul li a:hover {';
                     $css .= 'color: ' . esc_attr( $dropdown_items_font_colors['tablet']['hover'] ) . ';';
                     $css .= 'fill: ' . esc_attr( $dropdown_items_font_colors['tablet']['hover'] ) . ';';
                 $css .= '}';
             }
 
             if ( xenial_is_transparent_header_active() ) {
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle {';
                     if ( $transparent_dropdown_toggle_btn_bg_colors['tablet']['initial'] ) {
                         $css .= 'background-color: ' . esc_attr( $transparent_dropdown_toggle_btn_bg_colors['tablet']['initial'] ) . ';';
                     }
@@ -905,7 +905,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
 
                 
     
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover {';
                     if ( $transparent_dropdown_toggle_btn_bg_colors['tablet']['hover'] ) {
                         $css .= 'background-color: ' . esc_attr( $transparent_dropdown_toggle_btn_bg_colors['tablet']['hover'] ) . ';';
                     }
@@ -918,14 +918,14 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
                 $css .= '}';
 
                 if ( $transparent_dropdown_toggle_btn_label_colors['tablet']['initial'] ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle .icon svg {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle .icon svg {';
                         $css .= 'fill: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['tablet']['initial'] ) . ';';
                         $css .= 'color: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['tablet']['initial'] ) . ';';
                     $css .= '}';
                 }
     
                 if ( $transparent_dropdown_toggle_btn_label_colors['tablet']['hover'] ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover .icon svg {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover .icon svg {';
                         $css .= 'fill: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['tablet']['hover'] ) . ';';
                         $css .= 'color: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['tablet']['hover'] ) . ';';
                     $css .= '}';
@@ -934,7 +934,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
         $css .= '}';
 
         $css .= '@media screen and (max-width: 567px) {';
-            $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle {';
+            $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle {';
                 if ( $dropdown_toggle_btn_bg_colors['mobile']['initial'] ) {
                     $css .= 'background-color: ' . esc_attr( $dropdown_toggle_btn_bg_colors['mobile']['initial'] ) . ';';
                 }
@@ -946,7 +946,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
                 $css .= xenial_dynamic_border_css( $dropdown_toggle_btn_borders['mobile'] );
             $css .= '}';
     
-            $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover {';
+            $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover {';
                 if ( $dropdown_toggle_btn_bg_colors['mobile']['hover'] ) {
                     $css .= 'background-color: ' . esc_attr( $dropdown_toggle_btn_bg_colors['mobile']['hover'] ) . ';';
                 }
@@ -957,32 +957,32 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
             $css .= '}';
             
             if ( $dropdown_toggle_btn_label_colors['mobile']['initial'] ) {
-                $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle .icon svg {';
+                $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle .icon svg {';
                     $css .= 'fill: ' . esc_attr( $dropdown_toggle_btn_label_colors['mobile']['initial'] ) . ';';
                     $css .= 'color: ' . esc_attr( $dropdown_toggle_btn_label_colors['mobile']['initial'] ) . ';';
                 $css .= '}';
             }
     
             if ( $dropdown_toggle_btn_label_colors['mobile']['hover'] ) {
-                $css .= '#xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover .icon svg {';
+                $css .= '.xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover .icon svg {';
                     $css .= 'fill: ' . esc_attr( $dropdown_toggle_btn_label_colors['mobile']['hover'] ) . ';';
                     $css .= 'color: ' . esc_attr( $dropdown_toggle_btn_label_colors['mobile']['hover'] ) . ';';
                 $css .= '}';
             }
     
             if ( $dropdown_bg_colors['mobile']['initial'] ) {
-                $css .= '#xe-woo-vertical-navigation ul {';
+                $css .= '.xe-woo-vertical-navigation ul {';
                     $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['mobile']['initial'] ) . ';';
                 $css .= '}';
-                $css .= '#xe-woo-vertical-navigation>ul:after {';
+                $css .= '.xe-woo-vertical-navigation>ul:after {';
                     $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['mobile']['initial'] ) . ';';
                 $css .= '}';
-                $css .= '#xe-woo-vertical-navigation .children, #xe-woo-vertical-navigation .sub-menu {';
+                $css .= '.xe-woo-vertical-navigation .children, .xe-woo-vertical-navigation .sub-menu {';
                     $css .= 'background-color: ' . esc_attr( $dropdown_bg_colors['mobile']['initial'] ) . ';';
                 $css .= '}';
             }
     
-            $css .= '#xe-woo-vertical-navigation ul li a {';
+            $css .= '.xe-woo-vertical-navigation ul li a {';
                 if ( $dropdown_items_font_colors['mobile']['initial'] ) {
                     $css .= 'color: ' . esc_attr( $dropdown_items_font_colors['mobile']['initial'] ) . ';';
                     $css .= 'fill: ' . esc_attr( $dropdown_items_font_colors['mobile']['initial'] ) . ';';
@@ -994,7 +994,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
             $css .= '}';
     
             if ( $dropdown_items_font_colors['mobile']['hover'] ) {
-                $css .= '#xe-woo-vertical-navigation ul li a:hover {';
+                $css .= '.xe-woo-vertical-navigation ul li a:hover {';
                     $css .= 'color: ' . esc_attr( $dropdown_items_font_colors['mobile']['hover'] ) . ';';
                     $css .= 'fill: ' . esc_attr( $dropdown_items_font_colors['mobile']['hover'] ) . ';';
                 $css .= '}';
@@ -1002,7 +1002,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
 
             if ( xenial_is_transparent_header_active() ) {
 
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle {';
                     if ( $transparent_dropdown_toggle_btn_bg_colors['mobile']['initial'] ) {
                         $css .= 'background-color: ' . esc_attr( $transparent_dropdown_toggle_btn_bg_colors['mobile']['initial'] ) . ';';
                     }
@@ -1014,7 +1014,7 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
                     }
                 $css .= '}';
     
-                $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover {';
+                $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover {';
                     if ( $transparent_dropdown_toggle_btn_bg_colors['mobile']['hover'] ) {
                         $css .= 'background-color: ' . esc_attr( $transparent_dropdown_toggle_btn_bg_colors['mobile']['hover'] ) . ';';
                     }
@@ -1027,14 +1027,14 @@ if ( ! function_exists( 'xenial_header_woo_dropdown_dynamic_css' ) ) {
                 $css .= '}';
 
                 if ( $transparent_dropdown_toggle_btn_label_colors['mobile']['initial'] ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle .icon svg {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle .icon svg {';
                         $css .= 'fill: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['mobile']['initial'] ) . ';';
                         $css .= 'color: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['mobile']['initial'] ) . ';';
                     $css .= '}';
                 }
     
                 if ( $transparent_dropdown_toggle_btn_label_colors['mobile']['hover'] ) {
-                    $css .= '.xe-transparent-header-enabled #xe-mastheader #xe-woo-vertical-navigation #xe-woo-vertical-menu-toggle:hover .icon svg {';
+                    $css .= '.xe-transparent-header-enabled #xe-mastheader .xe-woo-vertical-navigation .xe-woo-vertical-menu-toggle:hover .icon svg {';
                         $css .= 'fill: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['mobile']['hover'] ) . ';';
                         $css .= 'color: ' . esc_attr( $transparent_dropdown_toggle_btn_label_colors['mobile']['hover'] ) . ';';
                     $css .= '}';
