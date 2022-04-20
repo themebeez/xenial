@@ -35,7 +35,7 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_toggle_button_css' ) )
 		}
 		
 
-		$css .= '#xe-mobile-canvas-trigger-button {';
+		$css .= '.xe-mobile-canvas-trigger-button {';
 			$css .= xenial_dynamic_spacing_css( $header_off_canvas_toggle_button_padding );
 			if ( $header_off_canvas_toggle_button_font_size ) {
 				$css .= 'font-size: ' . esc_attr( $header_off_canvas_toggle_button_font_size ) . 'px;';
@@ -54,7 +54,7 @@ if ( ! function_exists( 'xenial_dynamic_header_off_canvas_toggle_button_css' ) )
 
 		if ( $header_off_canvas_toggle_button_label_colors['hover'] || $header_off_canvas_toggle_button_background_colors['hover'] || $header_off_canvas_toggle_button_borders['border_colors']['hover'] ) {
 
-			$css .= '#xe-mobile-canvas-trigger-button:hover {';
+			$css .= '.xe-mobile-canvas-trigger-button:hover {';
 			
 				if ( $header_off_canvas_toggle_button_label_colors['hover'] ) {
 					$css .= 'color: ' . esc_attr( $header_off_canvas_toggle_button_label_colors['hover'] ) . ';';

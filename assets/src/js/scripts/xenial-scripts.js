@@ -9,6 +9,8 @@
 ===============================================================================================
 */
 
+let body = document.body;
+
 /**
  * 
  * Tooltip function.
@@ -50,10 +52,9 @@ function xeToolTip() {
 
 function xeToggleComment() {
 
-    var body = document.body;
     var commentToggleBtn = document.getElementById("xe-comment-toggle-btn");
 
-    if (commentToggleBtn !== null || undefined) {
+    if (commentToggleBtn) {
 
         commentToggleBtn.addEventListener('click', function () {
 
@@ -77,7 +78,7 @@ function xeBackToTopButton() {
 
         var yAxisHeight = window.pageYOffset;
 
-        if (backToTopBtn != null || backToTopBtn != undefined) {
+        if (backToTopBtn) {
 
             if (yAxisHeight > 600) {
 
@@ -103,21 +104,84 @@ function xeBackToTopButton() {
 
 /**
  * 
+ * Header Search.
+ * 
+*/
+
+function xeSearch() {
+
+    var searchButton = document.querySelectorAll('.xe-header-element-search-button');
+    var closeSearchBoxButton = document.getElementById('xe-close-search-box');
+
+    if (searchButton.length > 0) {
+
+        searchButton.forEach(function (searchModalTriggerBtn) {
+
+            searchModalTriggerBtn.addEventListener('click', function () {
+
+                body.classList.add('xe-visible-search-form');
+            });
+        });
+    }
+
+    if (closeSearchBoxButton) {
+
+        closeSearchBoxButton.addEventListener('click', function () {
+
+            body.classList.remove('xe-visible-search-form');
+        });
+    }
+}
+
+
+/**
+ * 
  * Canvas navigation.
  * 
 */
 
-function xeCanvasNavigationSubMenuToggleBtn() {
+function xeMobileCanvasNavigation() {
 
     var mobileCanvas = document.getElementById("xe-mobile-canvas");
+    var mobileCanavsMask = document.getElementById('xe-mobile-canvas-mask');
+    var mobileCanavsTriggerButton = document.querySelectorAll('.xe-mobile-canvas-trigger-button');
+    var mobileCanvasCloseButton = document.getElementById('xe-mobile-canvas-close-button');
+
     var mobileCanvasNavChildren = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation li.menu-item-has-children");
     var subMenuTooglePlusIconClass = "ti-plus";
     var subMenuToogleMinusIconClass = "ti-minus";
     var appendSubMenuToggleBtn = '<button class="xe-button xe-false-button xe-toggle-canvassubmenu"><i class="ti-plus"></button>';
 
-    if (mobileCanvas !== null || undefined) {
+    if (mobileCanavsTriggerButton.length > 0) {
 
-        if (mobileCanvasNavChildren !== null || undefined) {
+        mobileCanavsTriggerButton.forEach(function (ele) {
+
+            ele.addEventListener('click', function () {
+
+                body.classList.add('xe-visible-mobile-canvas');
+            });
+        });
+    }
+
+    if (mobileCanavsMask) {
+
+        mobileCanavsMask.addEventListener('click', function () {
+
+            body.classList.remove('xe-visible-mobile-canvas');
+        });
+    }
+
+    if (mobileCanvasCloseButton) {
+
+        mobileCanvasCloseButton.addEventListener('click', function () {
+
+            body.classList.remove('xe-visible-mobile-canvas');
+        });
+    }
+
+    if (mobileCanvas) {
+
+        if (mobileCanvasNavChildren) {
 
             mobileCanvasNavChildren.forEach(function (child) {
 
@@ -129,7 +193,7 @@ function xeCanvasNavigationSubMenuToggleBtn() {
     // Attribute xe-submenu-style="" | options = default | revealing
     var mobileCanvasSubMenuStyleEle = document.querySelector("#xe-mobile-canvas .is-offcanvas-menu");
 
-    if (mobileCanvasSubMenuStyleEle !== null || undefined) {
+    if (mobileCanvasSubMenuStyleEle) {
 
         var mobileCanvasSubMenuStyleEleAttribute = mobileCanvasSubMenuStyleEle.getAttribute('xe-submenu-style');
 
@@ -138,7 +202,7 @@ function xeCanvasNavigationSubMenuToggleBtn() {
             var mobileCanvasSubMenuBackButton = '<li class="goback"><button class="xe-button xe-false-button xe-canvassubmenu-goback-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 13v7l-8-8 8-8v7h8v2z" fill="rgba(105,105,105,1)"/></svg> <span class="text">Go Back</span></button></li>';
             var mobileCanvasSubMenuEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu");
 
-            if (mobileCanvasSubMenuEle !== null || undefined) {
+            if (mobileCanvasSubMenuEle) {
 
                 mobileCanvasSubMenuEle.forEach(function (childEle) {
 
@@ -148,7 +212,7 @@ function xeCanvasNavigationSubMenuToggleBtn() {
 
             var mobileCanvasSubMenuBackButtonEle = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .sub-menu .xe-canvassubmenu-goback-button");
 
-            if (mobileCanvasSubMenuBackButtonEle !== null || undefined) {
+            if (mobileCanvasSubMenuBackButtonEle) {
 
                 mobileCanvasSubMenuBackButtonEle.forEach(function (backBtn) {
 
@@ -164,7 +228,7 @@ function xeCanvasNavigationSubMenuToggleBtn() {
     // Canvas submenu toggle button
     var mobileCanvasSubMenuToggleBtn = document.querySelectorAll("#xe-mobile-canvas .xe-offcanvas-navigation .menu-item-has-children .xe-toggle-canvassubmenu");
 
-    if (mobileCanvasSubMenuToggleBtn !== null || undefined) {
+    if (mobileCanvasSubMenuToggleBtn) {
 
         mobileCanvasSubMenuToggleBtn.forEach(function (toggleBtn) {
 
@@ -197,5 +261,6 @@ document.addEventListener("DOMContentLoaded", function () {
     xeToolTip();
     xeToggleComment();
     xeBackToTopButton();
-    xeCanvasNavigationSubMenuToggleBtn();
+    xeSearch();
+    xeMobileCanvasNavigation();
 });

@@ -87,7 +87,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 		);
 
 		// Search modal toggle button dynamic CSS.
-		$css .= '#xe-header-element-search-button {';
+		$css .= '.xe-header-element-search-button {';
 			if ( $search_modal_toggle_button_background_colors['desktop']['initial'] ) {
 				$css .= 'background-color: ' . esc_attr( $search_modal_toggle_button_background_colors['desktop']['initial'] ) . ';';
 			}
@@ -102,7 +102,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 		$css .= '}';
 
 		if ( $search_modal_toggle_button_label_colors['desktop']['initial'] || $search_modal_toggle_button_font_desktop['font-size'] || $search_modal_toggle_button_font_desktop['font-size'] ) {
-			$css .= '#xe-header-element-search-button svg {';
+			$css .= '.xe-header-element-search-button svg {';
 				if ( $search_modal_toggle_button_label_colors['desktop']['initial'] ) {
 					$css .= 'fill: ' . esc_attr( $search_modal_toggle_button_label_colors['desktop']['initial'] ) . ';';
 				}
@@ -120,7 +120,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 		
 
 		if ( $search_modal_toggle_button_background_colors['desktop']['hover'] || $search_modal_toggle_button_label_colors['desktop']['hover'] || $search_modal_toggle_button_borders['desktop']['border_colors']['hover'] ) {
-			$css .= '#xe-header-element-search-button:hover {';
+			$css .= '.xe-header-element-search-button:hover {';
 				if ( $search_modal_toggle_button_background_colors['desktop']['hover'] ) {
 					$css .= 'background-color: ' . esc_attr( $search_modal_toggle_button_background_colors['desktop']['hover'] ) . ';';
 				}
@@ -138,7 +138,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 		
 
 		if ( $search_modal_toggle_button_label_colors['desktop']['hover'] ) {
-			$css .= '#xe-header-element-search-button:hover svg {';
+			$css .= '.xe-header-element-search-button:hover svg {';
 				$css .= 'fill: ' . esc_attr( $search_modal_toggle_button_label_colors['desktop']['hover'] ) . ';';
 			$css .= '}';
 		}
@@ -336,7 +336,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 			
 
 			// Search modal toggle button dynamic CSS tablet responsive
-			$css .= '#xe-header-element-search-button {';
+			$css .= '.xe-header-element-search-button {';
 				if ( $search_modal_toggle_button_background_colors['tablet']['initial'] ) {
 					$css .= 'background-color: ' . esc_attr( $search_modal_toggle_button_background_colors['tablet']['initial'] ) . ';';
 				}
@@ -351,7 +351,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 			$css .= '}';
 
 			if ( $search_modal_toggle_button_font_tablet['font-size'] || $search_modal_toggle_button_font_tablet['font-size'] ) {
-				$css .= '#xe-header-element-search-button svg {';
+				$css .= '.xe-header-element-search-button svg {';
 					if ( $search_modal_toggle_button_font_tablet['font-size'] ) {
 						$css .= 'height: ' . esc_attr( $search_modal_toggle_button_font_tablet['font-size'] ) . 'px;';
 					}	
@@ -365,7 +365,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 			
 
 			if ( $search_modal_toggle_button_background_colors['tablet']['hover'] || $search_modal_toggle_button_label_colors['tablet']['hover'] || $search_modal_toggle_button_borders['tablet']['border_colors']['hover'] ) {
-				$css .= '#xe-header-element-search-button:hover {';
+				$css .= '.xe-header-element-search-button:hover {';
 					if ( $search_modal_toggle_button_background_colors['tablet']['hover'] ) {
 						$css .= 'background-color: ' . esc_attr( $search_modal_toggle_button_background_colors['tablet']['hover'] ) . ';';
 					}
@@ -533,7 +533,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 			
 
 			// Search modal toggle button dynamic CSS mobile responsive
-			$css .= '#xe-header-element-search-button {';
+			$css .= '.xe-header-element-search-button {';
 				if ( $search_modal_toggle_button_background_colors['mobile']['initial'] ) {
 					$css .= 'background-color: ' . esc_attr( $search_modal_toggle_button_background_colors['mobile']['initial'] ) . ';';
 				}
@@ -548,7 +548,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 			$css .= '}';
 
 			if ( $search_modal_toggle_button_font_mobile['font-size'] || $search_modal_toggle_button_font_mobile['font-size'] ) {
-				$css .= '#xe-header-element-search-button svg {';
+				$css .= '.xe-header-element-search-button svg {';
 					if ( $search_modal_toggle_button_font_mobile['font-size'] ) {
 						$css .= 'height: ' . esc_attr( $search_modal_toggle_button_font_mobile['font-size'] ) . 'px;';
 					}
@@ -562,7 +562,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 			
 
 			if ( $search_modal_toggle_button_background_colors['mobile']['hover'] || $search_modal_toggle_button_label_colors['mobile']['hover'] || $search_modal_toggle_button_borders['mobile']['border_colors']['hover'] ) {
-				$css .= '#xe-header-element-search-button:hover {';
+				$css .= '.xe-header-element-search-button:hover {';
 					if ( $search_modal_toggle_button_background_colors['mobile']['hover'] ) {
 						$css .= 'background-color: ' . esc_attr( $search_modal_toggle_button_background_colors['mobile']['hover'] ) . ';';
 					}
