@@ -53,6 +53,7 @@ function xeWooCommerceMiniCart() {
     if (xeWooMiniCartTriggerEle.length > 0) {
 
         xeWooMiniCartTriggerEle.forEach(function (element) {
+
             element.addEventListener("click", function () {
 
                 body.classList.add("xe-woo-minicart-is-open");
@@ -62,6 +63,9 @@ function xeWooCommerceMiniCart() {
                 xeWooCommerceMiniCartOverlay.classList.remove("hidden");
             });
         });
+    }
+
+    if (xeWooCommerceMiniCartCloseEle) {
 
         xeWooCommerceMiniCartCloseEle.addEventListener("click", function () {
 
@@ -71,6 +75,9 @@ function xeWooCommerceMiniCart() {
             xeWooCommerceMiniCartOverlay.classList.remove("visible");
             xeWooCommerceMiniCartOverlay.classList.add("hidden");
         });
+    }
+
+    if (xeWooCommerceMiniCartOverlay) {
 
         xeWooCommerceMiniCartOverlay.addEventListener("click", function () {
 
