@@ -15,6 +15,4 @@
 </div>
 
 
-<?php do_action( 'xenial_offcanvas' ); ?>
-
-<?php do_action( 'xenial_header_element_search_modal' ); ?>
+<?php do_action( 'xenial_after_header' ); ?>

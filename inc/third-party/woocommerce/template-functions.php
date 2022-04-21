@@ -470,12 +470,32 @@ if ( ! function_exists( 'xenial_header_element_woocommerce_minicart_template' ) 
 
 	function xenial_header_element_woocommerce_minicart_template() {
 
+		if ( ! xenial_is_header_element_active( 'woocommerce_minicart' ) ) {
+			return;
+		}
+
 		$template_args = array();
 
 		get_template_part( 'template-parts/theme-header/elements/element', 'woocommerce-minicart', $template_args );
 	}
 
 	add_action( 'xenial_header_element_woocommerce_minicart', 'xenial_header_element_woocommerce_minicart_template' );
+}
+
+
+if ( ! function_exists( 'xenial_header_element_woocommerce_minicart_offcanvas_template' ) ) {
+
+	function xenial_header_element_woocommerce_minicart_offcanvas_template() {
+
+		if ( ! xenial_is_header_element_active( 'woocommerce_minicart' ) ) {
+
+			return;
+		}
+
+		get_template_part( 'template-parts/theme-header/elements/element', 'woocommerce-minicart-offcanvas' );
+	}
+
+	add_action( 'xenial_after_header', 'xenial_header_element_woocommerce_minicart_offcanvas_template' );
 }
 
 
@@ -497,6 +517,110 @@ if ( ! function_exists( 'xenial_header_element_woocommerce_dropdown_template' ) 
 if ( ! function_exists( 'xenial_do_not_display_woo_page_title' ) ) {
 
 	function xenial_do_not_display_woo_page_title() {
+
 		return false;
 	}
+}
+
+
+
+if ( ! function_exists( 'xenial_ajax_product_search' ) ) {
+
+	function xenial_ajax_product_search() {
+
+		$nonce = isset( $_POST['nonce'] ) ? $_POST['nonce'] : '';
+
+		$return_data = array(
+			'success' => false,
+			'message' => '',
+			'data' => ''
+		);
+
+		if ( ! wp_verify_nonce( $nonce, 'xenial_woo_ajax_nonce' ) ) {
+
+			$return_data['message'] = esc_html__( 'Security check failed!', 'xenial' );
+
+			wp_send_json_error( $return_data );
+		}
+
+		$product_search_text = isset( $_REQUEST['product_search_text'] ) ? sanitize_text_field( $_REQUEST['product_search_text'] ) : '';
+
+
+		if ( empty( $product_search_text ) ) {
+			
+			$return_data['message'] = esc_html__( 'Please enter a search term.', 'xenial' ); 
+
+			wp_send_json_error( $return_data );
+		}
+
+		$search_products = new WC_Product_Query( array(
+			's' => $product_search_text,
+		) );
+
+		$search_products = $search_products->get_products();
+
+		if ( 
+			is_array( $search_products ) &&
+			count( $search_products ) > 0
+		) {
+
+			$return_data['data'] = '<ul>';
+
+			foreach ( $search_products as $search_product ) {
+
+				$return_data['data'] .= '<li>';
+
+					$return_data['data'] .= '<div class="xe-woo-product">';
+
+					if ( $search_product->get_image() ) {
+
+						$return_data['data'] .= '<div class="xe-product-thumb">';
+
+							$return_data['data'] .= '<a class="xe-link xe-thumb-link woocommerce-LoopProduct-link woocommerce-loop-product__link" href="' . esc_url( $search_product->get_permalink() ) . '">';
+
+								$return_data['data'] .= $search_product->get_image();
+
+							$return_data['data'] .= '</a>';
+
+						$return_data['data'] .= '</div>';
+					}
+
+					$return_data['data'] .= '<div class="xe-product-title-price">';
+
+						$return_data['data'] .= '<div class="xe-product-title">';
+
+							$return_data['data'] .= '<a class="xe-link" href="' . esc_url( $search_product->get_permalink() ) . '">';
+
+								$return_data['data'] .= $search_product->get_title();
+
+							$return_data['data'] .= '</a>';
+						
+						$return_data['data'] .= '</div>';
+
+						$return_data['data'] .= '<div class="xe-product-price">';
+
+							$return_data['data'] .= $search_product->get_price_html();
+							
+						$return_data['data'] .= '</div>';
+
+					$return_data['data'] .= '</div>';
+
+					$return_data['data'] .= '</div>';
+
+				$return_data['data'] .= '</li>';
+			}
+
+			$return_data['data'] .= '</ul>';
+
+			$return_data['success'] = true;
+		} else {
+
+			$return_data['message'] = esc_html__( 'No products found.', 'xenial' );
+		}
+
+		wp_send_json( $return_data );
+	}
+
+	add_action( 'wp_ajax_xenial_ajax_product_search', 'xenial_ajax_product_search' );
+	add_action( 'wp_ajax_nopriv_xenial_ajax_product_search', 'xenial_ajax_product_search' );
 }

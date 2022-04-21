@@ -20,7 +20,7 @@ add_action( 'xenial_theme_header', 'xenial_theme_header_template' );
 add_action( 'xenial_header_top_row', 'xenial_header_top_row_template' );
 add_action( 'xenial_header_middle_row', 'xenial_header_middle_row_template' );
 add_action( 'xenial_header_bottom_row', 'xenial_header_bottom_row_template' );
-add_action( 'xenial_offcanvas', 'xenial_offcanvas_template' );
+add_action( 'xenial_after_header', 'xenial_offcanvas_template' );
 
 
 add_action( 'xenial_header_logo', 'xenial_header_logo_template' );
@@ -33,7 +33,7 @@ add_action( 'xenial_header_element_offcanvas_toggle_button', 'xenial_header_elem
 add_action( 'xenial_header_element_offcanvas_menu', 'xenial_header_element_offcanvas_menu_template' );
 add_action( 'xenial_header_element_social_links', 'xenial_header_element_social_links_template' );
 add_action( 'xenial_header_element_search', 'xenial_header_element_search_template' );
-add_action( 'xenial_header_element_search_modal', 'xenial_header_element_search_modal_template' );
+add_action( 'xenial_after_header', 'xenial_header_element_search_modal_template' );
 add_action( 'xenial_header_element_menu_1', 'xenial_header_element_menu_1_template' );
 add_action( 'xenial_header_element_menu_2', 'xenial_header_element_menu_2_template' );
 add_action( 'xenial_header_element_user_account_link', 'xenial_header_element_user_account_link_template' );

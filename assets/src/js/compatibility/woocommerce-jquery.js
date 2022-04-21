@@ -91,6 +91,41 @@
         });
     }
 
+
+
+
+    function xeAjaxProductSearch() {
+
+        var searchValue = '';
+
+        $(document).on('keyup', '.woocommerce-product-search .search-field', function(event) {
+            var searchField = $(this);
+            var searchVal = searchField.val();
+            var searchContentEle = $('#xe-header-element-search-ajax-content');
+            if (searchVal.length > 2 && searchVal != searchValue) {
+                searchValue = searchVal;
+                $.ajax({
+                    url: xenialWooScriptData.ajax_url,
+                    data: {
+                        action: 'xenial_ajax_product_search',
+                        product_search_text: searchVal,
+                        nonce: xenialWooScriptData.nonce
+                    },
+                    type: 'POST',
+                    success: function(response) {
+                        if (response.success) {
+                            searchContentEle.html(response.data);
+                        } else {
+                            searchContentEle.html('');
+                        }
+                    }
+                });
+            } else {
+                searchContentEle.html('');
+            }
+        });
+    }
+
     $(document).ready(function() {
 
         // Trigger WooCommerce cart fragments.
@@ -98,6 +133,7 @@
 
         xeWoocommerceAddedtoCart();
         xeWishlist();
+        xeAjaxProductSearch();
     });
 
 

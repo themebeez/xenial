@@ -280,6 +280,10 @@ if ( ! function_exists( 'xenial_header_element_search_template' ) ) {
 
 	function xenial_header_element_search_template() {
 
+		if ( ! xenial_is_header_element_active( 'search' ) ) {
+			return;
+		}
+
 		$search_layout = xenial_get_option( 'header_search_display' );
 
 		$template_args = array();
@@ -331,11 +335,17 @@ if ( ! function_exists( 'xenial_header_element_search_modal_template' ) ) {
 
 	function xenial_header_element_search_modal_template() {
 
+		if ( ! xenial_is_header_element_active( 'search' ) ) {
+			return;
+		}
+
 		$template_args = array();
 
 		get_template_part( 'template-parts/theme-header/elements/element', 'search-modal', $template_args );
 	}
 }
+
+ 
 
 
 /**
