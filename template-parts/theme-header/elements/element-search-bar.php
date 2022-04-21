@@ -12,6 +12,11 @@
 			get_search_form();
 		}
 		?>
+		<div id="xe-ajax-search-loading" class="hidden">
+			<span class="dot"></span>
+			<span class="dot"></span>
+			<span class="dot"></span>
+		</div>
 		<div id="xe-header-element-search-ajax-content"></div>
 	</div>
 </div>

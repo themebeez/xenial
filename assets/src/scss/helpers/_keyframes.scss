@@ -310,3 +310,22 @@
         opacity: 0;
     }
 }
+
+
+/* -------------------------------------------------------------------------- 
+	Ajax WooCommerce search loading
+  -------------------------------------------------------------------------- */
+
+
+@keyframes wooAjaxSearchLoading {
+
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
