@@ -40,6 +40,8 @@ if ( ! function_exists( 'xenial_header_element_edd_minicart_template' ) ) {
 }
 add_action( 'xenial_header_element_edd_minicart', 'xenial_header_element_edd_minicart_template' );
 
+
+
 /**
  * Prints EDD cart content of EDD mini cart header element.
  * 

@@ -26,5 +26,6 @@
 			get_search_form();
 		}
 		?>
+		<div id="xe-header-element-search-ajax-content"></div>
 	</div>
 </aside>
