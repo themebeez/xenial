@@ -91,8 +91,11 @@
         });
     }
 
-
-
+    /**
+     *
+     * WooCommerce Ajax Search.
+     * Since: 1.0.0
+     */
 
     function xeAjaxProductSearch() {
 
@@ -141,6 +144,16 @@
             } else {
                 searchContentEle.html('');
             }
+        });
+
+        $(document).on('focus', '#xe-search-form .woocommerce-product-search .search-field', function (event) {
+
+            $('body').addClass('xe-ajax-search-is-active');
+        });
+
+        $(document).on('focusout', '#xe-search-form .woocommerce-product-search .search-field', function (event) {
+
+            $('body').removeClass('xe-ajax-search-is-active');
         });
     }
 
