@@ -100,16 +100,25 @@
     function xeAjaxProductSearch() {
 
         var searchValue = '';
+        var searchLoadingDots = $('#xe-ajax-search-loading');
+        var searchContentEle = $('#xe-header-element-search-ajax-content');
 
         $(document).on('keyup', '#xe-search-form .woocommerce-product-search .search-field', function (event) {
 
             var searchField = $(this);
             var searchVal = searchField.val();
-            var searchContentEle = $('#xe-header-element-search-ajax-content');
             var ajaxResults = $('#xe-header-element-search-ajax-content > ul');
+            searchLoadingDots.addClass('visible').removeClass('hidden');
+
+            if (searchVal.length <= 0) {
+
+                searchLoadingDots.addClass('hidden').removeClass('visible');
+            }
 
             if (searchVal.length > 2 && searchVal != searchValue) {
+
                 searchValue = searchVal;
+
                 $.ajax({
 
                     url: xenialWooScriptData.ajax_url,
@@ -119,10 +128,12 @@
                         nonce: xenialWooScriptData.nonce
                     },
                     type: 'POST',
+
                     success: function (response) {
 
                         if (response.success) {
 
+                            searchLoadingDots.addClass('hidden').removeClass('visible');
                             searchContentEle.html(response.data);
 
                             if (ajaxResults) {
@@ -137,11 +148,14 @@
 
                         } else {
 
+                            searchLoadingDots.addClass('hidden').removeClass('visible');
+                            // No product found.
                             searchContentEle.html(response.data);
                         }
                     }
                 });
             } else {
+
                 searchContentEle.html('');
             }
         });
@@ -154,6 +168,7 @@
         $(document).on('focusout', '#xe-search-form .woocommerce-product-search .search-field', function (event) {
 
             $('body').removeClass('xe-ajax-search-is-active');
+            searchLoadingDots.addClass('hidden').removeClass('visible');
         });
     }
 

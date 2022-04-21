@@ -125,6 +125,45 @@
             font-size: calc( var(--xe_base_font_size) - 15% );
         }
     }
+
+    #xe-ajax-search-loading {
+            
+        @include flex();
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        max-width: 800px;
+        margin: 10px auto 0 auto;
+
+        .dot {
+
+            display: inline-flex;
+            width: 6px;
+            height: 6px;
+            border-radius: 100%;
+            background-color: rgb(218, 218, 218);
+
+            &:nth-child(1) {
+
+                animation: wooAjaxSearchLoading 0.6s 0.1s linear infinite;
+            }
+
+            &:nth-child(2) {
+
+                animation: wooAjaxSearchLoading 0.6s 0.2s linear infinite;
+            }
+
+            &:nth-child(3) {
+
+                animation: wooAjaxSearchLoading 0.6s 0.3s linear infinite;
+            }
+        }
+    }
+
+    #xe-ajax-search-loading.hidden {
+
+        display: none;
+    }
 }
 
 // When ajax search is active
