@@ -1,0 +1,128 @@
+/* -------------------------------------------------------------------------- 
+	Search (Ajaxed)
+  -------------------------------------------------------------------------- */
+
+#xe-search-form {
+
+    #xe-header-element-search-ajax-content {
+
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 800px;
+
+        ul {
+
+            @include flex();
+            gap: 20px;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            min-height: 80px;
+            padding: 20px;
+            margin: 0;
+            list-style: none;
+            border-radius: 5px;
+            background-color: white;
+            z-index: calc( var(--xe_search_form_modal_zindex) + 5 );
+            box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
+            animation: xeButtonFadeInUp 1s ease 0s;
+            overflow: hidden;
+            overflow-y: auto;
+
+            li {
+                
+                @include flex();
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                animation: xeFadeIn 0.5s ease 0s;
+        
+                .xe-woo-product {
+
+                    @include flex();
+                    gap: 15px;
+
+                    .xe-product-thumb {
+
+                        width: 72px;
+                        height: 72px;
+                        max-width: 72px;
+                        overflow: hidden;
+                    }
+
+                    .xe-product-title-price {
+
+                        flex: 1 1 0;
+
+                        .xe-product-title {
+
+                            font-size: calc( var(--xe_woo_product_title_size) - 5% );
+                            font-weight: normal;
+                            line-height: var(--xe_base_font_line_height);
+                            padding: 0;
+                            margin-top: 0;
+                            margin-bottom: 5px;
+
+                            .xe-link {
+
+                                color: var(--xe_base_text_color);
+
+                                &:hover {
+
+                                    color: var(--xe_secondary_color);
+                                }
+                            }
+                        }
+
+                        .xe-product-price {
+
+                            display: inline-flex;
+                            flex-wrap: wrap;
+                            flex-direction: row;
+                            align-items: center;
+                            font-size: 14px;
+                            color: var(--xe_woocommerce_price);
+                            font-weight: bold;
+                            margin-bottom: 0;
+
+                            del {
+
+                                display: inline-flex;
+                                margin-right: 5px;
+                                font-size: 13px;
+                                color: var(--xe_woo_previous_price_text_color);
+                                opacity: 0.8;
+                            }
+
+                            ins {
+
+                                display: inline-flex;
+                                font-weight: bold;
+                                color: var(--xe_woo_current_price_text_color);
+                                background-color: transparent;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .no-result {
+
+            @include flex();
+            margin: 20px 0 20px 5px;
+            font-size: calc( var(--xe_base_font_size) - 15% );
+        }
+    }
+}

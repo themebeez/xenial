@@ -564,11 +564,11 @@ if ( ! function_exists( 'xenial_ajax_product_search' ) ) {
 			count( $search_products ) > 0
 		) {
 
-			$return_data['data'] = '<ul>';
+			$return_data['data'] = '<ul id="xe-ajax-search-items">';
 
 			foreach ( $search_products as $search_product ) {
 
-				$return_data['data'] .= '<li>';
+				$return_data['data'] .= '<li class="search-item">';
 
 					$return_data['data'] .= '<div class="xe-woo-product">';
 
@@ -614,6 +614,8 @@ if ( ! function_exists( 'xenial_ajax_product_search' ) ) {
 
 			$return_data['success'] = true;
 		} else {
+
+			$return_data['data'] = '<div class="no-result"><span class="desc">'. __('Sorry no results found.', 'xenial') . '</span></div>';
 
 			$return_data['message'] = esc_html__( 'No products found.', 'xenial' );
 		}
