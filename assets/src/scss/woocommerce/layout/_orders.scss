@@ -1,3 +1,6 @@
+/* -------------------------------------------------------------------------- 
+	#. Order Received
+   -------------------------------------------------------------------------- */
 
 .woocommerce-order-received .woocommerce-thankyou-order-received {
 
@@ -78,6 +81,11 @@
     color: var(--xe_secondary_color);
 }
 
+.woocommerce-order-received table.shop_table td .wc-item-meta {
+
+    display: none;
+}
+
 .woocommerce-order-received .woocommerce-customer-details h2,
 .woocommerce-order-received .woocommerce-column--shipping-address h2 {
 
@@ -90,3 +98,28 @@
     border: 1px solid var(--xe_border_color);
 }
 
+
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 575px ) {
+
+    .woocommerce-order-received .woocommerce ul.order_details {
+
+        @include grid();
+	    grid-template-columns: repeat(1, 1fr);
+    }
+
+    .woocommerce-order-received .woocommerce ul.order_details li {
+
+        padding: 15px;
+        border-right: none;
+        border-bottom: 1px dashed var(--xe_border_color);
+
+        &:last-child {
+
+            border-bottom: none;
+        }
+    }
+}

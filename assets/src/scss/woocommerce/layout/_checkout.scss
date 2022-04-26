@@ -548,9 +548,16 @@
 
         width: 100%;
     }
+
     .woocommerce-page form.checkout .col2-set .col-2 {
 
         position: relative;
+        padding: 20px 20px 0 20px;
         margin-top: 40px;
+    }
+
+    .woocommerce form.woocommerce-checkout .woocommerce-additional-fields textarea {
+
+        height: 100px;
     }
 }

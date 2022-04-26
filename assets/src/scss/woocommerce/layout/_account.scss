@@ -158,3 +158,53 @@
    display: inline-block;
    font-family: var(--xe_iconfont);
 }
+
+
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 768px ) {
+
+   .woocommerce-account .woocommerce-MyAccount-content, 
+   .woocommerce-account .woocommerce-MyAccount-navigation {
+
+      display: block;
+      width: 100%;
+      float: none;
+   }
+
+   .woocommerce-account .woocommerce-MyAccount-navigation {
+
+      margin-bottom: 30px;
+   }
+}
+
+@media ( max-width: 575px ) {
+
+   .woocommerce-account .u-columns {
+
+      margin: 0;
+   }
+
+   .woocommerce-account .u-columns>[class*=col-] {
+
+      padding: 0;
+   }
+
+   .woocommerce-account .u-columns.col2-set>[class*=col-] {
+
+      width: 100%;
+   }
+
+   .woocommerce-account form.login, 
+   .woocommerce-account form.register {
+
+      padding: 20px;
+   }
+
+   .woocommerce-MyAccount-navigation ul {
+
+      padding: 20px;
+   }
+}
