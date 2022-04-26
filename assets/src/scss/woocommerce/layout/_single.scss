@@ -782,6 +782,7 @@
     .woocommerce-page #content div.product div.images {
 
         width: 100%;
+        margin-bottom: 0;
     }
 
     .woocommerce div.product div.summary,
@@ -790,6 +791,88 @@
     .woocommerce-page #content div.product div.summary {
 
         width: 100%;
+        margin-top: 30px;
+        margin-bottom: 20px;
         padding-left: 0;
+    }
+}
+
+@media ( max-width: 575px ) {
+ 
+    .woocommerce.single div.product > span.onsale {
+
+        top: 15px;
+        left: 15px;
+    }
+
+    .woocommerce div.product div.images .flex-viewport {
+
+        margin: 0;
+    }
+
+    .woocommerce div.product div.images .flex-control-thumbs {
+
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 10px;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        max-height: none;
+        margin: 10px 0 0;
+    }
+
+    .woocommerce div.product div.images .flex-control-thumbs li {
+
+        height: auto;
+        width: auto;
+        margin: 0;
+        border: none;
+    }
+
+    .woocommerce div.product .woocommerce-product-gallery .flex-direction-nav {
+
+        left: 5px;
+        right: 5px;
+    }
+
+    .woocommerce div.product .woocommerce-product-gallery .flex-direction-nav .flex-nav-next a, 
+    .woocommerce div.product .woocommerce-product-gallery .flex-direction-nav .flex-nav-prev a {
+
+        width: 30px;
+        height: 30px;
+    }
+
+    // TAB
+
+    .woocommerce div.product .woocommerce-tabs,
+    .woocommerce-page div.product .woocommerce-tabs,
+    .woocommerce #content div.product .woocommerce-tabs, 
+    .woocommerce-page #content div.product .woocommerce-tabs {
+
+        margin: 0;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li,
+    .woocommerce-page div.product .woocommerce-tabs ul.tabs li,
+    .woocommerce #content div.product .woocommerce-tabs ul.tabs li, 
+    .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li {
+
+        width: 100%;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a {
+
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .woocommerce div.product .woocommerce-tabs .panel {
+
+        margin: 0;
     }
 }

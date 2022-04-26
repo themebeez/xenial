@@ -1,6 +1,7 @@
 /* -------------------------------------------------------------------------- 
 	#. WooCommerce Shop
    -------------------------------------------------------------------------- */
+
 .woocommerce-products-header__title {
 
     margin-top: 0;
@@ -10,4 +11,23 @@
 .woocommerce .woocommerce-result-count {
 
     margin-bottom: 30px;
+}
+
+
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 768px ) {
+
+    .woocommerce .woocommerce-ordering, 
+    .woocommerce .woocommerce-result-count {
+
+        float: none;
+    }
+
+    .woocommerce .woocommerce-result-count {
+
+        margin-bottom: 10px;
+    }
 }
