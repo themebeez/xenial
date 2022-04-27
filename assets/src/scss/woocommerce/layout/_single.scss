@@ -832,6 +832,13 @@
         width: auto;
         margin: 0;
         border: none;
+        max-height: 72px;
+        overflow: hidden;
+    }
+
+    .woocommerce div.product div.images .flex-control-thumbs li img {
+
+        height: 72px;
     }
 
     .woocommerce div.product .woocommerce-product-gallery .flex-direction-nav {
@@ -843,9 +850,14 @@
     .woocommerce div.product .woocommerce-product-gallery .flex-direction-nav .flex-nav-next a, 
     .woocommerce div.product .woocommerce-product-gallery .flex-direction-nav .flex-nav-prev a {
 
-        width: 30px;
-        height: 30px;
+        width: 35px;
+        height: 35px;
     }
+
+
+    // VARIATION SWITCHER
+
+    
 
     // TAB
 
