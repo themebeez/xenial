@@ -120,6 +120,14 @@
       box-shadow: none;
    }
 
+   a.edd-submit.edd_go_to_checkout,
+   button.edd-submit.edd_go_to_checkout,
+   .edd-submit.blue.edd_go_to_checkout {
+
+      height: auto;
+      padding: 15px 20px;
+   }
+
    .edd-submit:hover,
    .edd-submit.button:hover, 
    .edd-submit.button.blue:hover,
@@ -208,6 +216,19 @@
       transform: scale(1);
       transform-origin: left center;
       background-color: var(--xe_text_button_hover_underline_color);
+   }
+
+   .edd-cart-ajax-alert {
+
+      display: inline-flex;
+      gap: 5px;
+      align-items: center;
+   }
+
+   .edd-cart-ajax-alert .edd-icon {
+
+      width: 16px;
+      height: 16px;
    }
 
     // Download button at purchase history.
