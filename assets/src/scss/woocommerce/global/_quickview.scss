@@ -121,6 +121,9 @@
     background: rgba(238, 238, 238, 0.98);
 }
 
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
 
 @media ( max-width: 768px ) {
 
@@ -139,6 +142,55 @@
         .adfy-quick-view-modal-content {
 
             padding: 30px;
+
+            .woocommerce {
+
+                .product {
+
+                    .woocommerce-product-gallery {
+
+                        .flex-control-thumbs {
+
+                            flex-wrap: nowrap;
+
+                            li {
+
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media ( max-width: 575px ) {
+
+    #addonify-quick-view-modal {
+
+        .adfy-quick-view-modal-content {
+
+            .woocommerce {
+
+                .product {
+
+                    .woocommerce-product-gallery {
+
+                        .flex-control-thumbs {
+
+                            flex-wrap: nowrap;
+
+                            li {
+
+                                width: auto;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

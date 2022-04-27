@@ -245,6 +245,7 @@
                         justify-content: space-between;
                         width: 100%;
                         text-align: left !important;
+                        border-bottom: 1px dotted var(--xe_border_color);
 
                         &::before {
 
@@ -269,6 +270,36 @@
                             width: 15px;
                             height: 15px;
                         }
+                    }
+
+                    td.actions {
+
+                        .coupon {
+
+                            gap: 5px;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .input-text {
+
+                                display: inline-flex;
+                                float: none;
+                                width: 50%;
+                            }
+
+                            .button {
+
+                                display: inline-flex;
+                                float: none;
+                                width: 50%;
+                            }
+                        }
+
+                        &::before {
+
+                            content: "";
+                            display: none;
+                        } 
                     }
 
                     &:last-child {

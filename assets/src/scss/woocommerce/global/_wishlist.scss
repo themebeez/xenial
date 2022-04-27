@@ -1,0 +1,67 @@
+/* -------------------------------------------------------------------------- 
+	#. Wishlist sidebar panel
+  -------------------------------------------------------------------------- */
+
+  #addonify-wishlist-sticky-sidebar-container {
+
+     .addonify-wishlist-sidebar-item {
+
+         .cart-column {
+
+             .button  {
+
+                position: relative;
+                padding: 0;
+                height: auto;
+                text-decoration: none;
+                color: var(--xe_button_is_link_style_text_color);
+                background-color: transparent;
+                border: none;
+
+                &::before {
+
+                    content: '';
+                    display: none; // remove icon if button is link style
+                }
+
+                &::after {
+
+                    content: "";
+                    display: inline-flex;
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    right: auto;
+                    width: 30px;
+                    height: 3px;
+                    background-color: var(--xe_button_is_link_style_underline_color);
+                    @include transation_delay_dymanic(0.8s);
+                }
+
+                &:hover {
+
+                    text-decoration: none;
+                    color: var(--xe_button_is_link_style_hover_text_color);
+                    background-color: transparent;
+                    border: none;
+
+                    &::after {
+
+                        content: "";
+                        right: 0;
+                        width: 100%;
+                        background-color: var(--xe_button_is_link_style_hover_underline_color);
+                    }
+
+                }
+
+                &:focus {
+
+                    box-shadow: none;
+                    border: none;
+                    background-color: transparent;
+                }
+             }
+         }
+     }
+  }
