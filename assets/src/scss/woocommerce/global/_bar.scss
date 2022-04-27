@@ -20,13 +20,13 @@ p.demo_store,
     width: 400px;
     height: auto;
     color: #FFFFFF;
-    padding: 40px;
+    padding: 30px;
     text-align: left;
     border-radius: 3px;
     font-size: var(--xe_base_font_size);
     line-height: var(--xe_base_font_line_height);
     letter-spacing: var(--xe_base_letter_spacing);
-    font-weight: (--xe_base_font_weight);
+    font-weight: var(--xe_base_font_weight);
     background-color: var(--xe_primary_color);
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
     animation: xeFadeInUp 0.6s 0s ease;
@@ -81,4 +81,29 @@ p.demo_store a:focus {
 
     outline: none;
     text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- 
+	#. Media Query
+   -------------------------------------------------------------------------- */
+
+@media ( max-width: 768px ) {
+
+    p.demo_store,
+    .woocommerce-store-notice,
+    .woocommerce-store-notice.demo_store {
+
+        padding: 20px;
+    }
+}
+
+@media ( max-width: 575px ) {
+
+    p.demo_store,
+    .woocommerce-store-notice,
+    .woocommerce-store-notice.demo_store {
+
+        width: 85vw;
+        left: 15px;
+    }
 }
