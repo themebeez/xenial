@@ -1,4 +1,3 @@
-
 // woocommerce buttons
 
 .woocommerce a.button,
@@ -9,7 +8,7 @@
 .woocommerce button.button.alt, 
 .woocommerce #respond input#submit,
 .woocommerce #respond input#submit.alt,
-.woocommerce ul.products li.product a.added_to_cart,
+.woocommerce ul.products li.product .xe-add-to-cart a.added_to_cart,
 .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
 
     display: inline-flex;
@@ -95,17 +94,12 @@
 
 // add to cart button
 
-.woocommerce ul.products li.product .button {
-
-
-}
-
 .woocommerce ul.products li.product .button.added {
 
     display: none;
 }
 
-.woocommerce ul.products li.product a.added_to_cart::before {
+.woocommerce ul.products li.product .xe-add-to-cart .added_to_cart::before {
 
     content: "\e64c";
     font-family: var(--xe_iconfont);
@@ -127,14 +121,20 @@
     transform: translateY(-50%);
     transition: all .3s ease;
 
-    .xe-button {
+    .xe-button,
+    .added_to_cart.wc-forward {
 
+        display: inline-flex;
         justify-content: center;
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
-        line-height: 47px;
-        margin-bottom: 10px;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        font-size: 13px;
+        line-height: 1;
+        font-weight: normal;
         color: var(--xe_base_text_color);
         background-color: white;
         border-radius: 100%;
@@ -145,14 +145,36 @@
         }
     }
 
-    .xe-quickview {
+    a.added_to_cart.wc-forward {
 
-        .xe-quickview-button {}
+        font-size: 0;
+
+        &::before {
+
+            content: "";
+            display: none;
+        }
+
+        &::after {
+
+            content: "\e64c";
+            position: relative;
+            font-family: var(--xe_iconfont);
+            transform: none;
+            font-size: 13px;
+            opacity: 1;
+            height: auto;
+            bottom: unset;
+            left: unset;
+            width: auto;
+            background: transparent;
+        }
     }
 
-    .xe-compare {}
+    .xe-cart-button.added {
 
-    .xe-wishlist {}
+        display: none;
+    } 
 
     .xe-add-to-cart-button {
 
@@ -175,25 +197,7 @@
     }
 }
 
-// add to cart button 
-
-.xe-add-to-cart-button {
-
-    align-items: center;
-
-    &::before {
-
-        content: "\e60e";
-        font-family: var(--xe_iconfont);
-        margin-right: 5px;
-    }
-
-    &::after {
-
-        content: "";
-        display: none;
-    }
-}
+// Add to cart button is link style
 
 .xe-add-to-cart-button.is-link-style {
 
