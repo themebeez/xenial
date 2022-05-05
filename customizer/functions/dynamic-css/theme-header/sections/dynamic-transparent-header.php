@@ -385,7 +385,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 
 
 
-		$css .= '@media screen and (max-width: 768px) {';
+		$css .= '@media (max-width: 768px) {';
 			if ( $site_title_colors['tablet']['initial'] ) {
 				$css .= '.xe-transparent-header-enabled .xe-site-branding .site-title a {';
 					$css .= 'color: ' . esc_attr( $site_title_colors['tablet']['initial'] ) . ';';
@@ -573,7 +573,7 @@ if ( ! function_exists( 'xenial_dynamic_transparent_header_css' ) ) {
 		$css .= '}';
 
 
-		$css .= '@media screen and (max-width: 576px) {';
+		$css .= '@media (max-width: 575px) {';
 			if ( $site_title_colors['mobile']['initial'] ) {
 				$css .= '.xe-transparent-header-enabled .xe-site-branding .site-title a {';
 					$css .= 'color: ' . esc_attr( $site_title_colors['mobile']['initial'] ) . ';';

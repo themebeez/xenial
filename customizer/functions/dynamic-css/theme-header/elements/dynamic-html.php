@@ -49,7 +49,7 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
         );
 
 
-        $css .= '@media screen and (max-width: 768px) {';
+        $css .= '@media (max-width: 768px) {';
 
         	$css .= '.xe-header-element.is-html {';
 				$css .= xenial_dynamic_font_css( $header_html_font_tablet );
@@ -77,7 +77,7 @@ if ( ! function_exists( 'xenial_dynamic_header_html_css' ) ) {
 			'line-height' => xenial_get_option( 'header_html_text_line_height_mobile' )
         );
 
-        $css .= '@media screen and (max-width: 576px) {';
+        $css .= '@media (max-width: 575px) {';
 
         	$css .= '.xe-header-element.is-html {';
 				$css .= xenial_dynamic_font_css( $header_html_font_mobile );

@@ -40,7 +40,7 @@ if ( ! function_exists( 'xenial_dynamic_layout_css' ) ) {
 		}
 
 		if ( $wide_container_side_spacings['tablet'] ) {
-			$css .= '@media screen and (max-width: 768px) {';
+			$css .= '@media (max-width: 768px) {';
 				$css .= '.xe-container-wide {';
 					$css .= 'padding-left: ' . esc_attr( $wide_container_side_spacings['tablet'] ) . 'px;';
 					$css .= 'padding-right: ' . esc_attr( $wide_container_side_spacings['tablet'] ) . 'px;';

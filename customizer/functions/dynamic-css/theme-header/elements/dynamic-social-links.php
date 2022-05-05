@@ -144,7 +144,7 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 		);	
 
 
-        $css .= '@media screen and (max-width: 768px) {';  
+        $css .= '@media (max-width: 768px) {';  
 
         	if ( $header_social_links_tablet['items-spacing'] ) {
 				$css .= '.xe-header-element-social {';
@@ -251,7 +251,7 @@ if ( ! function_exists( 'xenial_dynamic_header_social_links_css' ) ) {
 			'line-height' => xenial_get_option( 'header_social_link_title_line_height_mobile' )
 		);	
 
-        $css .= '@media screen and (max-width: 576px) {';
+        $css .= '@media (max-width: 575px) {';
 
         	if ( $header_social_links_mobile['items-spacing'] ) {
 				$css .= '.xe-header-element-social {';

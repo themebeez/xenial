@@ -36,7 +36,7 @@ if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
 		}
 
 		if ( $breadcrumbs_tablet_font_size ) {
-			$css .= '@media screen and (max-width: 768px) {
+			$css .= '@media (max-width: 768px) {
 				.xe-breadcrumb .trail-item > a, .xe-breadcrumb .trail-item > span {
 					font-size: ' . absint( $breadcrumbs_tablet_font_size ) . 'px;
 				}
@@ -44,7 +44,7 @@ if ( ! function_exists( 'xenial_dynamic_breadcrumbs_css' ) ) {
 		}
 
 		if ( $breadcrumbs_mobile_font_size ) {
-			$css .= '@media screen and (max-width: 576px) {
+			$css .= '@media (max-width: 575px) {
 				.xe-breadcrumb .trail-item > a, .xe-breadcrumb .trail-item > span {
 					font-size: ' . absint( $breadcrumbs_mobile_font_size ) . 'px;
 				}	

@@ -40,7 +40,7 @@ if ( ! function_exists( 'xenial_dynamic_header_top_css' ) ) {
 
 		// Start of dynamic theme header top for tablet responsive
 
-		$css .= '@media screen and (max-width: 768px) {';
+		$css .= '@media (max-width: 768px) {';
 
 			$css .= '.xe-top-header {';
 
@@ -70,7 +70,7 @@ if ( ! function_exists( 'xenial_dynamic_header_top_css' ) ) {
 
 		// Start of dynamic theme header top for mobile responsive
 
-		$css .= '@media screen and (max-width: 576px) {';
+		$css .= '@media (max-width: 575px) {';
 
 			$css .= '.xe-top-header {';
 

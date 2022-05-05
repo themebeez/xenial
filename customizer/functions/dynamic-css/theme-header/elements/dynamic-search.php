@@ -306,7 +306,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 
 		// Dynamic CSS tablet responsive
 
-		$css .= '@media screen and (max-width: 768px) {';
+		$css .= '@media (max-width: 768px) {';
 			// Search bar dynamic CSS tablet responsive
 			$css .= '.xe-search-form-search-bar {';
 				if ( $search_bar_background_colors['tablet']['initial'] ) {
@@ -502,7 +502,7 @@ if ( ! function_exists( 'xenial_dynamic_header_search_css' ) ) {
 
 		// Dynamic CSS mobile responsive
 
-		$css .= '@media screen and (max-width: 576px) {';
+		$css .= '@media (max-width: 575px) {';
 
 			// Search bar dynamic CSS mobile responsive
 			$css .= 'input.xe-search-form-search-bar {';

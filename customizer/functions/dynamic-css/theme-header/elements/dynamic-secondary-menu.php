@@ -51,7 +51,7 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			'line-height' => xenial_get_option( 'header_secondary_menu_line_height_tablet' )
         );
 
-        $css .= '@media screen and (max-width: 768px) {';
+        $css .= '@media (max-width: 768px) {';
 
         	if ( $header_secondary_menu_items_spacing_tablet ) {
         		$css .= '.is-secondary .xe-site-navigation {';
@@ -81,7 +81,7 @@ if ( ! function_exists( 'xenial_dynamic_header_secondary_menu_css' ) ) {
 			'line-height' => xenial_get_option( 'header_secondary_menu_line_height_mobile' )
         );
 
-        $css .= '@media screen and (max-width: 576px) {';
+        $css .= '@media (max-width: 575px) {';
 
         	if ( $header_secondary_menu_items_spacing_mobile ) {
         		$css .= '.is-secondary .xe-site-navigation {';

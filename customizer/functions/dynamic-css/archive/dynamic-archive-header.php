@@ -68,7 +68,7 @@ if ( ! function_exists( 'xenial_dynamic_archive_header_css' ) ) {
 			}
 		}
 
-		$css .= '@media screen and (max-width: 768px) {';
+		$css .= '@media (max-width: 768px) {';
 
 			// Page header background color
 			if ( $page_header_background_color['tablet']['initial'] ) {
@@ -100,7 +100,7 @@ if ( ! function_exists( 'xenial_dynamic_archive_header_css' ) ) {
 
 		// Start of dynamic archive page header for mobile responsive
 
-		$css .= '@media screen and (max-width: 576px) {';
+		$css .= '@media (max-width: 575px) {';
 
 			// Page header background color
 			if ( $page_header_background_color['mobile']['initial'] ) {
