@@ -354,8 +354,9 @@
 
 .woocommerce ul.products li.product .xe-product-thumb .xe-woo-buttons-group {
 
-	display: inline-block;
-	flex-direction: row;
+	@include flex();
+	flex-direction: column;
+	gap: 10px;
 	z-index: 10;
 }
 
