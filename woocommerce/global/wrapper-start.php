@@ -29,5 +29,4 @@ if ( is_archive() ) {
 <div class="xe-container xe-flex-alt">
     <div id="primary" class="content-area">
         <main id="site-main" class="site-main">
-            <div class="xe-container">
             

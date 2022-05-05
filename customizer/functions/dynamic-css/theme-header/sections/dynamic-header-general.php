@@ -102,7 +102,7 @@ if ( ! function_exists( 'xenial_dynamic_header_general_css' ) ) {
 
 		// Start of dynamic theme header general for tablet responsive
 
-		$css .= '@media screen and (max-width: 768px) {';
+		$css .= '@media (max-width: 768px) {';
 
 			$css .= '#xe-mastheader {';
 				if ( $header_margin_desktop ) {
@@ -120,7 +120,7 @@ if ( ! function_exists( 'xenial_dynamic_header_general_css' ) ) {
 
 		// Start of dynamic theme header general for mobile responsive
 
-		$css .= '@media screen and (max-width: 576px) {';
+		$css .= '@media (max-width: 575px) {';
 
 			$css .= '#xe-mastheader {';
 				if ( $header_margin_desktop ) {

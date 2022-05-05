@@ -83,7 +83,7 @@ if ( ! function_exists( 'xenial_dynamic_header_button_css' ) ) {
 		);
 
 
-		$css .= '@media screen and (max-width: 768px) {';
+		$css .= '@media (max-width: 768px) {';
 
 			$css .= '.xe-header-element-button {';
 
@@ -134,7 +134,7 @@ if ( ! function_exists( 'xenial_dynamic_header_button_css' ) ) {
 		);
 
 
-		$css .= '@media screen and (max-width: 576px) {';
+		$css .= '@media (max-width: 575px) {';
 
 			$css .= '.xe-header-element-button {';
 

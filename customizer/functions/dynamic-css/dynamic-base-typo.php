@@ -301,17 +301,17 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
 
 
 
-        $css .= '@media screen and (max-width: 768px) {';
+        $css .= '@media (max-width: 768px) {';
 
             // Body font size and line height for tablet devices
 
-			$css .= 'body {';
+			$css .= ':root {';
 
                 $body_tablet_font_size = ( xenial_get_option( 'body_font_size_tablet' ) ) ? xenial_get_option( 'body_font_size_tablet' ) : $customizer_defaults['body_font_size']['tablet'];
 
                 if ( $body_tablet_font_size ) {
                     $css .= '
-                        font-size: ' . esc_attr( $body_tablet_font_size ) . 'px;
+                        --xe_base_font_size: ' . esc_attr( $body_tablet_font_size ) . 'px;
                     ';
                 }
 
@@ -319,7 +319,7 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
 
                 if ( $body_tablet_line_height ) {
                     $css .= '
-                        line-height: ' . esc_attr( $body_tablet_line_height  ) . ';
+                        --xe_base_font_line_height: ' . esc_attr( $body_tablet_line_height  ) . ';
                     ';
                 }
 
@@ -327,7 +327,7 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
 
                 if ( $body_tablet_letter_spacing ) {
                     $css .= '
-                        letter-spacing: ' . esc_attr( $body_tablet_letter_spacing  ) . 'px;
+                        --xe_base_letter_spacing: ' . esc_attr( $body_tablet_letter_spacing  ) . 'px;
                     ';
                 }
 
@@ -520,17 +520,17 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
 
 	    // Start styles for mobile devices
 
-		$css .= '@media screen and (max-width: 576px) {';
+		$css .= '@media (max-width: 575px) {';
 
 			// Body font size and line height for mobile devices
 
-            $css .= 'body {';
+            $css .= ':root {';
 
                 $body_mobile_font_size = ( xenial_get_option( 'body_font_size_mobile' ) ) ? xenial_get_option( 'body_font_size_mobile' ) : $customizer_defaults['body_font_size']['mobile'];
 
                 if ( $body_mobile_font_size ) {
                     $css .= '
-                        font-size: ' . esc_attr( $body_mobile_font_size ) . 'px;
+                        --xe_base_font_size: ' . esc_attr( $body_mobile_font_size ) . 'px;
                     ';
                 }
 
@@ -538,7 +538,7 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
 
                 if ( $body_mobile_line_height ) {
                     $css .= '
-                        line-height: ' . esc_attr( $body_mobile_line_height  ) . ';
+                        --xe_base_font_line_height: ' . esc_attr( $body_mobile_line_height  ) . ';
                     ';
                 }
 
@@ -546,7 +546,7 @@ if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
 
                 if ( $body_mobile_letter_spacing ) {
                     $css .= '
-                        letter-spacing: ' . esc_attr( $body_mobile_letter_spacing  ) . 'px;
+                        --xe_base_letter_spacing: ' . esc_attr( $body_mobile_letter_spacing  ) . 'px;
                     ';
                 }
 

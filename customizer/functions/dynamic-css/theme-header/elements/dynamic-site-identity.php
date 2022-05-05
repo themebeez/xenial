@@ -151,7 +151,7 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         	'color' => $site_description_colors['tablet']['initial']
         );
 
-        $css .= '@media screen and (max-width: 768px) {';
+        $css .= '@media (max-width: 768px) {';
 
         	$css .= '.xe-site-branding .site-title {';
         		$css .= xenial_dynamic_font_css( $site_title_font_tablet );
@@ -188,7 +188,7 @@ if ( ! function_exists( 'xenial_dynamic_header_site_identity_css' ) ) {
         	'color' => $site_description_colors['mobile']['initial']
         );
 
-        $css .= '@media screen and (max-width: 576px) {';
+        $css .= '@media (max-width: 575px) {';
 
         	$css .= '.xe-site-branding .site-title {';
         		$css .= xenial_dynamic_font_css( $site_title_font_mobile );

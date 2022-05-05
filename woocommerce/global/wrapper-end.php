@@ -19,7 +19,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 ?>
-		</div>
 	</main>
 </div>
 <?php
