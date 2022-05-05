@@ -824,13 +824,7 @@
         width: auto;
         margin: 0;
         border: none;
-        max-height: 72px;
         overflow: hidden;
-    }
-
-    .woocommerce div.product div.images .flex-control-thumbs li img {
-
-        height: 72px;
     }
 
     .woocommerce div.product .woocommerce-product-gallery .flex-direction-nav {
@@ -846,19 +840,42 @@
         height: 35px;
     }
 
+    .woocommerce.single div.product .summary p.price, 
+    .woocommerce.single div.product .summary span.price {
 
-    // VARIATION SWITCHER
-
-    
+        font-size: 18px;
+    }    
 
     // TAB
 
     .woocommerce div.product .woocommerce-tabs,
     .woocommerce-page div.product .woocommerce-tabs,
-    .woocommerce #content div.product .woocommerce-tabs, 
-    .woocommerce-page #content div.product .woocommerce-tabs {
+     .woocommerce #content div.product .woocommerce-tabs {
 
         margin: 0;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs,
+    .woocommerce-page div.product .woocommerce-tabs ul.tabs,
+    .woocommerce #content div.product .woocommerce-tabs ul.tabs, 
+    .woocommerce-page #content div.product .woocommerce-tabs ul.tabs {
+
+        @include flex();
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid var(--xe_border_color);
+        border-radius: 4px;
+
+        &::before,
+        &::after {
+
+            content: "";
+            display: none;
+            border: none;
+        }
     }
 
     .woocommerce div.product .woocommerce-tabs ul.tabs li,
@@ -866,17 +883,43 @@
     .woocommerce #content div.product .woocommerce-tabs ul.tabs li, 
     .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li {
 
-        width: 100%;
+        @include flex();
+        align-items: flex-start;
     }
 
     .woocommerce div.product .woocommerce-tabs ul.tabs li a {
 
+        @include flex();
+        gap: 10px;
+        align-items: center;
         width: 100%;
-        padding: 10px 0;
+        padding: 0;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li a::before {
+
+        content: "\e649";
+        font-family: var(--xe_iconfont);
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+
+        border-bottom-color: transparent;
+    }
+
+    .woocommerce div.product .woocommerce-tabs ul.tabs li.active a::before {
+
+        content: "\e71d";
     }
 
     .woocommerce div.product .woocommerce-tabs .panel {
 
         margin: 0;
+    }
+
+    .woocommerce #reviews #comments,
+    .woocommerce #reviews #comments h2 {
+
+        margin-top: 0;
     }
 }
