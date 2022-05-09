@@ -31,9 +31,9 @@
             background-color: white;
             z-index: calc( var(--xe_search_form_modal_zindex) + 5 );
             box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.1);
-            animation: xeButtonFadeInUp 1s ease 0s;
             overflow: hidden;
             overflow-y: auto;
+            @include transation_delay();
 
             li {
                 
