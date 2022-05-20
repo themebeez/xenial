@@ -41,7 +41,9 @@ if ( ! function_exists( 'xenial_get_woocommerce_customize_defaults' ) ) {
                 'display_compare_action_button' => false,
                 'compare_action_button_tooltip_text' => esc_html__( 'Compare', 'xenial' ),
                 'display_add_to_cart_action_button' => false,
-                'add_to_cart_button_position' => 'default'
+                'add_to_cart_button_position' => 'default',
+                'pagination_mid_size' => 3,
+                'pagination_end_size' => 3
             )
         );
 
@@ -423,6 +425,57 @@ if ( ! function_exists( 'xenial_woocommerce_customize_register' ) ) {
                     'default' => esc_html__( 'Default', 'xenial' )
                 ),
                 'default' => xenial_get_customize_default( 'add_to_cart_button_position' )
+            )
+        );
+
+
+        xenial_divider_field( 
+            'woo_pagination_divider', 
+            array( 
+                'priority' => 10,
+                'section' => 'woocommerce_product_catalog', 
+            ) 
+        );
+
+        xenial_info_field(
+            'woo_pagination_info',
+            array(
+                'priority' => 10,
+                'section' => 'woocommerce_product_catalog',
+                'label' => esc_html__( 'Pagination', 'xenial' )
+            )
+        );
+
+
+        xenial_range_control_field(
+            'pagination_mid_size',
+            array(
+                'priority' => 10,
+                'section' => 'woocommerce_product_catalog',
+                'label' => esc_html__( 'Mid Size', 'xenial' ),
+                'input_attrs' => array(
+                    'min'       => 0,
+                    'max'       => 5,
+                    'step'      => 1,
+                ),
+                'responsive' => false,
+                'default' => xenial_get_customize_default( 'pagination_mid_size' )
+            )
+        );
+
+        xenial_range_control_field(
+            'pagination_end_size',
+            array(
+                'priority' => 10,
+                'section' => 'woocommerce_product_catalog',
+                'label' => esc_html__( 'End Size', 'xenial' ),
+                'input_attrs' => array(
+                    'min'       => 0,
+                    'max'       => 5,
+                    'step'      => 1,
+                ),
+                'responsive' => false,
+                'default' => xenial_get_customize_default( 'pagination_end_size' )
             )
         );
 
