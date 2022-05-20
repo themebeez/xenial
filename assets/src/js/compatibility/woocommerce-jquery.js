@@ -99,66 +99,64 @@
 
     function xeAjaxProductSearch() {
 
+        var typingTimer;
         var searchValue = '';
+        var searchVal = '';
         var searchLoadingDots = $('#xe-ajax-search-loading');
         var searchContentEle = $('#xe-header-element-search-ajax-content');
 
-        $(document).on('keyup', '#xe-search-form .woocommerce-product-search .search-field', function (event) {
-
+        $("#xe-search-form .woocommerce-product-search .search-field").on( "keyup", function (event) {
             var searchField = $(this);
-            var searchVal = searchField.val();
-            var ajaxResults = $('#xe-header-element-search-ajax-content > ul');
-            searchLoadingDots.addClass('visible').removeClass('hidden');
+            searchVal = searchField.val();
+
+            searchLoadingDots.addClass("visible").removeClass("hidden");
 
             if (searchVal.length <= 0) {
-
-                searchLoadingDots.addClass('hidden').removeClass('visible');
+              searchLoadingDots.addClass("hidden").removeClass("visible");
             }
 
             if (searchVal.length > 2 && searchVal != searchValue) {
-
-                searchValue = searchVal;
-
-                $.ajax({
-
-                    url: xenialWooScriptData.ajax_url,
-                    data: {
-                        action: 'xenial_ajax_product_search',
+                clearTimeout(typingTimer);
+                typingTimer = setTimeout( () => {
+                    searchValue = searchVal;
+                    $.ajax({
+                        url: xenialWooScriptData.ajax_url,
+                        data: {
+                        action: "xenial_ajax_product_search",
                         product_search_text: searchVal,
-                        nonce: xenialWooScriptData.nonce
-                    },
-                    type: 'POST',
+                        nonce: xenialWooScriptData.nonce,
+                        },
+                        type: "POST",
 
-                    success: function (response) {
+                        success: function (response) {
+                            if (response.success) {
+                                searchLoadingDots.addClass("hidden").removeClass("visible");
+                                searchContentEle.html(response.data);
 
-                        if (response.success) {
-
-                            searchLoadingDots.addClass('hidden').removeClass('visible');
-                            searchContentEle.html(response.data);
-
-                            if (ajaxResults) {
-
-                                new PerfectScrollbar('#xe-ajax-search-items', {
-
-                                    wheelSpeed: 2,
-                                    wheelPropagation: true,
-                                    minScrollbarLength: 20
-                                });
+                                var ajaxResults = $("#xe-header-element-search-ajax-content > ul");
+                                if (ajaxResults) {
+                                    new PerfectScrollbar("#xe-ajax-search-items", {
+                                        wheelSpeed: 2,
+                                        wheelPropagation: true,
+                                        minScrollbarLength: 20,
+                                    });
+                                }
+                            } else {
+                                searchLoadingDots.addClass("hidden").removeClass("visible");
+                                // No product found.
+                                searchContentEle.html(response.data);
                             }
-
-                        } else {
-
-                            searchLoadingDots.addClass('hidden').removeClass('visible');
-                            // No product found.
-                            searchContentEle.html(response.data);
-                        }
-                    }
-                });
+                        },
+                    });
+                }, 500);
             } else {
-
-                searchContentEle.html('');
+              searchContentEle.html("");
             }
         });
+
+        function xenialAjaxProductSearchDone() {
+            
+        }
 
         $(document).on('focus', '#xe-search-form .woocommerce-product-search .search-field', function (event) {
 
