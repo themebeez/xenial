@@ -404,7 +404,7 @@ if ( ! function_exists( 'xenial_woocommerce_product_add_to_wishlist_action_butto
 		$button_classes = array( 'xe-button', 'xe-false-button', 'xe-wishlist-button', 'xe-tippy' );
 
 		if ( class_exists( 'Addonify_Wishlist' ) ) {
-			$button_classes[] = 'addonify-add-to-wishlist-btn addonify-custom-wishlist-btn';
+			$button_classes[] = 'addonify-add-to-wishlist-btn addonify-custom-wishlist-btn addonify-wishlist-ajax-add-to-wishlist';
 			$product_in_wishlist = addonify_wishlist_is_product_in_wishlist( $product->get_id() );
 			if ( $product_in_wishlist ) {
 				$tooltip_text = addonify_wishlist_get_button_label( true );
