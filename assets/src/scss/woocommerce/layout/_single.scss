@@ -491,7 +491,7 @@
 
     @include flex();
     flex: 0 0 100%;
-    margin-top: 30px;
+    margin: 30px 0 20px 0;
 }
 
 .woocommerce div.product .summary .addonify-add-to-wishlist-btn-wrapper .adfy-wishlist-btn {
@@ -500,13 +500,19 @@
     gap: 5px;
     align-items: center;
     flex: 0 0 auto;
-    font-size: calc( var(--xe_base_font_size) - 10% );
+    font-size: var(--xe_base_font_size);
     color: var(--xe_base_text_color);
     fill: var(--xe_base_text_color);
     padding: 0;
     height: auto;
     background-color: transparent;
+
+    .icon {
+
+        color: var(--xe_base_text_color);
+    }
 }
+
 
 .woocommerce div.product .summary .addonify-add-to-wishlist-btn-wrapper .adfy-wishlist-btn.added-to-wishlist {
 

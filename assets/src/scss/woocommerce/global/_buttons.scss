@@ -193,6 +193,18 @@
     }
 }
 
+.woocommerce ul.products li.product .xe-product-thumb .xe-woo-buttons-group .addonify-add-to-wishlist-btn, 
+.woocommerce-page ul.products li.product .xe-product-thumb .xe-woo-buttons-group .addonify-add-to-wishlist-btn {
+
+    color: var(--xe_base_text_color);
+    background-color: white;
+
+    &:hover {
+
+        background-color: #e6e6e6;
+    }
+}
+
 @media (max-width: 575px) {
 
     .xe-woo-buttons-group .xe-button {

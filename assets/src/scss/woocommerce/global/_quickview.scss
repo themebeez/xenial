@@ -25,6 +25,8 @@
         color: var(--xe_base_text_color);
         border: 2px solid var(--xe_base_text_color);
         border-radius: 100%;
+        background: transparent;
+        background-color: transparent;
 
         svg {
 
@@ -38,6 +40,8 @@
             fill: var(--xe_base_link_hover_color);
             color: var(--xe_base_link_hover_color);
             border-color: var(--xe_base_link_hover_color);
+            background: transparent;
+            background-color: transparent;
         }
     }
 
@@ -46,6 +50,33 @@
         .woocommerce {
 
             .product {
+
+                .addonify-add-to-wishlist-btn {
+
+                    display: inline-flex;
+                    padding: 15px 20px;
+                    height: auto;
+                    fill: var(--xe_button_text_color);
+                    color: var(--xe_button_text_color);
+                    background-color: var(--xe_button_background_color);
+
+                    .icon {
+
+                        color: var(--xe_button_text_color);
+                    }
+
+                    &:hover {
+
+                        fill: var(--xe_button_hover_text_color);
+                        color: var(--xe_button_hover_text_color);
+                        background-color: var(--xe_button_hover_background_color);
+
+                        .icon {
+
+                            color: var(--xe_button_hover_text_color);
+                        }
+                    }
+                }
 
                 .woocommerce-product-gallery {
 
