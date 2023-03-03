@@ -6,7 +6,15 @@ if ( ! function_exists( 'xenial_get_sidebar_position' ) ) {
 
 		$global_sidebar_position = xenial_get_option( 'sidebar_default_position' );
 
-		if ( xenial_is_woocommerce_page() ) {
+		if (
+			class_exists( 'WooCommerce' ) &&
+			(
+				is_woocommerce() ||
+				is_cart() ||
+				is_checkout() ||
+				is_account_page()
+			)
+		) {
 
 			return xenial_get_woocommerce_sidebar_position();
 
