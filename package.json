@@ -4,10 +4,8 @@
   "description": "A Light-weight, Flexible Page Builder Optimized Multi-Purpose WordPress Theme.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp",
-    "dev": "run-p dev:browsersync dev:gulpassets",
-    "dev:browsersync": "browser-sync start --proxy 'xenial.local' --files './assets/build/**'",
-    "dev:gulpassets": "gulp assets"
+    "public": "gulp assets",
+    "zip": "gulp zip"
   },
   "repository": {
     "type": "git",
@@ -20,10 +18,8 @@
   },
   "homepage": "https://github.com/themebeez/xenial#readme",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "browser-sync": "^2.27.10",
-    "cssnano": "^5.0.11",
-    "dart-sass": "^1.25.0",
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
@@ -39,8 +35,6 @@
     "gulp-uglify": "^3.0.2",
     "gulp-wp-pot": "^2.5.0",
     "gulp-zip": "^4.2.0",
-    "node-sass": "^6.0.1",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.43.4"
+    "sass": "^1.62.0"
   }
 }

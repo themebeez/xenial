@@ -62,9 +62,10 @@ form.pmpro_form .pmpro_checkout-fields div,
 }
 
 form.pmpro_form label,
+#loginform label,
 [class*="pmpro_"] #loginform label {
 
-    display: inline-block;
+    display: block;
     margin: 0 0 5px 5px;
     font-weight: normal;
 }

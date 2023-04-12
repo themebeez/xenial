@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires PHP: 7.0.0
 Requires at least: 5.6
 Tested up to: 6.1.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ Xenial includes support for Infinite Scroll in Jetpack.
 
 
 == Changelog ==
+
+== 1.0.2 - April 12, 2023 ==
+
+- Fix: Paid membership pro plugin checkout page CSS issue.
 
 == 1.0.1 - March 3, 2023 ==
 
