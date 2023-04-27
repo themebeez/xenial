@@ -1,754 +1,777 @@
-<?php 
+<?php
 /**
- * Dyynamic CSS for general typography.
- *  
- * @param string 
- * @return string
+ * Dynamic CSS for general typography.
+ *
+ * @package Xenial
  */
-if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
 
+if ( ! function_exists( 'xenial_dynamic_typo_css' ) ) {
+	/**
+	 * Generates dynamic CSS for general typgraphy.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param string $css CSS.
+	 * @return string
+	 */
 	function xenial_dynamic_typo_css( $css ) {
 
 		$customizer_defaults = xenial_get_customizer_defaults();
 
-        $body_font_family = null;
-        $body_font_size = null;
-        $body_line_height = null;
-		$body_font_weight = null;
-				
-		
-		$headings_font_family = null;
-        $headings_font_weight = null;
+		$body_typography = xenial_get_option( 'body_typography' );
+		$body_typography = json_decode( $body_typography, true );
+
+		$headings_typography = xenial_get_option( 'headings_typography' );
+		$headings_typography = json_decode( $headings_typography, true );
+
+		$h1_typography = xenial_get_option( 'h1_typography' );
+		$h1_typography = json_decode( $h1_typography, true );
+
+		$h2_typography = xenial_get_option( 'h2_typography' );
+		$h2_typography = json_decode( $h2_typography, true );
+
+		$h3_typography = xenial_get_option( 'h3_typography' );
+		$h3_typography = json_decode( $h3_typography, true );
+
+		$h4_typography = xenial_get_option( 'h4_typography' );
+		$h4_typography = json_decode( $h4_typography, true );
+
+		$h5_typography = xenial_get_option( 'h5_typography' );
+		$h5_typography = json_decode( $h5_typography, true );
+
+		$h6_typography = xenial_get_option( 'h6_typography' );
+		$h6_typography = json_decode( $h6_typography, true );
+
+		$css .= ':root {';
+
+		if (
+			isset( $body_typography['font_family'] ) &&
+			! empty( $body_typography['font_family'] )
+		) {
+			$css .= '--xe_base_font_family: ' . esc_attr( $body_typography['font_family'] ) . ';';
+		}
+
+		if (
+			isset( $body_typography['font_weight'] ) &&
+			! empty( $body_typography['font_weight'] )
+		) {
+			$css .= '--xe_base_font_weight: ' . esc_attr( $body_typography['font_weight'] ) . ';';
+		}
+
+		if (
+			isset( $body_typography['font_sizes']['desktop']['value'] ) &&
+			! empty( $body_typography['font_sizes']['desktop']['value'] )
+		) {
+			$desktop_font_size      = $body_typography['font_sizes']['desktop']['value'];
+			$desktop_font_size_unit = ( isset( $body_typography['font_sizes']['desktop']['unit'] ) && ! empty( $body_typography['font_sizes']['desktop']['unit'] ) ) ? $body_typography['font_sizes']['desktop']['unit'] : 'px';
+
+			$css .= '--xe_base_font_size: ' . esc_attr( $desktop_font_size ) . esc_attr( $desktop_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $body_typography['letter_spacings']['desktop']['value'] ) &&
+			! empty( $body_typography['letter_spacings']['desktop']['value'] )
+		) {
+			$desktop_letter_spacing      = $body_typography['letter_spacings']['desktop']['value'];
+			$desktop_letter_spacing_unit = ( isset( $body_typography['letter_spacings']['desktop']['unit'] ) && ! empty( $body_typography['letter_spacings']['desktop']['unit'] ) ) ? $body_typography['letter_spacings']['desktop']['unit'] : 'px';
+
+			$css .= '--xe_base_letter_spacing: ' . esc_attr( $desktop_letter_spacing ) . esc_attr( $desktop_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $body_typography['line_heights']['desktop'] ) &&
+			! empty( $body_typography['line_heights']['desktop'] )
+		) {
+			$css .= '--xe_base_font_line_height: ' . esc_attr( $body_typography['line_heights']['desktop'] ) . ';';
+		}
+
+		if (
+			isset( $headings_typography['font_family'] ) &&
+			! empty( $headings_typography['font_family'] )
+		) {
+			$css .= '--xe_heading_font_family: ' . esc_attr( $headings_typography['font_family'] ) . ';';
+		}
+
+		if (
+			isset( $headings_typography['font_weight'] ) &&
+			! empty( $headings_typography['font_weight'] )
+		) {
+			$css .= '--xe_heading_font_weight: ' . esc_attr( $headings_typography['font_weight'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H1 font size and line height on desktop devices.
+
+		$css .= 'h1 {';
+
+		if (
+			isset( $h1_typography['font_sizes']['desktop']['value'] ) &&
+			! empty( $h1_typography['font_sizes']['desktop']['value'] )
+		) {
+			$desktop_h1_font_size      = $h1_typography['font_sizes']['desktop']['value'];
+			$desktop_h1_font_size_unit = ( isset( $h1_typography['font_sizes']['desktop']['unit'] ) && ! empty( $h1_typography['font_sizes']['desktop']['unit'] ) ) ? $h1_typography['font_sizes']['desktop']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $desktop_h1_font_size ) . esc_attr( $desktop_h1_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h1_typography['letter_spacings']['desktop']['value'] ) &&
+			! empty( $h1_typography['letter_spacings']['desktop']['value'] )
+		) {
+			$desktop_h1_letter_spacing      = $h1_typography['letter_spacings']['desktop']['value'];
+			$desktop_h1_letter_spacing_unit = ( isset( $h1_typography['letter_spacings']['desktop']['unit'] ) && ! empty( $h1_typography['letter_spacings']['desktop']['unit'] ) ) ? $h1_typography['letter_spacings']['desktop']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $desktop_h1_letter_spacing ) . esc_attr( $desktop_h1_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h1_typography['line_heights']['desktop'] ) &&
+			! empty( $h1_typography['line_heights']['desktop'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h1_typography['line_heights']['desktop'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H2 font size and line height on desktop devices.
+
+		$css .= 'h2 {';
 
-		$body_font_type = xenial_get_option( 'body_font_type' );
+		if (
+			isset( $h2_typography['font_sizes']['desktop']['value'] ) &&
+			! empty( $h2_typography['font_sizes']['desktop']['value'] )
+		) {
+			$desktop_h2_font_size      = $h2_typography['font_sizes']['desktop']['value'];
+			$desktop_h2_font_size_unit = ( isset( $h2_typography['font_sizes']['desktop']['unit'] ) && ! empty( $h2_typography['font_sizes']['desktop']['unit'] ) ) ? $h2_typography['font_sizes']['desktop']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $desktop_h2_font_size ) . esc_attr( $desktop_h2_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h2_typography['letter_spacings']['desktop']['value'] ) &&
+			! empty( $h2_typography['letter_spacings']['desktop']['value'] )
+		) {
+			$desktop_h2_letter_spacing      = $h2_typography['letter_spacings']['desktop']['value'];
+			$desktop_h2_letter_spacing_unit = ( isset( $h2_typography['letter_spacings']['desktop']['unit'] ) && ! empty( $h2_typography['letter_spacings']['desktop']['unit'] ) ) ? $h2_typography['letter_spacings']['desktop']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $desktop_h2_letter_spacing ) . esc_attr( $desktop_h2_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h2_typography['line_heights']['desktop'] ) &&
+			! empty( $h2_typography['line_heights']['desktop'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h2_typography['line_heights']['desktop'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H3 font size and line height on desktop devices.
+
+		$css .= 'h3 {';
 
-		if ( $body_font_type == 'google_font' ) {
-
-            $body_google_font = xenial_get_option( 'body_google_font' );
-
-            $body_google_font = json_decode( $body_google_font, true );
-
-            $body_font_category = $body_google_font['category'];
-
-            if ( $body_font_category ) {
-
-            	$body_font_category = ',' . $body_font_category;
-            }
-
-            $body_font_family = $body_google_font["font"] . $body_font_category;
-
-            $body_font_weight = xenial_google_font_weight( $body_google_font['boldweight'] );
-        } else {
-
-            $body_system_font_family = xenial_get_option( 'body_system_font_family' );
-
-            $websafe_fonts = xenial_get_standard_fonts();
-
-            $body_font_family = $websafe_fonts[ $body_system_font_family ]; 
-
-            $body_font_weight = absint( xenial_get_option( 'body_system_font_weight' ) );     	
-        }
-
-    	$headings_font_type = xenial_get_option( 'headings_font_type' );
-
-    	if ( $headings_font_type == 'google_font' ) {
-
-            $headings_google_font = xenial_get_option( 'headings_google_font' );
-
-            $headings_google_font = json_decode( $headings_google_font, true );
-
-            $headings_font_category = $headings_google_font['category'];
-
-            if ( $headings_font_category ) {
-
-            	$headings_font_category = ',' . $headings_font_category;
-            }
-
-            $headings_font_family = $headings_google_font["font"] . $headings_font_category;
-
-            $headings_font_weight = xenial_google_font_weight( $headings_google_font["boldweight"] );
-        } else {
-
-            $headings_system_font_family = xenial_get_option( 'headings_system_font_family' );
-
-            $websafe_fonts = xenial_get_standard_fonts();
-            
-            $headings_font_family = $websafe_fonts[ $headings_system_font_family ];
-
-            $headings_font_weight = absint( xenial_get_option( 'headings_system_font_weight' ) );
-        }
-
-
-        $body_font_size = ( xenial_get_option( 'body_font_size_desktop' ) ) ? xenial_get_option( 'body_font_size_desktop' ) : $customizer_defaults['body_font_size']['desktop'];
-
-        $body_line_height = xenial_get_option( 'body_line_height_desktop' ) ? xenial_get_option( 'body_line_height_desktop' ) : $customizer_defaults['body_line_height']['desktop'];
-
-        $body_letter_spacing = xenial_get_option( 'body_letter_spacing_desktop' ) ? xenial_get_option( 'body_letter_spacing_desktop' ) : $customizer_defaults['body_letter_spacing']['desktop'];
-
-        $css .= ':root {';
-
-            if ( $body_font_family ) {
-                $css .= '--xe_base_font_family: ' . esc_attr( $body_font_family ) . ';';
-            }
-
-            if ( $body_font_size ) {
-                $css .= '--xe_base_font_size: ' . esc_attr( $body_font_size ) . 'px;';
-            }
-
-            if ( $body_font_weight ) {
-                $css .= '--xe_base_font_weight: ' . esc_attr( $body_font_weight ) . ';';
-            }
-
-            if ( $body_letter_spacing ) {
-                $css .= '--xe_base_letter_spacing: ' . esc_attr( $body_letter_spacing ) . 'px;';
-            }
-
-            if ( $body_line_height ) {
-                $css .= '--xe_base_font_line_height: ' . esc_attr( $body_line_height ) . 'em;';
-            }            
-
-            if ( $headings_font_family ) {
-                $css .= '--xe_heading_font_family: ' . esc_attr( $headings_font_family ) . ';';
-            }
-
-            if ( $headings_font_weight ) {
-                $css .= '--xe_heading_font_weight: ' . esc_attr( $headings_font_weight ) . ';';
-            }
-
-        $css .= '}';
-
-        // H1 font size and line height on desktop devices
-
-        $css .= 'h1 {';
-
-            $h1_desktop_font_size = ( xenial_get_option( 'h1_font_size_desktop' ) ) ? xenial_get_option( 'h1_font_size_desktop' ) : $customizer_defaults['h1_font_size']['desktop'];
-
-            if ( $h1_desktop_font_size ) {
-                $css .= '
-                    font-size: ' . esc_attr( $h1_desktop_font_size ) . 'px;
-                ';
-            }
-
-            $h1_desktop_line_height = ( xenial_get_option( 'h1_line_height_desktop' ) ) ? xenial_get_option( 'h1_line_height_desktop' ) : $customizer_defaults['h1_line_height']['desktop'];
-
-            if ( $h1_desktop_line_height ) {
-                $css .= '
-                    line-height: ' . esc_attr( $h1_desktop_line_height  ) . ';
-                ';
-            }
-
-            $h1_desktop_letter_spacing = ( xenial_get_option( 'h1_letter_spacing_desktop' ) ) ? xenial_get_option( 'h1_letter_spacing_desktop' ) : $customizer_defaults['h1_letter_spacing']['desktop'];
-
-            if ( $h1_desktop_letter_spacing ) {
-                $css .= '
-                    letter-spacing: ' . esc_attr( $h1_desktop_letter_spacing  ) . 'px;
-                ';
-            }
-
-        $css .= '}';
-
-        // H2 font size and line height on desktop devices
-        $css .= 'h2 {';
-
-            $h2_desktop_font_size = ( xenial_get_option( 'h2_font_size_desktop' ) ) ? xenial_get_option( 'h2_font_size_desktop' ) : $customizer_defaults['h2_font_size']['desktop'];
-
-            if ( $h2_desktop_font_size ) {
-                $css .= '
-                    font-size: ' . esc_attr( $h2_desktop_font_size ) . 'px;
-                ';
-            }
-
-            $h2_desktop_line_height = ( xenial_get_option( 'h2_line_height_desktop' ) ) ? xenial_get_option( 'h2_line_height_desktop' ) : $customizer_defaults['h2_line_height']['desktop'];
-
-            if ( $h2_desktop_line_height ) {
-                $css .= '
-                    line-height: ' . esc_attr( $h2_desktop_line_height  ) . ';
-                ';
-            }
-
-            $h2_desktop_letter_spacing = ( xenial_get_option( 'h2_letter_spacing_desktop' ) ) ? xenial_get_option( 'h2_letter_spacing_desktop' ) : $customizer_defaults['h2_letter_spacing']['desktop'];
-
-            if ( $h2_desktop_letter_spacing ) {
-                $css .= '
-                    letter-spacing: ' . esc_attr( $h2_desktop_letter_spacing  ) . 'px;
-                ';
-            }
-
-        $css .= '}';
-
-        // H3 font size and line height on desktop devices
-
-        $css .= 'h3 {';
-
-            $h3_desktop_font_size = ( xenial_get_option( 'h3_font_size_desktop' ) ) ? xenial_get_option( 'h3_font_size_desktop' ) : $customizer_defaults['h3_font_size']['desktop'];
-
-            if ( $h3_desktop_font_size ) {
-                $css .= '
-                    font-size: ' . esc_attr( $h3_desktop_font_size ) . 'px;
-                ';
-            }
-
-            $h3_desktop_line_height = ( xenial_get_option( 'h3_line_height_desktop' ) ) ? xenial_get_option( 'h3_line_height_desktop' ) : $customizer_defaults['h3_line_height']['desktop'];
-
-            if ( $h3_desktop_line_height ) {
-                $css .= '
-                    line-height: ' . esc_attr( $h3_desktop_line_height  ) . ';
-                ';
-            }
-
-            $h3_desktop_letter_spacing = ( xenial_get_option( 'h3_letter_spacing_desktop' ) ) ? xenial_get_option( 'h3_letter_spacing_desktop' ) : $customizer_defaults['h3_letter_spacing']['desktop'];
-
-            if ( $h3_desktop_letter_spacing ) {
-                $css .= '
-                    letter-spacing: ' . esc_attr( $h3_desktop_letter_spacing  ) . 'px;
-                ';
-            }
-
-        $css .= '}';
-
-        // H4 font size and line height on desktop devices
-
-        $css .= 'h4 {';
-
-            $h4_desktop_font_size = ( xenial_get_option( 'h4_font_size_desktop' ) ) ? xenial_get_option( 'h4_font_size_desktop' ) : $customizer_defaults['h4_font_size']['desktop'];
-
-            if ( $h4_desktop_font_size ) {
-                $css .= '
-                    font-size: ' . esc_attr( $h4_desktop_font_size ) . 'px;
-                ';
-            }
-
-            $h4_desktop_line_height = ( xenial_get_option( 'h4_line_height_desktop' ) ) ? xenial_get_option( 'h4_line_height_desktop' ) : $customizer_defaults['h4_line_height']['desktop'];
-
-            if ( $h4_desktop_line_height ) {
-                $css .= '
-                    line-height: ' . esc_attr( $h4_desktop_line_height  ) . ';
-                ';
-            }
-
-            $h4_desktop_letter_spacing = ( xenial_get_option( 'h4_letter_spacing_desktop' ) ) ? xenial_get_option( 'h4_letter_spacing_desktop' ) : $customizer_defaults['h4_letter_spacing']['desktop'];
-
-            if ( $h4_desktop_letter_spacing ) {
-                $css .= '
-                    letter-spacing: ' . esc_attr( $h4_desktop_letter_spacing  ) . 'px;
-                ';
-            }
-
-        $css .= '}';
-
-
-        // H5 font size and line height on desktop devices
-
-        $css .= 'h5 {';
-
-            $h5_desktop_font_size = ( xenial_get_option( 'h5_font_size_desktop' ) ) ? xenial_get_option( 'h5_font_size_desktop' ) : $customizer_defaults['h5_font_size']['desktop'];
-
-            if ( $h5_desktop_font_size ) {
-                $css .= '
-                    font-size: ' . esc_attr( $h5_desktop_font_size ) . 'px;
-                ';
-            }
-
-            $h5_desktop_line_height = ( xenial_get_option( 'h5_line_height_desktop' ) ) ? xenial_get_option( 'h5_line_height_desktop' ) : $customizer_defaults['h5_line_height']['desktop'];
-
-            if ( $h5_desktop_line_height ) {
-                $css .= '
-                    line-height: ' . esc_attr( $h5_desktop_line_height  ) . ';
-                ';
-            }
-
-            $h5_desktop_letter_spacing = ( xenial_get_option( 'h5_letter_spacing_desktop' ) ) ? xenial_get_option( 'h5_letter_spacing_desktop' ) : $customizer_defaults['h5_letter_spacing']['desktop'];
-
-            if ( $h5_desktop_letter_spacing ) {
-                $css .= '
-                    letter-spacing: ' . esc_attr( $h5_desktop_letter_spacing  ) . 'px;
-                ';
-            }
-
-        $css .= '}';
-
-        // H6 font size and line height on desktop devices
-
-        $css .= 'h6 {';
-
-            $h6_desktop_font_size = ( xenial_get_option( 'h6_font_size_desktop' ) ) ? xenial_get_option( 'h6_font_size_desktop' ) : $customizer_defaults['h6_font_size']['desktop'];
-
-            if ( $h6_desktop_font_size ) {
-                $css .= '
-                    font-size: ' . esc_attr( $h6_desktop_font_size ) . 'px;
-                ';
-            }
-
-            $h6_desktop_line_height = ( xenial_get_option( 'h6_line_height_desktop' ) ) ? xenial_get_option( 'h6_line_height_desktop' ) : $customizer_defaults['h6_line_height']['desktop'];
-
-            if ( $h6_desktop_line_height ) {
-                $css .= '
-                    line-height: ' . esc_attr( $h6_desktop_line_height  ) . ';
-                ';
-            }
-
-            $h6_desktop_letter_spacing = ( xenial_get_option( 'h6_letter_spacing_desktop' ) ) ? xenial_get_option( 'h6_letter_spacing_desktop' ) : $customizer_defaults['h6_letter_spacing']['desktop'];
-
-            if ( $h6_desktop_letter_spacing ) {
-                $css .= '
-                    letter-spacing: ' . esc_attr( $h6_desktop_letter_spacing  ) . 'px;
-                ';
-            }
-
-        $css .= '}';
-
-
-
-
-
-        $css .= '@media (max-width: 768px) {';
-
-            // Body font size and line height for tablet devices
-
-			$css .= ':root {';
-
-                $body_tablet_font_size = ( xenial_get_option( 'body_font_size_tablet' ) ) ? xenial_get_option( 'body_font_size_tablet' ) : $customizer_defaults['body_font_size']['tablet'];
-
-                if ( $body_tablet_font_size ) {
-                    $css .= '
-                        --xe_base_font_size: ' . esc_attr( $body_tablet_font_size ) . 'px;
-                    ';
-                }
-
-                $body_tablet_line_height = ( xenial_get_option( 'body_line_height_tablet' ) ) ? xenial_get_option( 'body_line_height_tablet' ) : $customizer_defaults['body_line_height']['tablet'];
-
-                if ( $body_tablet_line_height ) {
-                    $css .= '
-                        --xe_base_font_line_height: ' . esc_attr( $body_tablet_line_height  ) . ';
-                    ';
-                }
-
-                $body_tablet_letter_spacing = xenial_get_option( 'body_letter_spacing_tablet' ) ? xenial_get_option( 'body_letter_spacing_tablet' ) : $customizer_defaults['body_letter_spacing']['tablet'];
-
-                if ( $body_tablet_letter_spacing ) {
-                    $css .= '
-                        --xe_base_letter_spacing: ' . esc_attr( $body_tablet_letter_spacing  ) . 'px;
-                    ';
-                }
-
-	        $css .= '}';
-
-
-            // H1 font size and line height for tablet devices
-
-			$css .= 'h1 {';
-
-    	        $h1_tablet_font_size = ( xenial_get_option( 'h1_font_size_tablet' ) ) ? xenial_get_option( 'h1_font_size_tablet' ) : $customizer_defaults['h1_font_size']['tablet'];
-
-                if ( $h1_tablet_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h1_tablet_font_size ) . 'px;
-                    ';
-                }
-
-                $h1_tablet_line_height = ( xenial_get_option( 'h1_line_height_tablet' ) ) ? xenial_get_option( 'h1_line_height_tablet' ) : $customizer_defaults['h1_line_height']['tablet'];
-
-                if ( $h1_tablet_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h1_tablet_line_height  ) . ';
-                    ';
-                }
-
-                $h1_tablet_letter_spacing = xenial_get_option( 'h1_letter_spacing_tablet' ) ? xenial_get_option( 'h1_letter_spacing_tablet' ) : $customizer_defaults['h1_letter_spacing']['tablet'];
-
-                if ( $h1_tablet_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h1_tablet_letter_spacing  ) . 'px;
-                    ';
-                }
-
-	        $css .= '}';
-
-            // H2 font size and line height for tablet devices
-
-	        $css .= 'h2 {';
-
-    	        $h2_tablet_font_size = ( xenial_get_option( 'h2_font_size_tablet' ) ) ? xenial_get_option( 'h2_font_size_tablet' ) : $customizer_defaults['h2_font_size']['tablet'];
-
-                if ( $h2_tablet_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h2_tablet_font_size ) . 'px;
-                    ';
-                }
-
-                $h2_tablet_line_height = ( xenial_get_option( 'h2_line_height_tablet' ) ) ? xenial_get_option( 'h2_line_height_tablet' ) : $customizer_defaults['h2_line_height']['tablet'];
-
-                if ( $h2_tablet_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h2_tablet_line_height  ) . ';
-                    ';
-                }
-
-                $h2_tablet_letter_spacing = xenial_get_option( 'h2_letter_spacing_tablet' ) ? xenial_get_option( 'h2_letter_spacing_tablet' ) : $customizer_defaults['h2_letter_spacing']['tablet'];
-
-                if ( $h2_tablet_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h2_tablet_letter_spacing  ) . 'px;
-                    ';
-                }
-
-	        $css .= '}';
-
-            // H3 font size and line height for tablet devices
-
-	        $css .= 'h3 {';
-
-    	        $h3_tablet_font_size = ( xenial_get_option( 'h3_font_size_tablet' ) ) ? xenial_get_option( 'h3_font_size_tablet' ) : $customizer_defaults['h3_font_size']['tablet'];
-
-                if ( $h3_tablet_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h3_tablet_font_size ) . 'px;
-                    ';
-                }
-
-                $h3_tablet_line_height = ( xenial_get_option( 'h3_line_height_tablet' ) ) ? xenial_get_option( 'h3_line_height_tablet' ) : $customizer_defaults['h3_line_height']['tablet'];
-
-                if ( $h3_tablet_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h3_tablet_line_height  ) . ';
-                    ';
-                }
-
-                $h3_tablet_letter_spacing = xenial_get_option( 'h3_letter_spacing_tablet' ) ? xenial_get_option( 'h3_letter_spacing_tablet' ) : $customizer_defaults['h3_letter_spacing']['tablet'];
-
-                if ( $h3_tablet_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h3_tablet_letter_spacing  ) . 'px;
-                    ';
-                }
-
-	        $css .= '}';
-
-            // H4 font size and line height for tablet devices
-
-	        $css .= 'h4 {';
-
-    	        $h4_tablet_font_size = ( xenial_get_option( 'h4_font_size_tablet' ) ) ? xenial_get_option( 'h4_font_size_tablet' ) : $customizer_defaults['h4_font_size']['tablet'];
-
-                if ( $h4_tablet_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h4_tablet_font_size ) . 'px;
-                    ';
-                }
-
-                $h4_tablet_line_height = ( xenial_get_option( 'h4_line_height_tablet' ) ) ? xenial_get_option( 'h4_line_height_tablet' ) : $customizer_defaults['h4_line_height']['tablet'];
-
-                if ( $h4_tablet_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h4_tablet_line_height  ) . ';
-                    ';
-                }
-
-                $h4_tablet_letter_spacing = xenial_get_option( 'h4_letter_spacing_tablet' ) ? xenial_get_option( 'h4_letter_spacing_tablet' ) : $customizer_defaults['h4_letter_spacing']['tablet'];
-
-                if ( $h4_tablet_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h4_tablet_letter_spacing  ) . 'px;
-                    ';
-                }
-
-	        $css .= '}';
-
-            // H5 font size and line height for tablet devices
-
-	        $css .= 'h5 {';
-
-    	        $h5_tablet_font_size = ( xenial_get_option( 'h5_font_size_tablet' ) ) ? xenial_get_option( 'h5_font_size_tablet' ) : $customizer_defaults['h5_font_size']['tablet'];
-
-                if ( $h5_tablet_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h5_tablet_font_size ) . 'px;
-                    ';
-                }
-
-                $h5_tablet_line_height = ( xenial_get_option( 'h5_line_height_tablet' ) ) ? xenial_get_option( 'h5_line_height_tablet' ) : $customizer_defaults['h5_line_height']['tablet'];
-
-                if ( $h5_tablet_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h5_tablet_line_height  ) . ';
-                    ';
-                }
-
-                $h5_tablet_letter_spacing = xenial_get_option( 'h5_letter_spacing_tablet' ) ? xenial_get_option( 'h5_letter_spacing_tablet' ) : $customizer_defaults['h5_letter_spacing']['tablet'];
-
-                if ( $h5_tablet_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h5_tablet_letter_spacing  ) . 'px;
-                    ';
-                }
-
-	        $css .= '}';
-
-            // H6 font size and line height for tablet devices
-
-	        $css .= 'h6 {';
-
-    	        $h6_tablet_font_size = ( xenial_get_option( 'h6_font_size_tablet' ) ) ? xenial_get_option( 'h6_font_size_tablet' ) : $customizer_defaults['h6_font_size']['tablet'];
-
-                if ( $h6_tablet_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h6_tablet_font_size ) . 'px;
-                    ';
-                }
-
-                $h6_tablet_line_height = ( xenial_get_option( 'h6_line_height_tablet' ) ) ? xenial_get_option( 'h6_line_height_tablet' ) : $customizer_defaults['h6_line_height']['tablet'];
-
-                if ( $h6_tablet_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h6_tablet_line_height  ) . ';
-                    ';
-                }
-
-                $h6_tablet_letter_spacing = xenial_get_option( 'h6_letter_spacing_tablet' ) ? xenial_get_option( 'h6_letter_spacing_tablet' ) : $customizer_defaults['h6_letter_spacing']['tablet'];
-
-                if ( $h6_tablet_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h6_tablet_letter_spacing  ) . 'px;
-                    ';
-                }
-
-	        $css .= '}';
-
-	    $css .= '}';
-
-
-
-	    // Start styles for mobile devices
+		if (
+			isset( $h3_typography['font_sizes']['desktop']['value'] ) &&
+			! empty( $h3_typography['font_sizes']['desktop']['value'] )
+		) {
+			$desktop_h3_font_size      = $h3_typography['font_sizes']['desktop']['value'];
+			$desktop_h3_font_size_unit = ( isset( $h3_typography['font_sizes']['desktop']['unit'] ) && ! empty( $h3_typography['font_sizes']['desktop']['unit'] ) ) ? $h3_typography['font_sizes']['desktop']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $desktop_h3_font_size ) . esc_attr( $desktop_h3_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h3_typography['letter_spacings']['desktop']['value'] ) &&
+			! empty( $h3_typography['letter_spacings']['desktop']['value'] )
+		) {
+			$desktop_h3_letter_spacing      = $h3_typography['letter_spacings']['desktop']['value'];
+			$desktop_h3_letter_spacing_unit = ( isset( $h3_typography['letter_spacings']['desktop']['unit'] ) && ! empty( $h3_typography['letter_spacings']['desktop']['unit'] ) ) ? $h3_typography['letter_spacings']['desktop']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $desktop_h3_letter_spacing ) . esc_attr( $desktop_h3_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h3_typography['line_heights']['desktop'] ) &&
+			! empty( $h3_typography['line_heights']['desktop'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h3_typography['line_heights']['desktop'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H4 font size and line height on desktop devices.
+
+		$css .= 'h4 {';
+
+		if (
+			isset( $h4_typography['font_sizes']['desktop']['value'] ) &&
+			! empty( $h4_typography['font_sizes']['desktop']['value'] )
+		) {
+			$desktop_h4_font_size      = $h4_typography['font_sizes']['desktop']['value'];
+			$desktop_h4_font_size_unit = ( isset( $h4_typography['font_sizes']['desktop']['unit'] ) && ! empty( $h4_typography['font_sizes']['desktop']['unit'] ) ) ? $h4_typography['font_sizes']['desktop']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $desktop_h4_font_size ) . esc_attr( $desktop_h4_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h4_typography['letter_spacings']['desktop']['value'] ) &&
+			! empty( $h4_typography['letter_spacings']['desktop']['value'] )
+		) {
+			$desktop_h4_letter_spacing      = $h4_typography['letter_spacings']['desktop']['value'];
+			$desktop_h4_letter_spacing_unit = ( isset( $h4_typography['letter_spacings']['desktop']['unit'] ) && ! empty( $h4_typography['letter_spacings']['desktop']['unit'] ) ) ? $h4_typography['letter_spacings']['desktop']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $desktop_h4_letter_spacing ) . esc_attr( $desktop_h4_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h4_typography['line_heights']['desktop'] ) &&
+			! empty( $h4_typography['line_heights']['desktop'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h4_typography['line_heights']['desktop'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H5 font size and line height on desktop devices.
+
+		$css .= 'h5 {';
+
+		if (
+			isset( $h5_typography['font_sizes']['desktop']['value'] ) &&
+			! empty( $h5_typography['font_sizes']['desktop']['value'] )
+		) {
+			$desktop_h5_font_size      = $h5_typography['font_sizes']['desktop']['value'];
+			$desktop_h5_font_size_unit = ( isset( $h5_typography['font_sizes']['desktop']['unit'] ) && ! empty( $h5_typography['font_sizes']['desktop']['unit'] ) ) ? $h5_typography['font_sizes']['desktop']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $desktop_h5_font_size ) . esc_attr( $desktop_h5_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h5_typography['letter_spacings']['desktop']['value'] ) &&
+			! empty( $h5_typography['letter_spacings']['desktop']['value'] )
+		) {
+			$desktop_h5_letter_spacing      = $h5_typography['letter_spacings']['desktop']['value'];
+			$desktop_h5_letter_spacing_unit = ( isset( $h5_typography['letter_spacings']['desktop']['unit'] ) && ! empty( $h5_typography['letter_spacings']['desktop']['unit'] ) ) ? $h5_typography['letter_spacings']['desktop']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $desktop_h5_letter_spacing ) . esc_attr( $desktop_h5_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h5_typography['line_heights']['desktop'] ) &&
+			! empty( $h5_typography['line_heights']['desktop'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h5_typography['line_heights']['desktop'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H6 font size and line height on desktop devices.
+
+		$css .= 'h6 {';
+
+		if (
+			isset( $h6_typography['font_sizes']['desktop']['value'] ) &&
+			! empty( $h6_typography['font_sizes']['desktop']['value'] )
+		) {
+			$desktop_h6_font_size      = $h6_typography['font_sizes']['desktop']['value'];
+			$desktop_h6_font_size_unit = ( isset( $h6_typography['font_sizes']['desktop']['unit'] ) && ! empty( $h6_typography['font_sizes']['desktop']['unit'] ) ) ? $h6_typography['font_sizes']['desktop']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $desktop_h6_font_size ) . esc_attr( $desktop_h6_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h6_typography['letter_spacings']['desktop']['value'] ) &&
+			! empty( $h6_typography['letter_spacings']['desktop']['value'] )
+		) {
+			$desktop_h6_letter_spacing      = $h6_typography['letter_spacings']['desktop']['value'];
+			$desktop_h6_letter_spacing_unit = ( isset( $h6_typography['letter_spacings']['desktop']['unit'] ) && ! empty( $h6_typography['letter_spacings']['desktop']['unit'] ) ) ? $h6_typography['letter_spacings']['desktop']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $desktop_h6_letter_spacing ) . esc_attr( $desktop_h6_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h6_typography['line_heights']['desktop'] ) &&
+			! empty( $h6_typography['line_heights']['desktop'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h6_typography['line_heights']['desktop'] ) . ';';
+		}
+
+		$css .= '}';
+
+		$css .= '@media (max-width: 768px) {';
+
+		// Body font size and line height for tablet devices.
+
+		$css .= ':root {';
+
+		if (
+			isset( $body_typography['font_sizes']['tablet']['value'] ) &&
+			! empty( $body_typography['font_sizes']['tablet']['value'] )
+		) {
+			$tablet_font_size      = $body_typography['font_sizes']['tablet']['value'];
+			$tablet_font_size_unit = ( isset( $body_typography['font_sizes']['tablet']['unit'] ) && ! empty( $body_typography['font_sizes']['tablet']['unit'] ) ) ? $body_typography['font_sizes']['tablet']['unit'] : 'px';
+
+			$css .= '--xe_base_font_size: ' . esc_attr( $tablet_font_size ) . esc_attr( $tablet_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $body_typography['letter_spacings']['tablet']['value'] ) &&
+			! empty( $body_typography['letter_spacings']['tablet']['value'] )
+		) {
+			$tablet_letter_spacing      = $body_typography['letter_spacings']['tablet']['value'];
+			$tablet_letter_spacing_unit = ( isset( $body_typography['letter_spacings']['tablet']['unit'] ) && ! empty( $body_typography['letter_spacings']['tablet']['unit'] ) ) ? $body_typography['letter_spacings']['tablet']['unit'] : 'px';
+
+			$css .= '--xe_base_letter_spacing: ' . esc_attr( $tablet_letter_spacing ) . esc_attr( $tablet_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $body_typography['line_heights']['tablet'] ) &&
+			! empty( $body_typography['line_heights']['tablet'] )
+		) {
+			$css .= '--xe_base_font_line_height: ' . esc_attr( $body_typography['line_heights']['tablet'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H1 font size and line height for tablet devices.
+
+		$css .= 'h1 {';
+
+		if (
+			isset( $h1_typography['font_sizes']['tablet']['value'] ) &&
+			! empty( $h1_typography['font_sizes']['tablet']['value'] )
+		) {
+			$tablet_h1_font_size      = $h1_typography['font_sizes']['tablet']['value'];
+			$tablet_h1_font_size_unit = ( isset( $h1_typography['font_sizes']['tablet']['unit'] ) && ! empty( $h1_typography['font_sizes']['tablet']['unit'] ) ) ? $h1_typography['font_sizes']['tablet']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $tablet_h1_font_size ) . esc_attr( $tablet_h1_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h1_typography['letter_spacings']['tablet']['value'] ) &&
+			! empty( $h1_typography['letter_spacings']['tablet']['value'] )
+		) {
+			$tablet_h1_letter_spacing      = $h1_typography['letter_spacings']['tablet']['value'];
+			$tablet_h1_letter_spacing_unit = ( isset( $h1_typography['letter_spacings']['tablet']['unit'] ) && ! empty( $h1_typography['letter_spacings']['tablet']['unit'] ) ) ? $h1_typography['letter_spacings']['tablet']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $tablet_h1_letter_spacing ) . esc_attr( $tablet_h1_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h1_typography['line_heights']['tablet'] ) &&
+			! empty( $h1_typography['line_heights']['tablet'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h1_typography['line_heights']['tablet'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H2 font size and line height for tablet devices.
+
+		$css .= 'h2 {';
+
+		if (
+			isset( $h2_typography['font_sizes']['tablet']['value'] ) &&
+			! empty( $h2_typography['font_sizes']['tablet']['value'] )
+		) {
+			$tablet_h2_font_size      = $h2_typography['font_sizes']['tablet']['value'];
+			$tablet_h2_font_size_unit = ( isset( $h2_typography['font_sizes']['tablet']['unit'] ) && ! empty( $h2_typography['font_sizes']['tablet']['unit'] ) ) ? $h2_typography['font_sizes']['tablet']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $tablet_h2_font_size ) . esc_attr( $tablet_h2_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h2_typography['letter_spacings']['tablet']['value'] ) &&
+			! empty( $h2_typography['letter_spacings']['tablet']['value'] )
+		) {
+			$tablet_h2_letter_spacing      = $h2_typography['letter_spacings']['tablet']['value'];
+			$tablet_h2_letter_spacing_unit = ( isset( $h2_typography['letter_spacings']['tablet']['unit'] ) && ! empty( $h2_typography['letter_spacings']['tablet']['unit'] ) ) ? $h2_typography['letter_spacings']['tablet']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $tablet_h2_letter_spacing ) . esc_attr( $tablet_h2_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h2_typography['line_heights']['tablet'] ) &&
+			! empty( $h2_typography['line_heights']['tablet'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h2_typography['line_heights']['tablet'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H3 font size and line height for tablet devices.
+
+		$css .= 'h3 {';
+
+		if (
+			isset( $h3_typography['font_sizes']['tablet']['value'] ) &&
+			! empty( $h3_typography['font_sizes']['tablet']['value'] )
+		) {
+			$tablet_h3_font_size      = $h3_typography['font_sizes']['tablet']['value'];
+			$tablet_h3_font_size_unit = ( isset( $h3_typography['font_sizes']['tablet']['unit'] ) && ! empty( $h3_typography['font_sizes']['tablet']['unit'] ) ) ? $h3_typography['font_sizes']['tablet']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $tablet_h3_font_size ) . esc_attr( $tablet_h3_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h3_typography['letter_spacings']['tablet']['value'] ) &&
+			! empty( $h3_typography['letter_spacings']['tablet']['value'] )
+		) {
+			$tablet_h3_letter_spacing      = $h3_typography['letter_spacings']['tablet']['value'];
+			$tablet_h3_letter_spacing_unit = ( isset( $h3_typography['letter_spacings']['tablet']['unit'] ) && ! empty( $h3_typography['letter_spacings']['tablet']['unit'] ) ) ? $h3_typography['letter_spacings']['tablet']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $tablet_h3_letter_spacing ) . esc_attr( $tablet_h3_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h3_typography['line_heights']['tablet'] ) &&
+			! empty( $h3_typography['line_heights']['tablet'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h3_typography['line_heights']['tablet'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H4 font size and line height for tablet devices.
+
+		$css .= 'h4 {';
+
+		if (
+			isset( $h4_typography['font_sizes']['tablet']['value'] ) &&
+			! empty( $h4_typography['font_sizes']['tablet']['value'] )
+		) {
+			$tablet_h4_font_size      = $h4_typography['font_sizes']['tablet']['value'];
+			$tablet_h4_font_size_unit = ( isset( $h4_typography['font_sizes']['tablet']['unit'] ) && ! empty( $h4_typography['font_sizes']['tablet']['unit'] ) ) ? $h4_typography['font_sizes']['tablet']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $tablet_h4_font_size ) . esc_attr( $tablet_h4_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h4_typography['letter_spacings']['tablet']['value'] ) &&
+			! empty( $h4_typography['letter_spacings']['tablet']['value'] )
+		) {
+			$tablet_h4_letter_spacing      = $h4_typography['letter_spacings']['tablet']['value'];
+			$tablet_h4_letter_spacing_unit = ( isset( $h4_typography['letter_spacings']['tablet']['unit'] ) && ! empty( $h4_typography['letter_spacings']['tablet']['unit'] ) ) ? $h4_typography['letter_spacings']['tablet']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $tablet_h4_letter_spacing ) . esc_attr( $tablet_h4_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h4_typography['line_heights']['tablet'] ) &&
+			! empty( $h4_typography['line_heights']['tablet'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h4_typography['line_heights']['tablet'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H5 font size and line height for tablet devices.
+
+		$css .= 'h5 {';
+
+		if (
+			isset( $h5_typography['font_sizes']['tablet']['value'] ) &&
+			! empty( $h5_typography['font_sizes']['tablet']['value'] )
+		) {
+			$tablet_h5_font_size      = $h5_typography['font_sizes']['tablet']['value'];
+			$tablet_h5_font_size_unit = ( isset( $h5_typography['font_sizes']['tablet']['unit'] ) && ! empty( $h5_typography['font_sizes']['tablet']['unit'] ) ) ? $h5_typography['font_sizes']['tablet']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $tablet_h5_font_size ) . esc_attr( $tablet_h5_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h5_typography['letter_spacings']['tablet']['value'] ) &&
+			! empty( $h5_typography['letter_spacings']['tablet']['value'] )
+		) {
+			$tablet_h5_letter_spacing      = $h5_typography['letter_spacings']['tablet']['value'];
+			$tablet_h5_letter_spacing_unit = ( isset( $h5_typography['letter_spacings']['tablet']['unit'] ) && ! empty( $h5_typography['letter_spacings']['tablet']['unit'] ) ) ? $h5_typography['letter_spacings']['tablet']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $tablet_h5_letter_spacing ) . esc_attr( $tablet_h5_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h5_typography['line_heights']['tablet'] ) &&
+			! empty( $h5_typography['line_heights']['tablet'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h5_typography['line_heights']['tablet'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H6 font size and line height for tablet devices.
+
+		$css .= 'h6 {';
+
+		if (
+			isset( $h6_typography['font_sizes']['tablet']['value'] ) &&
+			! empty( $h6_typography['font_sizes']['tablet']['value'] )
+		) {
+			$tablet_h6_font_size      = $h6_typography['font_sizes']['tablet']['value'];
+			$tablet_h6_font_size_unit = ( isset( $h6_typography['font_sizes']['tablet']['unit'] ) && ! empty( $h6_typography['font_sizes']['tablet']['unit'] ) ) ? $h6_typography['font_sizes']['tablet']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $tablet_h6_font_size ) . esc_attr( $tablet_h6_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h6_typography['letter_spacings']['tablet']['value'] ) &&
+			! empty( $h6_typography['letter_spacings']['tablet']['value'] )
+		) {
+			$tablet_h6_letter_spacing      = $h6_typography['letter_spacings']['tablet']['value'];
+			$tablet_h6_letter_spacing_unit = ( isset( $h6_typography['letter_spacings']['tablet']['unit'] ) && ! empty( $h6_typography['letter_spacings']['tablet']['unit'] ) ) ? $h6_typography['letter_spacings']['tablet']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $tablet_h6_letter_spacing ) . esc_attr( $tablet_h6_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h6_typography['line_heights']['tablet'] ) &&
+			! empty( $h6_typography['line_heights']['tablet'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h6_typography['line_heights']['tablet'] ) . ';';
+		}
+
+		$css .= '}';
+
+		$css .= '}';
+
+		// Start styles for mobile devices.
 
 		$css .= '@media (max-width: 575px) {';
 
-			// Body font size and line height for mobile devices
+		// Body font size and line height for mobile devices.
+
+		$css .= ':root {';
 
-            $css .= ':root {';
+		if (
+			isset( $body_typography['font_sizes']['mobile']['value'] ) &&
+			! empty( $body_typography['font_sizes']['mobile']['value'] )
+		) {
+			$mobile_font_size      = $body_typography['font_sizes']['mobile']['value'];
+			$mobile_font_size_unit = ( isset( $body_typography['font_sizes']['mobile']['unit'] ) && ! empty( $body_typography['font_sizes']['mobile']['unit'] ) ) ? $body_typography['font_sizes']['mobile']['unit'] : 'px';
+
+			$css .= '--xe_base_font_size: ' . esc_attr( $mobile_font_size ) . esc_attr( $mobile_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $body_typography['letter_spacings']['mobile']['value'] ) &&
+			! empty( $body_typography['letter_spacings']['mobile']['value'] )
+		) {
+			$mobile_letter_spacing      = $body_typography['letter_spacings']['mobile']['value'];
+			$mobile_letter_spacing_unit = ( isset( $body_typography['letter_spacings']['mobile']['unit'] ) && ! empty( $body_typography['letter_spacings']['mobile']['unit'] ) ) ? $body_typography['letter_spacings']['mobile']['unit'] : 'px';
+
+			$css .= '--xe_base_letter_spacing: ' . esc_attr( $mobile_letter_spacing ) . esc_attr( $mobile_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $body_typography['line_heights']['mobile'] ) &&
+			! empty( $body_typography['line_heights']['mobile'] )
+		) {
+			$css .= '--xe_base_font_line_height: ' . esc_attr( $body_typography['line_heights']['mobile'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H1 font size and line height for mobile devices.
+
+		$css .= 'h1 {';
 
-                $body_mobile_font_size = ( xenial_get_option( 'body_font_size_mobile' ) ) ? xenial_get_option( 'body_font_size_mobile' ) : $customizer_defaults['body_font_size']['mobile'];
+		if (
+			isset( $h1_typography['font_sizes']['mobile']['value'] ) &&
+			! empty( $h1_typography['font_sizes']['mobile']['value'] )
+		) {
+			$mobile_h1_font_size      = $h1_typography['font_sizes']['mobile']['value'];
+			$mobile_h1_font_size_unit = ( isset( $h1_typography['font_sizes']['mobile']['unit'] ) && ! empty( $h1_typography['font_sizes']['mobile']['unit'] ) ) ? $h1_typography['font_sizes']['mobile']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $mobile_h1_font_size ) . esc_attr( $mobile_h1_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h1_typography['letter_spacings']['mobile']['value'] ) &&
+			! empty( $h1_typography['letter_spacings']['mobile']['value'] )
+		) {
+			$mobile_h1_letter_spacing      = $h1_typography['letter_spacings']['mobile']['value'];
+			$mobile_h1_letter_spacing_unit = ( isset( $h1_typography['letter_spacings']['mobile']['unit'] ) && ! empty( $h1_typography['letter_spacings']['mobile']['unit'] ) ) ? $h1_typography['letter_spacings']['mobile']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $mobile_h1_letter_spacing ) . esc_attr( $mobile_h1_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h1_typography['line_heights']['mobile'] ) &&
+			! empty( $h1_typography['line_heights']['mobile'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h1_typography['line_heights']['mobile'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H2 font size and line height for mobile devices.
+
+		$css .= 'h2 {';
+
+		if (
+			isset( $h2_typography['font_sizes']['mobile']['value'] ) &&
+			! empty( $h2_typography['font_sizes']['mobile']['value'] )
+		) {
+			$mobile_h2_font_size      = $h2_typography['font_sizes']['mobile']['value'];
+			$mobile_h2_font_size_unit = ( isset( $h2_typography['font_sizes']['mobile']['unit'] ) && ! empty( $h2_typography['font_sizes']['mobile']['unit'] ) ) ? $h2_typography['font_sizes']['mobile']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $mobile_h2_font_size ) . esc_attr( $mobile_h2_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h2_typography['letter_spacings']['mobile']['value'] ) &&
+			! empty( $h2_typography['letter_spacings']['mobile']['value'] )
+		) {
+			$mobile_h2_letter_spacing      = $h2_typography['letter_spacings']['mobile']['value'];
+			$mobile_h2_letter_spacing_unit = ( isset( $h2_typography['letter_spacings']['mobile']['unit'] ) && ! empty( $h2_typography['letter_spacings']['mobile']['unit'] ) ) ? $h2_typography['letter_spacings']['mobile']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $mobile_h2_letter_spacing ) . esc_attr( $mobile_h2_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h2_typography['line_heights']['mobile'] ) &&
+			! empty( $h2_typography['line_heights']['mobile'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h2_typography['line_heights']['mobile'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H3 font size and line height for mobile devices.
+
+		$css .= 'h3 {';
 
-                if ( $body_mobile_font_size ) {
-                    $css .= '
-                        --xe_base_font_size: ' . esc_attr( $body_mobile_font_size ) . 'px;
-                    ';
-                }
+		if (
+			isset( $h3_typography['font_sizes']['mobile']['value'] ) &&
+			! empty( $h3_typography['font_sizes']['mobile']['value'] )
+		) {
+			$mobile_h3_font_size      = $h3_typography['font_sizes']['mobile']['value'];
+			$mobile_h3_font_size_unit = ( isset( $h3_typography['font_sizes']['mobile']['unit'] ) && ! empty( $h3_typography['font_sizes']['mobile']['unit'] ) ) ? $h3_typography['font_sizes']['mobile']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $mobile_h3_font_size ) . esc_attr( $mobile_h3_font_size_unit ) . ';';
+		}
 
-                $body_mobile_line_height = ( xenial_get_option( 'body_line_height_mobile' ) ) ? xenial_get_option( 'body_line_height_mobile' ) : $customizer_defaults['body_line_height']['mobile'];
-
-                if ( $body_mobile_line_height ) {
-                    $css .= '
-                        --xe_base_font_line_height: ' . esc_attr( $body_mobile_line_height  ) . ';
-                    ';
-                }
-
-                $body_mobile_letter_spacing = xenial_get_option( 'body_letter_spacing_mobile' ) ? xenial_get_option( 'body_letter_spacing_mobile' ) : $customizer_defaults['body_letter_spacing']['mobile'];
-
-                if ( $body_mobile_letter_spacing ) {
-                    $css .= '
-                        --xe_base_letter_spacing: ' . esc_attr( $body_mobile_letter_spacing  ) . 'px;
-                    ';
-                }
-
-            $css .= '}';
-
-
-            // H1 font size and line height for mobile devices
-
-            $css .= 'h1 {';
-
-                $h1_mobile_font_size = ( xenial_get_option( 'h1_font_size_mobile' ) ) ? xenial_get_option( 'h1_font_size_mobile' ) : $customizer_defaults['h1_font_size']['mobile'];
-
-                if ( $h1_mobile_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h1_mobile_font_size ) . 'px;
-                    ';
-                }
-
-                $h1_mobile_line_height = ( xenial_get_option( 'h1_line_height_mobile' ) ) ? xenial_get_option( 'h1_line_height_mobile' ) : $customizer_defaults['h1_line_height']['mobile'];
-
-                if ( $h1_mobile_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h1_mobile_line_height  ) . ';
-                    ';
-                }
-
-                $h1_mobile_letter_spacing = xenial_get_option( 'h1_letter_spacing_mobile' ) ? xenial_get_option( 'h1_letter_spacing_mobile' ) : $customizer_defaults['h1_letter_spacing']['mobile'];
-
-                if ( $h1_mobile_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h1_mobile_letter_spacing  ) . 'px;
-                    ';
-                }
-
-            $css .= '}';
-
-            // H2 font size and line height for mobile devices
-
-            $css .= 'h2 {';
-
-                $h2_mobile_font_size = ( xenial_get_option( 'h2_font_size_mobile' ) ) ? xenial_get_option( 'h2_font_size_mobile' ) : $customizer_defaults['h2_font_size']['mobile'];
-
-                if ( $h2_mobile_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h2_mobile_font_size ) . 'px;
-                    ';
-                }
-
-                $h2_mobile_line_height = ( xenial_get_option( 'h2_line_height_mobile' ) ) ? xenial_get_option( 'h2_line_height_mobile' ) : $customizer_defaults['h2_line_height']['mobile'];
-
-                if ( $h2_mobile_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h2_mobile_line_height  ) . ';
-                    ';
-                }
-
-                $h2_mobile_letter_spacing = xenial_get_option( 'h2_letter_spacing_mobile' ) ? xenial_get_option( 'h2_letter_spacing_mobile' ) : $customizer_defaults['h2_letter_spacing']['mobile'];
-
-                if ( $h2_mobile_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h2_mobile_letter_spacing  ) . 'px;
-                    ';
-                }
-
-            $css .= '}';
-
-            // H3 font size and line height for mobile devices
-
-            $css .= 'h3 {';
-
-                $h3_mobile_font_size = ( xenial_get_option( 'h3_font_size_mobile' ) ) ? xenial_get_option( 'h3_font_size_mobile' ) : $customizer_defaults['h3_font_size']['mobile'];
-
-                if ( $h3_mobile_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h3_mobile_font_size ) . 'px;
-                    ';
-                }
-
-                $h3_mobile_line_height = ( xenial_get_option( 'h3_line_height_mobile' ) ) ? xenial_get_option( 'h3_line_height_mobile' ) : $customizer_defaults['h3_line_height']['mobile'];
-
-                if ( $h3_mobile_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h3_mobile_line_height  ) . ';
-                    ';
-                }
-
-                $h3_mobile_letter_spacing = xenial_get_option( 'h3_letter_spacing_mobile' ) ? xenial_get_option( 'h3_letter_spacing_mobile' ) : $customizer_defaults['h3_letter_spacing']['mobile'];
-
-                if ( $h3_mobile_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h3_mobile_letter_spacing  ) . 'px;
-                    ';
-                }
-
-            $css .= '}';
-
-            // H4 font size and line height for mobile devices
-
-            $css .= 'h4 {';
-
-                $h4_mobile_font_size = ( xenial_get_option( 'h4_font_size_mobile' ) ) ? xenial_get_option( 'h4_font_size_mobile' ) : $customizer_defaults['h4_font_size']['mobile'];
-
-                if ( $h4_mobile_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h4_mobile_font_size ) . 'px;
-                    ';
-                }
-
-                $h4_mobile_line_height = ( xenial_get_option( 'h4_line_height_mobile' ) ) ? xenial_get_option( 'h4_line_height_mobile' ) : $customizer_defaults['h4_line_height']['mobile'];
-
-                if ( $h4_mobile_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h4_mobile_line_height  ) . ';
-                    ';
-                }
-
-                $h4_mobile_letter_spacing = xenial_get_option( 'h4_letter_spacing_mobile' ) ? xenial_get_option( 'h4_letter_spacing_mobile' ) : $customizer_defaults['h4_letter_spacing']['mobile'];
-
-                if ( $h4_mobile_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h4_mobile_letter_spacing  ) . 'px;
-                    ';
-                }
-
-            $css .= '}';
-
-            // H5 font size and line height for mobile devices
-
-            $css .= 'h5 {';
-
-                $h5_mobile_font_size = ( xenial_get_option( 'h5_font_size_mobile' ) ) ? xenial_get_option( 'h5_font_size_mobile' ) : $customizer_defaults['h5_font_size']['mobile'];
-
-                if ( $h5_mobile_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h5_mobile_font_size ) . 'px;
-                    ';
-                }
-
-                $h5_mobile_line_height = ( xenial_get_option( 'h5_line_height_mobile' ) ) ? xenial_get_option( 'h5_line_height_mobile' ) : $customizer_defaults['h5_line_height']['mobile'];
-
-                if ( $h5_mobile_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h5_mobile_line_height  ) . ';
-                    ';
-                }
-
-                $h5_mobile_letter_spacing = xenial_get_option( 'h5_letter_spacing_mobile' ) ? xenial_get_option( 'h5_letter_spacing_mobile' ) : $customizer_defaults['h5_letter_spacing']['mobile'];
-
-                if ( $h5_mobile_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h5_mobile_letter_spacing  ) . 'px;
-                    ';
-                }
-
-            $css .= '}';
-
-            // H6 font size and line height for mobile devices
-
-            $css .= 'h6 {';
-
-                $h6_mobile_font_size = ( xenial_get_option( 'h6_font_size_mobile' ) ) ? xenial_get_option( 'h6_font_size_mobile' ) : $customizer_defaults['h6_font_size']['mobile'];
-
-                if ( $h6_mobile_font_size ) {
-                    $css .= '
-                        font-size: ' . esc_attr( $h6_mobile_font_size ) . 'px;
-                    ';
-                }
-
-                $h6_mobile_line_height = ( xenial_get_option( 'h6_line_height_mobile' ) ) ? xenial_get_option( 'h6_line_height_mobile' ) : $customizer_defaults['h6_line_height']['mobile'];
-
-                if ( $h6_mobile_line_height ) {
-                    $css .= '
-                        line-height: ' . esc_attr( $h6_mobile_line_height  ) . ';
-                    ';
-                }
-
-                $h6_mobile_letter_spacing = xenial_get_option( 'h6_letter_spacing_mobile' ) ? xenial_get_option( 'h6_letter_spacing_mobile' ) : $customizer_defaults['h6_letter_spacing']['mobile'];
-
-                if ( $h6_mobile_letter_spacing ) {
-                    $css .= '
-                        letter-spacing: ' . esc_attr( $h6_mobile_letter_spacing  ) . 'px;
-                    ';
-                }
-
-            $css .= '}';
-
-        $css .= '}';
-
-        return $css;
+		if (
+			isset( $h3_typography['letter_spacings']['mobile']['value'] ) &&
+			! empty( $h3_typography['letter_spacings']['mobile']['value'] )
+		) {
+			$mobile_h3_letter_spacing      = $h3_typography['letter_spacings']['mobile']['value'];
+			$mobile_h3_letter_spacing_unit = ( isset( $h3_typography['letter_spacings']['mobile']['unit'] ) && ! empty( $h3_typography['letter_spacings']['mobile']['unit'] ) ) ? $h3_typography['letter_spacings']['mobile']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $mobile_h3_letter_spacing ) . esc_attr( $mobile_h3_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h3_typography['line_heights']['mobile'] ) &&
+			! empty( $h3_typography['line_heights']['mobile'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h3_typography['line_heights']['mobile'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H4 font size and line height for mobile devices.
+
+		$css .= 'h4 {';
+
+		if (
+			isset( $h4_typography['font_sizes']['mobile']['value'] ) &&
+			! empty( $h4_typography['font_sizes']['mobile']['value'] )
+		) {
+			$mobile_h4_font_size      = $h4_typography['font_sizes']['mobile']['value'];
+			$mobile_h4_font_size_unit = ( isset( $h4_typography['font_sizes']['mobile']['unit'] ) && ! empty( $h4_typography['font_sizes']['mobile']['unit'] ) ) ? $h4_typography['font_sizes']['mobile']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $mobile_h4_font_size ) . esc_attr( $mobile_h4_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h4_typography['letter_spacings']['mobile']['value'] ) &&
+			! empty( $h4_typography['letter_spacings']['mobile']['value'] )
+		) {
+			$mobile_h4_letter_spacing      = $h4_typography['letter_spacings']['mobile']['value'];
+			$mobile_h4_letter_spacing_unit = ( isset( $h4_typography['letter_spacings']['mobile']['unit'] ) && ! empty( $h4_typography['letter_spacings']['mobile']['unit'] ) ) ? $h4_typography['letter_spacings']['mobile']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $mobile_h4_letter_spacing ) . esc_attr( $mobile_h4_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h4_typography['line_heights']['mobile'] ) &&
+			! empty( $h4_typography['line_heights']['mobile'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h4_typography['line_heights']['mobile'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H5 font size and line height for mobile devices.
+
+		$css .= 'h5 {';
+
+		if (
+			isset( $h5_typography['font_sizes']['mobile']['value'] ) &&
+			! empty( $h5_typography['font_sizes']['mobile']['value'] )
+		) {
+			$mobile_h5_font_size      = $h5_typography['font_sizes']['mobile']['value'];
+			$mobile_h5_font_size_unit = ( isset( $h5_typography['font_sizes']['mobile']['unit'] ) && ! empty( $h5_typography['font_sizes']['mobile']['unit'] ) ) ? $h5_typography['font_sizes']['mobile']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $mobile_h5_font_size ) . esc_attr( $mobile_h5_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h5_typography['letter_spacings']['mobile']['value'] ) &&
+			! empty( $h5_typography['letter_spacings']['mobile']['value'] )
+		) {
+			$mobile_h5_letter_spacing      = $h5_typography['letter_spacings']['mobile']['value'];
+			$mobile_h5_letter_spacing_unit = ( isset( $h5_typography['letter_spacings']['mobile']['unit'] ) && ! empty( $h5_typography['letter_spacings']['mobile']['unit'] ) ) ? $h5_typography['letter_spacings']['mobile']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $mobile_h5_letter_spacing ) . esc_attr( $mobile_h5_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h5_typography['line_heights']['mobile'] ) &&
+			! empty( $h5_typography['line_heights']['mobile'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h5_typography['line_heights']['mobile'] ) . ';';
+		}
+
+		$css .= '}';
+
+		// H6 font size and line height for mobile devices.
+
+		$css .= 'h6 {';
+
+		if (
+			isset( $h6_typography['font_sizes']['mobile']['value'] ) &&
+			! empty( $h6_typography['font_sizes']['mobile']['value'] )
+		) {
+			$mobile_h6_font_size      = $h6_typography['font_sizes']['mobile']['value'];
+			$mobile_h6_font_size_unit = ( isset( $h6_typography['font_sizes']['mobile']['unit'] ) && ! empty( $h6_typography['font_sizes']['mobile']['unit'] ) ) ? $h6_typography['font_sizes']['mobile']['unit'] : 'rem';
+
+			$css .= 'font-size: ' . esc_attr( $mobile_h6_font_size ) . esc_attr( $mobile_h6_font_size_unit ) . ';';
+		}
+
+		if (
+			isset( $h6_typography['letter_spacings']['mobile']['value'] ) &&
+			! empty( $h6_typography['letter_spacings']['mobile']['value'] )
+		) {
+			$mobile_h6_letter_spacing      = $h6_typography['letter_spacings']['mobile']['value'];
+			$mobile_h6_letter_spacing_unit = ( isset( $h6_typography['letter_spacings']['mobile']['unit'] ) && ! empty( $h6_typography['letter_spacings']['mobile']['unit'] ) ) ? $h6_typography['letter_spacings']['mobile']['unit'] : 'px';
+
+			$css .= 'letter-spacing: ' . esc_attr( $mobile_h6_letter_spacing ) . esc_attr( $mobile_h6_letter_spacing_unit ) . ';';
+		}
+
+		if (
+			isset( $h6_typography['line_heights']['mobile'] ) &&
+			! empty( $h6_typography['line_heights']['mobile'] )
+		) {
+			$css .= 'line-height: ' . esc_attr( $h6_typography['line_heights']['mobile'] ) . ';';
+		}
+
+		$css .= '}';
+
+		$css .= '}';
+
+		return $css;
 	}
 }
 add_filter( 'xenial_dynamic_css', 'xenial_dynamic_typo_css' );
-
-
-if ( ! function_exists( 'xenial_google_font_weight' ) ) {
-
-	function xenial_google_font_weight( $weight ) {
-
-		if ( $weight === 'regular' || $weight === 'italic' ) {
-			return 400;
-		} else {
-			return absint( str_replace( 'italic', '', $weight ) );
-		}
-	}
-}

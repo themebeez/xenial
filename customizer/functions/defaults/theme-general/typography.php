@@ -3,145 +3,291 @@
 
 if ( ! function_exists( 'xenial_get_customizer_default_typography_values' ) ) {
 
-    function xenial_get_customizer_default_typography_values( $customize_defaults ) {
+	function xenial_get_customizer_default_typography_values( $customize_defaults ) {
 
-        $theme_typography_customize_defaults = apply_filters( 
-            'xenial_theme_typography_customize_defaults', 
-            array(
-                'body_font_type' => 'system_font',
-                'body_system_font_family' => 'arial',
-                'body_system_font_weight' => '400',
-                'body_google_font' => json_encode(
-                    array(
-                        'font' => 'Inter',
-                        'regularweight' => array( 'regular' ),
-                        'boldweight' => array( '400' ),
-                        'category' => 'sans-serif'
-                    )
-                ),
-                'body_font_size' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'body_line_height' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'body_letter_spacing' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'headings_font_type' => 'system_font',
-                'headings_system_font_family' => 'helvetica',
-                'headings_system_font_weight' => '600',
-                'headings_google_font' => json_encode(
-                    array(
-                        'font' => 'Inter',
-                        'regularweight' => array( 'regular' ),
-                        'boldweight' => array( '600' ),
-                        'category' => 'sans-serif'
-                    )
-                ),
-                'h1_font_size' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h1_line_height' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h1_letter_spacing' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h2_font_size' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h2_line_height' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h2_letter_spacing' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h3_font_size' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h3_line_height' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h3_letter_spacing' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h4_font_size' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h4_line_height' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h4_letter_spacing' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h5_font_size' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h5_line_height' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h5_letter_spacing' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h6_font_size' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h6_line_height' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-                'h6_letter_spacing' => array(
-                    'desktop' => '',
-                    'tablet' => '',
-                    'mobile' => ''
-                ),
-            )
-        );
+		$theme_typography_customize_defaults = apply_filters(
+			'xenial_theme_typography_customize_defaults',
+			array(
+				'body_typography'     => wp_json_encode(
+					array(
+						'source'          => 'websafe',
+						'font_family'     => 'Arial, sans-serif',
+						'font_variants'   => '',
+						'font_url'        => '',
+						'font_sizes'      => array(
+							'desktop' => array(
+								'value' => '18',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '16',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '14',
+								'unit'  => 'px',
+							),
+						),
+						'font_weight'     => 'inherit',
+						'line_heights'    => array(
+							'desktop' => '1.7',
+							'tablet'  => '1.6',
+							'mobile'  => '1.5',
+						),
+						'letter_spacings' => array(
+							'desktop' => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+						),
+					)
+				),
+				'headings_typography' => wp_json_encode(
+					array(
+						'source'        => 'websafe',
+						'font_family'   => 'Arial, sans-serif',
+						'font_variants' => '',
+						'font_url'      => '',
+						'font_weight'   => 'inherit',
+					)
+				),
+				'h1_typography'       => wp_json_encode(
+					array(
+						'font_sizes'      => array(
+							'desktop' => array(
+								'value' => '2.25',
+								'unit'  => 'rem',
+							),
+							'tablet'  => array(
+								'value' => '2.25',
+								'unit'  => 'rem',
+							),
+							'mobile'  => array(
+								'value' => '2.25',
+								'unit'  => 'rem',
+							),
+						),
+						'line_heights'    => array(
+							'desktop' => '1.2',
+							'tablet'  => '1.2',
+							'mobile'  => '1.2',
+						),
+						'letter_spacings' => array(
+							'desktop' => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+						),
+					)
+				),
+				'h2_typography'       => wp_json_encode(
+					array(
+						'font_sizes'      => array(
+							'desktop' => array(
+								'value' => '1.75',
+								'unit'  => 'rem',
+							),
+							'tablet'  => array(
+								'value' => '1.75',
+								'unit'  => 'rem',
+							),
+							'mobile'  => array(
+								'value' => '1.75',
+								'unit'  => 'rem',
+							),
+						),
+						'line_heights'    => array(
+							'desktop' => '1.2',
+							'tablet'  => '1.2',
+							'mobile'  => '1.2',
+						),
+						'letter_spacings' => array(
+							'desktop' => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+						),
+					)
+				),
+				'h3_typography'       => wp_json_encode(
+					array(
+						'font_sizes'      => array(
+							'desktop' => array(
+								'value' => '1.5',
+								'unit'  => 'rem',
+							),
+							'tablet'  => array(
+								'value' => '1.5',
+								'unit'  => 'rem',
+							),
+							'mobile'  => array(
+								'value' => '1.5',
+								'unit'  => 'rem',
+							),
+						),
+						'line_heights'    => array(
+							'desktop' => '1.2',
+							'tablet'  => '1.2',
+							'mobile'  => '1.2',
+						),
+						'letter_spacings' => array(
+							'desktop' => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+						),
+					)
+				),
+				'h4_typography'       => wp_json_encode(
+					array(
+						'font_sizes'      => array(
+							'desktop' => array(
+								'value' => '1.25',
+								'unit'  => 'rem',
+							),
+							'tablet'  => array(
+								'value' => '1.25',
+								'unit'  => 'rem',
+							),
+							'mobile'  => array(
+								'value' => '1.25',
+								'unit'  => 'rem',
+							),
+						),
+						'line_heights'    => array(
+							'desktop' => '1.2',
+							'tablet'  => '1.2',
+							'mobile'  => '1.2',
+						),
+						'letter_spacings' => array(
+							'desktop' => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+						),
+					)
+				),
+				'h5_typography'       => wp_json_encode(
+					array(
+						'font_sizes'      => array(
+							'desktop' => array(
+								'value' => '1.125',
+								'unit'  => 'rem',
+							),
+							'tablet'  => array(
+								'value' => '1.125',
+								'unit'  => 'rem',
+							),
+							'mobile'  => array(
+								'value' => '1.125',
+								'unit'  => 'rem',
+							),
+						),
+						'line_heights'    => array(
+							'desktop' => '1.2',
+							'tablet'  => '1.2',
+							'mobile'  => '1.2',
+						),
+						'letter_spacings' => array(
+							'desktop' => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+						),
+					)
+				),
+				'h6_typography'       => wp_json_encode(
+					array(
+						'font_sizes'      => array(
+							'desktop' => array(
+								'value' => '1',
+								'unit'  => 'rem',
+							),
+							'tablet'  => array(
+								'value' => '1',
+								'unit'  => 'rem',
+							),
+							'mobile'  => array(
+								'value' => '1',
+								'unit'  => 'rem',
+							),
+						),
+						'line_heights'    => array(
+							'desktop' => '1.2',
+							'tablet'  => '1.2',
+							'mobile'  => '1.2',
+						),
+						'letter_spacings' => array(
+							'desktop' => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'tablet'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+							'mobile'  => array(
+								'value' => '0',
+								'unit'  => 'px',
+							),
+						),
+					)
+				),
+			)
+		);
 
-        $customize_defaults = array_merge( $customize_defaults, $theme_typography_customize_defaults );
+		$customize_defaults = array_merge( $customize_defaults, $theme_typography_customize_defaults );
 
-        return $customize_defaults;
-    }
+		return $customize_defaults;
+	}
 
-    add_filter( 'xenial_customize_defaults', 'xenial_get_customizer_default_typography_values' );
+	add_filter( 'xenial_customize_defaults', 'xenial_get_customizer_default_typography_values' );
 }
