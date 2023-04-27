@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-04-12T09:34:10+00:00\n"
+"POT-Creation-Date: 2023-04-27T16:38:19+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: xenial\n"
@@ -237,21 +237,25 @@ msgstr ""
 msgid "Table/Mobile"
 msgstr ""
 
-#: customizer/controls/sortable-selector/class-xenial-customize-sortable-selector-control.php:90
-msgid "Nothing To Select"
-msgstr ""
-
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:219
 #: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:153
 #: customizer/fields/header/elements/logo.php:362
-#: customizer/fields/typography.php:70
-#: customizer/fields/typography.php:220
 msgid "Font Family"
 msgstr ""
 
-#: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:182
-msgid "Font Variants"
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:226
+msgid "Websafe Fonts"
 msgstr ""
 
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:245
+msgid "Google Fonts"
+msgstr ""
+
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:276
+msgid "Variants"
+msgstr ""
+
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:301
 #: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:207
 #: customizer/fields/footer/elements/footer-menu.php:144
 #: customizer/fields/header/elements/button.php:232
@@ -264,11 +268,67 @@ msgstr ""
 #: customizer/fields/header/elements/secondary-menu.php:193
 #: customizer/fields/pages/archive/header.php:166
 #: customizer/fields/pages/page-single/header.php:156
-#: customizer/fields/typography.php:91
-#: customizer/fields/typography.php:241
 #: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:393
 #: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:513
 msgid "Font Weight"
+msgstr ""
+
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:337
+msgid "Font Size"
+msgstr ""
+
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:597
+#: customizer/fields/footer/elements/footer-menu.php:127
+#: customizer/fields/header/elements/button.php:219
+#: customizer/fields/header/elements/html.php:161
+#: customizer/fields/header/elements/logo.php:416
+#: customizer/fields/header/elements/logo.php:535
+#: customizer/fields/header/elements/offcanvas-menu.php:209
+#: customizer/fields/header/elements/primary-menu-dropdown.php:302
+#: customizer/fields/header/elements/primary-menu.php:174
+#: customizer/fields/header/elements/secondary-menu.php:180
+#: customizer/fields/pages/archive/header.php:140
+#: customizer/fields/pages/page-single/header.php:130
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:380
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:500
+msgid "Line Height"
+msgstr ""
+
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:694
+#: customizer/fields/header/elements/logo.php:429
+#: customizer/fields/header/elements/logo.php:548
+#: customizer/fields/pages/archive/header.php:153
+#: customizer/fields/pages/page-single/header.php:143
+msgid "Letter Spacing"
+msgstr ""
+
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:955
+msgid "Text Style"
+msgstr ""
+
+#: customizer/controls/responsive-typography/class-xenial-customize-typography-control.php:1041
+#: customizer/fields/footer/elements/footer-menu.php:174
+#: customizer/fields/header/elements/button.php:262
+#: customizer/fields/header/elements/html.php:204
+#: customizer/fields/header/elements/logo.php:460
+#: customizer/fields/header/elements/logo.php:591
+#: customizer/fields/header/elements/offcanvas-menu.php:251
+#: customizer/fields/header/elements/primary-menu-dropdown.php:344
+#: customizer/fields/header/elements/primary-menu.php:213
+#: customizer/fields/header/elements/secondary-menu.php:223
+#: customizer/fields/pages/archive/header.php:196
+#: customizer/fields/pages/page-single/header.php:186
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:422
+#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:542
+msgid "Text Transform"
+msgstr ""
+
+#: customizer/controls/sortable-selector/class-xenial-customize-sortable-selector-control.php:90
+msgid "Nothing To Select"
+msgstr ""
+
+#: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:182
+msgid "Font Variants"
 msgstr ""
 
 #: customizer/controls/typography/class-xenial-customize-google-font-selector-control.php:233
@@ -331,13 +391,6 @@ msgstr ""
 #: customizer/fields/header/elements/social-links.php:365
 #: customizer/fields/pages/archive/header.php:128
 #: customizer/fields/pages/page-single/header.php:118
-#: customizer/fields/typography.php:131
-#: customizer/fields/typography.php:304
-#: customizer/fields/typography.php:366
-#: customizer/fields/typography.php:428
-#: customizer/fields/typography.php:490
-#: customizer/fields/typography.php:553
-#: customizer/fields/typography.php:615
 #: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:368
 #: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:488
 msgid "Font Size (px)"
@@ -919,31 +972,8 @@ msgstr ""
 #: customizer/fields/header/elements/logo.php:340
 #: customizer/fields/header/elements/logo.php:512
 #: customizer/fields/header/elements/secondary-menu.php:158
-#: customizer/fields/typography.php:8
+#: customizer/fields/typography.php:15
 msgid "Typography"
-msgstr ""
-
-#: customizer/fields/footer/elements/footer-menu.php:127
-#: customizer/fields/header/elements/button.php:219
-#: customizer/fields/header/elements/html.php:161
-#: customizer/fields/header/elements/logo.php:416
-#: customizer/fields/header/elements/logo.php:535
-#: customizer/fields/header/elements/offcanvas-menu.php:209
-#: customizer/fields/header/elements/primary-menu-dropdown.php:302
-#: customizer/fields/header/elements/primary-menu.php:174
-#: customizer/fields/header/elements/secondary-menu.php:180
-#: customizer/fields/pages/archive/header.php:140
-#: customizer/fields/pages/page-single/header.php:130
-#: customizer/fields/typography.php:143
-#: customizer/fields/typography.php:316
-#: customizer/fields/typography.php:378
-#: customizer/fields/typography.php:440
-#: customizer/fields/typography.php:502
-#: customizer/fields/typography.php:565
-#: customizer/fields/typography.php:627
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:380
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:500
-msgid "Line Height"
 msgstr ""
 
 #: customizer/fields/footer/elements/footer-menu.php:156
@@ -960,22 +990,6 @@ msgstr ""
 #: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:405
 #: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:525
 msgid "Font Style"
-msgstr ""
-
-#: customizer/fields/footer/elements/footer-menu.php:174
-#: customizer/fields/header/elements/button.php:262
-#: customizer/fields/header/elements/html.php:204
-#: customizer/fields/header/elements/logo.php:460
-#: customizer/fields/header/elements/logo.php:591
-#: customizer/fields/header/elements/offcanvas-menu.php:251
-#: customizer/fields/header/elements/primary-menu-dropdown.php:344
-#: customizer/fields/header/elements/primary-menu.php:213
-#: customizer/fields/header/elements/secondary-menu.php:223
-#: customizer/fields/pages/archive/header.php:196
-#: customizer/fields/pages/page-single/header.php:186
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:422
-#: inc/third-party/woocommerce/customize-header-elements/woocommerce-dropdown.php:542
-msgid "Text Transform"
 msgstr ""
 
 #: customizer/fields/footer/elements/social-links.php:8
@@ -1282,16 +1296,7 @@ msgid "Logo Position"
 msgstr ""
 
 #: customizer/fields/header/elements/logo.php:350
-#: customizer/fields/typography.php:49
-#: customizer/fields/typography.php:199
 msgid "Font Type"
-msgstr ""
-
-#: customizer/fields/header/elements/logo.php:429
-#: customizer/fields/header/elements/logo.php:548
-#: customizer/fields/pages/archive/header.php:153
-#: customizer/fields/pages/page-single/header.php:143
-msgid "Letter Spacing"
 msgstr ""
 
 #: customizer/fields/header/elements/logo.php:487
@@ -2077,46 +2082,12 @@ msgstr ""
 msgid "Disable Theme Footer"
 msgstr ""
 
-#: customizer/fields/typography.php:26
-msgid "Body Typograhy"
+#: customizer/fields/typography.php:32
+msgid "Base Font"
 msgstr ""
 
-#: customizer/fields/typography.php:156
-#: customizer/fields/typography.php:328
-#: customizer/fields/typography.php:390
-#: customizer/fields/typography.php:452
-#: customizer/fields/typography.php:515
-#: customizer/fields/typography.php:578
-#: customizer/fields/typography.php:639
-msgid "Letter Spacing (px)"
-msgstr ""
-
-#: customizer/fields/typography.php:176
-msgid "Headings (H1-H6)"
-msgstr ""
-
-#: customizer/fields/typography.php:286
-msgid "Heading - H1"
-msgstr ""
-
-#: customizer/fields/typography.php:349
-msgid "Heading - H2"
-msgstr ""
-
-#: customizer/fields/typography.php:410
-msgid "Heading - H3"
-msgstr ""
-
-#: customizer/fields/typography.php:472
-msgid "Heading - H4"
-msgstr ""
-
-#: customizer/fields/typography.php:535
-msgid "Heading - H5"
-msgstr ""
-
-#: customizer/fields/typography.php:597
-msgid "Heading - H6"
+#: customizer/fields/typography.php:100
+msgid "Headings Font"
 msgstr ""
 
 #: customizer/functions/customizer-choices.php:9
