@@ -1,0 +1,114 @@
+.customize-control-xenial-typography .xenial-typograhy-control {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 15px 15px 5px;
+}
+
+
+
+
+.customize-control-xenial-typography .xenial-typography-control-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.customize-control-xenial-typography span.label {
+    font-weight: 500;
+}
+
+.customize-control-xenial-typography .xenial-typography-section-inner.no-flex span.label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.customize-control-xenial-typography .xenial-typography-font-size-input {
+    width: 40px !important;
+    margin-bottom: 0px !important;
+}
+
+.customize-control-xenial-typography .xenial-typography-font-size-unit-input {
+    width: 50px !important;
+    margin-bottom: 0px !important;
+}
+
+.customize-control-xenial-typography .xenial-slider {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, .15);
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    transition: background .5s;
+    border: none;
+    margin-left: 5px;
+}
+
+.customize-control-xenial-typography .xenial-slider:hover {
+    background-color: rgba(0, 0, 0, .2)
+}
+
+.customize-control-xenial-typography .xenial-slider .ui-slider-range {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #0085ba;
+    background-image: none;
+    border-color: #0085ba;
+    left: -5px;
+}
+
+.customize-control-xenial-typography .xenial-slider .ui-slider-handle {
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%) translateX(-10px);
+    transform: translateY(-50%) translateX(-10px);
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: none;
+    background-color: #0085ba;
+    border: none;
+    margin-left: 0;
+}
+
+.customize-control-xenial-typography .xenial-slider-input {
+    float: right;
+}
+
+.customize-control-xenial-typography input.slider-input {
+    float: right;
+    width: 80%;
+    text-align: center;
+    border-radius: 4px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555
+}
+
+
+
+.customize-control-xenial-typography .xenial-typography-style .xenial-customize-button,
+.customize-control-xenial-typography .xenial-typography-text-transform .xenial-customize-button {
+    width: 25%;
+    padding: 8px 0px;
+}
+
+
+.customize-control-xenial-typography .xenial-customize-button-group .xenial-customize-button:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.customize-control-xenial-typography .xenial-customize-button-group .xenial-customize-button:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}

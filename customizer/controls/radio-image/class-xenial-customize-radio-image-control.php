@@ -36,7 +36,7 @@ if( ! class_exists( 'Xenial_Customize_Radio_Image_Control' ) ) {
                 foreach ( $this->choices as $value => $label ) : 
                     ?>                
                     <label for="<?php echo esc_attr( $this->id ) . esc_attr( $value ); ?>">
-                        <input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr( $this->id ) . esc_attr( $value ); ?>" <?php esc_url( $this->link() ); checked( $this->value(), $value ); ?>>
+                        <input class="image-select" type="radio" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" id="<?php echo esc_attr( $this->id ) . esc_attr( $value ); ?>" <?php $this->link(); ?> <?php checked( $this->value(), $value ); ?>>
                         <img src="<?php echo esc_url( $label ); ?>"/>
                     </label>
                     <?php 

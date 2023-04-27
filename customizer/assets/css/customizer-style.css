@@ -384,7 +384,6 @@ li#customize-controls-logo_position {
 }
 
 .customize-control .responsive-switchers {
-    margin-left: 5px;
     width: auto;
     float: right;
 }
@@ -411,7 +410,8 @@ li#customize-controls-logo_position {
     outline: 0;
     -webkit-transition: background-color .5s;
     transition: background-color .5s;
-    cursor: pointer
+    cursor: pointer;
+    background-color: #ffffff;
 }
 
 .customize-control .responsive-switchers li button svg {
@@ -729,4 +729,187 @@ body.rtl .customize-control .responsive-switchers li {
     width: 380px;
     margin: 30px auto;
     transform: translateX(-50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.customize-hidden {
+    display: none;
+}
+
+.customize-display {
+    display: block;
+}
+
+
+.box-border-expand-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+.xenial-control-toggle-button {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.xenial-control-toggle-button:hover {
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 20%);
+}
+
+.xenial-control-modal {
+    display: none;
+}
+
+.xenial-control-modal.modal-open {
+    display: block;
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    margin-top: 5px;
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 20%);
+    z-index: 1;
+}
+
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.xenial-customize-control-label.flex {
+    align-items: center;
+}
+
+.xenial-customize-control-section {
+
+}
+
+.xenial-customize-control-section-inner {
+
+}
+
+
+
+.xenial-customize-control-section-inner.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.xenial-customizer-control-section-field-wrapper {
+    margin-bottom: 10px;
+}
+
+.xenial-customize-button-group {
+    display: flex;
+}
+
+.xenial-customize-button {
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    transition-duration: 0.2s;
+}
+
+.xenial-customize-button.secondary:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.xenial-customize-button.active,
+.xenial-customize-button:hover {
+    background-color: #0085ba;
+    color: #ffffff;
+    border-color: #0085ba;
+    fill: #ffffff;
+}
+
+.xenial-customize-button.no-style {
+    background: transparent;
+    border: none;
+    padding: 0px;
+}
+
+.xenial-customize-button.no-style:hover {
+    background: transparent;
+    border: none;
+    color: #0085ba;
+}
+
+.xenial-customize-reset-button .dashicons {
+    font-size: 14px;
+    color: #888888;
+}
+
+.xenial-customize-reset-button:hover .dashicons {
+    color: #0085ba;
+}
+
+.xenial-unit-wrapper {
+    position: relative;
+}
+
+.unit-dropdown-toggle-button {
+    width: 45px;
+    height: 35px;
+    border-radius: 3px;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+.xenial-unit-dropdown {
+    display: none;
+}
+
+.xenial-unit-dropdown.dropdown-open {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    z-index: 1;
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #e8e8e8;
+    margin-left: 5px;
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 20%);
+}
+
+.xenial-unit-dropdown .xenial-customize-button {
+    border: none;
+    width: 100%;
+    padding: 10px 5px;
+    text-transform: uppercase;
+}
+
+.responsive-control-wrap {
+    display: none;
+}
+
+.responsive-control-wrap.active,
+.non-responsive-control-wrap {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.xenial-slider-input .slider-input {
+    width: 45px !important;
+    margin: 0px !important;
 }

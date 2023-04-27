@@ -47,3 +47,54 @@ xenial_divider_field(
 		'section' => 'xenial_theme_elements', 
 	) 
 );
+
+
+
+
+
+$wp_customize->add_setting(
+	'test_typography',
+	array(
+		'default'           => xenial_get_customize_default( 'test_typography' ),
+		'sanitize_callback' => '',
+	)
+);
+
+$wp_customize->add_control(
+	new Xenial_Customize_Typography_Control(
+		$wp_customize,
+		'test_typography',
+		array(
+			'label'   => 'Test Typography',
+			'section' => 'xenial_theme_elements',
+		)
+	)
+);
+
+
+xenial_divider_field(
+	'theme_elements_divider_3',
+	array(
+		'priority' => 10,
+		'section'  => 'xenial_theme_elements',
+	)
+);
+
+$wp_customize->add_setting(
+	'test_typography_1',
+	array(
+		'default'           => xenial_get_customize_default( 'test_typography_1' ),
+		'sanitize_callback' => '',
+	)
+);
+
+$wp_customize->add_control(
+	new Xenial_Customize_Typography_Control(
+		$wp_customize,
+		'test_typography_1',
+		array(
+			'label'   => 'Test Typography 1',
+			'section' => 'xenial_theme_elements',
+		)
+	)
+);

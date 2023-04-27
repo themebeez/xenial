@@ -1589,8 +1589,8 @@ if ( ! function_exists( 'xenial_get_letter_spacing_input_attrs' ) ) {
 			'xenial_letter_spacing_input_attrs',
 			array(
 				'min' 	=> 0,
-				'max' 	=> 15,
-				'step' 	=> 0.01
+				'max' 	=> 10,
+				'step' 	=> 0.5,
 			)
 		);
 	}
@@ -1604,9 +1604,9 @@ if ( ! function_exists( 'xenial_get_line_height_input_attrs' ) ) {
 		return apply_filters(
 			'xenial_line_height_input_attrs',
 			array(
-				'min' 	=> 0,
-				'max' 	=> 5,
-				'step' 	=> 0.01
+				'min'  => 0,
+				'max'  => 10,
+				'step' => 0.1,
 			)
 		);
 	}
@@ -1621,7 +1621,7 @@ if ( ! function_exists( 'xenial_get_font_size_input_attrs' ) ) {
 			'xenial_font_size_input_attrs',
 			array(
 				'min' 	=> 0,
-				'max' 	=> 150,
+				'max' 	=> 200,
 				'step' 	=> 1
 			)
 		);

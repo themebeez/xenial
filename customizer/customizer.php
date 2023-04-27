@@ -201,8 +201,9 @@ function xenial_customize_register( $wp_customize ) {
 
 	$wp_customize->register_section_type( 'Xenial_Customize_Box_Border_Control' );
 
-	
+	require $controls_path . 'responsive-typography/class-xenial-customize-typography-control.php';
 
+	$wp_customize->register_section_type( 'Xenial_Customize_Typography_Control' );
 
 	/**
 	 * Load customizer functions for sanitization of input values of control fields
