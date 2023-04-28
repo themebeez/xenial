@@ -272,19 +272,56 @@ wp.customize.controlConstructor['xenial-typography'] = wp.customize.Control.exte
                 let thisEle = jQuery(this);
                 let settingValue = getSettingValue(control.id);
                 let targetDevice = thisEle.data('device');
-                switch (targetDevice) {
-                    case 'desktop':
-                        settingValue.font_sizes.desktop.unit = thisEle.val();
-                        break;
-                    case 'tablet':
-                        settingValue.font_sizes.tablet.unit = thisEle.val();
-                        break;
-                    case 'mobile':
-                        settingValue.font_sizes.mobile.unit = thisEle.val();
-                        break;
-                    default:
-                        settingValue.font_size.unit = thisEle.val();
+
+                let fontSizeInputEle = jQuery('#xenial-' + targetDevice + '-font-size-' + control.id);
+
+                if (thisEle.val() === 'rem' || thisEle.val() === 'em') {
+                    let fontSizeInputEleVal = fontSizeInputEle.val();
+                    console.log(typeof fontSizeInputEleVal);
+
+                    if (typeof fontSizeInputEleVal === 'string' && fontSizeInputEleVal.includes('.')) {
+                        fontSizeInputEleVal = parseFloat(fontSizeInputEleVal).toFixed(1);
+                    } else {
+                        fontSizeInputEleVal = Number(fontSizeInputEleVal);
+                    }
+
+                    console.log(Number.isInteger(fontSizeInputEleVal));
+                    if (Number.isInteger(fontSizeInputEleVal)) {
+                        fontSizeInputEleVal = parseFloat(fontSizeInputEleVal / 16).toFixed(1);
+                    }
+                    console.log(fontSizeInputEleVal);
+                    fontSizeInputEle.attr('step', '0.1');
+                    fontSizeInputEle.val(fontSizeInputEleVal);
+                } else {
+
+                    let fontSizeInputEleVal = fontSizeInputEle.val();
+
+                    if (typeof fontSizeInputEleVal === 'string' && fontSizeInputEleVal.includes('.')) {
+                        fontSizeInputEleVal = parseFloat(fontSizeInputEleVal).toFixed(1);
+                    } else {
+                        fontSizeInputEleVal = Number(fontSizeInputEleVal);
+                    }
+
+                    fontSizeInputEleVal = parseInt(fontSizeInputEleVal * 16);
+
+                    fontSizeInputEle.attr('step', '1');
+                    fontSizeInputEle.val(fontSizeInputEleVal);
                 }
+
+                if (thisEle.val())
+                    switch (targetDevice) {
+                        case 'desktop':
+                            settingValue.font_sizes.desktop.unit = thisEle.val();
+                            break;
+                        case 'tablet':
+                            settingValue.font_sizes.tablet.unit = thisEle.val();
+                            break;
+                        case 'mobile':
+                            settingValue.font_sizes.mobile.unit = thisEle.val();
+                            break;
+                        default:
+                            settingValue.font_size.unit = thisEle.val();
+                    }
                 saveSetting(control.id, settingValue);
             });
 
@@ -338,6 +375,41 @@ wp.customize.controlConstructor['xenial-typography'] = wp.customize.Control.exte
                 let thisEle = jQuery(this);
                 let settingValue = getSettingValue(control.id);
                 let targetDevice = thisEle.data('device');
+
+                let letterSpacingInputEle = jQuery('#xenial-' + targetDevice + '-letter-spacing-' + control.id);
+
+                if (thisEle.val() === 'rem' || thisEle.val() === 'em') {
+
+                    let letterSpacingInputEleVal = letterSpacingInputEle.val();
+
+                    if (typeof letterSpacingInputEleVal === 'string' && letterSpacingInputEleVal.includes('.')) {
+                        letterSpacingInputEleVal = parseFloat(letterSpacingInputEleVal).toFixed(1);
+                    } else {
+                        letterSpacingInputEleVal = Number(letterSpacingInputEleVal);
+                    }
+
+                    if (Number.isInteger(letterSpacingInputEleVal)) {
+                        letterSpacingInputEleVal = parseFloat(letterSpacingInputEleVal / 16).toFixed(1);
+                    }
+
+                    letterSpacingInputEle.attr('step', '0.1');
+                    letterSpacingInputEle.val(letterSpacingInputEleVal);
+                } else {
+
+                    let letterSpacingInputEleVal = letterSpacingInputEle.val();
+
+                    if (typeof letterSpacingInputEleVal === 'string' && letterSpacingInputEleVal.includes('.')) {
+                        letterSpacingInputEleVal = parseFloat(letterSpacingInputEleVal).toFixed(1);
+                    } else {
+                        letterSpacingInputEleVal = Number(letterSpacingInputEleVal);
+                    }
+
+                    letterSpacingInputEleVal = parseInt(letterSpacingInputEleVal * 16);
+
+                    letterSpacingInputEle.attr('step', '1');
+                    letterSpacingInputEle.val(letterSpacingInputEleVal);
+                }
+
                 switch (targetDevice) {
                     case 'desktop':
                         settingValue.letter_spacings.desktop.unit = thisEle.val();
