@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires PHP: 7.4.0
 Requires at least: 5.6
 Tested up to: 6.2.2
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,10 @@ Xenial includes support for Infinite Scroll in Jetpack.
 
 
 == Changelog ==
+
+== 1.0.4 - July 25, 2023 ==
+
+- Updated: WooCommerce template version.
 
 == 1.0.3 - June 21, 2023 ==
 
