@@ -4,8 +4,8 @@ Contributors: themebeez
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, portfolio, grid-layout, two-columns, three-columns, left-sidebar, right-sidebar, theme-options, block-styles
 Requires PHP: 7.4.0
 Requires at least: 5.6
-Tested up to: 6.2.2
-Stable tag: 1.0.4
+Tested up to: 6.4.2
+Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,12 @@ Xenial includes support for Infinite Scroll in Jetpack.
 
 
 == Changelog ==
+
+== 1.0.5 - December 11, 2023 ==
+
+- Tweak: Minor CSS tweaks.
+- Tested: WordPress 6.4.2
+- Dev: Using `pnpm` instead of `npm` for development.
 
 == 1.0.4 - July 25, 2023 ==
 

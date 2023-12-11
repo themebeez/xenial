@@ -1,6 +1,3 @@
-
-// Xenial gulpfile to compile assets, zip prduction files & make POT file.
-
 const gulp = require('gulp');
 const zip = require('gulp-zip');
 const wpPot = require('gulp-wp-pot');
@@ -11,21 +8,10 @@ const uglify = require('gulp-uglify');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
-const replace = require('gulp-replace');
 const notify = require('gulp-notify');
 const plumber = require('gulp-plumber');
-const rtlcss = require('gulp-rtlcss');
 const rename = require('gulp-rename');
 const shell = require('gulp-shell');
-
-/*
-*
-# npm update
-# npm init
-# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename -g
-# npm install gulp@4.0.2 gulp-zip gulp-wp-pot gulp-sourcemaps gulp-sass sass gulp-concat gulp-uglify gulp-postcss autoprefixer cssnano gulp-replace gulp-notify gulp-plumber gulp-rtlcss gulp-rename --save-dev
-*
-*/
 
 /*
 ===========================================================
@@ -46,7 +32,7 @@ var base__script__path = {
     ],
     base__script__build__path: "./assets/build/js/",
 }
-var compiled__base__script_build = "xenial-script.js"; // what would you like to name your minified bundled js file
+var compiled__base__script_build = "xenial-script.js";
 
 // #1.1 base script files path
 var compatibility__script__path = {
@@ -135,7 +121,7 @@ const source__files__folders__to__compress = {
 /*
 ===========================================================
 =
-= Define task (Almost no chnages required)
+= Define task (Almost no changes required)
 =
 ====================================================
 */

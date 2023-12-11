@@ -8,6 +8,7 @@
 .woocommerce button.button.alt, 
 .woocommerce #respond input#submit,
 .woocommerce #respond input#submit.alt,
+.woocommerce ul.products li.product .button,
 .wc-block-grid__product-add-to-cart.wp-block-button .wp-block-button__link {
 
     position: relative;
@@ -48,6 +49,7 @@
 .woocommerce #respond input#submit:disabled, 
 .woocommerce button.button:disabled[disabled], 
 .woocommerce input.button:disabled[disabled],
+.woocommerce ul.products li.product .button.disabled,
 .woocommerce #respond input#submit:disabled[disabled] {
     
     opacity: 1;
