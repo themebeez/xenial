@@ -2,16 +2,16 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Xenial 1.0.4\n"
+"Project-Id-Version: Xenial 1.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/xenial\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-25T08:49:14+00:00\n"
+"POT-Creation-Date: 2023-12-11T05:49:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.8.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: xenial\n"
 
 #. Theme Name of the theme
@@ -19,7 +19,7 @@ msgid "Xenial"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "https://xenial.themebeez.com/"
+msgid "https://themebeez.com/"
 msgstr ""
 
 #. Description of the theme
